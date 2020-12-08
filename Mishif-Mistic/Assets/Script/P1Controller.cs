@@ -8,6 +8,11 @@ public class P1Controller : MonoBehaviour
     [SerializeField] public float Speed; //プレイヤーの移動速度の変数
     [SerializeField] public GameObject GameClear; //YouWinテキストの変数
     [SerializeField] public Button ReAlchemy; //再錬金テキストの変数
+                                              
+    public int PlayerHP;//体力の現在の数値
+    public Text PlayerHPtext;//体力の数値を表示
+    public Slider SliderGreen;//HPバー緑
+    public Slider SliderBlack;//HPバー黒
 
     private GameObject Cam2Obj; //P2カメラを入れる変数
     private Camera Cam; //P1カメラの変数
@@ -43,16 +48,32 @@ public class P1Controller : MonoBehaviour
         {
             GameSet();
         }
+        //HPテキストの表示
+        PlayerHPtext.text = string.Format("HP:{0}", PlayerHP);
+        //HPの継続的な減少
+        if (PlayerHP * 2 < SliderBlack.value)
+        {
+            SliderBlack.value -= 1;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("P2"))
         {
-            isMove1P = true;
-            isTouch = true;
+            //現時点ではここで減らす量を調整する必要がある
+            //数値的に減らす
+            PlayerHP -= 15;
+            //HPゲージを減らす
+            //ゆっくりゲージが減るようにゲージの最大値が200になっている
+            SliderGreen.value -= 30;
+            if (PlayerHP <= 0)//体力の値が0になった時
+            {
+                isMove1P = true;
+                isTouch = true;
 
-            Time.timeScale = 0;
+                Time.timeScale = 0;
+            }
         }
     }
 
