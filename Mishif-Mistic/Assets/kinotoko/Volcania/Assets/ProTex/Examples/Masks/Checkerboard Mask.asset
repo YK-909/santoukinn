@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -488832403, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Checkerboard Mask
+  m_EditorClassIdentifier: 
+  versionNumber: 1000
+  globalNodeId: 8
+  nodes:
+  - nodeId: 1
+    process: {fileID: 114160676162880998}
+    inputs: 070000000000000000000000000000000000000000000000
+    finalNode: 1
+  - nodeId: 7
+    process: {fileID: 114162647157703410}
+    inputs: 
+    finalNode: 0
+  nodePositions:
+  - nodeId: 1
+    nodePos: {x: 3992, y: 10}
+  - nodeId: 7
+    nodePos: {x: 3760, y: 51}
+  checksum: b56bc17484091754cf4e79f4eda83bc0
+--- !u!114 &114160676162880998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -462716759, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  preview: 0
+  normalStrength: 0.75
+--- !u!114 &114162647157703410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 118671959, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Random Noise
+  m_EditorClassIdentifier: 
+  brightness: -1
+  contrast: 4
+  baseSeed: 31
+  baseScaleX: 2
+  baseScaleY: 2

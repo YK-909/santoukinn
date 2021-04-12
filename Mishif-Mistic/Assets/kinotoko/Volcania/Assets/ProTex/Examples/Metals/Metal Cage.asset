@@ -1,0 +1,352 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -488832403, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Metal Cage
+  m_EditorClassIdentifier: 
+  versionNumber: 1000
+  globalNodeId: 22
+  nodes:
+  - nodeId: 1
+    process: {fileID: 114829266599364258}
+    inputs: 0500000011000000000000000d0000000000000000000000
+    finalNode: 1
+  - nodeId: 2
+    process: {fileID: 114214307925668150}
+    inputs: 
+    finalNode: 0
+  - nodeId: 3
+    process: {fileID: 114882565905276148}
+    inputs: 
+    finalNode: 0
+  - nodeId: 5
+    process: {fileID: 114830815604100490}
+    inputs: 09000000090000000900000007000000
+    finalNode: 0
+  - nodeId: 6
+    process: {fileID: 114128681633216652}
+    inputs: 0200000003000000
+    finalNode: 0
+  - nodeId: 7
+    process: {fileID: 114829646386395418}
+    inputs: 06000000
+    finalNode: 0
+  - nodeId: 9
+    process: {fileID: 114291610520525068}
+    inputs: 0b000000
+    finalNode: 0
+  - nodeId: 11
+    process: {fileID: 114108252013053492}
+    inputs: 
+    finalNode: 0
+  - nodeId: 12
+    process: {fileID: 114090711268618422}
+    inputs: 0b0000000600000000000000
+    finalNode: 0
+  - nodeId: 13
+    process: {fileID: 114216186335944722}
+    inputs: 11000000000000000000000013000000
+    finalNode: 0
+  - nodeId: 17
+    process: {fileID: 114089007041611834}
+    inputs: 0c00000014000000
+    finalNode: 0
+  - nodeId: 19
+    process: {fileID: 114597488868099826}
+    inputs: 11000000
+    finalNode: 0
+  - nodeId: 20
+    process: {fileID: 114066717699042422}
+    inputs: 
+    finalNode: 0
+  nodePositions:
+  - nodeId: 1
+    nodePos: {x: 3992, y: 10}
+  - nodeId: 2
+    nodePos: {x: 3038, y: 127}
+  - nodeId: 3
+    nodePos: {x: 3036, y: 281}
+  - nodeId: 5
+    nodePos: {x: 3598, y: 11}
+  - nodeId: 6
+    nodePos: {x: 3191, y: 215}
+  - nodeId: 7
+    nodePos: {x: 3339, y: 331}
+  - nodeId: 9
+    nodePos: {x: 3420, y: 7}
+  - nodeId: 11
+    nodePos: {x: 3199, y: 33}
+  - nodeId: 12
+    nodePos: {x: 3338, y: 147}
+  - nodeId: 13
+    nodePos: {x: 3843, y: 237}
+  - nodeId: 17
+    nodePos: {x: 3596, y: 206}
+  - nodeId: 19
+    nodePos: {x: 3718, y: 333}
+  - nodeId: 20
+    nodePos: {x: 3471, y: 346}
+  checksum: 3539ae85ea17623c3eff2bbf7d581796
+--- !u!114 &114066717699042422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1083763082, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Circle
+  m_EditorClassIdentifier: 
+  brightness: -0.20472442
+  contrast: 1.2440945
+  alpha: 0
+  repeatX: 4
+  repeatY: 4
+  falloff: 0.8503937
+  radius: 0.30708662
+--- !u!114 &114089007041611834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -538552255, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Blend
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  blendMode: 4
+--- !u!114 &114090711268618422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 50615648, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Interpolate
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  offset: 0.7874016
+--- !u!114 &114108252013053492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1076491161, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: FBM Noise
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 0.31496063
+  seed: 42
+  scaleX: 13
+  scaleY: 13
+  octaves: 4
+  lacunarity: 2
+  gain: 0.79527557
+--- !u!114 &114128681633216652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -538552255, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Blend
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  blendMode: 4
+--- !u!114 &114214307925668150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 638165638, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Line
+  m_EditorClassIdentifier: 
+  brightness: -0.503937
+  contrast: 1
+  alpha: 0
+  repeatX: 4
+  repeatY: 1
+  falloff: 0.1
+  direction: 0
+  thickness: 0.25
+  baseOffset: 0
+--- !u!114 &114216186335944722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1205356007, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: RGBA Mixer
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  redInput: 0
+  greenInput: 0
+  blueInput: 0
+  alphaInput: 0
+--- !u!114 &114291610520525068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 265611191, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Colorize
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  colorizeBasis: 0
+  colors:
+    serializedVersion: 2
+    key0: {r: 0.21960786, g: 0.19215688, b: 0.16862746, a: 1}
+    key1: {r: 0.28235295, g: 0.2509804, b: 0.227451, a: 1}
+    key2: {r: 0.1764706, g: 0.15294118, b: 0.1254902, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 26021
+    ctime1: 37394
+    ctime2: 53585
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+--- !u!114 &114597488868099826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1169881887, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Offset
+  m_EditorClassIdentifier: 
+  brightness: -0.27559054
+  contrast: 1
+  baseOffsetX: 0
+  baseOffsetY: 0
+--- !u!114 &114829266599364258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -462716759, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  preview: 0
+  normalStrength: 0.75
+--- !u!114 &114829646386395418
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1169881887, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Offset
+  m_EditorClassIdentifier: 
+  brightness: 1
+  contrast: 3.6062992
+  baseOffsetX: 0
+  baseOffsetY: 0
+--- !u!114 &114830815604100490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1205356007, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: RGBA Mixer
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  redInput: 0
+  greenInput: 0
+  blueInput: 0
+  alphaInput: 0
+--- !u!114 &114882565905276148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 638165638, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Line
+  m_EditorClassIdentifier: 
+  brightness: -0.2519685
+  contrast: 1
+  alpha: 0
+  repeatX: 1
+  repeatY: 4
+  falloff: 0.1
+  direction: 1
+  thickness: 0.25
+  baseOffset: 0

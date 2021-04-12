@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -488832403, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Bricks Mask
+  m_EditorClassIdentifier: 
+  versionNumber: 1000
+  globalNodeId: 7
+  nodes:
+  - nodeId: 1
+    process: {fileID: 114316675274192862}
+    inputs: 070000000000000000000000000000000000000000000000
+    finalNode: 1
+  - nodeId: 2
+    process: {fileID: 114155268475914868}
+    inputs: 
+    finalNode: 0
+  - nodeId: 3
+    process: {fileID: 114589563458007374}
+    inputs: 02000000
+    finalNode: 0
+  - nodeId: 4
+    process: {fileID: 114157080285318510}
+    inputs: 02000000
+    finalNode: 0
+  - nodeId: 5
+    process: {fileID: 114247007070558762}
+    inputs: 0200000004000000
+    finalNode: 0
+  - nodeId: 6
+    process: {fileID: 114555855336011310}
+    inputs: 0300000005000000
+    finalNode: 0
+  - nodeId: 7
+    process: {fileID: 114924761597587282}
+    inputs: 06000000
+    finalNode: 0
+  nodePositions:
+  - nodeId: 1
+    nodePos: {x: 3992, y: 10}
+  - nodeId: 2
+    nodePos: {x: 3294, y: 129}
+  - nodeId: 3
+    nodePos: {x: 3436, y: 10}
+  - nodeId: 4
+    nodePos: {x: 3425, y: 201}
+  - nodeId: 5
+    nodePos: {x: 3563, y: 128}
+  - nodeId: 6
+    nodePos: {x: 3705, y: 38}
+  - nodeId: 7
+    nodePos: {x: 3852, y: 31}
+  checksum: f68b546dddc1fa3f85a9c02484100c42
+--- !u!114 &114155268475914868
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 589497703, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Rectangle
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  repeatX: 1
+  repeatY: 1
+  falloff: 0.1
+  width: 0.95118105
+  height: 0.27559054
+  baseRoundness: 0
+--- !u!114 &114157080285318510
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1169881887, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Offset
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  baseOffsetX: 0.4015748
+  baseOffsetY: 0.33858266
+--- !u!114 &114247007070558762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -441674482, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Add
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+--- !u!114 &114316675274192862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -462716759, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  preview: 0
+  normalStrength: 0.75
+--- !u!114 &114555855336011310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -441674482, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Add
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+--- !u!114 &114589563458007374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1169881887, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Offset
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  baseOffsetX: -0.22834647
+  baseOffsetY: -0.33858266
+--- !u!114 &114924761597587282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1822197753, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Repeat
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  repeatX: 3
+  repeatY: 3

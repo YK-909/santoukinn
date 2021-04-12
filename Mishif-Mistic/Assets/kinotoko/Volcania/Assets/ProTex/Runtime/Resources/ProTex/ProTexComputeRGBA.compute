@@ -1,0 +1,69 @@
+﻿#pragma kernel RGBMixer
+#pragma kernel AlphaMixer
+
+uniform float4 size; 
+uniform float4 brightnessContrast; 
+uniform float4 mixerR;
+uniform float4 mixerG;
+uniform float4 mixerB;
+uniform float4 mixerA;
+
+StructuredBuffer<float4> input1;
+StructuredBuffer<float4> input2;
+StructuredBuffer<float4> input3;
+
+RWStructuredBuffer<float4> output;
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 SetBrightnessContrast(float4 color)
+{
+    float4 result = color;
+    result.rgb = saturate((color.rgb - 0.5) * brightnessContrast.y + 0.5 + brightnessContrast.x);
+    return result;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 GetPixel(StructuredBuffer<float4> buffer, uint2 pos)
+{
+    return buffer[pos.x + pos.y * size.x];
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+void SetPixel(uint2 pos, float4 color)
+{
+    output[pos.x + pos.y * size.x] = color;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void RGBMixer(uint3 id : SV_DispatchThreadID)
+{
+    float4 colorR = GetPixel(input1, id.xy);
+    float4 colorG = GetPixel(input2, id.xy);
+    float4 colorB = GetPixel(input3, id.xy);
+    
+    float4 result = float4(
+        dot(colorR, mixerR),
+        dot(colorG, mixerG),
+        dot(colorB, mixerB),
+        0);
+         
+    SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void AlphaMixer(uint3 id : SV_DispatchThreadID)
+{
+    float4 rgb = GetPixel(input1, id.xy);
+    float4 alpha = GetPixel(input2, id.xy);
+    
+    float4 result = float4(
+        rgb.x,
+        rgb.y,
+        rgb.z,
+        dot(alpha, mixerA));
+         
+    result = SetBrightnessContrast(result);    
+    SetPixel(id.xy, result);
+}

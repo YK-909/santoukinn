@@ -1,0 +1,306 @@
+﻿#pragma kernel Circle
+#pragma kernel Triangle
+#pragma kernel Rectangle
+#pragma kernel Rhombus
+#pragma kernel Pentagon
+#pragma kernel Hexagon
+#pragma kernel Octogon
+#pragma kernel Line
+#pragma kernel Cross
+#pragma kernel Constant
+
+uniform float4 size; 
+uniform float4 brightnessContrast; 
+uniform int4 alphaValue; // 0 = One, 1 = Zero, 2 = Operation 
+uniform int4 repeat;
+uniform float4 falloff;
+uniform float4 radius;
+uniform float4 shapeSize;
+uniform float4 roundness;
+uniform float4 constant;
+
+RWStructuredBuffer<float4> output;
+
+#define PI 3.14159265359
+#define TWO_PI 6.28318530718
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 SetBrightnessContrast(float4 color)
+{
+    float4 result = color;
+    result.rgb = saturate((color.rgb - 0.5) * brightnessContrast.y + 0.5 + brightnessContrast.x);
+    return result;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 SetAlphaAndClamp(float4 value)
+{
+    if (alphaValue.x == 0)
+    {
+        value.w = 1;
+    }
+    else if (alphaValue.x == 1)
+    {
+        value.w = 0;
+    }
+ 
+    return saturate(value); 
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+void SetPixel(uint2 pos, float4 color)
+{
+    output[pos.x + pos.y * size.x] = color;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float2 GetTiledPos(uint2 pos)
+{
+    float2 tiledPos = (pos.xy * repeat.xy) % size.xy;
+    tiledPos = (tiledPos / size.xy) * 2.0 - 1.0;    
+    return tiledPos;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float SDFCircle(float2 pos, float radius)
+{
+    return length(pos) - radius;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Circle(uint3 id : SV_DispatchThreadID)
+{
+    float2 pos = GetTiledPos(id.xy); 
+    
+    float sdf = SDFCircle(pos, radius.x - falloff.x);
+    float shape = 1.0 - smoothstep(0.0, falloff.x, sdf);     
+    float4 result = float4(shape, shape, shape, shape);     
+ 
+    result = SetBrightnessContrast(result);     
+    result = SetAlphaAndClamp(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float SDFTriangle(float2 p, float2 q)
+{
+    p.x = abs(p.x);
+    
+    float2 a = p - q * clamp(dot(p, q) / dot(q, q), 0.0, 1.0);
+    float2 b = p - q * float2(clamp(p.x / q.x, 0.0, 1.0), 1.0);
+    float s = -sign(q.y);
+    float2 d = min(float2(dot(a, a), s * (p.x * q.y - p.y * q.x)),
+                   float2(dot(b, b), s * (p.y - q.y)));
+
+    return -sqrt(d.x) * sign(d.y);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Triangle(uint3 id : SV_DispatchThreadID)
+{
+    float2 pos = GetTiledPos(id.xy) * float2(1, -1) + float2(0.0, (shapeSize.y - falloff.x - roundness.x * 2) * 0.5f);  
+   
+    float sdf = 
+        SDFTriangle(pos, shapeSize.xy - float2(falloff.x, falloff.x) - float2(roundness.x, roundness.x * 2.0));
+    float shape = 1.0 - smoothstep(0.0, falloff.x, sdf - roundness.x);    
+    float4 result = float4(shape, shape, shape, shape);
+    
+    result = SetBrightnessContrast(result);     
+    result = SetAlphaAndClamp(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float SDFBox(float2 pos, float2 b)
+{
+    float2 d = abs(pos) - b;
+    return length(max(d, float2(0.0, 0.0))) + min(max(d.x, d.y), 0.0);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Rectangle(uint3 id : SV_DispatchThreadID)
+{
+    float2 pos = GetTiledPos(id.xy);  
+   
+    float sdf = SDFBox(pos, shapeSize.xy - falloff.xx - roundness.xx);
+    float shape = 1.0 - smoothstep(0.0, falloff.x, sdf - roundness.x);    
+    float4 result = float4(shape, shape, shape, shape);
+    
+    result = SetBrightnessContrast(result);     
+    result = SetAlphaAndClamp(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float ndot(float2 a, float2 b)
+{ 
+    return a.x * b.x - a.y * b.y; 
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float SDFRhombus(float2 pos, float2 b)
+{
+    float2 q = abs(pos);    
+    float h = clamp((-2.0 * ndot(q, b) + ndot(b, b)) / dot(b, b), -1.0, 1.0 );
+    float d = length(q - 0.5 * b * float2(1.0 - h, 1.0 + h));
+    return d * sign(q.x * b.y + q.y * b.x - b.x * b.y);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Rhombus(uint3 id : SV_DispatchThreadID)
+{
+    float2 pos = GetTiledPos(id.xy);  
+   
+    float sdf = SDFRhombus(pos, shapeSize.xy - falloff.xx - roundness.xx);
+    float shape = 1.0 - smoothstep(0.0, falloff.x, sdf - roundness.x);    
+    float4 result = float4(shape, shape, shape, shape);
+    
+    result = SetBrightnessContrast(result);     
+    result = SetAlphaAndClamp(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float SDFPentagon(float2 p, float r)
+{
+    const float3 k = float3(0.809016994, 0.587785252, 0.726542528);
+
+    p.x = abs(p.x);
+    p.y = -p.y;
+
+    p -= 2.0 * min(dot(float2(-k.x, k.y), p), 0.0) * float2(-k.x, k.y);
+    p -= 2.0 * min(dot(float2( k.x, k.y), p), 0.0) * float2( k.x, k.y);
+    
+    return length(p - float2(clamp(p.x, -r * k.z, r * k.z), r)) * sign(p.y - r);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Pentagon(uint3 id : SV_DispatchThreadID)
+{
+    float2 pos = GetTiledPos(id.xy) + float2(0.0, 0.1); 
+     
+    float sdf = SDFPentagon(pos, radius.x - falloff.x - roundness.x);
+    float shape = 1.0 - smoothstep(0.0, falloff.x, sdf - roundness.x);    
+    float4 result = float4(shape, shape, shape, shape);
+    
+    result = SetBrightnessContrast(result);     
+    result = SetAlphaAndClamp(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float SDFOctogon(float2 p, float r)
+{
+    const float3 k = float3(-0.9238795325, 0.3826834323, 0.4142135623);
+
+    p = abs(p);
+
+    p -= 2.0 * min(dot(float2( k.x, k.y), p), 0.0) * float2( k.x, k.y);
+    p -= 2.0 * min(dot(float2(-k.x, k.y), p), 0.0) * float2(-k.x, k.y);
+    
+    return length(p - float2(clamp(p.x, -r * k.z, r * k.z), r)) * sign(p.y - r);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Octogon(uint3 id : SV_DispatchThreadID)
+{
+    float2 pos = GetTiledPos(id.xy); 
+     
+    float sdf = SDFOctogon(pos, radius.x - falloff.x - roundness.x);
+    float shape = 1.0 - smoothstep(0.0, falloff.x, sdf - roundness.x);    
+    float4 result = float4(shape, shape, shape, shape);
+    
+    result = SetBrightnessContrast(result);     
+    result = SetAlphaAndClamp(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float SDFHexagon(float2 p, float r)
+{
+    const float an = 6.2831853 / 6.0;
+    const float he = r * tan(0.5 * an);
+    
+    p = -p.yx;
+        
+    float bn = an * floor((atan2(p.y, p.x) + 0.5 * an) / an);
+    float2 cs = float2(cos(bn), sin(bn));
+    
+    p = mul(p, float2x2(cs.x,-cs.y,cs.y,cs.x));
+
+    return length(p - float2(r, clamp(p.y, -he, he))) * sign(p.x - r);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Hexagon(uint3 id : SV_DispatchThreadID)
+{
+    float2 pos = GetTiledPos(id.xy); 
+     
+    float sdf = SDFHexagon(pos, radius.x - falloff.x - roundness.x);
+    float shape = 1.0 - smoothstep(0.0, falloff.x, sdf - roundness.x);    
+    float4 result = float4(shape, shape, shape, shape);
+    
+    result = SetBrightnessContrast(result);     
+    result = SetAlphaAndClamp(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Line(uint3 id : SV_DispatchThreadID)
+{
+    float2 pos = GetTiledPos(id.xy - (shapeSize.zw * size.xy));  
+   
+    float sdf = SDFBox(pos, shapeSize.xy - falloff.xy);
+    float shape = 1.0 - smoothstep(0.0, max(falloff.x, falloff.y), sdf);    
+    float4 result = float4(shape, shape, shape, shape);
+    
+    result = SetBrightnessContrast(result);     
+    result = SetAlphaAndClamp(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float SDFCross(float2 p, float2 b, float r)
+{
+    p = abs(p); 
+    p = (p.y > p.x) ? p.yx : p.xy;
+    
+	float2 q = p - b;
+    float k = max(q.y, q.x);
+    float2 w = (k > 0.0) ? q : float2(b.y - p.x, -k);
+    
+    return sign(k) * length(max(w, 0.0)) + r;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Cross(uint3 id : SV_DispatchThreadID)
+{
+    float2 pos = GetTiledPos(id.xy);  
+   
+    float sdf = SDFCross(pos, shapeSize.xy - falloff.xx - roundness.xx, 0.0);
+    float shape = 1.0 - smoothstep(0.0, falloff.x, sdf - roundness.x);    
+    float4 result = float4(shape, shape, shape, shape);
+    
+    result = SetBrightnessContrast(result);     
+    result = SetAlphaAndClamp(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Constant(uint3 id : SV_DispatchThreadID)
+{
+    float4 result = constant;
+    result = SetBrightnessContrast(result);    
+    result = SetAlphaAndClamp(result);
+	SetPixel(id.xy, result);
+}

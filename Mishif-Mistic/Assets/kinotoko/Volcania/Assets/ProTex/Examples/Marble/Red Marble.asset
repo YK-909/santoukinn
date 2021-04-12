@@ -1,0 +1,301 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -488832403, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Red Marble
+  m_EditorClassIdentifier: 
+  versionNumber: 1000
+  globalNodeId: 20
+  nodes:
+  - nodeId: 1
+    process: {fileID: 114742616449121982}
+    inputs: 1400000000000000000000000b0000000000000000000000
+    finalNode: 1
+  - nodeId: 3
+    process: {fileID: 114634879078138562}
+    inputs: 
+    finalNode: 0
+  - nodeId: 4
+    process: {fileID: 114753493693483090}
+    inputs: 030000000d0000000d000000
+    finalNode: 0
+  - nodeId: 9
+    process: {fileID: 114297941402186928}
+    inputs: 0d000000
+    finalNode: 0
+  - nodeId: 10
+    process: {fileID: 114821695859801532}
+    inputs: 
+    finalNode: 0
+  - nodeId: 11
+    process: {fileID: 114774513421314208}
+    inputs: 0a000000000000000000000011000000
+    finalNode: 0
+  - nodeId: 13
+    process: {fileID: 114617399630854840}
+    inputs: 
+    finalNode: 0
+  - nodeId: 14
+    process: {fileID: 114270148833454272}
+    inputs: 
+    finalNode: 0
+  - nodeId: 17
+    process: {fileID: 114000968508964094}
+    inputs: 
+    finalNode: 0
+  - nodeId: 19
+    process: {fileID: 114684311379508296}
+    inputs: 040000000e000000
+    finalNode: 0
+  - nodeId: 20
+    process: {fileID: 114323587997185354}
+    inputs: 0900000013000000
+    finalNode: 0
+  nodePositions:
+  - nodeId: 1
+    nodePos: {x: 3992, y: 10}
+  - nodeId: 3
+    nodePos: {x: 3254, y: 29}
+  - nodeId: 4
+    nodePos: {x: 3439, y: 106}
+  - nodeId: 9
+    nodePos: {x: 3624, y: 16}
+  - nodeId: 10
+    nodePos: {x: 3697, y: 221}
+  - nodeId: 11
+    nodePos: {x: 3826, y: 278}
+  - nodeId: 13
+    nodePos: {x: 3256, y: 197}
+  - nodeId: 14
+    nodePos: {x: 3439, y: 286}
+  - nodeId: 17
+    nodePos: {x: 3689, y: 380}
+  - nodeId: 19
+    nodePos: {x: 3572, y: 203}
+  - nodeId: 20
+    nodePos: {x: 3789, y: 57}
+  checksum: 8ceb28872fad1cf6608bb31fa064f21f
+--- !u!114 &114000968508964094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -920509127, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Constant
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  constant: 0.6653543
+--- !u!114 &114270148833454272
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1076491161, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: FBM Noise
+  m_EditorClassIdentifier: 
+  brightness: -0.20472442
+  contrast: 1.2125984
+  seed: 42
+  scaleX: 10
+  scaleY: 10
+  octaves: 4
+  lacunarity: 2
+  gain: 0.5
+--- !u!114 &114297941402186928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 265611191, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Colorize
+  m_EditorClassIdentifier: 
+  brightness: -0.20472442
+  contrast: 1.1338582
+  colorizeBasis: 0
+  colors:
+    serializedVersion: 2
+    key0: {r: 0.5647059, g: 0.27058825, b: 0.25882354, a: 1}
+    key1: {r: 0.7830189, g: 0.37245262, b: 0.30655926, a: 1}
+    key2: {r: 0.5803922, g: 0.25490198, b: 0.20392159, a: 0}
+    key3: {r: 0.73333335, g: 0.74509805, b: 0.77647066, a: 0}
+    key4: {r: 0.9463197, g: 0.9463197, b: 0.9463197, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 5204
+    ctime1: 27949
+    ctime2: 65535
+    ctime3: 37008
+    ctime4: 65535
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+--- !u!114 &114323587997185354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -441674482, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Add
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+--- !u!114 &114617399630854840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1076491161, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: FBM Noise
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  seed: 42
+  scaleX: 4
+  scaleY: 4
+  octaves: 4
+  lacunarity: 2
+  gain: 0.5
+--- !u!114 &114634879078138562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 523783703, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Ridge Noise
+  m_EditorClassIdentifier: 
+  brightness: -0.070866145
+  contrast: 1
+  seed: 56
+  scaleX: 12
+  scaleY: 11
+  octaves: 4
+  lacunarity: 2.6181102
+  gain: 0.5826772
+--- !u!114 &114684311379508296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1879361092, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Multiply
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+--- !u!114 &114742616449121982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -462716759, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  preview: 0
+  normalStrength: 0.75
+--- !u!114 &114753493693483090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 734469083, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Distortion
+  m_EditorClassIdentifier: 
+  brightness: -0.20472442
+  contrast: 1.0708661
+  channelX: 0
+  distortionX: 0.17322835
+  channelY: 0
+  distortionY: 0.16535433
+--- !u!114 &114774513421314208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1205356007, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: RGBAMixer
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  redInput: 0
+  greenInput: 0
+  blueInput: 0
+  alphaInput: 0
+--- !u!114 &114821695859801532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -920509127, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Constant
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  constant: 0.10236221
