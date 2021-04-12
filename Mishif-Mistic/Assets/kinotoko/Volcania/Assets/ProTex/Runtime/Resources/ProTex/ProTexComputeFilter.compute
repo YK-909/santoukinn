@@ -1,0 +1,214 @@
+﻿#pragma kernel HighPass
+#pragma kernel LowPass
+#pragma kernel Step
+#pragma kernel SmoothStep
+#pragma kernel Blur
+#pragma kernel Sharpen
+#pragma kernel Pow
+#pragma kernel OneMinus
+
+uniform float4 size; 
+uniform float4 brightnessContrast; 
+uniform int4 alphaValue; // 0 = Original, 1 = One, 2 = Zero, 3 = Operation 
+uniform float4 threshold;
+uniform float4 blur;
+uniform float4 sharpen;
+uniform float4 offset;
+uniform float4 power; 
+
+StructuredBuffer<float4> input1;
+
+RWStructuredBuffer<float4> output;
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 SetBrightnessContrast(float4 color)
+{
+    float4 result = color;
+    result.rgb = saturate((color.rgb - 0.5) * brightnessContrast.y + 0.5 + brightnessContrast.x);
+    return result;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 GetPixelFast(StructuredBuffer<float4> buffer, int2 pos)
+{
+    return buffer[pos.x + pos.y * size.x];
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 GetPixel(StructuredBuffer<float4> buffer, int2 pos)
+{
+    pos = (pos + size.xy) % size.xy;
+    return buffer[pos.x + pos.y * size.x];
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+void SetPixel(uint2 pos, float4 color)
+{
+    output[pos.x + pos.y * size.x] = color;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 SetAlphaAndClamp(float4 value, float4 valueA)
+{
+    if (alphaValue.x == 0)
+    {
+        value.w = valueA.w;
+    }
+    else if (alphaValue.x == 1)
+    {
+        value.w = 1;
+    }
+    else if (alphaValue.x == 2)
+    {
+        value.w = 0;
+    }
+ 
+    return saturate(value); 
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void HighPass(uint3 id : SV_DispatchThreadID)
+{
+    float4 valueA = GetPixelFast(input1, id.xy);
+    
+    float4 result = step(threshold, valueA) * valueA;
+    
+    result = SetAlphaAndClamp(result, valueA);
+    
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void LowPass(uint3 id : SV_DispatchThreadID)
+{
+    float4 valueA = GetPixelFast(input1, id.xy);
+    
+    float4 result = (1.0 - step(threshold, valueA)) * valueA;
+    
+    result = SetBrightnessContrast(result);
+    result = SetAlphaAndClamp(result, valueA);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Step(uint3 id : SV_DispatchThreadID)
+{
+    float4 valueA = GetPixelFast(input1, id.xy);
+    
+    float4 result = step(threshold.x, valueA);
+    
+    result = SetBrightnessContrast(result);
+    result = SetAlphaAndClamp(result, valueA);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void SmoothStep(uint3 id : SV_DispatchThreadID)
+{
+    float4 valueA = GetPixelFast(input1, id.xy);
+    
+    float4 result = smoothstep(threshold.xxxx, threshold.yyyy, valueA.x);
+    
+    result = SetBrightnessContrast(result);
+    result = SetAlphaAndClamp(result, valueA);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Blur(uint3 id : SV_DispatchThreadID)
+{
+    const int2 offset[][9] = 
+    { 
+        { int2(-4, 0), int2(-3, 0), int2(-2, 0), int2(-1, 0), int2(0, 0), int2(1, 0), int2(2, 0), int2(3, 0), int2(4, 0) },
+        { int2(0, -4), int2(0, -3), int2(0, -2), int2(0, -1), int2(0, 0), int2(0, 1), int2(0, 2), int2(0, 3), int2(0, 4) }
+    };
+
+    const float weight[] = { 0.008488, 0.038078, 0.111165, 0.211357, 0.261824, 0.211357, 0.111165, 0.038078, 0.008488 };
+    
+    float4 result = float4(0, 0, 0, 1);
+    for (int i = 0; i < 9; ++i)
+    {
+        result.xyz += GetPixel(input1, id.xy + offset[(int)blur.y][i]).xyz * weight[i];
+    }
+    
+    float3 original = GetPixelFast(input1, id.xy).xyz;
+    result.xyz = lerp(original, result.xyz, blur.x); 
+    
+    result = lerp(result, SetBrightnessContrast(result), blur.y);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Sharpen(uint3 id : SV_DispatchThreadID)
+{
+    const int2 offset[9] = 
+    { 
+        int2(-1, -1),
+        int2( 0, -1), 
+        int2( 1, -1),
+        int2(-1,  0),
+        int2( 0,  0),
+        int2( 1,  0),
+        int2(-1,  1),
+        int2( 0,  1),
+        int2( 1,  1)
+    };
+
+    const float weight[] =
+    { 
+        -0.111111,
+        -0.111111,
+        -0.111111,
+        -0.111111,
+         2.0,
+        -0.111111,
+        -0.111111,
+        -0.111111,
+        -0.111111
+    };
+    
+    float4 result = float4(0, 0, 0, 1);
+    
+    for (int i = 0; i < 9; ++i)
+    {
+        result.xyz += GetPixel(input1, id.xy + offset[i]).xyz * weight[i];
+    }
+    
+    float3 original = GetPixelFast(input1, id.xy).xyz;
+    result.xyz = lerp(original, result.xyz, sharpen.x); 
+    
+    result = lerp(result, SetBrightnessContrast(result), sharpen.y);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Pow(uint3 id : SV_DispatchThreadID)
+{
+    float4 valueA = GetPixel(input1, id.xy);
+    
+    float4 result = pow(abs(valueA), power.xxxx);
+    
+    result = SetBrightnessContrast(result);    
+    result = SetAlphaAndClamp(result, valueA);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void OneMinus(uint3 id : SV_DispatchThreadID)
+{
+    float4 valueA = GetPixel(input1, id.xy);
+    
+    float4 result = float4(1.0f, 1.0f, 1.0f, 1.0f) - valueA;
+    
+    result = SetBrightnessContrast(result);    
+    result = SetAlphaAndClamp(result, valueA);
+	SetPixel(id.xy, result);
+}

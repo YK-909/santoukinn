@@ -1,0 +1,312 @@
+﻿#pragma kernel Noise
+#pragma kernel NoiseFBM
+#pragma kernel NoiseTurbulence
+#pragma kernel NoiseRidge
+
+uniform float4 size; 
+uniform float4 brightnessContrast; 
+uniform float4 scale; 
+uniform float4 sphereConstants; 
+uniform float4 noiseParams; // x = octaves, y = lacunarity, z = gain, w = offset  
+
+struct Permutations
+{
+    int perm;
+    int perm4D;
+};
+
+struct Contribution4
+{
+    float dx;
+    float dy;
+    float dz;
+    float dw;
+    
+    int xsb;
+    int ysb;
+    int zsb;
+    int wsb;
+    
+    int next;
+};
+
+StructuredBuffer<Permutations> permutations;
+StructuredBuffer<Contribution4> contributions;
+StructuredBuffer<int> lookupTable;
+
+RWStructuredBuffer<float4> output;
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 SetBrightnessContrast(float4 color)
+{
+    float4 result = color;
+    result.rgb = saturate((color.rgb - 0.5) * brightnessContrast.y + 0.5 + brightnessContrast.x);
+    return result;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+int FFloor(float x)
+{
+    int xi = (int)x;
+    return x < xi ? xi - 1 : xi;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float OpenSimplexNoise(float x, float y, float z, float w)
+{
+    const float STRETCH_4D = -0.138196601125011;
+    const float SQUISH_4D = 0.309016994374947;
+    const float NORM_4D = 1.0 / 30.0;
+
+    const float gradients4D[] =
+    {
+         3,  1,  1,  1,      1,  3,  1,  1,      1,  1,  3,  1,      1,  1,  1,  3,
+        -3,  1,  1,  1,     -1,  3,  1,  1,     -1,  1,  3,  1,     -1,  1,  1,  3,
+         3, -1,  1,  1,      1, -3,  1,  1,      1, -1,  3,  1,      1, -1,  1,  3,
+        -3, -1,  1,  1,     -1, -3,  1,  1,     -1, -1,  3,  1,     -1, -1,  1,  3,
+         3,  1, -1,  1,      1,  3, -1,  1,      1,  1, -3,  1,      1,  1, -1,  3,
+        -3,  1, -1,  1,     -1,  3, -1,  1,     -1,  1, -3,  1,     -1,  1, -1,  3,
+         3, -1, -1,  1,      1, -3, -1,  1,      1, -1, -3,  1,      1, -1, -1,  3,
+        -3, -1, -1,  1,     -1, -3, -1,  1,     -1, -1, -3,  1,     -1, -1, -1,  3,
+         3,  1,  1, -1,      1,  3,  1, -1,      1,  1,  3, -1,      1,  1,  1, -3,
+        -3,  1,  1, -1,     -1,  3,  1, -1,     -1,  1,  3, -1,     -1,  1,  1, -3,
+         3, -1,  1, -1,      1, -3,  1, -1,      1, -1,  3, -1,      1, -1,  1, -3,
+        -3, -1,  1, -1,     -1, -3,  1, -1,     -1, -1,  3, -1,     -1, -1,  1, -3,
+         3,  1, -1, -1,      1,  3, -1, -1,      1,  1, -3, -1,      1,  1, -1, -3,
+        -3,  1, -1, -1,     -1,  3, -1, -1,     -1,  1, -3, -1,     -1,  1, -1, -3,
+         3, -1, -1, -1,      1, -3, -1, -1,      1, -1, -3, -1,      1, -1, -1, -3,
+        -3, -1, -1, -1,     -1, -3, -1, -1,     -1, -1, -3, -1,     -1, -1, -1, -3,
+    };
+
+    float stretchOffset = (x + y + z + w) * STRETCH_4D;
+        
+    float xs = x + stretchOffset;
+    float ys = y + stretchOffset;
+    float zs = z + stretchOffset;
+    float ws = w + stretchOffset;
+    
+    int xsb = FFloor(xs);
+    int ysb = FFloor(ys);
+    int zsb = FFloor(zs);
+    int wsb = FFloor(ws);
+
+    float squishOffset = (xsb + ysb + zsb + wsb) * SQUISH_4D;
+        
+    float dx0 = x - (xsb + squishOffset);
+    float dy0 = y - (ysb + squishOffset);
+    float dz0 = z - (zsb + squishOffset);
+    float dw0 = w - (wsb + squishOffset);
+    
+    float xins = xs - xsb;
+    float yins = ys - ysb;
+    float zins = zs - zsb;
+    float wins = ws - wsb;
+    
+    float inSum = xins + yins + zins + wins;
+    
+    int index =
+        (int)(zins - wins + 1) |
+        (int)(yins - zins + 1) << 1 |
+        (int)(yins - wins + 1) << 2 |
+        (int)(xins - yins + 1) << 3 |
+        (int)(xins - zins + 1) << 4 |
+        (int)(xins - wins + 1) << 5 |
+        (int)inSum << 6 |
+        (int)(inSum + wins) << 8 |
+        (int)(inSum + zins) << 11 |
+        (int)(inSum + yins) << 14 |
+        (int)(inSum + xins) << 17;
+    
+    index = lookupTable[index];
+    
+    float value = 0.0; 
+    
+    while (index != -1)
+    {    
+        Contribution4 c = contributions[index];
+ 
+        float dx = dx0 + c.dx;
+        float dy = dy0 + c.dy;
+        float dz = dz0 + c.dz;
+        float dw = dw0 + c.dw;
+        
+        float attn = 2 - dx * dx - dy * dy - dz * dz - dw * dw;
+        
+        if (attn > 0)
+        {
+            int px = xsb + c.xsb;
+            int py = ysb + c.ysb;
+            int pz = zsb + c.zsb;
+            int pw = wsb + c.wsb;
+                
+            int i = permutations
+            [
+                (permutations
+                [
+                    (permutations
+                    [
+                        (permutations
+                        [
+                            px & 0xFF
+                        ].perm + py) & 0xFF
+                    ].perm + pz) & 0xFF
+                ].perm + pw) & 0xFF
+            ].perm4D;
+            
+            float valuePart = 
+                gradients4D[i] * dx + 
+                gradients4D[i + 1] * dy + 
+                gradients4D[i + 2] * dz + 
+                gradients4D[i + 3] * dw;
+    
+            attn *= attn;
+            value += attn * attn * valuePart;
+        }
+    
+        index = c.next;
+    } 
+    
+    return value * NORM_4D;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 GetPixel(StructuredBuffer<float4> buffer, uint2 pos)
+{
+    return buffer[pos.x + pos.y * size.x];
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+void SetPixel(uint2 pos, float4 color)
+{
+    output[pos.x + pos.y * size.x] = color;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Noise(uint3 id : SV_DispatchThreadID)
+{   
+    float angleX = id.x * sphereConstants.x;
+    float X = sin(angleX) * sphereConstants.z;
+    float Y = cos(angleX) * sphereConstants.z;
+
+    float angleY = id.y * sphereConstants.y;
+    float Z = sin(angleY) * sphereConstants.z;
+    float W = cos(angleY) * sphereConstants.z;
+
+    float noise = OpenSimplexNoise(X * scale.x, Y * scale.x, Z * scale.y, W * scale.y) * 0.5 + 0.5; 
+
+    float4 result = float4(noise, noise, noise, 1);
+    result = SetBrightnessContrast(result);    
+    SetPixel(id.xy, result);
+} 
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void NoiseFBM(uint3 id : SV_DispatchThreadID)
+{
+    float sum = 0.0f;	
+    float freq = 1.0f;
+    float amp = 1.0f;
+    
+    for (int i = 0; i < noiseParams.x; ++i) 
+    {
+        float angleX = id.x * sphereConstants.x;
+        float X = sin(angleX) * sphereConstants.z * scale.x * freq;
+        float Y = cos(angleX) * sphereConstants.z * scale.x * freq;
+    
+        float angleY = id.y * sphereConstants.y;
+        float Z = sin(angleY) * sphereConstants.z * scale.y * freq;
+        float W = cos(angleY) * sphereConstants.z * scale.y * freq;
+    
+        sum += OpenSimplexNoise(X, Y, Z, W) * amp;
+        freq *= noiseParams.y;
+        amp *= noiseParams.z; 
+    }
+    
+    float noise = clamp(sum, -1.0f, 1.0f) * 0.5f + 0.5f;
+
+    float4 result = float4(noise, noise, noise, 1);
+    result = SetBrightnessContrast(result);    
+    SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void NoiseTurbulence(uint3 id : SV_DispatchThreadID)
+{
+    float angleX = id.x * sphereConstants.x;
+    float X = sin(angleX) * sphereConstants.z * scale.x;
+    float Y = cos(angleX) * sphereConstants.z * scale.x;
+
+    float angleY = id.y * sphereConstants.y;
+    float Z = sin(angleY) * sphereConstants.z * scale.y;
+    float W = cos(angleY) * sphereConstants.z * scale.y;
+
+    float sum = 0.0f;	
+    float freq = 1.0f;
+    float amp = 1.0f;
+    
+    for (int i = 0; i < noiseParams.x; ++i) 
+    {
+        float angleX = id.x * sphereConstants.x;
+        float X = sin(angleX) * sphereConstants.z * scale.x * freq;
+        float Y = cos(angleX) * sphereConstants.z * scale.x * freq;
+    
+        float angleY = id.y * sphereConstants.y;
+        float Z = sin(angleY) * sphereConstants.z * scale.y * freq;
+        float W = cos(angleY) * sphereConstants.z * scale.y * freq;
+    
+        sum += abs(OpenSimplexNoise(X, Y, Z, W)) * amp;
+        freq *= noiseParams.y;
+        amp *= noiseParams.z; 
+    }
+    
+    float noise = clamp(sum, 0.0f, 1.0f);
+
+    float4 result = float4(noise, noise, noise, 1);
+    result = SetBrightnessContrast(result);    
+    SetPixel(id.xy, result);
+}
+
+//-----------------------------------------------------------------------------------------------------------------
+float Ridge(float h, float offset)
+{
+    h = abs(h);
+    h = offset - h;
+    h = h * h;
+    return h;
+}	
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void NoiseRidge(uint3 id : SV_DispatchThreadID)
+{
+    float sum = 0.0f;	
+    float freq = 1.0f;
+    float amp = 1.0f;
+    float prev = 1.0f;
+    
+    for (int i = 0; i < noiseParams.x; ++i) 
+    {        
+        float angleX = id.x * sphereConstants.x;
+        float X = sin(angleX) * sphereConstants.z * scale.x * freq;
+        float Y = cos(angleX) * sphereConstants.z * scale.x * freq;
+    
+        float angleY = id.y * sphereConstants.y;
+        float Z = sin(angleY) * sphereConstants.z * scale.y * freq;
+        float W = cos(angleY) * sphereConstants.z * scale.y * freq;
+    
+        float n = Ridge(OpenSimplexNoise(X, Y, Z, W), noiseParams.w);
+
+        sum += n * amp * prev;
+        prev = n;
+        freq *= noiseParams.y;
+        amp *= noiseParams.z;
+    }
+    
+    float noise = clamp(sum, 0.0f, 1.0f);
+
+    float4 result = float4(noise, noise, noise, 1);
+    result = SetBrightnessContrast(result);    
+    SetPixel(id.xy, result);
+}

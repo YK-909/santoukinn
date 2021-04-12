@@ -1,0 +1,138 @@
+﻿#pragma kernel UniformColor
+#pragma kernel ColorizeLuminance
+#pragma kernel ColorizeRed
+#pragma kernel ColorizeGreen
+#pragma kernel ColorizeBlue
+#pragma kernel ColorizeAlpha
+#pragma kernel ColorizeMaxRGB
+#pragma kernel ColorizeMinRGB
+#pragma kernel ColorizeAverageRGB
+
+uniform float4 size; 
+uniform float4 brightnessContrast; 
+uniform float4 color; 
+
+StructuredBuffer<float4> gradient;
+
+StructuredBuffer<float4> input1;
+
+RWStructuredBuffer<float4> output;
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 SetBrightnessContrast(float4 color)
+{
+    float4 result = color;
+    result.rgb = saturate((color.rgb - 0.5) * brightnessContrast.y + 0.5 + brightnessContrast.x);
+    return result;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 GetGradientColor(float interpolator)
+{
+    int index = floor(interpolator * 99.0);
+    return gradient[index]; 
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 GetPixel(StructuredBuffer<float4> buffer, uint2 pos)
+{
+    return buffer[pos.x + pos.y * size.x];
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+void SetPixel(uint2 pos, float4 color)
+{
+    output[pos.x + pos.y * size.x] = color;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void UniformColor(uint3 id : SV_DispatchThreadID)
+{
+    float4 result = SetBrightnessContrast(color);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void ColorizeLuminance(uint3 id : SV_DispatchThreadID)
+{
+    float4 input = GetPixel(input1, id.xy);
+    float luminance = dot(input.rgb, float3(0.299, 0.587, 0.114));
+    float4 result = GetGradientColor(input.x);
+    result = SetBrightnessContrast(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void ColorizeRed(uint3 id : SV_DispatchThreadID)
+{
+    float4 input = GetPixel(input1, id.xy);
+    float4 result = GetGradientColor(input.x);
+    result = SetBrightnessContrast(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void ColorizeGreen(uint3 id : SV_DispatchThreadID)
+{
+    float4 input = GetPixel(input1, id.xy);
+    float4 result = GetGradientColor(input.y);
+    result = SetBrightnessContrast(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void ColorizeBlue(uint3 id : SV_DispatchThreadID)
+{
+    float4 input = GetPixel(input1, id.xy);
+    float4 result = GetGradientColor(input.z);
+    result = SetBrightnessContrast(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void ColorizeAlpha(uint3 id : SV_DispatchThreadID)
+{
+    float4 input = GetPixel(input1, id.xy);
+    float4 result = GetGradientColor(input.w);
+    result = SetBrightnessContrast(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void ColorizeMaxRGB(uint3 id : SV_DispatchThreadID)
+{
+    float4 input = GetPixel(input1, id.xy);
+    float interpolator = max(max(input.x, input.y), input.z);
+    float4 result = GetGradientColor(interpolator);
+    result = SetBrightnessContrast(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void ColorizeMinRGB(uint3 id : SV_DispatchThreadID)
+{
+    float4 input = GetPixel(input1, id.xy);
+    float interpolator = min(min(input.x, input.y), input.z);
+    float4 result = GetGradientColor(interpolator);
+    result = SetBrightnessContrast(result);
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void ColorizeAverageRGB(uint3 id : SV_DispatchThreadID)
+{
+    float4 input = GetPixel(input1, id.xy);
+    float interpolator = (input.x + input.y + input.z) * 0.333333;
+    float4 result = GetGradientColor(interpolator);
+    result = SetBrightnessContrast(result);
+	SetPixel(id.xy, result);
+}

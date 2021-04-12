@@ -1,0 +1,88 @@
+﻿#pragma kernel Invert
+#pragma kernel Grayscale
+
+uniform float4 size; 
+uniform float4 brightnessContrast; 
+uniform int4 alphaValue; // 0 = Original, 1 = One, 2 = Zero, 3 = Operation 
+
+StructuredBuffer<float4> input1;
+
+RWStructuredBuffer<float4> output;
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 SetBrightnessContrast(float4 color)
+{
+    float4 result = color;
+    result.rgb = saturate((color.rgb - 0.5) * brightnessContrast.y + 0.5 + brightnessContrast.x);
+    return result;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 GetPixel(StructuredBuffer<float4> buffer, uint2 pos)
+{
+    return buffer[pos.x + pos.y * size.x];
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+void SetPixel(uint2 pos, float4 color)
+{
+    output[pos.x + pos.y * size.x] = color;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 SetAlphaAndClamp(float4 value, float4 valueA)
+{
+    if (alphaValue.x == 0)
+    {
+        value.w = valueA.w;
+    }
+    else if (alphaValue.x == 1)
+    {
+        value.w = 1;
+    }
+    else if (alphaValue.x == 2)
+    {
+        value.w = 0;
+    }
+ 
+    return saturate(value); 
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Invert(uint3 id : SV_DispatchThreadID)
+{
+    float4 valueA = GetPixel(input1, id.xy);
+    
+    float4 result = 1.0 - valueA;
+    
+    result = SetBrightnessContrast(result);
+    result = SetAlphaAndClamp(result, valueA);    
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void BrightnessContrast(uint3 id : SV_DispatchThreadID)
+{
+    float4 valueA = GetPixel(input1, id.xy);
+    
+    float4 result = saturate((valueA - 0.5) * brightnessContrast.y + 0.5) + brightnessContrast.x;
+
+    result = SetBrightnessContrast(result);
+    result = SetAlphaAndClamp(result, valueA);    
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Grayscale(uint3 id : SV_DispatchThreadID)
+{
+    float4 input = GetPixel(input1, id.xy);
+    float luminance = dot(input.rgb, float3(0.299, 0.587, 0.114));
+    luminance = saturate((luminance - 0.5) * brightnessContrast.y + 0.5) + brightnessContrast.x;
+
+    float4 result = float4(luminance, luminance, luminance, input.w);
+    result = SetBrightnessContrast(result);
+	SetPixel(id.xy, result);
+}

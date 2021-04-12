@@ -1,0 +1,125 @@
+﻿#pragma kernel Execute
+
+uniform float4 size;
+uniform float4 brightnessContrast; 
+uniform int4 seed; 
+uniform int4 scale;
+
+RWStructuredBuffer<float4> output;
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 SetBrightnessContrast(float4 color)
+{
+    float4 result = color;
+    result.rgb = saturate((color.rgb - 0.5) * brightnessContrast.y + 0.5 + brightnessContrast.x);
+    return result;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+uint WangHash(uint x)
+{
+    x = (x ^ 61) ^ (x >> 16);
+    x *= 9;
+    x = x ^ (x >> 4);
+    x *= 0x27D4EB2D;
+    x = x ^ (x >> 15);
+    
+    return x;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+uint RandXorshift(uint x)
+{
+    x ^= (x << 13);
+    x ^= (x >> 17);
+    x ^= (x << 5);
+    
+    return x;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float Random(uint x)
+{
+    uint hashSeed = WangHash(x + WangHash(seed.x));
+    return (float)(RandXorshift(hashSeed)) * (1.0 / 4294967296.0);    
+} 
+
+//----------------------------------------------------------------------------------------------------------------------
+int2 WrapCell(int2 cell)
+{
+    int2 wrappedCell = cell;
+
+    if (wrappedCell.x < 0)
+    {
+        wrappedCell.x = scale.z - 1;
+    }
+    else if (wrappedCell.x > scale.z - 1)
+    {
+        wrappedCell.x = 0;
+    }
+
+    if (wrappedCell.y < 0)
+    {
+        wrappedCell.y = scale.w - 1;
+    }
+    else if (wrappedCell.y > scale.w - 1)
+    {
+        wrappedCell.y = 0;
+    }
+
+    return wrappedCell;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float2 GetCellPoint(int2 cell)
+{
+    uint x1 = cell.x * scale.z + cell.y;
+    uint x2 = cell.x + cell.y * scale.w;
+    
+    return float2(Random(x1), Random(x2)); 
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float CellularNoise(float2 pos) 
+{
+    float2 st = pos.xy / float2(scale.x, scale.y);
+    
+    float2 i_st = floor(st);
+    float2 f_st = frac(st);
+
+    float m_dist = 1.0;
+
+    for (int y = -1; y <= 1; y++)
+    {
+        for (int x = -1; x <= 1; x++) 
+        {            
+            float2 cellPos = float2((float)x, (float)y);
+
+            int2 wrappedCell = WrapCell(i_st + int2(x, y)); 
+            float2 cellPoint = GetCellPoint(wrappedCell);
+                     
+            float2 diff = cellPos + cellPoint - f_st;
+            float dist = length(diff);
+
+            m_dist = min(m_dist, dist);
+        }
+    }
+    
+    return m_dist;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+void SetPixel(uint2 pos, float4 color)
+{
+    output[pos.x + pos.y * size.x] = color;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Execute(uint3 id : SV_DispatchThreadID)
+{
+    float noise = CellularNoise(id.xy);
+    
+    float4 result = SetBrightnessContrast(float4(noise, noise, noise, 1));
+	SetPixel(id.xy, result);
+}

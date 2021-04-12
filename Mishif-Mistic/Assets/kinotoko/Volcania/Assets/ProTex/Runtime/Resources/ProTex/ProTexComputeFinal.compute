@@ -1,0 +1,104 @@
+﻿#pragma kernel Color
+#pragma kernel Normal
+#pragma kernel Height
+#pragma kernel Metallic
+#pragma kernel Occlusion
+#pragma kernel Emission
+#pragma kernel NormalSource
+
+uniform float4 size; 
+uniform float4 normalStrength; 
+
+StructuredBuffer<float4> input1;
+StructuredBuffer<float4> input2;
+StructuredBuffer<float4> input3;
+StructuredBuffer<float4> input4;
+StructuredBuffer<float4> input5;
+StructuredBuffer<float4> input6;
+
+RWStructuredBuffer<float4> output;
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 GetPixelFast(StructuredBuffer<float4> buffer, int2 pos)
+{
+    return buffer[pos.x + pos.y * size.x];
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 GetPixel(StructuredBuffer<float4> buffer, int2 pos)
+{
+    pos = (pos + size.xy) % size.xy;
+    return buffer[pos.x + pos.y * size.x];
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+void SetPixel(uint2 pos, float4 color)
+{
+    output[pos.x + pos.y * size.x] = color;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Color(uint3 id : SV_DispatchThreadID)
+{
+    float4 color = GetPixelFast(input1, id.xy);    
+    SetPixel(id.xy, color);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Normal(uint3 id : SV_DispatchThreadID)
+{
+    const float3 luminanceFactor = float3(0.299, 0.587, 0.114);
+
+    float u1 = dot(GetPixel(input2, id.xy - uint2(1, 0)).xyz, luminanceFactor);
+    float u2 = dot(GetPixel(input2, id.xy + uint2(1, 0)).xyz, luminanceFactor);
+
+    float v1 = dot(GetPixel(input2, id.xy - uint2(0, 1)).xyz, luminanceFactor);
+    float v2 = dot(GetPixel(input2, id.xy + uint2(0, 1)).xyz, luminanceFactor);
+    
+    float3 normal = normalize(float3(u1 - u2, normalStrength.x, v1 - v2)) * 0.5 + 0.5;
+    float4 color = float4(normal.x, normal.z, normal.y, 1.0);
+        
+    SetPixel(id.xy, color);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Height(uint3 id : SV_DispatchThreadID)
+{
+    float4 color = GetPixelFast(input3, id.xy);    
+    SetPixel(id.xy, color);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Metallic(uint3 id : SV_DispatchThreadID)
+{
+    float4 color = GetPixelFast(input4, id.xy);    
+    SetPixel(id.xy, color);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Occlusion(uint3 id : SV_DispatchThreadID)
+{
+    float4 color = GetPixelFast(input5, id.xy);    
+    SetPixel(id.xy, color);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Emission(uint3 id : SV_DispatchThreadID)
+{
+    float4 color = GetPixelFast(input6, id.xy);    
+    SetPixel(id.xy, color);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void NormalSource(uint3 id : SV_DispatchThreadID)
+{
+    float4 color = GetPixelFast(input2, id.xy);    
+    SetPixel(id.xy, color);
+}
