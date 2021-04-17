@@ -1,0 +1,302 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -488832403, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Rusted Iron
+  m_EditorClassIdentifier: 
+  versionNumber: 1000
+  globalNodeId: 34
+  nodes:
+  - nodeId: 1
+    process: {fileID: 114729824358352006}
+    inputs: 0d0000001800000000000000120000000000000000000000
+    finalNode: 1
+  - nodeId: 6
+    process: {fileID: 114872087156058436}
+    inputs: 
+    finalNode: 0
+  - nodeId: 11
+    process: {fileID: 114554362441200246}
+    inputs: 0e000000
+    finalNode: 0
+  - nodeId: 13
+    process: {fileID: 114742475520759664}
+    inputs: 0b0000001b00000006000000
+    finalNode: 0
+  - nodeId: 14
+    process: {fileID: 114369309654185630}
+    inputs: 
+    finalNode: 0
+  - nodeId: 18
+    process: {fileID: 114115509897581434}
+    inputs: 2100000000000000000000001a000000
+    finalNode: 0
+  - nodeId: 24
+    process: {fileID: 114073176718687788}
+    inputs: 1a000000
+    finalNode: 0
+  - nodeId: 26
+    process: {fileID: 114591639000885482}
+    inputs: 0e0000000600000000000000
+    finalNode: 0
+  - nodeId: 27
+    process: {fileID: 114587984170942970}
+    inputs: 0e000000
+    finalNode: 0
+  - nodeId: 33
+    process: {fileID: 114131608423907480}
+    inputs: 
+    finalNode: 0
+  nodePositions:
+  - nodeId: 1
+    nodePos: {x: 3992, y: 10}
+  - nodeId: 6
+    nodePos: {x: 3256, y: 251}
+  - nodeId: 11
+    nodePos: {x: 3574, y: 5}
+  - nodeId: 13
+    nodePos: {x: 3737, y: 76}
+  - nodeId: 14
+    nodePos: {x: 3254, y: 47}
+  - nodeId: 18
+    nodePos: {x: 3727, y: 432}
+  - nodeId: 24
+    nodePos: {x: 3733, y: 273}
+  - nodeId: 26
+    nodePos: {x: 3446, y: 282}
+  - nodeId: 27
+    nodePos: {x: 3575, y: 160}
+  - nodeId: 33
+    nodePos: {x: 3586, y: 409}
+  checksum: fba4f35f8b3a1cf4bfb90834f4caed5c
+--- !u!114 &114073176718687788
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2106026997, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Invert
+  m_EditorClassIdentifier: 
+  brightness: -0.25984251
+  contrast: 0.20472439
+  alpha: 0
+--- !u!114 &114115509897581434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1205356007, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: RGBAMixer
+  m_EditorClassIdentifier: 
+  brightness: -0.496063
+  contrast: 1
+  redInput: 0
+  greenInput: 0
+  blueInput: 0
+  alphaInput: 0
+--- !u!114 &114131608423907480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -920509127, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Constant
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  constant: 1
+--- !u!114 &114369309654185630
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1076491161, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: FBM Noise
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  seed: 42
+  scaleX: 32
+  scaleY: 32
+  octaves: 4
+  lacunarity: 2
+  gain: 0.79527557
+--- !u!114 &114554362441200246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 265611191, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Colorize
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 0.99999994
+  colorizeBasis: 0
+  colors:
+    serializedVersion: 2
+    key0: {r: 0.85098046, g: 0.38431376, b: 0, a: 1}
+    key1: {r: 0.7137255, g: 0.13333334, b: 0.08627451, a: 1}
+    key2: {r: 0.7137255, g: 0.13333334, b: 0.08627451, a: 0}
+    key3: {r: 0.7137255, g: 0.13333334, b: 0.08627451, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 65535
+    ctime3: 65535
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+--- !u!114 &114587984170942970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 265611191, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Colorize
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  colorizeBasis: 0
+  colors:
+    serializedVersion: 2
+    key0: {r: 0.7686275, g: 0.7803922, b: 0.7803922, a: 1}
+    key1: {r: 0.68164825, g: 0.6981132, b: 0.6981132, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+--- !u!114 &114591639000885482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 50615648, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Interpolate
+  m_EditorClassIdentifier: 
+  brightness: 0.16535433
+  contrast: 1
+  alpha: 0
+  offset: 0.72440946
+--- !u!114 &114729824358352006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -462716759, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  preview: 0
+  normalStrength: 0.2992126
+--- !u!114 &114742475520759664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 50615648, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Interpolate
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  offset: -0.21259843
+--- !u!114 &114872087156058436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1076491161, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: FBM Noise
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1.2283465
+  seed: 36
+  scaleX: 7
+  scaleY: 7
+  octaves: 4
+  lacunarity: 2
+  gain: 0.7677165

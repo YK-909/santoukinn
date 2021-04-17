@@ -1,0 +1,299 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -488832403, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Lava
+  m_EditorClassIdentifier: 
+  versionNumber: 1000
+  globalNodeId: 16
+  nodes:
+  - nodeId: 1
+    process: {fileID: 114060163111063860}
+    inputs: 0000000007000000070000000f0000000600000009000000
+    finalNode: 1
+  - nodeId: 2
+    process: {fileID: 114187054454286962}
+    inputs: 
+    finalNode: 0
+  - nodeId: 3
+    process: {fileID: 114106231865763556}
+    inputs: 
+    finalNode: 0
+  - nodeId: 4
+    process: {fileID: 114072595835232212}
+    inputs: 020000000300000003000000
+    finalNode: 0
+  - nodeId: 5
+    process: {fileID: 114828223463998224}
+    inputs: 
+    finalNode: 0
+  - nodeId: 6
+    process: {fileID: 114230537729196044}
+    inputs: 040000000500000000000000
+    finalNode: 0
+  - nodeId: 7
+    process: {fileID: 114168483141764556}
+    inputs: 06000000
+    finalNode: 0
+  - nodeId: 8
+    process: {fileID: 114494703304842810}
+    inputs: 
+    finalNode: 0
+  - nodeId: 9
+    process: {fileID: 114121859135725548}
+    inputs: 06000000
+    finalNode: 0
+  - nodeId: 15
+    process: {fileID: 114981560300296050}
+    inputs: 08000000060000000000000010000000
+    finalNode: 0
+  - nodeId: 16
+    process: {fileID: 114855260574574814}
+    inputs: 
+    finalNode: 0
+  nodePositions:
+  - nodeId: 1
+    nodePos: {x: 3992, y: 10}
+  - nodeId: 2
+    nodePos: {x: 3293, y: 5}
+  - nodeId: 3
+    nodePos: {x: 3291, y: 154}
+  - nodeId: 4
+    nodePos: {x: 3451, y: 9}
+  - nodeId: 5
+    nodePos: {x: 3451, y: 201}
+  - nodeId: 6
+    nodePos: {x: 3601, y: 73}
+  - nodeId: 7
+    nodePos: {x: 3773, y: 13}
+  - nodeId: 8
+    nodePos: {x: 3621, y: 329}
+  - nodeId: 9
+    nodePos: {x: 3772, y: 161}
+  - nodeId: 15
+    nodePos: {x: 3766, y: 316}
+  - nodeId: 16
+    nodePos: {x: 3624, y: 478}
+  checksum: 3cbba78cacd5fb28f6a8d2ceecf862ce
+--- !u!114 &114060163111063860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -462716759, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  preview: 5
+  normalStrength: 0.75
+--- !u!114 &114072595835232212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 734469083, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Distortion
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  channelX: 0
+  distortionX: 0.4448819
+  channelY: 0
+  distortionY: 0.42125982
+--- !u!114 &114106231865763556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1076491161, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: FBM Noise
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  seed: 42
+  scaleX: 4
+  scaleY: 4
+  octaves: 4
+  lacunarity: 2
+  gain: 0.5
+--- !u!114 &114121859135725548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 265611191, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Colorize
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  colorizeBasis: 0
+  colors:
+    serializedVersion: 2
+    key0: {r: 0.103773594, g: 0.09545213, b: 0.09545213, a: 1}
+    key1: {r: 0.9150943, g: 0.056114297, b: 0.056114297, a: 1}
+    key2: {r: 0.9311436, g: 0.55758095, b: 0.087380014, a: 0}
+    key3: {r: 0.941677, g: 0.8867029, b: 0.107900284, a: 0}
+    key4: {r: 0.9433962, g: 0.9160666, b: 0.52954787, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 19275
+    ctime1: 34888
+    ctime2: 38936
+    ctime3: 45104
+    ctime4: 47609
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 5
+    m_NumAlphaKeys: 2
+--- !u!114 &114168483141764556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2106026997, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Invert
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 3.7322834
+  alpha: 0
+--- !u!114 &114187054454286962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2049573326, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Cellular Noise
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  baseSeed: 42
+  baseScaleX: 2
+  baseScaleY: 2
+--- !u!114 &114230537729196044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 50615648, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Interpolate
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  offset: 0.30708662
+--- !u!114 &114494703304842810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -920509127, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Constant
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  constant: 1
+--- !u!114 &114828223463998224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1076491161, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: FBM Noise
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  seed: 83
+  scaleX: 20
+  scaleY: 19
+  octaves: 4
+  lacunarity: 2
+  gain: 0.5
+--- !u!114 &114855260574574814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -920509127, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Constant
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  constant: 0
+--- !u!114 &114981560300296050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1205356007, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: RGBAMixer
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  redInput: 0
+  greenInput: 0
+  blueInput: 0
+  alphaInput: 0
