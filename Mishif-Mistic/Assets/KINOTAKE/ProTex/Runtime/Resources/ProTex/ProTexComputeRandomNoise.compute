@@ -1,0 +1,63 @@
+﻿#pragma kernel Execute
+
+uniform float4 size; 
+uniform float4 brightnessContrast; 
+uniform int4 seed;
+uniform int4 scale;
+
+RWStructuredBuffer<float4> output;
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 SetBrightnessContrast(float4 color)
+{
+    float4 result = color;
+    result.rgb = saturate((color.rgb - 0.5) * brightnessContrast.y + 0.5 + brightnessContrast.x);
+    return result;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+uint WangHash(uint x)
+{
+    x = (x ^ 61) ^ (x >> 16);
+    x *= 9;
+    x = x ^ (x >> 4);
+    x *= 0x27D4EB2D;
+    x = x ^ (x >> 15);
+    
+    return x;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+uint RandXorShift(uint x)
+{
+    x ^= (x << 13);
+    x ^= (x >> 17);
+    x ^= (x << 5);
+    
+    return x;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float Random(uint x)
+{
+    uint hashSeed = WangHash(x + WangHash(seed.x));
+    return (float)(RandXorShift(hashSeed)) * (1.0 / 4294967296.0);    
+} 
+
+//----------------------------------------------------------------------------------------------------------------------
+void SetPixel(uint2 pos, float4 color)
+{
+    output[pos.x + pos.y * size.x] = color;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Execute(uint3 id : SV_DispatchThreadID)
+{
+    uint pos = (id.x / scale.x) + (id.y / scale.y) * size.x;
+    float noise = Random(pos);	
+    
+    float4 result = float4(noise, noise, noise, 1);
+    result = SetBrightnessContrast(result);    
+    SetPixel(id.xy, result);
+}

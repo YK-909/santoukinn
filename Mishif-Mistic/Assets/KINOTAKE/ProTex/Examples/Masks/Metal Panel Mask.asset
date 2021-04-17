@@ -1,0 +1,204 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -488832403, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Metal Panel Mask
+  m_EditorClassIdentifier: 
+  versionNumber: 1000
+  globalNodeId: 10
+  nodes:
+  - nodeId: 1
+    process: {fileID: 114766823024078322}
+    inputs: 0a0000000000000000000000000000000a00000000000000
+    finalNode: 1
+  - nodeId: 2
+    process: {fileID: 114605887798432732}
+    inputs: 
+    finalNode: 0
+  - nodeId: 3
+    process: {fileID: 114166483797063936}
+    inputs: 
+    finalNode: 0
+  - nodeId: 4
+    process: {fileID: 114910526503463506}
+    inputs: 020000000000000003000000
+    finalNode: 0
+  - nodeId: 5
+    process: {fileID: 114892894130814100}
+    inputs: 
+    finalNode: 0
+  - nodeId: 6
+    process: {fileID: 114103576726058340}
+    inputs: 
+    finalNode: 0
+  - nodeId: 7
+    process: {fileID: 114891989441015704}
+    inputs: 0600000005000000
+    finalNode: 0
+  - nodeId: 10
+    process: {fileID: 114632698312487244}
+    inputs: 0700000004000000
+    finalNode: 0
+  nodePositions:
+  - nodeId: 1
+    nodePos: {x: 3992, y: 10}
+  - nodeId: 2
+    nodePos: {x: 3360, y: 15}
+  - nodeId: 3
+    nodePos: {x: 3361, y: 161}
+  - nodeId: 4
+    nodePos: {x: 3530, y: 38}
+  - nodeId: 5
+    nodePos: {x: 3522, y: 388}
+  - nodeId: 6
+    nodePos: {x: 3522, y: 242}
+  - nodeId: 7
+    nodePos: {x: 3658, y: 304}
+  - nodeId: 10
+    nodePos: {x: 3808, y: 52}
+  checksum: 2d612700e21bcca22f4d07749be1b0ce
+--- !u!114 &114103576726058340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 589497703, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Rectangle
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  repeatX: 1
+  repeatY: 1
+  falloff: 0.037007876
+  width: 1
+  height: 1
+  baseRoundness: 0
+--- !u!114 &114166483797063936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 589497703, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Rectangle
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  repeatX: 1
+  repeatY: 1
+  falloff: 0.1
+  width: 0.9
+  height: 0.9
+  baseRoundness: 0
+--- !u!114 &114605887798432732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1083763082, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Circle
+  m_EditorClassIdentifier: 
+  brightness: -0.68503934
+  contrast: 1
+  alpha: 0
+  repeatX: 12
+  repeatY: 12
+  falloff: 0.1
+  radius: 0.10629922
+--- !u!114 &114632698312487244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1005417632, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Subtract
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+--- !u!114 &114766823024078322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -462716759, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  preview: 0
+  normalStrength: 0.75
+--- !u!114 &114891989441015704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1879361092, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Multiply
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+--- !u!114 &114892894130814100
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -920509127, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Constant
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  constant: 0.44488192
+--- !u!114 &114910526503463506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 50615648, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Interpolate
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  offset: 0

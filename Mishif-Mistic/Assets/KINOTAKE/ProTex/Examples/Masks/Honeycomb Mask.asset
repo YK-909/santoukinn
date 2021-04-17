@@ -1,0 +1,194 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -488832403, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Honeycomb Mask
+  m_EditorClassIdentifier: 
+  versionNumber: 1000
+  globalNodeId: 8
+  nodes:
+  - nodeId: 1
+    process: {fileID: 114047746268039338}
+    inputs: 080000000000000000000000000000000000000000000000
+    finalNode: 1
+  - nodeId: 2
+    process: {fileID: 114157759044960188}
+    inputs: 
+    finalNode: 0
+  - nodeId: 3
+    process: {fileID: 114476363273599218}
+    inputs: 02000000
+    finalNode: 0
+  - nodeId: 4
+    process: {fileID: 114189597424215530}
+    inputs: 0200000003000000
+    finalNode: 0
+  - nodeId: 5
+    process: {fileID: 114097483060289478}
+    inputs: 04000000
+    finalNode: 0
+  - nodeId: 6
+    process: {fileID: 114129512510228240}
+    inputs: 0400000005000000
+    finalNode: 0
+  - nodeId: 7
+    process: {fileID: 114169884596716458}
+    inputs: 06000000
+    finalNode: 0
+  - nodeId: 8
+    process: {fileID: 114050384699659420}
+    inputs: 07000000
+    finalNode: 0
+  nodePositions:
+  - nodeId: 1
+    nodePos: {x: 3992, y: 10}
+  - nodeId: 2
+    nodePos: {x: 3025, y: 16}
+  - nodeId: 3
+    nodePos: {x: 3160, y: 104}
+  - nodeId: 4
+    nodePos: {x: 3290, y: 19}
+  - nodeId: 5
+    nodePos: {x: 3425, y: 112}
+  - nodeId: 6
+    nodePos: {x: 3564, y: 35}
+  - nodeId: 7
+    nodePos: {x: 3705, y: 70}
+  - nodeId: 8
+    nodePos: {x: 3850, y: 48}
+  checksum: 1ff8bb06a33b682931e0c3561af8a079
+--- !u!114 &114047746268039338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -462716759, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  preview: 0
+  normalStrength: 0.75
+--- !u!114 &114050384699659420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -10985404, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Rotate
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  rotation: 0
+--- !u!114 &114097483060289478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1169881887, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Offset
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  baseOffsetX: 0
+  baseOffsetY: 0.496063
+--- !u!114 &114129512510228240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -441674482, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Add
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+--- !u!114 &114157759044960188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 532899267, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Hexagon
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+  repeatX: 1
+  repeatY: 1
+  falloff: 0.4527559
+  radius: 0.62992126
+  baseRoundness: 0
+--- !u!114 &114169884596716458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1822197753, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Repeat
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  repeatX: 5
+  repeatY: 5
+--- !u!114 &114189597424215530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -441674482, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Add
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  alpha: 0
+--- !u!114 &114476363273599218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1169881887, guid: 5bcf95b6a5d4b7a44a90dd43cd5b14ff, type: 3}
+  m_Name: Offset
+  m_EditorClassIdentifier: 
+  brightness: 0
+  contrast: 1
+  baseOffsetX: 0.503937
+  baseOffsetY: 0.25984251

@@ -1,0 +1,138 @@
+﻿#pragma kernel Offset
+#pragma kernel Distortion
+#pragma kernel Rotate
+#pragma kernel Mirror
+#pragma kernel Repeat
+
+uniform float4 size; 
+uniform float4 brightnessContrast; 
+uniform int4 offset;
+uniform float4 distortion;
+uniform float4 rotation;  
+uniform float4 mirror;
+uniform int4 repeat;
+uniform float4 mixer1;
+uniform float4 mixer2;
+
+StructuredBuffer<float4> input1;
+StructuredBuffer<float4> input2;
+StructuredBuffer<float4> input3;
+
+RWStructuredBuffer<float4> output;
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 SetBrightnessContrast(float4 color)
+{
+    float4 result = color;
+    result.rgb = saturate((color.rgb - 0.5) * brightnessContrast.y + 0.5 + brightnessContrast.x);
+    return result;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 GetPixelFast(StructuredBuffer<float4> buffer, int2 pos)
+{
+    return buffer[pos.x + pos.y * size.x];
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 GetPixel(StructuredBuffer<float4> buffer, int2 pos)
+{
+    pos = (pos + size.xy) % size.xy;
+    return buffer[pos.x + pos.y * size.x];
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+float4 GetPixelBilinear(StructuredBuffer<float4> buffer, float2 pos)
+{
+    int2 floorPos = floor(pos);
+    float2 fracPos = frac(pos);
+    
+    float4 colorTL = GetPixel(buffer, floorPos);
+    float4 colorTR = GetPixel(buffer, floorPos + int2(1, 0));
+    float4 colorBL = GetPixel(buffer, floorPos + int2(0, 1));
+    float4 colorBR = GetPixel(buffer, floorPos + int2(1, 1));
+    
+    float4 color = lerp( 
+        lerp(colorTL, colorTR, fracPos.x),
+        lerp(colorBL, colorBR, fracPos.x),
+        fracPos.y);
+        
+    return color;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+void SetPixel(uint2 pos, float4 color)
+{
+    output[pos.x + pos.y * size.x] = color;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Offset(uint3 id : SV_DispatchThreadID)
+{
+    float4 result = GetPixel(input1, id.xy + offset.xy);
+             
+    result = SetBrightnessContrast(result);    
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Distortion(uint3 id : SV_DispatchThreadID)
+{
+    float4 colorX = GetPixel(input2, id.xy) * 2.0f - 1.0f; 
+    float4 colorY = GetPixel(input3, id.xy) * 2.0f - 1.0f; 
+
+    float2 displacement = float2(
+        dot(colorX, mixer1),
+        dot(colorY, mixer2));
+
+    float2 posOffset = displacement * size.xy * distortion.xy;
+    
+    float4 result = GetPixelBilinear(input1, id.xy + posOffset);
+
+    result = SetBrightnessContrast(result);    
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Rotate(uint3 id : SV_DispatchThreadID)
+{    
+    float2 centerPos = id.xy - size.xy * 0.5;
+    float2 pos = float2(
+        centerPos.x * rotation.y - centerPos.y * rotation.x, 
+        centerPos.x * rotation.x + centerPos.y * rotation.y);
+    pos += size.xy * 0.5;
+            
+    float4 result = GetPixelBilinear(input1, pos);
+             
+    result = SetBrightnessContrast(result);    
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Mirror(uint3 id : SV_DispatchThreadID)
+{
+    int2 pos = int2(
+        pos.x = mirror.x ? (size.x - 1) - id.x : id.x,
+        pos.y = mirror.y ? (size.y - 1) - id.y : id.y);
+    
+    float4 result = GetPixelFast(input1, pos);
+             
+    result = SetBrightnessContrast(result);    
+	SetPixel(id.xy, result);
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+[numthreads(8,8,1)]
+void Repeat(uint3 id : SV_DispatchThreadID)
+{
+    float2 pos = id.xy * repeat.xy;;
+    
+    float4 result = GetPixelBilinear(input1, pos);
+             
+    result = SetBrightnessContrast(result);    
+	SetPixel(id.xy, result);
+}
