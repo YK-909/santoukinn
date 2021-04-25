@@ -23,12 +23,10 @@ public class ContloleBody : MonoBehaviour
         {
             case 0:
                 body = 1;
-                Debug.Log("カメ");
                 break;
 
             case 1:
                 body = 2;
-                Debug.Log("サソリ");
                 break;
 
             case 2:

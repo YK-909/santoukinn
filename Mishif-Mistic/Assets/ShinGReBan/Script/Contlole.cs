@@ -24,17 +24,14 @@ public class Contlole : MonoBehaviour
         {
             case 0:
                 head = 1;
-                Debug.Log("カエル");
                 break;
 
             case 1:
                 head = 2;
-                Debug.Log("ライオン");
                 break;
             
             case 2:
                 head = 3;
-                Debug.Log("Kim3");
                 break;
         }
     }
