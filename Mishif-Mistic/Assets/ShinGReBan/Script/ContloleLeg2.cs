@@ -23,12 +23,10 @@ public class ContloleLeg2 : MonoBehaviour
         {
             case 0:
                 leg2 = 1;
-                Debug.Log("Kim6");
                 break;
 
             case 1:
                 leg2 = 2;
-                Debug.Log("Kim7");
                 break;
 
             case 2:
