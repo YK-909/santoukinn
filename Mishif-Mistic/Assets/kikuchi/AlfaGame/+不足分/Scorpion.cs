@@ -34,7 +34,7 @@ public class Scorpion : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //ガード以外のタグのものとぶつかった際、速やかに削除
-        if (collision.gameObject.tag != "Gard" && collision.gameObject.tag != "ScorpionMuzzle")
+        if (collision.gameObject.tag != "Gard")
         {
             Destroy(this, 0.01f);
         }

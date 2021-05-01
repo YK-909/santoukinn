@@ -171,7 +171,7 @@ public class JoyconPlay1 : MonoBehaviour
                                 {
                                     P1FlogAnimator.SetBool("FlogAtkFinP1", true);
                                     //オブジェクトが消える時間
-                                    Invoke("DelayFlog", 2.2f);
+                                    Invoke("DelayFlog", 1.0f);
                                     AllActionInterval = true;
                                     //行動停止
                                     Invoke("ActionInterval", 3.0f);
@@ -373,7 +373,7 @@ public class JoyconPlay1 : MonoBehaviour
     void LionAttackTime()
     {
         //攻撃判定がある状態、分かりやすく現在は色を変更
-        P1Lionhead.tag = "Player";
+        P1Lionhead.tag = "Player1";
         P1Lionhead.GetComponent<Renderer>().material.color = P1LionNormal.color;
     }
     void DelayLion()
@@ -516,7 +516,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     //ダメを食らう時の半分ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player1);
-                    Rb.AddForce(ToVec * 1, ForceMode.Impulse);
+                    Rb.AddForce(ToVec * 5, ForceMode.Impulse);
                     ShieldPoint -= 0.04f;
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
@@ -608,10 +608,10 @@ public class JoyconPlay1 : MonoBehaviour
                     P1G.transform.position += new Vector3(HP10per * 0.4f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player1);
-                    Rb.AddForce(ToVec * 1, ForceMode.Impulse);
+                    Rb.AddForce(ToVec * 5, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
-                    Invoke("InvincibleTime", 0.1f);
+                    Invoke("InvincibleTime", 0.3f);
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
@@ -662,10 +662,10 @@ public class JoyconPlay1 : MonoBehaviour
                     P1G.transform.position += new Vector3(HP10per * 0.48f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player1);
-                    Rb.AddForce(ToVec * 2, ForceMode.Impulse);
+                    Rb.AddForce(ToVec * 5, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
-                    Invoke("InvincibleTime", 0.1f);
+                    Invoke("InvincibleTime", 0.3f);
                 }
                 //オオカミのカウンターのタグに切り替えが未実装
                 if (other.gameObject.CompareTag("P1WolfAttackBack"))

@@ -34,7 +34,7 @@ public class KeybordPlay2 : MonoBehaviour
     public GameObject P2G;
     public GameObject P2R;
     //座標からHPが10ごと減少した際の値
-    private float HP10per = 34.5f;
+    private float HP10per =- 34.5f;
 
     //無敵時間の生成
     private bool Invincible = false;
@@ -159,7 +159,7 @@ public class KeybordPlay2 : MonoBehaviour
                                 if (LionSwitch == true)
                                 {
                                     AllActionInterval = true;
-                                    P2Lionhead.tag = "P1LionAttack";
+                                    P2Lionhead.tag = "P2LionAttack";
                                     Rb.AddForce(transform.forward * 10f, ForceMode.Impulse);
                                     P2Lionhead.GetComponent<Renderer>().material.color = P2LionColor.color;
                                     LionSwitch = false;
@@ -191,7 +191,7 @@ public class KeybordPlay2 : MonoBehaviour
                                 {
                                     P2FlogAnimator.SetBool("FlogAtkFinP1", true);
                                     //オブジェクトが消える時間
-                                    Invoke("DelayFlog", 2.2f);
+                                    Invoke("DelayFlog", 1.0f);
                                     AllActionInterval = true;
                                     //行動停止
                                     Invoke("ActionInterval", 3.0f);
@@ -628,10 +628,10 @@ public class KeybordPlay2 : MonoBehaviour
                     P2G.transform.position += new Vector3(HP10per * 0.4f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player2);
-                    Rb.AddForce(ToVec * 1, ForceMode.Impulse);
+                    Rb.AddForce(ToVec * 5, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
-                    Invoke("InvincibleTime", 0.1f);
+                    Invoke("InvincibleTime", 0.3f);
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
@@ -640,7 +640,7 @@ public class KeybordPlay2 : MonoBehaviour
                     P2G.transform.position += new Vector3(HP10per * 0.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player2);
-                    Rb.AddForce(ToVec * 5, ForceMode.Impulse);
+                    Rb.AddForce(ToVec * 2, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -652,7 +652,7 @@ public class KeybordPlay2 : MonoBehaviour
                     P2G.transform.position -= new Vector3(HP10per * 2 * 1.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(Player1Gard, Player2);
-                    Rb.AddForce(ToVec * 15, ForceMode.Impulse);
+                    Rb.AddForce(ToVec * 3, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -685,7 +685,7 @@ public class KeybordPlay2 : MonoBehaviour
                     Rb.AddForce(ToVec * 2, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
-                    Invoke("InvincibleTime", 0.1f);
+                    Invoke("InvincibleTime", 0.3f);
                 }
                 //オオカミのカウンターのタグに切り替えが未実装
                 if (other.gameObject.CompareTag("P2WolfAttackBack"))
