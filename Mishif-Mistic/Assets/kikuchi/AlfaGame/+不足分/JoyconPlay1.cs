@@ -41,8 +41,6 @@ public class JoyconPlay1 : MonoBehaviour
 
     //飛ぶ方向のための調整
     public GameObject Player1;
-    //ガードに攻撃してしまった際の反射
-    public GameObject Player2Gard;
 
     //カエルの攻撃
     public GameObject P1FlogTongue;
@@ -631,7 +629,7 @@ public class JoyconPlay1 : MonoBehaviour
                     Player1HP -= 24;
                     P1G.transform.position -= new Vector3(HP10per * 2 * 1.2f, 0, 0);
                     //ノックバック
-                    Vector3 ToVec = GetAngleVec(Player2Gard, Player1);
+                    Vector3 ToVec = GetAngleVec(other.gameObject, Player1);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
@@ -641,7 +639,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 36;
                     P1G.transform.position -= new Vector3(HP10per * 3 * 1.2f, 0, 0);
-                    Vector3 ToVec = GetAngleVec(Player2Gard, P1ImplaBlock);
+                    Vector3 ToVec = GetAngleVec(other.gameObject, P1ImplaBlock);
 
                     Rb.AddForce(ToVec * 20, ForceMode.Impulse);
                     //無敵タイム開始
