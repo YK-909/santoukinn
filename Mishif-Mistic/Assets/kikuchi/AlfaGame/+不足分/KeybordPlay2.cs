@@ -41,8 +41,6 @@ public class KeybordPlay2 : MonoBehaviour
 
     //飛ぶ方向のための調整
     public GameObject Player2;
-    //ガードに攻撃してしまった際の反射
-    public GameObject Player1Gard;
 
     //カエルの攻撃
     public GameObject P2FlogTongue;
@@ -651,7 +649,7 @@ public class KeybordPlay2 : MonoBehaviour
                     Player2HP -= 24;
                     P2G.transform.position -= new Vector3(HP10per * 2 * 1.2f, 0, 0);
                     //ノックバック
-                    Vector3 ToVec = GetAngleVec(Player1Gard, Player2);
+                    Vector3 ToVec = GetAngleVec(other.gameObject, Player2);
                     Rb.AddForce(ToVec * 3, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
@@ -661,7 +659,7 @@ public class KeybordPlay2 : MonoBehaviour
                 {
                     Player2HP -= 36;
                     P2G.transform.position -= new Vector3(HP10per * 3 * 1.2f, 0, 0);
-                    Vector3 ToVec = GetAngleVec(Player1Gard, P2ImplaBlock);
+                    Vector3 ToVec = GetAngleVec(other.gameObject, P2ImplaBlock);
 
                     Rb.AddForce(ToVec * 20, ForceMode.Impulse);
                     //無敵タイム開始

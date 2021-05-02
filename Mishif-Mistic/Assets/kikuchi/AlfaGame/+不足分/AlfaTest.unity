@@ -163,7 +163,6 @@ MonoBehaviour:
   P1G: {fileID: 1440225616}
   P1R: {fileID: 1028796553}
   Player1: {fileID: 4168298}
-  Player2Gard: {fileID: 1545914266}
   P1FlogTongue: {fileID: 2071407802}
   P1FlogAnimator: {fileID: 2071407805}
   P1ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
@@ -274,7 +273,7 @@ Transform:
   - {fileID: 291187473}
   - {fileID: 1407500331}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &22086550
 GameObject:
@@ -1408,8 +1407,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184067422}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.7539897, y: -2.008978, z: 1.7362772}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2145403883}
@@ -1420,7 +1419,7 @@ Transform:
   - {fileID: 2043735743}
   - {fileID: 1043573585}
   - {fileID: 1958481329}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 454771525}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &185678941
@@ -3869,6 +3868,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411650856}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &454771524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 454771525}
+  m_Layer: 0
+  m_Name: Alfa
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &454771525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454771524}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.7539897, y: 2.008978, z: -1.7362772}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 184067423}
+  - {fileID: 1413845240}
+  - {fileID: 547867014}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &455588548
 GameObject:
   m_ObjectHideFlags: 0
@@ -4149,7 +4181,6 @@ MonoBehaviour:
   P2G: {fileID: 2042613636}
   P2R: {fileID: 233229394}
   Player2: {fileID: 516437285}
-  Player1Gard: {fileID: 1080766217}
   P2FlogTongue: {fileID: 2039370575}
   P2FlogAnimator: {fileID: 2039370578}
   ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
@@ -4260,7 +4291,7 @@ Transform:
   - {fileID: 1729255122}
   - {fileID: 455588549}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &516580605
 PrefabInstance:
@@ -4553,7 +4584,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &529060185
 GameObject:
@@ -4851,8 +4882,8 @@ RectTransform:
   - {fileID: 42787154}
   - {fileID: 1357198898}
   - {fileID: 1972264151}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 454771525}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8936,7 +8967,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &941230704
 GameObject:
@@ -9746,29 +9777,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 0
+  Player1HP: 100
   Head: 0
-  Body: 0
+  Body: 1
   Leg: 0
-  ShieldObj: {fileID: 0}
-  ShieldPoint: 0
+  ShieldObj: {fileID: 362295040}
+  ShieldPoint: 1
   P1G: {fileID: 0}
   P1R: {fileID: 0}
-  Player1: {fileID: 0}
-  Player2Gard: {fileID: 0}
-  P1FlogTongue: {fileID: 0}
-  P1FlogAnimator: {fileID: 0}
-  P1ScorpionBullet: {fileID: 0}
-  P1SetScorpion: {fileID: 0}
-  P1WolfAtk: {fileID: 0}
-  P1WolfNormal: {fileID: 0}
-  P1WolfColor: {fileID: 0}
-  P1Lionhead: {fileID: 0}
-  P1LionNormal: {fileID: 0}
-  P1LionColor: {fileID: 0}
-  P1TurtleGard: {fileID: 0}
-  P1ImplaBlock: {fileID: 0}
-  P1ImplaWaveBlock: {fileID: 0}
+  Player1: {fileID: 1019169853}
+  P1FlogTongue: {fileID: 516580608}
+  P1FlogAnimator: {fileID: 516580611}
+  P1ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
+    type: 3}
+  P1SetScorpion: {fileID: 1824546439}
+  P1WolfAtk: {fileID: 1320104624}
+  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
+  P1Lionhead: {fileID: 280605845}
+  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
+  P1TurtleGard: {fileID: 695535061}
+  P1ImplaBlock: {fileID: 1920667192}
+  P1ImplaWaveBlock: {fileID: 802896561}
 --- !u!65 &1019169855
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14374,7 +14405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1413845240
 Transform:
   m_ObjectHideFlags: 0
@@ -14382,8 +14413,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413845239}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.7539897, y: -2.008978, z: 1.7362772}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1019169852}
@@ -14394,8 +14425,8 @@ Transform:
   - {fileID: 1490386522}
   - {fileID: 635045748}
   - {fileID: 1540883702}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 454771525}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1417083905
 GameObject:
@@ -15818,7 +15849,7 @@ Transform:
   m_LocalScale: {x: 50, y: 3.2174761, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1525352977
 GameObject:
@@ -18764,7 +18795,7 @@ Transform:
   m_Children:
   - {fileID: 188510473}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1848841821
 GameObject:
@@ -19216,7 +19247,7 @@ Transform:
   m_LocalScale: {x: 17.9742, y: 8.9871, z: 17.9742}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1883070704
 GameObject:
@@ -19303,7 +19334,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
 --- !u!1001 &1896624236
 PrefabInstance:
@@ -20936,7 +20967,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2039370574
 PrefabInstance:
@@ -22081,7 +22112,6 @@ MonoBehaviour:
   P2G: {fileID: 2042613636}
   P2R: {fileID: 233229394}
   Player2: {fileID: 2145403882}
-  Player1Gard: {fileID: 1080766217}
   P2FlogTongue: {fileID: 1239349374}
   P2FlogAnimator: {fileID: 1239349376}
   ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
