@@ -31,7 +31,7 @@ public class PreviewP2Kimera212 : MonoBehaviour
                 //if文の外でやると無駄に毎フレーム実行されるので中にする
                 GameObject obj = (GameObject)Resources.Load("CP2Kimera212");
                 //メンバ変数に入れる
-                instance = (GameObject)Instantiate(obj, new Vector3(3.0f, -0.5f, 0.0f), Quaternion.Euler(0f, 180f, 0f));
+                instance = (GameObject)Instantiate(obj, new Vector3(4.46f, -1.09f, 10.0f), Quaternion.Euler(0f, -90f, 0f));
                 One = false;
             }
         }
@@ -43,6 +43,7 @@ public class PreviewP2Kimera212 : MonoBehaviour
         if (Contlole2.head2 == Head2 && ContloleBody2.body2 == Body2 && ContloleLeg2.leg2 == Leg2)
         {
             instance.SetActive(true);
+            instance.transform.RotateAround(new Vector3(4.8f, -1, 10), transform.up, 30 * Time.deltaTime);
         }
     }
 }

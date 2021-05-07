@@ -29,7 +29,7 @@ public class Player2leg : MonoBehaviour
 
     //0 : 動物画像を透明にする基準座標
     //1 : 動物画像を逆の端に移動する基準座標
-    private Vector2 Up0 = new Vector2(256f, -20f);
+    private Vector2 Up0 = new Vector2(256f, 0f);
     private Vector2 Up1 = new Vector2(256f, -101f);
     private Vector2 Down0 = new Vector2(256f, 142f);
     private Vector2 Down1 = new Vector2(256f, 223f);
@@ -73,11 +73,11 @@ public class Player2leg : MonoBehaviour
             //真ん中以外の動物画像のサイズを 1/1.8 にする
             if (i == 2)
             {
-                AnimaruRect[i].localScale = new Vector3(1.5f, 1.5f, 1);
+                AnimaruRect[i].localScale = new Vector3(2.0f, 2.0f, 1);
             }
             else
             {
-                AnimaruRect[i].localScale = new Vector3(1 / 1.8f, 1 / 1.8f, 1 / 1.8f);
+                AnimaruRect[i].localScale = new Vector3(1 / 1.2f, 1 / 1.2f, 1 / 1.2f);
             }
 
             /*
@@ -210,7 +210,7 @@ public class Player2leg : MonoBehaviour
                     /*
                      * 武器画像の大きさを1にする(他は1/1.8)
                      */
-                    AnimaruRect[i].localScale = new Vector3(1.5f, 1.5f, 1);
+                    AnimaruRect[i].localScale = new Vector3(2.0f, 2.0f, 1);
 
                     /*
                      * WeponLevel別に武器選択UIの配置を設定する
@@ -234,7 +234,7 @@ public class Player2leg : MonoBehaviour
                 }
                 else
                 {
-                    AnimaruRect[i].localScale = new Vector3(1 / 1.8f, 1 / 1.8f, 1 / 1.8f);
+                    AnimaruRect[i].localScale = new Vector3(1 / 1.2f, 1 / 1.2f, 1 / 1.2f);
                 }
             }
             PosFlag = false;
