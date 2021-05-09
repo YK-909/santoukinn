@@ -35,7 +35,7 @@ public class KeybordPlay2 : MonoBehaviour
     public GameObject P2G;
     public GameObject P2R;
     //座標からHPが10ごと減少した際の値
-    private float HP10per =- 34.5f;
+    private float HP10per = 34.5f;
 
     //無敵時間の生成
     private bool Invincible = false;
@@ -254,14 +254,17 @@ public class KeybordPlay2 : MonoBehaviour
                             {
                                 if (Implajump == true)
                                 {
-                                    Rb.constraints = RigidbodyConstraints.FreezePosition;
-                                    //P1collider.isTrigger = true;
-                                    AllActionInterval = true;
-                                    Invoke("ImpleFreeze", 1.0f);
+                                    if (this.transform.position.y > 20)
+                                    {
+                                        Rb.isKinematic = true;
+                                        P1collider.isTrigger = true;
+                                        AllActionInterval = true;
+                                        Invoke("ImpleFreeze", 1.0f);
+                                    }
                                 }
                                 else if (Implajump == false)
                                 {
-                                    Rb.AddForce(transform.up * 50, ForceMode.Impulse);
+                                    Rb.AddForce(transform.up * 40, ForceMode.Impulse);
                                     Implajump = true;
                                 }
                             }
@@ -423,8 +426,8 @@ public class KeybordPlay2 : MonoBehaviour
     void ImpleFreeze()
     {
         //空中で一時停止
-        Rb.constraints = RigidbodyConstraints.None;
-        Rb.AddForce(-transform.up * 25, ForceMode.Impulse);
+        Rb.isKinematic = false;
+        Rb.AddForce(-transform.up * 30, ForceMode.Impulse);
         P2ImplaBlock.SetActive(true);
     }
     void WolfAttackTime()
@@ -472,6 +475,7 @@ public class KeybordPlay2 : MonoBehaviour
 
         if (other.gameObject.tag == "floor")
         {
+            Vector3 Pos = this.transform.position;
             //ただのジャンプ
             NormalJump = false;
             Implajump = false;
@@ -481,6 +485,9 @@ public class KeybordPlay2 : MonoBehaviour
                 //P2のインパラブロックが表示されているとき
                 if (P2ImplaBlock.activeSelf == true)
                 {
+                    //Pos.y = 10;
+                    this.transform.position = Pos;
+                    //Rb.isKinematic = true;
                     P2ImplaWaveBlock.SetActive(true);
                     Invoke("DelayImple", 0.05f);
                     Invoke("DelayImpleWave", 0.1f);
@@ -580,7 +587,7 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1LionAttack"))
                 {
                     Player2HP -= 20;
-                    P2G.transform.position -= new Vector3(HP10per * 2, 0, 0);
+                    P2G.transform.position += new Vector3(HP10per * 2, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player2);
                     Rb.AddForce(ToVec * 20, ForceMode.Impulse);
@@ -591,7 +598,7 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1Impla"))
                 {
                     Player2HP -= 30;
-                    P2G.transform.position -= new Vector3(HP10per * 3, 0, 0);
+                    P2G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player2);
                     Debug.Log(ToVec);
@@ -603,7 +610,7 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1ImplaWave"))
                 {
                     Player2HP -= 10;
-                    P2G.transform.position -= new Vector3(HP10per, 0, 0);
+                    P2G.transform.position += new Vector3(HP10per, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player2);
                     Rb.AddForce(ToVec * 20, ForceMode.Impulse);
@@ -649,7 +656,7 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2LionAttackBack"))
                 {
                     Player2HP -= 24;
-                    P2G.transform.position -= new Vector3(HP10per * 2 * 1.2f, 0, 0);
+                    P2G.transform.position += new Vector3(HP10per * 2 * 1.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player2);
                     Rb.AddForce(ToVec * 25, ForceMode.Impulse);
@@ -660,7 +667,7 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2ImplaBack"))
                 {
                     Player2HP -= 36;
-                    P2G.transform.position -= new Vector3(HP10per * 3 * 1.2f, 0, 0);
+                    P2G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     Vector3 ToVec = GetAngleVec(other.gameObject, P2ImplaBlock);
 
                     Rb.AddForce(ToVec * 30, ForceMode.Impulse);
@@ -671,7 +678,7 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2ImplaWaveBack"))
                 {
                     Player2HP -= 12;
-                    P2G.transform.position -= new Vector3(HP10per * 1.2f, 0, 0);
+                    P2G.transform.position += new Vector3(HP10per * 1.2f, 0, 0);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);

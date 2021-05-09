@@ -559,7 +559,7 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2LionAttack"))
                 {
                     Player1HP -= 20;
-                    P1G.transform.position -= new Vector3(HP10per * 2, 0, 0);
+                    P1G.transform.position += new Vector3(HP10per * 2, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player1);
                     Rb.AddForce(ToVec * 20, ForceMode.Impulse);
@@ -570,7 +570,7 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2Impla"))
                 {
                     Player1HP -= 30;
-                    P1G.transform.position -= new Vector3(HP10per * 3, 0, 0);
+                    P1G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player1);
                     Debug.Log(ToVec);
@@ -582,7 +582,7 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2ImplaWave"))
                 {
                     Player1HP -= 10;
-                    P1G.transform.position -= new Vector3(HP10per, 0, 0);
+                    P1G.transform.position += new Vector3(HP10per, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player1);
                     Rb.AddForce(ToVec * 20, ForceMode.Impulse);
@@ -628,7 +628,7 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1LionAttackBack"))
                 {
                     Player1HP -= 24;
-                    P1G.transform.position -= new Vector3(HP10per * 2 * 1.2f, 0, 0);
+                    P1G.transform.position += new Vector3(HP10per * 2 * 1.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player1);
                     Rb.AddForce(ToVec * 25, ForceMode.Impulse);
@@ -639,7 +639,7 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1ImplaBack"))
                 {
                     Player1HP -= 36;
-                    P1G.transform.position -= new Vector3(HP10per * 3 * 1.2f, 0, 0);
+                    P1G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     Vector3 ToVec = GetAngleVec(other.gameObject, P1ImplaBlock);
 
                     Rb.AddForce(ToVec * 30, ForceMode.Impulse);
@@ -650,7 +650,7 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1ImplaWaveBack"))
                 {
                     Player1HP -= 12;
-                    P1G.transform.position -= new Vector3(HP10per * 1.2f, 0, 0);
+                    P1G.transform.position += new Vector3(HP10per * 1.2f, 0, 0);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
