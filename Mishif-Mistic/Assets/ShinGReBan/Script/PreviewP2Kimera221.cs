@@ -43,7 +43,7 @@ public class PreviewP2Kimera221 : MonoBehaviour
         if (Contlole2.head2 == Head2 && ContloleBody2.body2 == Body2 && ContloleLeg2.leg2 == Leg2)
         {
             instance.SetActive(true);
-            instance.transform.RotateAround(new Vector3(4.8f, -1, 10), transform.up, 30 * Time.deltaTime);
+            instance.transform.RotateAround(new Vector3(4.8f, -1, 10), transform.up, 20 * Time.deltaTime);
         }
     }
 }

@@ -43,7 +43,7 @@ public class PreviewP1Kimera212 : MonoBehaviour
         if (Contlole.head == Head && ContloleBody.body == Body && ContloleLeg.leg == Leg)
         {
             instance.SetActive(true);
-            instance.transform.RotateAround(new Vector3(-4.8f, -1, 10), transform.up, 30 * Time.deltaTime);
+            instance.transform.RotateAround(new Vector3(-4.8f, -1, 10), transform.up, 20 * Time.deltaTime);
         }
     }
 }
