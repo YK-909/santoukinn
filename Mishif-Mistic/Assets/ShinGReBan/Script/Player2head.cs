@@ -59,6 +59,11 @@ public class Player2head : MonoBehaviour
 
     public int WeponType { private set; get; }
 
+    //AudioComponent
+    public AudioClip UpDownSound;
+    AudioSource audioSource;
+
+
     //AnimaruLevelが3の時の設定
     public void SetLevelThree()
     {
@@ -245,6 +250,9 @@ public class Player2head : MonoBehaviour
     void Start()
     {
         SetLevelThree();
+
+        //AudioComponent取得
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -255,12 +263,20 @@ public class Player2head : MonoBehaviour
             SlideFlag = true;
             PosFlag = true;
             Dir = 0;
+
+
+            //音鳴らす
+            audioSource.PlayOneShot(UpDownSound);
         }
         if (Input.GetKeyDown(KeyCode.W) && !SlideFlag)
         {
             SlideFlag = true;
             PosFlag = true;
             Dir = 1;
+
+
+            //音鳴らす
+            audioSource.PlayOneShot(UpDownSound);
         }
 
         SlideWepon();
