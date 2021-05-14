@@ -9,10 +9,18 @@ namespace SelectCharacter
     {
         private SceneTransition sceneTransition;
 
+        //AudioComponent
+        public AudioClip CharacterDecesion;
+        AudioSource audioSource;
+
+
         // Start is called before the first frame update
         void Start()
         {
             sceneTransition = FindObjectOfType<SceneTransition>();
+
+            //AudioComponent取得
+            audioSource = GetComponent<AudioSource>();
         }
 
         // Update is called once per frame
@@ -25,6 +33,9 @@ namespace SelectCharacter
         {
             //MyGameManagerDateに保存されている次のシーンに移動
             sceneTransition.GameStart();
+
+            //音鳴らす
+            audioSource.PlayOneShot(CharacterDecesion);
         }
     }
 }
