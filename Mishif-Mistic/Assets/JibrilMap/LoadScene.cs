@@ -2,15 +2,18 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class LoadScene: MonoBehaviour
 {
     public SceneObject m_BackScene;
 
-     public void LoadSceneBottun()
+    public void LoadSceneBottun()
     {
-            SceneManager.LoadScene(m_BackScene);
-        
+        SceneManager.LoadScene(m_BackScene);
+    }
+
+    public void OnLoadScene()
+    {
+        Invoke("LoadSceneBottun", 1.0f);
     }
 }

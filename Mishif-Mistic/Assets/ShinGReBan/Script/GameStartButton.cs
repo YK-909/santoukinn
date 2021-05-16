@@ -31,11 +31,16 @@ namespace SelectCharacter
 
         public void OnGameStart()
         {
-            //MyGameManagerDateに保存されている次のシーンに移動
-            sceneTransition.GameStart();
-
             //音鳴らす
             audioSource.PlayOneShot(CharacterDecesion);
+
+            Invoke("OnGameStart2", 2.0f);
+        }
+
+        public void OnGameStart2()
+        {
+            //MyGameManagerDateに保存されている次のシーンに移動
+            sceneTransition.GameStart();           
         }
     }
 }
