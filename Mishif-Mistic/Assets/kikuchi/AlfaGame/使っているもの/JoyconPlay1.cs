@@ -8,11 +8,11 @@ public class JoyconPlay1 : MonoBehaviour
     public float Player1HP;
 
     //キャラ変更
-    //1=カエル 2=ライオン
+    //1=ライオン 2=カエル
     public int Head = 0;
-    //1=サソリ 2=カメ
+    //1=カメ 1=サソリ
     public int Body = 0;
-    //1=オオカミ 2=インパラ
+    //1=インパラ 1=オオカミ
     public int Leg = 0;
 
     //移動速度
@@ -132,6 +132,28 @@ public class JoyconPlay1 : MonoBehaviour
                         
                         if (Head == 1)
                         {
+                            // ライオン
+                            if (Input.GetKey(KeyCode.Joystick1Button3))
+                            {
+                                if (LionSwitch == true)
+                                {
+                                    AllActionInterval = true;
+                                    P1Lionhead.tag = "P1LionAttack";
+                                    Rb.AddForce(transform.forward * 50f, ForceMode.Impulse);
+                                    P1Lionhead.GetComponent<Renderer>().material.color = P1LionColor.color;
+                                    LionSwitch = false;
+                                    //当たり判定がある時間
+                                    Invoke("LionAttackTime", 0.5f);
+                                    //行動停止
+                                    Invoke("ActionInterval", 0.8f);
+                                    //リキャストタイム
+                                    Invoke("DelayLion", 1.2f);
+                                }
+                            }
+                        }
+                        else if (Head == 2)
+                        {
+                           
                             //カエル
                             if (Input.GetKeyDown(KeyCode.Joystick1Button3))
                             {
@@ -156,49 +178,11 @@ public class JoyconPlay1 : MonoBehaviour
                                 }
                             }
                         }
-                        else if (Head == 2)
-                        {
-                            // ライオン
-                            if (Input.GetKey(KeyCode.Joystick1Button3))
-                            {
-                                if (LionSwitch == true)
-                                {
-                                    AllActionInterval = true;
-                                    P1Lionhead.tag = "P1LionAttack";
-                                    Rb.AddForce(transform.forward * 50f, ForceMode.Impulse);
-                                    P1Lionhead.GetComponent<Renderer>().material.color = P1LionColor.color;
-                                    LionSwitch = false;
-                                    //当たり判定がある時間
-                                    Invoke("LionAttackTime", 0.5f);
-                                    //行動停止
-                                    Invoke("ActionInterval", 0.8f);
-                                    //リキャストタイム
-                                    Invoke("DelayLion", 1.2f);
-                                }
-                            }
-                        }
 
                         if (FlogSwitch == true)
                         {
 
                             if (Body == 1)
-                            {
-                                //サソリ
-                                if (Input.GetKeyUp(KeyCode.Joystick1Button1))
-                                {
-                                    if (ScorpionAtk == true)
-                                    {
-                                        AllActionInterval = true;
-                                        GameObject Obj;
-                                        Obj = Instantiate(P1ScorpionBullet, P1SetScorpion.transform.position, P1SetScorpion.transform.rotation) as GameObject;
-                                        //行動停止
-                                        Invoke("ActionInterval", 0.2f);
-                                        //リキャストタイム
-                                        Invoke("DelayScorpion", 0.2f);
-                                    }
-                                }
-                            }
-                            else if (Body == 2)
                             {
                                 //カメ
                                 if (Input.GetKeyUp(KeyCode.Joystick1Button1))
@@ -221,6 +205,23 @@ public class JoyconPlay1 : MonoBehaviour
                                     }
                                 }
                             }
+                            else if (Body == 2)
+                            {
+                                //サソリ
+                                if (Input.GetKeyUp(KeyCode.Joystick1Button1))
+                                {
+                                    if (ScorpionAtk == true)
+                                    {
+                                        AllActionInterval = true;
+                                        GameObject Obj;
+                                        Obj = Instantiate(P1ScorpionBullet, P1SetScorpion.transform.position, P1SetScorpion.transform.rotation) as GameObject;
+                                        //行動停止
+                                        Invoke("ActionInterval", 0.2f);
+                                        //リキャストタイム
+                                        Invoke("DelayScorpion", 0.2f);
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -231,30 +232,8 @@ public class JoyconPlay1 : MonoBehaviour
 
                         if (Leg == 1)
                         {
-
-                            //オオカミ
-                            if (Input.GetKey(KeyCode.Joystick1Button0))
-                            {
-                                if (WolfSwitch == true)
-                                {
-                                    AllActionInterval = true;
-                                    P1WolfAtk.tag = "P2WolfAttack";
-                                    Rb.AddForce(transform.forward * 55f, ForceMode.Impulse);
-                                    P1WolfAtk.GetComponent<Renderer>().material.color = P1WolfColor.color;
-                                    WolfSwitch = false;
-                                    //当たり判定がある時間
-                                    Invoke("WolfAttackTime", 0.5f);
-                                    //行動停止
-                                    Invoke("ActionInterval", 0.8f);
-                                    //リキャストタイム
-                                    Invoke("DelayWolf", 1.2f);
-                                }
-                            }
-                        }
-                        else if (Leg == 2)
-                        {
                             //インパラ
-                            if (Input.GetKeyDown(KeyCode.C))
+                            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
                             {
                                 if (Implajump == true)
                                 {
@@ -275,6 +254,27 @@ public class JoyconPlay1 : MonoBehaviour
                             if (Implajump == true)
                             {
                                 transform.position += transform.forward * 25 * Time.deltaTime;
+                            }
+                        }
+                        else if (Leg == 2)
+                        {
+                            //オオカミ
+                            if (Input.GetKey(KeyCode.Joystick1Button0))
+                            {
+                                if (WolfSwitch == true)
+                                {
+                                    AllActionInterval = true;
+                                    P1WolfAtk.tag = "P2WolfAttack";
+                                    Rb.AddForce(transform.forward * 55f, ForceMode.Impulse);
+                                    P1WolfAtk.GetComponent<Renderer>().material.color = P1WolfColor.color;
+                                    WolfSwitch = false;
+                                    //当たり判定がある時間
+                                    Invoke("WolfAttackTime", 0.5f);
+                                    //行動停止
+                                    Invoke("ActionInterval", 0.8f);
+                                    //リキャストタイム
+                                    Invoke("DelayWolf", 1.2f);
+                                }
                             }
                         }
                     }
