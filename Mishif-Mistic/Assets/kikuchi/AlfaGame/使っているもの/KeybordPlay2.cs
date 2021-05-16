@@ -9,11 +9,11 @@ public class KeybordPlay2 : MonoBehaviour
     public float Player2HP;
 
     //キャラ変更
-    //1=カエル 2=ライオン
+    //1=ライオン 2=カエル
     public int Head = 0;
-    //1=サソリ 2=カメ
+    //1=カメ 1=サソリ
     public int Body = 0;
-    //1=オオカミ 2=インパラ
+    //1=インパラ 1=オオカミ
     public int Leg = 0;
 
     //移動速度
@@ -152,6 +152,27 @@ public class KeybordPlay2 : MonoBehaviour
                     {
                         if (Head == 1)
                         {
+                            // ライオン
+                            if (Input.GetKey(KeyCode.Z))
+                            {
+                                if (LionSwitch == true)
+                                {
+                                    AllActionInterval = true;
+                                    P2Lionhead.tag = "P2LionAttack";
+                                    Rb.AddForce(transform.forward * 50f, ForceMode.Impulse);
+                                    P2Lionhead.GetComponent<Renderer>().material.color = P2LionColor.color;
+                                    LionSwitch = false;
+                                    //当たり判定がある時間
+                                    Invoke("LionAttackTime", 0.5f);
+                                    //行動停止
+                                    Invoke("ActionInterval", 0.8f);
+                                    //リキャストタイム
+                                    Invoke("DelayLion", 1.2f);
+                                }
+                            }
+                        }
+                        else if (Head == 2)
+                        {
                             //カエル
                             if (Input.GetKeyDown(KeyCode.Z))
                             {
@@ -176,48 +197,10 @@ public class KeybordPlay2 : MonoBehaviour
                                 }
                             }
                         }
-                        else if (Head == 2)
-                        {
-                            // ライオン
-                            if (Input.GetKey(KeyCode.Z))
-                            {
-                                if (LionSwitch == true)
-                                {
-                                    AllActionInterval = true;
-                                    P2Lionhead.tag = "P2LionAttack";
-                                    Rb.AddForce(transform.forward * 50f, ForceMode.Impulse);
-                                    P2Lionhead.GetComponent<Renderer>().material.color = P2LionColor.color;
-                                    LionSwitch = false;
-                                    //当たり判定がある時間
-                                    Invoke("LionAttackTime", 0.5f);
-                                    //行動停止
-                                    Invoke("ActionInterval", 0.8f);
-                                    //リキャストタイム
-                                    Invoke("DelayLion", 1.2f);
-                                }
-                            }
-                        }
 
                         if (FlogSwitch == true)
                         {
                             if (Body == 1)
-                            {
-                                //サソリ
-                                if (Input.GetKeyUp(KeyCode.X))
-                                {
-                                    if (ScorpionAtk == true)
-                                    {
-                                        AllActionInterval = true;
-                                        GameObject Obj;
-                                        Obj = Instantiate(ScorpionBullet, P2SetScorpion.transform.position, P2SetScorpion.transform.rotation) as GameObject;
-                                        //行動停止
-                                        Invoke("ActionInterval", 0.2f);
-                                        //リキャストタイム
-                                        Invoke("DelayScorpion", 0.2f);
-                                    }
-                                }
-                            }
-                            else if (Body == 2)
                             {
                                 //カメ
                                 if (Input.GetKeyUp(KeyCode.X))
@@ -240,6 +223,23 @@ public class KeybordPlay2 : MonoBehaviour
                                     }
                                 }
                             }
+                            else if (Body == 2)
+                            {
+                                //サソリ
+                                if (Input.GetKeyUp(KeyCode.X))
+                                {
+                                    if (ScorpionAtk == true)
+                                    {
+                                        AllActionInterval = true;
+                                        GameObject Obj;
+                                        Obj = Instantiate(ScorpionBullet, P2SetScorpion.transform.position, P2SetScorpion.transform.rotation) as GameObject;
+                                        //行動停止
+                                        Invoke("ActionInterval", 0.2f);
+                                        //リキャストタイム
+                                        Invoke("DelayScorpion", 0.2f);
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -249,27 +249,6 @@ public class KeybordPlay2 : MonoBehaviour
                     {
                        
                         if (Leg == 1)
-                        {
-                            //オオカミ
-                            if (Input.GetKey(KeyCode.C))
-                            {
-                                if (WolfSwitch == true)
-                                {
-                                    AllActionInterval = true;
-                                    P2WolfAtk.tag = "P2WolfAttack";
-                                    Rb.AddForce(transform.forward * 55f, ForceMode.Impulse);
-                                    P2WolfAtk.GetComponent<Renderer>().material.color = P2WolfColor.color;
-                                    WolfSwitch = false;
-                                    //当たり判定がある時間
-                                    Invoke("WolfAttackTime", 0.5f);
-                                    //行動停止
-                                    Invoke("ActionInterval", 0.8f);
-                                    //リキャストタイム
-                                    Invoke("DelayWolf", 1.2f);
-                                }
-                            }
-                        }
-                        else if (Leg == 2)
                         {
                             //インパラ
                             if (Input.GetKeyDown(KeyCode.C))
@@ -293,6 +272,27 @@ public class KeybordPlay2 : MonoBehaviour
                             if (Implajump == true)
                             {
                                 transform.position += transform.forward * 25 * Time.deltaTime;
+                            }
+                        }
+                        else if (Leg == 2)
+                        {
+                            //オオカミ
+                            if (Input.GetKey(KeyCode.C))
+                            {
+                                if (WolfSwitch == true)
+                                {
+                                    AllActionInterval = true;
+                                    P2WolfAtk.tag = "P2WolfAttack";
+                                    Rb.AddForce(transform.forward * 55f, ForceMode.Impulse);
+                                    P2WolfAtk.GetComponent<Renderer>().material.color = P2WolfColor.color;
+                                    WolfSwitch = false;
+                                    //当たり判定がある時間
+                                    Invoke("WolfAttackTime", 0.5f);
+                                    //行動停止
+                                    Invoke("ActionInterval", 0.8f);
+                                    //リキャストタイム
+                                    Invoke("DelayWolf", 1.2f);
+                                }
                             }
                         }
                     }
