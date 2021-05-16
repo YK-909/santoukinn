@@ -7,24 +7,28 @@ namespace SelectCharacter
 {
     public class SceneTransition : MonoBehaviour
     {
+        public AudioClip DecesionSound;
+        AudioSource audioSource;
+
         private MyGameManagerData myGameManagerData;
 
         // Start is called before the first frame update
         void Start()
         {
+            //Componentを取得
+            audioSource = GetComponent<AudioSource>();
+
             myGameManagerData = FindObjectOfType<MyGameManager>().GetMyGameManagerData();
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            
         }
 
-        public void GoToOtherScene(string stage)
+        public void GoToOtherScene()
         {
-            //次のシーンをMyGameManagerに保存
-            myGameManagerData.SetNextSceneName(stage);
             //キャラクター選択のシーンに移動
             SceneManager.LoadScene("SelectCharactor");
         }
@@ -33,6 +37,16 @@ namespace SelectCharacter
         {
             //　MyGameManagerDataに保存されている次のシーンに移動する
             SceneManager.LoadScene(myGameManagerData.GetNextSceneName());
+        }
+
+        public void OnStageButton(string stage)
+        {
+            //次のシーンをMyGameManagerに保存
+            myGameManagerData.SetNextSceneName(stage);
+
+            audioSource.PlayOneShot(DecesionSound);
+
+            Invoke("GoToOtherScene", 1.0f);
         }
     }
 }
