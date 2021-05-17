@@ -80,6 +80,10 @@ public class KeybordPlay2 : MonoBehaviour
     public GameObject P2ImplaBlock;
     public GameObject P2ImplaWaveBlock;
 
+    private bool AllActionInterval = false;
+    //透過させるために
+    private Collider P1collider;
+
     //AudioComponent
     public AudioClip Footsteps;
     public AudioClip LionBite;
@@ -93,9 +97,6 @@ public class KeybordPlay2 : MonoBehaviour
     public AudioClip ShieldBreakSound;
     AudioSource audioSource;
 
-    private bool AllActionInterval = false;
-    //透過させるために
-    private Collider P1collider;
     void Start()
     {
         P2TurtleGard.SetActive(false);
