@@ -127,6 +127,9 @@ public class JoyconPlay1 : MonoBehaviour
                         if (Input.GetKey(KeyCode.Joystick1Button14))
                         {
                             Speed = Sprintspeed;
+
+                            //音鳴らす
+                            audioSource.PlayOneShot(Footsteps);
                         }
                         else
                         {
@@ -143,8 +146,6 @@ public class JoyconPlay1 : MonoBehaviour
                         //前方に移動する
                         transform.position += Direction * Speed * Time.deltaTime;
 
-                        //音鳴らす
-                        audioSource.PlayOneShot(Footsteps);
                     }
 
                     if (NormalJump == false)
