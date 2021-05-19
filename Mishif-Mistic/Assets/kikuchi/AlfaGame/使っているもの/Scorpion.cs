@@ -19,11 +19,11 @@ public class Scorpion : MonoBehaviour
         Timecount += Time.deltaTime;
         if (GardTouch == false)
         {
-            transform.position += transform.forward * 50f * Time.deltaTime;
+            transform.position += transform.forward * 100f * Time.deltaTime;
         }
         else if (GardTouch == true)
         {
-            transform.position -= transform.forward * 50f * Time.deltaTime;
+            transform.position -= transform.forward * 100f * Time.deltaTime;
         }
 
         if (Timecount > 2.0)
