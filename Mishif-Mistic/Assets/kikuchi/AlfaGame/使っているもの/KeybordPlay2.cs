@@ -99,6 +99,7 @@ public class KeybordPlay2 : MonoBehaviour
 
     void Start()
     {
+        P2FlogTongue.SetActive(false);
         P2TurtleGard.SetActive(false);
         Rb = GetComponent<Rigidbody>();
         P1collider = GetComponent<Collider>();
@@ -125,14 +126,21 @@ public class KeybordPlay2 : MonoBehaviour
 
                     if (FlogSwitch == true)
                     {
-                        if (Input.GetKey(KeyCode.LeftControl))
+                        if (NormalJump == false)
                         {
-                            Speed = Sprintspeed;
+                            if (Input.GetKey(KeyCode.LeftControl))
+                            {
+                                Speed = Sprintspeed;
+                            }
+                            else
+                            {
+                                //歩きの速さの調整をする際はここも
+                                Speed = 40.0f;
+                            }
                         }
                         else
                         {
-                            //歩きの速さの調整をする際はここも
-                            Speed = 40.0f;
+                            Speed = 25f;
                         }
 
                         if (Input.GetKey(KeyCode.UpArrow))
@@ -394,7 +402,7 @@ public class KeybordPlay2 : MonoBehaviour
                     {
                         if (FlogSwitch == true)
                         {
-                            Rb.AddForce(transform.up * 10, ForceMode.Impulse);
+                            Rb.AddForce(transform.up * 30, ForceMode.Impulse);
                             NormalJump = true;
 
                             //音鳴らす

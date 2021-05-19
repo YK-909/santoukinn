@@ -98,6 +98,7 @@ public class JoyconPlay1 : MonoBehaviour
 
     void Start()
     {
+        P1FlogTongue.SetActive(false);
         P1TurtleGard.SetActive(false);
         Rb = GetComponent<Rigidbody>();
         P1collider = GetComponent<Collider>();
@@ -124,17 +125,24 @@ public class JoyconPlay1 : MonoBehaviour
 
                     if (FlogSwitch == true)
                     {
-                        if (Input.GetKey(KeyCode.Joystick1Button14))
+                        if (NormalJump == false)
                         {
-                            Speed = Sprintspeed;
+                            if (Input.GetKey(KeyCode.Joystick1Button14))
+                            {
+                                Speed = Sprintspeed;
 
-                            //音鳴らす
-                            audioSource.PlayOneShot(Footsteps);
+                                //音鳴らす
+                                audioSource.PlayOneShot(Footsteps);
+                            }
+                            else
+                            {
+                                //歩きの速さの調整をする際はここも
+                                Speed = 40.0f;
+                            }
                         }
                         else
                         {
-                            //歩きの速さの調整をする際はここも
-                            Speed = 40.0f;
+                            Speed = 25f;
                         }
 
                         Direction.Set(Input.GetAxis("Vertical 1"), 0, Input.GetAxis("Horizontal 1"));
@@ -368,7 +376,7 @@ public class JoyconPlay1 : MonoBehaviour
                     {
                         if (FlogSwitch == true)
                         {
-                            Rb.AddForce(transform.up * 10, ForceMode.Impulse);
+                            Rb.AddForce(transform.up * 30, ForceMode.Impulse);
                             NormalJump = true;
 
                             //音鳴らす
