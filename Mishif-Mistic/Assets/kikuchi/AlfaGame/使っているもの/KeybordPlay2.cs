@@ -140,7 +140,7 @@ public class KeybordPlay2 : MonoBehaviour
                         }
                         else
                         {
-                            Speed = 25f;
+                            Speed = 15f;
                         }
 
                         if (Input.GetKey(KeyCode.UpArrow))
@@ -402,7 +402,7 @@ public class KeybordPlay2 : MonoBehaviour
                     {
                         if (FlogSwitch == true)
                         {
-                            Rb.AddForce(transform.up * 30, ForceMode.Impulse);
+                            Rb.AddForce(transform.up * 15, ForceMode.Impulse);
                             NormalJump = true;
 
                             //音鳴らす

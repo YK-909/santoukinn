@@ -142,7 +142,7 @@ public class JoyconPlay1 : MonoBehaviour
                         }
                         else
                         {
-                            Speed = 25f;
+                            Speed = 15f;
                         }
 
                         Direction.Set(Input.GetAxis("Vertical 1"), 0, Input.GetAxis("Horizontal 1"));
@@ -376,7 +376,7 @@ public class JoyconPlay1 : MonoBehaviour
                     {
                         if (FlogSwitch == true)
                         {
-                            Rb.AddForce(transform.up * 30, ForceMode.Impulse);
+                            Rb.AddForce(transform.up * 15, ForceMode.Impulse);
                             NormalJump = true;
 
                             //音鳴らす
