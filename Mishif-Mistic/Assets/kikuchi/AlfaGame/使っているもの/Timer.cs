@@ -2,32 +2,92 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI TimerText;
-    public float Second;
-    private int Secondtext;
-    private int hour;
+    public static float Second;
+    [SerializeField]
+    private Text _textCountdown;
+    public static int GameChange;
+    [SerializeField]
+    private Text GameWinner;
+    public Button FinishButton;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        //timerText = GetComponent();
+        FinishButton.gameObject.SetActive(false);
+        _textCountdown.text = "";
+        GameWinner.text = "";
+        StartCoroutine(CountdownCoroutine());
+    }
+
+    IEnumerator CountdownCoroutine()
+    {
+        _textCountdown.gameObject.SetActive(true);
+
+        _textCountdown.text = "3";
+        yield return new WaitForSeconds(1.0f);
+
+        _textCountdown.text = "2";
+        yield return new WaitForSeconds(1.0f);
+
+        _textCountdown.text = "1";
+        yield return new WaitForSeconds(1.0f);
+
+        _textCountdown.text = "GO!";
+        yield return new WaitForSeconds(1.0f);
+
+        _textCountdown.text = "";
+        _textCountdown.gameObject.SetActive(false);
+        GameChange = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Second -= Time.deltaTime;
-
-
-        if (Second <= 0f)
+        if (GameChange == 1)
         {
-            //シーン変更
-            //SceneManager.LoadScene("ResultScene");
+            Second -= Time.deltaTime;
+            TimerText.text = Second.ToString("f0");
+
+            //HPが０による勝敗
+            if (JoyconPlay1.GetP1HP() <= 0)
+            {
+                GameWinner.text = "P2の勝利";
+                GameChange = 2;
+                FinishButton.gameObject.SetActive(true);
+            }
+            else if (KeybordPlay2.GetP2HP() <= 0)
+            {
+                GameWinner.text = "P1の勝利";
+                GameChange = 2;
+                FinishButton.gameObject.SetActive(true);
+            }
+            //制限時間による勝敗
+            if (Second <= 0)
+            {
+                if (JoyconPlay1.GetP1HP() < KeybordPlay2.GetP2HP())
+                {
+                    GameWinner.text = "P2の勝利";
+                    GameChange = 2;
+                    FinishButton.gameObject.SetActive(true);
+                }
+                else if (KeybordPlay2.GetP2HP() < JoyconPlay1.GetP1HP())
+                {
+                    GameWinner.text = "P1の勝利";
+                    GameChange = 2;
+                    FinishButton.gameObject.SetActive(true);
+                }
+            }
         }
-        TimerText.text = Second.ToString("f0");
+    }
+
+    public static int GetGamemode()
+    {
+        return GameChange;
     }
 }

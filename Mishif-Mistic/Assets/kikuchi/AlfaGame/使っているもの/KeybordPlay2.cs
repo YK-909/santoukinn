@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class KeybordPlay2 : MonoBehaviour
 {
-    //全部5倍
     //体力
-    public float Player2HP;
+    public static float Player2HP;
+    //
+    private int Gamemode = 0;
 
     //キャラ変更
     //1=ライオン 2=カエル
@@ -82,7 +83,7 @@ public class KeybordPlay2 : MonoBehaviour
 
     private bool AllActionInterval = false;
     //透過させるために
-    private Collider P1collider;
+    private Collider P2collider;
 
     //AudioComponent
     public AudioClip Footsteps;
@@ -102,8 +103,9 @@ public class KeybordPlay2 : MonoBehaviour
         P2FlogTongue.SetActive(false);
         P2TurtleGard.SetActive(false);
         Rb = GetComponent<Rigidbody>();
-        P1collider = GetComponent<Collider>();
-        P1collider.isTrigger = false;
+        P2collider = GetComponent<Collider>();
+        P2collider.isTrigger = false;
+        Rb.isKinematic = true;
 
         //AudioComponent取得
         audioSource = GetComponent<AudioSource>();
@@ -112,301 +114,306 @@ public class KeybordPlay2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Gamemode = Timer.GetGamemode();
         P2TurtleGard.transform.position = this.transform.position;
         //シールドの色変更　tの値で変わる　調整中無視していいよ
         ShieldObj.GetComponent<Renderer>().material.color = Color.HSVToRGB(ShieldPoint * 150, 1, 1);
 
         if (AllActionInterval == false)
         {
-            if (Shield == false)
+            if (Gamemode == 1)
             {
-
-                if (Implajump == false)
+                Rb.isKinematic = false;
+                if (Shield == false)
                 {
 
+                    if (Implajump == false)
+                    {
+
+                        if (FlogSwitch == true)
+                        {
+                            if (NormalJump == false)
+                            {
+                                if (Input.GetKey(KeyCode.LeftControl))
+                                {
+                                    Speed = Sprintspeed;
+                                }
+                                else
+                                {
+                                    //歩きの速さの調整をする際はここも
+                                    Speed = 40.0f;
+                                }
+                            }
+                            else
+                            {
+                                Speed = 15f;
+                            }
+
+                            if (Input.GetKey(KeyCode.UpArrow))
+                            {
+                                //キャラクターが指定の向きを向く
+                                transform.rotation = Quaternion.Euler(0, -90, 0);
+                                //前方に移動する
+                                transform.position += transform.forward * Speed * Time.deltaTime;
+
+                                //音鳴らす
+                                audioSource.PlayOneShot(Footsteps);
+                            }
+                            else if (Input.GetKey(KeyCode.DownArrow))
+                            {
+                                //キャラクターが指定の向きを向く
+                                transform.rotation = Quaternion.Euler(0, 90, 0);
+                                //前方に移動する
+                                transform.position += transform.forward * Speed * Time.deltaTime;
+
+                                //音鳴らす
+                                audioSource.PlayOneShot(Footsteps);
+                            }
+                            else if (Input.GetKey(KeyCode.RightArrow))
+                            {
+                                //キャラクターが指定の向きを向く
+                                transform.rotation = Quaternion.Euler(0, 0, 0);
+                                //前方に移動する
+                                transform.position += transform.forward * Speed * Time.deltaTime;
+
+                                //音鳴らす
+                                audioSource.PlayOneShot(Footsteps);
+                            }
+                            else if (Input.GetKey(KeyCode.LeftArrow))
+                            {
+                                //キャラクターが指定の向きを向く
+                                transform.rotation = Quaternion.Euler(0, 180, 0);
+                                //前方に移動する
+                                transform.position += transform.forward * Speed * Time.deltaTime;
+
+                                //音鳴らす
+                                audioSource.PlayOneShot(Footsteps);
+                            }
+                        }
+
+                        if (NormalJump == false)
+                        {
+                            if (Head == 1)
+                            {
+                                //カエル
+                                if (Input.GetKeyDown(KeyCode.Z))
+                                {
+                                    //音鳴らす
+                                    audioSource.PlayOneShot(FrogTongueAttack);
+
+                                    if (FlogSwitch == true)
+                                    {
+                                        P2FlogTongue.SetActive(true);
+                                        P2FlogAnimator.SetTrigger("FlogAtkStartP1");
+                                        P2FlogAnimator.SetBool("FlogAtkFinP1", false);
+                                        FlogSwitch = false;
+                                    }
+                                }
+                                if (Input.GetKeyUp(KeyCode.Z))
+                                {
+                                    if (FlogSwitch == false)
+                                    {
+                                        P2FlogAnimator.SetBool("FlogAtkFinP1", true);
+                                        //オブジェクトが消える時間
+                                        Invoke("DelayFlog", 1.0f);
+                                        AllActionInterval = true;
+                                        //行動停止
+                                        Invoke("ActionInterval", 3.0f);
+                                    }
+                                }
+                            }
+                            else if (Head == 2)
+                            {
+                                // ライオン
+                                if (Input.GetKey(KeyCode.Z))
+                                {
+                                    //音鳴らす
+                                    audioSource.PlayOneShot(LionBite);
+
+                                    if (LionSwitch == true)
+                                    {
+                                        AllActionInterval = true;
+                                        P2Lionhead.tag = "P2LionAttack";
+                                        Rb.AddForce(transform.forward * 50f, ForceMode.Impulse);
+                                        P2Lionhead.GetComponent<Renderer>().material.color = P2LionColor.color;
+                                        LionSwitch = false;
+                                        //当たり判定がある時間
+                                        Invoke("LionAttackTime", 0.5f);
+                                        //行動停止
+                                        Invoke("ActionInterval", 0.8f);
+                                        //リキャストタイム
+                                        Invoke("DelayLion", 1.2f);
+                                    }
+                                }
+                            }
+
+                            if (FlogSwitch == true)
+                            {
+                                if (Body == 1)
+                                {
+                                    //カメ
+                                    if (Input.GetKeyUp(KeyCode.X))
+                                    {
+                                        //音鳴らす
+                                        audioSource.PlayOneShot(TurtleShield);
+
+                                        if (Gard == true)
+                                        {
+                                            AllActionInterval = true;
+                                            P2TurtleGard.SetActive(true);
+                                            Gard = false;
+                                            //無敵タイム開始
+                                            Invincible = true;
+                                            //無敵時間
+                                            Invoke("InvincibleTime", 2f);
+                                            //上と同じ値
+                                            Invoke("TurtleGardRemove", 2f);
+                                            //行動停止
+                                            Invoke("ActionInterval", 3.0f);
+                                            //リキャストタイム
+                                            Invoke("DelayTartle", 6f);
+                                        }
+                                    }
+                                }
+                                else if (Body == 2)
+                                {
+                                    //サソリ
+                                    if (Input.GetKeyUp(KeyCode.X))
+                                    {
+                                        //音鳴らす
+                                        audioSource.PlayOneShot(ScorpionNeedle);
+
+                                        if (ScorpionAtk == true)
+                                        {
+                                            AllActionInterval = true;
+                                            GameObject Obj;
+                                            Obj = Instantiate(ScorpionBullet, P2SetScorpion.transform.position, P2SetScorpion.transform.rotation) as GameObject;
+                                            //行動停止
+                                            Invoke("ActionInterval", 0.2f);
+                                            //リキャストタイム
+                                            Invoke("DelayScorpion", 0.2f);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                     if (FlogSwitch == true)
                     {
                         if (NormalJump == false)
                         {
-                            if (Input.GetKey(KeyCode.LeftControl))
+
+                            if (Leg == 1)
                             {
-                                Speed = Sprintspeed;
-                            }
-                            else
-                            {
-                                //歩きの速さの調整をする際はここも
-                                Speed = 40.0f;
-                            }
-                        }
-                        else
-                        {
-                            Speed = 15f;
-                        }
-
-                        if (Input.GetKey(KeyCode.UpArrow))
-                        {
-                            //キャラクターが指定の向きを向く
-                            transform.rotation = Quaternion.Euler(0, -90, 0);
-                            //前方に移動する
-                            transform.position += transform.forward * Speed * Time.deltaTime;
-
-                            //音鳴らす
-                            audioSource.PlayOneShot(Footsteps);
-                        }
-                        else if (Input.GetKey(KeyCode.DownArrow))
-                        {
-                            //キャラクターが指定の向きを向く
-                            transform.rotation = Quaternion.Euler(0, 90, 0);
-                            //前方に移動する
-                            transform.position += transform.forward * Speed * Time.deltaTime;
-
-                            //音鳴らす
-                            audioSource.PlayOneShot(Footsteps);
-                        }
-                        else if (Input.GetKey(KeyCode.RightArrow))
-                        {
-                            //キャラクターが指定の向きを向く
-                            transform.rotation = Quaternion.Euler(0, 0, 0);
-                            //前方に移動する
-                            transform.position += transform.forward * Speed * Time.deltaTime;
-
-                            //音鳴らす
-                            audioSource.PlayOneShot(Footsteps);
-                        }
-                        else if (Input.GetKey(KeyCode.LeftArrow))
-                        {
-                            //キャラクターが指定の向きを向く
-                            transform.rotation = Quaternion.Euler(0, 180, 0);
-                            //前方に移動する
-                            transform.position += transform.forward * Speed * Time.deltaTime;
-
-                            //音鳴らす
-                            audioSource.PlayOneShot(Footsteps);
-                        }
-                    }
-
-                    if (NormalJump == false)
-                    {
-                        if (Head == 1)
-                        {
-                            // ライオン
-                            if (Input.GetKey(KeyCode.Z))
-                            {
-                                //音鳴らす
-                                audioSource.PlayOneShot(LionBite);
-
-                                if (LionSwitch == true)
-                                {
-                                    AllActionInterval = true;
-                                    P2Lionhead.tag = "P2LionAttack";
-                                    Rb.AddForce(transform.forward * 50f, ForceMode.Impulse);
-                                    P2Lionhead.GetComponent<Renderer>().material.color = P2LionColor.color;
-                                    LionSwitch = false;
-                                    //当たり判定がある時間
-                                    Invoke("LionAttackTime", 0.5f);
-                                    //行動停止
-                                    Invoke("ActionInterval", 0.8f);
-                                    //リキャストタイム
-                                    Invoke("DelayLion", 1.2f);
-                                }
-                            }
-                        }
-                        else if (Head == 2)
-                        {
-                            //カエル
-                            if (Input.GetKeyDown(KeyCode.Z))
-                            {
-                                //音鳴らす
-                                audioSource.PlayOneShot(FrogTongueAttack);
-
-                                if (FlogSwitch == true)
-                                {
-                                    P2FlogTongue.SetActive(true);
-                                    P2FlogAnimator.SetTrigger("FlogAtkStartP1");
-                                    P2FlogAnimator.SetBool("FlogAtkFinP1", false);
-                                    FlogSwitch = false;
-                                }
-                            }
-                            if (Input.GetKeyUp(KeyCode.Z))
-                            {
-                                if (FlogSwitch == false)
-                                {
-                                    P2FlogAnimator.SetBool("FlogAtkFinP1", true);
-                                    //オブジェクトが消える時間
-                                    Invoke("DelayFlog", 1.0f);
-                                    AllActionInterval = true;
-                                    //行動停止
-                                    Invoke("ActionInterval", 3.0f);
-                                }
-                            }
-                        }
-
-                        if (FlogSwitch == true)
-                        {
-                            if (Body == 1)
-                            {
-                                //カメ
-                                if (Input.GetKeyUp(KeyCode.X))
+                                //インパラ
+                                if (Input.GetKeyDown(KeyCode.C))
                                 {
                                     //音鳴らす
-                                    audioSource.PlayOneShot(TurtleShield);
+                                    audioSource.PlayOneShot(ImpalaJump);
 
-                                    if (Gard == true)
+                                    if (Implajump == true)
                                     {
-                                        AllActionInterval = true;
-                                        P2TurtleGard.SetActive(true);
-                                        Gard = false;
-                                        //無敵タイム開始
-                                        Invincible = true;
-                                        //無敵時間
-                                        Invoke("InvincibleTime", 2f);
-                                        //上と同じ値
-                                        Invoke("TurtleGardRemove", 2f);
-                                        //行動停止
-                                        Invoke("ActionInterval", 3.0f);
-                                        //リキャストタイム
-                                        Invoke("DelayTartle", 6f);
+                                        if (this.transform.position.y > 20)
+                                        {
+                                            Rb.isKinematic = true;
+                                            P2collider.isTrigger = true;
+                                            AllActionInterval = true;
+                                            Invoke("ImpleFreeze", 1.0f);
+                                        }
+                                    }
+                                    else if (Implajump == false)
+                                    {
+                                        Rb.AddForce(transform.up * 40, ForceMode.Impulse);
+                                        Implajump = true;
                                     }
                                 }
-                            }
-                            else if (Body == 2)
-                            {
-                                //サソリ
-                                if (Input.GetKeyUp(KeyCode.X))
-                                {
-                                    //音鳴らす
-                                    audioSource.PlayOneShot(ScorpionNeedle);
-
-                                    if (ScorpionAtk == true)
-                                    {
-                                        AllActionInterval = true;
-                                        GameObject Obj;
-                                        Obj = Instantiate(ScorpionBullet, P2SetScorpion.transform.position, P2SetScorpion.transform.rotation) as GameObject;
-                                        //行動停止
-                                        Invoke("ActionInterval", 0.2f);
-                                        //リキャストタイム
-                                        Invoke("DelayScorpion", 0.2f);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                if (FlogSwitch == true)
-                {
-                    if (NormalJump == false)
-                    {
-                       
-                        if (Leg == 1)
-                        {
-                            //インパラ
-                            if (Input.GetKeyDown(KeyCode.C))
-                            {
-                                //音鳴らす
-                                audioSource.PlayOneShot(ImpalaJump);
-
                                 if (Implajump == true)
                                 {
-                                    if (this.transform.position.y > 20)
+                                    transform.position += transform.forward * 25 * Time.deltaTime;
+                                }
+                            }
+                            else if (Leg == 2)
+                            {
+                                //オオカミ
+                                if (Input.GetKey(KeyCode.C))
+                                {
+                                    //音鳴らす
+                                    audioSource.PlayOneShot(WolfScratch);
+
+                                    if (WolfSwitch == true)
                                     {
-                                        Rb.isKinematic = true;
-                                        P1collider.isTrigger = true;
                                         AllActionInterval = true;
-                                        Invoke("ImpleFreeze", 1.0f);
+                                        P2WolfAtk.tag = "P2WolfAttack";
+                                        Rb.AddForce(transform.forward * 55f, ForceMode.Impulse);
+                                        P2WolfAtk.GetComponent<Renderer>().material.color = P2WolfColor.color;
+                                        WolfSwitch = false;
+                                        //当たり判定がある時間
+                                        Invoke("WolfAttackTime", 0.5f);
+                                        //行動停止
+                                        Invoke("ActionInterval", 0.8f);
+                                        //リキャストタイム
+                                        Invoke("DelayWolf", 1.2f);
                                     }
                                 }
-                                else if (Implajump == false)
-                                {
-                                    Rb.AddForce(transform.up * 40, ForceMode.Impulse);
-                                    Implajump = true;
-                                }
-                            }
-                            if (Implajump == true)
-                            {
-                                transform.position += transform.forward * 25 * Time.deltaTime;
-                            }
-                        }
-                        else if (Leg == 2)
-                        {
-                            //オオカミ
-                            if (Input.GetKey(KeyCode.C))
-                            {
-                                //音鳴らす
-                                audioSource.PlayOneShot(WolfScratch);
-
-                                if (WolfSwitch == true)
-                                {
-                                    AllActionInterval = true;
-                                    P2WolfAtk.tag = "P2WolfAttack";
-                                    Rb.AddForce(transform.forward * 55f, ForceMode.Impulse);
-                                    P2WolfAtk.GetComponent<Renderer>().material.color = P2WolfColor.color;
-                                    WolfSwitch = false;
-                                    //当たり判定がある時間
-                                    Invoke("WolfAttackTime", 0.5f);
-                                    //行動停止
-                                    Invoke("ActionInterval", 0.8f);
-                                    //リキャストタイム
-                                    Invoke("DelayWolf", 1.2f);
-                                }
                             }
                         }
                     }
+
                 }
 
-            }
+                //LRのシールド
+                if (Input.GetKey(KeyCode.V))
+                {
+                    //音鳴らす
+                    audioSource.PlayOneShot(NormalShield);
 
-            //LRのシールド
-            if (Input.GetKey(KeyCode.V))
-            {
-                //音鳴らす
-                audioSource.PlayOneShot(NormalShield);
-
-                if (NormalJump == false)
-                {
-                    if (FlogSwitch == true)
-                    {
-                        Shield = true;
-                        ShieldObj.SetActive(true);
-                        if (ShieldPoint >= 0)
-                        {
-                            //シールドの減少量
-                            ShieldPoint -= 0.001f;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                ShieldObj.SetActive(false);
-                //シールド
-                if (ShieldPoint <= 1)
-                {
-                    //シールドの回復速度
-                    ShieldPoint += 0.001f;
-                }
-            }
-            //ガードのボタンを離したとき　後隙
-            if (Input.GetKeyUp(KeyCode.V))
-            {
-                if (NormalJump == false)
-                {
-                    ShieldObj.SetActive(false);
-                    Invoke("ShieldDelay", 0.5f);
-                }
-            }
-            if (Input.GetKey(KeyCode.Space))
-            {
-                if (Shield == false)
-                {
                     if (NormalJump == false)
                     {
                         if (FlogSwitch == true)
                         {
-                            Rb.AddForce(transform.up * 15, ForceMode.Impulse);
-                            NormalJump = true;
+                            Shield = true;
+                            ShieldObj.SetActive(true);
+                            if (ShieldPoint >= 0)
+                            {
+                                //シールドの減少量
+                                ShieldPoint -= 0.001f;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    ShieldObj.SetActive(false);
+                    //シールド
+                    if (ShieldPoint <= 1)
+                    {
+                        //シールドの回復速度
+                        ShieldPoint += 0.001f;
+                    }
+                }
+                //ガードのボタンを離したとき　後隙
+                if (Input.GetKeyUp(KeyCode.V))
+                {
+                    if (NormalJump == false)
+                    {
+                        ShieldObj.SetActive(false);
+                        Invoke("ShieldDelay", 0.5f);
+                    }
+                }
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    if (Shield == false)
+                    {
+                        if (NormalJump == false)
+                        {
+                            if (FlogSwitch == true)
+                            {
+                                Rb.AddForce(transform.up * 15, ForceMode.Impulse);
+                                NormalJump = true;
 
-                            //音鳴らす
-                            audioSource.PlayOneShot(AllCharacterJump);
+                                //音鳴らす
+                                audioSource.PlayOneShot(AllCharacterJump);
+                            }
                         }
                     }
                 }
@@ -440,11 +447,11 @@ public class KeybordPlay2 : MonoBehaviour
             audioSource.PlayOneShot(ShieldBreakSound);
         }
 
-        if (this.transform.position.y <= 0 && P1collider.isTrigger == true)
+        if (this.transform.position.y <= 0 && P2collider.isTrigger == true)
         {
             //透過下ブロックが落ちないように
             transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-            P1collider.isTrigger = false;
+            P2collider.isTrigger = false;
         }
     }
 
@@ -534,7 +541,10 @@ public class KeybordPlay2 : MonoBehaviour
         Vector3 toVec = new Vector3(_to.transform.position.x, 0, _to.transform.position.z);
         return Vector3.Normalize(toVec - fromVec);
     }
-
+    public static float GetP2HP()
+    {
+        return Player2HP;
+    }
     void OnCollisionEnter(Collision other)
     {
 
@@ -560,7 +570,7 @@ public class KeybordPlay2 : MonoBehaviour
                 //行動停止
                 Invoke("ActionInterval", 0.5f);
             }
-            P1collider.isTrigger = false;
+            P2collider.isTrigger = false;
         }
     }
 
