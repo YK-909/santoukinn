@@ -44,6 +44,7 @@ namespace SelectCharacter
             //次のシーンをMyGameManagerに保存
             myGameManagerData.SetNextSceneName(stage);
 
+            //音鳴らす
             audioSource.PlayOneShot(DecesionSound);
 
             Invoke("GoToOtherScene", 1.0f);
