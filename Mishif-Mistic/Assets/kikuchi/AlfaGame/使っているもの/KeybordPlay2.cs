@@ -85,7 +85,7 @@ public class KeybordPlay2 : MonoBehaviour
     private Collider P1collider;
 
     //AudioComponent
-    public AudioClip Footsteps;
+    //public AudioClip Footsteps;
     public AudioClip LionBite;
     public AudioClip FrogTongueAttack;
     public AudioClip TurtleShield;
@@ -96,6 +96,7 @@ public class KeybordPlay2 : MonoBehaviour
     public AudioClip AllCharacterJump;
     public AudioClip ShieldBreakSound;
     AudioSource audioSource;
+    public AudioSource FootstepsAS;
 
     void Start()
     {
@@ -107,6 +108,7 @@ public class KeybordPlay2 : MonoBehaviour
 
         //AudioComponent取得
         audioSource = GetComponent<AudioSource>();
+        FootstepsAS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -151,7 +153,8 @@ public class KeybordPlay2 : MonoBehaviour
                             transform.position += transform.forward * Speed * Time.deltaTime;
 
                             //音鳴らす
-                            audioSource.PlayOneShot(Footsteps);
+                            //audioSource.PlayOneShot(Footsteps);
+                            FootstepsAS.Play();
                         }
                         else if (Input.GetKey(KeyCode.DownArrow))
                         {
@@ -161,7 +164,8 @@ public class KeybordPlay2 : MonoBehaviour
                             transform.position += transform.forward * Speed * Time.deltaTime;
 
                             //音鳴らす
-                            audioSource.PlayOneShot(Footsteps);
+                            //audioSource.PlayOneShot(Footsteps);
+                            FootstepsAS.Play();
                         }
                         else if (Input.GetKey(KeyCode.RightArrow))
                         {
@@ -171,7 +175,8 @@ public class KeybordPlay2 : MonoBehaviour
                             transform.position += transform.forward * Speed * Time.deltaTime;
 
                             //音鳴らす
-                            audioSource.PlayOneShot(Footsteps);
+                            //audioSource.PlayOneShot(Footsteps);
+                            FootstepsAS.Play();
                         }
                         else if (Input.GetKey(KeyCode.LeftArrow))
                         {
@@ -181,8 +186,13 @@ public class KeybordPlay2 : MonoBehaviour
                             transform.position += transform.forward * Speed * Time.deltaTime;
 
                             //音鳴らす
-                            audioSource.PlayOneShot(Footsteps);
+                            //audioSource.PlayOneShot(Footsteps);
+                            FootstepsAS.Play();
                         }
+                        /*else
+                        {
+                            FootstepsAS.Stop();
+                        }*/
                     }
 
                     if (NormalJump == false)
