@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43761885, g: 0.48547536, b: 0.5657535, a: 1}
+  m_IndirectSpecularColor: {r: 0.4376193, g: 0.48547626, b: 0.56575453, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -549,8 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
-  Head: 1
+  Head: 2
   Body: 2
   Leg: 1
   ShieldObj: {fileID: 2072822355}
@@ -594,7 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e8cc7c1c76b6a47ac18d44ca38625b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 1
+  Head: 2
   Body: 2
   Leg: 1
 --- !u!65 &10394549
@@ -2717,8 +2716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
-  Head: 2
+  Head: 1
   Body: 1
   Leg: 1
   ShieldObj: {fileID: 1443830685}
@@ -2762,7 +2760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e8cc7c1c76b6a47ac18d44ca38625b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 2
+  Head: 1
   Body: 1
   Leg: 1
 --- !u!65 &84199019
@@ -4648,8 +4646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
-  Head: 2
+  Head: 1
   Body: 1
   Leg: 2
   ShieldObj: {fileID: 1920651938}
@@ -4693,7 +4690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e8cc7c1c76b6a47ac18d44ca38625b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 2
+  Head: 1
   Body: 1
   Leg: 2
 --- !u!65 &124695547
@@ -5957,8 +5954,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158458033}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 497, y: -58.66, z: 290.20322}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: -0.7071068}
+  m_LocalPosition: {x: 583.89056, y: 29.325157, z: 554.1699}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9366,8 +9363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
-  Head: 1
+  Head: 2
   Body: 1
   Leg: 1
   ShieldObj: {fileID: 279996951}
@@ -9411,7 +9407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e8cc7c1c76b6a47ac18d44ca38625b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 1
+  Head: 2
   Body: 1
   Leg: 1
 --- !u!65 &270081944
@@ -9682,8 +9678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
-  Head: 1
+  Head: 2
   Body: 2
   Leg: 2
   ShieldObj: {fileID: 151345656}
@@ -9705,6 +9700,7 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1171299755}
   P2ImplaBlock: {fileID: 1218054956}
   P2ImplaWaveBlock: {fileID: 414007826}
+  Footsteps: {fileID: 0}
   LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
   FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
   TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
@@ -9714,7 +9710,6 @@ MonoBehaviour:
   NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
   AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
   ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
-  FootstepsAS: {fileID: 273608022}
 --- !u!114 &273608018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9727,7 +9722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c54a8222e4f6704cbbfce120301d40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head2: 1
+  Head2: 2
   Body2: 2
   Leg2: 2
 --- !u!65 &273608019
@@ -16694,8 +16689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
-  Head: 2
+  Head: 1
   Body: 1
   Leg: 2
   ShieldObj: {fileID: 2133130419}
@@ -16717,6 +16711,7 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 584981078}
   P2ImplaBlock: {fileID: 1446530318}
   P2ImplaWaveBlock: {fileID: 1224819591}
+  Footsteps: {fileID: 0}
   LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
   FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
   TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
@@ -16726,7 +16721,6 @@ MonoBehaviour:
   NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
   AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
   ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
-  FootstepsAS: {fileID: 465090313}
 --- !u!114 &465090309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16739,7 +16733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c54a8222e4f6704cbbfce120301d40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head2: 2
+  Head2: 1
   Body2: 1
   Leg2: 2
 --- !u!65 &465090310
@@ -17359,8 +17353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
-  Head: 1
+  Head: 2
   Body: 2
   Leg: 1
   ShieldObj: {fileID: 1056041602}
@@ -17382,6 +17375,7 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1997259575}
   P2ImplaBlock: {fileID: 320193626}
   P2ImplaWaveBlock: {fileID: 1744926522}
+  Footsteps: {fileID: 0}
   LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
   FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
   TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
@@ -17391,7 +17385,6 @@ MonoBehaviour:
   NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
   AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
   ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
-  FootstepsAS: {fileID: 472187414}
 --- !u!114 &472187410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17404,7 +17397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c54a8222e4f6704cbbfce120301d40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head2: 1
+  Head2: 2
   Body2: 2
   Leg2: 1
 --- !u!65 &472187411
@@ -19630,6 +19623,84 @@ Transform:
   m_Father: {fileID: 28745196}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &532111546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 532111547}
+  - component: {fileID: 532111549}
+  - component: {fileID: 532111548}
+  m_Layer: 5
+  m_Name: Countdown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &532111547
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532111546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2076338795}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &532111548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532111546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 60
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 3
+--- !u!222 &532111549
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532111546}
+  m_CullTransparentMesh: 0
 --- !u!1 &532296503
 GameObject:
   m_ObjectHideFlags: 0
@@ -22992,8 +23063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
-  Head: 1
+  Head: 2
   Body: 1
   Leg: 2
   ShieldObj: {fileID: 530316540}
@@ -23015,6 +23085,7 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1389505779}
   P2ImplaBlock: {fileID: 1839529023}
   P2ImplaWaveBlock: {fileID: 387081267}
+  Footsteps: {fileID: 0}
   LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
   FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
   TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
@@ -23024,7 +23095,6 @@ MonoBehaviour:
   NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
   AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
   ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
-  FootstepsAS: {fileID: 631558606}
 --- !u!114 &631558602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23037,7 +23107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c54a8222e4f6704cbbfce120301d40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head2: 1
+  Head2: 2
   Body2: 1
   Leg2: 2
 --- !u!65 &631558603
@@ -25355,7 +25425,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1.5885e-41, z: 0, w: -0.0000000013096724}
+  m_BoundingSphereOverride: {x: 0, y: 1.6642e-41, z: 0, w: -6.0666413e+10}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -28405,8 +28475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
-  Head: 2
+  Head: 1
   Body: 2
   Leg: 1
   ShieldObj: {fileID: 1328490649}
@@ -28428,6 +28497,7 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1921241917}
   P2ImplaBlock: {fileID: 496396106}
   P2ImplaWaveBlock: {fileID: 81910335}
+  Footsteps: {fileID: 0}
   LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
   FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
   TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
@@ -28437,7 +28507,6 @@ MonoBehaviour:
   NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
   AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
   ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
-  FootstepsAS: {fileID: 799395740}
 --- !u!114 &799395737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28450,7 +28519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c54a8222e4f6704cbbfce120301d40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head2: 2
+  Head2: 1
   Body2: 2
   Leg2: 1
 --- !u!54 &799395738
@@ -29982,8 +30051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
-  Head: 2
+  Head: 1
   Body: 2
   Leg: 1
   ShieldObj: {fileID: 147225438}
@@ -30027,7 +30095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e8cc7c1c76b6a47ac18d44ca38625b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 2
+  Head: 1
   Body: 2
   Leg: 1
 --- !u!65 &848944312
@@ -34587,8 +34655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
-  Head: 1
+  Head: 2
   Body: 1
   Leg: 2
   ShieldObj: {fileID: 965370632}
@@ -34632,7 +34699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e8cc7c1c76b6a47ac18d44ca38625b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 1
+  Head: 2
   Body: 1
   Leg: 2
 --- !u!65 &1009264049
@@ -42430,7 +42497,7 @@ RectTransform:
   m_Children:
   - {fileID: 373970648}
   m_Father: {fileID: 2076338795}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -42451,7 +42518,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BackScene:
     m_SceneName: Title
-  TitleDecesionSound: {fileID: 0}
 --- !u!114 &1255921738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44888,8 +44954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
-  Head: 2
+  Head: 1
   Body: 1
   Leg: 1
   ShieldObj: {fileID: 920727406}
@@ -44911,6 +44976,7 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 762123085}
   P2ImplaBlock: {fileID: 1204736833}
   P2ImplaWaveBlock: {fileID: 561680100}
+  Footsteps: {fileID: 0}
   LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
   FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
   TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
@@ -44920,7 +44986,6 @@ MonoBehaviour:
   NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
   AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
   ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
-  FootstepsAS: {fileID: 1324903871}
 --- !u!114 &1324903867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44933,7 +44998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c54a8222e4f6704cbbfce120301d40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head2: 2
+  Head2: 1
   Body2: 1
   Leg2: 1
 --- !u!65 &1324903868
@@ -45186,7 +45251,7 @@ Transform:
   m_Children:
   - {fileID: 1812241957}
   m_Father: {fileID: 2076338795}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1325247908
 GameObject:
@@ -49189,8 +49254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
-  Head: 2
+  Head: 1
   Body: 2
   Leg: 2
   ShieldObj: {fileID: 1986249826}
@@ -49234,7 +49298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e8cc7c1c76b6a47ac18d44ca38625b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 2
+  Head: 1
   Body: 2
   Leg: 2
 --- !u!65 &1452394629
@@ -55635,8 +55699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
-  Head: 1
+  Head: 2
   Body: 1
   Leg: 1
   ShieldObj: {fileID: 104891541}
@@ -55658,6 +55721,7 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 462577934}
   P2ImplaBlock: {fileID: 1554454205}
   P2ImplaWaveBlock: {fileID: 652276406}
+  Footsteps: {fileID: 0}
   LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
   FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
   TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
@@ -55667,7 +55731,6 @@ MonoBehaviour:
   NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
   AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
   ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
-  FootstepsAS: {fileID: 1671307550}
 --- !u!114 &1671307545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55680,7 +55743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c54a8222e4f6704cbbfce120301d40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head2: 1
+  Head2: 2
   Body2: 1
   Leg2: 1
 --- !u!65 &1671307546
@@ -58959,6 +59022,84 @@ Transform:
   m_Father: {fileID: 1820907431}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1756589345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1756589346}
+  - component: {fileID: 1756589348}
+  - component: {fileID: 1756589347}
+  m_Layer: 5
+  m_Name: Winner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1756589346
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756589345}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2076338795}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -8.000122, y: -4.5}
+  m_SizeDelta: {x: 300, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1756589347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756589345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 60
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "P1\u306E\u52DD\u5229"
+--- !u!222 &1756589348
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756589345}
+  m_CullTransparentMesh: 0
 --- !u!1 &1757727270
 GameObject:
   m_ObjectHideFlags: 0
@@ -60920,6 +61061,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerText: {fileID: 1812241959}
   Second: 180
+  _textCountdown: {fileID: 532111548}
+  GameWinner: {fileID: 1756589347}
+  FinishButton: {fileID: 1255921738}
 --- !u!114 &1812241959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62405,8 +62549,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864677295}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.36, y: -4.64, z: -0.28}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: -0.7071068}
+  m_LocalPosition: {x: -7, y: -0.61, z: 8.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 848944309}
@@ -62419,7 +62563,7 @@ Transform:
   - {fileID: 1009264046}
   m_Father: {fileID: 330749803}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 180, y: -90, z: 180}
 --- !u!1 &1866325201
 GameObject:
   m_ObjectHideFlags: 0
@@ -64254,8 +64398,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920931916}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.93, y: -3.67, z: -2.7}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 15.5, y: -0.3, z: -7.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 799395734}
@@ -64268,7 +64412,7 @@ Transform:
   - {fileID: 631558600}
   m_Father: {fileID: 330749803}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1920936491
 GameObject:
   m_ObjectHideFlags: 0
@@ -65196,8 +65340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
-  Head: 2
+  Head: 1
   Body: 2
   Leg: 2
   ShieldObj: {fileID: 2061610449}
@@ -65219,6 +65362,7 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1331833807}
   P2ImplaBlock: {fileID: 464969551}
   P2ImplaWaveBlock: {fileID: 1267596023}
+  Footsteps: {fileID: 0}
   LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
   FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
   TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
@@ -65228,7 +65372,6 @@ MonoBehaviour:
   NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
   AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
   ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
-  FootstepsAS: {fileID: 1942710492}
 --- !u!114 &1942710488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65241,7 +65384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c54a8222e4f6704cbbfce120301d40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head2: 2
+  Head2: 1
   Body2: 2
   Leg2: 2
 --- !u!65 &1942710489
@@ -70199,8 +70342,10 @@ RectTransform:
   - {fileID: 623002991}
   - {fileID: 1008114435}
   - {fileID: 737547377}
-  - {fileID: 1255921736}
   - {fileID: 1325082594}
+  - {fileID: 532111547}
+  - {fileID: 1756589346}
+  - {fileID: 1255921736}
   m_Father: {fileID: 330749803}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -72153,8 +72298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
-  Head: 1
+  Head: 2
   Body: 2
   Leg: 2
   ShieldObj: {fileID: 1246508091}
@@ -72198,7 +72342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e8cc7c1c76b6a47ac18d44ca38625b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 1
+  Head: 2
   Body: 2
   Leg: 2
 --- !u!65 &2133052733
