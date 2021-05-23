@@ -5,7 +5,7 @@ using UnityEngine;
 public class KeybordPlay2 : MonoBehaviour
 {
     //体力
-    public static float Player2HP;
+    public static float Player2HP=100;
     //
     private int Gamemode = 0;
 
@@ -215,7 +215,7 @@ public class KeybordPlay2 : MonoBehaviour
                                     {
                                         P2FlogAnimator.SetBool("FlogAtkFinP1", true);
                                         //オブジェクトが消える時間
-                                        Invoke("DelayFlog", 1.0f);
+                                        Invoke("DelayFlog", 1.5f);
                                         AllActionInterval = true;
                                         //行動停止
                                         Invoke("ActionInterval", 3.0f);

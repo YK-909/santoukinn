@@ -5,7 +5,7 @@ using UnityEngine;
 public class JoyconPlay1 : MonoBehaviour
 {
     //体力
-    public static float Player1HP;
+    public static float Player1HP=100;
     //スタートの合図のため
     private int Gamemode = 0;
 
@@ -187,7 +187,7 @@ public class JoyconPlay1 : MonoBehaviour
                                     {
                                         P1FlogAnimator.SetBool("FlogAtkFinP1", true);
                                         //オブジェクトが消える時間
-                                        Invoke("DelayFlog", 1.0f);
+                                        Invoke("DelayFlog", 1.5f);
                                         AllActionInterval = true;
                                         //行動停止
                                         Invoke("ActionInterval", 3.0f);

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI TimerText;
-    public  float Second;
+    private  float Second=180;
     [SerializeField]
     private Text _textCountdown;
     public static int GameChange;
