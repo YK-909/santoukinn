@@ -475,8 +475,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8816169}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1.6346855, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 18, y: 0.63, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 509542718}
@@ -485,7 +485,7 @@ Transform:
   - {fileID: 1026769711}
   m_Father: {fileID: 1778616102}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &8816171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,7 +498,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
   Head: 1
   Body: 1
   Leg: 1
@@ -521,6 +520,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 821906426}
   P2ImplaBlock: {fileID: 1913800178}
   P2ImplaWaveBlock: {fileID: 2117667039}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &8816172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1124,6 +1133,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerText: {fileID: 21057978}
   Second: 180
+  _textCountdown: {fileID: 0}
+  GameWinner: {fileID: 0}
+  FinishButton: {fileID: 0}
 --- !u!114 &21057978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4292,8 +4304,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118815926}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1.6346855, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.6427876, z: 0, w: 0.7660445}
+  m_LocalPosition: {x: 5, y: 0.63, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 655840029}
@@ -4302,7 +4314,7 @@ Transform:
   - {fileID: 1228474875}
   m_Father: {fileID: 319894424}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -80, z: 0}
 --- !u!114 &118815928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4315,7 +4327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
   Head: 1
   Body: 1
   Leg: 2
@@ -4338,6 +4349,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 1993175671}
   P1ImplaBlock: {fileID: 1611746558}
   P1ImplaWaveBlock: {fileID: 1805006960}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &118815929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5302,8 +5323,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139478584}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1.6346855, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.6427876, z: 0, w: 0.7660445}
+  m_LocalPosition: {x: 5, y: 0.63, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1587745741}
@@ -5319,7 +5340,7 @@ Transform:
   - {fileID: 1977448532}
   m_Father: {fileID: 319894424}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -80, z: 0}
 --- !u!114 &139478586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5332,7 +5353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
   Head: 2
   Body: 1
   Leg: 1
@@ -5355,6 +5375,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 1546005705}
   P1ImplaBlock: {fileID: 1072264972}
   P1ImplaWaveBlock: {fileID: 1354507051}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &139478587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11440,8 +11470,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314744259}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1.6346855, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.6427876, z: 0, w: 0.7660445}
+  m_LocalPosition: {x: 5, y: 0.63, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 218668788}
@@ -11451,7 +11481,7 @@ Transform:
   - {fileID: 1090129905}
   m_Father: {fileID: 319894424}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -80, z: 0}
 --- !u!114 &314744261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11464,7 +11494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
   Head: 2
   Body: 2
   Leg: 1
@@ -11487,6 +11516,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 879343086}
   P1ImplaBlock: {fileID: 1947987648}
   P1ImplaWaveBlock: {fileID: 429615246}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &314744262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13145,8 +13184,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358064323}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 18, y: 0.63, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1176967659}
@@ -13156,7 +13195,7 @@ Transform:
   - {fileID: 1064141974}
   m_Father: {fileID: 1778616102}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &358064325
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13182,7 +13221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
   Head: 2
   Body: 2
   Leg: 1
@@ -13205,6 +13243,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1098797191}
   P2ImplaBlock: {fileID: 1908529514}
   P2ImplaWaveBlock: {fileID: 968580429}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &358064327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23613,8 +23661,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675251887}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1.6346855, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 18, y: 0.63, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1320598949}
@@ -23623,7 +23671,7 @@ Transform:
   - {fileID: 1229756032}
   m_Father: {fileID: 1778616102}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &675251889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23636,7 +23684,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
   Head: 2
   Body: 1
   Leg: 2
@@ -23659,6 +23706,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1800566089}
   P2ImplaBlock: {fileID: 1862987964}
   P2ImplaWaveBlock: {fileID: 1772530998}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &675251890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23730,8 +23787,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677001277}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1.6346855, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 18, y: 0.63, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2090993464}
@@ -23740,7 +23797,7 @@ Transform:
   - {fileID: 1737000108}
   m_Father: {fileID: 1778616102}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &677001279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23753,7 +23810,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
   Head: 1
   Body: 1
   Leg: 2
@@ -23776,6 +23832,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1330524506}
   P2ImplaBlock: {fileID: 307677917}
   P2ImplaWaveBlock: {fileID: 1473506108}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &677001280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39889,8 +39955,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092289910}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1.6346855, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 18, y: 0.63, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 724391102}
@@ -39899,7 +39965,7 @@ Transform:
   - {fileID: 8655967}
   m_Father: {fileID: 1778616102}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1092289912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39912,7 +39978,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
   Head: 1
   Body: 2
   Leg: 2
@@ -39935,6 +40000,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1535827784}
   P2ImplaBlock: {fileID: 995466353}
   P2ImplaWaveBlock: {fileID: 937381973}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &1092289913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41346,8 +41421,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120234274}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1.6346855, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 18, y: 0.63, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 395804053}
@@ -41363,7 +41438,7 @@ Transform:
   - {fileID: 2141395568}
   m_Father: {fileID: 1778616102}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1120234276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41376,7 +41451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
   Head: 2
   Body: 1
   Leg: 1
@@ -41399,6 +41473,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 327423586}
   P2ImplaBlock: {fileID: 893129895}
   P2ImplaWaveBlock: {fileID: 1919705615}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &1120234277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45036,8 +45120,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230659134}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1.6346855, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.6427876, z: 0, w: 0.7660445}
+  m_LocalPosition: {x: 5, y: 0.63, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 852156549}
@@ -45046,7 +45130,7 @@ Transform:
   - {fileID: 1622912368}
   m_Father: {fileID: 319894424}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -80, z: 0}
 --- !u!114 &1230659136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45059,7 +45143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
   Head: 1
   Body: 1
   Leg: 1
@@ -45082,6 +45165,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 989551741}
   P1ImplaBlock: {fileID: 2031588825}
   P1ImplaWaveBlock: {fileID: 1421953946}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &1230659137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47000,8 +47093,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297537526}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1.6346855, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 18, y: 0.63, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 871602526}
@@ -47010,7 +47103,7 @@ Transform:
   - {fileID: 1324726130}
   m_Father: {fileID: 1778616102}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1297537528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47023,7 +47116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
   Head: 2
   Body: 2
   Leg: 2
@@ -47046,6 +47138,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 2081450289}
   P2ImplaBlock: {fileID: 742449121}
   P2ImplaWaveBlock: {fileID: 305775428}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &1297537529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51924,8 +52026,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421846449}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1.6346855, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 18, y: 0.63, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 994602678}
@@ -51934,7 +52036,7 @@ Transform:
   - {fileID: 364261576}
   m_Father: {fileID: 1778616102}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1421846451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51947,7 +52049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player2HP: 100
   Head: 1
   Body: 2
   Leg: 1
@@ -51970,6 +52071,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1495483799}
   P2ImplaBlock: {fileID: 1051547642}
   P2ImplaWaveBlock: {fileID: 1796699988}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &1421846452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52348,8 +52459,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429336826}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1.6346855, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.6427876, z: 0, w: 0.7660445}
+  m_LocalPosition: {x: 5, y: 0.63, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2087783526}
@@ -52358,7 +52469,7 @@ Transform:
   - {fileID: 1596996387}
   m_Father: {fileID: 319894424}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -80, z: 0}
 --- !u!114 &1429336828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52371,7 +52482,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
   Head: 1
   Body: 2
   Leg: 1
@@ -52394,6 +52504,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 848781897}
   P1ImplaBlock: {fileID: 1698123959}
   P1ImplaWaveBlock: {fileID: 593266989}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &1429336829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55981,8 +56101,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517664052}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1.6346855, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.6427876, z: 0, w: 0.7660445}
+  m_LocalPosition: {x: 5, y: 0.63, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 603231665}
@@ -55991,7 +56111,7 @@ Transform:
   - {fileID: 2099477319}
   m_Father: {fileID: 319894424}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -80, z: 0}
 --- !u!114 &1517664054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56004,7 +56124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
   Head: 2
   Body: 2
   Leg: 2
@@ -56027,6 +56146,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 1390498559}
   P1ImplaBlock: {fileID: 624391139}
   P1ImplaWaveBlock: {fileID: 1519347322}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &1517664055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59461,8 +59590,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627633470}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1.6346855, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.6427876, z: 0, w: 0.7660445}
+  m_LocalPosition: {x: 5, y: 0.63, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1294887799}
@@ -59471,7 +59600,7 @@ Transform:
   - {fileID: 1454874670}
   m_Father: {fileID: 319894424}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -80, z: 0}
 --- !u!114 &1627633472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59484,7 +59613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
   Head: 2
   Body: 1
   Leg: 2
@@ -59507,6 +59635,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 465621374}
   P1ImplaBlock: {fileID: 2016052992}
   P1ImplaWaveBlock: {fileID: 292942787}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &1627633473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75563,8 +75701,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010493663}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7539902, y: 1.6346855, z: -3.9862769}
+  m_LocalRotation: {x: 0, y: -0.6427876, z: 0, w: 0.7660445}
+  m_LocalPosition: {x: 5, y: 0.63, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 654535184}
@@ -75573,7 +75711,7 @@ Transform:
   - {fileID: 752250539}
   m_Father: {fileID: 319894424}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -80, z: 0}
 --- !u!114 &2010493665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75586,7 +75724,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1HP: 100
   Head: 1
   Body: 2
   Leg: 2
@@ -75609,6 +75746,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 689960489}
   P1ImplaBlock: {fileID: 1045672887}
   P1ImplaWaveBlock: {fileID: 726469197}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!114 &2010493666
 MonoBehaviour:
   m_ObjectHideFlags: 0
