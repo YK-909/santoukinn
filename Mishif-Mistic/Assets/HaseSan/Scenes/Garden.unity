@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4376193, g: 0.48547626, b: 0.56575453, a: 1}
+  m_IndirectSpecularColor: {r: 0.43761885, g: 0.48547536, b: 0.5657535, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -549,38 +549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 2
-  Body: 2
-  Leg: 1
-  ShieldObj: {fileID: 2072822355}
-  ShieldPoint: 1
-  P1G: {fileID: 79983398}
-  P1R: {fileID: 1760798326}
-  Player1: {fileID: 10394545}
-  P1FlogTongue: {fileID: 68682080}
-  P1FlogAnimator: {fileID: 68682083}
-  P1ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P1SetScorpion: {fileID: 1058266846}
-  P1WolfAtk: {fileID: 1109552491}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1Lionhead: {fileID: 667525170}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1TurtleGard: {fileID: 2091979122}
-  P1ImplaBlock: {fileID: 6744023}
-  P1ImplaWaveBlock: {fileID: 731387598}
-  Footsteps: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &10394548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2716,38 +2684,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 1
-  Body: 1
-  Leg: 1
-  ShieldObj: {fileID: 1443830685}
-  ShieldPoint: 1
-  P1G: {fileID: 79983398}
-  P1R: {fileID: 1760798326}
-  Player1: {fileID: 84199015}
-  P1FlogTongue: {fileID: 550406309}
-  P1FlogAnimator: {fileID: 550406312}
-  P1ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P1SetScorpion: {fileID: 1899038814}
-  P1WolfAtk: {fileID: 850419782}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1Lionhead: {fileID: 510908167}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1TurtleGard: {fileID: 2077941441}
-  P1ImplaBlock: {fileID: 1452562887}
-  P1ImplaWaveBlock: {fileID: 816889919}
-  Footsteps: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &84199018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4646,38 +4582,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 1
-  Body: 1
-  Leg: 2
-  ShieldObj: {fileID: 1920651938}
-  ShieldPoint: 1
-  P1G: {fileID: 79983398}
-  P1R: {fileID: 1760798326}
-  Player1: {fileID: 124695543}
-  P1FlogTongue: {fileID: 1194966599}
-  P1FlogAnimator: {fileID: 1194966602}
-  P1ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P1SetScorpion: {fileID: 800964302}
-  P1WolfAtk: {fileID: 2102551051}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1Lionhead: {fileID: 1670210238}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1TurtleGard: {fileID: 2087389821}
-  P1ImplaBlock: {fileID: 2086378007}
-  P1ImplaWaveBlock: {fileID: 355226943}
-  Footsteps: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &124695546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9363,38 +9267,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 2
-  Body: 1
-  Leg: 1
-  ShieldObj: {fileID: 279996951}
-  ShieldPoint: 1
-  P1G: {fileID: 79983398}
-  P1R: {fileID: 1760798326}
-  Player1: {fileID: 270081940}
-  P1FlogTongue: {fileID: 1002872387}
-  P1FlogAnimator: {fileID: 1002872390}
-  P1ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P1SetScorpion: {fileID: 1416344200}
-  P1WolfAtk: {fileID: 1940889270}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1Lionhead: {fileID: 1469975407}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1TurtleGard: {fileID: 702955132}
-  P1ImplaBlock: {fileID: 2073569663}
-  P1ImplaWaveBlock: {fileID: 236113841}
-  Footsteps: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &270081943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9678,38 +9550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 2
-  Body: 2
-  Leg: 2
-  ShieldObj: {fileID: 151345656}
-  ShieldPoint: 1
-  P2G: {fileID: 162990724}
-  P2R: {fileID: 1985211918}
-  Player2: {fileID: 273608015}
-  P2FlogTongue: {fileID: 1712059790}
-  P2FlogAnimator: {fileID: 1712059793}
-  ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P2SetScorpion: {fileID: 1346828418}
-  P2WolfAtk: {fileID: 342209887}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2Lionhead: {fileID: 1697049242}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2TurtleGard: {fileID: 1171299755}
-  P2ImplaBlock: {fileID: 1218054956}
-  P2ImplaWaveBlock: {fileID: 414007826}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &273608018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13653,6 +13493,36 @@ Transform:
   m_Father: {fileID: 1942710486}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &372354371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1797534831}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 372354372}
+  m_Layer: 0
+  m_Name: Tree (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &372354372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1797534831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372354371}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &373456776
 GameObject:
   m_ObjectHideFlags: 0
@@ -16689,38 +16559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 1
-  Body: 1
-  Leg: 2
-  ShieldObj: {fileID: 2133130419}
-  ShieldPoint: 1
-  P2G: {fileID: 162990724}
-  P2R: {fileID: 1985211918}
-  Player2: {fileID: 465090306}
-  P2FlogTongue: {fileID: 1195278223}
-  P2FlogAnimator: {fileID: 1195278226}
-  ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P2SetScorpion: {fileID: 1258635385}
-  P2WolfAtk: {fileID: 1761492304}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2Lionhead: {fileID: 364663500}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2TurtleGard: {fileID: 584981078}
-  P2ImplaBlock: {fileID: 1446530318}
-  P2ImplaWaveBlock: {fileID: 1224819591}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &465090309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17353,38 +17191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 2
-  Body: 2
-  Leg: 1
-  ShieldObj: {fileID: 1056041602}
-  ShieldPoint: 1
-  P2G: {fileID: 162990724}
-  P2R: {fileID: 1985211918}
-  Player2: {fileID: 472187407}
-  P2FlogTongue: {fileID: 1080919554}
-  P2FlogAnimator: {fileID: 1080919557}
-  ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P2SetScorpion: {fileID: 1246109018}
-  P2WolfAtk: {fileID: 1687497147}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2Lionhead: {fileID: 2008966819}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2TurtleGard: {fileID: 1997259575}
-  P2ImplaBlock: {fileID: 320193626}
-  P2ImplaWaveBlock: {fileID: 1744926522}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &472187410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23063,38 +22869,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 2
-  Body: 1
-  Leg: 2
-  ShieldObj: {fileID: 530316540}
-  ShieldPoint: 1
-  P2G: {fileID: 162990724}
-  P2R: {fileID: 1985211918}
-  Player2: {fileID: 631558599}
-  P2FlogTongue: {fileID: 226368393}
-  P2FlogAnimator: {fileID: 226368396}
-  ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P2SetScorpion: {fileID: 358240132}
-  P2WolfAtk: {fileID: 1712811721}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2Lionhead: {fileID: 797564795}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2TurtleGard: {fileID: 1389505779}
-  P2ImplaBlock: {fileID: 1839529023}
-  P2ImplaWaveBlock: {fileID: 387081267}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &631558602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28475,38 +28249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 1
-  Body: 2
-  Leg: 1
-  ShieldObj: {fileID: 1328490649}
-  ShieldPoint: 1
-  P2G: {fileID: 162990724}
-  P2R: {fileID: 1985211918}
-  Player2: {fileID: 799395733}
-  P2FlogTongue: {fileID: 539470483}
-  P2FlogAnimator: {fileID: 539470486}
-  ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P2SetScorpion: {fileID: 1963794593}
-  P2WolfAtk: {fileID: 1354241561}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2Lionhead: {fileID: 1516026083}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2TurtleGard: {fileID: 1921241917}
-  P2ImplaBlock: {fileID: 496396106}
-  P2ImplaWaveBlock: {fileID: 81910335}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &799395737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30051,38 +29793,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 1
-  Body: 2
-  Leg: 1
-  ShieldObj: {fileID: 147225438}
-  ShieldPoint: 1
-  P1G: {fileID: 79983398}
-  P1R: {fileID: 1760798326}
-  Player1: {fileID: 848944308}
-  P1FlogTongue: {fileID: 710796035}
-  P1FlogAnimator: {fileID: 710796038}
-  P1ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P1SetScorpion: {fileID: 239461468}
-  P1WolfAtk: {fileID: 12023367}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1Lionhead: {fileID: 1701313230}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1TurtleGard: {fileID: 443750728}
-  P1ImplaBlock: {fileID: 1512109943}
-  P1ImplaWaveBlock: {fileID: 562796648}
-  Footsteps: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &848944311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32866,7 +32576,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61cc300a871db0b44ac2bc3c4f906160, type: 3}
@@ -34655,38 +34365,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 2
-  Body: 1
-  Leg: 2
-  ShieldObj: {fileID: 965370632}
-  ShieldPoint: 1
-  P1G: {fileID: 79983398}
-  P1R: {fileID: 1760798326}
-  Player1: {fileID: 1009264045}
-  P1FlogTongue: {fileID: 1833045414}
-  P1FlogAnimator: {fileID: 1833045417}
-  P1ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P1SetScorpion: {fileID: 228625317}
-  P1WolfAtk: {fileID: 743522005}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1Lionhead: {fileID: 550497618}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1TurtleGard: {fileID: 307477275}
-  P1ImplaBlock: {fileID: 2132864921}
-  P1ImplaWaveBlock: {fileID: 626674276}
-  Footsteps: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &1009264048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35822,7 +35500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: b544816461f324e56a39767fdeb5b114, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: b544816461f324e56a39767fdeb5b114, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -44954,38 +44632,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 1
-  Body: 1
-  Leg: 1
-  ShieldObj: {fileID: 920727406}
-  ShieldPoint: 1
-  P2G: {fileID: 162990724}
-  P2R: {fileID: 1985211918}
-  Player2: {fileID: 1324903864}
-  P2FlogTongue: {fileID: 126074565}
-  P2FlogAnimator: {fileID: 126074568}
-  ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P2SetScorpion: {fileID: 1145751346}
-  P2WolfAtk: {fileID: 974192383}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2Lionhead: {fileID: 92473396}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2TurtleGard: {fileID: 762123085}
-  P2ImplaBlock: {fileID: 1204736833}
-  P2ImplaWaveBlock: {fileID: 561680100}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &1324903867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49254,38 +48900,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 1
-  Body: 2
-  Leg: 2
-  ShieldObj: {fileID: 1986249826}
-  ShieldPoint: 1
-  P1G: {fileID: 79983398}
-  P1R: {fileID: 1760798326}
-  Player1: {fileID: 1452394625}
-  P1FlogTongue: {fileID: 977407353}
-  P1FlogAnimator: {fileID: 977407356}
-  P1ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P1SetScorpion: {fileID: 1983727034}
-  P1WolfAtk: {fileID: 1236430549}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1Lionhead: {fileID: 87865036}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1TurtleGard: {fileID: 236584512}
-  P1ImplaBlock: {fileID: 1003074759}
-  P1ImplaWaveBlock: {fileID: 698411177}
-  Footsteps: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &1452394628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55699,38 +55313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 2
-  Body: 1
-  Leg: 1
-  ShieldObj: {fileID: 104891541}
-  ShieldPoint: 1
-  P2G: {fileID: 162990724}
-  P2R: {fileID: 1985211918}
-  Player2: {fileID: 1671307542}
-  P2FlogTongue: {fileID: 1146247693}
-  P2FlogAnimator: {fileID: 1146247696}
-  ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P2SetScorpion: {fileID: 1432253433}
-  P2WolfAtk: {fileID: 1313378146}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2Lionhead: {fileID: 1911476419}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2TurtleGard: {fileID: 462577934}
-  P2ImplaBlock: {fileID: 1554454205}
-  P2ImplaWaveBlock: {fileID: 652276406}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &1671307545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61059,11 +60641,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e219297c53967214e9648f891fd0ae84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimerText: {fileID: 1812241959}
-  Second: 180
-  _textCountdown: {fileID: 532111548}
-  GameWinner: {fileID: 1756589347}
-  FinishButton: {fileID: 1255921738}
 --- !u!114 &1812241959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65340,38 +64917,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 1
-  Body: 2
-  Leg: 2
-  ShieldObj: {fileID: 2061610449}
-  ShieldPoint: 1
-  P2G: {fileID: 162990724}
-  P2R: {fileID: 1985211918}
-  Player2: {fileID: 1942710485}
-  P2FlogTongue: {fileID: 833762387}
-  P2FlogAnimator: {fileID: 833762390}
-  ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P2SetScorpion: {fileID: 1848690284}
-  P2WolfAtk: {fileID: 1867539809}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2Lionhead: {fileID: 2017561123}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P2TurtleGard: {fileID: 1331833807}
-  P2ImplaBlock: {fileID: 464969551}
-  P2ImplaWaveBlock: {fileID: 1267596023}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &1942710488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72298,38 +71843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 2
-  Body: 2
-  Leg: 2
-  ShieldObj: {fileID: 1246508091}
-  ShieldPoint: 1
-  P1G: {fileID: 79983398}
-  P1R: {fileID: 1760798326}
-  Player1: {fileID: 2133052729}
-  P1FlogTongue: {fileID: 1224176777}
-  P1FlogAnimator: {fileID: 1224176780}
-  P1ScorpionBullet: {fileID: 7594620443687686967, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
-    type: 3}
-  P1SetScorpion: {fileID: 1567728670}
-  P1WolfAtk: {fileID: 1512315969}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1Lionhead: {fileID: 530855491}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
-  P1TurtleGard: {fileID: 311261294}
-  P1ImplaBlock: {fileID: 1654217190}
-  P1ImplaWaveBlock: {fileID: 1252167870}
-  Footsteps: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
-  LionBite: {fileID: 8300000, guid: ddc3015db00eb874c9c5202974e1aa1b, type: 3}
-  FrogTongueAttack: {fileID: 8300000, guid: 684fc2038dbac604095bf710c3b8b894, type: 3}
-  TurtleShield: {fileID: 8300000, guid: a64fcf7f6339ea148a3839c4a2f65ab6, type: 3}
-  ScorpionNeedle: {fileID: 8300000, guid: 1f4c2dbcfd4db2b42829aaf7fa2b4005, type: 3}
-  ImpalaJump: {fileID: 8300000, guid: c99213cc1e3f4ca468e1fc061fcac2b8, type: 3}
-  WolfScratch: {fileID: 8300000, guid: 3549712ab813e7846af492303f6067a7, type: 3}
-  NormalShield: {fileID: 8300000, guid: e40f1187f2f20ec4997f53d0540d3617, type: 3}
-  AllCharacterJump: {fileID: 8300000, guid: b56a043c8133f154199f19928242f8aa, type: 3}
-  ShieldBreakSound: {fileID: 8300000, guid: 14068737146250b41a1c3956106f85de, type: 3}
 --- !u!114 &2133052732
 MonoBehaviour:
   m_ObjectHideFlags: 0
