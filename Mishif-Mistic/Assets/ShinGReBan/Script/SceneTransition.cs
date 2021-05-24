@@ -7,8 +7,8 @@ namespace SelectCharacter
 {
     public class SceneTransition : MonoBehaviour
     {
-        public AudioClip DecesionSound;
-        AudioSource audioSource;
+        /*public AudioClip DecesionSound;
+        AudioSource audioSource;*/
 
         private MyGameManagerData myGameManagerData;
 
@@ -16,7 +16,7 @@ namespace SelectCharacter
         void Start()
         {
             //Componentを取得
-            audioSource = GetComponent<AudioSource>();
+            //audioSource = GetComponent<AudioSource>();
 
             myGameManagerData = FindObjectOfType<MyGameManager>().GetMyGameManagerData();
         }
@@ -45,7 +45,7 @@ namespace SelectCharacter
             myGameManagerData.SetNextSceneName(stage);
 
             //音鳴らす
-            audioSource.PlayOneShot(DecesionSound);
+            //audioSource.PlayOneShot(DecesionSound);
 
             Invoke("GoToOtherScene", 1.0f);
         }

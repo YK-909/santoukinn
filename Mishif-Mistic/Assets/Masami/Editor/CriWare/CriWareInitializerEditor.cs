@@ -250,7 +250,8 @@ public class CriWareInitializerEditor : Editor
 			EditorGUI.indentLevel -= 1;
 			EditorGUILayout.EndToggleGroup();
 
-
+			GenToggleField("Dont Initialize On Awake", "", ref initializer.dontInitializeOnAwake);
+			GenToggleField("Dont Destroy On Load", "", ref initializer.dontDestroyOnLoad);
 		}
 		if (GUI.changed) {
 			EditorUtility.SetDirty(initializer);
