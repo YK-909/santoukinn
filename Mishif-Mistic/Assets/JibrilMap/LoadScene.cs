@@ -26,4 +26,14 @@ public class LoadScene: MonoBehaviour
         //audioSource.PlayOneShot(TitleDecesionSound);
 
     }
+
+    public void InvokeTitle()
+    {
+        SceneManager.LoadScene(m_BackScene);
+    }
+
+    public void LoadSceneButtonTitle()
+    {
+        Invoke("InvokeTitle", 1.0f);
+    }
 }
