@@ -102,6 +102,8 @@ public class KeybordPlay2 : MonoBehaviour
     {
         P2FlogTongue.SetActive(false);
         P2TurtleGard.SetActive(false);
+        P2Lionhead.SetActive(false);
+        P2WolfAtk.SetActive(false);
         Rb = GetComponent<Rigidbody>();
         P2collider = GetComponent<Collider>();
         P2collider.isTrigger = false;
@@ -232,6 +234,7 @@ public class KeybordPlay2 : MonoBehaviour
 
                                     if (LionSwitch == true)
                                     {
+                                        P2Lionhead.SetActive(true);
                                         AllActionInterval = true;
                                         P2Lionhead.tag = "P2LionAttack";
                                         Rb.AddForce(transform.forward * 20f, ForceMode.Impulse);
@@ -342,6 +345,7 @@ public class KeybordPlay2 : MonoBehaviour
 
                                     if (WolfSwitch == true)
                                     {
+                                        P2WolfAtk.SetActive(true);
                                         AllActionInterval = true;
                                         P2WolfAtk.tag = "P2WolfAttack";
                                         Rb.AddForce(transform.forward * 30f, ForceMode.Impulse);
@@ -467,6 +471,7 @@ public class KeybordPlay2 : MonoBehaviour
     void LionAttackTime()
     {
         //攻撃判定がある状態、分かりやすく現在は色を変更
+        P2Lionhead.SetActive(false);
         P2Lionhead.tag = "Player";
         P2Lionhead.GetComponent<Renderer>().material.color = P2LionNormal.color;
     }
@@ -505,6 +510,7 @@ public class KeybordPlay2 : MonoBehaviour
     void WolfAttackTime()
     {
         //攻撃判定がある状態、分かりやすく現在は色を変更
+        P2WolfAtk.SetActive(false);
         P2WolfAtk.tag = "Player2";
         P2WolfAtk.GetComponent<Renderer>().material.color = P2WolfNormal.color;
     }
