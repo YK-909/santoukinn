@@ -57,11 +57,9 @@ public class Player1leg : MonoBehaviour
     */
     private int Dir = 0;
 
-    public int WeponType { private set; get; }
+    private bool _flag;
 
-    //AudioComponent
-    public AudioClip UpDownSound;
-    AudioSource audioSource;
+    public int WeponType { private set; get; }
 
     //AnimaruLevelが3の時の設定
     public void SetLevelThree()
@@ -250,32 +248,48 @@ public class Player1leg : MonoBehaviour
     {
         SetLevelThree();
 
-        //AudioComponent取得
-        audioSource = GetComponent<AudioSource>();
+        var h1 = Input.GetAxis("Horizontal1");
+        var v1 = Input.GetAxis("Vertical1");
+
+        var h2 = Input.GetAxis("Horizontal2");
+        var v2 = Input.GetAxis("Vertical2");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B) && !SlideFlag)
+        if (_flag)
         {
-            SlideFlag = true;
-            PosFlag = true;
-            Dir = 0;
+            if (Input.GetAxisRaw("Vertical") < 0 && !SlideFlag)
+            {
+                SlideFlag = true;
+                PosFlag = true;
+                Dir = 0;
+            }
+            if (0 < Input.GetAxisRaw("Vertical") && !SlideFlag)
+            {
+                SlideFlag = true;
+                PosFlag = true;
+                Dir = 1;
+            }
 
-            //音鳴らす
-            audioSource.PlayOneShot(UpDownSound);
+            SlideWepon();
         }
-        if (Input.GetKeyDown(KeyCode.N) && !SlideFlag)
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("ChooseArea"))
         {
-            SlideFlag = true;
-            PosFlag = true;
-            Dir = 1;
-
-            //音鳴らす
-            audioSource.PlayOneShot(UpDownSound);
+            _flag = true;
         }
+    }
 
-        SlideWepon();
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("ChooseArea"))
+        {
+            _flag = false;
+        }
     }
 }
