@@ -101,7 +101,9 @@ public class JoyconPlay1 : MonoBehaviour
     void Start()
     {
         P1FlogTongue.SetActive(false);
+        P1Lionhead.SetActive(false);
         P1TurtleGard.SetActive(false);
+        P1WolfAtk.SetActive(false);
         Rb = GetComponent<Rigidbody>();
         P1collider = GetComponent<Collider>();
         P1collider.isTrigger = false;
@@ -205,6 +207,7 @@ public class JoyconPlay1 : MonoBehaviour
                                         {
                                             AllActionInterval = true;
                                             P1Lionhead.tag = "P1LionAttack";
+                                            P1Lionhead.SetActive(true);
                                             Rb.AddForce(transform.forward * 20f, ForceMode.Impulse);
                                             P1Lionhead.GetComponent<Renderer>().material.color = P1LionColor.color;
                                             LionSwitch = false;
@@ -314,6 +317,7 @@ public class JoyconPlay1 : MonoBehaviour
 
                                         if (WolfSwitch == true)
                                         {
+                                            P1WolfAtk.SetActive(true);
                                             AllActionInterval = true;
                                             P1WolfAtk.tag = "P2WolfAttack";
                                             Rb.AddForce(transform.forward * 30f, ForceMode.Impulse);
@@ -440,6 +444,7 @@ public class JoyconPlay1 : MonoBehaviour
     void LionAttackTime()
     {
         //攻撃判定がある状態、分かりやすく現在は色を変更
+        P1Lionhead.SetActive(false);
         P1Lionhead.tag = "Player1";
         P1Lionhead.GetComponent<Renderer>().material.color = P1LionNormal.color;
     }
@@ -478,6 +483,7 @@ public class JoyconPlay1 : MonoBehaviour
     void WolfAttackTime()
     {
         //攻撃判定がある状態、分かりやすく現在は色を変更
+        P1WolfAtk.SetActive(false);
         P1WolfAtk.tag = "Player1";
         P1WolfAtk.GetComponent<Renderer>().material.color = P1WolfNormal.color;
     }
