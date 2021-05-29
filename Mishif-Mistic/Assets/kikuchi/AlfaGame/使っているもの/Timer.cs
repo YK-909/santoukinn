@@ -13,13 +13,11 @@ public class Timer : MonoBehaviour
     public static int GameChange;
     [SerializeField]
     private Text GameWinner;
-    public Button FinishButton;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        FinishButton.gameObject.SetActive(false);
         _textCountdown.text = "";
         GameWinner.text = "";
         StartCoroutine(CountdownCoroutine());
@@ -59,13 +57,13 @@ public class Timer : MonoBehaviour
             {
                 GameWinner.text = "P2の勝利";
                 GameChange = 2;
-                FinishButton.gameObject.SetActive(true);
+        
             }
             else if (KeybordPlay2.GetP2HP() <= 0)
             {
                 GameWinner.text = "P1の勝利";
                 GameChange = 2;
-                FinishButton.gameObject.SetActive(true);
+             
             }
             //制限時間による勝敗
             if (Second <= 0)
@@ -74,13 +72,13 @@ public class Timer : MonoBehaviour
                 {
                     GameWinner.text = "P2の勝利";
                     GameChange = 2;
-                    FinishButton.gameObject.SetActive(true);
+               
                 }
                 else if (KeybordPlay2.GetP2HP() < JoyconPlay1.GetP1HP())
                 {
                     GameWinner.text = "P1の勝利";
                     GameChange = 2;
-                    FinishButton.gameObject.SetActive(true);
+               
                 }
             }
         }

@@ -36,7 +36,7 @@ public class JoyconPlay1 : MonoBehaviour
     public GameObject P1G;
     public GameObject P1R;
     //座標からHPが10ごと減少した際の値
-    private float HP10per = -34.5f;
+    private float HP10per = -34.7f;
 
     //無敵時間の生成
     private bool Invincible = false;
