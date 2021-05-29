@@ -36,7 +36,7 @@ public class KeybordPlay2 : MonoBehaviour
     public GameObject P2G;
     public GameObject P2R;
     //座標からHPが10ごと減少した際の値
-    private float HP10per = 34.5f;
+    private float HP10per = 34.7f;
 
     //無敵時間の生成
     private bool Invincible = false;
