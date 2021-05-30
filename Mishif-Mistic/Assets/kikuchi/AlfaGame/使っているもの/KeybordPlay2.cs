@@ -88,7 +88,7 @@ public class KeybordPlay2 : MonoBehaviour
     //キャラの向きを常に一定に
     private GameObject EnemyObj;
 
-    //AudioComponent
+    /*//AudioComponent
     public AudioClip Footsteps;
     public AudioClip LionBite;
     public AudioClip FrogTongueAttack;
@@ -99,7 +99,9 @@ public class KeybordPlay2 : MonoBehaviour
     public AudioClip NormalShield;
     public AudioClip AllCharacterJump;
     public AudioClip ShieldBreakSound;
-    AudioSource audioSource;
+    AudioSource audioSource;*/
+
+
 
     void Start()
     {
@@ -114,7 +116,7 @@ public class KeybordPlay2 : MonoBehaviour
         EnemyObj = GameObject.Find("P1camera");
 
         //AudioComponent取得
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -320,7 +322,7 @@ public class KeybordPlay2 : MonoBehaviour
                                 if (Input.GetKeyDown(KeyCode.C))
                                 {
                                     //音鳴らす
-                                    //  audioSource.PlayOneShot(ImpalaJump);
+                                    // audioSource.PlayOneShot(ImpalaJump);
 
                                     if (Implajump == true)
                                     {
@@ -456,7 +458,7 @@ public class KeybordPlay2 : MonoBehaviour
             Invoke("ShieldBreak", 5f);
 
             //音鳴らす
-            audioSource.PlayOneShot(ShieldBreakSound);
+            //audioSource.PlayOneShot(ShieldBreakSound);
         }
 
         if (this.transform.position.y <= 0 && P2collider.isTrigger == true)
