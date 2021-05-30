@@ -85,6 +85,9 @@ public class JoyconPlay1 : MonoBehaviour
     //透過させるために
     private Collider P1collider;
 
+    //キャラの向きを常に一定に
+    private GameObject EnemyObj;
+
     //AudioComponent
     public AudioClip Footsteps;
     public AudioClip LionBite;
@@ -108,6 +111,7 @@ public class JoyconPlay1 : MonoBehaviour
         P1collider = GetComponent<Collider>();
         P1collider.isTrigger = false;
         Rb.isKinematic = true;
+        EnemyObj = GameObject.Find("P2camera");
 
         //AudioComponent取得
         audioSource = GetComponent<AudioSource>();
@@ -158,6 +162,10 @@ public class JoyconPlay1 : MonoBehaviour
                             {
                                 //向きを指定
                                 transform.rotation = Quaternion.LookRotation(Direction);
+                            }
+                            else
+                            {
+                                transform.LookAt(EnemyObj.transform);
                             }
                             //前方に移動する
                             transform.position += Direction * Speed * Time.deltaTime;

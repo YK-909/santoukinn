@@ -85,6 +85,9 @@ public class KeybordPlay2 : MonoBehaviour
     //透過させるために
     private Collider P2collider;
 
+    //キャラの向きを常に一定に
+    private GameObject EnemyObj;
+
     //AudioComponent
     public AudioClip Footsteps;
     public AudioClip LionBite;
@@ -108,6 +111,7 @@ public class KeybordPlay2 : MonoBehaviour
         P2collider = GetComponent<Collider>();
         P2collider.isTrigger = false;
         Rb.isKinematic = true;
+        EnemyObj = GameObject.Find("P1camera");
 
         //AudioComponent取得
         audioSource = GetComponent<AudioSource>();
@@ -154,7 +158,7 @@ public class KeybordPlay2 : MonoBehaviour
                             if (Input.GetKey(KeyCode.UpArrow))
                             {
                                 //キャラクターが指定の向きを向く
-                                transform.rotation = Quaternion.Euler(0, -90, 0);
+                                transform.rotation = Quaternion.Euler(0, 0, 0);
                                 //前方に移動する
                                 transform.position += transform.forward * Speed * Time.deltaTime;
 
@@ -164,7 +168,7 @@ public class KeybordPlay2 : MonoBehaviour
                             else if (Input.GetKey(KeyCode.DownArrow))
                             {
                                 //キャラクターが指定の向きを向く
-                                transform.rotation = Quaternion.Euler(0, 90, 0);
+                                transform.rotation = Quaternion.Euler(0, 180, 0);
                                 //前方に移動する
                                 transform.position += transform.forward * Speed * Time.deltaTime;
 
@@ -174,7 +178,7 @@ public class KeybordPlay2 : MonoBehaviour
                             else if (Input.GetKey(KeyCode.RightArrow))
                             {
                                 //キャラクターが指定の向きを向く
-                                transform.rotation = Quaternion.Euler(0, 0, 0);
+                                transform.rotation = Quaternion.Euler(0, 90, 0);
                                 //前方に移動する
                                 transform.position += transform.forward * Speed * Time.deltaTime;
 
@@ -184,12 +188,16 @@ public class KeybordPlay2 : MonoBehaviour
                             else if (Input.GetKey(KeyCode.LeftArrow))
                             {
                                 //キャラクターが指定の向きを向く
-                                transform.rotation = Quaternion.Euler(0, 180, 0);
+                                transform.rotation = Quaternion.Euler(0, -90, 0);
                                 //前方に移動する
                                 transform.position += transform.forward * Speed * Time.deltaTime;
 
                                 //音鳴らす
                                 //audioSource.PlayOneShot(Footsteps);
+                            }
+                            else
+                            {
+                                transform.LookAt(EnemyObj.transform);
                             }
                         }
 
