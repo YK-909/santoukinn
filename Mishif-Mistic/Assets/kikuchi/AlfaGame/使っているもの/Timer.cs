@@ -15,7 +15,10 @@ public class Timer : MonoBehaviour
     private Text GameWinner;
 
     //ADX設定
-    private CriAtomSource atomSrc;
+    public CriAtomSource CountSrc;
+    public CriAtomSource BGMSrc;
+    string cueSheetBGM = "GardenBGM";
+    string cueSheetCount = "CountDownSE";
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +28,12 @@ public class Timer : MonoBehaviour
         StartCoroutine(CountdownCoroutine());
 
         //CriAtomSourceを取得
-        atomSrc = (CriAtomSource)GetComponent("CriAtomSource");
+        CountSrc = (CriAtomSource)GetComponent("CriAtomSource");
+        BGMSrc = (CriAtomSource)GetComponent("CriAtomSource");
+        CriAtomExAcb BGMacb = CriAtom.GetAcb(cueSheetBGM);
+        CriAtomExAcb Countacb = CriAtom.GetAcb(cueSheetCount);
+        BGMSrc.cueSheet = cueSheetBGM;
+        CountSrc.cueSheet = cueSheetCount;
     }
 
     IEnumerator CountdownCoroutine()
@@ -93,19 +101,20 @@ public class Timer : MonoBehaviour
 
         if (_textCountdown.text == "3")
         {
-            atomSrc.Play(0);
+            CountSrc.Play("CountDown_Single");
         }
         else if (_textCountdown.text == "2")
         {
-            atomSrc.Play(0);
+            CountSrc.Play("CountDown_Single");
         }
         else if (_textCountdown.text == "1")
         {
-            atomSrc.Play(0);
+            CountSrc.Play("CountDown_Single");
         }
         else if (_textCountdown.text == "GO!")
         {
-            atomSrc.Play(1);
+            CountSrc.Play("CountDown_Finish");
+            BGMSrc.Play("Battle");
         }
     }
 
