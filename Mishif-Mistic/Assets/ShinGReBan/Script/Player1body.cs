@@ -260,13 +260,13 @@ public class Player1body : MonoBehaviour
     {
         if (_flag)
         {
-            if (Input.GetAxisRaw("Vertical") < 0 && !SlideFlag)
+            if (Input.GetKeyDown(KeyCode.W) && !SlideFlag)
             {
                 SlideFlag = true;
                 PosFlag = true;
                 Dir = 0;
             }
-            if (0 < Input.GetAxisRaw("Vertical") && !SlideFlag)
+            if (Input.GetKeyDown(KeyCode.S) && !SlideFlag)
             {
                 SlideFlag = true;
                 PosFlag = true;

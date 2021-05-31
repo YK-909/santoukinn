@@ -59,6 +59,8 @@ public class Player1leg : MonoBehaviour
 
     private bool _flag;
 
+    Button buttonA;
+
     public int WeponType { private set; get; }
 
     //AnimaruLevelが3の時の設定
@@ -248,11 +250,8 @@ public class Player1leg : MonoBehaviour
     {
         SetLevelThree();
 
-        var h1 = Input.GetAxis("Horizontal1");
-        var v1 = Input.GetAxis("Vertical1");
-
-        var h2 = Input.GetAxis("Horizontal2");
-        var v2 = Input.GetAxis("Vertical2");
+        //インパラのため一時
+        buttonA = GameObject.Find("Canvas/Button").GetComponent<Button>();
     }
 
     // Update is called once per frame
@@ -260,13 +259,13 @@ public class Player1leg : MonoBehaviour
     {
         if (_flag)
         {
-            if (Input.GetAxisRaw("Vertical") < 0 && !SlideFlag)
+            if (Input.GetKeyDown(KeyCode.W) && !SlideFlag)
             {
                 SlideFlag = true;
                 PosFlag = true;
                 Dir = 0;
             }
-            if (0 < Input.GetAxisRaw("Vertical") && !SlideFlag)
+            if (Input.GetKeyDown(KeyCode.S) && !SlideFlag)
             {
                 SlideFlag = true;
                 PosFlag = true;
@@ -274,6 +273,15 @@ public class Player1leg : MonoBehaviour
             }
 
             SlideWepon();
+        }
+
+        if (ContloleLeg.leg == 1 || ContloleLeg2.leg2 == 1)
+        {
+            buttonA.interactable = false;
+        }
+        else
+        {
+            buttonA.interactable = true;
         }
     }
 

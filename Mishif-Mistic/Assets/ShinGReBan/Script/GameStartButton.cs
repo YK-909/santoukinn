@@ -19,23 +19,7 @@ namespace SelectCharacter
         // Update is called once per frame
         void Update()
         {
-            if (ContloleLeg.leg == 1)
-            {
-                this.gameObject.SetActive(false);
-            }
-            else
-            {
-                this.gameObject.SetActive(true);
-            }
 
-            if(ContloleLeg2.leg2 == 1)
-            {
-                this.gameObject.SetActive(false);
-            }
-            else
-            {
-                this.gameObject.SetActive(true);
-            }
         }
 
         public void OnGameStart()
