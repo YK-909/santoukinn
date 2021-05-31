@@ -567,6 +567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 299633110}
   - component: {fileID: 299633111}
+  - component: {fileID: 299633112}
   m_Layer: 0
   m_Name: CountDown_Single(CriAtomSource)
   m_TagString: Untagged
@@ -601,7 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playOnStart: 0
-  _cueName: CountDown_Single
+  _cueName: CountDown_Finish
   _cueSheet: CountDownSE
   _regionOnStart: {fileID: 0}
   _listenerOnStart: {fileID: 0}
@@ -611,6 +612,21 @@ MonoBehaviour:
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
+--- !u!114 &299633112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299633109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e219297c53967214e9648f891fd0ae84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimerText: {fileID: 1585651371}
+  _textCountdown: {fileID: 2128521842}
+  GameWinner: {fileID: 614377358}
 --- !u!1 &388267084
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,6 +759,90 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &408771831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 408771833}
+  - component: {fileID: 408771832}
+  - component: {fileID: 408771834}
+  m_Layer: 0
+  m_Name: Water4AdvancedReflectionCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!20 &408771832
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408771831}
+  m_Enabled: 0
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 1}
+  m_projectionMatrixMode: 0
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967279
+  m_RenderingPath: 1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &408771833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408771831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 53.34, z: -20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &408771834
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408771831}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 0}
 --- !u!1 &421307715
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,7 +964,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427463019}
-  m_LocalRotation: {x: -0.22265211, y: 0.074388064, z: 0.017041415, w: 0.9719064}
+  m_LocalRotation: {x: -0.21705943, y: 0.053251944, z: 0.011859686, w: 0.9746327}
   m_LocalPosition: {x: 497, y: -58.66, z: 319.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1225,6 +1325,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &614377358 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6552868311636610230, guid: 52a1b0b47e403ed4699e98e5e708930a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7308325044173537390}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &626700154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,7 +2049,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 21.976189
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -1962,7 +2074,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.2226521, y: 0.074388064, z: -0.01704141, w: 0.9719064}
+  m_LocalRotation: {x: 0.21705942, y: 0.05325195, z: -0.011859686, w: 0.9746327}
   m_LocalPosition: {x: 497, y: 112, z: 319.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2032,7 +2144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playOnStart: 1
+  _playOnStart: 0
   _cueName: Battle
   _cueSheet: GardenBGM
   _regionOnStart: {fileID: 0}
@@ -2748,6 +2860,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1585651371 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3666387709811003022, guid: 52a1b0b47e403ed4699e98e5e708930a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7308325044173537390}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1635318694
 GameObject:
   m_ObjectHideFlags: 0
@@ -3436,6 +3560,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2128521842 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9171455788547880476, guid: 52a1b0b47e403ed4699e98e5e708930a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7308325044173537390}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2144068106
 GameObject:
   m_ObjectHideFlags: 0
@@ -3547,25 +3683,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4261292726154325264, guid: 52a1b0b47e403ed4699e98e5e708930a,
+        type: 3}
+      propertyPath: SingleCue
+      value: 
+      objectReference: {fileID: 299633111}
     - target: {fileID: 7609765730205786138, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2226521
+      value: 0.21705942
       objectReference: {fileID: 0}
     - target: {fileID: 7609765730205786138, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.074388064
+      value: 0.05325195
       objectReference: {fileID: 0}
     - target: {fileID: 7609765730205786138, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.01704141
+      value: -0.011859686
       objectReference: {fileID: 0}
     - target: {fileID: 7609765730205786138, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9719064
+      value: 0.9746327
       objectReference: {fileID: 0}
     - target: {fileID: 8852071761424511884, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}

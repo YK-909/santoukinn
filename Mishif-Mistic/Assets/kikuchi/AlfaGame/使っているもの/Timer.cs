@@ -14,6 +14,8 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private Text GameWinner;
 
+    //ADX設定
+    private CriAtomSource atomSrc;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,9 @@ public class Timer : MonoBehaviour
         _textCountdown.text = "";
         GameWinner.text = "";
         StartCoroutine(CountdownCoroutine());
+
+        //CriAtomSourceを取得
+        atomSrc = (CriAtomSource)GetComponent("CriAtomSource");
     }
 
     IEnumerator CountdownCoroutine()
@@ -29,11 +34,14 @@ public class Timer : MonoBehaviour
 
         _textCountdown.text = "3";
         yield return new WaitForSeconds(1.0f);
+        
 
         _textCountdown.text = "2";
+        //SingleCue.Play();
         yield return new WaitForSeconds(1.0f);
 
         _textCountdown.text = "1";
+        //SingleCue.Play();
         yield return new WaitForSeconds(1.0f);
 
         _textCountdown.text = "GO!";
@@ -81,6 +89,23 @@ public class Timer : MonoBehaviour
                
                 }
             }
+        }
+
+        if (_textCountdown.text == "3")
+        {
+            atomSrc.Play(0);
+        }
+        else if (_textCountdown.text == "2")
+        {
+            atomSrc.Play(0);
+        }
+        else if (_textCountdown.text == "1")
+        {
+            atomSrc.Play(0);
+        }
+        else if (_textCountdown.text == "GO!")
+        {
+            atomSrc.Play(1);
         }
     }
 
