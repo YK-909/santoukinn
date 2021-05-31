@@ -28,8 +28,6 @@ public class Timer : MonoBehaviour
         StartCoroutine(CountdownCoroutine());
 
         //CriAtomSourceを取得
-        CountSrc = (CriAtomSource)GetComponent("CriAtomSource");
-        BGMSrc = (CriAtomSource)GetComponent("CriAtomSource");
         CriAtomExAcb BGMacb = CriAtom.GetAcb(cueSheetBGM);
         CriAtomExAcb Countacb = CriAtom.GetAcb(cueSheetCount);
         BGMSrc.cueSheet = cueSheetBGM;
