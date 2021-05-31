@@ -194,7 +194,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2074513390}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &138267058
 MonoBehaviour:
@@ -587,7 +587,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2074513390}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &299633111
 MonoBehaviour:
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playOnStart: 0
-  _cueName: CountDown_Finish
+  _cueName: CountDown_Single
   _cueSheet: CountDownSE
   _regionOnStart: {fileID: 0}
   _listenerOnStart: {fileID: 0}
@@ -627,6 +627,8 @@ MonoBehaviour:
   TimerText: {fileID: 1585651371}
   _textCountdown: {fileID: 2128521842}
   GameWinner: {fileID: 614377358}
+  CountSrc: {fileID: 299633111}
+  BGMSrc: {fileID: 965062698}
 --- !u!1 &388267084
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,7 +966,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427463019}
-  m_LocalRotation: {x: -0.21705943, y: 0.053251944, z: 0.011859686, w: 0.9746327}
+  m_LocalRotation: {x: -0.22265211, y: 0.074388064, z: 0.017041415, w: 0.9719064}
   m_LocalPosition: {x: 497, y: -58.66, z: 319.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1631,7 +1633,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1.3167e-41, z: 0, w: 0.000000003594323}
+  m_BoundingSphereOverride: {x: 0, y: 3.0548e-41, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2049,7 +2051,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 21.976189
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -2074,7 +2076,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.21705942, y: 0.05325195, z: -0.011859686, w: 0.9746327}
+  m_LocalRotation: {x: 0.2226521, y: 0.074388064, z: -0.01704141, w: 0.9719064}
   m_LocalPosition: {x: 497, y: 112, z: 319.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2125,6 +2127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 965062699}
   - component: {fileID: 965062698}
+  - component: {fileID: 965062700}
   m_Layer: 0
   m_Name: Battle(CriAtomSource)
   m_TagString: Untagged
@@ -2167,8 +2170,25 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2074513390}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &965062700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965062697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e219297c53967214e9648f891fd0ae84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimerText: {fileID: 1585651371}
+  _textCountdown: {fileID: 2128521842}
+  GameWinner: {fileID: 614377358}
+  CountSrc: {fileID: 299633111}
+  BGMSrc: {fileID: 965062698}
 --- !u!1 &1009058300
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,6 +2536,94 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1224958901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1224958902}
+  - component: {fileID: 1224958904}
+  - component: {fileID: 1224958903}
+  m_Layer: 0
+  m_Name: Garden_Footsteps(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1224958902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224958901}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2074513390}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1224958903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224958901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Head: 0
+  Body: 0
+  Leg: 0
+  ShieldObj: {fileID: 0}
+  ShieldPoint: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  Player2: {fileID: 0}
+  P2FlogTongue: {fileID: 0}
+  P2FlogAnimator: {fileID: 0}
+  ScorpionBullet: {fileID: 0}
+  P2SetScorpion: {fileID: 0}
+  P2WolfAtk: {fileID: 0}
+  P2WolfNormal: {fileID: 0}
+  P2WolfColor: {fileID: 0}
+  P2Lionhead: {fileID: 0}
+  P2LionNormal: {fileID: 0}
+  P2LionColor: {fileID: 0}
+  P2TurtleGard: {fileID: 0}
+  P2ImplaBlock: {fileID: 0}
+  P2ImplaWaveBlock: {fileID: 0}
+--- !u!114 &1224958904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224958901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Garden_Footsteps
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &1264396706
 GameObject:
   m_ObjectHideFlags: 0
@@ -3169,7 +3277,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2074513390}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1797906706
 MonoBehaviour:
@@ -3412,6 +3520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2039282895}
   - component: {fileID: 2039282896}
+  - component: {fileID: 2039282897}
   m_Layer: 0
   m_Name: Lion_Bite(CriAtomSource)
   m_TagString: Untagged
@@ -3456,6 +3565,39 @@ MonoBehaviour:
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
+--- !u!114 &2039282897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039282894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be441e4459dfa64ca25a3813b8ae751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Head: 0
+  Body: 0
+  Leg: 0
+  ShieldObj: {fileID: 0}
+  ShieldPoint: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  Player2: {fileID: 0}
+  P2FlogTongue: {fileID: 0}
+  P2FlogAnimator: {fileID: 0}
+  ScorpionBullet: {fileID: 0}
+  P2SetScorpion: {fileID: 0}
+  P2WolfAtk: {fileID: 0}
+  P2WolfNormal: {fileID: 0}
+  P2WolfColor: {fileID: 0}
+  P2Lionhead: {fileID: 0}
+  P2LionNormal: {fileID: 0}
+  P2LionColor: {fileID: 0}
+  P2TurtleGard: {fileID: 0}
+  P2ImplaBlock: {fileID: 0}
+  P2ImplaWaveBlock: {fileID: 0}
 --- !u!1 &2074513388
 GameObject:
   m_ObjectHideFlags: 0
@@ -3553,6 +3695,7 @@ Transform:
   - {fileID: 774149662}
   - {fileID: 1089639059}
   - {fileID: 582087536}
+  - {fileID: 1224958902}
   - {fileID: 138267057}
   - {fileID: 1797906705}
   - {fileID: 299633110}
@@ -3691,22 +3834,22 @@ PrefabInstance:
     - target: {fileID: 7609765730205786138, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.21705942
+      value: 0.2226521
       objectReference: {fileID: 0}
     - target: {fileID: 7609765730205786138, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.05325195
+      value: 0.074388064
       objectReference: {fileID: 0}
     - target: {fileID: 7609765730205786138, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.011859686
+      value: -0.01704141
       objectReference: {fileID: 0}
     - target: {fileID: 7609765730205786138, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9746327
+      value: 0.9719064
       objectReference: {fileID: 0}
     - target: {fileID: 8852071761424511884, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
