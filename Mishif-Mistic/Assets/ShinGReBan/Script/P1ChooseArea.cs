@@ -17,13 +17,12 @@ public class P1ChooseArea : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //左傾き
-        if (Input.GetAxisRaw("Horizontal") < 0)
+        if (Input.GetKeyDown(KeyCode.A))
         {
             transform.Translate(-160, 0, 0);
         }
-        //右傾き
-        else if (0 < Input.GetAxisRaw("Horizontal"))
+
+        if (Input.GetKeyDown(KeyCode.D))
         {
             transform.Translate(160, 0, 0);
         }
