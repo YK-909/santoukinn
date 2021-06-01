@@ -648,6 +648,7 @@ GameObject:
   - component: {fileID: 173235608}
   - component: {fileID: 173235610}
   - component: {fileID: 173235609}
+  - component: {fileID: 173235611}
   m_Layer: 0
   m_Name: SlotDecision(CriAtomSource)
   m_TagString: Untagged
@@ -676,7 +677,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173235607}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecbdf192e91493a4fbad9e5c0e78270c, type: 3}
   m_Name: 
@@ -704,6 +705,18 @@ MonoBehaviour:
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
+--- !u!114 &173235611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173235607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce6ceccb3d86dd40a57ab75b64bdff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &209840524
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,7 +768,7 @@ MonoBehaviour:
   _listenerOnStart: {fileID: 0}
   _use3dPositioning: 1
   _loop: 0
-  _volume: 1
+  _volume: 0.5
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
@@ -3324,7 +3337,7 @@ MonoBehaviour:
   _listenerOnStart: {fileID: 0}
   _use3dPositioning: 1
   _loop: 0
-  _volume: 1
+  _volume: 0.5
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
@@ -5408,6 +5421,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 173235609}
+        m_MethodName: PlayAndStopSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
