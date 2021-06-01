@@ -101,7 +101,15 @@ public class KeybordPlay2 : MonoBehaviour
     public AudioClip ShieldBreakSound;
     AudioSource audioSource;*/
 
-   // private CriAtomSource atomSrc;
+    public CriAtomSource AnimalFSSrc;
+    public CriAtomSource LionSrc;
+    public CriAtomSource FrogSwingSrc;
+    public CriAtomSource TurtleShieldOPSrc;
+    public CriAtomSource ScorpionSrc;
+    public CriAtomSource ImpalaJumpSrc;
+    public CriAtomSource WolfSrc;
+    public CriAtomSource AnimalJumpSrc;
+    public CriAtomSource AnimalShieldOPSrc;
 
     void Start()
     {
@@ -119,7 +127,6 @@ public class KeybordPlay2 : MonoBehaviour
         //audioSource = GetComponent<AudioSource>();
 
         //CriAtomSourceを取得
-       // atomSrc = (CriAtomSource)GetComponent("CriAtomSource");
     }
 
     // Update is called once per frame
@@ -170,7 +177,7 @@ public class KeybordPlay2 : MonoBehaviour
                                 //音鳴らす
                                 //audioSource.PlayOneShot(Footsteps);
 
-                                //atomSrc.Play(7);
+                                AnimalFSSrc.Play();
                             }
                             else if (Input.GetKey(KeyCode.DownArrow))
                             {
@@ -182,7 +189,7 @@ public class KeybordPlay2 : MonoBehaviour
                                 //音鳴らす
                                 // audioSource.PlayOneShot(Footsteps);
 
-                               // atomSrc.Play(7);
+                                AnimalFSSrc.Play();
                             }
                             else if (Input.GetKey(KeyCode.RightArrow))
                             {
@@ -194,7 +201,7 @@ public class KeybordPlay2 : MonoBehaviour
                                 //音鳴らす
                                 //audioSource.PlayOneShot(Footsteps);
 
-                              //  atomSrc.Play(7);
+                                AnimalFSSrc.Play();
                             }
                             else if (Input.GetKey(KeyCode.LeftArrow))
                             {
@@ -206,7 +213,7 @@ public class KeybordPlay2 : MonoBehaviour
                                 //音鳴らす
                                 //audioSource.PlayOneShot(Footsteps);
 
-                                //atomSrc.Play(7);
+                                AnimalFSSrc.Play();
                             }
                             else
                             {
@@ -224,7 +231,7 @@ public class KeybordPlay2 : MonoBehaviour
                                     //音鳴らす
                                     // audioSource.PlayOneShot(FrogTongueAttack);
 
-                                  //  atomSrc.Play(6);
+                                    FrogSwingSrc.Play();
 
                                     if (FlogSwitch == true)
                                     {
@@ -255,7 +262,7 @@ public class KeybordPlay2 : MonoBehaviour
                                     //音鳴らす
                                     //audioSource.PlayOneShot(LionBite);
 
-                                  //  atomSrc.Play(0);
+                                    LionSrc.Play();
 
                                     if (LionSwitch == true)
                                     {
@@ -285,7 +292,7 @@ public class KeybordPlay2 : MonoBehaviour
                                         //音鳴らす
                                         // audioSource.PlayOneShot(TurtleShield);
 
-                                       // atomSrc.Play(3);
+                                        TurtleShieldOPSrc.Play();
 
                                         if (Gard == true)
                                         {
@@ -313,7 +320,7 @@ public class KeybordPlay2 : MonoBehaviour
                                         //音鳴らす
                                         // audioSource.PlayOneShot(ScorpionNeedle);
 
-                                      //  atomSrc.Play(2);
+                                        ScorpionSrc.Play();
 
                                         if (ScorpionAtk == true)
                                         {
@@ -343,7 +350,7 @@ public class KeybordPlay2 : MonoBehaviour
                                     //音鳴らす
                                     // audioSource.PlayOneShot(ImpalaJump);
 
-                                //    atomSrc.Play(5);
+                                    ImpalaJumpSrc.Play();
 
                                     if (Implajump == true)
                                     {
@@ -374,7 +381,7 @@ public class KeybordPlay2 : MonoBehaviour
                                     //音鳴らす
                                     //audioSource.PlayOneShot(WolfScratch);
 
-                                 //   atomSrc.Play(4);
+                                    WolfSrc.Play();
 
                                     if (WolfSwitch == true)
                                     {
@@ -403,6 +410,8 @@ public class KeybordPlay2 : MonoBehaviour
                 {
                     //音鳴らす
                     //audioSource.PlayOneShot(NormalShield);
+
+                    AnimalShieldOPSrc.Play();
 
                     if (NormalJump == false)
                     {
@@ -450,6 +459,8 @@ public class KeybordPlay2 : MonoBehaviour
 
                                 //音鳴らす
                                 // audioSource.PlayOneShot(AllCharacterJump);
+
+                                AnimalJumpSrc.Play();
                             }
                         }
                     }
