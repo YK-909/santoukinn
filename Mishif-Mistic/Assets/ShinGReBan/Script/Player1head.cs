@@ -61,6 +61,9 @@ public class Player1head : MonoBehaviour
 
     public int WeponType { private set; get; }
 
+    //ADX設定
+    public CriAtomSource SwitchSlotUDSrc;
+
     //AnimaruLevelが3の時の設定
     public void SetLevelThree()
     {
@@ -265,12 +268,18 @@ public class Player1head : MonoBehaviour
                 SlideFlag = true;
                 PosFlag = true;
                 Dir = 0;
+
+                //音鳴らす
+                SwitchSlotUDSrc.Play();
             }
             if (Input.GetKeyDown(KeyCode.S) && !SlideFlag)
             {
                 SlideFlag = true;
                 PosFlag = true;
                 Dir = 1;
+
+                //音鳴らす
+                SwitchSlotUDSrc.Play();
             }
 
             SlideWepon();
