@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class P1ChooseArea : MonoBehaviour
 {
+    public CriAtomSource SwitchSlotLRSrc;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +22,17 @@ public class P1ChooseArea : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             transform.Translate(-160, 0, 0);
+
+            //音鳴らす
+            SwitchSlotLRSrc.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
             transform.Translate(160, 0, 0);
+
+            //音鳴らす
+            SwitchSlotLRSrc.Play();
         }
     }
 }

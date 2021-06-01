@@ -88,18 +88,16 @@ public class JoyconPlay1 : MonoBehaviour
     //キャラの向きを常に一定に
     private GameObject EnemyObj;
 
-    //AudioComponent
-    public AudioClip Footsteps;
-    public AudioClip LionBite;
-    public AudioClip FrogTongueAttack;
-    public AudioClip TurtleShield;
-    public AudioClip ScorpionNeedle;
-    public AudioClip ImpalaJump;
-    public AudioClip WolfScratch;
-    public AudioClip NormalShield;
-    public AudioClip AllCharacterJump;
-    public AudioClip ShieldBreakSound;
-    AudioSource audioSource;
+    //ADX設定
+    public CriAtomSource AnimalFSSrc;
+    public CriAtomSource LionSrc;
+    public CriAtomSource FrogSwingSrc;
+    public CriAtomSource TurtleShieldOPSrc;
+    public CriAtomSource ScorpionSrc;
+    public CriAtomSource ImpalaJumpSrc;
+    public CriAtomSource WolfSrc;
+    public CriAtomSource AnimalJumpSrc;
+    public CriAtomSource AnimalShieldOPSrc;
 
     void Start()
     {
@@ -113,8 +111,6 @@ public class JoyconPlay1 : MonoBehaviour
         Rb.isKinematic = true;
         EnemyObj = GameObject.Find("P2camera");
 
-        //AudioComponent取得
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -144,7 +140,7 @@ public class JoyconPlay1 : MonoBehaviour
                                     Speed = Sprintspeed;
 
                                     //音鳴らす
-                                    audioSource.PlayOneShot(Footsteps);
+                                    AnimalFSSrc.Play();
                                 }
                                 else
                                 {
@@ -181,7 +177,7 @@ public class JoyconPlay1 : MonoBehaviour
                                 if (Input.GetKeyDown(KeyCode.Joystick1Button3))
                                 {
                                     //音鳴らす
-                                    audioSource.PlayOneShot(FrogTongueAttack);
+                                    FrogSwingSrc.Play();
 
                                     if (FlogSwitch == true)
                                     {
@@ -209,7 +205,7 @@ public class JoyconPlay1 : MonoBehaviour
                                     if (Input.GetKey(KeyCode.Joystick1Button3))
                                     {
                                         //音鳴らす
-                                        audioSource.PlayOneShot(LionBite);
+                                        LionSrc.Play();
 
                                         if (LionSwitch == true)
                                         {
@@ -238,7 +234,7 @@ public class JoyconPlay1 : MonoBehaviour
                                         if (Input.GetKeyUp(KeyCode.Joystick1Button1))
                                         {
                                             //音鳴らす
-                                            audioSource.PlayOneShot(TurtleShield);
+                                            TurtleShieldOPSrc.Play();
 
                                             if (Gard == true)
                                             {
@@ -264,7 +260,7 @@ public class JoyconPlay1 : MonoBehaviour
                                         if (Input.GetKeyUp(KeyCode.Joystick1Button1))
                                         {
                                             //音鳴らす
-                                            audioSource.PlayOneShot(ScorpionNeedle);
+                                            ScorpionSrc.Play();
 
                                             if (ScorpionAtk == true)
                                             {
@@ -292,7 +288,7 @@ public class JoyconPlay1 : MonoBehaviour
                                     if (Input.GetKeyDown(KeyCode.Joystick1Button0))
                                     {
                                         //音鳴らす
-                                        audioSource.PlayOneShot(ImpalaJump);
+                                        ImpalaJumpSrc.Play();
 
                                         if (Implajump == true)
                                         {
@@ -321,7 +317,7 @@ public class JoyconPlay1 : MonoBehaviour
                                     if (Input.GetKey(KeyCode.Joystick1Button0))
                                     {
                                         //音鳴らす
-                                        audioSource.PlayOneShot(WolfScratch);
+                                        WolfSrc.Play();
 
                                         if (WolfSwitch == true)
                                         {
@@ -351,7 +347,7 @@ public class JoyconPlay1 : MonoBehaviour
             if (Input.GetKey(KeyCode.Joystick2Button15) || Input.GetKey(KeyCode.Joystick1Button15))
             {
                 //音鳴らす
-                audioSource.PlayOneShot(NormalShield);
+                AnimalShieldOPSrc.Play();
 
                 if (NormalJump == false)
                 {
@@ -398,7 +394,7 @@ public class JoyconPlay1 : MonoBehaviour
                             NormalJump = true;
 
                             //音鳴らす
-                            audioSource.PlayOneShot(AllCharacterJump);
+                            AnimalJumpSrc.Play();
                         }
                     }
                 }
@@ -429,7 +425,7 @@ public class JoyconPlay1 : MonoBehaviour
             Invoke("ShieldBreak", 5f);
 
             //音鳴らす
-            audioSource.PlayOneShot(ShieldBreakSound);
+            //audioSource.PlayOneShot(ShieldBreakSound);
         }
 
         if (this.transform.position.y <= 0 && P1collider.isTrigger == true)
