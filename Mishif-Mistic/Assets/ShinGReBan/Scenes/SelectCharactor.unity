@@ -552,7 +552,6 @@ GameObject:
   - component: {fileID: 173235608}
   - component: {fileID: 173235610}
   - component: {fileID: 173235609}
-  - component: {fileID: 173235611}
   m_Layer: 0
   m_Name: SlotDecision(CriAtomSource)
   m_TagString: Untagged
@@ -609,18 +608,6 @@ MonoBehaviour:
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
---- !u!114 &173235611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173235607}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cce6ceccb3d86dd40a57ab75b64bdff9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &209840524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2884,7 +2871,7 @@ MonoBehaviour:
   initializesAtom: 1
   atomConfig:
     acfFileName: 
-    maxVirtualVoices: 32
+    maxVirtualVoices: 42
     maxVoiceLimitGroups: 32
     maxCategories: 32
     maxSequenceEventsPerFrame: 2
@@ -2893,8 +2880,8 @@ MonoBehaviour:
       memoryVoices: 16
       streamingVoices: 8
     hcaMxVoicePoolConfig:
-      memoryVoices: 0
-      streamingVoices: 0
+      memoryVoices: 16
+      streamingVoices: 2
     outputSamplingRate: 0
     usesInGamePreview: 0
     inGamePreviewMode: 0
@@ -5126,7 +5113,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 173235609}
+      - m_Target: {fileID: 0}
         m_MethodName: PlayAndStopSound
         m_Mode: 1
         m_Arguments:
