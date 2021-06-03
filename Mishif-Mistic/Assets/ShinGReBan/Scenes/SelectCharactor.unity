@@ -551,7 +551,6 @@ GameObject:
   m_Component:
   - component: {fileID: 173235608}
   - component: {fileID: 173235610}
-  - component: {fileID: 173235609}
   m_Layer: 0
   m_Name: SlotDecision(CriAtomSource)
   m_TagString: Untagged
@@ -573,18 +572,6 @@ Transform:
   m_Father: {fileID: 1129857081}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &173235609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173235607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbdf192e91493a4fbad9e5c0e78270c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &173235610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3166,13 +3153,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acfFile: MischiefMystic.acf
   cueSheets:
-  - name: SlotSE
-    acbFile: SlotSE.acb
-    awbFile: SlotSE.awb
-    loaderStatus: 0
   - name: UISE
     acbFile: UISE.acb
     awbFile: UISE.awb
+    loaderStatus: 0
+  - name: SlotSE
+    acbFile: SlotSE.acb
+    awbFile: SlotSE.awb
     loaderStatus: 0
   dspBusSetting: 
   dontDestroyOnLoad: 1
@@ -5036,6 +5023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be1837b49d05114ca6fd26b4dfeb34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SlotDecisionSrc: {fileID: 173235610}
 --- !u!114 &1957915655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5109,17 +5097,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: PlayAndStopSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
