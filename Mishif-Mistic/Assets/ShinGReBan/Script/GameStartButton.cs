@@ -9,6 +9,8 @@ namespace SelectCharacter
     {
         private SceneTransition sceneTransition;
 
+        //ADX設定
+        public CriAtomSource SlotDecisionSrc;
 
         // Start is called before the first frame update
         void Start()
@@ -24,6 +26,9 @@ namespace SelectCharacter
 
         public void OnGameStart()
         {
+            //音鳴らす
+            SlotDecisionSrc.Play();
+
             Invoke("OnGameStart2", 2.0f);
         }
 
