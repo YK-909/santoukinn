@@ -87,6 +87,7 @@ public class JoyconPlay1 : MonoBehaviour
 
     //キャラの向きを常に一定に
     private GameObject EnemyObj;
+    private Vector3 Enemy;
 
     //ADX設定
     public CriAtomSource AnimalFSSrc;
@@ -161,7 +162,8 @@ public class JoyconPlay1 : MonoBehaviour
                             }
                             else
                             {
-                                transform.LookAt(EnemyObj.transform);
+                                Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
+                                transform.LookAt(Enemy);
                             }
                             //前方に移動する
                             transform.position += Direction * Speed * Time.deltaTime;
