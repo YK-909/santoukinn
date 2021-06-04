@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662fe3d1519ebc649b3ed953e7a5a17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  Player: {fileID: 0}
+  playerID: 2
+  Player: {fileID: 3909010202124309293}
 --- !u!1 &2750677633124722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,7 +1794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ffbefe9607f19468921371abd94961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &222762637725856849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2710,7 +2710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ffbefe9607f19468921371abd94961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &288001251902681751
 GameObject:
   m_ObjectHideFlags: 0
@@ -4480,8 +4480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662fe3d1519ebc649b3ed953e7a5a17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  Player: {fileID: 0}
+  playerID: 2
+  Player: {fileID: 743488160567621177}
 --- !u!1 &614181032385038054
 GameObject:
   m_ObjectHideFlags: 0
@@ -5106,7 +5106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951dff18cc69ec34d9e9d64b8539e02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &686631910046638150
 GameObject:
   m_ObjectHideFlags: 0
@@ -6367,7 +6367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951dff18cc69ec34d9e9d64b8539e02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &860071826900925273
 GameObject:
   m_ObjectHideFlags: 0
@@ -6579,7 +6579,6 @@ GameObject:
   - component: {fileID: 743488160567621177}
   - component: {fileID: 7186463959983357707}
   - component: {fileID: 7210298229243798540}
-  - component: {fileID: 2170742054893268621}
   - component: {fileID: 4440353458181032522}
   m_Layer: 0
   m_Name: FSW
@@ -6684,112 +6683,15 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1562858753444108555}
   P2ImplaBlock: {fileID: 608130789239574866}
   P2ImplaWaveBlock: {fileID: 5925938293822385961}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
---- !u!82 &2170742054893268621
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 888054778717906543}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &4440353458181032522
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6797,7 +6699,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888054778717906543}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
@@ -7361,7 +7263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341cfde1fe6a11f4c8783a0b3b880e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &999862256281295993
 GameObject:
   m_ObjectHideFlags: 0
@@ -7620,16 +7522,15 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 1326314566160348814}
   P1ImplaBlock: {fileID: 3734402319062978163}
   P1ImplaWaveBlock: {fileID: 8472768054696188903}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &5287588075869975925
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7637,7 +7538,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019777702442220638}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -7906,16 +7807,15 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 7252082298722720607}
   P2ImplaBlock: {fileID: 1348469038147416}
   P2ImplaWaveBlock: {fileID: 983183502787695945}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &3568971173309122983
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7923,7 +7823,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028512831960741080}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -8019,7 +7919,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028512831960741080}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
@@ -9078,7 +8978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  FlogCouter: {fileID: 0}
+  FlogCouter: {fileID: 1208134907717038163}
 --- !u!1 &1209493091273354213
 GameObject:
   m_ObjectHideFlags: 0
@@ -12135,7 +12035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  FlogCouter: {fileID: 0}
+  FlogCouter: {fileID: 1628901090316001271}
 --- !u!1 &1643085890207705780
 GameObject:
   m_ObjectHideFlags: 0
@@ -12882,8 +12782,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675bbbc397ba3ef4082c3b3f779f12ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  FlogCouter: {fileID: 0}
+  playerID: 2
+  FlogCouter: {fileID: 1755320659109519478}
 --- !u!1 &1757510328590415470
 GameObject:
   m_ObjectHideFlags: 0
@@ -13439,8 +13339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662fe3d1519ebc649b3ed953e7a5a17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  Player: {fileID: 0}
+  playerID: 2
+  Player: {fileID: 881204617983482888}
 --- !u!1 &1824463685765242234
 GameObject:
   m_ObjectHideFlags: 0
@@ -13689,8 +13589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662fe3d1519ebc649b3ed953e7a5a17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  Player: {fileID: 0}
+  playerID: 2
+  Player: {fileID: 5793935260949814815}
 --- !u!1 &1848589949164875325
 GameObject:
   m_ObjectHideFlags: 0
@@ -14079,7 +13979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  FlogCouter: {fileID: 0}
+  FlogCouter: {fileID: 1885808786928078980}
 --- !u!1 &1889631600996205431
 GameObject:
   m_ObjectHideFlags: 0
@@ -15646,7 +15546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  Player: {fileID: 0}
+  Player: {fileID: 786496188588605672}
 --- !u!1 &2090513246272023951
 GameObject:
   m_ObjectHideFlags: 0
@@ -16651,7 +16551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  Player: {fileID: 0}
+  Player: {fileID: 6349114070462090005}
 --- !u!1 &2191251503961323670
 GameObject:
   m_ObjectHideFlags: 0
@@ -16758,7 +16658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ffbefe9607f19468921371abd94961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &2192734079471662874
 GameObject:
   m_ObjectHideFlags: 0
@@ -17726,8 +17626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675bbbc397ba3ef4082c3b3f779f12ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  FlogCouter: {fileID: 0}
+  playerID: 2
+  FlogCouter: {fileID: 2316210752388520258}
 --- !u!1 &2316909819959854504
 GameObject:
   m_ObjectHideFlags: 0
@@ -18958,16 +18858,15 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 8212117289243161243}
   P2ImplaBlock: {fileID: 1838441399131953885}
   P2ImplaWaveBlock: {fileID: 8891223178466306683}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &6147669937738003627
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18975,7 +18874,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2510057100206385101}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -19071,7 +18970,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2510057100206385101}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
@@ -19316,7 +19215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  Player: {fileID: 0}
+  Player: {fileID: 2437240148631352955}
 --- !u!1 &2521678327878690444
 GameObject:
   m_ObjectHideFlags: 0
@@ -21297,7 +21196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341cfde1fe6a11f4c8783a0b3b880e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &2831377108627931003
 GameObject:
   m_ObjectHideFlags: 0
@@ -22003,16 +21902,15 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 4708300806846850186}
   P1ImplaBlock: {fileID: 2190263247500958439}
   P1ImplaWaveBlock: {fileID: 4133588499714441413}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &1176601046755034548
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22020,7 +21918,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2923439466402619703}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -23451,7 +23349,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3139058846964642432}
-  m_LocalRotation: {x: 0.2170594, y: 0.053251915, z: -0.011859677, w: 0.9746327}
+  m_LocalRotation: {x: 0.21705942, y: 0.05325195, z: -0.011859686, w: 0.9746327}
   m_LocalPosition: {x: -0.7000122, y: 73.5, z: -177.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -23918,8 +23816,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662fe3d1519ebc649b3ed953e7a5a17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  Player: {fileID: 0}
+  playerID: 2
+  Player: {fileID: 1722954623052369572}
 --- !u!136 &4840565854473406782
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24684,7 +24582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  FlogCouter: {fileID: 0}
+  FlogCouter: {fileID: 3276526172460186748}
 --- !u!1 &3277854498131144804
 GameObject:
   m_ObjectHideFlags: 0
@@ -24863,16 +24761,15 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 7267899178145520019}
   P1ImplaBlock: {fileID: 8995840155935591235}
   P1ImplaWaveBlock: {fileID: 4880635336086921801}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &5894274369475949284
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24880,7 +24777,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3287021079392991140}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -26288,16 +26185,15 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 3615906038703050178}
   P1ImplaBlock: {fileID: 3830263508086928502}
   P1ImplaWaveBlock: {fileID: 8770651131498190803}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &2796969237576255451
 AudioSource:
   m_ObjectHideFlags: 0
@@ -26305,7 +26201,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3470965109135230818}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -26990,8 +26886,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675bbbc397ba3ef4082c3b3f779f12ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  FlogCouter: {fileID: 0}
+  playerID: 2
+  FlogCouter: {fileID: 3566045532132383129}
 --- !u!1 &3570632697111037605
 GameObject:
   m_ObjectHideFlags: 0
@@ -27542,7 +27438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ffbefe9607f19468921371abd94961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &3622682434705239342
 GameObject:
   m_ObjectHideFlags: 0
@@ -27789,7 +27685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951dff18cc69ec34d9e9d64b8539e02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &3645375447335505335
 GameObject:
   m_ObjectHideFlags: 0
@@ -28413,7 +28309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  Player: {fileID: 0}
+  Player: {fileID: 4015664051184983168}
 --- !u!1 &3740002754809023429
 GameObject:
   m_ObjectHideFlags: 0
@@ -29050,7 +28946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341cfde1fe6a11f4c8783a0b3b880e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &3818234208578861909
 GameObject:
   m_ObjectHideFlags: 0
@@ -29301,7 +29197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  Player: {fileID: 0}
+  Player: {fileID: 4832996420311496253}
 --- !u!1 &3831349653229411369
 GameObject:
   m_ObjectHideFlags: 0
@@ -29551,7 +29447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341cfde1fe6a11f4c8783a0b3b880e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &3852138341255100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -31652,7 +31548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ffbefe9607f19468921371abd94961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &4144746404774476556
 GameObject:
   m_ObjectHideFlags: 0
@@ -33488,16 +33384,15 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 6938625012089233453}
   P1ImplaBlock: {fileID: 2087149790351830337}
   P1ImplaWaveBlock: {fileID: 844203022900335108}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &6702012579051847983
 AudioSource:
   m_ObjectHideFlags: 0
@@ -33505,7 +33400,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4394856289621701595}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -35295,6 +35190,8 @@ MonoBehaviour:
   TimerText: {fileID: 3666387709811003022}
   _textCountdown: {fileID: 9171455788547880476}
   GameWinner: {fileID: 6552868311636610230}
+  CountSrc: {fileID: 0}
+  BGMSrc: {fileID: 0}
 --- !u!1 &4633734762896020779
 GameObject:
   m_ObjectHideFlags: 0
@@ -35630,7 +35527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ffbefe9607f19468921371abd94961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &4662591795722280104
 GameObject:
   m_ObjectHideFlags: 0
@@ -36311,16 +36208,15 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 8581414113636356429}
   P1ImplaBlock: {fileID: 2516027005902073086}
   P1ImplaWaveBlock: {fileID: 8011076177904368435}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &527233998290572913
 AudioSource:
   m_ObjectHideFlags: 0
@@ -36328,7 +36224,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4723411092853684667}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -37767,7 +37663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951dff18cc69ec34d9e9d64b8539e02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &4903186429928412041
 GameObject:
   m_ObjectHideFlags: 0
@@ -38617,16 +38513,15 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 8828542520079011259}
   P1ImplaBlock: {fileID: 7344671510640219817}
   P1ImplaWaveBlock: {fileID: 1848589949164875325}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &7447937191527326774
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38634,7 +38529,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5010432344435259304}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -40763,8 +40658,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675bbbc397ba3ef4082c3b3f779f12ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  FlogCouter: {fileID: 0}
+  playerID: 2
+  FlogCouter: {fileID: 5320507913180699448}
 --- !u!1 &5324965988930578366
 GameObject:
   m_ObjectHideFlags: 0
@@ -40987,16 +40882,15 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 4465194945799513927}
   P1ImplaBlock: {fileID: 8120552457750261315}
   P1ImplaWaveBlock: {fileID: 9003116381554720392}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &841282730878677043
 AudioSource:
   m_ObjectHideFlags: 0
@@ -41004,7 +40898,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5334755814731135544}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -42173,7 +42067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951dff18cc69ec34d9e9d64b8539e02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &5508324060598976678
 GameObject:
   m_ObjectHideFlags: 0
@@ -43413,8 +43307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662fe3d1519ebc649b3ed953e7a5a17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  Player: {fileID: 0}
+  playerID: 2
+  Player: {fileID: 5635723268791210173}
 --- !u!1 &5683323430838480726
 GameObject:
   m_ObjectHideFlags: 0
@@ -44320,16 +44214,15 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 7754258251937462429}
   P2ImplaBlock: {fileID: 1820762263251672484}
   P2ImplaWaveBlock: {fileID: 2830217811417930413}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &4146371244448824461
 AudioSource:
   m_ObjectHideFlags: 0
@@ -44337,7 +44230,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5783783858865356792}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -44433,7 +44326,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5783783858865356792}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
@@ -45653,7 +45546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341cfde1fe6a11f4c8783a0b3b880e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &5928183683611598394
 GameObject:
   m_ObjectHideFlags: 0
@@ -45860,7 +45753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  FlogCouter: {fileID: 0}
+  FlogCouter: {fileID: 5960565450645277151}
 --- !u!1 &5968556675105207892
 GameObject:
   m_ObjectHideFlags: 0
@@ -46505,7 +46398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951dff18cc69ec34d9e9d64b8539e02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &6093059681928663219
 GameObject:
   m_ObjectHideFlags: 0
@@ -47110,8 +47003,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662fe3d1519ebc649b3ed953e7a5a17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  Player: {fileID: 0}
+  playerID: 2
+  Player: {fileID: 801629912250497115}
 --- !u!1 &6147476877599053574
 GameObject:
   m_ObjectHideFlags: 0
@@ -50968,8 +50861,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675bbbc397ba3ef4082c3b3f779f12ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  FlogCouter: {fileID: 0}
+  playerID: 2
+  FlogCouter: {fileID: 6626695914348485958}
 --- !u!1 &6627238668934383767
 GameObject:
   m_ObjectHideFlags: 0
@@ -52454,7 +52347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  FlogCouter: {fileID: 0}
+  FlogCouter: {fileID: 6798351762571014499}
 --- !u!1 &6802354190776786064
 GameObject:
   m_ObjectHideFlags: 0
@@ -53163,8 +53056,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675bbbc397ba3ef4082c3b3f779f12ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  FlogCouter: {fileID: 0}
+  playerID: 2
+  FlogCouter: {fileID: 6900606610922325961}
 --- !u!1 &6907610617467577134
 GameObject:
   m_ObjectHideFlags: 0
@@ -53485,7 +53378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  FlogCouter: {fileID: 0}
+  FlogCouter: {fileID: 6919585982502690952}
 --- !u!1 &6920807584209827981
 GameObject:
   m_ObjectHideFlags: 0
@@ -54936,7 +54829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ffbefe9607f19468921371abd94961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &7111123450693665068
 GameObject:
   m_ObjectHideFlags: 0
@@ -55882,8 +55775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662fe3d1519ebc649b3ed953e7a5a17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  Player: {fileID: 0}
+  playerID: 2
+  Player: {fileID: 3743873003992093578}
 --- !u!1 &7206367781017106437
 GameObject:
   m_ObjectHideFlags: 0
@@ -56258,16 +56151,15 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 6441024232844621036}
   P2ImplaBlock: {fileID: 5676460352653856096}
   P2ImplaWaveBlock: {fileID: 8238962928515272647}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &5304775830799796174
 AudioSource:
   m_ObjectHideFlags: 0
@@ -56275,7 +56167,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7232085260413412453}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -56371,7 +56263,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7232085260413412453}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
@@ -57509,7 +57401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  Player: {fileID: 0}
+  Player: {fileID: 3563816127567050671}
 --- !u!1 &7346909880546671087
 GameObject:
   m_ObjectHideFlags: 0
@@ -59898,7 +59790,6 @@ GameObject:
   - component: {fileID: 1722954623052369572}
   - component: {fileID: 7870197104318481030}
   - component: {fileID: 2725053926727904875}
-  - component: {fileID: 7566958800988156260}
   - component: {fileID: 947122256050579541}
   m_Layer: 0
   m_Name: FSI
@@ -60003,112 +59894,15 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 8662081443401511713}
   P2ImplaBlock: {fileID: 3211148262356500558}
   P2ImplaWaveBlock: {fileID: 3846883189673123351}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
---- !u!82 &7566958800988156260
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7771406097602320421}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &947122256050579541
 AudioSource:
   m_ObjectHideFlags: 0
@@ -60116,7 +59910,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7771406097602320421}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
@@ -60480,7 +60274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ffbefe9607f19468921371abd94961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &7809936759578879134
 GameObject:
   m_ObjectHideFlags: 0
@@ -60857,16 +60651,15 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 382073157351796060}
   P2ImplaBlock: {fileID: 7199463311939202125}
   P2ImplaWaveBlock: {fileID: 3817469206533020276}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &1855143089664553654
 AudioSource:
   m_ObjectHideFlags: 0
@@ -60874,7 +60667,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7825800219587003067}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -60970,7 +60763,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7825800219587003067}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
@@ -61847,8 +61640,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675bbbc397ba3ef4082c3b3f779f12ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  FlogCouter: {fileID: 0}
+  playerID: 2
+  FlogCouter: {fileID: 7939340429943872981}
 --- !u!1 &7952878713062084455
 GameObject:
   m_ObjectHideFlags: 0
@@ -63552,7 +63345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  Player: {fileID: 0}
+  Player: {fileID: 2790403399572480621}
 --- !u!1 &8125720505766714104
 GameObject:
   m_ObjectHideFlags: 0
@@ -63947,7 +63740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951dff18cc69ec34d9e9d64b8539e02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &8150886900167953526
 GameObject:
   m_ObjectHideFlags: 0
@@ -64220,16 +64013,15 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1933933465010727600}
   P2ImplaBlock: {fileID: 6145661482463667465}
   P2ImplaWaveBlock: {fileID: 8993579716804041981}
-  Footsteps: {fileID: 0}
-  LionBite: {fileID: 0}
-  FrogTongueAttack: {fileID: 0}
-  TurtleShield: {fileID: 0}
-  ScorpionNeedle: {fileID: 0}
-  ImpalaJump: {fileID: 0}
-  WolfScratch: {fileID: 0}
-  NormalShield: {fileID: 0}
-  AllCharacterJump: {fileID: 0}
-  ShieldBreakSound: {fileID: 0}
+  AnimalFSSrc: {fileID: 0}
+  LionSrc: {fileID: 0}
+  FrogSwingSrc: {fileID: 0}
+  TurtleShieldOPSrc: {fileID: 0}
+  ScorpionSrc: {fileID: 0}
+  ImpalaJumpSrc: {fileID: 0}
+  WolfSrc: {fileID: 0}
+  AnimalJumpSrc: {fileID: 0}
+  AnimalShieldOPSrc: {fileID: 0}
 --- !u!82 &5704861468291827144
 AudioSource:
   m_ObjectHideFlags: 0
@@ -64237,7 +64029,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8184458508432215613}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -64333,7 +64125,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8184458508432215613}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7814b947bfb54a54ebcbcb4bf701d99f, type: 3}
@@ -65049,7 +64841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341cfde1fe6a11f4c8783a0b3b880e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &8246067981339775740
 GameObject:
   m_ObjectHideFlags: 0
@@ -66110,7 +65902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951dff18cc69ec34d9e9d64b8539e02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &8348503149002644812
 GameObject:
   m_ObjectHideFlags: 0
@@ -69833,7 +69625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341cfde1fe6a11f4c8783a0b3b880e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &8892501983353368704
 GameObject:
   m_ObjectHideFlags: 0
@@ -69913,8 +69705,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675bbbc397ba3ef4082c3b3f779f12ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
-  FlogCouter: {fileID: 0}
+  playerID: 2
+  FlogCouter: {fileID: 8892501983353368704}
 --- !u!1 &8902964623318180109
 GameObject:
   m_ObjectHideFlags: 0
@@ -70381,7 +70173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341cfde1fe6a11f4c8783a0b3b880e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 1
+  playerID: 2
 --- !u!1 &8993903946611281089
 GameObject:
   m_ObjectHideFlags: 0
@@ -70537,7 +70329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  Player: {fileID: 0}
+  Player: {fileID: 2171182298920855287}
 --- !u!1 &9003116381554720392
 GameObject:
   m_ObjectHideFlags: 0
@@ -71977,7 +71769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 1
-  FlogCouter: {fileID: 0}
+  FlogCouter: {fileID: 9213988711508087119}
 --- !u!1 &9216349702327142343
 GameObject:
   m_ObjectHideFlags: 0

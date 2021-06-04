@@ -87,6 +87,7 @@ public class KeybordPlay2 : MonoBehaviour
 
     //キャラの向きを常に一定に
     private GameObject EnemyObj;
+    private Vector3 Enemy;
 
     public CriAtomSource AnimalFSSrc;
     public CriAtomSource LionSrc;
@@ -191,7 +192,8 @@ public class KeybordPlay2 : MonoBehaviour
                             }
                             else
                             {
-                                transform.LookAt(EnemyObj.transform);
+                                Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
+                                transform.LookAt(Enemy);
                             }
                         }
 

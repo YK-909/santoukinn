@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43761885, g: 0.48547536, b: 0.5657535, a: 1}
+  m_IndirectSpecularColor: {r: 0.4376193, g: 0.48547626, b: 0.56575453, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -872,8 +872,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408771831}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 53.34, z: -20}
+  m_LocalRotation: {x: -0.21705943, y: 0.053251944, z: 0.011859686, w: 0.9746327}
+  m_LocalPosition: {x: 497, y: -58.66, z: 319.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2180,7 +2180,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 21.976189
+  field of view: 21.966822
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -4352,11 +4352,6 @@ PrefabInstance:
       propertyPath: AnimalShieldOPSrc
       value: 
       objectReference: {fileID: 1823623870}
-    - target: {fileID: 527233998290572913, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 802078204815330509, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: AnimalFSSrc
@@ -4402,16 +4397,6 @@ PrefabInstance:
       propertyPath: AnimalShieldOPSrc
       value: 
       objectReference: {fileID: 1823623870}
-    - target: {fileID: 841282730878677043, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 947122256050579541, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1127716642804949735, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: AnimalFSSrc
@@ -4457,16 +4442,6 @@ PrefabInstance:
       propertyPath: AnimalShieldOPSrc
       value: 
       objectReference: {fileID: 1823623870}
-    - target: {fileID: 1176601046755034548, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1855143089664553654, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1936100777860485289, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: AnimalFSSrc
@@ -4512,11 +4487,6 @@ PrefabInstance:
       propertyPath: AnimalShieldOPSrc
       value: 
       objectReference: {fileID: 1823623870}
-    - target: {fileID: 2080112046064383110, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2167606602227811091, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: AnimalFSSrc
@@ -4607,11 +4577,6 @@ PrefabInstance:
       propertyPath: AnimalShieldOPSrc
       value: 
       objectReference: {fileID: 1823623870}
-    - target: {fileID: 2715711827856190043, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2725053926727904875, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: AnimalFSSrc
@@ -4629,16 +4594,6 @@ PrefabInstance:
       objectReference: {fileID: 774149663}
     - target: {fileID: 2725053926727904875, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
-      propertyPath: WolfSrc
-      value: 
-      objectReference: {fileID: 582087537}
-    - target: {fileID: 2725053926727904875, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: ImpalaJumpSrc
-      value: 
-      objectReference: {fileID: 1089639060}
-    - target: {fileID: 2725053926727904875, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
       propertyPath: TurtleShieldOPSrc
       value: 
       objectReference: {fileID: 1701419361}
@@ -4649,6 +4604,16 @@ PrefabInstance:
       objectReference: {fileID: 1434532151}
     - target: {fileID: 2725053926727904875, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
+      propertyPath: ImpalaJumpSrc
+      value: 
+      objectReference: {fileID: 1089639060}
+    - target: {fileID: 2725053926727904875, guid: 52a1b0b47e403ed4699e98e5e708930a,
+        type: 3}
+      propertyPath: WolfSrc
+      value: 
+      objectReference: {fileID: 582087537}
+    - target: {fileID: 2725053926727904875, guid: 52a1b0b47e403ed4699e98e5e708930a,
+        type: 3}
       propertyPath: AnimalJumpSrc
       value: 
       objectReference: {fileID: 1719045965}
@@ -4657,11 +4622,6 @@ PrefabInstance:
       propertyPath: AnimalShieldOPSrc
       value: 
       objectReference: {fileID: 1823623870}
-    - target: {fileID: 2796969237576255451, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2921537476692197007, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: AnimalFSSrc
@@ -4807,21 +4767,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3568971173309122983, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4146371244448824461, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4261292726154325264, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: SingleCue
-      value: 
-      objectReference: {fileID: 299633111}
     - target: {fileID: 4423631423778832365, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: AnimalFSSrc
@@ -4867,11 +4812,6 @@ PrefabInstance:
       propertyPath: AnimalShieldOPSrc
       value: 
       objectReference: {fileID: 1823623870}
-    - target: {fileID: 4440353458181032522, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4837768314757230370, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: AnimalFSSrc
@@ -4917,31 +4857,6 @@ PrefabInstance:
       propertyPath: AnimalShieldOPSrc
       value: 
       objectReference: {fileID: 1823623870}
-    - target: {fileID: 5024017423046925116, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287588075869975925, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5304775830799796174, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5704861468291827144, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870284756606543611, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5877887963967060286, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: AnimalFSSrc
@@ -4987,26 +4902,6 @@ PrefabInstance:
       propertyPath: AnimalShieldOPSrc
       value: 
       objectReference: {fileID: 1823623870}
-    - target: {fileID: 5894274369475949284, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6113657914342418138, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6147669937738003627, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6702012579051847983, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7210298229243798540, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: AnimalFSSrc
@@ -5052,41 +4947,6 @@ PrefabInstance:
       propertyPath: AnimalShieldOPSrc
       value: 
       objectReference: {fileID: 1823623870}
-    - target: {fileID: 7447937191527326774, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7609765730205786138, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.21705942
-      objectReference: {fileID: 0}
-    - target: {fileID: 7609765730205786138, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.05325195
-      objectReference: {fileID: 0}
-    - target: {fileID: 7609765730205786138, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.011859686
-      objectReference: {fileID: 0}
-    - target: {fileID: 7609765730205786138, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9746327
-      objectReference: {fileID: 0}
-    - target: {fileID: 7739041060474109359, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7820609961359799947, guid: 52a1b0b47e403ed4699e98e5e708930a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8236329700830397715, guid: 52a1b0b47e403ed4699e98e5e708930a,
         type: 3}
       propertyPath: AnimalFSSrc
@@ -5182,7 +5042,5 @@ PrefabInstance:
       propertyPath: AnimalShieldOPSrc
       value: 
       objectReference: {fileID: 1823623870}
-    m_RemovedComponents:
-    - {fileID: 7566958800988156260, guid: 52a1b0b47e403ed4699e98e5e708930a, type: 3}
-    - {fileID: 2170742054893268621, guid: 52a1b0b47e403ed4699e98e5e708930a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52a1b0b47e403ed4699e98e5e708930a, type: 3}
