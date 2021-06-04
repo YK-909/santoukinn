@@ -6,14 +6,13 @@ public class P1ChooseArea : MonoBehaviour
 {
     public CriAtomSource SwitchSlotLRSrc;
 
+    private float minX = 225;
+    private float maxX = 580;
+
     // Start is called before the first frame update
     void Start()
     {
-        var h1 = Input.GetAxis("Horizontal1");
-        var v1 = Input.GetAxis("Vertical1");
 
-        var h2 = Input.GetAxis("Horizontal2");
-        var v2 = Input.GetAxis("Vertical2");
     }
 
     // Update is called once per frame
@@ -33,6 +32,19 @@ public class P1ChooseArea : MonoBehaviour
 
             //音鳴らす
             SwitchSlotLRSrc.Play();
+        }
+
+        if (transform.position.x < minX)
+        {
+            Vector3 temp = transform.position;
+            temp.x = minX;
+            transform.position = temp;
+        }
+        if (transform.position.x > maxX)
+        {
+            Vector3 temp = transform.position;
+            temp.x = maxX;
+            transform.position = temp;
         }
     }
 }
