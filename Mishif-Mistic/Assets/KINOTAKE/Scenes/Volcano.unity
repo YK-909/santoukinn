@@ -2827,20 +2827,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94afd02428f885649835347e01087f21, type: 3}
---- !u!4 &508763961
+--- !u!4 &508763961 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 94afd02428f885649835347e01087f21,
+    type: 3}
   m_PrefabInstance: {fileID: 508763960}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785136986}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1098983121}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &508850800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3558,6 +3550,60 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 674032894}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &697953755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 697953756}
+  - component: {fileID: 697953757}
+  m_Layer: 0
+  m_Name: Volcano_Footsteps(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &697953756
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697953755}
+  m_LocalRotation: {x: -0, y: 0.46003097, z: -0, w: 0.88790286}
+  m_LocalPosition: {x: 389.43332, y: 55, z: 823.3414}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 124322863982061155}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &697953757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697953755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Volcano_Footsteps
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -4082,22 +4128,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 754713383}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &785136986
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 508763960}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 508763961}
-  m_Layer: 0
-  m_Name: Missing Prefab (Dummy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1001 &787002407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5628,37 +5658,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1044054672}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1098983120
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 508763960}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1098983121}
-  m_Layer: 0
-  m_Name: ruin_03 (Missing Prefab)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1098983121
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 508763960}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098983120}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 508763961}
-  m_Father: {fileID: 1411635439}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1109917734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6920,7 +6919,7 @@ Transform:
   m_Children:
   - {fileID: 1517235485}
   - {fileID: 899161233}
-  - {fileID: 1098983121}
+  - {fileID: 508763961}
   - {fileID: 8270345}
   - {fileID: 674032895}
   - {fileID: 588362739}
@@ -11263,7 +11262,7 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 7058086555557888038}
   P1ImplaBlock: {fileID: 2111807042664959306}
   P1ImplaWaveBlock: {fileID: 724684614014874127}
-  AnimalFSSrc: {fileID: 124322862304341206}
+  AnimalFSSrc: {fileID: 697953757}
   LionSrc: {fileID: 124322863604287438}
   FrogSwingSrc: {fileID: 124322863073267185}
   TurtleShieldOPSrc: {fileID: 124322863305823305}
@@ -11567,7 +11566,7 @@ MonoBehaviour:
   _listenerOnStart: {fileID: 0}
   _use3dPositioning: 1
   _loop: 0
-  _volume: 1
+  _volume: 0.5
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
@@ -11637,7 +11636,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 124322863982061155}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124322862277643234
 GameObject:
@@ -11745,7 +11744,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 124322863982061155}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124322862447530286
 GameObject:
@@ -11799,7 +11798,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 124322863982061155}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124322862654047063
 GameObject:
@@ -11830,7 +11829,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 124322863982061155}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124322862663451225
 GameObject:
@@ -11908,7 +11907,7 @@ MonoBehaviour:
   _listenerOnStart: {fileID: 0}
   _use3dPositioning: 1
   _loop: 0
-  _volume: 1
+  _volume: 0.3
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
@@ -11924,7 +11923,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 124322863982061155}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &124322863073267185
 MonoBehaviour:
@@ -11961,7 +11960,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 124322863982061155}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124322863073267187
 GameObject:
@@ -12061,7 +12060,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 124322863982061155}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124322863305823307
 GameObject:
@@ -12159,7 +12158,7 @@ MonoBehaviour:
   _listenerOnStart: {fileID: 0}
   _use3dPositioning: 1
   _loop: 0
-  _volume: 1
+  _volume: 0.5
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
@@ -12175,7 +12174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 124322863982061155}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124322863570995458
 GameObject:
@@ -12246,7 +12245,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 124322863982061155}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124322863662741972
 GameObject:
@@ -12300,7 +12299,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 124322863982061155}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &124322863918413667
 MonoBehaviour:
@@ -12337,7 +12336,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 124322863982061155}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124322863918413677
 GameObject:
@@ -12368,6 +12367,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 124322862304341207}
+  - {fileID: 697953756}
   - {fileID: 124322863604287439}
   - {fileID: 124322863073267186}
   - {fileID: 124322863305823306}
@@ -12378,8 +12378,8 @@ Transform:
   - {fileID: 124322863662741995}
   - {fileID: 124322862663451224}
   - {fileID: 124322862837606703}
-  - {fileID: 124322863570995457}
   - {fileID: 124322862273679302}
+  - {fileID: 124322863570995457}
   m_Father: {fileID: 3345231794589083941}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12806,7 +12806,7 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1976825980323449531}
   P2ImplaBlock: {fileID: 6120506735498691842}
   P2ImplaWaveBlock: {fileID: 9040470365557914870}
-  AnimalFSSrc: {fileID: 124322862304341206}
+  AnimalFSSrc: {fileID: 697953757}
   LionSrc: {fileID: 124322863604287438}
   FrogSwingSrc: {fileID: 124322863073267185}
   TurtleShieldOPSrc: {fileID: 124322863305823305}
@@ -17291,7 +17291,7 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 357134017678495063}
   P2ImplaBlock: {fileID: 7084178985488403526}
   P2ImplaWaveBlock: {fileID: 3838138873853098623}
-  AnimalFSSrc: {fileID: 124322862304341206}
+  AnimalFSSrc: {fileID: 697953757}
   LionSrc: {fileID: 124322863604287438}
   FrogSwingSrc: {fileID: 124322863073267185}
   TurtleShieldOPSrc: {fileID: 124322863305823305}
@@ -19332,7 +19332,7 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 1428110496882284165}
   P1ImplaBlock: {fileID: 3632977611038256760}
   P1ImplaWaveBlock: {fileID: 8371346576478878700}
-  AnimalFSSrc: {fileID: 124322862304341206}
+  AnimalFSSrc: {fileID: 697953757}
   LionSrc: {fileID: 124322863604287438}
   FrogSwingSrc: {fileID: 124322863073267185}
   TurtleShieldOPSrc: {fileID: 124322863305823305}
@@ -27025,7 +27025,7 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 7648526378833975446}
   P2ImplaBlock: {fileID: 1800607922817367471}
   P2ImplaWaveBlock: {fileID: 2810064639147752102}
-  AnimalFSSrc: {fileID: 124322862304341206}
+  AnimalFSSrc: {fileID: 697953757}
   LionSrc: {fileID: 124322863604287438}
   FrogSwingSrc: {fileID: 124322863073267185}
   TurtleShieldOPSrc: {fileID: 124322863305823305}
@@ -29299,7 +29299,7 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 4678835801873679489}
   P1ImplaBlock: {fileID: 2295936605894376172}
   P1ImplaWaveBlock: {fileID: 4099641438761623758}
-  AnimalFSSrc: {fileID: 124322862304341206}
+  AnimalFSSrc: {fileID: 697953757}
   LionSrc: {fileID: 124322863604287438}
   FrogSwingSrc: {fileID: 124322863073267185}
   TurtleShieldOPSrc: {fileID: 124322863305823305}
@@ -29537,7 +29537,7 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 7306366056597207448}
   P1ImplaBlock: {fileID: 9038172538709568328}
   P1ImplaWaveBlock: {fileID: 4756593983099699778}
-  AnimalFSSrc: {fileID: 124322862304341206}
+  AnimalFSSrc: {fileID: 697953757}
   LionSrc: {fileID: 124322863604287438}
   FrogSwingSrc: {fileID: 124322863073267185}
   TurtleShieldOPSrc: {fileID: 124322863305823305}
@@ -32100,7 +32100,7 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 8758458739766727466}
   P2ImplaBlock: {fileID: 3254383619583139909}
   P2ImplaWaveBlock: {fileID: 3808762279477280284}
-  AnimalFSSrc: {fileID: 124322862304341206}
+  AnimalFSSrc: {fileID: 697953757}
   LionSrc: {fileID: 124322863604287438}
   FrogSwingSrc: {fileID: 124322863073267185}
   TurtleShieldOPSrc: {fileID: 124322863305823305}
@@ -34722,7 +34722,7 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 6402627277064492263}
   P2ImplaBlock: {fileID: 5728429611314883947}
   P2ImplaWaveBlock: {fileID: 8353900084689563596}
-  AnimalFSSrc: {fileID: 124322862304341206}
+  AnimalFSSrc: {fileID: 697953757}
   LionSrc: {fileID: 124322863604287438}
   FrogSwingSrc: {fileID: 124322863073267185}
   TurtleShieldOPSrc: {fileID: 124322863305823305}
@@ -37964,7 +37964,7 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 4345447907826779980}
   P1ImplaBlock: {fileID: 8144849620097568328}
   P1ImplaWaveBlock: {fileID: 9027694538312162947}
-  AnimalFSSrc: {fileID: 124322862304341206}
+  AnimalFSSrc: {fileID: 697953757}
   LionSrc: {fileID: 124322863604287438}
   FrogSwingSrc: {fileID: 124322863073267185}
   TurtleShieldOPSrc: {fileID: 124322863305823305}
@@ -44969,10 +44969,10 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 7286046367292668756}
   P2ImplaBlock: {fileID: 125366938448119635}
   P2ImplaWaveBlock: {fileID: 872949370682242370}
-  AnimalFSSrc: {fileID: 124322862304341206}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 124322863604287438}
-  TurtleShieldOPSrc: {fileID: 124322863073267185}
+  AnimalFSSrc: {fileID: 697953757}
+  LionSrc: {fileID: 124322863604287438}
+  FrogSwingSrc: {fileID: 124322863073267185}
+  TurtleShieldOPSrc: {fileID: 124322863305823305}
   ScorpionSrc: {fileID: 124322863918413667}
   ImpalaJumpSrc: {fileID: 124322862447530284}
   WolfSrc: {fileID: 124322862277643232}
@@ -48203,7 +48203,7 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 8880225836997340592}
   P1ImplaBlock: {fileID: 7229452982484563618}
   P1ImplaWaveBlock: {fileID: 1737875158083915318}
-  AnimalFSSrc: {fileID: 124322862304341206}
+  AnimalFSSrc: {fileID: 697953757}
   LionSrc: {fileID: 124322863604287438}
   FrogSwingSrc: {fileID: 124322863073267185}
   TurtleShieldOPSrc: {fileID: 124322863305823305}
@@ -55577,7 +55577,7 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 8092656089330061968}
   P2ImplaBlock: {fileID: 1745947818354604758}
   P2ImplaWaveBlock: {fileID: 8852483278078282352}
-  AnimalFSSrc: {fileID: 124322862304341206}
+  AnimalFSSrc: {fileID: 697953757}
   LionSrc: {fileID: 124322863604287438}
   FrogSwingSrc: {fileID: 124322863073267185}
   TurtleShieldOPSrc: {fileID: 124322863305823305}
@@ -67508,7 +67508,7 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1443910819906615552}
   P2ImplaBlock: {fileID: 705144599749816665}
   P2ImplaWaveBlock: {fileID: 6018084016617410338}
-  AnimalFSSrc: {fileID: 124322862304341206}
+  AnimalFSSrc: {fileID: 697953757}
   LionSrc: {fileID: 124322863604287438}
   FrogSwingSrc: {fileID: 124322863073267185}
   TurtleShieldOPSrc: {fileID: 124322863305823305}
@@ -75113,7 +75113,7 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 3717696884124478921}
   P1ImplaBlock: {fileID: 3791602771982849149}
   P1ImplaWaveBlock: {fileID: 8650907185340413912}
-  AnimalFSSrc: {fileID: 124322862304341206}
+  AnimalFSSrc: {fileID: 697953757}
   LionSrc: {fileID: 124322863604287438}
   FrogSwingSrc: {fileID: 124322863073267185}
   TurtleShieldOPSrc: {fileID: 124322863305823305}
@@ -80136,7 +80136,7 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 8552019409291751750}
   P1ImplaBlock: {fileID: 2545404358645779701}
   P1ImplaWaveBlock: {fileID: 7968171395703135032}
-  AnimalFSSrc: {fileID: 124322862304341206}
+  AnimalFSSrc: {fileID: 697953757}
   LionSrc: {fileID: 124322863604287438}
   FrogSwingSrc: {fileID: 124322863073267185}
   TurtleShieldOPSrc: {fileID: 124322863305823305}
