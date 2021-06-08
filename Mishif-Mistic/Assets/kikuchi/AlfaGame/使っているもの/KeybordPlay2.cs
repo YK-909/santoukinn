@@ -237,6 +237,9 @@ public class KeybordPlay2 : MonoBehaviour
                                         AllActionInterval = true;
                                         //行動停止
                                         Invoke("ActionInterval", 3.0f);
+
+                                        //音止める
+                                        FrogSwingSrc.Stop();
                                     }
                                 }
                             }
