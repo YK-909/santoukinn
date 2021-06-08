@@ -28,7 +28,7 @@ public class Scorpion : MonoBehaviour
 
         if (Timecount > 2.0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -36,7 +36,7 @@ public class Scorpion : MonoBehaviour
         //ガード以外のタグのものとぶつかった際、速やかに削除
         if (collision.gameObject.tag != "Gard")
         {
-            Destroy(this, 0.01f);
+            Destroy(gameObject);
         }
     }
     void OnTriggerEnter(Collider collision)
