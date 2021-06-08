@@ -6290,7 +6290,7 @@ Transform:
   m_GameObject: {fileID: 854381657756410313}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.0742077, z: 21.003014}
-  m_LocalScale: {x: 1.0186299, y: 1.0588518, z: 1.1332952}
+  m_LocalScale: {x: 1.6656798, y: 1.04105, z: 1.6656798}
   m_Children: []
   m_Father: {fileID: 468423964296701812}
   m_RootOrder: 6
@@ -6581,7 +6581,6 @@ GameObject:
   - component: {fileID: 7210298229243798540}
   - component: {fileID: 2170742054893268621}
   - component: {fileID: 4440353458181032522}
-  - component: {fileID: 392492023094555727}
   m_Layer: 0
   m_Name: FSW
   m_TagString: Player2
@@ -6685,15 +6684,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1562858753444108555}
   P2ImplaBlock: {fileID: 608130789239574866}
   P2ImplaWaveBlock: {fileID: 5925938293822385961}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &2170742054893268621
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6886,25 +6886,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &392492023094555727
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 888054778717906543}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 47c4079e254f1c04da1125014b740b30, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &905481057679336035
 GameObject:
   m_ObjectHideFlags: 0
@@ -7536,7 +7517,6 @@ GameObject:
   - component: {fileID: 7803912409935389445}
   - component: {fileID: 1127716642804949735}
   - component: {fileID: 5287588075869975925}
-  - component: {fileID: 2942094618187880318}
   m_Layer: 0
   m_Name: LSW
   m_TagString: Player1
@@ -7640,15 +7620,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 1326314566160348814}
   P1ImplaBlock: {fileID: 3734402319062978163}
   P1ImplaWaveBlock: {fileID: 8472768054696188903}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &5287588075869975925
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7745,25 +7726,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &2942094618187880318
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019777702442220638}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9cb2877038011384ab8d9be98471f582, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1021232865478929657
 GameObject:
   m_ObjectHideFlags: 0
@@ -7944,15 +7906,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 7252082298722720607}
   P2ImplaBlock: {fileID: 1348469038147416}
   P2ImplaWaveBlock: {fileID: 983183502787695945}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &3568971173309122983
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18995,15 +18958,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 8212117289243161243}
   P2ImplaBlock: {fileID: 1838441399131953885}
   P2ImplaWaveBlock: {fileID: 8891223178466306683}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &6147669937738003627
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22039,15 +22003,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 4708300806846850186}
   P1ImplaBlock: {fileID: 2190263247500958439}
   P1ImplaWaveBlock: {fileID: 4133588499714441413}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &1176601046755034548
 AudioSource:
   m_ObjectHideFlags: 0
@@ -23486,7 +23451,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3139058846964642432}
-  m_LocalRotation: {x: 0.2226521, y: 0.07438808, z: -0.017041413, w: 0.9719064}
+  m_LocalRotation: {x: 0.2170594, y: 0.053251915, z: -0.011859677, w: 0.9746327}
   m_LocalPosition: {x: -0.7000122, y: 73.5, z: -177.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -24795,7 +24760,6 @@ GameObject:
   - component: {fileID: 4130160680123863552}
   - component: {fileID: 2167606602227811091}
   - component: {fileID: 5894274369475949284}
-  - component: {fileID: 5511466417633204095}
   m_Layer: 0
   m_Name: LTW
   m_TagString: Player1
@@ -24899,15 +24863,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 7267899178145520019}
   P1ImplaBlock: {fileID: 8995840155935591235}
   P1ImplaWaveBlock: {fileID: 4880635336086921801}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &5894274369475949284
 AudioSource:
   m_ObjectHideFlags: 0
@@ -25004,25 +24969,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &5511466417633204095
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3287021079392991140}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4efa4d3ad8b65184ba03d4d89e5e8dc7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3289327231059438946
 GameObject:
   m_ObjectHideFlags: 0
@@ -25499,7 +25445,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7632958166848114531
 Transform:
   m_ObjectHideFlags: 0
@@ -26342,15 +26288,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 3615906038703050178}
   P1ImplaBlock: {fileID: 3830263508086928502}
   P1ImplaWaveBlock: {fileID: 8770651131498190803}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &2796969237576255451
 AudioSource:
   m_ObjectHideFlags: 0
@@ -33541,15 +33488,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 6938625012089233453}
   P1ImplaBlock: {fileID: 2087149790351830337}
   P1ImplaWaveBlock: {fileID: 844203022900335108}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &6702012579051847983
 AudioSource:
   m_ObjectHideFlags: 0
@@ -35347,8 +35295,6 @@ MonoBehaviour:
   TimerText: {fileID: 3666387709811003022}
   _textCountdown: {fileID: 9171455788547880476}
   GameWinner: {fileID: 6552868311636610230}
-  CountSrc: {fileID: 0}
-  BGMSrc: {fileID: 0}
 --- !u!1 &4633734762896020779
 GameObject:
   m_ObjectHideFlags: 0
@@ -36365,15 +36311,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 8581414113636356429}
   P1ImplaBlock: {fileID: 2516027005902073086}
   P1ImplaWaveBlock: {fileID: 8011076177904368435}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &527233998290572913
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38567,7 +38514,6 @@ GameObject:
   - component: {fileID: 1899948767116907021}
   - component: {fileID: 4837768314757230370}
   - component: {fileID: 7447937191527326774}
-  - component: {fileID: 8656730715687445041}
   m_Layer: 0
   m_Name: FTW
   m_TagString: Player1
@@ -38671,15 +38617,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 8828542520079011259}
   P1ImplaBlock: {fileID: 7344671510640219817}
   P1ImplaWaveBlock: {fileID: 1848589949164875325}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &7447937191527326774
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38776,25 +38723,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &8656730715687445041
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5010432344435259304}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ca2f02ccbd604f44481d8bc61cd98107, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5011896107869681998
 GameObject:
   m_ObjectHideFlags: 0
@@ -40956,7 +40884,6 @@ GameObject:
   - component: {fileID: 200943640983294001}
   - component: {fileID: 3383664460622312287}
   - component: {fileID: 841282730878677043}
-  - component: {fileID: 1124383381672476778}
   m_Layer: 0
   m_Name: FSW
   m_TagString: Player1
@@ -41060,15 +40987,16 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 4465194945799513927}
   P1ImplaBlock: {fileID: 8120552457750261315}
   P1ImplaWaveBlock: {fileID: 9003116381554720392}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &841282730878677043
 AudioSource:
   m_ObjectHideFlags: 0
@@ -41165,25 +41093,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &1124383381672476778
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5334755814731135544}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 47c4079e254f1c04da1125014b740b30, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5343210080063037087
 GameObject:
   m_ObjectHideFlags: 0
@@ -44308,7 +44217,6 @@ GameObject:
   - component: {fileID: 1936100777860485289}
   - component: {fileID: 4146371244448824461}
   - component: {fileID: 5024017423046925116}
-  - component: {fileID: 4268901026569769899}
   m_Layer: 0
   m_Name: FTW
   m_TagString: Player2
@@ -44412,15 +44320,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 7754258251937462429}
   P2ImplaBlock: {fileID: 1820762263251672484}
   P2ImplaWaveBlock: {fileID: 2830217811417930413}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &4146371244448824461
 AudioSource:
   m_ObjectHideFlags: 0
@@ -44613,25 +44522,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &4268901026569769899
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5783783858865356792}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ca2f02ccbd604f44481d8bc61cd98107, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5785224810636551395
 GameObject:
   m_ObjectHideFlags: 0
@@ -51764,7 +51654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2977235666641825683
 Transform:
   m_ObjectHideFlags: 0
@@ -56265,7 +56155,6 @@ GameObject:
   - component: {fileID: 2921537476692197007}
   - component: {fileID: 5304775830799796174}
   - component: {fileID: 7820609961359799947}
-  - component: {fileID: 1374126131414376708}
   m_Layer: 0
   m_Name: LTW
   m_TagString: Player2
@@ -56369,15 +56258,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 6441024232844621036}
   P2ImplaBlock: {fileID: 5676460352653856096}
   P2ImplaWaveBlock: {fileID: 8238962928515272647}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &5304775830799796174
 AudioSource:
   m_ObjectHideFlags: 0
@@ -56570,25 +56460,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &1374126131414376708
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7232085260413412453}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4efa4d3ad8b65184ba03d4d89e5e8dc7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7236416628839852826
 GameObject:
   m_ObjectHideFlags: 0
@@ -60132,15 +60003,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 8662081443401511713}
   P2ImplaBlock: {fileID: 3211148262356500558}
   P2ImplaWaveBlock: {fileID: 3846883189673123351}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &7566958800988156260
 AudioSource:
   m_ObjectHideFlags: 0
@@ -60985,15 +60857,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 382073157351796060}
   P2ImplaBlock: {fileID: 7199463311939202125}
   P2ImplaWaveBlock: {fileID: 3817469206533020276}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &1855143089664553654
 AudioSource:
   m_ObjectHideFlags: 0
@@ -63996,8 +63869,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8149688087888822382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 1.0742077, z: 21.19}
-  m_LocalScale: {x: 1.3040441, y: 0.9266802, z: 1.0065191}
+  m_LocalPosition: {x: 0, y: 1.0742077, z: 21.003014}
+  m_LocalScale: {x: 1.6656798, y: 1.04105, z: 1.6656798}
   m_Children: []
   m_Father: {fileID: 3698442996905446733}
   m_RootOrder: 6
@@ -64244,7 +64117,6 @@ GameObject:
   - component: {fileID: 283379952940511958}
   - component: {fileID: 5704861468291827144}
   - component: {fileID: 7739041060474109359}
-  - component: {fileID: 6525369809106979929}
   m_Layer: 0
   m_Name: LSW
   m_TagString: Player2
@@ -64348,15 +64220,16 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 1933933465010727600}
   P2ImplaBlock: {fileID: 6145661482463667465}
   P2ImplaWaveBlock: {fileID: 8993579716804041981}
-  AnimalFSSrc: {fileID: 0}
-  LionSrc: {fileID: 0}
-  FrogSwingSrc: {fileID: 0}
-  TurtleShieldOPSrc: {fileID: 0}
-  ScorpionSrc: {fileID: 0}
-  ImpalaJumpSrc: {fileID: 0}
-  WolfSrc: {fileID: 0}
-  AnimalJumpSrc: {fileID: 0}
-  AnimalShieldOPSrc: {fileID: 0}
+  Footsteps: {fileID: 0}
+  LionBite: {fileID: 0}
+  FrogTongueAttack: {fileID: 0}
+  TurtleShield: {fileID: 0}
+  ScorpionNeedle: {fileID: 0}
+  ImpalaJump: {fileID: 0}
+  WolfScratch: {fileID: 0}
+  NormalShield: {fileID: 0}
+  AllCharacterJump: {fileID: 0}
+  ShieldBreakSound: {fileID: 0}
 --- !u!82 &5704861468291827144
 AudioSource:
   m_ObjectHideFlags: 0
@@ -64549,25 +64422,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &6525369809106979929
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8184458508432215613}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9cb2877038011384ab8d9be98471f582, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8187948676727581304
 GameObject:
   m_ObjectHideFlags: 0
