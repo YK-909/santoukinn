@@ -59,8 +59,6 @@ public class Player1leg : MonoBehaviour
 
     private bool _flag;
 
-    Button buttonA;
-
     public int WeponType { private set; get; }
 
     //ADX設定
@@ -252,9 +250,6 @@ public class Player1leg : MonoBehaviour
     void Start()
     {
         SetLevelThree();
-
-        //インパラのため一時
-        buttonA = GameObject.Find("Canvas/Button").GetComponent<Button>();
     }
 
     // Update is called once per frame
@@ -282,15 +277,6 @@ public class Player1leg : MonoBehaviour
             }
 
             SlideWepon();
-        }
-
-        if (ContloleLeg.leg == 1 || ContloleLeg2.leg2 == 1)
-        {
-            buttonA.interactable = false;
-        }
-        else
-        {
-            buttonA.interactable = true;
         }
     }
 
