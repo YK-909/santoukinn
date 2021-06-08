@@ -5,7 +5,7 @@ using UnityEngine;
 public class KeybordPlay2 : MonoBehaviour
 {
     //体力
-    public static float Player2HP=100;
+    public static float Player2HP = 100;
     //
     private int Gamemode = 0;
 
@@ -19,9 +19,6 @@ public class KeybordPlay2 : MonoBehaviour
 
     //移動速度
     private float Speed = 40.0f;
-    //走る時の速さは未実装
-    private float Sprintspeed = 25.0f;
-    private Vector3 Direction;
 
     //シールド　※カメとの変数に注意　調整中無視していいよ
     private bool Shield = false;
@@ -82,8 +79,7 @@ public class KeybordPlay2 : MonoBehaviour
     public GameObject P2ImplaWaveBlock;
 
     private bool AllActionInterval = false;
-    //透過させるために
-    private Collider P2collider;
+    private bool CalledOncePoint = false;
 
     //キャラの向きを常に一定に
     private GameObject EnemyObj;
@@ -106,8 +102,6 @@ public class KeybordPlay2 : MonoBehaviour
         P2Lionhead.SetActive(false);
         P2WolfAtk.SetActive(false);
         Rb = GetComponent<Rigidbody>();
-        P2collider = GetComponent<Collider>();
-        P2collider.isTrigger = false;
         Rb.isKinematic = true;
         EnemyObj = GameObject.Find("P1camera");
     }
@@ -120,83 +114,101 @@ public class KeybordPlay2 : MonoBehaviour
         //シールドの色変更　tの値で変わる　調整中無視していいよ
         ShieldObj.GetComponent<Renderer>().material.color = Color.HSVToRGB(ShieldPoint * 150, 1, 1);
 
-        if (AllActionInterval == false)
+        if (Gamemode == 1)
         {
-            if (Gamemode == 1)
+            if (!CalledOncePoint)
             {
+                CalledOncePoint = true;
                 Rb.isKinematic = false;
-                if (Shield == false)
+            }
+            if (Shield == false)
+            {
+
+                if (Implajump == false)
                 {
-
-                    if (Implajump == false)
+                    if (WolfSwitch == true)
                     {
-
-                        if (FlogSwitch == true)
+                        if (ScorpionAtk == true)
                         {
-                            if (NormalJump == false)
+                            if (Gard == true)
                             {
-                                if (Input.GetKey(KeyCode.LeftControl))
+                                if (FlogSwitch == true)
                                 {
-                                    Speed = Sprintspeed;
+                                    if (LionSwitch == true)
+                                    {
+                                        if (NormalJump == false)
+                                        {
+                                            //歩きの速さの調整をする際はここも
+                                            Speed = 40.0f;
+                                        }
+                                        else
+                                        {
+                                            Speed = 15f;
+                                        }
+
+                                        if (Input.GetKey(KeyCode.UpArrow))
+                                        {
+                                            //キャラクターが指定の向きを向く
+                                            transform.rotation = Quaternion.Euler(0, 0, 0);
+                                            //前方に移動する
+                                            transform.position += transform.forward * Speed * Time.deltaTime;
+                                            if (Speed == 40.0)
+                                            {
+                                                //音鳴らす
+                                                AnimalFSSrc.Play();
+                                            }
+                                        }
+                                        else if (Input.GetKey(KeyCode.DownArrow))
+                                        {
+                                            //キャラクターが指定の向きを向く
+                                            transform.rotation = Quaternion.Euler(0, 180, 0);
+                                            //前方に移動する
+                                            transform.position += transform.forward * Speed * Time.deltaTime;
+
+                                            if (Speed == 40.0)
+                                            {
+                                                //音鳴らす
+                                                AnimalFSSrc.Play();
+                                            }
+                                        }
+                                        else if (Input.GetKey(KeyCode.RightArrow))
+                                        {
+                                            //キャラクターが指定の向きを向く
+                                            transform.rotation = Quaternion.Euler(0, 90, 0);
+                                            //前方に移動する
+                                            transform.position += transform.forward * Speed * Time.deltaTime;
+                                            if (Speed == 40.0)
+                                            {
+                                                //音鳴らす
+                                                AnimalFSSrc.Play();
+                                            }
+                                        }
+                                        else if (Input.GetKey(KeyCode.LeftArrow))
+                                        {
+                                            //キャラクターが指定の向きを向く
+                                            transform.rotation = Quaternion.Euler(0, -90, 0);
+                                            //前方に移動する
+                                            transform.position += transform.forward * Speed * Time.deltaTime;
+
+                                            if (Speed == 40.0)
+                                            {
+                                                //音鳴らす
+                                                AnimalFSSrc.Play();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
+                                            transform.LookAt(Enemy);
+                                        }
+                                    }
                                 }
-                                else
-                                {
-                                    //歩きの速さの調整をする際はここも
-                                    Speed = 40.0f;
-                                }
-                            }
-                            else
-                            {
-                                Speed = 15f;
-                            }
-
-                            if (Input.GetKey(KeyCode.UpArrow))
-                            {
-                                //キャラクターが指定の向きを向く
-                                transform.rotation = Quaternion.Euler(0, 0, 0);
-                                //前方に移動する
-                                transform.position += transform.forward * Speed * Time.deltaTime;
-
-                                //音鳴らす
-                                AnimalFSSrc.Play();
-                            }
-                            else if (Input.GetKey(KeyCode.DownArrow))
-                            {
-                                //キャラクターが指定の向きを向く
-                                transform.rotation = Quaternion.Euler(0, 180, 0);
-                                //前方に移動する
-                                transform.position += transform.forward * Speed * Time.deltaTime;
-
-                                //音鳴らす
-                                AnimalFSSrc.Play();
-                            }
-                            else if (Input.GetKey(KeyCode.RightArrow))
-                            {
-                                //キャラクターが指定の向きを向く
-                                transform.rotation = Quaternion.Euler(0, 90, 0);
-                                //前方に移動する
-                                transform.position += transform.forward * Speed * Time.deltaTime;
-
-                                //音鳴らす
-                                AnimalFSSrc.Play();
-                            }
-                            else if (Input.GetKey(KeyCode.LeftArrow))
-                            {
-                                //キャラクターが指定の向きを向く
-                                transform.rotation = Quaternion.Euler(0, -90, 0);
-                                //前方に移動する
-                                transform.position += transform.forward * Speed * Time.deltaTime;
-
-                                //音鳴らす
-                                AnimalFSSrc.Play();
-                            }
-                            else
-                            {
-                                Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
-                                transform.LookAt(Enemy);
                             }
                         }
+                    }
 
+                    if (AllActionInterval == false)
+                    {
                         if (NormalJump == false)
                         {
                             if (Head == 1)
@@ -254,6 +266,7 @@ public class KeybordPlay2 : MonoBehaviour
                                 }
                             }
 
+
                             if (FlogSwitch == true)
                             {
                                 if (Body == 1)
@@ -293,6 +306,7 @@ public class KeybordPlay2 : MonoBehaviour
                                         if (ScorpionAtk == true)
                                         {
                                             AllActionInterval = true;
+                                            ScorpionAtk = false;
                                             GameObject Obj;
                                             Obj = Instantiate(ScorpionBullet, P2SetScorpion.transform.position, P2SetScorpion.transform.rotation) as GameObject;
                                             //行動停止
@@ -305,6 +319,10 @@ public class KeybordPlay2 : MonoBehaviour
                             }
                         }
                     }
+                }
+
+                if (AllActionInterval == false)
+                {
                     if (FlogSwitch == true)
                     {
                         if (NormalJump == false)
@@ -323,14 +341,13 @@ public class KeybordPlay2 : MonoBehaviour
                                         if (this.transform.position.y > 20)
                                         {
                                             Rb.isKinematic = true;
-                                            P2collider.isTrigger = true;
                                             AllActionInterval = true;
                                             Invoke("ImpleFreeze", 1.0f);
                                         }
                                     }
                                     else if (Implajump == false)
                                     {
-                                        Rb.AddForce(transform.up * 40, ForceMode.Impulse);
+                                        Rb.AddForce(transform.up * 30, ForceMode.Impulse);
                                         Implajump = true;
                                     }
                                 }
@@ -366,66 +383,75 @@ public class KeybordPlay2 : MonoBehaviour
                             }
                         }
                     }
-
                 }
 
-                //LRのシールド
-                if (Input.GetKey(KeyCode.V))
-                {
-                    //音鳴らす
-                    AnimalShieldOPSrc.Play();
+            }
 
-                    if (NormalJump == false)
-                    {
-                        if (FlogSwitch == true)
-                        {
-                            Shield = true;
-                            ShieldObj.SetActive(true);
-                            if (ShieldPoint >= 0)
-                            {
-                                //シールドの減少量
-                                ShieldPoint -= 0.001f;
-                            }
-                        }
-                    }
-                }
-                else
+
+
+            if (AllActionInterval == false)
+            {
+                if (Implajump == false)
                 {
-                    ShieldObj.SetActive(false);
-                    //シールド
-                    if (ShieldPoint <= 1)
+                    //LRのシールド
+                    if (Input.GetKey(KeyCode.V))
                     {
-                        //シールドの回復速度
-                        ShieldPoint += 0.001f;
-                    }
-                }
-                //ガードのボタンを離したとき　後隙
-                if (Input.GetKeyUp(KeyCode.V))
-                {
-                    if (NormalJump == false)
-                    {
-                        ShieldObj.SetActive(false);
-                        Invoke("ShieldDelay", 0.5f);
-                    }
-                }
-                if (Input.GetKey(KeyCode.Space))
-                {
-                    if (Shield == false)
-                    {
+                        //音鳴らす
+                        AnimalShieldOPSrc.Play();
+
                         if (NormalJump == false)
                         {
                             if (FlogSwitch == true)
                             {
-                                Rb.AddForce(transform.up * 15, ForceMode.Impulse);
-                                NormalJump = true;
+                                Shield = true;
+                                ShieldObj.SetActive(true);
+                                if (ShieldPoint >= 0)
+                                {
+                                    //シールドの減少量
+                                    ShieldPoint -= 0.001f;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        ShieldObj.SetActive(false);
+                        //シールド
+                        if (ShieldPoint <= 1)
+                        {
+                            //シールドの回復速度
+                            ShieldPoint += 0.001f;
+                        }
+                    }
+                    //ガードのボタンを離したとき　後隙
+                    if (Input.GetKeyUp(KeyCode.V))
+                    {
+                        if (NormalJump == false)
+                        {
+                            ShieldObj.SetActive(false);
+                            Invoke("ShieldDelay", 0.5f);
+                        }
+                    }
+                    if (Input.GetKey(KeyCode.Space))
+                    {
+                        if (Shield == false)
+                        {
+                            if (NormalJump == false)
+                            {
+                                if (FlogSwitch == true)
+                                {
+                                    Rb.AddForce(transform.up * 15, ForceMode.Impulse);
+                                    NormalJump = true;
 
-                                //音鳴らす
-                                AnimalJumpSrc.Play();
+                                    //音鳴らす
+                                    AnimalJumpSrc.Play();
+                                }
                             }
                         }
                     }
                 }
             }
+
         }
 
         if (Poisontimer < Poisoningtime)
@@ -455,12 +481,6 @@ public class KeybordPlay2 : MonoBehaviour
             //audioSource.PlayOneShot(ShieldBreakSound);
         }
 
-        if (this.transform.position.y <= 0 && P2collider.isTrigger == true)
-        {
-            //透過下ブロックが落ちないように
-            transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-            P2collider.isTrigger = false;
-        }
     }
 
     void ShieldBreak()
@@ -508,6 +528,7 @@ public class KeybordPlay2 : MonoBehaviour
     {
         //空中で一時停止
         Rb.isKinematic = false;
+        gameObject.layer = LayerMask.NameToLayer("ImplaLayer");
         Rb.AddForce(-transform.up * 30, ForceMode.Impulse);
         P2ImplaBlock.SetActive(true);
     }
@@ -560,19 +581,16 @@ public class KeybordPlay2 : MonoBehaviour
 
         if (other.gameObject.tag == "floor")
         {
-            Vector3 Pos = this.transform.position;
             //ただのジャンプ
             NormalJump = false;
             Implajump = false;
+            gameObject.layer = LayerMask.NameToLayer("NormalLayer");
             //インパラの攻撃のため
             if (AllActionInterval == true)
             {
                 //P2のインパラブロックが表示されているとき
                 if (P2ImplaBlock.activeSelf == true)
                 {
-                    //Pos.y = 10;
-                    this.transform.position = Pos;
-                    //Rb.isKinematic = true;
                     P2ImplaWaveBlock.SetActive(true);
                     Invoke("DelayImple", 0.05f);
                     Invoke("DelayImpleWave", 0.1f);
@@ -580,7 +598,6 @@ public class KeybordPlay2 : MonoBehaviour
                 //行動停止
                 Invoke("ActionInterval", 0.5f);
             }
-            P2collider.isTrigger = false;
         }
     }
 
@@ -735,7 +752,7 @@ public class KeybordPlay2 : MonoBehaviour
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
-                    Invoke("InvincibleTime", 1.5f);
+                    Invoke("InvincibleTime", 0.7f);
                 }
                 //カウンターダメージ用
                 if (other.gameObject.CompareTag("P2LionAttackBack"))
