@@ -95,6 +95,28 @@ public class KeybordPlay2 : MonoBehaviour
     public CriAtomSource AnimalJumpSrc;
     public CriAtomSource AnimalShieldOPSrc;
 
+    //アニメーター
+    private Animator Animator;
+
+    //共通アニメーション
+    private string isWalk = "isWalk";
+    private string isRun = "isRun";
+    private string isJump = "isJump";
+    private string isFalt = "isFalt";
+    private string isBlown = "isBlown";
+    private string isShield = "isShield";
+
+    //固有スキルアニメーション
+    private string isBite = "isBite";
+    private string isScratch = "isScratch";
+    private string isKameShield = "isKameShield";
+    private string isCounter = "isCounter";
+    private string isMissileStr = "isMissileStr";
+    private string isMissileFin = "isMissileFin";
+    private string isTongueStr = "isTongueStr";
+    private string isTongueFin = "isTongueFin";
+    private string isImpalaAtk = "isImpalaAtk";
+
     void Start()
     {
         P2FlogTongue.SetActive(false);
@@ -104,6 +126,8 @@ public class KeybordPlay2 : MonoBehaviour
         Rb = GetComponent<Rigidbody>();
         Rb.isKinematic = true;
         EnemyObj = GameObject.Find("P1camera");
+
+        Animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -140,6 +164,7 @@ public class KeybordPlay2 : MonoBehaviour
                                         {
                                             //歩きの速さの調整をする際はここも
                                             Speed = 40.0f;
+
                                         }
                                         else
                                         {
@@ -157,6 +182,9 @@ public class KeybordPlay2 : MonoBehaviour
                                                 //音鳴らす
                                                 AnimalFSSrc.Play();
                                             }
+
+                                            //走る
+                                            this.Animator.SetBool(isRun, true);
                                         }
                                         else if (Input.GetKey(KeyCode.DownArrow))
                                         {
@@ -170,6 +198,9 @@ public class KeybordPlay2 : MonoBehaviour
                                                 //音鳴らす
                                                 AnimalFSSrc.Play();
                                             }
+
+                                            //走る
+                                            this.Animator.SetBool(isRun, true);
                                         }
                                         else if (Input.GetKey(KeyCode.RightArrow))
                                         {
@@ -182,6 +213,9 @@ public class KeybordPlay2 : MonoBehaviour
                                                 //音鳴らす
                                                 AnimalFSSrc.Play();
                                             }
+
+                                            //走る
+                                            this.Animator.SetBool(isRun, true);
                                         }
                                         else if (Input.GetKey(KeyCode.LeftArrow))
                                         {
@@ -195,11 +229,16 @@ public class KeybordPlay2 : MonoBehaviour
                                                 //音鳴らす
                                                 AnimalFSSrc.Play();
                                             }
+
+                                            //走る
+                                            this.Animator.SetBool(isRun, true);
                                         }
                                         else
                                         {
                                             Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
                                             transform.LookAt(Enemy);
+
+                                            this.Animator.SetBool(isRun, false);
                                         }
                                     }
                                 }
@@ -214,7 +253,7 @@ public class KeybordPlay2 : MonoBehaviour
                             if (Head == 1)
                             {
                                 //カエル
-                                if (Input.GetKeyDown(KeyCode.Z))
+                                if (Input.GetKey(KeyCode.Z))
                                 {
                                     //音鳴らす
                                     FrogSwingSrc.Play();
@@ -225,6 +264,10 @@ public class KeybordPlay2 : MonoBehaviour
                                         P2FlogAnimator.SetTrigger("FlogAtkStartP1");
                                         P2FlogAnimator.SetBool("FlogAtkFinP1", false);
                                         FlogSwitch = false;
+
+                                        //舌攻撃
+                                        this.Animator.SetBool(isTongueStr, true);
+                                        this.Animator.SetBool(isTongueFin, false);
                                     }
                                 }
                                 if (Input.GetKeyUp(KeyCode.Z))
@@ -240,24 +283,29 @@ public class KeybordPlay2 : MonoBehaviour
 
                                         //音止める
                                         FrogSwingSrc.Stop();
+
+                                        //舌攻撃
+                                        this.Animator.SetBool(isTongueStr, false);
+                                        this.Animator.SetBool(isTongueFin, true);
                                     }
                                 }
                             }
                             else if (Head == 2)
                             {
                                 // ライオン
-                                if (Input.GetKey(KeyCode.Z))
+                                if (Input.GetKeyDown(KeyCode.Z))
                                 {
                                     //音鳴らす
-                                    LionSrc.Play();
+                                    //LionSrc.Play();
+                                    Invoke("BiteSound", 0.6f);
 
                                     if (LionSwitch == true)
                                     {
-                                        P2Lionhead.SetActive(true);
+                                        //P2Lionhead.SetActive(true);
                                         AllActionInterval = true;
                                         P2Lionhead.tag = "P2LionAttack";
                                         Rb.AddForce(transform.forward * 20f, ForceMode.Impulse);
-                                        P2Lionhead.GetComponent<Renderer>().material.color = P2LionColor.color;
+                                        //P2Lionhead.GetComponent<Renderer>().material.color = P2LionColor.color;
                                         LionSwitch = false;
                                         //当たり判定がある時間
                                         Invoke("LionAttackTime", 0.5f);
@@ -265,7 +313,17 @@ public class KeybordPlay2 : MonoBehaviour
                                         Invoke("ActionInterval", 0.8f);
                                         //リキャストタイム
                                         Invoke("DelayLion", 1.2f);
+
+                                        //噛む
+                                        this.Animator.SetBool(isBite, true);
+                                        //当たり判定
+                                        Invoke("BiteEnable", 0.4f);
+                                        Invoke("BiteUnable", 1.0f);
                                     }
+                                }
+                                else
+                                {
+                                    this.Animator.SetBool(isBite, false);
                                 }
                             }
 
@@ -295,28 +353,48 @@ public class KeybordPlay2 : MonoBehaviour
                                             Invoke("ActionInterval", 3.0f);
                                             //リキャストタイム
                                             Invoke("DelayTartle", 6f);
+
+                                            //カメのシールド
+                                            this.Animator.SetBool(isKameShield, true);
+                                            this.Animator.SetBool(isCounter, false);
+
+                                            //遷移タイミング
+                                            Invoke("TurtleAnimTiming", 1.8f);
                                         }
                                     }
                                 }
                                 else if (Body == 2)
                                 {
                                     //サソリ
-                                    if (Input.GetKeyUp(KeyCode.X))
+                                    if (Input.GetKey(KeyCode.X))
                                     {
                                         //音鳴らす
-                                        ScorpionSrc.Play();
+                                        //ScorpionSrc.Play();
 
                                         if (ScorpionAtk == true)
                                         {
                                             AllActionInterval = true;
                                             ScorpionAtk = false;
-                                            GameObject Obj;
-                                            Obj = Instantiate(ScorpionBullet, P2SetScorpion.transform.position, P2SetScorpion.transform.rotation) as GameObject;
+                                            //GameObject Obj;
+                                            //Obj = Instantiate(ScorpionBullet, P2SetScorpion.transform.position, P2SetScorpion.transform.rotation) as GameObject;
                                             //行動停止
                                             Invoke("ActionInterval", 0.2f);
                                             //リキャストタイム
                                             Invoke("DelayScorpion", 0.2f);
+
+                                            //ミサイル発射タイミング
+                                            Invoke("MissileTiming", 1.0f);
+                                            Invoke("MissileTiming", 1.2f);
+
+                                            //ミサイル発射
+                                            this.Animator.SetBool(isMissileStr, true);
+                                            this.Animator.SetBool(isMissileFin, false);
                                         }
+                                    }
+                                    else
+                                    {
+                                        this.Animator.SetBool(isMissileStr, false);
+                                        this.Animator.SetBool(isMissileFin, true);
                                     }
                                 }
                             }
@@ -365,15 +443,16 @@ public class KeybordPlay2 : MonoBehaviour
                                 if (Input.GetKey(KeyCode.C))
                                 {
                                     //音鳴らす
-                                    WolfSrc.Play();
+                                    //WolfSrc.Play();
+                                    Invoke("ScratchSound", 0.5f);
 
                                     if (WolfSwitch == true)
                                     {
-                                        P2WolfAtk.SetActive(true);
+                                        //P2WolfAtk.SetActive(true);
                                         AllActionInterval = true;
                                         P2WolfAtk.tag = "P2WolfAttack";
                                         Rb.AddForce(transform.forward * 30f, ForceMode.Impulse);
-                                        P2WolfAtk.GetComponent<Renderer>().material.color = P2WolfColor.color;
+                                       // P2WolfAtk.GetComponent<Renderer>().material.color = P2WolfColor.color;
                                         WolfSwitch = false;
                                         //当たり判定がある時間
                                         Invoke("WolfAttackTime", 0.5f);
@@ -381,7 +460,18 @@ public class KeybordPlay2 : MonoBehaviour
                                         Invoke("ActionInterval", 0.8f);
                                         //リキャストタイム
                                         Invoke("DelayWolf", 1.2f);
+
+                                        //ひっかく
+                                        this.Animator.SetBool(isScratch, true);
+                                        //当たり判定
+                                        Invoke("ScratchEnable", 0.4f);
+                                        Invoke("ScratchUnable", 1.0f);
                                     }
+                                }
+                                else
+                                {
+                                    //ひっかく
+                                    this.Animator.SetBool(isScratch, false);
                                 }
                             }
                         }
@@ -402,6 +492,9 @@ public class KeybordPlay2 : MonoBehaviour
                         //音鳴らす
                         AnimalShieldOPSrc.Play();
 
+                        //シールド展開
+                        this.Animator.SetBool(isShield, true);
+
                         if (NormalJump == false)
                         {
                             if (FlogSwitch == true)
@@ -413,6 +506,7 @@ public class KeybordPlay2 : MonoBehaviour
                                     //シールドの減少量
                                     ShieldPoint -= 0.001f;
                                 }
+
                             }
                         }
                     }
@@ -434,6 +528,8 @@ public class KeybordPlay2 : MonoBehaviour
                             ShieldObj.SetActive(false);
                             Invoke("ShieldDelay", 0.5f);
                         }
+
+                        this.Animator.SetBool(isShield, false) ;
                     }
                     if (Input.GetKey(KeyCode.Space))
                     {
@@ -448,9 +544,17 @@ public class KeybordPlay2 : MonoBehaviour
 
                                     //音鳴らす
                                     AnimalJumpSrc.Play();
+
+                                    //ジャンプする
+                                    this.Animator.SetBool(isJump, true);
                                 }
                             }
                         }
+                    }
+                    else
+                    {
+                        //ジャンプする
+                        this.Animator.SetBool(isJump, false);
                     }
                 }
             }
@@ -498,7 +602,7 @@ public class KeybordPlay2 : MonoBehaviour
     void LionAttackTime()
     {
         //攻撃判定がある状態、分かりやすく現在は色を変更
-        P2Lionhead.SetActive(false);
+        //P2Lionhead.SetActive(false);
         P2Lionhead.tag = "Player";
         P2Lionhead.GetComponent<Renderer>().material.color = P2LionNormal.color;
     }
@@ -538,7 +642,7 @@ public class KeybordPlay2 : MonoBehaviour
     void WolfAttackTime()
     {
         //攻撃判定がある状態、分かりやすく現在は色を変更
-        P2WolfAtk.SetActive(false);
+        //P2WolfAtk.SetActive(false);
         P2WolfAtk.tag = "Player2";
         P2WolfAtk.GetComponent<Renderer>().material.color = P2WolfNormal.color;
     }
@@ -568,6 +672,57 @@ public class KeybordPlay2 : MonoBehaviour
         //無敵タイムの終了
         Invincible = false;
     }
+
+    void MissileTiming()
+    {
+        ScorpionSrc.Play();
+        //ミサイル発射タイミング
+        GameObject Obj;
+        Obj = Instantiate(ScorpionBullet, P2SetScorpion.transform.position, P2SetScorpion.transform.rotation) as GameObject;
+    }
+
+    void ScratchSound()
+    {
+        WolfSrc.Play();
+    }
+
+    void ScratchEnable()
+    {
+        //オオカミの当たり判定
+        P2WolfAtk.SetActive(true);
+
+    }
+
+    void ScratchUnable()
+    {
+        //オオカミの当たり判定を消す
+        P2WolfAtk.SetActive(false);
+    }
+
+    void BiteSound()
+    {
+        LionSrc.Play();
+    }
+
+    void BiteEnable()
+    {
+        //ライオンの当たり判定
+        P2Lionhead.SetActive(true);
+    }
+
+    void BiteUnable()
+    {
+        //ライオンの当たり判定を消すタイミングをイベントで制御
+        P2Lionhead.SetActive(false);
+    }
+
+    void TurtleAnimTiming()
+    {
+        //カメのシールドがカウンターに遷移するタイミング
+        this.Animator.SetBool(isKameShield, false);
+        this.Animator.SetBool(isCounter, true);
+    }
+
     Vector3 GetAngleVec(GameObject _from, GameObject _to)
     {
         //高さの概念を入れないベクトルを作る
@@ -699,6 +854,9 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+
+                    //ふっとぶ
+                    this.Animator.SetBool(isBlown, true);
                 }
                 if (other.gameObject.CompareTag("P1Impla"))
                 {
@@ -711,6 +869,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+
                 }
                 if (other.gameObject.CompareTag("P1ImplaWave"))
                 {
@@ -733,6 +892,9 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+
+                    //ふっとぶ
+                    this.Animator.SetBool(isBlown, true);
                 }
                 if (other.gameObject.CompareTag("P1FlogAttack"))
                 {
@@ -744,6 +906,9 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
+
+                    //怯む
+                    this.Animator.SetBool(isFalt, true);
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
@@ -756,6 +921,9 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.7f);
+
+                    //怯む
+                    this.Animator.SetBool(isFalt, true);
                 }
                 //カウンターダメージ用
                 if (other.gameObject.CompareTag("P2LionAttackBack"))
@@ -824,6 +992,11 @@ public class KeybordPlay2 : MonoBehaviour
                     Invoke("InvincibleTime", 1.5f);
                 }
             }
+        }
+        else
+        {
+            this.Animator.SetBool(isFalt, false);
+            this.Animator.SetBool(isBlown, false);
         }
     }
 }
