@@ -26,7 +26,7 @@ public class PreviewP2Kimera122 : MonoBehaviour
     {
         if (One)
         {
-            if (Contlole2.head2 == Head2 && ContloleBody2.body2 == Body2 && ContloleLeg2.leg2 == Leg2)
+            if (NPCContlolehead.head2 == Head2 && NPCContloleBody.body2 == Body2 && NPCContloleLeg.leg2 == Leg2)
             {
                 //if文の外でやると無駄に毎フレーム実行されるので中にする
                 GameObject obj = (GameObject)Resources.Load("CP2Kimera122");
@@ -40,7 +40,7 @@ public class PreviewP2Kimera122 : MonoBehaviour
             instance.SetActive(false);
         }
 
-        if (Contlole2.head2 == Head2 && ContloleBody2.body2 == Body2 && ContloleLeg2.leg2 == Leg2)
+        if (NPCContlolehead.head2 == Head2 && NPCContloleBody.body2 == Body2 && NPCContloleLeg.leg2 == Leg2)
         {
             instance.SetActive(true);
             instance.transform.RotateAround(new Vector3(4.8f, -1, 10), transform.up, 20 * Time.deltaTime);
