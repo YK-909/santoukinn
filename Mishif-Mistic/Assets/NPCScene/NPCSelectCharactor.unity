@@ -130,11 +130,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 63298167}
-  - component: {fileID: 63298169}
-  - component: {fileID: 63298168}
   - component: {fileID: 63298170}
   - component: {fileID: 63298172}
   - component: {fileID: 63298171}
+  - component: {fileID: 63298169}
+  - component: {fileID: 63298168}
   m_Layer: 5
   m_Name: 2P_leg
   m_TagString: Untagged
@@ -175,11 +175,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 63298166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b95fbcd6162d824abaada5b1e5fc3cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cc699946b352f94ab8f68b3305ace9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FlyPanSprite: {fileID: 21300000, guid: 8b0ca69f84662a94fb5c0814027adb52, type: 3}
-  ImpalaSprite: {fileID: 21300000, guid: ee0501a62616b9e4a8d27e8e4d9cc7d0, type: 3}
+  FlyPanSprite: {fileID: 21300000, guid: 58b13bffa17f4274587109274efb7351, type: 3}
+  ImpalaSprite: {fileID: 21300000, guid: 58b13bffa17f4274587109274efb7351, type: 3}
   WolfSprite: {fileID: 21300000, guid: 58b13bffa17f4274587109274efb7351, type: 3}
   Animaru:
   - {fileID: 220707261}
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 63298166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe7eb80df0f9184abb0849ae266ba58, type: 3}
+  m_Script: {fileID: 11500000, guid: e044a9bc6d973be479c8eb73fb287cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!82 &63298170
@@ -806,11 +806,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 296586839}
-  - component: {fileID: 296586841}
-  - component: {fileID: 296586840}
   - component: {fileID: 296586842}
   - component: {fileID: 296586844}
   - component: {fileID: 296586843}
+  - component: {fileID: 296586841}
+  - component: {fileID: 296586840}
   m_Layer: 5
   m_Name: 2P_body
   m_TagString: Untagged
@@ -851,18 +851,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 296586838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0fb897e7d393b3479276e58adaf343a, type: 3}
+  m_Script: {fileID: 11500000, guid: 7067068a00763f34c817dd44de86e597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FlyPanSprite: {fileID: 21300000, guid: 8b0ca69f84662a94fb5c0814027adb52, type: 3}
-  TortoiseSprite: {fileID: 21300000, guid: d5685abc4183a654d8cfe981177e3082, type: 3}
-  ScorpionSprite: {fileID: 21300000, guid: 3ba89599d237ac04a909984cde267938, type: 3}
-  Animaru:
-  - {fileID: 2050902718}
-  - {fileID: 1091759444}
-  - {fileID: 608502859}
-  - {fileID: 123373023}
-  - {fileID: 1532628710}
 --- !u!114 &296586841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -872,9 +863,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 296586838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a988ac5f60d003047a5529edc2f5c223, type: 3}
+  m_Script: {fileID: 11500000, guid: 2adc1b35fb147fc4cba9b3999ef23140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FlyPanSprite: {fileID: 21300000, guid: 3ba89599d237ac04a909984cde267938, type: 3}
+  TortoiseSprite: {fileID: 21300000, guid: 3ba89599d237ac04a909984cde267938, type: 3}
+  ScorpionSprite: {fileID: 21300000, guid: 3ba89599d237ac04a909984cde267938, type: 3}
+  Animaru:
+  - {fileID: 2050902718}
+  - {fileID: 1091759444}
+  - {fileID: 608502859}
+  - {fileID: 123373023}
+  - {fileID: 1532628710}
 --- !u!82 &296586842
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3702,143 +3702,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532628710}
   m_CullTransparentMesh: 0
---- !u!1 &1579556808
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1579556809}
-  - component: {fileID: 1579556814}
-  - component: {fileID: 1579556813}
-  - component: {fileID: 1579556812}
-  - component: {fileID: 1579556811}
-  - component: {fileID: 1579556810}
-  m_Layer: 5
-  m_Name: ChooseAreaP2
-  m_TagString: ChooseArea
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1579556809
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579556808}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1909600821}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200.8, y: 64.7}
-  m_SizeDelta: {x: 83.72916, y: 148.46924}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1579556810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579556808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3086ec9f6a6d9e488410027435af17f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KeyboardSlotLRSrc: {fileID: 209840526}
---- !u!61 &1579556811
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579556808}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.37596893, y: -0.6517372}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 83.98695, y: 146.52786}
-  m_EdgeRadius: 0
---- !u!50 &1579556812
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579556808}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &1579556813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579556808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.90058327, b: 0, a: 0.2901961}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1579556814
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579556808}
-  m_CullTransparentMesh: 0
 --- !u!1 &1621196966
 GameObject:
   m_ObjectHideFlags: 0
@@ -4489,11 +4352,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1825258817}
-  - component: {fileID: 1825258818}
-  - component: {fileID: 1825258819}
   - component: {fileID: 1825258820}
   - component: {fileID: 1825258822}
   - component: {fileID: 1825258821}
+  - component: {fileID: 1825258818}
+  - component: {fileID: 1825258819}
   m_Layer: 5
   m_Name: 2P_head
   m_TagString: Untagged
@@ -4534,9 +4397,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1825258816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d1f40c6c88d87d40895ca08c938fc93, type: 3}
+  m_Script: {fileID: 11500000, guid: 8722f017809ca5742a223f65afc7c0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FlyPanSprite: {fileID: 21300000, guid: a34e968b513088e40bbb0f82ac3f2b2f, type: 3}
+  FrogSprite: {fileID: 21300000, guid: a34e968b513088e40bbb0f82ac3f2b2f, type: 3}
+  LionSprite: {fileID: 21300000, guid: a34e968b513088e40bbb0f82ac3f2b2f, type: 3}
+  Animaru:
+  - {fileID: 1754580362}
+  - {fileID: 1031829418}
+  - {fileID: 1127896043}
+  - {fileID: 1347687241}
+  - {fileID: 619815163}
 --- !u!114 &1825258819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4546,18 +4418,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1825258816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86aa3e8e8bbb0ea4aa602b74e6b938a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fbdb86c7625c0e44abab43b46e60a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FlyPanSprite: {fileID: 21300000, guid: 8b0ca69f84662a94fb5c0814027adb52, type: 3}
-  FrogSprite: {fileID: 21300000, guid: a34e968b513088e40bbb0f82ac3f2b2f, type: 3}
-  LionSprite: {fileID: 21300000, guid: 480e3beb2da36d949826b3d668fef7e5, type: 3}
-  Animaru:
-  - {fileID: 1754580362}
-  - {fileID: 1031829418}
-  - {fileID: 1127896043}
-  - {fileID: 1347687241}
-  - {fileID: 619815163}
 --- !u!82 &1825258820
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4876,7 +4739,6 @@ RectTransform:
   - {fileID: 1957915653}
   - {fileID: 722462500}
   - {fileID: 1781473130}
-  - {fileID: 1579556809}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -12.752001, z: 0}
