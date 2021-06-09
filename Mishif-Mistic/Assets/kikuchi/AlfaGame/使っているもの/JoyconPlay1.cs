@@ -171,7 +171,7 @@ public class JoyconPlay1 : MonoBehaviour
                                             Speed = 15f;
                                         }
 
-                                        Direction.Set(Input.GetAxis("Vertical1"), 0, Input.GetAxis("Horizontal1"));
+                                        Direction.Set(Input.GetAxis("Horizontal1"), 0, Input.GetAxis("Vertical1"));
                                         if (Direction != Vector3.zero)
                                         {
                                             //向きを指定
