@@ -115,7 +115,7 @@ public class KeybordPlay2 : MonoBehaviour
     private string isMissileFin = "isMissileFin";
     private string isTongueStr = "isTongueStr";
     private string isTongueFin = "isTongueFin";
-    private string isImpalaAtk = "isImpalaAtk";
+    private string isImpalaAtk = "isImpAtk";
 
     void Start()
     {
@@ -435,6 +435,12 @@ public class KeybordPlay2 : MonoBehaviour
                                 if (Implajump == true)
                                 {
                                     transform.position += transform.forward * 25 * Time.deltaTime;
+                                    //インパラ攻撃
+                                    this.Animator.SetBool(isImpalaAtk, true);
+                                }
+                                else
+                                {
+                                    this.Animator.SetBool(isImpalaAtk, false);
                                 }
                             }
                             else if (Leg == 2)
@@ -870,6 +876,9 @@ public class KeybordPlay2 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
 
+                    //ふっとぶ
+                    this.Animator.SetBool(isBlown, true);
+
                 }
                 if (other.gameObject.CompareTag("P1ImplaWave"))
                 {
@@ -881,6 +890,9 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+
+                    //ふっとぶ
+                    this.Animator.SetBool(isBlown, true);
                 }
                 if (other.gameObject.CompareTag("P1WolfAttack"))
                 {
