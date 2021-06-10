@@ -306,9 +306,9 @@ public class JoyconPlay1 : MonoBehaviour
                                             //上と同じ値
                                             Invoke("TurtleGardRemove", 2f);
                                             //行動停止
-                                            Invoke("ActionInterval", 3.0f);
+                                            Invoke("ActionInterval", 2.0f);
                                             //リキャストタイム
-                                            Invoke("DelayTartle", 6f);
+                                            Invoke("DelayTartle", 4f);
 
                                             //カメのシールド
                                             this.Animator.SetBool(isKameShield, true);
@@ -531,7 +531,7 @@ public class JoyconPlay1 : MonoBehaviour
         //HPの継続的な減少
         if (P1G.transform.position.x < P1R.transform.position.x)
         {
-            P1R.transform.position -= new Vector3(1f, 0, 0);
+            P1R.transform.position -= new Vector3(0.1f, 0, 0);
         }
 
         //シールドブレイク

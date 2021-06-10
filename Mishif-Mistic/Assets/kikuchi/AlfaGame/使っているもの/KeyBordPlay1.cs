@@ -133,12 +133,10 @@ public class KeyBordPlay1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Gamemode = Timer.GetGamemode();
+        Gamemode = Timerbotgame.GetGamemode();
         P1TurtleGard.transform.position = this.transform.position;
         //シールドの色変更　tの値で変わる　調整中無視していいよ
         ShieldObj.GetComponent<Renderer>().material.color = Color.HSVToRGB(ShieldPoint * 150, 1, 1);
-        float Distance = Vector3.Distance(transform.position, EnemyObj.transform.position);
-        Debug.Log(Distance);
 
         if (Gamemode == 1)
         {
@@ -352,9 +350,9 @@ public class KeyBordPlay1 : MonoBehaviour
                                             //上と同じ値
                                             Invoke("TurtleGardRemove", 2f);
                                             //行動停止
-                                            Invoke("ActionInterval", 3.0f);
+                                            Invoke("ActionInterval", 2.0f);
                                             //リキャストタイム
-                                            Invoke("DelayTartle", 6f);
+                                            Invoke("DelayTartle", 4f);
 
                                             //カメのシールド
                                             this.Animator.SetBool(isKameShield, true);
@@ -583,7 +581,7 @@ public class KeyBordPlay1 : MonoBehaviour
         //HPの継続的な減少
         if (P1G.transform.position.x < P1R.transform.position.x)
         {
-            P1R.transform.position += new Vector3(HP10per * (0.01f * Time.deltaTime), 0, 0);
+            P1R.transform.position -= new Vector3(0.1f, 0, 0);
         }
 
         //シールドブレイク
@@ -614,7 +612,7 @@ public class KeyBordPlay1 : MonoBehaviour
     {
         //攻撃判定がある状態、分かりやすく現在は色を変更
         //P1Lionhead.SetActive(false);
-        P1Lionhead.tag = "Player";
+        P1Lionhead.tag = "Player1";
         P1Lionhead.GetComponent<Renderer>().material.color = P1LionNormal.color;
     }
     void DelayLion()
@@ -654,7 +652,7 @@ public class KeyBordPlay1 : MonoBehaviour
     {
         //攻撃判定がある状態、分かりやすく現在は色を変更
         //P1WolfAtk.SetActive(false);
-        P1WolfAtk.tag = "Player2";
+        P1WolfAtk.tag = "Player1";
         P1WolfAtk.GetComponent<Renderer>().material.color = P1WolfNormal.color;
     }
     void DelayWolf()

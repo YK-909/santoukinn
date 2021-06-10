@@ -121,7 +121,7 @@ public class BotFSW : MonoBehaviour
     private string isImpalaAtk = "isImpAtk";
 
     //ボット化のための
-    private int Value = 0;
+    private int Value = 1;
     private float Distance;
 
     void Start()
@@ -140,7 +140,7 @@ public class BotFSW : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Gamemode = Timer.GetGamemode();
+        Gamemode = Timerbotgame.GetGamemode();
         P2TurtleGard.transform.position = this.transform.position;
         //シールドの色変更　tの値で変わる　調整中無視していいよ
         ShieldObj.GetComponent<Renderer>().material.color = Color.HSVToRGB(ShieldPoint * 150, 1, 1);
@@ -148,6 +148,8 @@ public class BotFSW : MonoBehaviour
         //ボット用 この数値が短いほど正確な動き
         StartCoroutine(DelayMethod(4));
         StartCoroutine(DirectionMethod(7));
+        Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
+        transform.LookAt(Enemy);
 
         if (Gamemode == 1)
         {
@@ -180,70 +182,13 @@ public class BotFSW : MonoBehaviour
                                         }
 
                                         //距離要調整
-                                        if (Value == 0)
+                                       
+                                         if (Value == 1|| Value == 2) 
                                         {
-                                            //キャラクターが指定の向きを向く
-                                            transform.rotation = Quaternion.Euler(0, 0, 0);
-                                            //前方に移動する
-                                            transform.position += transform.forward * Speed * Time.deltaTime;
-                                            if (Speed == 40.0)
-                                            {
-                                                //音鳴らす
-                                                AnimalFSSrc.Play();
-                                            }
-
-                                            //走る
-                                            this.Animator.SetBool(isRun, true);
-                                        }
-                                        else if (Value == 1)
-                                        {
-                                            //キャラクターが指定の向きを向く
-                                            transform.rotation = Quaternion.Euler(0, 180, 0);
-                                            //前方に移動する
-                                            transform.position += transform.forward * Speed * Time.deltaTime;
-                                            if (Speed == 40.0)
-                                            {
-                                                //音鳴らす
-                                                AnimalFSSrc.Play();
-                                            }
-
-                                            //走る
-                                            this.Animator.SetBool(isRun, true);
-                                        }
-                                        else if (Value == 2)
-                                        {
-                                            //キャラクターが指定の向きを向く
-                                            transform.rotation = Quaternion.Euler(0, 90, 0);
-                                            //前方に移動する
-                                            transform.position += transform.forward * Speed * Time.deltaTime;
-                                            if (Speed == 40.0)
-                                            {
-                                                //音鳴らす
-                                                AnimalFSSrc.Play();
-                                            }
-
-                                            //走る
-                                            this.Animator.SetBool(isRun, true);
-                                        }
-                                        else if (Value == 3)
-                                        {
-                                            //キャラクターが指定の向きを向く
-                                            transform.rotation = Quaternion.Euler(0, -90, 0);
-                                            //前方に移動する
-                                            transform.position += transform.forward * Speed * Time.deltaTime;
-                                            if (Speed == 40.0)
-                                            {
-                                                //音鳴らす
-                                                AnimalFSSrc.Play();
-                                            }
-
-                                            //走る
-                                            this.Animator.SetBool(isRun, true);
                                         }
                                         else
                                         {
-                                            Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
-                                            transform.LookAt(Enemy);
+                                           
                                             //前方に移動する
                                             transform.position += transform.forward * Speed * Time.deltaTime;
                                             if (Speed == 40.0)
@@ -270,7 +215,7 @@ public class BotFSW : MonoBehaviour
                             if (Head == 1)
                             {
                                 //カエル
-                                if (30 < Distance && Distance < 40)
+                                if ( Distance < 20)
                                 {
                                     //音鳴らす
                                     FrogSwingSrc.Play();
@@ -287,7 +232,7 @@ public class BotFSW : MonoBehaviour
                                         this.Animator.SetBool(isTongueFin, false);
                                     }
                                 }
-                                if (Distance > 60)
+                                if (Distance > 35)
                                 {
                                     if (FlogSwitch == false)
                                     {
@@ -383,7 +328,7 @@ public class BotFSW : MonoBehaviour
                                 else if (Body == 2)
                                 {
                                     //サソリ
-                                    if (60 < Distance && Distance < 80)
+                                    if (60 < Distance && Distance < 70)
                                     {
                                         //音鳴らす
                                         //ScorpionSrc.Play();
@@ -394,9 +339,9 @@ public class BotFSW : MonoBehaviour
                                             //GameObject Obj;
                                             //Obj = Instantiate(P2ScorpionBullet, P2SetScorpion.transform.position, P2SetScorpion.transform.rotation) as GameObject;
                                             //行動停止
-                                            Invoke("ActionInterval", 0.2f);
+                                            Invoke("ActionInterval", 1.2f);
                                             //リキャストタイム
-                                            Invoke("DelayScorpion", 0.2f);
+                                            Invoke("DelayScorpion", 1.4f);
 
                                             //ミサイル発射タイミング
                                             Invoke("MissileTiming", 1.0f);
@@ -595,7 +540,7 @@ public class BotFSW : MonoBehaviour
         //HPの継続的な減少
         if (P2G.transform.position.x > P2R.transform.position.x)
         {
-            P2R.transform.position += new Vector3(HP10per * (0.01f * Time.deltaTime), 0, 0);
+            P2R.transform.position += new Vector3(0.1f, 0, 0);
         }
 
         //シールドブレイク
@@ -805,7 +750,7 @@ public class BotFSW : MonoBehaviour
             if (Shield == true)
             {
                 //シールドを張っているとき
-                if (other.gameObject.CompareTag("P2LionAttack"))
+                if (other.gameObject.CompareTag("P1LionAttack"))
                 {
                     ShieldPoint -= 0.2f;
                     //ダメを食らう時の半分ノックバック
@@ -815,7 +760,7 @@ public class BotFSW : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
                 }
-                if (other.gameObject.CompareTag("P2Impla"))
+                if (other.gameObject.CompareTag("P1Impla"))
                 {
                     //ダメを食らう時の半分ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player1);
@@ -826,7 +771,7 @@ public class BotFSW : MonoBehaviour
                     Invoke("InvincibleTime", 0.3f);
                 }
 
-                if (other.gameObject.CompareTag("P2ImplaWave"))
+                if (other.gameObject.CompareTag("P1ImplaWave"))
                 {
                     //ダメを食らう時の半分ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player1);
@@ -837,7 +782,7 @@ public class BotFSW : MonoBehaviour
                     Invoke("InvincibleTime", 0.3f);
                 }
                 //カエル、サソリ、オオカミ
-                if (other.gameObject.CompareTag("P2FlogAttack"))
+                if (other.gameObject.CompareTag("P1FlogAttack"))
                 {
                     //ダメを食らう時の半分ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player1);
@@ -867,7 +812,7 @@ public class BotFSW : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
                 }
-                if (other.gameObject.CompareTag("P2WolfAttack"))
+                if (other.gameObject.CompareTag("P1WolfAttack"))
                 {
                     //ダメを食らう時の半分ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player1);
@@ -882,7 +827,7 @@ public class BotFSW : MonoBehaviour
             else
             {
                 //ダメージの当たり判定
-                if (other.gameObject.CompareTag("P2LionAttack"))
+                if (other.gameObject.CompareTag("P1LionAttack"))
                 {
                     Player1HP -= 20;
                     P2G.transform.position += new Vector3(HP10per * 2, 0, 0);
@@ -896,7 +841,7 @@ public class BotFSW : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                 }
-                if (other.gameObject.CompareTag("P2Impla"))
+                if (other.gameObject.CompareTag("P1Impla"))
                 {
                     Player1HP -= 30;
                     P2G.transform.position += new Vector3(HP10per * 3, 0, 0);
@@ -911,7 +856,7 @@ public class BotFSW : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                 }
-                if (other.gameObject.CompareTag("P2ImplaWave"))
+                if (other.gameObject.CompareTag("P1ImplaWave"))
                 {
                     Player1HP -= 10;
                     P2G.transform.position += new Vector3(HP10per, 0, 0);
@@ -925,7 +870,7 @@ public class BotFSW : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                 }
-                if (other.gameObject.CompareTag("P2WolfAttack"))
+                if (other.gameObject.CompareTag("P1WolfAttack"))
                 {
                     Player1HP -= 15;
                     P2G.transform.position += new Vector3(HP10per * 1.5f, 0, 0);
@@ -939,7 +884,7 @@ public class BotFSW : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                 }
-                if (other.gameObject.CompareTag("P2FlogAttack"))
+                if (other.gameObject.CompareTag("P1FlogAttack"))
                 {
                     Player1HP -= 4;
                     P2G.transform.position += new Vector3(HP10per * 0.4f, 0, 0);
