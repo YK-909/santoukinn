@@ -6,8 +6,8 @@ public class P1ChooseArea : MonoBehaviour
 {
     public CriAtomSource SwitchSlotLRSrc;
 
-    private float minX = 225;
-    private float maxX = 580;
+    private float minX = 270;
+    private float maxX = 680;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class P1ChooseArea : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            transform.Translate(-160, 0, 0);
+            transform.Translate(-200, 0, 0);
 
             //音鳴らす
             SwitchSlotLRSrc.Play();
@@ -28,7 +28,7 @@ public class P1ChooseArea : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            transform.Translate(160, 0, 0);
+            transform.Translate(200, 0, 0);
 
             //音鳴らす
             SwitchSlotLRSrc.Play();
