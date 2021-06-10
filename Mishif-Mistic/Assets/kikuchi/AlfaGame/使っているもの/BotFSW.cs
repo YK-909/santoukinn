@@ -199,7 +199,6 @@ public class BotFSW : MonoBehaviour
 
                                             //走る
                                             this.Animator.SetBool(isRun, true);
-
                                         }
                                     }
                                 }
@@ -217,6 +216,7 @@ public class BotFSW : MonoBehaviour
                                 //カエル
                                 if ( Distance < 20)
                                 {
+                                    this.Animator.SetBool(isRun, false);
                                     //音鳴らす
                                     FrogSwingSrc.Play();
 
@@ -330,6 +330,7 @@ public class BotFSW : MonoBehaviour
                                     //サソリ
                                     if (60 < Distance && Distance < 70)
                                     {
+                                        this.Animator.SetBool(isRun, false);
                                         //音鳴らす
                                         //ScorpionSrc.Play();
 
@@ -410,6 +411,7 @@ public class BotFSW : MonoBehaviour
                                 //オオカミ
                                 if (Distance <= 30)
                                 {
+                                    this.Animator.SetBool(isRun, false);
                                     //音鳴らす
                                     //WolfSrc.Play();
                                     Invoke("ScratchSound", 0.5f);
@@ -534,7 +536,7 @@ public class BotFSW : MonoBehaviour
         {
             Poisontimer += Time.deltaTime;
             Player1HP -= Time.deltaTime;
-            P2G.transform.position += new Vector3(HP10per * (0.01f * Time.deltaTime), 0, 0);
+            P2G.transform.position += new Vector3(HP10per * (0.1f * Time.deltaTime), 0, 0);
         }
 
         //HPの継続的な減少
