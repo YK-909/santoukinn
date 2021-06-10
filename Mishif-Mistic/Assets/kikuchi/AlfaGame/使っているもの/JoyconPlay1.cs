@@ -439,8 +439,6 @@ public class JoyconPlay1 : MonoBehaviour
                         }
                     }
                 }
-
-
             }
             if (AllActionInterval == false)
             {
@@ -519,7 +517,10 @@ public class JoyconPlay1 : MonoBehaviour
                 }
             }
         }
-
+        else if (Gamemode == 2)
+        {
+            Player1HP = 100;
+        }
         if (Poisontimer < Poisoningtime)
         {
             Poisontimer += Time.deltaTime;
