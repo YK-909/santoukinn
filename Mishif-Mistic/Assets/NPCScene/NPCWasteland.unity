@@ -1316,7 +1316,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544286332}
-  m_LocalRotation: {x: 0.25088724, y: -0.006798278, z: 0.0017620011, w: 0.9679909}
+  m_LocalRotation: {x: 0.25088724, y: -0.0067983116, z: 0.0017620098, w: 0.9679909}
   m_LocalPosition: {x: 2200, y: 3453, z: 221}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2007,6 +2007,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4188844248639909561, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4801486456767168090, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: m_IsActive
@@ -2025,12 +2030,12 @@ PrefabInstance:
     - target: {fileID: 5720865484877363749, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.006798278
+      value: -0.0067983116
       objectReference: {fileID: 0}
     - target: {fileID: 5720865484877363749, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0017620011
+      value: 0.0017620098
       objectReference: {fileID: 0}
     - target: {fileID: 6299059107457766402, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
@@ -2047,5 +2052,27 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4991320589223814452, guid: c385dabe6cedf4e428bdd96948641605, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c385dabe6cedf4e428bdd96948641605, type: 3}
+--- !u!1 &4579360226879571989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3075052932977310800, guid: c385dabe6cedf4e428bdd96948641605,
+    type: 3}
+  m_PrefabInstance: {fileID: 4579360226879571988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4579360226879571990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4579360226879571989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c3765abac3ee149b406bcf0c4b7cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Head2: 1
+  Body2: 2
+  Leg2: 2
