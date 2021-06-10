@@ -566,6 +566,10 @@ public class KeybordPlay2 : MonoBehaviour
             }
 
         }
+        else if (Gamemode == 2)
+        {
+            Player2HP = 100;
+        }
 
         if (Poisontimer < Poisoningtime)
         {
