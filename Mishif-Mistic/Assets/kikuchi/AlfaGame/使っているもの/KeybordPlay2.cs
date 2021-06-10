@@ -575,7 +575,7 @@ public class KeybordPlay2 : MonoBehaviour
         {
             Poisontimer += Time.deltaTime;
             Player2HP -= Time.deltaTime;
-            P2G.transform.position += new Vector3(HP10per * (0.01f * Time.deltaTime), 0, 0);
+            P2G.transform.position += new Vector3(HP10per * (0.1f * Time.deltaTime), 0, 0);
         }
 
         //HPの継続的な減少
