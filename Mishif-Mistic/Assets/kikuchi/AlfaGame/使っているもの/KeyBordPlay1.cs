@@ -115,7 +115,9 @@ public class KeyBordPlay1 : MonoBehaviour
     private string isMissileFin = "isMissileFin";
     private string isTongueStr = "isTongueStr";
     private string isTongueFin = "isTongueFin";
-    private string isImpalaAtk = "isImpAtk";
+    private string isImpalaAtkStr = "isImpAtkStr";
+    private string isImpalaAtkCont = "isImpAtkCont";
+    private string isImpalaAtkFin = "isImpAtkFin";
 
     void Start()
     {
@@ -424,24 +426,30 @@ public class KeyBordPlay1 : MonoBehaviour
                                             Rb.isKinematic = true;
                                             AllActionInterval = true;
                                             Invoke("ImpleFreeze", 1.0f);
+
+                                            Invoke("ImpalaAtkTiming", 0.5f);
+                                            Invoke("ImpalaFinTiming", 1.5f);
                                         }
                                     }
                                     else if (Implajump == false)
                                     {
                                         Rb.AddForce(transform.up * 30, ForceMode.Impulse);
                                         Implajump = true;
+
+                                        //インパラ攻撃
+                                        this.Animator.SetBool(isImpalaAtkStr, true);
+                                        this.Animator.SetBool(isImpalaAtkCont, false);
+                                        this.Animator.SetBool(isImpalaAtkFin, false);
+
                                     }
                                 }
                                 if (Implajump == true)
                                 {
                                     transform.position += transform.forward * 25 * Time.deltaTime;
-                                    //インパラ攻撃
-                                    this.Animator.SetBool(isImpalaAtk, true);
+
                                 }
-                                else
-                                {
-                                    this.Animator.SetBool(isImpalaAtk, false);
-                                }
+
+
                             }
                             else if (Leg == 2)
                             {
@@ -732,6 +740,20 @@ public class KeyBordPlay1 : MonoBehaviour
         this.Animator.SetBool(isCounter, true);
     }
 
+    void ImpalaAtkTiming()
+    {
+        this.Animator.SetBool(isImpalaAtkCont, true);
+        this.Animator.SetBool(isImpalaAtkFin, false);
+        this.Animator.SetBool(isImpalaAtkStr, false);
+    }
+
+    void ImpalaFinTiming()
+    {
+        this.Animator.SetBool(isImpalaAtkFin, true);
+        this.Animator.SetBool(isImpalaAtkStr, false);
+        this.Animator.SetBool(isImpalaAtkCont, false);
+    }
+
     Vector3 GetAngleVec(GameObject _from, GameObject _to)
     {
         //高さの概念を入れないベクトルを作る
@@ -752,6 +774,7 @@ public class KeyBordPlay1 : MonoBehaviour
             NormalJump = false;
             Implajump = false;
             gameObject.layer = LayerMask.NameToLayer("NormalLayer");
+
             //インパラの攻撃のため
             if (AllActionInterval == true)
             {
