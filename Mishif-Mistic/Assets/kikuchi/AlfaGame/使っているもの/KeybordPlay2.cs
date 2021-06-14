@@ -306,7 +306,7 @@ public class KeybordPlay2 : MonoBehaviour
                                         //P2Lionhead.SetActive(true);
                                         AllActionInterval = true;
                                         P2Lionhead.tag = "P2LionAttack";
-                                        Rb.AddForce(transform.forward * 20f, ForceMode.Impulse);
+                                        Rb.AddForce(transform.forward * 30f, ForceMode.Impulse);
                                         //P2Lionhead.GetComponent<Renderer>().material.color = P2LionColor.color;
                                         LionSwitch = false;
                                         //当たり判定がある時間
@@ -435,7 +435,7 @@ public class KeybordPlay2 : MonoBehaviour
                                     }
                                     else if (Implajump == false)
                                     {
-                                        Rb.AddForce(transform.up * 30, ForceMode.Impulse);
+                                        Rb.AddForce(transform.up * 90, ForceMode.Impulse);
                                         Implajump = true;
 
                                         //インパラ攻撃
@@ -446,7 +446,7 @@ public class KeybordPlay2 : MonoBehaviour
                                 }
                                 if (Implajump == true)
                                 {
-                                    transform.position += transform.forward * 25 * Time.deltaTime;
+                                    transform.position += transform.forward * 15 * Time.deltaTime;
 
                                 }
  
@@ -465,7 +465,7 @@ public class KeybordPlay2 : MonoBehaviour
                                         //P2WolfAtk.SetActive(true);
                                         AllActionInterval = true;
                                         P2WolfAtk.tag = "P2WolfAttack";
-                                        Rb.AddForce(transform.forward * 30f, ForceMode.Impulse);
+                                        Rb.AddForce(transform.forward * 40f, ForceMode.Impulse);
                                        // P2WolfAtk.GetComponent<Renderer>().material.color = P2WolfColor.color;
                                         WolfSwitch = false;
                                         //当たり判定がある時間
@@ -882,7 +882,7 @@ public class KeybordPlay2 : MonoBehaviour
                     P2G.transform.position += new Vector3(HP10per * 2, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player2);
-                    Rb.AddForce(ToVec * 20, ForceMode.Impulse);
+                    Rb.AddForce(ToVec * 50, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -897,7 +897,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player2);
                     Debug.Log(ToVec);
-                    Rb.AddForce(ToVec * 25, ForceMode.Impulse);
+                    Rb.AddForce(ToVec * 60, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -912,7 +912,7 @@ public class KeybordPlay2 : MonoBehaviour
                     P2G.transform.position += new Vector3(HP10per, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player2);
-                    Rb.AddForce(ToVec * 20, ForceMode.Impulse);
+                    Rb.AddForce(ToVec * 30, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -926,7 +926,7 @@ public class KeybordPlay2 : MonoBehaviour
                     P2G.transform.position += new Vector3(HP10per * 1.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player2);
-                    Rb.AddForce(ToVec * 20, ForceMode.Impulse);
+                    Rb.AddForce(ToVec * 40, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -970,7 +970,7 @@ public class KeybordPlay2 : MonoBehaviour
                     P2G.transform.position += new Vector3(HP10per * 2 * 1.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player2);
-                    Rb.AddForce(ToVec * 25, ForceMode.Impulse);
+                    Rb.AddForce(ToVec * 55, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -981,7 +981,7 @@ public class KeybordPlay2 : MonoBehaviour
                     P2G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     Vector3 ToVec = GetAngleVec(other.gameObject, P2ImplaBlock);
 
-                    Rb.AddForce(ToVec * 30, ForceMode.Impulse);
+                    Rb.AddForce(ToVec * 60, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1000,7 +1000,7 @@ public class KeybordPlay2 : MonoBehaviour
                     P2G.transform.position += new Vector3(HP10per * 0.48f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player2);
-                    Rb.AddForce(ToVec * 12, ForceMode.Impulse);
+                    Rb.AddForce(ToVec * 20, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
@@ -1012,7 +1012,7 @@ public class KeybordPlay2 : MonoBehaviour
                     P2G.transform.position += new Vector3(HP10per * 1.8f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, Player2);
-                    Rb.AddForce(ToVec * 25, ForceMode.Impulse);
+                    Rb.AddForce(ToVec * 55, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
