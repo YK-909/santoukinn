@@ -23,6 +23,7 @@ public class Timerbotgame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameChange = 2;
         _textCountdown.text = "";
         GameWinner.text = "";
         StartCoroutine(CountdownCoroutine());
