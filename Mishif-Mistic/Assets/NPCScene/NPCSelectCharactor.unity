@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4051,10 +4051,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 760527349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7030bdb55d819364ea852e0ebf872e0c, type: 3}
+  m_Script: {fileID: 11500000, guid: e61a45c8ed56ea047b00aa78028b03ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SwitchSlotLRSrc: {fileID: 209840526}
+  KeyboardSlotLRSrc: {fileID: 209840526}
 --- !u!61 &760527352
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4549,10 +4549,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 825987302}
-  - component: {fileID: 825987306}
-  - component: {fileID: 825987305}
   - component: {fileID: 825987304}
   - component: {fileID: 825987303}
+  - component: {fileID: 825987306}
+  - component: {fileID: 825987305}
   m_Layer: 5
   m_Name: 1P_leg
   m_TagString: Untagged
@@ -4640,7 +4640,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 825987301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0221a14517ebd29459fb62029326c936, type: 3}
+  m_Script: {fileID: 11500000, guid: 5586049b0a42c58499afb270610f4974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &825987306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825987301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1ad0aca6b69e84cb3d61b4a179007c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FlyPanSprite: {fileID: 21300000, guid: 8b0ca69f84662a94fb5c0814027adb52, type: 3}
@@ -4653,18 +4665,6 @@ MonoBehaviour:
   - {fileID: 706994083}
   - {fileID: 125410680}
   SwitchSlotUDSrc: {fileID: 1262543504}
---- !u!114 &825987306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 825987301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c71b05b205f2c4eacf86c986c867ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &889194217
 GameObject:
   m_ObjectHideFlags: 0
@@ -8694,10 +8694,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1920264228}
-  - component: {fileID: 1920264232}
-  - component: {fileID: 1920264231}
   - component: {fileID: 1920264230}
   - component: {fileID: 1920264229}
+  - component: {fileID: 1920264232}
+  - component: {fileID: 1920264231}
   m_Layer: 5
   m_Name: 1P_body
   m_TagString: Untagged
@@ -8785,7 +8785,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1920264227}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb80d67427f508c488f652bf3c723932, type: 3}
+  m_Script: {fileID: 11500000, guid: 071846195dab0ed47b0a5f0557d4ab2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1920264232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920264227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241d4f7e6034da74cb5023f65bdbb8c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FlyPanSprite: {fileID: 21300000, guid: 8b0ca69f84662a94fb5c0814027adb52, type: 3}
@@ -8798,18 +8810,6 @@ MonoBehaviour:
   - {fileID: 428743825}
   - {fileID: 323585443}
   SwitchSlotUDSrc: {fileID: 1262543504}
---- !u!114 &1920264232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1920264227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23894bf6530101b44ab65d771e3ede65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1923046000
 GameObject:
   m_ObjectHideFlags: 0
@@ -8819,10 +8819,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1923046001}
-  - component: {fileID: 1923046005}
-  - component: {fileID: 1923046004}
   - component: {fileID: 1923046003}
   - component: {fileID: 1923046002}
+  - component: {fileID: 1923046005}
+  - component: {fileID: 1923046004}
   m_Layer: 5
   m_Name: 1P_head
   m_TagString: Untagged
@@ -8910,7 +8910,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1923046000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74353f933bdaae24483a997ad00a1675, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a13faac335c2e54d9d813e0dea7870b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1923046005
@@ -8922,7 +8922,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1923046000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcb969f623bd1d54e876d42d86d568fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 4de4041c72bf282469ee76625072af62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FlyPanSprite: {fileID: 21300000, guid: 8b0ca69f84662a94fb5c0814027adb52, type: 3}

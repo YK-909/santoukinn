@@ -250,12 +250,6 @@ public class Player1head : MonoBehaviour
     void Start()
     {
         SetLevelThree();
-
-        var h1 = Input.GetAxis("Horizontal1");
-        var v1 = Input.GetAxis("Vertical1");
-
-        var h2 = Input.GetAxis("Horizontal2");
-        var v2 = Input.GetAxis("Vertical2");
     }
 
     // Update is called once per frame
@@ -263,7 +257,7 @@ public class Player1head : MonoBehaviour
     {
         if (_flag)
         {
-            if (Input.GetKeyDown(KeyCode.W) && !SlideFlag)
+            if (Input.GetKey(KeyCode.Joystick2Button2) && !SlideFlag)
             {
                 SlideFlag = true;
                 PosFlag = true;
@@ -272,7 +266,7 @@ public class Player1head : MonoBehaviour
                 //音鳴らす
                 SwitchSlotUDSrc.Play();
             }
-            if (Input.GetKeyDown(KeyCode.S) && !SlideFlag)
+            if (Input.GetKey(KeyCode.Joystick2Button1) && !SlideFlag)
             {
                 SlideFlag = true;
                 PosFlag = true;
