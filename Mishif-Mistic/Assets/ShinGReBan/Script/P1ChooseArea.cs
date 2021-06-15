@@ -18,7 +18,7 @@ public class P1ChooseArea : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.Joystick2Button0))
         {
             transform.Translate(-200, 0, 0);
 
@@ -26,7 +26,7 @@ public class P1ChooseArea : MonoBehaviour
             SwitchSlotLRSrc.Play();
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.Joystick2Button3))
         {
             transform.Translate(200, 0, 0);
 
