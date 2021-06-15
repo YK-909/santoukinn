@@ -503,7 +503,7 @@ public class JoyconPlay1 : MonoBehaviour
                             {
                                 if (FlogSwitch == true)
                                 {
-                                    Rb.AddForce(transform.up * 15, ForceMode.Impulse);
+                                    Rb.AddForce(transform.up * 45, ForceMode.Impulse);
                                     NormalJump = true;
 
                                     //音鳴らす
