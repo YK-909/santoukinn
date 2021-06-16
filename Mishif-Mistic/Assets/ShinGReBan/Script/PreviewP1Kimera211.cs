@@ -45,27 +45,5 @@ public class PreviewP1Kimera211 : MonoBehaviour
             instance.SetActive(true);
             instance.transform.RotateAround(new Vector3(-4.8f, -1, 10), transform.up, 20 * Time.deltaTime);
         }
-
-        if (One)
-        {
-            if (NPCP1Contlolehead.head == Head && NPCP1Contlolebody.body == Body && NPCP1Contloleleg.leg == Leg)
-            {
-                //if文の外でやると無駄に毎フレーム実行されるので中にする
-                GameObject obj = (GameObject)Resources.Load("CP1Kimera211");
-                //メンバ変数に入れる
-                instance = (GameObject)Instantiate(obj, new Vector3(-4.52f, -1.09f, 10.0f), Quaternion.Euler(0f, 90f, 0f));
-                One = false;
-            }
-        }
-        else
-        {
-            instance.SetActive(false);
-        }
-
-        if (NPCP1Contlolehead.head == Head && NPCP1Contlolebody.body == Body && NPCP1Contloleleg.leg == Leg)
-        {
-            instance.SetActive(true);
-            instance.transform.RotateAround(new Vector3(-4.8f, -1, 10), transform.up, 20 * Time.deltaTime);
-        }
     }
 }

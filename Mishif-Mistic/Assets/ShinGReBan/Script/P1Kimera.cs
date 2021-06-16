@@ -28,14 +28,5 @@ public class P1Kimera : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
-
-        if (NPCP1Contlolehead.GetHead() == Head && NPCP1Contlolebody.GetBody() == Body && NPCP1Contloleleg.GetLeg() == Leg)
-        {
-            this.gameObject.SetActive(true);
-        }
-        else
-        {
-            this.gameObject.SetActive(false);
-        }
     }
 }
