@@ -257,7 +257,7 @@ public class Player1head : MonoBehaviour
     {
         if (_flag)
         {
-            if (Input.GetKey(KeyCode.Joystick2Button2) && !SlideFlag)
+            if (Input.GetKeyDown(KeyCode.Joystick2Button2) && !SlideFlag)
             {
                 SlideFlag = true;
                 PosFlag = true;
@@ -266,7 +266,7 @@ public class Player1head : MonoBehaviour
                 //音鳴らす
                 SwitchSlotUDSrc.Play();
             }
-            if (Input.GetKey(KeyCode.Joystick2Button1) && !SlideFlag)
+            if (Input.GetKeyDown(KeyCode.Joystick2Button1) && !SlideFlag)
             {
                 SlideFlag = true;
                 PosFlag = true;
