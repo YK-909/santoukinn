@@ -9,6 +9,13 @@ public class NPCP1Contlolehead : MonoBehaviour
     public static int body;
     public static int leg;
 
+    //ADX設定
+    public CriAtomSource LionSlotVo;
+    public CriAtomSource FrogSlotVo;
+    //音数制限
+    bool isLionVoOnce = false;
+    bool isFrogVoOnce = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +39,27 @@ public class NPCP1Contlolehead : MonoBehaviour
             case 2:
                 head = 3;
                 break;
+        }
+
+        //音鳴らす
+        if (head == 1)
+        {
+            if (isFrogVoOnce == false)
+            {
+                isFrogVoOnce = true;
+                FrogSlotVo.Play();
+                isLionVoOnce = false;
+            }
+
+        }
+        if (head == 2)
+        {
+            if (isLionVoOnce == false)
+            {
+                isLionVoOnce = true;
+                LionSlotVo.Play();
+                isFrogVoOnce = false;
+            }
         }
     }
 
