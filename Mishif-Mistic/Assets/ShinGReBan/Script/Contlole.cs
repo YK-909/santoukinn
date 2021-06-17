@@ -10,6 +10,10 @@ public class Contlole : MonoBehaviour
     public static int body;
     public static int leg;
 
+    //ADX設定
+    public CriAtomSource LionSlotVo;
+    public CriAtomSource FrogSlotVo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +37,16 @@ public class Contlole : MonoBehaviour
             case 2:
                 head = 3;
                 break;
+        }
+
+        //音鳴らす
+        if (head == 1)
+        {
+            FrogSlotVo.Play();
+        }
+        if (head == 2)
+        {
+            LionSlotVo.Play();
         }
     }
 

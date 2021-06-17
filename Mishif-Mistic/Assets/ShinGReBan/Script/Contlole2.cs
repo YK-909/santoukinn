@@ -9,6 +9,10 @@ public class Contlole2 : MonoBehaviour
     public static int body2;
     public static int leg2;
 
+    //ADX設定
+    public CriAtomSource LionSlotVo;
+    public CriAtomSource FrogSlotVo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +36,16 @@ public class Contlole2 : MonoBehaviour
             case 2:
                 head2 = 3;
                 break;
+        }
+
+        //音鳴らす
+        if (head2 == 1)
+        {
+            FrogSlotVo.Play();
+        }
+        if (head2 == 2)
+        {
+            LionSlotVo.Play();
         }
     }
 

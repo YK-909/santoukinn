@@ -4739,6 +4739,60 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 614917051}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &617752374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 617752375}
+  - component: {fileID: 617752376}
+  m_Layer: 0
+  m_Name: Animal_Shield_Dst(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &617752375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617752374}
+  m_LocalRotation: {x: -0, y: 0.46002936, z: -0, w: 0.88790375}
+  m_LocalPosition: {x: 389.4322, y: 55, z: 823.34106}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7157855714506749527}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &617752376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617752374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Animal_Shield_Dst
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &643611197
 GameObject:
   m_ObjectHideFlags: 0
@@ -6643,6 +6697,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48f776745573f3e449b966b71440df82, type: 3}
+--- !u!1 &938771999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 938772000}
+  - component: {fileID: 938772001}
+  m_Layer: 0
+  m_Name: LionAtkVo(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &938772000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938771999}
+  m_LocalRotation: {x: -0, y: 0.46002936, z: -0, w: 0.88790375}
+  m_LocalPosition: {x: 389.4322, y: 55, z: 823.34106}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7157855714506749527}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &938772001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938771999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: LionAtkVo
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1001 &949975410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10034,7 +10142,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 12.863329
+  field of view: 12.812339
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -12059,6 +12167,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1752176015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1752176016}
+  - component: {fileID: 1752176017}
+  m_Layer: 0
+  m_Name: Animal_Shield_Dmg(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1752176016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752176015}
+  m_LocalRotation: {x: -0, y: 0.46002936, z: -0, w: 0.88790375}
+  m_LocalPosition: {x: 389.4322, y: 55, z: 823.34106}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 0.9999999}
+  m_Children: []
+  m_Father: {fileID: 7157855714506749527}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1752176017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752176015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Animal_Shield_Dmg
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1001 &1756617088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13056,6 +13218,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1876499231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1876499232}
+  - component: {fileID: 1876499233}
+  m_Layer: 0
+  m_Name: FrogAtkVo(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1876499232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876499231}
+  m_LocalRotation: {x: -0, y: 0.46002936, z: -0, w: 0.88790375}
+  m_LocalPosition: {x: 389.4322, y: 55, z: 823.34106}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7157855714506749527}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1876499233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876499231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: FrogAtkVo
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1001 &1908374199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15451,11 +15667,206 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 186148827789143054, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 186148827789143054, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 186148827789143054, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 186148827789143054, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 186148827789143054, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
     - target: {fileID: 323151533767661000, guid: 650742500df46d345955813945f5f374,
         type: 3}
       propertyPath: m_Name
       value: Alfa vol norotain
       objectReference: {fileID: 0}
+    - target: {fileID: 930454018119934807, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 930454018119934807, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 930454018119934807, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 930454018119934807, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 930454018119934807, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
+    - target: {fileID: 1675235000766301790, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.45378807
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675235000766301790, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.14587879
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675235000766301790, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.07558298
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675235000766301790, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8758328
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924392531988382280, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 1924392531988382280, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 1924392531988382280, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 1924392531988382280, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 1924392531988382280, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
+    - target: {fileID: 3402050825788170106, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 3402050825788170106, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 3402050825788170106, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 3402050825788170106, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 3402050825788170106, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
+    - target: {fileID: 4433728278685010278, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 4433728278685010278, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 4433728278685010278, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 4433728278685010278, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 4433728278685010278, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
+    - target: {fileID: 4883896036989786537, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 4883896036989786537, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 4883896036989786537, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 4883896036989786537, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 4883896036989786537, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
+    - target: {fileID: 5787618240853234971, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 5787618240853234971, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 5787618240853234971, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 5787618240853234971, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 5787618240853234971, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
     - target: {fileID: 5868745213739495274, guid: 650742500df46d345955813945f5f374,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15511,10 +15922,253 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6210343065813244107, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 6210343065813244107, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 6210343065813244107, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 6210343065813244107, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 6210343065813244107, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
+    - target: {fileID: 6590357100986566703, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 6590357100986566703, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 6590357100986566703, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
+    - target: {fileID: 6590357100986566703, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 6590357100986566703, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 6935270205354928806, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 6935270205354928806, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 6935270205354928806, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 6935270205354928806, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 6935270205354928806, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
+    - target: {fileID: 6967088956348687703, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 6967088956348687703, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 6967088956348687703, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 6967088956348687703, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 6967088956348687703, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
     - target: {fileID: 7096259199521051330, guid: 650742500df46d345955813945f5f374,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7240268264274278125, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 7240268264274278125, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 7240268264274278125, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 7240268264274278125, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 7240268264274278125, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
+    - target: {fileID: 8143216803247424675, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 8143216803247424675, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 8143216803247424675, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 8143216803247424675, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 8143216803247424675, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
+    - target: {fileID: 8468312279911803529, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 8468312279911803529, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 8468312279911803529, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 8468312279911803529, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 8468312279911803529, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
+    - target: {fileID: 9028085949881193618, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 9028085949881193618, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 9028085949881193618, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 9028085949881193618, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 9028085949881193618, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
+    - target: {fileID: 9102999496831229220, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkSrc
+      value: 
+      objectReference: {fileID: 7157855714506749528}
+    - target: {fileID: 9102999496831229220, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDstSrc
+      value: 
+      objectReference: {fileID: 617752376}
+    - target: {fileID: 9102999496831229220, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: AnimalShieldDmgSrc
+      value: 
+      objectReference: {fileID: 1752176017}
+    - target: {fileID: 9102999496831229220, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: LionAtkVoSrc
+      value: 
+      objectReference: {fileID: 938772001}
+    - target: {fileID: 9102999496831229220, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: FrogAtkVoSrc
+      value: 
+      objectReference: {fileID: 1876499233}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 650742500df46d345955813945f5f374, type: 3}
+--- !u!4 &7157855714506749527 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9125683478572589100, guid: 650742500df46d345955813945f5f374,
+    type: 3}
+  m_PrefabInstance: {fileID: 7157855714506749526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7157855714506749528 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9125683479418733584, guid: 650742500df46d345955813945f5f374,
+    type: 3}
+  m_PrefabInstance: {fileID: 7157855714506749526}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

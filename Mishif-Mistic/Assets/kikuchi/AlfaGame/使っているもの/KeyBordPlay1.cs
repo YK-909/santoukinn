@@ -88,12 +88,17 @@ public class KeyBordPlay1 : MonoBehaviour
     public CriAtomSource AnimalFSSrc;
     public CriAtomSource LionSrc;
     public CriAtomSource FrogSwingSrc;
+    public CriAtomSource FrogAtkSrc;
     public CriAtomSource TurtleShieldOPSrc;
     public CriAtomSource ScorpionSrc;
     public CriAtomSource ImpalaJumpSrc;
     public CriAtomSource WolfSrc;
     public CriAtomSource AnimalJumpSrc;
     public CriAtomSource AnimalShieldOPSrc;
+    public CriAtomSource AnimalShieldDstSrc;
+    public CriAtomSource AnimalShieldDmgSrc;
+    public CriAtomSource LionAtkVoSrc;
+    public CriAtomSource FrogAtkVoSrc;
 
     //アニメーター
     private Animator Animator;
@@ -259,6 +264,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                 {
                                     //音鳴らす
                                     FrogSwingSrc.Play();
+                                    FrogAtkVoSrc.Play();
 
                                     if (FlogSwitch == true)
                                     {
@@ -298,7 +304,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                 if (Input.GetKeyDown(KeyCode.Z))
                                 {
                                     //音鳴らす
-                                    //LionSrc.Play();
+                                    LionAtkVoSrc.Play();
                                     Invoke("BiteSound", 0.6f);
 
                                     if (LionSwitch == true)
@@ -603,7 +609,7 @@ public class KeyBordPlay1 : MonoBehaviour
             Invoke("ShieldBreak", 5f);
 
             //音鳴らす
-            //audioSource.PlayOneShot(ShieldBreakSound);
+            AnimalShieldDstSrc.Play();
         }
     }
 
@@ -808,6 +814,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
+                    //音鳴らす
+                    AnimalShieldDmgSrc.Play();
                 }
                 if (other.gameObject.CompareTag("P2Impla"))
                 {
@@ -840,6 +848,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
+                    //音鳴らす
+                    AnimalShieldDmgSrc.Play();
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
@@ -850,6 +860,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
+                    //音鳴らす
+                    AnimalShieldDmgSrc.Play();
                 }
                 if (other.gameObject.CompareTag("PoisonAttackBack"))
                 {
@@ -870,6 +882,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
+                    //音鳴らす
+                    AnimalShieldDmgSrc.Play();
                 }
 
             }
@@ -886,6 +900,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    //音鳴らす
+                    LionSrc.Play();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -944,6 +960,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
+                    //音鳴らす
+                    FrogAtkSrc.Play();
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
