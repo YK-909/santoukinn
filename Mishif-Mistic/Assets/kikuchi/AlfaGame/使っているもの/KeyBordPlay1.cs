@@ -123,6 +123,10 @@ public class KeyBordPlay1 : MonoBehaviour
     private string isImpalaAtkStr = "isImpAtkStr";
     private string isImpalaAtkCont = "isImpAtkCont";
     private string isImpalaAtkFin = "isImpAtkFin";
+    private string isKick = "isKick";
+    private string isGilotine = "isGilotine";
+    private string isRollStr = "isRollStr";
+    private string isRollFin = "isRollFin";
 
     void Start()
     {
