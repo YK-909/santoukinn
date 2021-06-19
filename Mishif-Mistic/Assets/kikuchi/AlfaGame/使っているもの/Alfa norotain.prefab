@@ -1,5 +1,1933 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &16141208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 16141209}
+  - component: {fileID: 16141210}
+  m_Layer: 0
+  m_Name: Animal_Shield_Dst(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &16141209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16141208}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8805454264787446244}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &16141210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16141208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Animal_Shield_Dst
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
+--- !u!1 &154069379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 154069384}
+  - component: {fileID: 154069383}
+  - component: {fileID: 154069382}
+  - component: {fileID: 154069381}
+  - component: {fileID: 154069380}
+  m_Layer: 0
+  m_Name: P2Horse
+  m_TagString: P2HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &154069384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154069379}
+  m_LocalRotation: {x: -0, y: -0.000000014901159, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1319933, z: 17.952984}
+  m_LocalScale: {x: 1.66568, y: 1.04105, z: 1.66568}
+  m_Children: []
+  m_Father: {fileID: 5287437409105420993}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &154069383
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154069379}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &154069382
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154069379}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &154069381
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154069379}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &154069380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154069379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 2
+--- !u!1 &299647716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 299647717}
+  - component: {fileID: 299647718}
+  m_Layer: 0
+  m_Name: FrogAtkVo(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &299647717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299647716}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8805454264787446244}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &299647718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299647716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: FrogAtkVo
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
+--- !u!1 &333287556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 333287561}
+  - component: {fileID: 333287560}
+  - component: {fileID: 333287559}
+  - component: {fileID: 333287558}
+  - component: {fileID: 333287557}
+  m_Layer: 0
+  m_Name: P1Horse
+  m_TagString: P1HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &333287561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333287556}
+  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.03579235, z: 17.899992}
+  m_LocalScale: {x: 1.6656802, y: 1.04105, z: 1.6656802}
+  m_Children: []
+  m_Father: {fileID: 885018123937151172}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &333287560
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333287556}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &333287559
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333287556}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &333287558
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333287556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &333287557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333287556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 1
+--- !u!1 &333452646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 333452651}
+  - component: {fileID: 333452650}
+  - component: {fileID: 333452649}
+  - component: {fileID: 333452648}
+  - component: {fileID: 333452647}
+  m_Layer: 0
+  m_Name: P1Horse
+  m_TagString: P1HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &333452651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333452646}
+  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.03579235, z: 17.899992}
+  m_LocalScale: {x: 1.6656802, y: 1.04105, z: 1.6656802}
+  m_Children: []
+  m_Father: {fileID: 4460611178242318077}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &333452650
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333452646}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &333452649
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333452646}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &333452648
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333452646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &333452647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333452646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 1
+--- !u!1 &372408505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 372408510}
+  - component: {fileID: 372408509}
+  - component: {fileID: 372408508}
+  - component: {fileID: 372408507}
+  - component: {fileID: 372408506}
+  m_Layer: 0
+  m_Name: P1Horse
+  m_TagString: P1HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &372408510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372408505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.03579235, z: 17.9}
+  m_LocalScale: {x: 1.6656797, y: 1.04105, z: 1.6656797}
+  m_Children: []
+  m_Father: {fileID: 7777781996997191583}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &372408509
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372408505}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &372408508
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372408505}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &372408507
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372408505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &372408506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372408505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 1
+--- !u!1 &462150424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 462150429}
+  - component: {fileID: 462150428}
+  - component: {fileID: 462150427}
+  - component: {fileID: 462150426}
+  - component: {fileID: 462150425}
+  m_Layer: 0
+  m_Name: P2Horse
+  m_TagString: P2HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &462150429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462150424}
+  m_LocalRotation: {x: -0, y: -0.000000014901159, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1319933, z: 17.952984}
+  m_LocalScale: {x: 1.66568, y: 1.04105, z: 1.66568}
+  m_Children: []
+  m_Father: {fileID: 3707854082512709642}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &462150428
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462150424}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &462150427
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462150424}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &462150426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462150424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &462150425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462150424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 2
+--- !u!1 &525169395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 525169400}
+  - component: {fileID: 525169399}
+  - component: {fileID: 525169398}
+  - component: {fileID: 525169397}
+  - component: {fileID: 525169396}
+  m_Layer: 0
+  m_Name: P1Horse
+  m_TagString: P1HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &525169400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525169395}
+  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.03579235, z: 17.899992}
+  m_LocalScale: {x: 1.6656802, y: 1.04105, z: 1.6656802}
+  m_Children: []
+  m_Father: {fileID: 6865410834956483521}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &525169399
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525169395}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &525169398
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525169395}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &525169397
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525169395}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &525169396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525169395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 1
+--- !u!1 &587438936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 587438941}
+  - component: {fileID: 587438940}
+  - component: {fileID: 587438939}
+  - component: {fileID: 587438938}
+  - component: {fileID: 587438937}
+  m_Layer: 0
+  m_Name: P2Horse
+  m_TagString: P2HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &587438941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587438936}
+  m_LocalRotation: {x: -0, y: -0.000000014901159, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1319933, z: 17.952984}
+  m_LocalScale: {x: 1.66568, y: 1.04105, z: 1.66568}
+  m_Children: []
+  m_Father: {fileID: 7082032655934595035}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &587438940
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587438936}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &587438939
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587438936}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &587438938
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587438936}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &587438937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587438936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 2
+--- !u!1 &729908951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 729908956}
+  - component: {fileID: 729908955}
+  - component: {fileID: 729908954}
+  - component: {fileID: 729908953}
+  - component: {fileID: 729908952}
+  m_Layer: 0
+  m_Name: P1Horse
+  m_TagString: P1HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &729908956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729908951}
+  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.03579235, z: 17.899992}
+  m_LocalScale: {x: 1.6656802, y: 1.04105, z: 1.6656802}
+  m_Children: []
+  m_Father: {fileID: 7458206679260529208}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &729908955
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729908951}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &729908954
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729908951}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &729908953
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729908951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &729908952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729908951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 1
+--- !u!1 &816117367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 816117372}
+  - component: {fileID: 816117371}
+  - component: {fileID: 816117370}
+  - component: {fileID: 816117369}
+  - component: {fileID: 816117368}
+  m_Layer: 0
+  m_Name: P1Horse
+  m_TagString: P1HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &816117372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816117367}
+  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.03579235, z: 17.899992}
+  m_LocalScale: {x: 1.6656802, y: 1.04105, z: 1.6656802}
+  m_Children: []
+  m_Father: {fileID: 1761383348446073273}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &816117371
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816117367}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &816117370
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816117367}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &816117369
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816117367}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &816117368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816117367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 1
+--- !u!1 &842635129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 842635134}
+  - component: {fileID: 842635133}
+  - component: {fileID: 842635132}
+  - component: {fileID: 842635131}
+  - component: {fileID: 842635130}
+  m_Layer: 0
+  m_Name: P2Horse
+  m_TagString: P2HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &842635134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842635129}
+  m_LocalRotation: {x: -0, y: -0.000000014901159, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1319933, z: 17.952984}
+  m_LocalScale: {x: 1.66568, y: 1.04105, z: 1.66568}
+  m_Children: []
+  m_Father: {fileID: 7104143486329264941}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &842635133
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842635129}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &842635132
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842635129}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &842635131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842635129}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &842635130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842635129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 2
+--- !u!1 &844157824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 844157825}
+  - component: {fileID: 844157826}
+  m_Layer: 0
+  m_Name: Animal_Shield_Dmg(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &844157825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844157824}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8805454264787446244}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &844157826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844157824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Animal_Shield_Dmg
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
+--- !u!1 &992654154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 992654155}
+  - component: {fileID: 992654156}
+  m_Layer: 0
+  m_Name: LionAtkVo(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &992654155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992654154}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8805454264787446244}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &992654156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992654154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: LionAtkVo
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
+--- !u!1 &1175926495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1175926500}
+  - component: {fileID: 1175926499}
+  - component: {fileID: 1175926498}
+  - component: {fileID: 1175926497}
+  - component: {fileID: 1175926496}
+  m_Layer: 0
+  m_Name: P1Horse
+  m_TagString: P1HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1175926500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175926495}
+  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.03579235, z: 17.899992}
+  m_LocalScale: {x: 1.6656802, y: 1.04105, z: 1.6656802}
+  m_Children: []
+  m_Father: {fileID: 8805402518926396648}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1175926499
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175926495}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1175926498
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175926495}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1175926497
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175926495}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1175926496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175926495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 1
+--- !u!1 &1179179495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1179179500}
+  - component: {fileID: 1179179499}
+  - component: {fileID: 1179179498}
+  - component: {fileID: 1179179497}
+  - component: {fileID: 1179179496}
+  m_Layer: 0
+  m_Name: P2Horse
+  m_TagString: P2HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1179179500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179179495}
+  m_LocalRotation: {x: -0, y: -0.000000014901159, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1319933, z: 17.952984}
+  m_LocalScale: {x: 1.66568, y: 1.04105, z: 1.66568}
+  m_Children: []
+  m_Father: {fileID: 8985647853446416632}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1179179499
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179179495}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1179179498
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179179495}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1179179497
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179179495}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1179179496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179179495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 2
+--- !u!1 &1287533554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1287533559}
+  - component: {fileID: 1287533558}
+  - component: {fileID: 1287533557}
+  - component: {fileID: 1287533556}
+  - component: {fileID: 1287533555}
+  m_Layer: 0
+  m_Name: P2Horse
+  m_TagString: P2HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1287533559
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287533554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.132, z: 17.953}
+  m_LocalScale: {x: 1.66568, y: 1.04105, z: 1.66568}
+  m_Children: []
+  m_Father: {fileID: 3219450037716447114}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1287533558
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287533554}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1287533557
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287533554}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1287533556
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287533554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1287533555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287533554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 2
+--- !u!1 &1402315316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1402315321}
+  - component: {fileID: 1402315320}
+  - component: {fileID: 1402315319}
+  - component: {fileID: 1402315318}
+  - component: {fileID: 1402315317}
+  m_Layer: 0
+  m_Name: P2Horse
+  m_TagString: P2HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1402315321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402315316}
+  m_LocalRotation: {x: -0, y: -0.000000014901159, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1319933, z: 17.952984}
+  m_LocalScale: {x: 1.66568, y: 1.04105, z: 1.66568}
+  m_Children: []
+  m_Father: {fileID: 4453908361621649751}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1402315320
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402315316}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1402315319
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402315316}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1402315318
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402315316}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1402315317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402315316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 2
+--- !u!1 &1416524051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1416524056}
+  - component: {fileID: 1416524055}
+  - component: {fileID: 1416524054}
+  - component: {fileID: 1416524053}
+  - component: {fileID: 1416524052}
+  m_Layer: 0
+  m_Name: P2Horse
+  m_TagString: P2HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1416524056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416524051}
+  m_LocalRotation: {x: -0, y: -0.000000014901159, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1319933, z: 17.952984}
+  m_LocalScale: {x: 1.66568, y: 1.04105, z: 1.66568}
+  m_Children: []
+  m_Father: {fileID: 6641256420878120249}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1416524055
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416524051}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1416524054
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416524051}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1416524053
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416524051}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1416524052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416524051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 2
+--- !u!1 &2020031837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2020031842}
+  - component: {fileID: 2020031841}
+  - component: {fileID: 2020031840}
+  - component: {fileID: 2020031839}
+  - component: {fileID: 2020031838}
+  m_Layer: 0
+  m_Name: P1Horse
+  m_TagString: P1HorseAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2020031842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020031837}
+  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.03579235, z: 17.899992}
+  m_LocalScale: {x: 1.6656802, y: 1.04105, z: 1.6656802}
+  m_Children: []
+  m_Father: {fileID: 9137677261874698375}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2020031841
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020031837}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2020031840
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020031837}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &2020031839
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020031837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2020031838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020031837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87aabf288cc8bcf4cb4604b240fa18ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 1
 --- !u!1 &4875911479251619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,6 +2941,7 @@ Transform:
   - {fileID: 9132756354497575093}
   - {fileID: 1879706369692933566}
   - {fileID: 7750927823507987064}
+  - {fileID: 1179179500}
   m_Father: {fileID: 2358182741547443962}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2549,6 +4478,7 @@ Transform:
   - {fileID: 6534245632924003402}
   - {fileID: 3755127055727789867}
   - {fileID: 43683189269901049}
+  - {fileID: 1402315321}
   m_Father: {fileID: 839566380033682612}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2727,6 +4657,7 @@ Transform:
   - {fileID: 1668458909087985062}
   - {fileID: 3925090501261033541}
   - {fileID: 1712240231475028245}
+  - {fileID: 587438941}
   m_Father: {fileID: 657181234219893873}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6793,7 +8724,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839441557882216881}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -6833,30 +8764,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P2G: {fileID: 226024189828388461}
   P2R: {fileID: 8781872961923099370}
-  Player2: {fileID: 839441557882216881}
   P2FlogTongue: {fileID: 6491823861083764430}
   P2FlogAnimator: {fileID: 2603217700997759927}
   ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P2SetScorpion: {fileID: 6104313244468582330}
   P2WolfAtk: {fileID: 1617944240478615175}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2Lionhead: {fileID: 3897201836767492943}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2TurtleGard: {fileID: 6982255340951160124}
   P2ImplaBlock: {fileID: 3421192616208730757}
   P2ImplaWaveBlock: {fileID: 503522563100570481}
+  P2HorseLeg: {fileID: 462150424}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454265976324726}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &4774241403266606285
 Animator:
   serializedVersion: 3
@@ -9464,7 +11396,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291080275499399081}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -9504,30 +11436,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P2G: {fileID: 226024189828388461}
   P2R: {fileID: 8781872961923099370}
-  Player2: {fileID: 1291080275499399081}
   P2FlogTongue: {fileID: 2733864359900964933}
   P2FlogAnimator: {fileID: 9101586892562649814}
   ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P2SetScorpion: {fileID: 743044896653473021}
   P2WolfAtk: {fileID: 4850834553540287176}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2Lionhead: {fileID: 8337820775248785050}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2TurtleGard: {fileID: 145987852204809389}
   P2ImplaBlock: {fileID: 6242842667678232514}
   P2ImplaWaveBlock: {fileID: 5715522993373901211}
+  P2HorseLeg: {fileID: 1287533554}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454265976324726}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &1874662459065236093
 Animator:
   serializedVersion: 3
@@ -11776,7 +13709,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632996690269826359}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -11816,30 +13749,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P2G: {fileID: 226024189828388461}
   P2R: {fileID: 8781872961923099370}
-  Player2: {fileID: 1632996690269826359}
   P2FlogTongue: {fileID: 1449444458607161945}
   P2FlogAnimator: {fileID: 4016286910393273231}
   ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P2SetScorpion: {fileID: 2842113542087126137}
   P2WolfAtk: {fileID: 1775644307794674361}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2Lionhead: {fileID: 712268053551968047}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2TurtleGard: {fileID: 9186823735211573968}
   P2ImplaBlock: {fileID: 1863051795162743745}
   P2ImplaWaveBlock: {fileID: 5677106206878414328}
+  P2HorseLeg: {fileID: 842635129}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454265976324726}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &4175587292782618893
 Animator:
   serializedVersion: 3
@@ -14420,6 +16354,7 @@ Transform:
   - {fileID: 8041354137964454256}
   - {fileID: 4391754906043819748}
   - {fileID: 1312033558922655421}
+  - {fileID: 2020031842}
   m_Father: {fileID: 1732010467115729411}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16675,7 +18610,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2192906923169549289}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -16715,30 +18650,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P2G: {fileID: 226024189828388461}
   P2R: {fileID: 8781872961923099370}
-  Player2: {fileID: 2192906923169549289}
   P2FlogTongue: {fileID: 2433495017621664458}
   P2FlogAnimator: {fileID: 7870811078849190133}
   ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P2SetScorpion: {fileID: 13575112696488626}
   P2WolfAtk: {fileID: 7231551345212528410}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2Lionhead: {fileID: 8207842855468502597}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2TurtleGard: {fileID: 2544638696945179488}
   P2ImplaBlock: {fileID: 3816119664866894572}
   P2ImplaWaveBlock: {fileID: 605152653965549643}
+  P2HorseLeg: {fileID: 1179179495}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454265976324726}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &7797072077975900708
 Animator:
   serializedVersion: 3
@@ -21366,6 +23302,7 @@ Transform:
   - {fileID: 1039824284274584969}
   - {fileID: 6563518959579619920}
   - {fileID: 2589929369916546848}
+  - {fileID: 372408510}
   m_Father: {fileID: 556762941290029435}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23776,7 +25713,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3060023078056431732}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -23816,30 +25753,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P2G: {fileID: 226024189828388461}
   P2R: {fileID: 8781872961923099370}
-  Player2: {fileID: 3060023078056431732}
   P2FlogTongue: {fileID: 5426381823995098645}
   P2FlogAnimator: {fileID: 8965121418680566558}
   ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P2SetScorpion: {fileID: 2435300009417287451}
   P2WolfAtk: {fileID: 4220014081739461764}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2Lionhead: {fileID: 804666741431676898}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2TurtleGard: {fileID: 1274495379753932561}
   P2ImplaBlock: {fileID: 7167452014699278888}
   P2ImplaWaveBlock: {fileID: 6734489044745401633}
+  P2HorseLeg: {fileID: 154069379}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454265976324726}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &4434419249924652857
 Animator:
   serializedVersion: 3
@@ -27242,7 +29180,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3475545424922416564}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -27282,30 +29220,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P1G: {fileID: 7053505283363499610}
   P1R: {fileID: 1001085072399412667}
-  Player1: {fileID: 3475545424922416564}
   P1FlogTongue: {fileID: 6290346918908384240}
   P1FlogAnimator: {fileID: 1134616546837429031}
   P1ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P1SetScorpion: {fileID: 1504085981311609275}
   P1WolfAtk: {fileID: 4098159352814466982}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1Lionhead: {fileID: 940069423203385537}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1TurtleGard: {fileID: 5171483831000910027}
   P1ImplaBlock: {fileID: 757375975303578063}
   P1ImplaWaveBlock: {fileID: 487018394501124356}
+  P1HorseLeg: {fileID: 333287556}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454265976324726}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &1529753862277397906
 Animator:
   serializedVersion: 3
@@ -33287,7 +35226,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4305352581631006263}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -33327,30 +35266,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P1G: {fileID: 7053505283363499610}
   P1R: {fileID: 1001085072399412667}
-  Player1: {fileID: 4305352581631006263}
   P1FlogTongue: {fileID: 427256930204237507}
   P1FlogAnimator: {fileID: 3072480982409701853}
   P1ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P1SetScorpion: {fileID: 2441405460326057667}
   P1WolfAtk: {fileID: 2840576508839999996}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1Lionhead: {fileID: 3939923944248552769}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1TurtleGard: {fileID: 946895753598615233}
   P1ImplaBlock: {fileID: 6402424578208334706}
   P1ImplaWaveBlock: {fileID: 1521738758508434623}
+  P1HorseLeg: {fileID: 372408505}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454265976324726}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &4281464414718632029
 Animator:
   serializedVersion: 3
@@ -35326,7 +37266,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4592514572848683044}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -35366,30 +37306,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P1G: {fileID: 7053505283363499610}
   P1R: {fileID: 1001085072399412667}
-  Player1: {fileID: 4592514572848683044}
   P1FlogTongue: {fileID: 6924564913854299912}
   P1FlogAnimator: {fileID: 6856276965706211699}
   P1ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P1SetScorpion: {fileID: 7443092067664339555}
   P1WolfAtk: {fileID: 3352555825649590233}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1Lionhead: {fileID: 8790375984464101315}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1TurtleGard: {fileID: 51240150503416375}
   P1ImplaBlock: {fileID: 2296485974116923685}
   P1ImplaWaveBlock: {fileID: 7175572054187950513}
+  P1HorseLeg: {fileID: 333452646}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454265976324726}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &3815183162439677103
 Animator:
   serializedVersion: 3
@@ -38602,6 +40543,7 @@ Transform:
   - {fileID: 3366403007631835871}
   - {fileID: 4727941336883211843}
   - {fileID: 235203718844666945}
+  - {fileID: 333287561}
   m_Father: {fileID: 4580268791659160393}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -39509,7 +41451,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102271076869168215}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -39549,30 +41491,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P1G: {fileID: 7053505283363499610}
   P1R: {fileID: 1001085072399412667}
-  Player1: {fileID: 5102271076869168215}
   P1FlogTongue: {fileID: 2624431901790805743}
   P1FlogAnimator: {fileID: 6510503026783663779}
   P1ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P1SetScorpion: {fileID: 1092086353263541482}
   P1WolfAtk: {fileID: 7568353902678945154}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1Lionhead: {fileID: 2072682742932101725}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1TurtleGard: {fileID: 1907750186633629601}
   P1ImplaBlock: {fileID: 7405124696153260749}
   P1ImplaWaveBlock: {fileID: 8179790561764097416}
+  P1HorseLeg: {fileID: 816117367}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454265976324726}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &1090759661878898540
 Animator:
   serializedVersion: 3
@@ -40951,6 +42894,7 @@ Transform:
   - {fileID: 6899669905002421240}
   - {fileID: 2236813417710024401}
   - {fileID: 842821908123959621}
+  - {fileID: 816117372}
   m_Father: {fileID: 1986364927540140912}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41690,7 +43634,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5339046358747998446}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -41730,30 +43674,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P1G: {fileID: 7053505283363499610}
   P1R: {fileID: 1001085072399412667}
-  Player1: {fileID: 5339046358747998446}
   P1FlogTongue: {fileID: 7707746163771482079}
   P1FlogAnimator: {fileID: 7084395810988465369}
   P1ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P1SetScorpion: {fileID: 231794654747220194}
   P1WolfAtk: {fileID: 8769751801211328416}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1Lionhead: {fileID: 1838408138500931184}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1TurtleGard: {fileID: 5196315464113218126}
   P1ImplaBlock: {fileID: 5698344757708332026}
   P1ImplaWaveBlock: {fileID: 253572380030433375}
+  P1HorseLeg: {fileID: 729908951}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454265976324726}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &6132213407533339582
 Animator:
   serializedVersion: 3
@@ -44685,6 +46630,7 @@ Transform:
   - {fileID: 7799855715770594360}
   - {fileID: 1379278781391792604}
   - {fileID: 8860345511308730120}
+  - {fileID: 333452651}
   m_Father: {fileID: 8372036328886502404}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45311,7 +47257,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5882668011669445900}
-  m_LocalRotation: {x: 0.2585715, y: -0.029133817, z: 0.007802185, w: 0.96552116}
+  m_LocalRotation: {x: 0.25088724, y: -0.0067983116, z: 0.0017620098, w: 0.9679909}
   m_LocalPosition: {x: 340.6, y: 679.6, z: -55.8}
   m_LocalScale: {x: 0.20000002, y: 0.19999999, z: 0.2}
   m_Children:
@@ -45776,7 +47722,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5954153109466549947}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -45816,30 +47762,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P1G: {fileID: 7053505283363499610}
   P1R: {fileID: 1001085072399412667}
-  Player1: {fileID: 5954153109466549947}
   P1FlogTongue: {fileID: 7829585918989938811}
   P1FlogAnimator: {fileID: 170672620227898938}
   P1ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P1SetScorpion: {fileID: 4917601194027977984}
   P1WolfAtk: {fileID: 3234505290019347401}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1Lionhead: {fileID: 8425859948972083415}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1TurtleGard: {fileID: 4279682585942625030}
   P1ImplaBlock: {fileID: 7230004536836945259}
   P1ImplaWaveBlock: {fileID: 4858881343890468681}
+  P1HorseLeg: {fileID: 525169395}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454265976324726}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &3254062507505346281
 Animator:
   serializedVersion: 3
@@ -46520,6 +48467,7 @@ Transform:
   - {fileID: 1524612128708038983}
   - {fileID: 5847262531060246128}
   - {fileID: 3487079917381416688}
+  - {fileID: 729908956}
   m_Father: {fileID: 7628676427623303032}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48783,7 +50731,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6318156934955604008}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -48823,30 +50771,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P1G: {fileID: 7053505283363499610}
   P1R: {fileID: 1001085072399412667}
-  Player1: {fileID: 6318156934955604008}
   P1FlogTongue: {fileID: 2921548295768516179}
   P1FlogAnimator: {fileID: 8022951451793383868}
   P1ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P1SetScorpion: {fileID: 3821095798043529696}
   P1WolfAtk: {fileID: 2723321579640275747}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1Lionhead: {fileID: 3171665725465972658}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1TurtleGard: {fileID: 2229143053375125023}
   P1ImplaBlock: {fileID: 496775803019715791}
   P1ImplaWaveBlock: {fileID: 4145631605189086661}
+  P1HorseLeg: {fileID: 1175926495}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454265976324726}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &5273402764921619225
 Animator:
   serializedVersion: 3
@@ -49026,6 +50975,7 @@ Transform:
   - {fileID: 104948058567023179}
   - {fileID: 1731084845966550898}
   - {fileID: 7767420622695712411}
+  - {fileID: 1175926500}
   m_Father: {fileID: 1878393840692508033}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49186,6 +51136,7 @@ Transform:
   - {fileID: 7881591996168765929}
   - {fileID: 3471521130000977854}
   - {fileID: 6884677136342373969}
+  - {fileID: 525169400}
   m_Father: {fileID: 5342994952549793259}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49691,7 +51642,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6406020423640418369}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -49731,30 +51682,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P2G: {fileID: 226024189828388461}
   P2R: {fileID: 8781872961923099370}
-  Player2: {fileID: 6406020423640418369}
   P2FlogTongue: {fileID: 3739535535669638324}
   P2FlogAnimator: {fileID: 3241458820154772629}
   ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P2SetScorpion: {fileID: 2962261342458761827}
   P2WolfAtk: {fileID: 8732609072431337451}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2Lionhead: {fileID: 5239688596887249720}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2TurtleGard: {fileID: 847819304902401303}
   P2ImplaBlock: {fileID: 7183301561083393361}
   P2ImplaWaveBlock: {fileID: 94780512622052855}
+  P2HorseLeg: {fileID: 587438936}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454265976324726}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &7249609932766161964
 Animator:
   serializedVersion: 3
@@ -56378,6 +58330,7 @@ Transform:
   - {fileID: 7511626127032571367}
   - {fileID: 2290804046487636820}
   - {fileID: 6466517273998170445}
+  - {fileID: 1416524056}
   m_Father: {fileID: 843087473471300497}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60964,6 +62917,7 @@ Transform:
   - {fileID: 3371144901400754801}
   - {fileID: 715804642042243564}
   - {fileID: 4553040457562480420}
+  - {fileID: 842635134}
   m_Father: {fileID: 6975683480840414627}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64017,7 +65971,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8364794650844533714}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -64057,30 +66011,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P1G: {fileID: 7053505283363499610}
   P1R: {fileID: 1001085072399412667}
-  Player1: {fileID: 8364794650844533714}
   P1FlogTongue: {fileID: 1888148207085276932}
   P1FlogAnimator: {fileID: 4454292743427330372}
   P1ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P1SetScorpion: {fileID: 3927565583633930280}
   P1WolfAtk: {fileID: 2136537189241205917}
-  P1WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1Lionhead: {fileID: 5619507996797301001}
-  P1LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P1LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P1TurtleGard: {fileID: 7519681047578695938}
   P1ImplaBlock: {fileID: 5323255995922080255}
   P1ImplaWaveBlock: {fileID: 1127610368797062251}
+  P1HorseLeg: {fileID: 2020031837}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454265976324726}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &7077137539083594193
 Animator:
   serializedVersion: 3
@@ -64224,7 +66179,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8391684918508313428}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -64264,30 +66219,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P2G: {fileID: 226024189828388461}
   P2R: {fileID: 8781872961923099370}
-  Player2: {fileID: 8391684918508313428}
   P2FlogTongue: {fileID: 97884504696839948}
   P2FlogAnimator: {fileID: 809570709140940852}
   ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P2SetScorpion: {fileID: 4776706137500467561}
   P2WolfAtk: {fileID: 5220395323929561093}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2Lionhead: {fileID: 4163340065468130236}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2TurtleGard: {fileID: 2204459709996971219}
   P2ImplaBlock: {fileID: 8806657596657354964}
   P2ImplaWaveBlock: {fileID: 8617561125336971973}
+  P2HorseLeg: {fileID: 1402315316}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454264359012425}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &1388915675031352376
 Animator:
   serializedVersion: 3
@@ -64342,6 +66298,7 @@ Transform:
   - {fileID: 4721563694272379493}
   - {fileID: 8088634971771484303}
   - {fileID: 6719730428470791537}
+  - {fileID: 154069384}
   m_Father: {fileID: 7321408109242893727}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64504,6 +66461,7 @@ Transform:
   - {fileID: 5121794942843966636}
   - {fileID: 1924624213697886319}
   - {fileID: 3113678689039194548}
+  - {fileID: 1287533559}
   m_Father: {fileID: 853596015444676524}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -65060,7 +67018,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8529891490297678307}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: df2be43765c3db448bf4df58ca8449ff, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -65100,30 +67058,31 @@ MonoBehaviour:
   ShieldPoint: 1
   P2G: {fileID: 226024189828388461}
   P2R: {fileID: 8781872961923099370}
-  Player2: {fileID: 8529891490297678307}
   P2FlogTongue: {fileID: 7092998811108446202}
   P2FlogAnimator: {fileID: 7530368509983890534}
   ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
     type: 3}
   P2SetScorpion: {fileID: 7569620783666744119}
   P2WolfAtk: {fileID: 8773928281356129104}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2Lionhead: {fileID: 3364991272257569278}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2TurtleGard: {fileID: 8035303276199474823}
   P2ImplaBlock: {fileID: 8233637554090016478}
   P2ImplaWaveBlock: {fileID: 2886362589186048165}
+  P2HorseLeg: {fileID: 1416524051}
   AnimalFSSrc: {fileID: 8805454265794077521}
   LionSrc: {fileID: 8805454264359012425}
   FrogSwingSrc: {fileID: 8805454265976324726}
+  FrogAtkSrc: {fileID: 8805454266103057880}
   TurtleShieldOPSrc: {fileID: 8805454264664792014}
   ScorpionSrc: {fileID: 8805454265261127908}
   ImpalaJumpSrc: {fileID: 8805454265383624363}
   WolfSrc: {fileID: 8805454265683428455}
   AnimalJumpSrc: {fileID: 8805454266127011026}
   AnimalShieldOPSrc: {fileID: 8805454264434767469}
+  AnimalShieldDstSrc: {fileID: 16141210}
+  AnimalShieldDmgSrc: {fileID: 844157826}
+  LionAtkVoSrc: {fileID: 992654156}
+  FrogAtkVoSrc: {fileID: 299647718}
 --- !u!95 &7346391380933485169
 Animator:
   serializedVersion: 3
@@ -68004,6 +69963,10 @@ Transform:
   - {fileID: 8805454266344122024}
   - {fileID: 8805454264393352838}
   - {fileID: 8805454265696829505}
+  - {fileID: 16141209}
+  - {fileID: 844157825}
+  - {fileID: 992654155}
+  - {fileID: 299647717}
   m_Father: {fileID: 6189716564314793634}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -69345,6 +71308,7 @@ Transform:
   - {fileID: 2144513195065622879}
   - {fileID: 4628168934575354184}
   - {fileID: 8942991387702023832}
+  - {fileID: 462150429}
   m_Father: {fileID: 7532564144450920738}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

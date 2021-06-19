@@ -963,7 +963,7 @@ public class KeyBordPlay1 : MonoBehaviour
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
-                    Invoke("InvincibleTime", 0.3f);
+                    Invoke("InvincibleTime", 0.6f);
                     //音鳴らす
                     FrogAtkSrc.Play();
 
