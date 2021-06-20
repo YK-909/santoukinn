@@ -7,8 +7,8 @@ public class ChooseArea : MonoBehaviour
     //ADX設定
     public CriAtomSource KeyboardSlotLRSrc;
 
-    private float minX = 1250;
-    private float maxX = 1650;
+    private float minX = 1050;
+    private float maxX = 1380;
 
     // Start is called before the first frame update
     void Start()

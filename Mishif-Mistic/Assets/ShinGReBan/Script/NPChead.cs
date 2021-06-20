@@ -25,14 +25,14 @@ public class NPChead : MonoBehaviour
     private RectTransform[] AnimaruRect = new RectTransform[5];
 
     //武器選択UIの真ん中に表示している動物画像の座標   
-    private Vector2 Main = new Vector2(104f, 61f);
+    private Vector2 Main = new Vector2(281f, 152f);
 
     //0 : 動物画像を透明にする基準座標
     //1 : 動物画像を逆の端に移動する基準座標
-    private Vector2 Up0 = new Vector2(104f, 0f);
-    private Vector2 Up1 = new Vector2(104f, -101f);
-    private Vector2 Down0 = new Vector2(104f, 142f);
-    private Vector2 Down1 = new Vector2(104f, 223f);
+    private Vector2 Up0 = new Vector2(281f, -49f);
+    private Vector2 Up1 = new Vector2(281f, -250f);
+    private Vector2 Down0 = new Vector2(281f, 353f);
+    private Vector2 Down1 = new Vector2(281f, 554f);
 
     //動物画像をスライド(変更)させた後の座標(目的地の座標)
     private Vector2[] Target = new Vector2[5];
@@ -70,7 +70,7 @@ public class NPChead : MonoBehaviour
             AnimaruRect[i] = Animaru[i].GetComponent<RectTransform>();
 
             //動物画像が初期状態からバラバラになっている可能性があるので、上から下に動物画像0～4を整列させる
-            AnimaruRect[i].localPosition = new Vector2(104f, 169f - i * 54);
+            AnimaruRect[i].localPosition = new Vector2(281f, 420f - i * 134);
 
             //真ん中以外の動物画像のサイズを 1/1.8 にする
             if (i == 2)
@@ -132,7 +132,7 @@ public class NPChead : MonoBehaviour
                 if (Dir == 0)
                 {
                     //スライド後(目的地)の座標を指定
-                    Target[i] = new Vector2(AnimaruRectPos[i].x, AnimaruRectPos[i].y - 54f);
+                    Target[i] = new Vector2(AnimaruRectPos[i].x, AnimaruRectPos[i].y - 134f);
 
                     /*
                      * 動物画像を目的地に移動させる
@@ -140,7 +140,7 @@ public class NPChead : MonoBehaviour
                      * 移動座標がUp0を超えたら動物画像を透明にする
                      * 移動座標がUp1(上)になったら下に瞬間移動させる
                      */
-                    AnimaruRect[i].localPosition = Vector2.MoveTowards(AnimaruRect[i].localPosition, Target[i], Time.deltaTime * 200);
+                    AnimaruRect[i].localPosition = Vector2.MoveTowards(AnimaruRect[i].localPosition, Target[i], Time.deltaTime * 300);
                     if (AnimaruRect[i].localPosition.y <= Down0.y)
                     {
                         AnimaruImage[i].color = new Color(255, 255, 255, 255);
@@ -151,7 +151,7 @@ public class NPChead : MonoBehaviour
                     }
                     if (AnimaruRect[i].localPosition.y == Up1.y)
                     {
-                        AnimaruRect[i].localPosition = new Vector2(Down1.x, Down1.y - 54f);
+                        AnimaruRect[i].localPosition = new Vector2(Down1.x, Down1.y - 134f);
                     }
                 }
                 else
@@ -159,14 +159,14 @@ public class NPChead : MonoBehaviour
                     /*
                      * スライド後(目的地)の座標を指定
                      */
-                    Target[i] = new Vector2(AnimaruRectPos[i].x, AnimaruRectPos[i].y + 54f);
+                    Target[i] = new Vector2(AnimaruRectPos[i].x, AnimaruRectPos[i].y + 134f);
                     /*
                      * 動物画像を目的地に移動させる
                      * 移動座標がUp0を超えたら武器画像を透明から元に戻す
                      * 移動座標がDown0を超えたら武器画像を透明にする
                      * 移動座標がDown1(下)になったら上端に瞬間移動させる
                      */
-                    AnimaruRect[i].localPosition = Vector2.MoveTowards(AnimaruRect[i].localPosition, Target[i], Time.deltaTime * 200);
+                    AnimaruRect[i].localPosition = Vector2.MoveTowards(AnimaruRect[i].localPosition, Target[i], Time.deltaTime * 300);
                     if (AnimaruRect[i].localPosition.y >= Up0.y)
                     {
                         AnimaruImage[i].color = new Color(255, 255, 255, 255);
@@ -178,7 +178,7 @@ public class NPChead : MonoBehaviour
 
                     if (AnimaruRect[i].localPosition.y == Down1.y)
                     {
-                        AnimaruRect[i].localPosition = new Vector2(Up1.x, Up1.y + 54f);
+                        AnimaruRect[i].localPosition = new Vector2(Up1.x, Up1.y + 134f);
                     }
                 }
 
