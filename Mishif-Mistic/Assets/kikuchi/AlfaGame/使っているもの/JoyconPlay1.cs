@@ -234,7 +234,7 @@ public class JoyconPlay1 : MonoBehaviour
                                     {
                                         //音鳴らす
                                         FrogSwingSrc.Play();
-                                        FrogAtkVoSrc.Play();
+                                        //FrogAtkVoSrc.Play();
 
                                         P1FlogTongue.SetActive(true);
                                         P1FlogAnimator.SetTrigger("FlogAtkStartP1");

@@ -633,6 +633,60 @@ Light:
     type: 3}
   m_PrefabInstance: {fileID: 39786646634221547}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &723487954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 723487956}
+  - component: {fileID: 723487955}
+  m_Layer: 0
+  m_Name: Wind01(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &723487955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723487954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Wind01
+  _cueSheet: WastelandES
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 1
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
+--- !u!4 &723487956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723487954}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &755250202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,6 +1215,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1460134087 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8805454264787446244, guid: b27404b3d78794440b1c9751b6b85bd7,
+    type: 3}
+  m_PrefabInstance: {fileID: 8805454264792341646}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1476641603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,7 +1351,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 28.158924
+  field of view: 28.175835
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -1316,7 +1376,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544286332}
-  m_LocalRotation: {x: 0.25088724, y: -0.0067983116, z: 0.0017620098, w: 0.9679909}
+  m_LocalRotation: {x: 0.25088724, y: -0.00679831, z: 0.0017620093, w: 0.9679909}
   m_LocalPosition: {x: 2200, y: 3453, z: 221}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1411,6 +1471,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1705546596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1705546597}
+  - component: {fileID: 1705546598}
+  m_Layer: 0
+  m_Name: Wind01(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1705546597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705546596}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1460134087}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1705546598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705546596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 1
+  _cueName: Wind01
+  _cueSheet: WastelandES
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 1
+  _volume: 0.3
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &1739858053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1947,6 +2061,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alfa norotain
       objectReference: {fileID: 0}
+    - target: {fileID: 1416403649006456726, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00679831
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416403649006456726, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0017620093
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416403649006456726, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.25088724
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416403649006456726, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9679909
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688358436631593628, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: WastelandES01
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6189716564314793634, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2001,6 +2140,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416664300337371914, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805454264234182233, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: cueSheets.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805454264234182233, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: cueSheets.Array.data[3].name
+      value: WastelandES
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805454264234182233, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: cueSheets.Array.data[3].acbFile
+      value: WastelandES.acb
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805454266344122025, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b27404b3d78794440b1c9751b6b85bd7, type: 3}

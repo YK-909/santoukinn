@@ -7641,6 +7641,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1040773164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1040773165}
+  - component: {fileID: 1040773166}
+  m_Layer: 0
+  m_Name: Bubble01(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1040773165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040773164}
+  m_LocalRotation: {x: -0, y: 0.46002936, z: -0, w: 0.88790375}
+  m_LocalPosition: {x: 389.4322, y: 55, z: 823.34106}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 0.9999999}
+  m_Children: []
+  m_Father: {fileID: 7157855714506749527}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1040773166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040773164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 1
+  _cueName: Bubble01
+  _cueSheet: VolcanoES
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 1
+  _volume: 0.5
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1001 &1044054672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10142,7 +10196,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 12.812339
+  field of view: 12.830914
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -16152,6 +16206,21 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1876499233}
+    - target: {fileID: 9125683479156248465, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: cueSheets.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9125683479156248465, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: cueSheets.Array.data[3].name
+      value: VolcanoES
+      objectReference: {fileID: 0}
+    - target: {fileID: 9125683479156248465, guid: 650742500df46d345955813945f5f374,
+        type: 3}
+      propertyPath: cueSheets.Array.data[3].acbFile
+      value: VolcanoES.acb
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 650742500df46d345955813945f5f374, type: 3}
 --- !u!4 &7157855714506749527 stripped

@@ -268,7 +268,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                 {
                                     //音鳴らす
                                     FrogSwingSrc.Play();
-                                    FrogAtkVoSrc.Play();
+                                    //FrogAtkVoSrc.Play();
 
                                     if (FlogSwitch == true)
                                     {

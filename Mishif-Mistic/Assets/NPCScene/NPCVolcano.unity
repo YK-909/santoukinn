@@ -2248,6 +2248,60 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 220745228}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &229189924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 229189925}
+  - component: {fileID: 229189926}
+  m_Layer: 0
+  m_Name: Bubble01(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &229189925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229189924}
+  m_LocalRotation: {x: -0, y: 0.46002936, z: -0, w: 0.88790375}
+  m_LocalPosition: {x: 389.4322, y: 55, z: 823.34106}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 0.9999999}
+  m_Children: []
+  m_Father: {fileID: 8775065649248862817}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &229189926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229189924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 1
+  _cueName: Bubble01
+  _cueSheet: VolcanoES
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 1
+  _volume: 0.5
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &231102643
 GameObject:
   m_ObjectHideFlags: 0
@@ -10580,7 +10634,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 12.830914
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -10605,7 +10659,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484220110}
-  m_LocalRotation: {x: 0.16452509, y: 0.001248449, z: -0.00020823904, w: 0.9863721}
+  m_LocalRotation: {x: 0.1642967, y: 0.000011333224, z: -0.000001887663, w: 0.986411}
   m_LocalPosition: {x: 491.49542, y: 131.5, z: 153.74739}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -15722,6 +15776,21 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1120315237}
+    - target: {fileID: 1833790339282674997, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: cueSheets.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833790339282674997, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: cueSheets.Array.data[3].name
+      value: VolcanoES
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833790339282674997, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: cueSheets.Array.data[3].acbFile
+      value: VolcanoES.acb
+      objectReference: {fileID: 0}
     - target: {fileID: 1917453761960476214, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: FrogAtkSrc
@@ -16090,22 +16159,22 @@ PrefabInstance:
     - target: {fileID: 8136244226817322234, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14598665
+      value: 0.14587879
       objectReference: {fileID: 0}
     - target: {fileID: 8136244226817322234, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.45486864
+      value: 0.45378807
       objectReference: {fileID: 0}
     - target: {fileID: 8136244226817322234, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.07587127
+      value: -0.07558298
       objectReference: {fileID: 0}
     - target: {fileID: 8136244226817322234, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8752291
+      value: 0.8758328
       objectReference: {fileID: 0}
     - target: {fileID: 8168935826294364880, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
