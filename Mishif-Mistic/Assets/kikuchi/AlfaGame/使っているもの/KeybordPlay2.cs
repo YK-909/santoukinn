@@ -279,7 +279,7 @@ public class KeybordPlay2 : MonoBehaviour
                                     {
                                         //音鳴らす
                                         FrogSwingSrc.Play();
-                                        FrogAtkVoSrc.Play();
+                                        //FrogAtkVoSrc.Play();
 
                                         P2FlogTongue.SetActive(true);
                                         P2FlogAnimator.SetTrigger("FlogAtkStartP1");

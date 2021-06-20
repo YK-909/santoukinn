@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
     //ADX設定
     public CriAtomSource CountSrc;
     public CriAtomSource BGMSrc;
+    public CriAtomSource WastelandES01;
     string cueSheetBGM = "GardenBGM";
     string cueSheetCount = "CountDownSE";
 
@@ -114,6 +115,7 @@ public class Timer : MonoBehaviour
         {
             CountSrc.Play("CountDown_Finish");
             BGMSrc.Play("Battle");
+            WastelandES01.Play();
         }
     }
 
