@@ -131,6 +131,8 @@ public class KeybordPlay2 : MonoBehaviour
     private string isRollStr = "isRollStr";
     private string isRollFin = "isRollFin";
 
+    GameObject Obj;
+
     void Start()
     {
         P2FlogTongue.SetActive(false);
@@ -364,7 +366,8 @@ public class KeybordPlay2 : MonoBehaviour
 
 
                                             AllActionInterval = true;
-                                            P2TurtleGard.SetActive(true);
+                                            //P2TurtleGard.SetActive(true);
+                                            Obj = Instantiate(P2TurtleGard, transform.position, transform.rotation) as GameObject;
                                             Gard = false;
                                             //無敵タイム開始
                                             Invincible = true;
