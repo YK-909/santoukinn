@@ -61,6 +61,10 @@ public class JoyconPlay1 : MonoBehaviour
     //ライオンの攻撃
     public GameObject P1Lionhead;
     private bool LionSwitch = true;
+    //出血について
+    private float Bloodingtimer = 5;
+    private float Bloodingtime = 5;
+    private int Bloodper;
 
     //カメのカウンター
     public GameObject P1TurtleGard;
@@ -350,9 +354,9 @@ public class JoyconPlay1 : MonoBehaviour
                                             //GameObject Obj;
                                             //Obj = Instantiate(P1ScorpionBullet, P1SetScorpion.transform.position, P1SetScorpion.transform.rotation) as GameObject;
                                             //行動停止
-                                            Invoke("ActionInterval", 0.2f);
+                                            Invoke("ActionInterval", 1.2f);
                                             //リキャストタイム
-                                            Invoke("DelayScorpion", 0.2f);
+                                            Invoke("DelayScorpion", 1.5f);
 
                                             //ミサイル発射タイミング
                                             Invoke("MissileTiming", 1.0f);
@@ -397,12 +401,12 @@ public class JoyconPlay1 : MonoBehaviour
                                                 ArmadilloSpeed += -20 * Time.deltaTime;
                                                 transform.position += transform.forward * ArmadilloSpeed * Time.deltaTime;
 
-                                                if (Input.GetKey(KeyCode.RightArrow))
+                                                if (Direction.x>0)
                                                 {
                                                     //右に回転
                                                     transform.Rotate(0, 10 * Time.deltaTime, 0);
                                                 }
-                                                if (Input.GetKey(KeyCode.LeftArrow))
+                                                if (Direction.x < 0)
                                                 {
                                                     //左に回転
                                                     transform.Rotate(0, -10 * Time.deltaTime, 0);
@@ -413,6 +417,7 @@ public class JoyconPlay1 : MonoBehaviour
                                                 this.tag = "Player1";
                                                 ArmadilloMode = 0;
                                                 //オブジェクトが消える時間
+                                                ArmadilloSwitch = false;
                                                 Invoke("DelayArma", 3.0f);
                                                 AllActionInterval = true;
                                                 //行動停止
@@ -455,7 +460,7 @@ public class JoyconPlay1 : MonoBehaviour
                                     }
                                     else if (Implajump == false)
                                     {
-                                        Rb.AddForce(transform.up * 90, ForceMode.Impulse);
+                                        Rb.AddForce(transform.up * 60, ForceMode.Impulse);
                                         Implajump = true;
 
                                         //インパラ攻撃
@@ -596,7 +601,7 @@ public class JoyconPlay1 : MonoBehaviour
                             {
                                 if (FlogSwitch == true)
                                 {
-                                    Rb.AddForce(transform.up * 45, ForceMode.Impulse);
+                                    Rb.AddForce(transform.up * 30, ForceMode.Impulse);
                                     NormalJump = true;
 
                                     //音鳴らす
@@ -621,9 +626,16 @@ public class JoyconPlay1 : MonoBehaviour
         {
             Player1HP = 100;
         }
+
         if (Poisontimer < Poisoningtime)
         {
             Poisontimer += Time.deltaTime;
+            Player1HP -= Time.deltaTime;
+            P1G.transform.position += new Vector3(HP10per * (0.1f * Time.deltaTime), 0, 0);
+        }
+        if (Bloodingtimer < Bloodingtime)
+        {
+            Bloodingtimer += Time.deltaTime;
             Player1HP -= Time.deltaTime;
             P1G.transform.position += new Vector3(HP10per * (0.1f * Time.deltaTime), 0, 0);
         }
@@ -784,7 +796,7 @@ public class JoyconPlay1 : MonoBehaviour
     }
     void DelayArma()
     {
-        ArmadilloSwitch = false;
+        ArmadilloSwitch = true;
     }
 
     void DelayHorse()
@@ -877,7 +889,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //ダメを食らう時の半分ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 13, ForceMode.Impulse);
-                    ShieldPoint -= 0.04f;
+                    ShieldPoint -= 0.02f;
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
@@ -889,7 +901,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //ダメを食らう時の半分ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 12, ForceMode.Impulse);
-                    ShieldPoint -= 0.05f;
+                    ShieldPoint -= 0.03f;
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
@@ -901,7 +913,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //ダメを食らう時の半分ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 13, ForceMode.Impulse);
-                    ShieldPoint -= 0.06f;
+                    ShieldPoint -= 0.036f;
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
@@ -951,6 +963,11 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 20;
                     P1G.transform.position += new Vector3(HP10per * 2, 0, 0);
+                    Bloodper = Random.Range(0, 10);
+                    if (Bloodper == 0 || Bloodper == 1)
+                    {
+                        Bloodingtimer = 0;
+                    }
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
@@ -996,6 +1013,11 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 20;
                     P1G.transform.position += new Vector3(HP10per * 2f, 0, 0);
+                    Bloodper = Random.Range(0, 10);
+                    if (Bloodper == 0 || Bloodper == 1)
+                    {
+                        Bloodingtimer = 0;
+                    }
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 40, ForceMode.Impulse);
@@ -1008,8 +1030,8 @@ public class JoyconPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P2FlogAttack"))
                 {
-                    Player1HP -= 4;
-                    P1G.transform.position += new Vector3(HP10per * 0.4f, 0, 0);
+                    Player1HP -= 2;
+                    P1G.transform.position += new Vector3(HP10per * 0.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject,this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
@@ -1024,9 +1046,9 @@ public class JoyconPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
-                    Player1HP -= 5;
+                    Player1HP -= 3;
                     Poisontimer = 0;
-                    P1G.transform.position += new Vector3(HP10per * 0.5f, 0, 0);
+                    P1G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
@@ -1098,8 +1120,8 @@ public class JoyconPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P1FlogAttackBack"))
                 {
-                    Player1HP -= 4.8f;
-                    P1G.transform.position += new Vector3(HP10per * 0.48f, 0, 0);
+                    Player1HP -= 4f;
+                    P1G.transform.position += new Vector3(HP10per * 0.4f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 20, ForceMode.Impulse);
@@ -1121,9 +1143,9 @@ public class JoyconPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("PoisonAttackBack"))
                 {
-                    Player1HP -= 6;
+                    Player1HP -= 3.6f;
                     Poisontimer = 0;
-                    P1G.transform.position += new Vector3(HP10per * 0.6f, 0, 0);
+                    P1G.transform.position += new Vector3(HP10per * 0.36f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 16, ForceMode.Impulse);
