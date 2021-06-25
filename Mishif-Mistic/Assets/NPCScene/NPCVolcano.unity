@@ -2277,7 +2277,7 @@ Transform:
   m_LocalScale: {x: 0.9999999, y: 1, z: 0.9999999}
   m_Children: []
   m_Father: {fileID: 8775065649248862817}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &229189926
 MonoBehaviour:
@@ -13768,6 +13768,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1877684559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1877684560}
+  - component: {fileID: 1877684561}
+  m_Layer: 0
+  m_Name: Animal_Damage(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1877684560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877684559}
+  m_LocalRotation: {x: -0, y: 0.46002936, z: -0, w: 0.88790375}
+  m_LocalPosition: {x: 389.4322, y: 55, z: 823.34106}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8775065649248862817}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1877684561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877684559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Animal_Damage
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1001 &1908374199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15858,6 +15912,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1120315237}
+    - target: {fileID: 264736007598169161, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1877684561}
     - target: {fileID: 408952886525048934, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -15888,6 +15947,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1120315237}
+    - target: {fileID: 1320508491211096109, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1877684561}
     - target: {fileID: 1833790339282674997, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: cueSheets.Array.size
@@ -15928,6 +15992,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1120315237}
+    - target: {fileID: 1917453761960476214, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1877684561}
     - target: {fileID: 2131788491288338692, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: FrogAtkSrc
@@ -15953,6 +16022,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1120315237}
+    - target: {fileID: 2131788491288338692, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1877684561}
     - target: {fileID: 2336438886043039118, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: FrogAtkSrc
@@ -15978,6 +16052,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1120315237}
+    - target: {fileID: 2336438886043039118, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1877684561}
     - target: {fileID: 2358494414201285004, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: FrogAtkSrc
@@ -16003,6 +16082,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1120315237}
+    - target: {fileID: 2358494414201285004, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1877684561}
     - target: {fileID: 2598871443287061261, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: FrogAtkSrc
@@ -16033,6 +16117,11 @@ PrefabInstance:
       propertyPath: FrogSwingSrc
       value: 
       objectReference: {fileID: 8775065649248862819}
+    - target: {fileID: 2598871443287061261, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1877684561}
     - target: {fileID: 3196521263253681702, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: FrogAtkSrc
@@ -16058,6 +16147,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1120315237}
+    - target: {fileID: 3196521263253681702, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1877684561}
     - target: {fileID: 3601063593994695279, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: FrogAtkSrc
@@ -16083,6 +16177,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1120315237}
+    - target: {fileID: 3601063593994695279, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1877684561}
     - target: {fileID: 3938370329177064910, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16163,6 +16262,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1120315237}
+    - target: {fileID: 4273805054833253542, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1877684561}
     - target: {fileID: 4369538934212518539, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: FrogAtkSrc
@@ -16188,6 +16292,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1120315237}
+    - target: {fileID: 4369538934212518539, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1877684561}
     - target: {fileID: 5251370255855613406, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: FrogAtkSrc
@@ -16213,6 +16322,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1120315237}
+    - target: {fileID: 5251370255855613406, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1877684561}
     - target: {fileID: 7181568793530269548, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: m_Name
@@ -16243,6 +16357,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1120315237}
+    - target: {fileID: 7496509531277362809, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1877684561}
     - target: {fileID: 7915926517038733553, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: FrogAtkSrc
@@ -16268,6 +16387,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1120315237}
+    - target: {fileID: 7915926517038733553, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1877684561}
     - target: {fileID: 8136244226817322234, guid: 98a060c299ab26b4d99d865b0d3be075,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -16313,6 +16437,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 1120315237}
+    - target: {fileID: 8168935826294364880, guid: 98a060c299ab26b4d99d865b0d3be075,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1877684561}
     m_RemovedComponents:
     - {fileID: 1846790612737829827, guid: 98a060c299ab26b4d99d865b0d3be075, type: 3}
     - {fileID: 1998203727410978001, guid: 98a060c299ab26b4d99d865b0d3be075, type: 3}

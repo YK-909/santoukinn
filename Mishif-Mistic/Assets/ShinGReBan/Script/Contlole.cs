@@ -13,6 +13,9 @@ public class Contlole : MonoBehaviour
     //ADX設定
     public CriAtomSource LionSlotVo;
     public CriAtomSource FrogSlotVo;
+    //音数制限
+    bool isLionVoOnce = false;
+    bool isFrogVoOnce = false;
 
     // Start is called before the first frame update
     void Start()
@@ -42,11 +45,21 @@ public class Contlole : MonoBehaviour
         //音鳴らす
         if (head == 1)
         {
-            FrogSlotVo.Play();
+            if (isFrogVoOnce == false)
+            {
+                isFrogVoOnce = true;
+                FrogSlotVo.Play();
+                isLionVoOnce = false;
+            }
         }
         if (head == 2)
         {
-            LionSlotVo.Play();
+            if (isLionVoOnce == false)
+            {
+                isLionVoOnce = true;
+                LionSlotVo.Play();
+                isFrogVoOnce = false;
+            }
         }
     }
 

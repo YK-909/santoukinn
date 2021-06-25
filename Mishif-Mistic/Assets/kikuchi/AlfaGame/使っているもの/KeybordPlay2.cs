@@ -107,6 +107,7 @@ public class KeybordPlay2 : MonoBehaviour
     public CriAtomSource AnimalShieldDmgSrc;
     public CriAtomSource LionAtkVoSrc;
     public CriAtomSource FrogAtkVoSrc;
+    public CriAtomSource AnimalDamage;
 
     //アニメーター
     private Animator Animator;
@@ -939,6 +940,8 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
+                    //音鳴らす
+                    AnimalShieldDmgSrc.Play();
                 }
 
                 if (other.gameObject.CompareTag("P1ImplaWave"))
@@ -987,6 +990,8 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
+                    //音鳴らす
+                    AnimalShieldDmgSrc.Play();
                 }
                 if (other.gameObject.CompareTag("P1WolfAttack"))
                 {
@@ -1044,7 +1049,8 @@ public class KeybordPlay2 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
                     //音鳴らす
-                    LionSrc.Play();
+                    //LionSrc.Play();
+                    AnimalDamage.Play();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1094,6 +1100,8 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    //音鳴らす
+                    AnimalDamage.Play();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1125,6 +1133,8 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.7f);
+                    //音鳴らす
+                    AnimalDamage.Play();
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
@@ -1168,6 +1178,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    
                 }
                 if (other.gameObject.CompareTag("P2ImplaBack"))
                 {
@@ -1210,6 +1221,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    
                 }
                 if (other.gameObject.CompareTag("PoisonAttackBack"))
                 {
@@ -1222,6 +1234,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    
                 }
                 if (other.gameObject.CompareTag("Gard")&& this.tag== "P2ArmadilloAttack")
                 {
