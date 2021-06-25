@@ -68,6 +68,7 @@ public class JoyconPlay1 : MonoBehaviour
 
     //カメのカウンター
     public GameObject P1TurtleGard;
+    public GameObject P2TurtleCounter;
     private bool Gard = true;
 
     //インパラののジャンプ攻撃
@@ -154,7 +155,7 @@ public class JoyconPlay1 : MonoBehaviour
     void Update()
     {
         Gamemode = Timer.GetGamemode();
-        P1TurtleGard.transform.position = this.transform.position;
+        P1TurtleGard.transform.position = this.transform.position + transform.forward * 5 + transform.up * -2;
         //シールドの色変更　tの値で変わる　調整中無視していいよ
         ShieldObj.GetComponent<Renderer>().material.color = Color.HSVToRGB(ShieldPoint * 150, 1, 1);
 
@@ -351,8 +352,7 @@ public class JoyconPlay1 : MonoBehaviour
                                         if (ScorpionAtk == true)
                                         {
                                             AllActionInterval = true;
-                                            //GameObject Obj;
-                                            //Obj = Instantiate(P1ScorpionBullet, P1SetScorpion.transform.position, P1SetScorpion.transform.rotation) as GameObject;
+                                            
                                             //行動停止
                                             Invoke("ActionInterval", 1.2f);
                                             //リキャストタイム
@@ -779,6 +779,12 @@ public class JoyconPlay1 : MonoBehaviour
         //カメのシールドがカウンターに遷移するタイミング
         this.Animator.SetBool(isKameShield, false);
         this.Animator.SetBool(isCounter, true);
+    }
+    void TurtleCounter()
+    {
+        GameObject Obj;
+        Obj = Instantiate(P2TurtleCounter, transform.position + transform.forward * 6, transform.rotation) as GameObject;
+        Destroy(Obj, 0.7f);
     }
 
     void ImpalaAtkTiming()
