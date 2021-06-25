@@ -108,7 +108,7 @@ public class JoyconPlay1 : MonoBehaviour
     public CriAtomSource AnimalShieldDmgSrc;
     public CriAtomSource LionAtkVoSrc;
     public CriAtomSource FrogAtkVoSrc;
-
+    public CriAtomSource AnimalDamage;
 
     //アニメーター
     private Animator Animator;
@@ -981,7 +981,8 @@ public class JoyconPlay1 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
                     //音鳴らす
-                    LionSrc.Play();
+                    //LionSrc.Play();
+                    AnimalDamage.Play();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1030,6 +1031,8 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    //音鳴らす
+                    AnimalDamage.Play();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1061,6 +1064,8 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.7f);
+                    //音鳴らす
+                    AnimalDamage.Play();
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);

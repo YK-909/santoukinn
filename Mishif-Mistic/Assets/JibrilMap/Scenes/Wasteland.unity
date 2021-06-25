@@ -385,6 +385,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &317743573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 317743574}
+  - component: {fileID: 317743575}
+  m_Layer: 0
+  m_Name: Animal_Damage(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &317743574
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317743573}
+  m_LocalRotation: {x: -0, y: -0.000000029802322, z: -0, w: 1}
+  m_LocalPosition: {x: 0.000038146973, y: 0, z: -0.000076293945}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1460134087}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &317743575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317743573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Animal_Damage
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &354051340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,7 +1479,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544286332}
-  m_LocalRotation: {x: 0.25088724, y: -0.0067983116, z: 0.0017620098, w: 0.9679909}
+  m_LocalRotation: {x: 0.25088724, y: -0.006798278, z: 0.0017620011, w: 0.9679909}
   m_LocalPosition: {x: 2200, y: 3453, z: 221}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1580,7 +1634,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1460134087}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1705546598
 MonoBehaviour:
@@ -2151,15 +2205,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alfa norotain
       objectReference: {fileID: 0}
+    - target: {fileID: 433163160004388294, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 317743575}
+    - target: {fileID: 611944439987661471, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 317743575}
     - target: {fileID: 1416403649006456726, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0067983116
+      value: -0.006798278
       objectReference: {fileID: 0}
     - target: {fileID: 1416403649006456726, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0017620098
+      value: 0.0017620011
       objectReference: {fileID: 0}
     - target: {fileID: 1416403649006456726, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
@@ -2171,11 +2235,36 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 0.9679909
       objectReference: {fileID: 0}
+    - target: {fileID: 2171687240008715136, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 317743575}
+    - target: {fileID: 3143848946314466994, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 317743575}
+    - target: {fileID: 4111916918682484910, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 317743575}
     - target: {fileID: 4688358436631593628, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
       propertyPath: WastelandES01
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5138791170940604513, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 317743575}
+    - target: {fileID: 6108696276872862931, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 317743575}
     - target: {fileID: 6189716564314793634, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2231,11 +2320,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6909106886703170023, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 317743575}
+    - target: {fileID: 6984286314358701861, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 317743575}
+    - target: {fileID: 7216913640620240031, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 317743575}
+    - target: {fileID: 7253246520351597422, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 317743575}
     - target: {fileID: 7416664300337371914, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8147803240895505217, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 317743575}
+    - target: {fileID: 8472737989262101867, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 317743575}
+    - target: {fileID: 8781322803996515674, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 317743575}
     - target: {fileID: 8805454264234182233, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
       propertyPath: cueSheets.Array.size
@@ -2256,5 +2380,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8846172573836088556, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 317743575}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b27404b3d78794440b1c9751b6b85bd7, type: 3}

@@ -1502,7 +1502,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 28.158924
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -1527,7 +1527,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544286332}
-  m_LocalRotation: {x: 0.25088724, y: -0.0067983116, z: 0.0017620098, w: 0.9679909}
+  m_LocalRotation: {x: 0.2585715, y: -0.029133817, z: 0.007802185, w: 0.96552116}
   m_LocalPosition: {x: 2200, y: 3453, z: 221}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1653,6 +1653,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1686056630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1686056631}
+  - component: {fileID: 1686056632}
+  m_Layer: 0
+  m_Name: Animal_Damage(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1686056631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686056630}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4579360226879572005}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1686056632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686056630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Animal_Damage
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &1694098623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,7 +1790,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4579360226879572005}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1717084916
 MonoBehaviour:
@@ -2322,6 +2376,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 818580795}
+    - target: {fileID: 229295865126548564, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1686056632}
     - target: {fileID: 343044125793602169, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: FrogAtkSrc
@@ -2347,6 +2406,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 818580795}
+    - target: {fileID: 343044125793602169, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1686056632}
     - target: {fileID: 660552706865566481, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2432,6 +2496,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 818580795}
+    - target: {fileID: 1041646114107401392, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1686056632}
     - target: {fileID: 1232131747169989195, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: m_Mass
@@ -2462,6 +2531,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 818580795}
+    - target: {fileID: 1428051175916921081, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1686056632}
     - target: {fileID: 1733802668826511315, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: m_Mass
@@ -2497,6 +2571,11 @@ PrefabInstance:
       propertyPath: FrogSwingSrc
       value: 
       objectReference: {fileID: 4579360226879572007}
+    - target: {fileID: 1989513598504052178, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1686056632}
     - target: {fileID: 2249031182666268499, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: FrogAtkSrc
@@ -2522,6 +2601,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 818580795}
+    - target: {fileID: 2249031182666268499, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1686056632}
     - target: {fileID: 2297281202004796241, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: FrogAtkSrc
@@ -2547,6 +2631,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 818580795}
+    - target: {fileID: 2297281202004796241, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1686056632}
     - target: {fileID: 2456860432387635163, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: FrogAtkSrc
@@ -2572,6 +2661,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 818580795}
+    - target: {fileID: 2456860432387635163, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1686056632}
     - target: {fileID: 2588142513715883877, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: m_Mass
@@ -2602,6 +2696,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 818580795}
+    - target: {fileID: 2670931261585844457, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1686056632}
     - target: {fileID: 2810185987971363818, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: cueSheets.Array.size
@@ -2652,6 +2751,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 818580795}
+    - target: {fileID: 3305154650607113970, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1686056632}
     - target: {fileID: 3854962224132298494, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: m_Mass
@@ -2692,6 +2796,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 818580795}
+    - target: {fileID: 4332920385814678166, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1686056632}
     - target: {fileID: 4776931658600343546, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: m_Mass
@@ -2722,15 +2831,30 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 818580795}
+    - target: {fileID: 5679254665524431887, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1686056632}
     - target: {fileID: 5720865484877363749, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0067983116
+      value: -0.029133817
       objectReference: {fileID: 0}
     - target: {fileID: 5720865484877363749, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0017620098
+      value: 0.007802185
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720865484877363749, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.2585715
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720865484877363749, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.96552116
       objectReference: {fileID: 0}
     - target: {fileID: 5932967935925341742, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
@@ -2757,6 +2881,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 818580795}
+    - target: {fileID: 5932967935925341742, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1686056632}
     - target: {fileID: 5972558330923077091, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: m_Mass
@@ -2792,6 +2921,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 818580795}
+    - target: {fileID: 6306680422309990566, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1686056632}
     - target: {fileID: 6640321367173130675, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: m_Name
@@ -2832,6 +2966,11 @@ PrefabInstance:
       propertyPath: FrogAtkVoSrc
       value: 
       objectReference: {fileID: 818580795}
+    - target: {fileID: 8605739736188838657, guid: c385dabe6cedf4e428bdd96948641605,
+        type: 3}
+      propertyPath: AnimalDamage
+      value: 
+      objectReference: {fileID: 1686056632}
     - target: {fileID: 9085807217046617228, guid: c385dabe6cedf4e428bdd96948641605,
         type: 3}
       propertyPath: m_Mass
