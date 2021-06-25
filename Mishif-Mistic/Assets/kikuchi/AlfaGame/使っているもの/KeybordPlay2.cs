@@ -67,6 +67,7 @@ public class KeybordPlay2 : MonoBehaviour
 
     //カメのカウンター
     public GameObject P2TurtleGard;
+    public GameObject P2TurtleCounter;
     private bool Gard = true;
 
     //インパラののジャンプ攻撃
@@ -135,7 +136,6 @@ public class KeybordPlay2 : MonoBehaviour
     private string isRollStr = "isRollStr";
     private string isRollFin = "isRollFin";
 
-    GameObject Obj;
 
     void Start()
     {
@@ -154,7 +154,7 @@ public class KeybordPlay2 : MonoBehaviour
     void Update()
     {
         Gamemode = Timer.GetGamemode();
-        P2TurtleGard.transform.position = this.transform.position;
+        P2TurtleGard.transform.position = this.transform.position + transform.forward * 5+transform.up*-2;
         //シールドの色変更　tの値で変わる　調整中無視していいよ
         ShieldObj.GetComponent<Renderer>().material.color = Color.HSVToRGB(ShieldPoint * 150, 1, 1);
 
@@ -370,10 +370,8 @@ public class KeybordPlay2 : MonoBehaviour
                                             //音鳴らす
                                             TurtleShieldOPSrc.Play();
 
-
                                             AllActionInterval = true;
-                                            //P2TurtleGard.SetActive(true);
-                                            Obj = Instantiate(P2TurtleGard, transform.position, transform.rotation) as GameObject;
+                                            P2TurtleGard.SetActive(true);                                           
                                             Gard = false;
                                             //無敵タイム開始
                                             Invincible = true;
@@ -844,6 +842,13 @@ public class KeybordPlay2 : MonoBehaviour
         //カメのシールドがカウンターに遷移するタイミング
         this.Animator.SetBool(isKameShield, false);
         this.Animator.SetBool(isCounter, true);
+    }
+
+    void TurtleCounter()
+    {
+        GameObject Obj;
+        Obj = Instantiate(P2TurtleCounter, transform.position + transform.forward * 6, transform.rotation) as GameObject;
+        Destroy(Obj, 0.7f);
     }
 
     void ImpalaAtkTiming()
