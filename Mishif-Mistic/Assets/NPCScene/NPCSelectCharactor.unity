@@ -2154,6 +2154,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761407095}
   m_CullTransparentMesh: 0
+--- !u!1 &762881898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 762881900}
+  - component: {fileID: 762881899}
+  m_Layer: 0
+  m_Name: ButtonContlole
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &762881899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762881898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab6a869e43eea846b0b6dd280b1124a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirstSelectButton: {fileID: 1197254000}
+--- !u!4 &762881900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762881898}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 399, y: 224.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &814212154
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,7 +2640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1ad0aca6b69e84cb3d61b4a179007c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FlyPanSprite: {fileID: 21300000, guid: 8b0ca69f84662a94fb5c0814027adb52, type: 3}
+  FlyPanSprite: {fileID: 21300000, guid: ceb58b7044939224f9e9ad9613ecf99b, type: 3}
   ImpalaSprite: {fileID: 21300000, guid: ee0501a62616b9e4a8d27e8e4d9cc7d0, type: 3}
   WolfSprite: {fileID: 21300000, guid: 58b13bffa17f4274587109274efb7351, type: 3}
   Animaru:
@@ -4382,6 +4426,7 @@ GameObject:
   - component: {fileID: 1743823390}
   - component: {fileID: 1743823389}
   - component: {fileID: 1743823387}
+  - component: {fileID: 1743823396}
   m_Layer: 0
   m_Name: P1PreviewManager
   m_TagString: Untagged
@@ -4523,6 +4568,21 @@ MonoBehaviour:
   Head: 1
   Body: 1
   Leg: 1
+--- !u!114 &1743823396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743823386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b303252751baf4c8f6fd81844e84ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Head: 2
+  Body: 1
+  Leg: 3
 --- !u!1 &1840776648
 GameObject:
   m_ObjectHideFlags: 0
@@ -5081,7 +5141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241d4f7e6034da74cb5023f65bdbb8c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FlyPanSprite: {fileID: 21300000, guid: 8b0ca69f84662a94fb5c0814027adb52, type: 3}
+  FlyPanSprite: {fileID: 21300000, guid: 0c24dd0670a8da34ab9b93dee0085830, type: 3}
   TortoiseSprite: {fileID: 21300000, guid: d5685abc4183a654d8cfe981177e3082, type: 3}
   ScorpionSprite: {fileID: 21300000, guid: 3ba89599d237ac04a909984cde267938, type: 3}
   Animaru:
@@ -5208,7 +5268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de4041c72bf282469ee76625072af62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FlyPanSprite: {fileID: 21300000, guid: 8b0ca69f84662a94fb5c0814027adb52, type: 3}
+  FlyPanSprite: {fileID: 21300000, guid: 9845ec86600de16439e5e92cdf7ad543, type: 3}
   FrogSprite: {fileID: 21300000, guid: a34e968b513088e40bbb0f82ac3f2b2f, type: 3}
   LionSprite: {fileID: 21300000, guid: 480e3beb2da36d949826b3d668fef7e5, type: 3}
   Animaru:
