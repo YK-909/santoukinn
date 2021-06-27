@@ -6,8 +6,8 @@ public class NPCChooseArea : MonoBehaviour
 {
     public CriAtomSource KeyboardSlotLRSrc;
 
-    private float minX = 230;
-    private float maxX = 640;
+    private float minX = 290;
+    private float maxX = 690;
 
     // Start is called before the first frame update
     void Start()
