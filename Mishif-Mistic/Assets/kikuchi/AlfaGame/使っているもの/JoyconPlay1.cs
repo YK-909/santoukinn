@@ -177,36 +177,39 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     if (Implajump == false)
                     {
+                        if (FlogSwitch == true)
+                        {
 
-                        if (NormalJump == false)
-                        {
-                            Speed = 40.0f;
-                        }
-                        else
-                        {
-                            Speed = 15f;
-                        }
-
-                        Direction.Set(Input.GetAxis("Horizontal1"), 0, Input.GetAxis("Vertical1"));
-                        if (Direction != Vector3.zero)
-                        {
-                            //向きを指定
-                            transform.rotation = Quaternion.LookRotation(Direction);
-                            if (Speed == 40.0)
+                            if (NormalJump == false)
                             {
-                                //音鳴らす
-                                AnimalFSSrc.Play();
+                                Speed = 40.0f;
+                            }
+                            else
+                            {
+                                Speed = 15f;
                             }
 
-                            //走る
-                            this.Animator.SetBool(isRun, true);
-                        }
-                        else
-                        {
-                            Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
-                            transform.LookAt(Enemy);
+                            Direction.Set(Input.GetAxis("Horizontal1"), 0, Input.GetAxis("Vertical1"));
+                            if (Direction != Vector3.zero)
+                            {
+                                //向きを指定
+                                transform.rotation = Quaternion.LookRotation(Direction);
+                                if (Speed == 40.0)
+                                {
+                                    //音鳴らす
+                                    AnimalFSSrc.Play();
+                                }
 
-                            this.Animator.SetBool(isRun, false);
+                                //走る
+                                this.Animator.SetBool(isRun, true);
+                            }
+                            else
+                            {
+                                Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
+                                transform.LookAt(Enemy);
+
+                                this.Animator.SetBool(isRun, false);
+                            }
                         }
                         //前方に移動する
                         transform.position += Direction * Speed * Time.deltaTime;
@@ -219,7 +222,7 @@ public class JoyconPlay1 : MonoBehaviour
                                 if (Head == 1)
                                 {
                                     //カエル
-                                    if (Input.GetKeyDown(KeyCode.Joystick1Button3))
+                                    if (Input.GetKeyDown(KeyCode.Joystick1Button0))
                                     {
                                         if (FlogSwitch == true)
                                         {
@@ -237,7 +240,7 @@ public class JoyconPlay1 : MonoBehaviour
                                             this.Animator.SetBool(isTongueFin, false);
                                         }
                                     }
-                                    if (Input.GetKeyUp(KeyCode.Joystick1Button3))
+                                    if (Input.GetKeyUp(KeyCode.Joystick1Button0))
                                     {
                                         if (FlogSwitch == false)
                                         {
@@ -260,7 +263,7 @@ public class JoyconPlay1 : MonoBehaviour
                                 else if (Head == 2)
                                 {
                                     // ライオン
-                                    if (Input.GetKeyDown(KeyCode.Joystick1Button3))
+                                    if (Input.GetKeyDown(KeyCode.Joystick1Button0))
                                     {
                                         if (LionSwitch == true)
                                         {
@@ -294,16 +297,19 @@ public class JoyconPlay1 : MonoBehaviour
                                     //クワガタの攻撃
                                     if (KuwagataSwitch == true)
                                     {
-                                        KuwagataSwitch = false;
-                                        AllActionInterval = true;
-                                        KuwagataBlock.tag = "P1KuwagataAttack";
-                                        KuwagataBlock.SetActive(true);
-                                        Rb.isKinematic = true;
-                                        Invoke("KuwagataUnable", 0.7f);
-                                        //行動停止
-                                        Invoke("ActionInterval", 1.5f);
-                                        //リキャストタイム
-                                        Invoke("DelayKuwagata", 3f);
+                                        if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+                                        {
+                                            KuwagataSwitch = false;
+                                            AllActionInterval = true;
+                                            KuwagataBlock.tag = "P1KuwagataAttack";
+                                            KuwagataBlock.SetActive(true);
+                                            Rb.isKinematic = true;
+                                            Invoke("KuwagataUnable", 0.7f);
+                                            //行動停止
+                                            Invoke("ActionInterval", 1.5f);
+                                            //リキャストタイム
+                                            Invoke("DelayKuwagata", 3f);
+                                        }
                                     }
                                 }
 
@@ -313,7 +319,7 @@ public class JoyconPlay1 : MonoBehaviour
                                     if (Body == 1)
                                     {
                                         //カメ
-                                        if (Input.GetKeyUp(KeyCode.Joystick1Button1))
+                                        if (Input.GetKeyUp(KeyCode.Joystick1Button3))
                                         {
 
                                             if (Gard == true)
@@ -331,7 +337,7 @@ public class JoyconPlay1 : MonoBehaviour
                                                 //上と同じ値
                                                 Invoke("TurtleGardRemove", 2f);
                                                 //行動停止
-                                                Invoke("ActionInterval", 2.5f);
+                                                Invoke("ActionInterval", 3.0f);
                                                 //リキャストタイム
                                                 Invoke("DelayTartle", 4f);
 
@@ -347,7 +353,7 @@ public class JoyconPlay1 : MonoBehaviour
                                     else if (Body == 2)
                                     {
                                         //サソリ
-                                        if (Input.GetKeyUp(KeyCode.Joystick1Button1))
+                                        if (Input.GetKeyUp(KeyCode.Joystick1Button3))
                                         {
                                             //音鳴らす
                                             //ScorpionSrc.Play();
@@ -383,7 +389,7 @@ public class JoyconPlay1 : MonoBehaviour
                                             if (ArmadilloMode == 0)
                                             {
                                                 //アルマジロ
-                                                if (Input.GetKey(KeyCode.Joystick1Button1))
+                                                if (Input.GetKey(KeyCode.Joystick1Button3))
                                                 {
                                                     Debug.Log(ArmadilloSpeed);
                                                     if (ArmadilloSpeed < 60)
@@ -391,7 +397,7 @@ public class JoyconPlay1 : MonoBehaviour
                                                         ArmadilloSpeed += 15 * Time.deltaTime;
                                                     }
                                                 }
-                                                if (Input.GetKeyUp(KeyCode.Joystick1Button1))
+                                                if (Input.GetKeyUp(KeyCode.Joystick1Button3))
                                                 {
                                                     ArmadilloMode = 1;
                                                 }
@@ -444,7 +450,7 @@ public class JoyconPlay1 : MonoBehaviour
                                 if (Leg == 1)
                                 {
                                     //インパラ
-                                    if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+                                    if (Input.GetKeyDown(KeyCode.Joystick1Button2))
                                     {
                                         //音鳴らす
                                         ImpalaJumpSrc.Play();
@@ -483,7 +489,7 @@ public class JoyconPlay1 : MonoBehaviour
                                 else if (Leg == 2)
                                 {
                                     //オオカミ
-                                    if (Input.GetKey(KeyCode.Joystick1Button0))
+                                    if (Input.GetKey(KeyCode.Joystick1Button2))
                                     {
                                         if (WolfSwitch == true)
                                         {
@@ -518,7 +524,7 @@ public class JoyconPlay1 : MonoBehaviour
                                     if (LionSwitch == true)
                                     {
                                         // ウマ
-                                        if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+                                        if (Input.GetKeyDown(KeyCode.Joystick1Button2))
                                         {
                                             //音鳴らす
 
@@ -555,7 +561,7 @@ public class JoyconPlay1 : MonoBehaviour
                         if (NormalJump == false)
                         {
                             //LRのシールド
-                            if (Input.GetKey(KeyCode.Joystick2Button15) || Input.GetKey(KeyCode.Joystick1Button15))
+                            if (Input.GetKey(KeyCode.Joystick1Button6) || Input.GetKey(KeyCode.Joystick2Button7))
                             {
                                 //音鳴らす
                                 AnimalShieldOPSrc.Play();
@@ -587,7 +593,7 @@ public class JoyconPlay1 : MonoBehaviour
                                 }
                             }
                             //ガードのボタンを離したとき　後隙
-                            if (Input.GetKeyUp(KeyCode.Joystick2Button15) || Input.GetKeyUp(KeyCode.Joystick1Button15))
+                            if (Input.GetKeyUp(KeyCode.Joystick1Button6) || Input.GetKey(KeyCode.Joystick2Button7))
                             {
                                 ShieldObj.SetActive(false);
                                 Invoke("ShieldDelay", 0.5f);
@@ -595,11 +601,11 @@ public class JoyconPlay1 : MonoBehaviour
                             }
                             if (Shield == false)
                             {
-                                if (Input.GetKey(KeyCode.Joystick1Button2))
+                                if (Input.GetKey(KeyCode.Joystick1Button1))
                                 {
                                     if (FlogSwitch == true)
                                     {
-                                        Rb.AddForce(transform.up * 30, ForceMode.Impulse);
+                                        Rb.AddForce(transform.up * 45, ForceMode.Impulse);
                                         NormalJump = true;
 
                                         //音鳴らす
