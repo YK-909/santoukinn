@@ -178,88 +178,89 @@ public class KeybordPlay2 : MonoBehaviour
 
                     if (Implajump == false)
                     {
-
-                        if (NormalJump == false)
+                        if (FlogSwitch == true)
                         {
-                            //歩きの速さの調整をする際はここも
-                            Speed = 40.0f;
-
-                        }
-                        else
-                        {
-                            Speed = 15f;
-                        }
-
-                        if (Input.GetKey(KeyCode.UpArrow))
-                        {
-                            //キャラクターが指定の向きを向く
-                            transform.rotation = Quaternion.Euler(0, 0, 0);
-                            //前方に移動する
-                            transform.position += transform.forward * Speed * Time.deltaTime;
-                            if (Speed == 40.0)
+                            if (NormalJump == false)
                             {
-                                //音鳴らす
-                                AnimalFSSrc.Play();
+                                //歩きの速さの調整をする際はここも
+                                Speed = 40.0f;
+
+                            }
+                            else
+                            {
+                                Speed = 15f;
                             }
 
-                            //走る
-                            this.Animator.SetBool(isRun, true);
-                        }
-                        else if (Input.GetKey(KeyCode.DownArrow))
-                        {
-                            //キャラクターが指定の向きを向く
-                            transform.rotation = Quaternion.Euler(0, 180, 0);
-                            //前方に移動する
-                            transform.position += transform.forward * Speed * Time.deltaTime;
-
-                            if (Speed == 40.0)
+                            if (Input.GetKey(KeyCode.UpArrow))
                             {
-                                //音鳴らす
-                                AnimalFSSrc.Play();
-                            }
+                                //キャラクターが指定の向きを向く
+                                transform.rotation = Quaternion.Euler(0, 0, 0);
+                                //前方に移動する
+                                transform.position += transform.forward * Speed * Time.deltaTime;
+                                if (Speed == 40.0)
+                                {
+                                    //音鳴らす
+                                    AnimalFSSrc.Play();
+                                }
 
-                            //走る
-                            this.Animator.SetBool(isRun, true);
-                        }
-                        else if (Input.GetKey(KeyCode.RightArrow))
-                        {
-                            //キャラクターが指定の向きを向く
-                            transform.rotation = Quaternion.Euler(0, 90, 0);
-                            //前方に移動する
-                            transform.position += transform.forward * Speed * Time.deltaTime;
-                            if (Speed == 40.0)
+                                //走る
+                                this.Animator.SetBool(isRun, true);
+                            }
+                            else if (Input.GetKey(KeyCode.DownArrow))
                             {
-                                //音鳴らす
-                                AnimalFSSrc.Play();
+                                //キャラクターが指定の向きを向く
+                                transform.rotation = Quaternion.Euler(0, 180, 0);
+                                //前方に移動する
+                                transform.position += transform.forward * Speed * Time.deltaTime;
+
+                                if (Speed == 40.0)
+                                {
+                                    //音鳴らす
+                                    AnimalFSSrc.Play();
+                                }
+
+                                //走る
+                                this.Animator.SetBool(isRun, true);
                             }
-
-                            //走る
-                            this.Animator.SetBool(isRun, true);
-                        }
-                        else if (Input.GetKey(KeyCode.LeftArrow))
-                        {
-                            //キャラクターが指定の向きを向く
-                            transform.rotation = Quaternion.Euler(0, -90, 0);
-                            //前方に移動する
-                            transform.position += transform.forward * Speed * Time.deltaTime;
-
-                            if (Speed == 40.0)
+                            else if (Input.GetKey(KeyCode.RightArrow))
                             {
-                                //音鳴らす
-                                AnimalFSSrc.Play();
+                                //キャラクターが指定の向きを向く
+                                transform.rotation = Quaternion.Euler(0, 90, 0);
+                                //前方に移動する
+                                transform.position += transform.forward * Speed * Time.deltaTime;
+                                if (Speed == 40.0)
+                                {
+                                    //音鳴らす
+                                    AnimalFSSrc.Play();
+                                }
+
+                                //走る
+                                this.Animator.SetBool(isRun, true);
                             }
+                            else if (Input.GetKey(KeyCode.LeftArrow))
+                            {
+                                //キャラクターが指定の向きを向く
+                                transform.rotation = Quaternion.Euler(0, -90, 0);
+                                //前方に移動する
+                                transform.position += transform.forward * Speed * Time.deltaTime;
 
-                            //走る
-                            this.Animator.SetBool(isRun, true);
+                                if (Speed == 40.0)
+                                {
+                                    //音鳴らす
+                                    AnimalFSSrc.Play();
+                                }
+
+                                //走る
+                                this.Animator.SetBool(isRun, true);
+                            }
+                            else
+                            {
+                                Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
+                                transform.LookAt(Enemy);
+
+                                this.Animator.SetBool(isRun, false);
+                            }
                         }
-                        else
-                        {
-                            Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
-                            transform.LookAt(Enemy);
-
-                            this.Animator.SetBool(isRun, false);
-                        }
-
                         if (Invincible == false)
                         {
                             if (NormalJump == false)
@@ -385,7 +386,7 @@ public class KeybordPlay2 : MonoBehaviour
                                                 //上と同じ値
                                                 Invoke("TurtleGardRemove", 2f);
                                                 //行動停止
-                                                Invoke("ActionInterval", 2.5f);
+                                                Invoke("ActionInterval", 3.0f);
                                                 //リキャストタイム
                                                 Invoke("DelayTartle", 4f);
 
@@ -661,7 +662,7 @@ public class KeybordPlay2 : MonoBehaviour
                                 {
                                     if (FlogSwitch == true)
                                     {
-                                        Rb.AddForce(transform.up * 30, ForceMode.Impulse);
+                                        Rb.AddForce(transform.up * 45, ForceMode.Impulse);
                                         NormalJump = true;
 
                                         //音鳴らす
