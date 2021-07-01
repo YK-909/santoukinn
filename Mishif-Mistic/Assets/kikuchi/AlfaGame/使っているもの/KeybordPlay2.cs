@@ -341,28 +341,36 @@ public class KeybordPlay2 : MonoBehaviour
                                             this.Animator.SetBool(isBite, false);
                                         }
                                     }
-                                    else if (Head == 3)
-                                    {
-                                        //クワガタの攻撃
-                                        if (KuwagataSwitch == true)
-                                        {
-                                            if (Input.GetKeyDown(KeyCode.Z))
-                                            {
-                                                KuwagataSwitch = false;
-                                                AllActionInterval = true;
-                                                KuwagataBlock.tag = "P2KuwagataAttack";
-                                                KuwagataBlock.SetActive(true);
-                                                Rb.isKinematic = true;
-                                                Invoke("KuwagataUnable", 0.7f);
-                                                //行動停止
-                                                Invoke("ActionInterval", 1.5f);
-                                                //リキャストタイム
-                                                Invoke("DelayKuwagata", 3f);
-                                            }
-                                        }
-                                    }
                                 }
+                                else if (Head == 3)
+                                {
+                                    //クワガタの攻撃
+                                    if (KuwagataSwitch == true)
+                                    {
+                                        if (Input.GetKeyDown(KeyCode.Z))
+                                        {
+                                            KuwagataSwitch = false;
+                                            AllActionInterval = true;
+                                            KuwagataBlock.tag = "P2KuwagataAttack";
+                                            KuwagataBlock.SetActive(true);
+                                            Rb.isKinematic = true;
+                                            Invoke("KuwagataUnable", 0.7f);
+                                            //行動停止
+                                            Invoke("ActionInterval", 1.5f);
+                                            //リキャストタイム
+                                            Invoke("DelayKuwagata", 3f);
 
+                                            //ギロチンアタック
+                                            this.Animator.SetBool(isGilotine, true);
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        this.Animator.SetBool(isGilotine, false);
+                                    }
+
+                                }
 
                                 if (FlogSwitch == true)
                                 {
@@ -449,10 +457,17 @@ public class KeybordPlay2 : MonoBehaviour
                                                     {
                                                         ArmadilloSpeed += 15 * Time.deltaTime;
                                                     }
+
+                                                    //ローリングアタック
+                                                    this.Animator.SetBool(isRollStr, true);
+                                                    this.Animator.SetBool(isRollFin, false);
                                                 }
                                                 if (Input.GetKeyUp(KeyCode.X))
                                                 {
                                                     ArmadilloMode = 1;
+
+                                                    this.Animator.SetBool(isRollStr, false);
+                                                    this.Animator.SetBool(isRollFin, true);
                                                 }
                                             }
                                             else if (ArmadilloMode == 1)
@@ -572,10 +587,11 @@ public class KeybordPlay2 : MonoBehaviour
                                 }
                                 else if (Leg == 3)
                                 {
-                                    if (LionSwitch == true)
+                                    // ウマ
+                                    if (Input.GetKeyDown(KeyCode.C))
                                     {
-                                        // ウマ
-                                        if (Input.GetKeyDown(KeyCode.Z))
+
+                                        if (HorseSwitch == true)
                                         {
                                             //音鳴らす
 
@@ -589,16 +605,13 @@ public class KeybordPlay2 : MonoBehaviour
                                             Invoke("DelayHorse", 1.6f);
 
                                             //蹴る
-                                            //this.Animator.SetBool(isBite, true);
-                                            //当たり判定
-                                            //Invoke("BiteEnable", 0.4f);
-                                            //Invoke("BiteUnable", 1.0f);
+                                            this.Animator.SetBool(isKick, true);
 
                                         }
-                                        else
-                                        {
-                                            //this.Animator.SetBool(isBite, false);
-                                        }
+                                    }
+                                    else
+                                    {
+                                        this.Animator.SetBool(isKick, false);
                                     }
                                 }
                             }
