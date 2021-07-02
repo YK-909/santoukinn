@@ -921,14 +921,14 @@ RectTransform:
   m_GameObject: {fileID: 1678672168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 708573456}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 30}
+  m_AnchoredPosition: {x: 150, y: 30}
   m_SizeDelta: {x: 170, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1678672170
@@ -982,8 +982,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1727368747}
   - component: {fileID: 1727368748}
-  - component: {fileID: 1727368749}
   - component: {fileID: 1727368750}
+  - component: {fileID: 1727368751}
   m_Layer: 5
   m_Name: BGMSlider
   m_TagString: Untagged
@@ -1000,7 +1000,7 @@ RectTransform:
   m_GameObject: {fileID: 1727368746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 25817845}
   - {fileID: 1473396738}
@@ -1063,7 +1063,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1727368749}
+      - m_Target: {fileID: 1727368751}
         m_MethodName: OnVolSliderChanged
         m_Mode: 1
         m_Arguments:
@@ -1074,20 +1074,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1727368749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727368746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d51f36ea1fd4f974395fced81b1b6008, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volSlider: {fileID: 1727368748}
-  pitchSlider: {fileID: 0}
 --- !u!114 &1727368750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1111,6 +1097,20 @@ MonoBehaviour:
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
+--- !u!114 &1727368751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727368746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf4b3044ce71174bab7b0b68b447064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGMvolSlider: {fileID: 1727368748}
+  SEvolSlider: {fileID: 0}
 --- !u!1 &1759440752
 GameObject:
   m_ObjectHideFlags: 0
