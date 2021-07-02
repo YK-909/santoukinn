@@ -113,6 +113,7 @@ public class KeybordPlay2 : MonoBehaviour
     public CriAtomSource LionAtkVoSrc;
     public CriAtomSource FrogAtkVoSrc;
     public CriAtomSource AnimalDamage;
+    private CriAtomSource atomSrc;
 
     //アニメーター
     private Animator Animator;
@@ -154,6 +155,8 @@ public class KeybordPlay2 : MonoBehaviour
         EnemyObj = GameObject.Find("P1camera");
 
         Animator = GetComponent<Animator>();
+
+        atomSrc = (CriAtomSource)GetComponent("CriAtomSource");
     }
 
     // Update is called once per frame
@@ -1103,6 +1106,9 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+
+                    //音鳴らす
+                    atomSrc.Play("Impala_Attack");
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
