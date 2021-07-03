@@ -441,7 +441,7 @@ public class KeybordPlay2 : MonoBehaviour
 
                                                 //ミサイル発射タイミング
                                                 Invoke("MissileTiming", 1.0f);
-                                                Invoke("MissileTiming", 1.2f);
+                                                Invoke("MissileTiming", 1.4f);
 
                                                 //ミサイル発射
                                                 this.Animator.SetBool(isMissileStr, true);
@@ -540,7 +540,7 @@ public class KeybordPlay2 : MonoBehaviour
                                             {
                                                 Rb.isKinematic = true;
                                                 AllActionInterval = true;
-                                                Invoke("ImpleFreeze", 1.0f);
+                                                Invoke("ImpleFreeze", 0.7f);
 
                                                 Invoke("ImpalaAtkTiming", 0.5f);
                                                 Invoke("ImpalaFinTiming", 1.5f);
@@ -733,7 +733,7 @@ public class KeybordPlay2 : MonoBehaviour
         //HPの継続的な減少
         if (P2G.transform.position.x > P2R.transform.position.x)
         {
-            P2R.transform.position += new Vector3(0.1f, 0, 0);
+            P2R.transform.position += new Vector3(0.2f, 0, 0);
         }
 
         //シールドブレイク
@@ -796,7 +796,7 @@ public class KeybordPlay2 : MonoBehaviour
         //空中で一時停止
         Rb.isKinematic = false;
         gameObject.layer = LayerMask.NameToLayer("ImplaLayer");
-        Rb.AddForce(-transform.up * 30, ForceMode.Impulse);
+        Rb.AddForce(-transform.up * 45, ForceMode.Impulse);
         P2ImplaBlock.SetActive(true);
     }
     
@@ -979,7 +979,7 @@ public class KeybordPlay2 : MonoBehaviour
                 //シールドを張っているとき
                 if (other.gameObject.CompareTag("P1LionAttack"))
                 {
-                    ShieldPoint -= 0.2f;
+                    ShieldPoint -= 0.3f;
                     //ダメを食らう時の半分ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
@@ -1023,7 +1023,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //ダメを食らう時の半分ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 13, ForceMode.Impulse);
-                    ShieldPoint -= 0.02f;
+                    ShieldPoint -= 0.01f;
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
@@ -1103,8 +1103,8 @@ public class KeybordPlay2 : MonoBehaviour
                 //ダメージの当たり判定
                 if (other.gameObject.CompareTag("P1LionAttack"))
                 {
-                    Player2HP -= 20;
-                    P2G.transform.position += new Vector3(HP10per * 2, 0, 0);
+                    Player2HP -= 30;
+                    P2G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
                     {
@@ -1116,6 +1116,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    P2ImplaBlock.SetActive(false);
                     //音鳴らす
                     //LionSrc.Play();
                     //AnimalDamage.Play();
@@ -1132,6 +1133,7 @@ public class KeybordPlay2 : MonoBehaviour
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Debug.Log(ToVec);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
+                    P2ImplaBlock.SetActive(false);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1150,6 +1152,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 30, ForceMode.Impulse);
+                    P2ImplaBlock.SetActive(false);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1174,6 +1177,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    P2ImplaBlock.SetActive(false);
                     //音鳴らす
                     //AnimalDamage.Play();
                     atomSrc.Play("Animal_Damage");
@@ -1183,14 +1187,15 @@ public class KeybordPlay2 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P1FlogAttack"))
                 {
-                    Player2HP -= 2;
-                    P2G.transform.position += new Vector3(HP10per * 0.2f, 0, 0);
+                    Player2HP -= 1;
+                    P2G.transform.position += new Vector3(HP10per * 0.1f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.6f);
+                    P2ImplaBlock.SetActive(false);
                     //音鳴らす
                     //FrogAtkSrc.Play();
                     atomSrc.Play("Frog_Attack");
@@ -1209,6 +1214,8 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.7f);
+                    P2ImplaBlock.SetActive(false); 
+
                     //音鳴らす
                     //AnimalDamage.Play();
                     atomSrc.Play("Animal_Damage");
@@ -1226,7 +1233,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
-
+                    P2ImplaBlock.SetActive(false);
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                 }
@@ -1240,15 +1247,15 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
-
+                    P2ImplaBlock.SetActive(false);
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                 }
                 //カウンターダメージ用
                 if (other.gameObject.CompareTag("P2LionAttackBack"))
                 {
-                    Player2HP -= 24;
-                    P2G.transform.position += new Vector3(HP10per * 2 * 1.2f, 0, 0);
+                    Player2HP -= 36;
+                    P2G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 55, ForceMode.Impulse);
@@ -1267,6 +1274,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    P2ImplaBlock.SetActive(false);
                 }
                 if (other.gameObject.CompareTag("P2ImplaWaveBack"))
                 {
@@ -1275,11 +1283,12 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    P2ImplaBlock.SetActive(false);
                 }
                 if (other.gameObject.CompareTag("P2FlogAttackBack"))
                 {
-                    Player2HP -= 4f;
-                    P2G.transform.position += new Vector3(HP10per * 0.4f, 0, 0);
+                    Player2HP -= 1.2f;
+                    P2G.transform.position += new Vector3(HP10per * 0.12f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 20, ForceMode.Impulse);

@@ -5,7 +5,6 @@ using UnityEngine;
 public class FlogAttack : MonoBehaviour
 {
     public int playerID = 1;
-    public GameObject FlogCouter;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +20,8 @@ public class FlogAttack : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Gard"))
         {
-            FlogCouter.tag = ("P" + playerID + "FlogAttackBack");
-            Invoke("FlogNormal", 1.0f);
+            this.tag = ("P" + playerID + "FlogAttackBack");
+            Invoke("FlogNormal", 1.5f);
         }
     }
     void FlogNormal()
