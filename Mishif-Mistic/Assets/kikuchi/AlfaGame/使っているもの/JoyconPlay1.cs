@@ -345,9 +345,9 @@ public class JoyconPlay1 : MonoBehaviour
                                                 //上と同じ値
                                                 Invoke("TurtleGardRemove", 2f);
                                                 //行動停止
-                                                Invoke("ActionInterval", 3.0f);
+                                                Invoke("ActionInterval", 2.3f);
                                                 //リキャストタイム
-                                                Invoke("DelayTartle", 4f);
+                                                Invoke("DelayTartle", 3f);
 
                                                 //カメのシールド
                                                 this.Animator.SetBool(isKameShield, true);
@@ -377,7 +377,7 @@ public class JoyconPlay1 : MonoBehaviour
 
                                                 //ミサイル発射タイミング
                                                 Invoke("MissileTiming", 1.0f);
-                                                Invoke("MissileTiming", 1.2f);
+                                                Invoke("MissileTiming", 1.4f);
 
                                                 //ミサイル発射
                                                 this.Animator.SetBool(isMissileStr, true);
@@ -470,7 +470,7 @@ public class JoyconPlay1 : MonoBehaviour
                                             {
                                                 Rb.isKinematic = true;
                                                 AllActionInterval = true;
-                                                Invoke("ImpleFreeze", 1.0f);
+                                                Invoke("ImpleFreeze", 0.7f);
 
                                                 Invoke("ImpalaAtkTiming", 0.5f);
                                                 Invoke("ImpalaFinTiming", 1.5f);
@@ -658,7 +658,7 @@ public class JoyconPlay1 : MonoBehaviour
         //HPの継続的な減少
         if (P1G.transform.position.x < P1R.transform.position.x)
         {
-            P1R.transform.position -= new Vector3(0.1f, 0, 0);
+            P1R.transform.position -= new Vector3(0.2f, 0, 0);
         }
 
         //シールドブレイク
@@ -720,7 +720,7 @@ public class JoyconPlay1 : MonoBehaviour
         //空中で一時停止
         Rb.isKinematic = false;
         gameObject.layer = LayerMask.NameToLayer("ImplaLayer");
-        Rb.AddForce(-transform.up * 30, ForceMode.Impulse);
+        Rb.AddForce(-transform.up * 45, ForceMode.Impulse);
         P1ImplaBlock.SetActive(true);
     }
     void DelayWolf()
@@ -895,7 +895,7 @@ public class JoyconPlay1 : MonoBehaviour
                 //シールドを張っているとき
                 if (other.gameObject.CompareTag("P2LionAttack"))
                 {
-                    ShieldPoint -= 0.2f;
+                    ShieldPoint -= 0.3f;
                     //ダメを食らう時の半分ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
@@ -933,7 +933,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //ダメを食らう時の半分ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 13, ForceMode.Impulse);
-                    ShieldPoint -= 0.02f;
+                    ShieldPoint -= 0.01f;
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
@@ -1010,8 +1010,8 @@ public class JoyconPlay1 : MonoBehaviour
                 //ダメージの当たり判定
                 if (other.gameObject.CompareTag("P2LionAttack"))
                 {
-                    Player1HP -= 20;
-                    P1G.transform.position += new Vector3(HP10per * 2, 0, 0);
+                    Player1HP -= 30;
+                    P1G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
                     {
@@ -1023,6 +1023,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    P1ImplaBlock.SetActive(false);
                     //音鳴らす
                     //LionSrc.Play();
                     //AnimalDamage.Play();
@@ -1042,7 +1043,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
-
+                    P1ImplaBlock.SetActive(false);
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                 }
@@ -1056,7 +1057,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
-
+                    P1ImplaBlock.SetActive(false);
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                 }
@@ -1075,6 +1076,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    P1ImplaBlock.SetActive(false);
                     //音鳴らす
                     //AnimalDamage.Play();
                     atomSrc.Play("Animal_Damage");
@@ -1084,14 +1086,15 @@ public class JoyconPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P2FlogAttack"))
                 {
-                    Player1HP -= 2;
-                    P1G.transform.position += new Vector3(HP10per * 0.2f, 0, 0);
+                    Player1HP -= 1.2f;
+                    P1G.transform.position += new Vector3(HP10per * 0.12f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject,this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.6f);
+                    P1ImplaBlock.SetActive(false);
                     //音鳴らす
                     //FrogAtkSrc.Play();
                     atomSrc.Play("Frog_Attack");
@@ -1110,6 +1113,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.7f);
+                    P1ImplaBlock.SetActive(false);
                     //音鳴らす
                     //AnimalDamage.Play();
                     atomSrc.Play("Animal_Damage");
@@ -1124,6 +1128,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
+                    P1ImplaBlock.SetActive(false);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1138,6 +1143,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
+                    P1ImplaBlock.SetActive(false);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1153,6 +1159,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 55, ForceMode.Impulse);
+                    P1ImplaBlock.SetActive(false);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1162,7 +1169,7 @@ public class JoyconPlay1 : MonoBehaviour
                     Player1HP -= 36;
                     P1G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     Vector3 ToVec = GetAngleVec(other.gameObject, P1ImplaBlock);
-
+                    P1ImplaBlock.SetActive(false);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
                     //無敵タイム開始
                     Invincible = true;
@@ -1173,6 +1180,7 @@ public class JoyconPlay1 : MonoBehaviour
                     Player1HP -= 12;
                     P1G.transform.position += new Vector3(HP10per * 1.2f, 0, 0);
                     //無敵タイム開始
+                    P1ImplaBlock.SetActive(false);
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
                 }
