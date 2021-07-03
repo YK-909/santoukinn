@@ -99,21 +99,22 @@ public class JoyconPlay1 : MonoBehaviour
     private Vector3 Enemy;
 
     //ADX設定
-    public CriAtomSource AnimalFSSrc;
-    public CriAtomSource LionSrc;
-    public CriAtomSource FrogSwingSrc;
-    public CriAtomSource FrogAtkSrc;
-    public CriAtomSource TurtleShieldOPSrc;
-    public CriAtomSource ScorpionSrc;
-    public CriAtomSource ImpalaJumpSrc;
-    public CriAtomSource WolfSrc;
-    public CriAtomSource AnimalJumpSrc;
-    public CriAtomSource AnimalShieldOPSrc;
-    public CriAtomSource AnimalShieldDstSrc;
-    public CriAtomSource AnimalShieldDmgSrc;
-    public CriAtomSource LionAtkVoSrc;
-    public CriAtomSource FrogAtkVoSrc;
-    public CriAtomSource AnimalDamage;
+    //public CriAtomSource AnimalFSSrc;
+    //public CriAtomSource LionSrc;
+    //public CriAtomSource FrogSwingSrc;
+    //public CriAtomSource FrogAtkSrc;
+    //public CriAtomSource TurtleShieldOPSrc;
+    //public CriAtomSource ScorpionSrc;
+    //public CriAtomSource ImpalaJumpSrc;
+    //public CriAtomSource WolfSrc;
+    //public CriAtomSource AnimalJumpSrc;
+    //public CriAtomSource AnimalShieldOPSrc;
+    //public CriAtomSource AnimalShieldDstSrc;
+    //public CriAtomSource AnimalShieldDmgSrc;
+    //public CriAtomSource LionAtkVoSrc;
+    //public CriAtomSource FrogAtkVoSrc;
+    //public CriAtomSource AnimalDamage;
+    private CriAtomSource atomSrc;
 
     //アニメーター
     private Animator Animator;
@@ -154,6 +155,8 @@ public class JoyconPlay1 : MonoBehaviour
         EnemyObj = GameObject.Find("P2camera");
 
         Animator = GetComponent<Animator>();
+
+        atomSrc = (CriAtomSource)GetComponent<CriAtomSource>();
     }
 
     // Update is called once per frame
@@ -197,7 +200,8 @@ public class JoyconPlay1 : MonoBehaviour
                                 if (Speed == 40.0)
                                 {
                                     //音鳴らす
-                                    AnimalFSSrc.Play();
+                                    //AnimalFSSrc.Play();
+                                    atomSrc.Play("Garden_Footsteps");
                                 }
 
                                 //走る
@@ -227,7 +231,8 @@ public class JoyconPlay1 : MonoBehaviour
                                         if (FlogSwitch == true)
                                         {
                                             //音鳴らす
-                                            FrogSwingSrc.Play();
+                                            //FrogSwingSrc.Play();
+                                            atomSrc.Play("Frog_Swing");
                                             //FrogAtkVoSrc.Play();
 
                                             P1FlogTongue.SetActive(true);
@@ -252,7 +257,8 @@ public class JoyconPlay1 : MonoBehaviour
                                             Invoke("ActionInterval", 3.0f);
 
                                             //音止める
-                                            FrogSwingSrc.Stop();
+                                            //FrogSwingSrc.Stop();
+                                            atomSrc.Stop();
 
                                             //舌攻撃
                                             this.Animator.SetBool(isTongueStr, false);
@@ -268,7 +274,8 @@ public class JoyconPlay1 : MonoBehaviour
                                         if (LionSwitch == true)
                                         {
                                             //音鳴らす
-                                            LionAtkVoSrc.Play();
+                                            //LionAtkVoSrc.Play();
+                                            atomSrc.Play("LionAtkVo");
                                             Invoke("BiteSound", 0.6f);
 
                                             AllActionInterval = true;
@@ -325,7 +332,8 @@ public class JoyconPlay1 : MonoBehaviour
                                             if (Gard == true)
                                             {
                                                 //音鳴らす
-                                                TurtleShieldOPSrc.Play();
+                                                //TurtleShieldOPSrc.Play();
+                                                atomSrc.Play("Turtle_Shield");
 
                                                 AllActionInterval = true;
                                                 P1TurtleGard.SetActive(true);
@@ -453,7 +461,8 @@ public class JoyconPlay1 : MonoBehaviour
                                     if (Input.GetKeyDown(KeyCode.Joystick1Button2))
                                     {
                                         //音鳴らす
-                                        ImpalaJumpSrc.Play();
+                                        //ImpalaJumpSrc.Play();
+                                        atomSrc.Play("Impala_Jump");
 
                                         if (Implajump == true)
                                         {
@@ -564,7 +573,8 @@ public class JoyconPlay1 : MonoBehaviour
                             if (Input.GetKey(KeyCode.Joystick1Button6) || Input.GetKey(KeyCode.Joystick2Button7))
                             {
                                 //音鳴らす
-                                AnimalShieldOPSrc.Play();
+                                //AnimalShieldOPSrc.Play();
+                                atomSrc.Play("Animal_Shield_OP");
 
                                 //シールド展開
                                 this.Animator.SetBool(isShield, true);
@@ -609,7 +619,8 @@ public class JoyconPlay1 : MonoBehaviour
                                         NormalJump = true;
 
                                         //音鳴らす
-                                        AnimalJumpSrc.Play();
+                                        //AnimalJumpSrc.Play();
+                                        atomSrc.Play("Animal_Jump");
 
                                         //ジャンプする
                                         this.Animator.SetBool(isJump, true);
@@ -661,7 +672,8 @@ public class JoyconPlay1 : MonoBehaviour
             Invoke("ShieldBreak", 5f);
 
             //音鳴らす
-            AnimalShieldDstSrc.Play();
+            //AnimalShieldDstSrc.Play();
+            atomSrc.Play("Animal_Shield_Dst");
         }
         if (Flying == true)
         {
@@ -740,7 +752,9 @@ public class JoyconPlay1 : MonoBehaviour
 
     void MissileTiming()
     {
-        ScorpionSrc.Play();
+        //音鳴らす
+        //ScorpionSrc.Play();
+        atomSrc.Play("Scorpion_Needle");
         //ミサイル発射タイミング
         GameObject Obj;
         Obj = Instantiate(P1ScorpionBullet, P1SetScorpion.transform.position, P1SetScorpion.transform.rotation) as GameObject;
@@ -748,7 +762,9 @@ public class JoyconPlay1 : MonoBehaviour
 
     void ScratchSound()
     {
-        WolfSrc.Play();
+        //音鳴らす
+        //WolfSrc.Play();
+        atomSrc.Play("Wolf_Scratch");
     }
 
     void ScratchEnable()
@@ -766,7 +782,9 @@ public class JoyconPlay1 : MonoBehaviour
 
     void BiteSound()
     {
-        LionSrc.Play();
+        //音鳴らす
+        //LionSrc.Play();
+        atomSrc.Play("Lion_Bite");
     }
 
     void BiteEnable()
@@ -885,7 +903,8 @@ public class JoyconPlay1 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
                     //音鳴らす
-                    AnimalShieldDmgSrc.Play();
+                    //AnimalShieldDmgSrc.Play();
+                    atomSrc.Play("Animal_Shield_Dmg");
                 }
                 if (other.gameObject.CompareTag("P2Impla"))
                 {
@@ -919,7 +938,8 @@ public class JoyconPlay1 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
                     //音鳴らす
-                    AnimalShieldDmgSrc.Play();
+                    //AnimalShieldDmgSrc.Play();
+                    atomSrc.Play("Animal_Shield_Dmg");
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
@@ -931,7 +951,8 @@ public class JoyconPlay1 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
                     //音鳴らす
-                    AnimalShieldDmgSrc.Play();
+                    //AnimalShieldDmgSrc.Play();
+                    atomSrc.Play("Animal_Shield_Dmg");
                 }
                 if (other.gameObject.CompareTag("PoisonAttackBack"))
                 {
@@ -953,7 +974,8 @@ public class JoyconPlay1 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
                     //音鳴らす
-                    AnimalShieldDmgSrc.Play();
+                    //AnimalShieldDmgSrc.Play();
+                    atomSrc.Play("Animal_Shield_Dmg");
                 }
                 if (other.gameObject.CompareTag("P2ArmadilloAttack"))
                 {
@@ -965,7 +987,8 @@ public class JoyconPlay1 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
                     //音鳴らす
-                    AnimalShieldDmgSrc.Play();
+                    //AnimalShieldDmgSrc.Play();
+                    atomSrc.Play("Animal_Shield_Dmg");
                 }
                 if (other.gameObject.CompareTag("P2HorseAttack"))
                 {
@@ -977,7 +1000,8 @@ public class JoyconPlay1 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
                     //音鳴らす
-                    AnimalShieldDmgSrc.Play();
+                    //AnimalShieldDmgSrc.Play();
+                    atomSrc.Play("Animal_Shield_Dmg");
                 }
 
             }
@@ -1001,7 +1025,8 @@ public class JoyconPlay1 : MonoBehaviour
                     Invoke("InvincibleTime", 1.5f);
                     //音鳴らす
                     //LionSrc.Play();
-                    AnimalDamage.Play();
+                    //AnimalDamage.Play();
+                    atomSrc.Play("Animal_Damage");
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1051,7 +1076,8 @@ public class JoyconPlay1 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
                     //音鳴らす
-                    AnimalDamage.Play();
+                    //AnimalDamage.Play();
+                    atomSrc.Play("Animal_Damage");
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1067,7 +1093,8 @@ public class JoyconPlay1 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 0.6f);
                     //音鳴らす
-                    FrogAtkSrc.Play();
+                    //FrogAtkSrc.Play();
+                    atomSrc.Play("Frog_Attack");
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
@@ -1084,7 +1111,8 @@ public class JoyconPlay1 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 0.7f);
                     //音鳴らす
-                    AnimalDamage.Play();
+                    //AnimalDamage.Play();
+                    atomSrc.Play("Animal_Damage");
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
@@ -1220,7 +1248,8 @@ public class JoyconPlay1 : MonoBehaviour
                 //行動停止
                 Invoke("ActionInterval", 1.2f);
                 //音鳴らす
-                AnimalDamage.Play();
+                //AnimalDamage.Play();
+                atomSrc.Play("Animal_Damage");
             }
         }
         else
