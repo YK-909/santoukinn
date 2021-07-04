@@ -8,6 +8,7 @@ public class P1ChooseArea : MonoBehaviour
 
     private float minX = 270;
     private float maxX = 680;
+    new string name = "Horizontal3";
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class P1ChooseArea : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Joystick2Button0))
+        if (Input.GetButtonDown("Horizontal3"))
         {
             transform.Translate(-200, 0, 0);
 
@@ -26,7 +27,7 @@ public class P1ChooseArea : MonoBehaviour
             SwitchSlotLRSrc.Play();
         }
 
-        if (Input.GetKey(KeyCode.Joystick2Button3))
+        if (Input.GetButtonDown("Horizontal3"))
         {
             transform.Translate(200, 0, 0);
 
