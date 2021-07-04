@@ -618,6 +618,9 @@ public class KeybordPlay2 : MonoBehaviour
 
                                             //蹴る
                                             this.Animator.SetBool(isKick, true);
+                                            //当たり判定
+                                            Invoke("KickEnable", 0.8f);
+                                            Invoke("KickUnable", 1.2f);
 
                                         }
                                     }
@@ -914,6 +917,17 @@ public class KeybordPlay2 : MonoBehaviour
     {
         HorseSwitch = true;
     }
+
+    void KickEnable()
+    {
+        P2HorseLeg.SetActive(true);
+    }
+
+    void KickUnable()
+    {
+        P2HorseLeg.SetActive(false);
+    }
+
     void KuwagataUnable()
     {
         KuwagataBlock.SetActive(false);
@@ -943,6 +957,9 @@ public class KeybordPlay2 : MonoBehaviour
 
         if (other.gameObject.tag == "floor")
         {
+            //インパラ攻撃からStayに戻す
+            ImpalaFinTiming();
+
             //ただのジャンプ
             NormalJump = false;
             Implajump = false;

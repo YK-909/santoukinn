@@ -316,7 +316,14 @@ public class JoyconPlay1 : MonoBehaviour
                                             Invoke("ActionInterval", 1.5f);
                                             //リキャストタイム
                                             Invoke("DelayKuwagata", 3f);
+
+                                            //ギロチンアタック
+                                            this.Animator.SetBool(isGilotine, true);
                                         }
+                                    }
+                                    else
+                                    {
+                                        this.Animator.SetBool(isGilotine, false);
                                     }
                                 }
 
@@ -530,15 +537,15 @@ public class JoyconPlay1 : MonoBehaviour
                                 }
                                 else if (Leg == 3)
                                 {
-                                    if (LionSwitch == true)
+                                    if (Input.GetKeyDown(KeyCode.C))
                                     {
-                                        // ウマ
-                                        if (Input.GetKeyDown(KeyCode.Joystick1Button2))
+
+                                        if (HorseSwitch == true)
                                         {
                                             //音鳴らす
 
                                             AllActionInterval = true;
-                                            P1HorseLeg.tag = "P1HorseAttack";
+                                            P1HorseLeg.tag = "P2HorseAttack";
                                             Rb.AddForce(transform.forward * 25f, ForceMode.Impulse);
                                             HorseSwitch = false;
                                             //行動停止
@@ -547,16 +554,16 @@ public class JoyconPlay1 : MonoBehaviour
                                             Invoke("DelayHorse", 1.6f);
 
                                             //蹴る
-                                            //this.Animator.SetBool(isBite, true);
+                                            this.Animator.SetBool(isKick, true);
                                             //当たり判定
-                                            //Invoke("BiteEnable", 0.4f);
-                                            //Invoke("BiteUnable", 1.0f);
+                                            Invoke("KickEnable", 0.8f);
+                                            Invoke("KickUnable", 1.2f);
 
                                         }
-                                        else
-                                        {
-                                            //this.Animator.SetBool(isBite, false);
-                                        }
+                                    }
+                                    else
+                                    {
+                                        this.Animator.SetBool(isKick, false);
                                     }
                                 }
                             }
@@ -834,6 +841,17 @@ public class JoyconPlay1 : MonoBehaviour
     {
         HorseSwitch = true;
     }
+
+    void KickEnable()
+    {
+        P1HorseLeg.SetActive(true);
+    }
+
+    void KickUnable()
+    {
+        P1HorseLeg.SetActive(false);
+    }
+
     void KuwagataUnable()
     {
         KuwagataBlock.SetActive(false);
@@ -865,6 +883,9 @@ public class JoyconPlay1 : MonoBehaviour
 
         if (other.gameObject.tag == "floor")
         {
+            //インパラ攻撃からStayに戻す
+            ImpalaFinTiming();
+
             //ただのジャンプ
             NormalJump = false;
             Implajump = false;
@@ -1151,6 +1172,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                 }
+
                 //カウンターダメージ用
                 if (other.gameObject.CompareTag("P1LionAttackBack"))
                 {
