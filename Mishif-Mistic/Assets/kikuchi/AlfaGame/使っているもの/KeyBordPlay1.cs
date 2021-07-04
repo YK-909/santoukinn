@@ -807,6 +807,9 @@ public class KeyBordPlay1 : MonoBehaviour
 
         if (other.gameObject.tag == "floor")
         {
+            //インパラ攻撃からStayに戻す
+            ImpalaFinTiming();
+
             //ただのジャンプ
             NormalJump = false;
             Implajump = false;
@@ -1031,6 +1034,7 @@ public class KeyBordPlay1 : MonoBehaviour
                     //怯む
                     this.Animator.SetBool(isFalt, true);
                 }
+
                 //カウンターダメージ用
                 if (other.gameObject.CompareTag("P1LionAttackBack"))
                 {
