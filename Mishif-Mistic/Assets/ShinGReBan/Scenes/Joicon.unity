@@ -247,17 +247,17 @@ MonoBehaviour:
   initializesAtom: 1
   atomConfig:
     acfFileName: 
-    maxVirtualVoices: 32
+    maxVirtualVoices: 80
     maxVoiceLimitGroups: 32
     maxCategories: 32
     maxSequenceEventsPerFrame: 2
     maxBeatSyncCallbacksPerFrame: 1
     standardVoicePoolConfig:
-      memoryVoices: 16
-      streamingVoices: 8
+      memoryVoices: 24
+      streamingVoices: 16
     hcaMxVoicePoolConfig:
-      memoryVoices: 0
-      streamingVoices: 0
+      memoryVoices: 24
+      streamingVoices: 16
     outputSamplingRate: 0
     usesInGamePreview: 0
     inGamePreviewMode: 0
@@ -593,8 +593,12 @@ MonoBehaviour:
     acbFile: UISE.acb
     awbFile: UISE.awb
     loaderStatus: 0
+  - name: TltleBGM
+    acbFile: TltleBGM.acb
+    awbFile: TltleBGM.awb
+    loaderStatus: 0
   dspBusSetting: 
-  dontDestroyOnLoad: 0
+  dontDestroyOnLoad: 1
   dontRemoveExistsCueSheet: 0
 --- !u!4 &842653309
 Transform:
@@ -735,7 +739,7 @@ MonoBehaviour:
   _cueSheet: UISE
   _regionOnStart: {fileID: 0}
   _listenerOnStart: {fileID: 0}
-  _use3dPositioning: 1
+  _use3dPositioning: 0
   _loop: 0
   _volume: 1
   _pitch: 0

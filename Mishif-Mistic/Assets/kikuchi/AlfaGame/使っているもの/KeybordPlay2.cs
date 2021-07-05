@@ -606,6 +606,7 @@ public class KeybordPlay2 : MonoBehaviour
                                         if (HorseSwitch == true)
                                         {
                                             //音鳴らす
+                                            atomSrc.Play("Horse_Swing");
 
                                             AllActionInterval = true;
                                             P2HorseLeg.tag = "P2HorseAttack";
@@ -1251,6 +1252,11 @@ public class KeybordPlay2 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
                     P2ImplaBlock.SetActive(false);
+
+                    //音鳴らす
+                    //AnimalDamage.Play();
+                    atomSrc.Play("Animal_Damage");
+
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                 }
@@ -1265,6 +1271,11 @@ public class KeybordPlay2 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
                     P2ImplaBlock.SetActive(false);
+
+                    //音鳴らす
+                    //AnimalDamage.Play();
+                    atomSrc.Play("Horse_Kick");
+
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                 }

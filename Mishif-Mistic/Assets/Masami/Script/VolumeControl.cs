@@ -14,6 +14,8 @@ public class VolumeControl : MonoBehaviour
     void Start()
     {
         atomSrc = (CriAtomSource)GetComponent("CriAtomSource");
+
+        BGMvolSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
     }
 
     // Update is called once per frame
@@ -46,7 +48,7 @@ public class VolumeControl : MonoBehaviour
     }
 
     /* イベントコールバック用関数を追加 */
-    public void OnVolSliderChanged()
+    public void ValueChangeCheck()
     {
         //atomSrc.volume = BGMvolSlider.value;
         //CriAtomExCategory.SetVolume("BGM", 0.0f);   // BGM カテゴリのボリュームを 0.0f に設定する

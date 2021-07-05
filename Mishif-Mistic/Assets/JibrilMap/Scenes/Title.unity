@@ -1577,7 +1577,7 @@ MonoBehaviour:
   _cueSheet: TltleBGM
   _regionOnStart: {fileID: 0}
   _listenerOnStart: {fileID: 0}
-  _use3dPositioning: 1
+  _use3dPositioning: 0
   _loop: 1
   _volume: 0.3
   _pitch: 0
@@ -1630,7 +1630,7 @@ MonoBehaviour:
   _cueSheet: UISE
   _regionOnStart: {fileID: 0}
   _listenerOnStart: {fileID: 0}
-  _use3dPositioning: 1
+  _use3dPositioning: 0
   _loop: 0
   _volume: 1
   _pitch: 0
@@ -2487,7 +2487,7 @@ MonoBehaviour:
     numberOfDecoders: 8
     numberOfMaxEntries: 4
   dontInitializeOnAwake: 0
-  dontDestroyOnLoad: 0
+  dontDestroyOnLoad: 1
 --- !u!4 &2082061423
 Transform:
   m_ObjectHideFlags: 0
@@ -2542,10 +2542,10 @@ MonoBehaviour:
     loaderStatus: 0
   - name: TltleBGM
     acbFile: TltleBGM.acb
-    awbFile: 
+    awbFile: TltleBGM.awb
     loaderStatus: 0
   dspBusSetting: 
-  dontDestroyOnLoad: 0
+  dontDestroyOnLoad: 1
   dontRemoveExistsCueSheet: 0
 --- !u!4 &2135639292
 Transform:

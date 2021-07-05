@@ -1062,18 +1062,7 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1727368751}
-        m_MethodName: OnVolSliderChanged
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1727368750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,7 +1080,7 @@ MonoBehaviour:
   _cueSheet: TltleBGM
   _regionOnStart: {fileID: 0}
   _listenerOnStart: {fileID: 0}
-  _use3dPositioning: 1
+  _use3dPositioning: 0
   _loop: 1
   _volume: 1
   _pitch: 0
@@ -1144,7 +1133,7 @@ MonoBehaviour:
   cueSheets:
   - name: TltleBGM
     acbFile: TltleBGM.acb
-    awbFile: 
+    awbFile: TltleBGM.awb
     loaderStatus: 0
   dspBusSetting: 
   dontDestroyOnLoad: 1
