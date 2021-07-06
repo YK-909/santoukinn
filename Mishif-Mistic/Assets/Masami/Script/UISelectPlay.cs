@@ -46,12 +46,27 @@ public class UISelectPlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKey(KeyCode.W))
+        {
+            atomSrc.Play("Cursor_Select");
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            atomSrc.Play("Cursor_Select");
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            atomSrc.Play("Cursor_Select");
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            atomSrc.Play("Cursor_Select");
+        }
     }
 
     //カーソルが乗ったとき
-    private void OnMouseEnter()
+    /*private void OnMouseEnter()
     {
-        atomSrc.Play("Cursor_Select");
-    }
+        
+    }*/
 }
