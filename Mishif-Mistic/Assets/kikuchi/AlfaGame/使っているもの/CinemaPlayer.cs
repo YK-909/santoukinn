@@ -12,6 +12,8 @@ public class CinemaPlayer : MonoBehaviour
     public GameObject LSW;
     public GameObject LTI;
     public GameObject LTW;
+    public GameObject KAW;
+    public GameObject LTU;
 
     private Vector3 PlayerObject;
     void Start()
@@ -51,6 +53,14 @@ public class CinemaPlayer : MonoBehaviour
             PlayerObject = LTI.transform.position;
         }
         else if (LTW.activeSelf)
+        {
+            PlayerObject = LTW.transform.position;
+        }
+        else if (KAW.activeSelf)
+        {
+            PlayerObject = LTW.transform.position;
+        }
+        else if (LTU.activeSelf)
         {
             PlayerObject = LTW.transform.position;
         }

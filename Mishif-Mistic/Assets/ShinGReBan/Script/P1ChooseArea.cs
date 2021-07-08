@@ -9,6 +9,7 @@ public class P1ChooseArea : MonoBehaviour
     private float minX = 270;
     private float maxX = 680;
     new string name = "Horizontal3";
+    private bool delay = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,20 +20,28 @@ public class P1ChooseArea : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Horizontal3"))
+        if (delay == false)
         {
-            transform.Translate(-200, 0, 0);
+            float x = Input.GetAxis("Horizontal3");
+            if (x < 0)
+            {
+                transform.Translate(-200, 0, 0);
 
-            //音鳴らす
-            SwitchSlotLRSrc.Play();
-        }
+                //音鳴らす
+                SwitchSlotLRSrc.Play();
+                delay = true;
+                Invoke("deceideDelay", 0.3f);
+            }
 
-        if (Input.GetButtonDown("Horizontal3"))
-        {
-            transform.Translate(200, 0, 0);
+            if (x > 0)
+            {
+                transform.Translate(200, 0, 0);
 
-            //音鳴らす
-            SwitchSlotLRSrc.Play();
+                //音鳴らす
+                SwitchSlotLRSrc.Play();
+                delay =true;
+                Invoke("deceideDelay", 0.3f);
+            }
         }
 
         if (transform.position.x < minX)
@@ -47,5 +56,9 @@ public class P1ChooseArea : MonoBehaviour
             temp.x = maxX;
             transform.position = temp;
         }
+    }
+    private void deceideDelay()
+    {
+        delay = false;
     }
 }
