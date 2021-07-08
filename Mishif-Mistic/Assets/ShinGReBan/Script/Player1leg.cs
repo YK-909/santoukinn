@@ -64,6 +64,9 @@ public class Player1leg : MonoBehaviour
     //ADX設定
     public CriAtomSource SwitchSlotUDSrc;
 
+    //キャラ選択操作の遅延
+    private bool delay = false;
+
     //AnimaruLevelが3の時の設定
     public void SetLevelThree()
     {
@@ -246,6 +249,11 @@ public class Player1leg : MonoBehaviour
         }
     }
 
+    private void deceideDelay()
+    {
+        delay = false;
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -257,23 +265,31 @@ public class Player1leg : MonoBehaviour
     {
         if (_flag)
         {
-            if (Input.GetButtonDown("Vertical3") && !SlideFlag)
+            if (delay == false)
             {
-                SlideFlag = true;
-                PosFlag = true;
-                Dir = 0;
+                float y = Input.GetAxis("Vertical3");
+                if (y > 0 && !SlideFlag)
+                {
+                    SlideFlag = true;
+                    PosFlag = true;
+                    Dir = 0;
 
-                //音鳴らす
-                SwitchSlotUDSrc.Play();
-            }
-            if (Input.GetButtonDown("Vertical3") && !SlideFlag)
-            {
-                SlideFlag = true;
-                PosFlag = true;
-                Dir = 1;
+                    //音鳴らす
+                    SwitchSlotUDSrc.Play();
+                    delay = true;
+                    Invoke("deceideDelay", 0.3f);
+                }
+                if (y < 0 && !SlideFlag)
+                {
+                    SlideFlag = true;
+                    PosFlag = true;
+                    Dir = 1;
 
-                //音鳴らす
-                SwitchSlotUDSrc.Play();
+                    //音鳴らす
+                    SwitchSlotUDSrc.Play();
+                    delay = true;
+                    Invoke("deceideDelay", 0.3f);
+                }
             }
 
             SlideWepon();

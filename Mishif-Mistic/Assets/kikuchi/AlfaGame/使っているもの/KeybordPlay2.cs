@@ -77,9 +77,10 @@ public class KeybordPlay2 : MonoBehaviour
     public GameObject P2ImplaWaveBlock;
 
     //アルマジロの攻撃
-    private float ArmadilloSpeed = 30.0f;
+    private float ArmadilloSpeed = 0.0f;
     private int ArmadilloMode = 0;
     private bool ArmadilloSwitch = true;
+    public GameObject ArmadilloBlock;
 
     //馬の攻撃
     public GameObject P2HorseLeg;
@@ -88,7 +89,6 @@ public class KeybordPlay2 : MonoBehaviour
     //クワガタの攻撃
     public GameObject KuwagataBlock;
     private bool KuwagataSwitch = true;
-    private bool Flying = false;
 
     private bool AllActionInterval = false;
     private bool CalledOncePoint = false;
@@ -183,89 +183,92 @@ public class KeybordPlay2 : MonoBehaviour
                     {
                         if (FlogSwitch == true)
                         {
-                            if (NormalJump == false)
+                            if (ArmadilloSpeed <= 0)
                             {
-                                //歩きの速さの調整をする際はここも
-                                Speed = 40.0f;
-
-                            }
-                            else
-                            {
-                                Speed = 15f;
-                            }
-
-                            if (Input.GetKey(KeyCode.UpArrow))
-                            {
-                                //キャラクターが指定の向きを向く
-                                transform.rotation = Quaternion.Euler(0, 0, 0);
-                                //前方に移動する
-                                transform.position += transform.forward * Speed * Time.deltaTime;
-                                if (Speed == 40.0)
+                                if (NormalJump == false)
                                 {
-                                    //音鳴らす
-                                    //AnimalFSSrc.Play();
-                                    atomSrc.Play("Garden_Footsteps");
+                                    //歩きの速さの調整をする際はここも
+                                    Speed = 40.0f;
+
+                                }
+                                else
+                                {
+                                    Speed = 15f;
                                 }
 
-                                //走る
-                                this.Animator.SetBool(isRun, true);
-                            }
-                            else if (Input.GetKey(KeyCode.DownArrow))
-                            {
-                                //キャラクターが指定の向きを向く
-                                transform.rotation = Quaternion.Euler(0, 180, 0);
-                                //前方に移動する
-                                transform.position += transform.forward * Speed * Time.deltaTime;
-
-                                if (Speed == 40.0)
+                                if (Input.GetKey(KeyCode.UpArrow))
                                 {
-                                    //音鳴らす
-                                    //AnimalFSSrc.Play();
-                                    atomSrc.Play("Garden_Footsteps");
-                                }
+                                    //キャラクターが指定の向きを向く
+                                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                                    //前方に移動する
+                                    transform.position += transform.forward * Speed * Time.deltaTime;
+                                    if (Speed == 40.0)
+                                    {
+                                        //音鳴らす
+                                        //AnimalFSSrc.Play();
+                                        atomSrc.Play("Garden_Footsteps");
+                                    }
 
-                                //走る
-                                this.Animator.SetBool(isRun, true);
-                            }
-                            else if (Input.GetKey(KeyCode.RightArrow))
-                            {
-                                //キャラクターが指定の向きを向く
-                                transform.rotation = Quaternion.Euler(0, 90, 0);
-                                //前方に移動する
-                                transform.position += transform.forward * Speed * Time.deltaTime;
-                                if (Speed == 40.0)
+                                    //走る
+                                    this.Animator.SetBool(isRun, true);
+                                }
+                                else if (Input.GetKey(KeyCode.DownArrow))
                                 {
-                                    //音鳴らす
-                                    //AnimalFSSrc.Play();
-                                    atomSrc.Play("Garden_Footsteps");
+                                    //キャラクターが指定の向きを向く
+                                    transform.rotation = Quaternion.Euler(0, 180, 0);
+                                    //前方に移動する
+                                    transform.position += transform.forward * Speed * Time.deltaTime;
+
+                                    if (Speed == 40.0)
+                                    {
+                                        //音鳴らす
+                                        //AnimalFSSrc.Play();
+                                        atomSrc.Play("Garden_Footsteps");
+                                    }
+
+                                    //走る
+                                    this.Animator.SetBool(isRun, true);
                                 }
-
-                                //走る
-                                this.Animator.SetBool(isRun, true);
-                            }
-                            else if (Input.GetKey(KeyCode.LeftArrow))
-                            {
-                                //キャラクターが指定の向きを向く
-                                transform.rotation = Quaternion.Euler(0, -90, 0);
-                                //前方に移動する
-                                transform.position += transform.forward * Speed * Time.deltaTime;
-
-                                if (Speed == 40.0)
+                                else if (Input.GetKey(KeyCode.RightArrow))
                                 {
-                                    //音鳴らす
-                                    //AnimalFSSrc.Play();
-                                    atomSrc.Play("Garden_Footsteps");
+                                    //キャラクターが指定の向きを向く
+                                    transform.rotation = Quaternion.Euler(0, 90, 0);
+                                    //前方に移動する
+                                    transform.position += transform.forward * Speed * Time.deltaTime;
+                                    if (Speed == 40.0)
+                                    {
+                                        //音鳴らす
+                                        //AnimalFSSrc.Play();
+                                        atomSrc.Play("Garden_Footsteps");
+                                    }
+
+                                    //走る
+                                    this.Animator.SetBool(isRun, true);
                                 }
+                                else if (Input.GetKey(KeyCode.LeftArrow))
+                                {
+                                    //キャラクターが指定の向きを向く
+                                    transform.rotation = Quaternion.Euler(0, -90, 0);
+                                    //前方に移動する
+                                    transform.position += transform.forward * Speed * Time.deltaTime;
 
-                                //走る
-                                this.Animator.SetBool(isRun, true);
-                            }
-                            else
-                            {
-                                Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
-                                transform.LookAt(Enemy);
+                                    if (Speed == 40.0)
+                                    {
+                                        //音鳴らす
+                                        //AnimalFSSrc.Play();
+                                        atomSrc.Play("Garden_Footsteps");
+                                    }
 
-                                this.Animator.SetBool(isRun, false);
+                                    //走る
+                                    this.Animator.SetBool(isRun, true);
+                                }
+                                else
+                                {
+                                    Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
+                                    transform.LookAt(Enemy);
+
+                                    this.Animator.SetBool(isRun, false);
+                                }
                             }
                         }
                         if (Invincible == false)
@@ -429,11 +432,10 @@ public class KeybordPlay2 : MonoBehaviour
                                                 //音鳴らす
                                                 //ScorpionSrc.Play();
 
-
                                                 AllActionInterval = true;
                                                 ScorpionAtk = false;
-                                                //GameObject Obj;
-                                                //Obj = Instantiate(ScorpionBullet, P2SetScorpion.transform.position, P2SetScorpion.transform.rotation) as GameObject;
+                                                Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
+                                                transform.LookAt(Enemy);
                                                 //行動停止
                                                 Invoke("ActionInterval", 1.5f);
                                                 //リキャストタイム
@@ -485,8 +487,9 @@ public class KeybordPlay2 : MonoBehaviour
                                             {
                                                 if (ArmadilloSpeed > 0)
                                                 {
-                                                    this.tag = "P2ArmadilloAttack";
-                                                    ArmadilloSpeed += -20 * Time.deltaTime;
+                                                    ArmadilloBlock.SetActive(true);
+                                                    ArmadilloBlock.tag = "P2ArmadilloAttack";
+                                                    ArmadilloSpeed += -5 * Time.deltaTime;
                                                     transform.position += transform.forward * ArmadilloSpeed * Time.deltaTime;
                                                     if (Input.GetKey(KeyCode.RightArrow))
                                                     {
@@ -501,14 +504,14 @@ public class KeybordPlay2 : MonoBehaviour
                                                 }
                                                 else
                                                 {
-                                                    this.tag = "Player2";
+                                                    ArmadilloBlock.SetActive(false);
                                                     ArmadilloMode = 0;
                                                     //オブジェクトが消える時間
                                                     ArmadilloSwitch = false;
-                                                    Invoke("DelayArma", 3.0f);
+                                                    Invoke("DelayArma", 1.5f);
                                                     AllActionInterval = true;
                                                     //行動停止
-                                                    Invoke("ActionInterval", 3.0f);
+                                                    Invoke("ActionInterval", 1.0f);
                                                 }
                                             }
                                         }
@@ -540,7 +543,7 @@ public class KeybordPlay2 : MonoBehaviour
                                             {
                                                 Rb.isKinematic = true;
                                                 AllActionInterval = true;
-                                                Invoke("ImpleFreeze", 0.7f);
+                                                Invoke("ImpleFreeze", 0.35f);
 
                                                 Invoke("ImpalaAtkTiming", 0.5f);
                                                 Invoke("ImpalaFinTiming", 1.5f);
@@ -683,7 +686,7 @@ public class KeybordPlay2 : MonoBehaviour
                             {
 
                                 ShieldObj.SetActive(false);
-                                Invoke("ShieldDelay", 0.5f);//行動停止
+                                Invoke("ShieldDelay", 0.25f);//行動停止
                                 this.Animator.SetBool(isShield, false);
                             }
                             if (Shield == false)
@@ -754,10 +757,6 @@ public class KeybordPlay2 : MonoBehaviour
             //AnimalShieldDstSrc.Play();
             atomSrc.Play("Animal_Shield_Dst");
         }
-        if (Flying == true) 
-        {
-            transform.position += transform.forward * 50 * Time.deltaTime;
-        }
     }
 
     void ShieldBreak()
@@ -800,7 +799,7 @@ public class KeybordPlay2 : MonoBehaviour
         //空中で一時停止
         Rb.isKinematic = false;
         gameObject.layer = LayerMask.NameToLayer("ImplaLayer");
-        Rb.AddForce(-transform.up * 45, ForceMode.Impulse);
+        Rb.AddForce(-transform.up * 60, ForceMode.Impulse);
         P2ImplaBlock.SetActive(true);
     }
     
@@ -938,10 +937,6 @@ public class KeybordPlay2 : MonoBehaviour
     {
         KuwagataSwitch = true;
     }
-    void NotFlying()
-    {
-        Flying = false;
-    }
     Vector3 GetAngleVec(GameObject _from, GameObject _to)
     {
         //高さの概念を入れないベクトルを作る
@@ -1041,7 +1036,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //ダメを食らう時の半分ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 13, ForceMode.Impulse);
-                    ShieldPoint -= 0.01f;
+                    ShieldPoint -= 0.015f;
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
@@ -1205,8 +1200,8 @@ public class KeybordPlay2 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P1FlogAttack"))
                 {
-                    Player2HP -= 1;
-                    P2G.transform.position += new Vector3(HP10per * 0.1f, 0, 0);
+                    Player2HP -= 1.5f;
+                    P2G.transform.position += new Vector3(HP10per * 0.15f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
@@ -1315,8 +1310,8 @@ public class KeybordPlay2 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P2FlogAttackBack"))
                 {
-                    Player2HP -= 1.2f;
-                    P2G.transform.position += new Vector3(HP10per * 0.12f, 0, 0);
+                    Player2HP -= 3f;
+                    P2G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 20, ForceMode.Impulse);
@@ -1335,13 +1330,12 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
-
                 }
                 if (other.gameObject.CompareTag("PoisonAttackBack"))
                 {
                     Player2HP -= 3.6f;
                     Poisontimer = 0;
-                    P2G.transform.position += new Vector3(HP10per * 3.6f, 0, 0);
+                    P2G.transform.position += new Vector3(HP10per * 0.36f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 16, ForceMode.Impulse);
@@ -1350,7 +1344,7 @@ public class KeybordPlay2 : MonoBehaviour
                     Invoke("InvincibleTime", 1.5f);
 
                 }
-                if (other.gameObject.CompareTag("Gard") && this.tag == "P2ArmadilloAttack")
+                if (other.gameObject.CompareTag("P2ArmadilloAttackBack"))
                 {
                     Player2HP -= 30;
                     P2G.transform.position += new Vector3(HP10per * 3f, 0, 0);
@@ -1376,15 +1370,17 @@ public class KeybordPlay2 : MonoBehaviour
             if (other.gameObject.CompareTag("P1KuwagataAttack"))
             {
                 Player2HP -= 30;
-                P2G.transform.position += new Vector3(HP10per * 3, 0, 0);
+                P2G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                 //ノックバック
+                this.transform.position = new Vector3(this.transform.position.x, other.gameObject.transform.position.y + 2, this.transform.position.z);
                 Vector3 ToVec = GetAngleVec(this.gameObject, other.gameObject);
-                Rb.AddForce(ToVec * 60, ForceMode.Impulse);
-                Flying = true;
-                Invoke("NotFlying", 0.7f);
+                Rb.AddForce(transform.up * 20, ForceMode.Impulse);
+                Rb.AddForce(ToVec * 40, ForceMode.Impulse);
                 //無敵タイム開始
-                AllActionInterval = true;
+                Invincible = true;
+                Invoke("InvincibleTime", 1.5f);
                 //行動停止
+                AllActionInterval = true;
                 Invoke("ActionInterval", 1.2f);
                 //音鳴らす
                 //AnimalDamage.Play();

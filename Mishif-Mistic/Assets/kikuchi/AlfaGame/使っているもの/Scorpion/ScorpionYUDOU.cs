@@ -21,8 +21,18 @@ public class ScorpionYUDOU : MonoBehaviour
     {
         if(Once==true)
         {
-            Target = new Vector3(TargetObj.transform.position.x, this.transform.position.y, TargetObj.transform.position.z);
-            transform.LookAt(Target);
+            float dist = Vector3.Distance(TargetObj.transform.position, transform.position);
+            if (dist < 55)
+            {
+                Target = new Vector3(TargetObj.transform.position.x, this.transform.position.y, TargetObj.transform.position.z);
+                transform.LookAt(Target);
+            }
+            else
+            {
+                Target = new Vector3(TargetObj.transform.position.x, TargetObj.transform.position.y, TargetObj.transform.position.z);
+                transform.LookAt(Target);
+            }
+                
             Once = false;
         }
         Timecount += Time.deltaTime;
