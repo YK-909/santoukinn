@@ -518,7 +518,7 @@ public class JoyconPlay1 : MonoBehaviour
 
                                             AllActionInterval = true;
                                             P1WolfAtk.tag = "P1WolfAttack";
-                                            Rb.AddForce(transform.forward * 40f, ForceMode.Impulse);
+                                            Rb.AddForce(transform.forward * 60f, ForceMode.Impulse);
                                             WolfSwitch = false;
                                             //行動停止
                                             Invoke("ActionInterval", 1.2f);

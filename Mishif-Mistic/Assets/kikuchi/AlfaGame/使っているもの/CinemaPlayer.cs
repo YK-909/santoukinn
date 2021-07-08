@@ -58,11 +58,11 @@ public class CinemaPlayer : MonoBehaviour
         }
         else if (KAW.activeSelf)
         {
-            PlayerObject = LTW.transform.position;
+            PlayerObject = KAW.transform.position;
         }
         else if (LTU.activeSelf)
         {
-            PlayerObject = LTW.transform.position;
+            PlayerObject = LTU.transform.position;
         }
         this.transform.position = PlayerObject;
     }

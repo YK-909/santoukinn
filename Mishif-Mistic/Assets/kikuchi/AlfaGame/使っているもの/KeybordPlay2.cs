@@ -478,9 +478,8 @@ public class KeybordPlay2 : MonoBehaviour
                                                 if (Input.GetKeyUp(KeyCode.X))
                                                 {
                                                     ArmadilloMode = 1;
-
+                                                    //アニメーションの位置をずらしたよ
                                                     this.Animator.SetBool(isRollStr, false);
-                                                    this.Animator.SetBool(isRollFin, true);
                                                 }
                                             }
                                             else if (ArmadilloMode == 1)
@@ -504,6 +503,7 @@ public class KeybordPlay2 : MonoBehaviour
                                                 }
                                                 else
                                                 {
+                                                    this.Animator.SetBool(isRollFin, true);
                                                     ArmadilloBlock.SetActive(false);
                                                     ArmadilloMode = 0;
                                                     //オブジェクトが消える時間
@@ -580,7 +580,7 @@ public class KeybordPlay2 : MonoBehaviour
 
                                             AllActionInterval = true;
                                             P2WolfAtk.tag = "P2WolfAttack";
-                                            Rb.AddForce(transform.forward * 40f, ForceMode.Impulse);
+                                            Rb.AddForce(transform.forward * 60f, ForceMode.Impulse);
                                             WolfSwitch = false;
                                             //行動停止
                                             Invoke("ActionInterval", 1.2f);
