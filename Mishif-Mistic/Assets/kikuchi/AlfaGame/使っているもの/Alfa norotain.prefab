@@ -1,5 +1,286 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &38182396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 38182397}
+  - component: {fileID: 38182399}
+  - component: {fileID: 38182398}
+  m_Layer: 0
+  m_Name: Cursor_Decision(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &38182397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38182396}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5179912998554337204}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &38182399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38182396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Cursor_Decision
+  _cueSheet: UISE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
+--- !u!114 &38182398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38182396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce6ceccb3d86dd40a57ab75b64bdff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &231503971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 231503972}
+  - component: {fileID: 231503976}
+  - component: {fileID: 231503975}
+  - component: {fileID: 231503974}
+  - component: {fileID: 231503973}
+  m_Layer: 0
+  m_Name: P2Arma
+  m_TagString: P2ArmadilloAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &231503972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231503971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.132, z: 19.3}
+  m_LocalScale: {x: 1.66568, y: 1.04105, z: 2.5}
+  m_Children: []
+  m_Father: {fileID: 5179912999441983339}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &231503976
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231503971}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &231503975
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231503971}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &231503974
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231503971}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &231503973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231503971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbddb4f5d0145fe429504a153175fce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 2
+--- !u!1 &1121079391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1121079392}
+  - component: {fileID: 1121079396}
+  - component: {fileID: 1121079395}
+  - component: {fileID: 1121079394}
+  - component: {fileID: 1121079393}
+  m_Layer: 0
+  m_Name: P1Arma
+  m_TagString: P1ArmadilloAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1121079392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121079391}
+  m_LocalRotation: {x: -0, y: 0.000000014901161, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.03579235, z: 19.3}
+  m_LocalScale: {x: 1.6656802, y: 1.04105, z: 2.5}
+  m_Children: []
+  m_Father: {fileID: 5179912999673268079}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1121079396
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121079391}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1121079395
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121079391}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1121079394
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121079391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1121079393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121079391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbddb4f5d0145fe429504a153175fce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 1
 --- !u!1 &1617589198209360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1440,7 @@ GameObject:
   - component: {fileID: 6755195188499098577}
   - component: {fileID: 342708752650458878}
   - component: {fileID: 658578546932605695}
+  - component: {fileID: 5179912998554012417}
   m_Layer: 8
   m_Name: FTW
   m_TagString: Player1
@@ -1259,6 +1541,7 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 2454247112343236469}
   P1ImplaWaveBlock: {fileID: 6792903431881168865}
+  ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 4454620154113344310}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &658578546932605695
@@ -1280,6 +1563,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173985372847181428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &175477216927760530
 GameObject:
   m_ObjectHideFlags: 0
@@ -3822,6 +4128,7 @@ GameObject:
   - component: {fileID: 5129969083701747455}
   - component: {fileID: 4310818907842687894}
   - component: {fileID: 485030170619508237}
+  - component: {fileID: 5179912998554012420}
   m_Layer: 8
   m_Name: FSI
   m_TagString: Player1
@@ -3912,7 +4219,7 @@ MonoBehaviour:
   P1R: {fileID: 3473802518894017515}
   P1FlogTongue: {fileID: 4052138536831117459}
   P1FlogAnimator: {fileID: 1689509846874111885}
-  P1ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
+  P1ScorpionBullet: {fileID: 9097440135806186983, guid: 55a9609a80151324e89e535d8ff3eddf,
     type: 3}
   P1SetScorpion: {fileID: 2031229230338527379}
   P1WolfAtk: {fileID: 1925917921379545004}
@@ -3921,6 +4228,7 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 0}
   P1ImplaBlock: {fileID: 7280075767731344674}
   P1ImplaWaveBlock: {fileID: 2940762850103001839}
+  ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 4454620154041095913}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &485030170619508237
@@ -3942,6 +4250,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463398182478774375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &468452874191363139
 GameObject:
   m_ObjectHideFlags: 0
@@ -8073,6 +8404,7 @@ GameObject:
   - component: {fileID: 4984176646244641261}
   - component: {fileID: 7572679128346446467}
   - component: {fileID: 2948514589832883138}
+  - component: {fileID: 5179912998554012419}
   m_Layer: 8
   m_Name: FSW
   m_TagString: Player1
@@ -8163,7 +8495,7 @@ MonoBehaviour:
   P1R: {fileID: 3473802518894017515}
   P1FlogTongue: {fileID: 7681505287393052064}
   P1FlogAnimator: {fileID: 3634135318189223287}
-  P1ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
+  P1ScorpionBullet: {fileID: 9097440135806186983, guid: 55a9609a80151324e89e535d8ff3eddf,
     type: 3}
   P1SetScorpion: {fileID: 2958420024611700715}
   P1WolfAtk: {fileID: 364346655457911286}
@@ -8172,6 +8504,7 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 0}
   P1ImplaBlock: {fileID: 3986600474462279583}
   P1ImplaWaveBlock: {fileID: 4256959154302404436}
+  ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 4454620154109970132}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &2948514589832883138
@@ -8193,6 +8526,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002723044875355108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &1010120470334611042
 GameObject:
   m_ObjectHideFlags: 0
@@ -13941,6 +14297,7 @@ GameObject:
   - component: {fileID: 2328450173672468451}
   - component: {fileID: 6718480089750710645}
   - component: {fileID: 25831640906426729}
+  - component: {fileID: 5179912998554012397}
   m_Layer: 8
   m_Name: FTW
   m_TagString: Player2
@@ -14041,6 +14398,7 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 6820168150585582712}
   P2ImplaWaveBlock: {fileID: 6963773899688895345}
+  ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 4454620153957990355}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &25831640906426729
@@ -14062,6 +14420,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704225067821811236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &1705597886363852095
 GameObject:
   m_ObjectHideFlags: 0
@@ -21691,6 +22072,7 @@ GameObject:
   - component: {fileID: 6961008945246464011}
   - component: {fileID: 8028191587968337747}
   - component: {fileID: 5901191963285521524}
+  - component: {fileID: 5179912998554012393}
   m_Layer: 8
   m_Name: LTW
   m_TagString: Player2
@@ -21791,6 +22173,7 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 658767926897079484}
   P2ImplaWaveBlock: {fileID: 3869738098692240923}
+  ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 4454620154840485815}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &5901191963285521524
@@ -21812,6 +22195,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2575839461445000633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &2577464588001717484
 GameObject:
   m_ObjectHideFlags: 0
@@ -26862,6 +27268,7 @@ GameObject:
   - component: {fileID: 4420522671865849541}
   - component: {fileID: 5531320349947507985}
   - component: {fileID: 298178657068367709}
+  - component: {fileID: 5179912998554012396}
   m_Layer: 8
   m_Name: LSI
   m_TagString: Player2
@@ -26952,7 +27359,7 @@ MonoBehaviour:
   P2R: {fileID: 4904006043426651322}
   P2FlogTongue: {fileID: 3011935510674859017}
   P2FlogAnimator: {fileID: 751338935003782623}
-  ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
+  ScorpionBullet: {fileID: 685456431638768573, guid: ed8bf84d6d692a64b90da28bd59ae13b,
     type: 3}
   P2SetScorpion: {fileID: 1918755924654619177}
   P2WolfAtk: {fileID: 2699246597569713385}
@@ -26961,6 +27368,7 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 0}
   P2ImplaBlock: {fileID: 2597203493174154641}
   P2ImplaWaveBlock: {fileID: 8293624358451012520}
+  ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 4454620153570738473}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &298178657068367709
@@ -26982,6 +27390,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3132373094978763623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &3134724655729712450
 GameObject:
   m_ObjectHideFlags: 0
@@ -27303,6 +27734,7 @@ GameObject:
   - component: {fileID: 3087835455579585370}
   - component: {fileID: 7076256133181937591}
   - component: {fileID: 2870445525903027245}
+  - component: {fileID: 5179912998554012400}
   m_Layer: 8
   m_Name: FSI
   m_TagString: Player2
@@ -27393,7 +27825,7 @@ MonoBehaviour:
   P2R: {fileID: 4904006043426651322}
   P2FlogTongue: {fileID: 1738774608282631701}
   P2FlogAnimator: {fileID: 4872516993562215558}
-  ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
+  ScorpionBullet: {fileID: 685456431638768573, guid: ed8bf84d6d692a64b90da28bd59ae13b,
     type: 3}
   P2SetScorpion: {fileID: 4007691331004179117}
   P2WolfAtk: {fileID: 9115388170948398232}
@@ -27402,6 +27834,7 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 0}
   P2ImplaBlock: {fileID: 7742520335358245266}
   P2ImplaWaveBlock: {fileID: 8250700675939837899}
+  ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 4454620154938451362}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &2870445525903027245
@@ -27423,6 +27856,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3187189291394490873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &3187919312339124106
 GameObject:
   m_ObjectHideFlags: 0
@@ -32401,6 +32857,7 @@ GameObject:
   - component: {fileID: 1907843478426991412}
   - component: {fileID: 4903430421710572298}
   - component: {fileID: 9191985580956971677}
+  - component: {fileID: 5179912998554012395}
   m_Layer: 8
   m_Name: LSW
   m_TagString: Player2
@@ -32491,7 +32948,7 @@ MonoBehaviour:
   P2R: {fileID: 4904006043426651322}
   P2FlogTongue: {fileID: 7477780804032372894}
   P2FlogAnimator: {fileID: 1869418090419443175}
-  ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
+  ScorpionBullet: {fileID: 685456431638768573, guid: ed8bf84d6d692a64b90da28bd59ae13b,
     type: 3}
   P2SetScorpion: {fileID: 7595072146147885546}
   P2WolfAtk: {fileID: 3145178142394884311}
@@ -32500,6 +32957,7 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 0}
   P2ImplaBlock: {fileID: 1345302930665200853}
   P2ImplaWaveBlock: {fileID: 4264102320223560993}
+  ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 4454620154249284936}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &9191985580956971677
@@ -32521,6 +32979,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3924806585949222881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &3931080195233365533
 GameObject:
   m_ObjectHideFlags: 0
@@ -44513,6 +44994,7 @@ Transform:
   - {fileID: 4454620154076370101}
   - {fileID: 5179912998798355208}
   - {fileID: 5179913000120031675}
+  - {fileID: 38182397}
   m_Father: {fileID: 7509672140338983154}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46098,6 +46580,10 @@ MonoBehaviour:
   - name: WastelandES
     acbFile: WastelandES.acb
     awbFile: 
+    loaderStatus: 0
+  - name: UISE
+    acbFile: UISE.acb
+    awbFile: UISE.awb
     loaderStatus: 0
   dspBusSetting: 
   dontDestroyOnLoad: 0
@@ -47732,7 +48218,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 38182398}
         m_MethodName: PlayAndStopSound
         m_Mode: 1
         m_Arguments:
@@ -48104,6 +48590,7 @@ Transform:
   - {fileID: 5179913000237736509}
   - {fileID: 5179912999768041531}
   - {fileID: 5179913000274420760}
+  - {fileID: 231503972}
   m_Father: {fileID: 4640966085454858172}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48941,6 +49428,7 @@ Transform:
   - {fileID: 5179912999976631051}
   - {fileID: 5179912998695133820}
   - {fileID: 5179912999492532149}
+  - {fileID: 1121079392}
   m_Father: {fileID: 4640966084217216582}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -51179,7 +51667,7 @@ GameObject:
   - component: {fileID: 5179913000274420759}
   - component: {fileID: 5179913000274420758}
   - component: {fileID: 5179913000274420761}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: P2Kuwagata
   m_TagString: P2KuwagataAttack
   m_Icon: {fileID: 0}
@@ -52729,6 +53217,7 @@ GameObject:
   - component: {fileID: 3715455405679017328}
   - component: {fileID: 8827435951019836977}
   - component: {fileID: 3357317108155277928}
+  - component: {fileID: 5179912998554012394}
   m_Layer: 8
   m_Name: LTI
   m_TagString: Player2
@@ -52829,6 +53318,7 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 5180957068753444484}
   P2ImplaWaveBlock: {fileID: 5352043556728220821}
+  ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 4454620155188442212}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &3357317108155277928
@@ -52850,6 +53340,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5306574709912505604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &5308411068209393978
 GameObject:
   m_ObjectHideFlags: 0
@@ -52904,6 +53417,7 @@ GameObject:
   - component: {fileID: 3147927699879451353}
   - component: {fileID: 5207510416710966075}
   - component: {fileID: 6910481664232669057}
+  - component: {fileID: 5179912998554012415}
   m_Layer: 8
   m_Name: LSW
   m_TagString: Player1
@@ -52994,7 +53508,7 @@ MonoBehaviour:
   P1R: {fileID: 3473802518894017515}
   P1FlogTongue: {fileID: 2874969640906463572}
   P1FlogAnimator: {fileID: 332928102876948}
-  P1ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
+  P1ScorpionBullet: {fileID: 9097440135806186983, guid: 55a9609a80151324e89e535d8ff3eddf,
     type: 3}
   P1SetScorpion: {fileID: 815285103626555000}
   P1WolfAtk: {fileID: 2339475065549808333}
@@ -53003,6 +53517,7 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 0}
   P1ImplaBlock: {fileID: 8372750750857541551}
   P1ImplaWaveBlock: {fileID: 3636637776850117179}
+  ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 4454620154742958861}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &6910481664232669057
@@ -53024,6 +53539,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315449357417694594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &5318358138310104357
 GameObject:
   m_ObjectHideFlags: 0
@@ -53595,6 +54133,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.6, y: 2, z: 3}
   m_Center: {x: 0, y: -0.3, z: -0.2}
+--- !u!114 &5179912998554012422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5414407280153543932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: 
+  _cueSheet: 
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!114 &5179913000309127592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53607,8 +54168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31f32004a7b7cd428133022da79709c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Head: 2
-  Body: 1
+  Head: 3
+  Body: 3
   Leg: 2
   ShieldObj: {fileID: 5179912999726612761}
   ShieldPoint: 1
@@ -53626,6 +54187,7 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 5179912999266058822}
   P1ImplaWaveBlock: {fileID: 5179912999847869570}
+  ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 5179912998695133823}
   KuwagataBlock: {fileID: 5179912999492532148}
 --- !u!114 &5179913000309127593
@@ -53657,6 +54219,9 @@ GameObject:
   - component: {fileID: 8790808391212750531}
   - component: {fileID: 5179912999849904734}
   - component: {fileID: 5179912999849904735}
+  - component: {fileID: 5179912998554012401}
+  - component: {fileID: 5179912998554012423}
+  - component: {fileID: 5179912998554012424}
   m_Layer: 8
   m_Name: LTU
   m_TagString: Player2
@@ -53761,6 +54326,7 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 5179912999239898519}
   P2ImplaWaveBlock: {fileID: 5179912999047592369}
+  ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 5179912999608877391}
   KuwagataBlock: {fileID: 5179912999228742111}
 --- !u!114 &5179912999849904735
@@ -53778,6 +54344,75 @@ MonoBehaviour:
   Head2: 2
   Body2: 1
   Leg2: 3
+--- !u!114 &5179912998554012401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5414407280902174706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 0
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
+--- !u!114 &5179912998554012423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5414407280902174706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Horse_Swing
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 0
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
+--- !u!114 &5179912998554012424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5414407280902174706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Horse_Kick
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 0
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &5414407281055653126
 GameObject:
   m_ObjectHideFlags: 0
@@ -53792,6 +54427,7 @@ GameObject:
   - component: {fileID: 7930601232265437443}
   - component: {fileID: 5179912999062822994}
   - component: {fileID: 5179912999062822995}
+  - component: {fileID: 5179912998554012402}
   m_Layer: 8
   m_Name: KAW
   m_TagString: Player2
@@ -53896,6 +54532,7 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 6800941056486187777}
   P2ImplaWaveBlock: {fileID: 4359844196068053927}
+  ArmadilloBlock: {fileID: 231503971}
   P2HorseLeg: {fileID: 5179912999768041530}
   KuwagataBlock: {fileID: 5179913000274420763}
 --- !u!114 &5179912999062822995
@@ -53913,6 +54550,29 @@ MonoBehaviour:
   Head2: 3
   Body2: 3
   Leg2: 2
+--- !u!114 &5179912998554012402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5414407281055653126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!54 &5179912998501860849
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -53973,6 +54633,7 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 5179912999554383752}
   P1ImplaWaveBlock: {fileID: 5179912998698414667}
+  ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 5179912999171736362}
   KuwagataBlock: {fileID: 0}
 --- !u!114 &5179912998501860851
@@ -53990,6 +54651,29 @@ MonoBehaviour:
   Head: 2
   Body: 1
   Leg: 3
+--- !u!114 &5179912998554012421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5414407281702664360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: 
+  _cueSheet: 
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &5416077194670275604
 GameObject:
   m_ObjectHideFlags: 0
@@ -54234,6 +54918,7 @@ GameObject:
   - component: {fileID: 2619350644446660311}
   - component: {fileID: 2590307988664163792}
   - component: {fileID: 6350741110323737633}
+  - component: {fileID: 5179912998554012399}
   m_Layer: 8
   m_Name: FSW
   m_TagString: Player2
@@ -54324,7 +55009,7 @@ MonoBehaviour:
   P2R: {fileID: 4904006043426651322}
   P2FlogTongue: {fileID: 6899120707695532458}
   P2FlogAnimator: {fileID: 6147628095940086326}
-  ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
+  ScorpionBullet: {fileID: 685456431638768573, guid: ed8bf84d6d692a64b90da28bd59ae13b,
     type: 3}
   P2SetScorpion: {fileID: 6115128062779989351}
   P2WolfAtk: {fileID: 4905189810087691520}
@@ -54333,6 +55018,7 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 0}
   P2ImplaBlock: {fileID: 5733712169443338382}
   P2ImplaWaveBlock: {fileID: 1576143419354486517}
+  ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 4454620155077896003}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &6350741110323737633
@@ -54354,6 +55040,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5454350013562544051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &5462805603361336960
 GameObject:
   m_ObjectHideFlags: 0
@@ -58866,6 +59575,8 @@ MonoBehaviour:
   LSW: {fileID: 3924806585949222881}
   LTI: {fileID: 5306574709912505604}
   LTW: {fileID: 2575839461445000633}
+  KAW: {fileID: 5414407281055653126}
+  LTU: {fileID: 5414407280902174706}
 --- !u!1 &6032757535252592414
 GameObject:
   m_ObjectHideFlags: 0
@@ -69187,6 +69898,7 @@ GameObject:
   - component: {fileID: 3110474866122006552}
   - component: {fileID: 1617017219908600034}
   - component: {fileID: 6434013013777545852}
+  - component: {fileID: 5179912998554012398}
   m_Layer: 8
   m_Name: FTI
   m_TagString: Player2
@@ -69293,6 +70005,7 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 6800941056486187777}
   P2ImplaWaveBlock: {fileID: 4359844196068053927}
+  ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 4454620153318690056}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &6434013013777545852
@@ -69314,6 +70027,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7293364984965553681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &7294082061140552982
 GameObject:
   m_ObjectHideFlags: 0
@@ -71903,6 +72639,7 @@ GameObject:
   - component: {fileID: 9129913739243088860}
   - component: {fileID: 6482471885321796303}
   - component: {fileID: 8430490621158856009}
+  - component: {fileID: 5179912998554012413}
   m_Layer: 8
   m_Name: LTW
   m_TagString: Player1
@@ -72003,6 +72740,7 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 4266346563047469727}
   P1ImplaWaveBlock: {fileID: 313493405331446677}
+  ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 4454620154844668047}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &8430490621158856009
@@ -72024,6 +72762,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7673965730817887864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &7675848107178224031
 GameObject:
   m_ObjectHideFlags: 0
@@ -72763,6 +73524,8 @@ MonoBehaviour:
   LSW: {fileID: 5315449357417694594}
   LTI: {fileID: 8631684206274854590}
   LTW: {fileID: 7673965730817887864}
+  KAW: {fileID: 5414407280153543932}
+  LTU: {fileID: 5414407281702664360}
 --- !u!1 &7742520335358245266
 GameObject:
   m_ObjectHideFlags: 0
@@ -73361,7 +74124,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7814468893002730332}
-  m_LocalRotation: {x: 0.2585715, y: -0.029133817, z: 0.0078021847, w: 0.96552116}
+  m_LocalRotation: {x: 0.25088724, y: -0.0067983116, z: 0.0017620098, w: 0.9679909}
   m_LocalPosition: {x: 340.6, y: 679.6, z: -55.8}
   m_LocalScale: {x: 0.20000002, y: 0.19999999, z: 0.2}
   m_Children:
@@ -74724,6 +75487,7 @@ GameObject:
   - component: {fileID: 6284699079185037087}
   - component: {fileID: 6447263688079308094}
   - component: {fileID: 1223076882193133753}
+  - component: {fileID: 5179912998554012416}
   m_Layer: 8
   m_Name: LSI
   m_TagString: Player1
@@ -74814,7 +75578,7 @@ MonoBehaviour:
   P1R: {fileID: 3473802518894017515}
   P1FlogTongue: {fileID: 5870929767734404651}
   P1FlogAnimator: {fileID: 4580060446061066346}
-  P1ScorpionBullet: {fileID: 20485091527577147, guid: a5c6e32c39ae19c4bba96fe0c911acf6,
+  P1ScorpionBullet: {fileID: 9097440135806186983, guid: 55a9609a80151324e89e535d8ff3eddf,
     type: 3}
   P1SetScorpion: {fileID: 8786286849947327312}
   P1WolfAtk: {fileID: 1239255162843909529}
@@ -74823,6 +75587,7 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 0}
   P1ImplaBlock: {fileID: 6451370991027757883}
   P1ImplaWaveBlock: {fileID: 9133242573761411353}
+  ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 4454620154186540195}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &1223076882193133753
@@ -74844,6 +75609,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030089492999330027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &8030854640584829971
 GameObject:
   m_ObjectHideFlags: 0
@@ -79661,6 +80449,7 @@ GameObject:
   - component: {fileID: 8868487682168221823}
   - component: {fileID: 3868571551903628495}
   - component: {fileID: 7550288035539142126}
+  - component: {fileID: 5179912998554012414}
   m_Layer: 8
   m_Name: LTI
   m_TagString: Player1
@@ -79761,6 +80550,7 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 8270134145010814378}
   P1ImplaWaveBlock: {fileID: 4491535587421498895}
+  ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 4454620153444388999}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &7550288035539142126
@@ -79782,6 +80572,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8631684206274854590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &8638790964994698297
 GameObject:
   m_ObjectHideFlags: 0
@@ -81762,6 +82575,7 @@ GameObject:
   - component: {fileID: 6639961920319945575}
   - component: {fileID: 5121180446387159740}
   - component: {fileID: 3671231183708305724}
+  - component: {fileID: 5179912998554012418}
   m_Layer: 8
   m_Name: FTI
   m_TagString: Player1
@@ -81868,6 +82682,7 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 6563350772772820125}
   P1ImplaWaveBlock: {fileID: 5500453431494732760}
+  ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 4454620153530556455}
   KuwagataBlock: {fileID: 0}
 --- !u!95 &3671231183708305724
@@ -81889,6 +82704,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5179912998554012418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8871833908397836807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_Attack
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &8871982893735872306
 GameObject:
   m_ObjectHideFlags: 0
@@ -84920,15 +85758,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8978774e16ea62c4ab0c2d6032964eaa, type: 3}
---- !u!1 &6663216998249867136 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6456063512903358498, guid: 8978774e16ea62c4ab0c2d6032964eaa,
-    type: 3}
-  m_PrefabInstance: {fileID: 423350466847457186}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6790917865236058566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6619768979123596900, guid: 8978774e16ea62c4ab0c2d6032964eaa,
+    type: 3}
+  m_PrefabInstance: {fileID: 423350466847457186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6663216998249867136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6456063512903358498, guid: 8978774e16ea62c4ab0c2d6032964eaa,
     type: 3}
   m_PrefabInstance: {fileID: 423350466847457186}
   m_PrefabAsset: {fileID: 0}
@@ -85006,15 +85844,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8978774e16ea62c4ab0c2d6032964eaa, type: 3}
---- !u!1 &5627971463877186532 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6456063512903358498, guid: 8978774e16ea62c4ab0c2d6032964eaa,
-    type: 3}
-  m_PrefabInstance: {fileID: 1693944676292774854}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5502340350692795810 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6619768979123596900, guid: 8978774e16ea62c4ab0c2d6032964eaa,
+    type: 3}
+  m_PrefabInstance: {fileID: 1693944676292774854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5627971463877186532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6456063512903358498, guid: 8978774e16ea62c4ab0c2d6032964eaa,
     type: 3}
   m_PrefabInstance: {fileID: 1693944676292774854}
   m_PrefabAsset: {fileID: 0}
@@ -85092,15 +85930,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8978774e16ea62c4ab0c2d6032964eaa, type: 3}
---- !u!1 &8497015382818164147 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6456063512903358498, guid: 8978774e16ea62c4ab0c2d6032964eaa,
-    type: 3}
-  m_PrefabInstance: {fileID: 3203182999875032465}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8623787625793256437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6619768979123596900, guid: 8978774e16ea62c4ab0c2d6032964eaa,
+    type: 3}
+  m_PrefabInstance: {fileID: 3203182999875032465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8497015382818164147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6456063512903358498, guid: 8978774e16ea62c4ab0c2d6032964eaa,
     type: 3}
   m_PrefabInstance: {fileID: 3203182999875032465}
   m_PrefabAsset: {fileID: 0}
@@ -85178,15 +86016,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8978774e16ea62c4ab0c2d6032964eaa, type: 3}
---- !u!1 &1989363039759543279 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6456063512903358498, guid: 8978774e16ea62c4ab0c2d6032964eaa,
-    type: 3}
-  m_PrefabInstance: {fileID: 4756690342846116813}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1863659539196304809 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6619768979123596900, guid: 8978774e16ea62c4ab0c2d6032964eaa,
+    type: 3}
+  m_PrefabInstance: {fileID: 4756690342846116813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1989363039759543279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6456063512903358498, guid: 8978774e16ea62c4ab0c2d6032964eaa,
     type: 3}
   m_PrefabInstance: {fileID: 4756690342846116813}
   m_PrefabAsset: {fileID: 0}
@@ -85279,6 +86117,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c0751e19eb7e3f4384a8ae562d8e2fd, type: 3}
+--- !u!1 &1793126229870136513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2377678898046858952, guid: 8c0751e19eb7e3f4384a8ae562d8e2fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 5179912998501860857}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5414407281702664360 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8c0751e19eb7e3f4384a8ae562d8e2fd,
@@ -85288,12 +86132,6 @@ GameObject:
 --- !u!4 &4640966086049440274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8c0751e19eb7e3f4384a8ae562d8e2fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 5179912998501860857}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1793126229870136513 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2377678898046858952, guid: 8c0751e19eb7e3f4384a8ae562d8e2fd,
     type: 3}
   m_PrefabInstance: {fileID: 5179912998501860857}
   m_PrefabAsset: {fileID: 0}
@@ -85371,15 +86209,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8978774e16ea62c4ab0c2d6032964eaa, type: 3}
---- !u!1 &2196125916176785218 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6456063512903358498, guid: 8978774e16ea62c4ab0c2d6032964eaa,
-    type: 3}
-  m_PrefabInstance: {fileID: 5179912999360005984}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2034672370023131396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6619768979123596900, guid: 8978774e16ea62c4ab0c2d6032964eaa,
+    type: 3}
+  m_PrefabInstance: {fileID: 5179912999360005984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2196125916176785218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6456063512903358498, guid: 8978774e16ea62c4ab0c2d6032964eaa,
     type: 3}
   m_PrefabInstance: {fileID: 5179912999360005984}
   m_PrefabAsset: {fileID: 0}
@@ -85755,15 +86593,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8978774e16ea62c4ab0c2d6032964eaa, type: 3}
---- !u!1 &1453622726208922498 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6456063512903358498, guid: 8978774e16ea62c4ab0c2d6032964eaa,
-    type: 3}
-  m_PrefabInstance: {fileID: 5599317552760699808}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1615351312938358212 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6619768979123596900, guid: 8978774e16ea62c4ab0c2d6032964eaa,
+    type: 3}
+  m_PrefabInstance: {fileID: 5599317552760699808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1453622726208922498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6456063512903358498, guid: 8978774e16ea62c4ab0c2d6032964eaa,
     type: 3}
   m_PrefabInstance: {fileID: 5599317552760699808}
   m_PrefabAsset: {fileID: 0}
@@ -85841,15 +86679,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8978774e16ea62c4ab0c2d6032964eaa, type: 3}
---- !u!4 &3720437337140974194 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6619768979123596900, guid: 8978774e16ea62c4ab0c2d6032964eaa,
-    type: 3}
-  m_PrefabInstance: {fileID: 7529880982832069654}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3595853087943402548 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6456063512903358498, guid: 8978774e16ea62c4ab0c2d6032964eaa,
+    type: 3}
+  m_PrefabInstance: {fileID: 7529880982832069654}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3720437337140974194 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6619768979123596900, guid: 8978774e16ea62c4ab0c2d6032964eaa,
     type: 3}
   m_PrefabInstance: {fileID: 7529880982832069654}
   m_PrefabAsset: {fileID: 0}

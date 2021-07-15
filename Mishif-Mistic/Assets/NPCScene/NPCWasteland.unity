@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -211,7 +211,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &149235262
 GameObject:
@@ -477,60 +477,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &532899041
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 532899042}
-  - component: {fileID: 532899043}
-  m_Layer: 0
-  m_Name: LionAtkVo(CriAtomSource)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &532899042
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532899041}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4579360226879572005}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &532899043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532899041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playOnStart: 0
-  _cueName: LionAtkVo
-  _cueSheet: AnimalSE
-  _regionOnStart: {fileID: 0}
-  _listenerOnStart: {fileID: 0}
-  _use3dPositioning: 1
-  _loop: 0
-  _volume: 1
-  _pitch: 0
-  _androidUseLowLatencyVoicePool: 0
-  need_to_player_update_all: 1
 --- !u!1 &592073808
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,60 +769,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &818580793
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 818580794}
-  - component: {fileID: 818580795}
-  m_Layer: 0
-  m_Name: FrogAtkVo(CriAtomSource)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &818580794
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818580793}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4579360226879572005}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &818580795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818580793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playOnStart: 0
-  _cueName: FrogAtkVo
-  _cueSheet: AnimalSE
-  _regionOnStart: {fileID: 0}
-  _listenerOnStart: {fileID: 0}
-  _use3dPositioning: 1
-  _loop: 0
-  _volume: 1
-  _pitch: 0
-  _androidUseLowLatencyVoicePool: 0
-  need_to_player_update_all: 1
 --- !u!1 &844163125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,60 +1253,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1484902832
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1484902833}
-  - component: {fileID: 1484902834}
-  m_Layer: 0
-  m_Name: Animal_Shield_Dmg(CriAtomSource)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1484902833
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484902832}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4579360226879572005}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1484902834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484902832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playOnStart: 0
-  _cueName: Animal_Shield_Dmg
-  _cueSheet: AnimalSE
-  _regionOnStart: {fileID: 0}
-  _listenerOnStart: {fileID: 0}
-  _use3dPositioning: 1
-  _loop: 0
-  _volume: 1
-  _pitch: 0
-  _androidUseLowLatencyVoicePool: 0
-  need_to_player_update_all: 1
 --- !u!1 &1544286332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,7 +1340,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 28.158924
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -1527,7 +1365,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544286332}
-  m_LocalRotation: {x: 0.2585715, y: -0.029133817, z: 0.007802185, w: 0.96552116}
+  m_LocalRotation: {x: 0.2508872, y: -0.0067983125, z: 0.0017620096, w: 0.9679909}
   m_LocalPosition: {x: 2200, y: 3453, z: 221}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1653,168 +1491,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1686056630
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1686056631}
-  - component: {fileID: 1686056632}
-  m_Layer: 0
-  m_Name: Animal_Damage(CriAtomSource)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1686056631
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1686056630}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4579360226879572005}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1686056632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1686056630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playOnStart: 0
-  _cueName: Animal_Damage
-  _cueSheet: AnimalSE
-  _regionOnStart: {fileID: 0}
-  _listenerOnStart: {fileID: 0}
-  _use3dPositioning: 1
-  _loop: 0
-  _volume: 1
-  _pitch: 0
-  _androidUseLowLatencyVoicePool: 0
-  need_to_player_update_all: 1
---- !u!1 &1694098623
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1694098624}
-  - component: {fileID: 1694098625}
-  m_Layer: 0
-  m_Name: Animal_Shield_Dst(CriAtomSource)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1694098624
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1694098623}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4579360226879572005}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1694098625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1694098623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playOnStart: 0
-  _cueName: Animal_Shield_Dst
-  _cueSheet: AnimalSE
-  _regionOnStart: {fileID: 0}
-  _listenerOnStart: {fileID: 0}
-  _use3dPositioning: 1
-  _loop: 0
-  _volume: 1
-  _pitch: 0
-  _androidUseLowLatencyVoicePool: 0
-  need_to_player_update_all: 1
---- !u!1 &1717084914
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1717084915}
-  - component: {fileID: 1717084916}
-  m_Layer: 0
-  m_Name: Wind01(CriAtomSource)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1717084915
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717084914}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4579360226879572005}
-  m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1717084916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717084914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playOnStart: 1
-  _cueName: Wind01
-  _cueSheet: WastelandES
-  _regionOnStart: {fileID: 0}
-  _listenerOnStart: {fileID: 0}
-  _use3dPositioning: 1
-  _loop: 1
-  _volume: 0.3
-  _pitch: 0
-  _androidUseLowLatencyVoicePool: 0
-  need_to_player_update_all: 1
 --- !u!1 &1739858053
 GameObject:
   m_ObjectHideFlags: 0
@@ -2339,853 +2015,82 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e156f3727e2716e4d8ebfde2ec4f0026, type: 3}
---- !u!1001 &4579360226879571988
+--- !u!1001 &736472249359175044
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 90398365369745227, guid: c385dabe6cedf4e428bdd96948641605,
+    - target: {fileID: 3242512857511376047, guid: c7487fca733d4bf4d872e0b321c04317,
         type: 3}
-      propertyPath: m_Mass
-      value: 3
+      propertyPath: m_LocalRotation.y
+      value: -0.0067983125
       objectReference: {fileID: 0}
-    - target: {fileID: 229295865126548564, guid: c385dabe6cedf4e428bdd96948641605,
+    - target: {fileID: 3242512857511376047, guid: c7487fca733d4bf4d872e0b321c04317,
         type: 3}
-      propertyPath: FrogAtkSrc
-      value: 
-      objectReference: {fileID: 4579360226879572006}
-    - target: {fileID: 229295865126548564, guid: c385dabe6cedf4e428bdd96948641605,
+      propertyPath: m_LocalRotation.z
+      value: 0.0017620096
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592556179577120569, guid: c7487fca733d4bf4d872e0b321c04317,
         type: 3}
-      propertyPath: AnimalShieldDstSrc
-      value: 
-      objectReference: {fileID: 1694098625}
-    - target: {fileID: 229295865126548564, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDmgSrc
-      value: 
-      objectReference: {fileID: 1484902834}
-    - target: {fileID: 229295865126548564, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: LionAtkVoSrc
-      value: 
-      objectReference: {fileID: 532899043}
-    - target: {fileID: 229295865126548564, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkVoSrc
-      value: 
-      objectReference: {fileID: 818580795}
-    - target: {fileID: 229295865126548564, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalDamage
-      value: 
-      objectReference: {fileID: 1686056632}
-    - target: {fileID: 343044125793602169, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkSrc
-      value: 
-      objectReference: {fileID: 4579360226879572006}
-    - target: {fileID: 343044125793602169, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDstSrc
-      value: 
-      objectReference: {fileID: 1694098625}
-    - target: {fileID: 343044125793602169, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDmgSrc
-      value: 
-      objectReference: {fileID: 1484902834}
-    - target: {fileID: 343044125793602169, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: LionAtkVoSrc
-      value: 
-      objectReference: {fileID: 532899043}
-    - target: {fileID: 343044125793602169, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkVoSrc
-      value: 
-      objectReference: {fileID: 818580795}
-    - target: {fileID: 343044125793602169, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalDamage
-      value: 
-      objectReference: {fileID: 1686056632}
-    - target: {fileID: 660552706865566481, guid: c385dabe6cedf4e428bdd96948641605,
+      propertyPath: m_Name
+      value: Alfa norotain Bot V2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688174207919152539, guid: c7487fca733d4bf4d872e0b321c04317,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 497
       objectReference: {fileID: 0}
-    - target: {fileID: 660552706865566481, guid: c385dabe6cedf4e428bdd96948641605,
+    - target: {fileID: 7688174207919152539, guid: c7487fca733d4bf4d872e0b321c04317,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 55
       objectReference: {fileID: 0}
-    - target: {fileID: 660552706865566481, guid: c385dabe6cedf4e428bdd96948641605,
+    - target: {fileID: 7688174207919152539, guid: c7487fca733d4bf4d872e0b321c04317,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 500
       objectReference: {fileID: 0}
-    - target: {fileID: 660552706865566481, guid: c385dabe6cedf4e428bdd96948641605,
+    - target: {fileID: 7688174207919152539, guid: c7487fca733d4bf4d872e0b321c04317,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 660552706865566481, guid: c385dabe6cedf4e428bdd96948641605,
+    - target: {fileID: 7688174207919152539, guid: c7487fca733d4bf4d872e0b321c04317,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 660552706865566481, guid: c385dabe6cedf4e428bdd96948641605,
+    - target: {fileID: 7688174207919152539, guid: c7487fca733d4bf4d872e0b321c04317,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 660552706865566481, guid: c385dabe6cedf4e428bdd96948641605,
+    - target: {fileID: 7688174207919152539, guid: c7487fca733d4bf4d872e0b321c04317,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 660552706865566481, guid: c385dabe6cedf4e428bdd96948641605,
+    - target: {fileID: 7688174207919152539, guid: c7487fca733d4bf4d872e0b321c04317,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 660552706865566481, guid: c385dabe6cedf4e428bdd96948641605,
+    - target: {fileID: 7688174207919152539, guid: c7487fca733d4bf4d872e0b321c04317,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 660552706865566481, guid: c385dabe6cedf4e428bdd96948641605,
+    - target: {fileID: 7688174207919152539, guid: c7487fca733d4bf4d872e0b321c04317,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 660552706865566481, guid: c385dabe6cedf4e428bdd96948641605,
+    - target: {fileID: 7688174207919152539, guid: c7487fca733d4bf4d872e0b321c04317,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 710789010728760807, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041646114107401392, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkSrc
-      value: 
-      objectReference: {fileID: 4579360226879572006}
-    - target: {fileID: 1041646114107401392, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDstSrc
-      value: 
-      objectReference: {fileID: 1694098625}
-    - target: {fileID: 1041646114107401392, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDmgSrc
-      value: 
-      objectReference: {fileID: 1484902834}
-    - target: {fileID: 1041646114107401392, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: LionAtkVoSrc
-      value: 
-      objectReference: {fileID: 532899043}
-    - target: {fileID: 1041646114107401392, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkVoSrc
-      value: 
-      objectReference: {fileID: 818580795}
-    - target: {fileID: 1041646114107401392, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalDamage
-      value: 
-      objectReference: {fileID: 1686056632}
-    - target: {fileID: 1232131747169989195, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1428051175916921081, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkSrc
-      value: 
-      objectReference: {fileID: 4579360226879572006}
-    - target: {fileID: 1428051175916921081, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDstSrc
-      value: 
-      objectReference: {fileID: 1694098625}
-    - target: {fileID: 1428051175916921081, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDmgSrc
-      value: 
-      objectReference: {fileID: 1484902834}
-    - target: {fileID: 1428051175916921081, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: LionAtkVoSrc
-      value: 
-      objectReference: {fileID: 532899043}
-    - target: {fileID: 1428051175916921081, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkVoSrc
-      value: 
-      objectReference: {fileID: 818580795}
-    - target: {fileID: 1428051175916921081, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalDamage
-      value: 
-      objectReference: {fileID: 1686056632}
-    - target: {fileID: 1733802668826511315, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1989513598504052178, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkSrc
-      value: 
-      objectReference: {fileID: 4579360226879572006}
-    - target: {fileID: 1989513598504052178, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDstSrc
-      value: 
-      objectReference: {fileID: 1694098625}
-    - target: {fileID: 1989513598504052178, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDmgSrc
-      value: 
-      objectReference: {fileID: 1484902834}
-    - target: {fileID: 1989513598504052178, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: LionAtkVoSrc
-      value: 
-      objectReference: {fileID: 532899043}
-    - target: {fileID: 1989513598504052178, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkVoSrc
-      value: 
-      objectReference: {fileID: 818580795}
-    - target: {fileID: 1989513598504052178, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogSwingSrc
-      value: 
-      objectReference: {fileID: 4579360226879572007}
-    - target: {fileID: 1989513598504052178, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalDamage
-      value: 
-      objectReference: {fileID: 1686056632}
-    - target: {fileID: 2249031182666268499, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkSrc
-      value: 
-      objectReference: {fileID: 4579360226879572006}
-    - target: {fileID: 2249031182666268499, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDstSrc
-      value: 
-      objectReference: {fileID: 1694098625}
-    - target: {fileID: 2249031182666268499, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDmgSrc
-      value: 
-      objectReference: {fileID: 1484902834}
-    - target: {fileID: 2249031182666268499, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: LionAtkVoSrc
-      value: 
-      objectReference: {fileID: 532899043}
-    - target: {fileID: 2249031182666268499, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkVoSrc
-      value: 
-      objectReference: {fileID: 818580795}
-    - target: {fileID: 2249031182666268499, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalDamage
-      value: 
-      objectReference: {fileID: 1686056632}
-    - target: {fileID: 2297281202004796241, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkSrc
-      value: 
-      objectReference: {fileID: 4579360226879572006}
-    - target: {fileID: 2297281202004796241, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDstSrc
-      value: 
-      objectReference: {fileID: 1694098625}
-    - target: {fileID: 2297281202004796241, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDmgSrc
-      value: 
-      objectReference: {fileID: 1484902834}
-    - target: {fileID: 2297281202004796241, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: LionAtkVoSrc
-      value: 
-      objectReference: {fileID: 532899043}
-    - target: {fileID: 2297281202004796241, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkVoSrc
-      value: 
-      objectReference: {fileID: 818580795}
-    - target: {fileID: 2297281202004796241, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalDamage
-      value: 
-      objectReference: {fileID: 1686056632}
-    - target: {fileID: 2456860432387635163, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkSrc
-      value: 
-      objectReference: {fileID: 4579360226879572006}
-    - target: {fileID: 2456860432387635163, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDstSrc
-      value: 
-      objectReference: {fileID: 1694098625}
-    - target: {fileID: 2456860432387635163, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDmgSrc
-      value: 
-      objectReference: {fileID: 1484902834}
-    - target: {fileID: 2456860432387635163, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: LionAtkVoSrc
-      value: 
-      objectReference: {fileID: 532899043}
-    - target: {fileID: 2456860432387635163, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkVoSrc
-      value: 
-      objectReference: {fileID: 818580795}
-    - target: {fileID: 2456860432387635163, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalDamage
-      value: 
-      objectReference: {fileID: 1686056632}
-    - target: {fileID: 2588142513715883877, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2670931261585844457, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkSrc
-      value: 
-      objectReference: {fileID: 4579360226879572006}
-    - target: {fileID: 2670931261585844457, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDstSrc
-      value: 
-      objectReference: {fileID: 1694098625}
-    - target: {fileID: 2670931261585844457, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDmgSrc
-      value: 
-      objectReference: {fileID: 1484902834}
-    - target: {fileID: 2670931261585844457, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: LionAtkVoSrc
-      value: 
-      objectReference: {fileID: 532899043}
-    - target: {fileID: 2670931261585844457, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkVoSrc
-      value: 
-      objectReference: {fileID: 818580795}
-    - target: {fileID: 2670931261585844457, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalDamage
-      value: 
-      objectReference: {fileID: 1686056632}
-    - target: {fileID: 2810185987971363818, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: cueSheets.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2810185987971363818, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: cueSheets.Array.data[3].name
-      value: WastelandES
-      objectReference: {fileID: 0}
-    - target: {fileID: 2810185987971363818, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: cueSheets.Array.data[3].acbFile
-      value: WastelandES.acb
-      objectReference: {fileID: 0}
-    - target: {fileID: 3033021664749537332, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3116748192743388473, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3305154650607113970, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkSrc
-      value: 
-      objectReference: {fileID: 4579360226879572006}
-    - target: {fileID: 3305154650607113970, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDstSrc
-      value: 
-      objectReference: {fileID: 1694098625}
-    - target: {fileID: 3305154650607113970, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDmgSrc
-      value: 
-      objectReference: {fileID: 1484902834}
-    - target: {fileID: 3305154650607113970, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: LionAtkVoSrc
-      value: 
-      objectReference: {fileID: 532899043}
-    - target: {fileID: 3305154650607113970, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkVoSrc
-      value: 
-      objectReference: {fileID: 818580795}
-    - target: {fileID: 3305154650607113970, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalDamage
-      value: 
-      objectReference: {fileID: 1686056632}
-    - target: {fileID: 3854962224132298494, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188844248639909561, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4201079708385323467, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332920385814678166, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkSrc
-      value: 
-      objectReference: {fileID: 4579360226879572006}
-    - target: {fileID: 4332920385814678166, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDstSrc
-      value: 
-      objectReference: {fileID: 1694098625}
-    - target: {fileID: 4332920385814678166, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDmgSrc
-      value: 
-      objectReference: {fileID: 1484902834}
-    - target: {fileID: 4332920385814678166, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: LionAtkVoSrc
-      value: 
-      objectReference: {fileID: 532899043}
-    - target: {fileID: 4332920385814678166, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkVoSrc
-      value: 
-      objectReference: {fileID: 818580795}
-    - target: {fileID: 4332920385814678166, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalDamage
-      value: 
-      objectReference: {fileID: 1686056632}
-    - target: {fileID: 4776931658600343546, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5679254665524431887, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkSrc
-      value: 
-      objectReference: {fileID: 4579360226879572006}
-    - target: {fileID: 5679254665524431887, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDstSrc
-      value: 
-      objectReference: {fileID: 1694098625}
-    - target: {fileID: 5679254665524431887, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDmgSrc
-      value: 
-      objectReference: {fileID: 1484902834}
-    - target: {fileID: 5679254665524431887, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: LionAtkVoSrc
-      value: 
-      objectReference: {fileID: 532899043}
-    - target: {fileID: 5679254665524431887, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkVoSrc
-      value: 
-      objectReference: {fileID: 818580795}
-    - target: {fileID: 5679254665524431887, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalDamage
-      value: 
-      objectReference: {fileID: 1686056632}
-    - target: {fileID: 5720865484877363749, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.029133817
-      objectReference: {fileID: 0}
-    - target: {fileID: 5720865484877363749, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.007802185
-      objectReference: {fileID: 0}
-    - target: {fileID: 5720865484877363749, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.2585715
-      objectReference: {fileID: 0}
-    - target: {fileID: 5720865484877363749, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.96552116
-      objectReference: {fileID: 0}
-    - target: {fileID: 5932967935925341742, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkSrc
-      value: 
-      objectReference: {fileID: 4579360226879572006}
-    - target: {fileID: 5932967935925341742, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDstSrc
-      value: 
-      objectReference: {fileID: 1694098625}
-    - target: {fileID: 5932967935925341742, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDmgSrc
-      value: 
-      objectReference: {fileID: 1484902834}
-    - target: {fileID: 5932967935925341742, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: LionAtkVoSrc
-      value: 
-      objectReference: {fileID: 532899043}
-    - target: {fileID: 5932967935925341742, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkVoSrc
-      value: 
-      objectReference: {fileID: 818580795}
-    - target: {fileID: 5932967935925341742, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalDamage
-      value: 
-      objectReference: {fileID: 1686056632}
-    - target: {fileID: 5972558330923077091, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6006889841426904070, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6306680422309990566, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkSrc
-      value: 
-      objectReference: {fileID: 4579360226879572006}
-    - target: {fileID: 6306680422309990566, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDstSrc
-      value: 
-      objectReference: {fileID: 1694098625}
-    - target: {fileID: 6306680422309990566, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDmgSrc
-      value: 
-      objectReference: {fileID: 1484902834}
-    - target: {fileID: 6306680422309990566, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: LionAtkVoSrc
-      value: 
-      objectReference: {fileID: 532899043}
-    - target: {fileID: 6306680422309990566, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkVoSrc
-      value: 
-      objectReference: {fileID: 818580795}
-    - target: {fileID: 6306680422309990566, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalDamage
-      value: 
-      objectReference: {fileID: 1686056632}
-    - target: {fileID: 6640321367173130675, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Name
-      value: Alfa norotain Bot
-      objectReference: {fileID: 0}
-    - target: {fileID: 7576599247042960110, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8260454263942470534, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8605739736188838657, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkSrc
-      value: 
-      objectReference: {fileID: 4579360226879572006}
-    - target: {fileID: 8605739736188838657, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDstSrc
-      value: 
-      objectReference: {fileID: 1694098625}
-    - target: {fileID: 8605739736188838657, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalShieldDmgSrc
-      value: 
-      objectReference: {fileID: 1484902834}
-    - target: {fileID: 8605739736188838657, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: LionAtkVoSrc
-      value: 
-      objectReference: {fileID: 532899043}
-    - target: {fileID: 8605739736188838657, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: FrogAtkVoSrc
-      value: 
-      objectReference: {fileID: 818580795}
-    - target: {fileID: 8605739736188838657, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: AnimalDamage
-      value: 
-      objectReference: {fileID: 1686056632}
-    - target: {fileID: 9085807217046617228, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9093939019938863568, guid: c385dabe6cedf4e428bdd96948641605,
-        type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2750636807454407964, guid: c385dabe6cedf4e428bdd96948641605, type: 3}
-    - {fileID: 2609321865094482446, guid: c385dabe6cedf4e428bdd96948641605, type: 3}
-    - {fileID: 4411438589680949380, guid: c385dabe6cedf4e428bdd96948641605, type: 3}
-    - {fileID: 4369107443549128754, guid: c385dabe6cedf4e428bdd96948641605, type: 3}
-    - {fileID: 3903154859630925052, guid: c385dabe6cedf4e428bdd96948641605, type: 3}
-    - {fileID: 5382603895153703226, guid: c385dabe6cedf4e428bdd96948641605, type: 3}
-    - {fileID: 1877513577606681500, guid: c385dabe6cedf4e428bdd96948641605, type: 3}
-    - {fileID: 2282918215684360255, guid: c385dabe6cedf4e428bdd96948641605, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: c385dabe6cedf4e428bdd96948641605, type: 3}
---- !u!1 &4579360226879571989 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 820236797509610907, guid: c385dabe6cedf4e428bdd96948641605,
-    type: 3}
-  m_PrefabInstance: {fileID: 4579360226879571988}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4579360226879571990 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1645099349462801757, guid: c385dabe6cedf4e428bdd96948641605,
-    type: 3}
-  m_PrefabInstance: {fileID: 4579360226879571988}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4579360226879571991 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2943440107528365665, guid: c385dabe6cedf4e428bdd96948641605,
-    type: 3}
-  m_PrefabInstance: {fileID: 4579360226879571988}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4579360226879571992 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1039748707135404808, guid: c385dabe6cedf4e428bdd96948641605,
-    type: 3}
-  m_PrefabInstance: {fileID: 4579360226879571988}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4579360226879571993 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7167312710374518167, guid: c385dabe6cedf4e428bdd96948641605,
-    type: 3}
-  m_PrefabInstance: {fileID: 4579360226879571988}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4579360226879571994 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1874170099963390436, guid: c385dabe6cedf4e428bdd96948641605,
-    type: 3}
-  m_PrefabInstance: {fileID: 4579360226879571988}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4579360226879571995 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7851767986150744071, guid: c385dabe6cedf4e428bdd96948641605,
-    type: 3}
-  m_PrefabInstance: {fileID: 4579360226879571988}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4579360226879571996 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7454341497494561668, guid: c385dabe6cedf4e428bdd96948641605,
-    type: 3}
-  m_PrefabInstance: {fileID: 4579360226879571988}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4579360226879571997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4579360226879571989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4651fc0dd5d12a4393137495b579eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Head: 2
-  Body: 1
-  Leg: 2
---- !u!114 &4579360226879571998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4579360226879571990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4651fc0dd5d12a4393137495b579eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Head: 2
-  Body: 1
-  Leg: 1
---- !u!114 &4579360226879571999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4579360226879571991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4651fc0dd5d12a4393137495b579eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Head: 2
-  Body: 2
-  Leg: 2
---- !u!114 &4579360226879572000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4579360226879571992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4651fc0dd5d12a4393137495b579eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Head: 2
-  Body: 2
-  Leg: 1
---- !u!114 &4579360226879572001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4579360226879571993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4651fc0dd5d12a4393137495b579eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Head: 1
-  Body: 1
-  Leg: 2
---- !u!114 &4579360226879572002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4579360226879571994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4651fc0dd5d12a4393137495b579eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Head: 1
-  Body: 1
-  Leg: 1
---- !u!114 &4579360226879572003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4579360226879571995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4651fc0dd5d12a4393137495b579eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Head: 1
-  Body: 2
-  Leg: 2
---- !u!114 &4579360226879572004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4579360226879571996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4651fc0dd5d12a4393137495b579eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Head: 1
-  Body: 2
-  Leg: 1
---- !u!4 &4579360226879572005 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2810185988526709847, guid: c385dabe6cedf4e428bdd96948641605,
-    type: 3}
-  m_PrefabInstance: {fileID: 4579360226879571988}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4579360226879572006 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2810185987160143979, guid: c385dabe6cedf4e428bdd96948641605,
-    type: 3}
-  m_PrefabInstance: {fileID: 4579360226879571988}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4579360226879572007 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2810185987287103429, guid: c385dabe6cedf4e428bdd96948641605,
-    type: 3}
-  m_PrefabInstance: {fileID: 4579360226879571988}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7487fca733d4bf4d872e0b321c04317, type: 3}
