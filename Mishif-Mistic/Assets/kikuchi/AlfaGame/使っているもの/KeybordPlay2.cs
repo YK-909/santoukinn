@@ -295,8 +295,6 @@ public class KeybordPlay2 : MonoBehaviour
                                             //舌攻撃
                                             this.Animator.SetBool(isTongueStr, true);
                                             this.Animator.SetBool(isTongueFin, false);
-
-
                                         }
                                     }
                                     if (Input.GetKeyUp(KeyCode.Z))
@@ -815,6 +813,8 @@ public class KeybordPlay2 : MonoBehaviour
     }
     void DelayFlog()
     {
+        //カエルの攻撃がボタン押しているときに被ダメした時のため
+        P2FlogAnimator.SetBool("FlogAtkFinP1", true);
         //カエル攻撃オブジェクトの除去
         P2FlogTongue.SetActive(false);
         FlogSwitch = true;
@@ -1134,6 +1134,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //LionSrc.Play();
                     //AnimalDamage.Play();
                     atomSrc.Play("Animal_Damage");
+                    DelayFlog();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1153,6 +1154,7 @@ public class KeybordPlay2 : MonoBehaviour
 
                     //音鳴らす
                     atomSrc.Play("Impala_Attack");
+                    DelayFlog();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1171,6 +1173,7 @@ public class KeybordPlay2 : MonoBehaviour
                     Invoke("InvincibleTime", 1.5f);
                     //音鳴らす
                     atomSrc.Play("Impala_Attack");
+                    DelayFlog();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1194,6 +1197,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //音鳴らす
                     //AnimalDamage.Play();
                     atomSrc.Play("Animal_Damage");
+                    DelayFlog();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1212,6 +1216,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //音鳴らす
                     //FrogAtkSrc.Play();
                     atomSrc.Play("Frog_Attack");
+                    DelayFlog();
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
@@ -1232,6 +1237,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //音鳴らす
                     //AnimalDamage.Play();
                     atomSrc.Play("Animal_Damage");
+                    DelayFlog();
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
@@ -1251,6 +1257,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //音鳴らす
                     //AnimalDamage.Play();
                     atomSrc.Play("Animal_Damage");
+                    DelayFlog();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1270,6 +1277,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //音鳴らす
                     //AnimalDamage.Play();
                     atomSrc.Play("Horse_Kick");
+                    DelayFlog();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1285,7 +1293,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
-
+                    DelayFlog();
                 }
                 if (other.gameObject.CompareTag("P2ImplaBack"))
                 {
@@ -1298,6 +1306,7 @@ public class KeybordPlay2 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
                     P2ImplaBlock.SetActive(false);
+                    DelayFlog();
                 }
                 if (other.gameObject.CompareTag("P2ImplaWaveBack"))
                 {
@@ -1307,6 +1316,7 @@ public class KeybordPlay2 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
                     P2ImplaBlock.SetActive(false);
+                    DelayFlog();
                 }
                 if (other.gameObject.CompareTag("P2FlogAttackBack"))
                 {
@@ -1318,6 +1328,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.5f);
+                    DelayFlog();
                 }
                 //オオカミのカウンターのタグに切り替えが未実装
                 if (other.gameObject.CompareTag("P2WolfAttackBack"))
@@ -1330,6 +1341,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    DelayFlog();
                 }
                 if (other.gameObject.CompareTag("PoisonAttackBack"))
                 {
@@ -1342,6 +1354,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    DelayFlog();
 
                 }
                 if (other.gameObject.CompareTag("P2ArmadilloAttackBack"))
@@ -1354,6 +1367,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    DelayFlog();
                 }
                 if (other.gameObject.CompareTag("P2HorseAttackBack"))
                 {
@@ -1365,6 +1379,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    DelayFlog();
                 }
             }
             if (other.gameObject.CompareTag("P1KuwagataAttack"))
@@ -1385,6 +1400,7 @@ public class KeybordPlay2 : MonoBehaviour
                 //音鳴らす
                 //AnimalDamage.Play();
                 atomSrc.Play("Animal_Damage");
+                DelayFlog();
             }
         }
         else

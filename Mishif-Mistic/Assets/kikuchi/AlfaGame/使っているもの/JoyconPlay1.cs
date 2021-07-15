@@ -741,6 +741,8 @@ public class JoyconPlay1 : MonoBehaviour
     }
     void DelayFlog()
     {
+        //カエルの攻撃途中の時に被ダメした用
+        P1FlogAnimator.SetBool("FlogAtkFinP1", true);
         //カエル攻撃オブジェクトの除去
         P1FlogTongue.SetActive(false);
         FlogSwitch = true;
@@ -1044,6 +1046,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //LionSrc.Play();
                     //AnimalDamage.Play();
                     atomSrc.Play("Animal_Damage");
+                    DelayFlog();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1060,6 +1063,8 @@ public class JoyconPlay1 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
                     P1ImplaBlock.SetActive(false);
+                    DelayFlog();
+
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                 }
@@ -1074,6 +1079,8 @@ public class JoyconPlay1 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
                     P1ImplaBlock.SetActive(false);
+                    DelayFlog();
+
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                 }
@@ -1096,6 +1103,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //音鳴らす
                     //AnimalDamage.Play();
                     atomSrc.Play("Animal_Damage");
+                    DelayFlog();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1114,6 +1122,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //音鳴らす
                     //FrogAtkSrc.Play();
                     atomSrc.Play("Frog_Attack");
+                    DelayFlog();
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
@@ -1133,6 +1142,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //音鳴らす
                     //AnimalDamage.Play();
                     atomSrc.Play("Animal_Damage");
+                    DelayFlog();
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
@@ -1148,6 +1158,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    DelayFlog();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1163,6 +1174,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    DelayFlog();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
@@ -1180,6 +1192,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    DelayFlog();
                 }
                 if (other.gameObject.CompareTag("P1ImplaBack"))
                 {
@@ -1191,6 +1204,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    DelayFlog();
                 }
                 if (other.gameObject.CompareTag("P1ImplaWaveBack"))
                 {
@@ -1200,6 +1214,7 @@ public class JoyconPlay1 : MonoBehaviour
                     P1ImplaBlock.SetActive(false);
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    DelayFlog();
                 }
                 if (other.gameObject.CompareTag("P1FlogAttackBack"))
                 {
@@ -1211,6 +1226,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
+                    DelayFlog();
                 }
                 //オオカミのカウンターのタグに切り替えが未実装
                 if (other.gameObject.CompareTag("P1WolfAttackBack"))
@@ -1223,6 +1239,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    DelayFlog();
                 }
                 if (other.gameObject.CompareTag("PoisonAttackBack"))
                 {
@@ -1235,6 +1252,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    DelayFlog();
                 }
                 if (other.gameObject.CompareTag("P1ArmadilloAttackBack"))
                 {
@@ -1246,6 +1264,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    DelayFlog();
                 }
                 if (other.gameObject.CompareTag("P1HorseAttackBack"))
                 {
@@ -1257,6 +1276,7 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    DelayFlog();
                 }
             }
             if (other.gameObject.CompareTag("P2KuwagataAttack"))
@@ -1277,6 +1297,7 @@ public class JoyconPlay1 : MonoBehaviour
                 //音鳴らす
                 //AnimalDamage.Play();
                 atomSrc.Play("Animal_Damage");
+                DelayFlog();
             }
         }
         else
