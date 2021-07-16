@@ -472,6 +472,8 @@ public class KeybordPlay2 : MonoBehaviour
                                                     //ローリングアタック
                                                     this.Animator.SetBool(isRollStr, true);
                                                     this.Animator.SetBool(isRollFin, false);
+
+                                                    atomSrc.Play("Armadillo_Roll");
                                                 }
                                                 if (Input.GetKeyUp(KeyCode.X))
                                                 {
