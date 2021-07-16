@@ -6,14 +6,23 @@ public class CinemaPlayer : MonoBehaviour
 {
     public GameObject FSI;
     public GameObject FSW;
+    public GameObject FSU;
     public GameObject FTI;
     public GameObject FTW;
+    public GameObject FTU;
+    public GameObject FAI;
+    public GameObject FAW;
+    public GameObject FAU;
     public GameObject LSI;
     public GameObject LSW;
+    public GameObject LSU;
     public GameObject LTI;
     public GameObject LTW;
-    public GameObject KAW;
     public GameObject LTU;
+    public GameObject LAI;
+    public GameObject LAW;
+    public GameObject LAU;
+    public GameObject KAW;
 
     private Vector3 PlayerObject;
     void Start()
