@@ -8,6 +8,8 @@ namespace SelectCharacter
     public class GameStartButton : MonoBehaviour
     {
         private SceneTransition sceneTransition;
+        public static int head2;
+        public static int head;
 
         //ADX設定
         public CriAtomSource SlotDecisionSrc;
@@ -21,7 +23,14 @@ namespace SelectCharacter
         // Update is called once per frame
         void Update()
         {
-
+            if(Contlole.GetHead() == 3 || Contlole2.GetHead2() == 3)
+            {
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                this.gameObject.SetActive(true);
+            }
         }
 
         public void OnGameStart()
