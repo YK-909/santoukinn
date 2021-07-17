@@ -41,6 +41,10 @@ public class CinemaPlayer : MonoBehaviour
         {
             PlayerObject = FSW.transform.position;
         }
+        else if (FSU.activeSelf)
+        {
+            PlayerObject = FSU.transform.position;
+        }
         else if (FTI.activeSelf)
         {
             PlayerObject = FTI.transform.position;
@@ -48,6 +52,22 @@ public class CinemaPlayer : MonoBehaviour
         else if (FTW.activeSelf)
         {
             PlayerObject = FTW.transform.position;
+        }
+        else if (FTU.activeSelf)
+        {
+            PlayerObject = FTU.transform.position;
+        }
+        else if (FAI.activeSelf)
+        {
+            PlayerObject = FAI.transform.position;
+        }
+        else if (FAW.activeSelf)
+        {
+            PlayerObject = FAW.transform.position;
+        }
+        else if (FAU.activeSelf)
+        {
+            PlayerObject = FAU.transform.position;
         }
         else if (LSI.activeSelf)
         {
@@ -57,6 +77,10 @@ public class CinemaPlayer : MonoBehaviour
         {
             PlayerObject = LSW.transform.position;
         }
+        else if (LSU.activeSelf)
+        {
+            PlayerObject = LSU.transform.position;
+        }
         else if (LTI.activeSelf)
         {
             PlayerObject = LTI.transform.position;
@@ -65,13 +89,25 @@ public class CinemaPlayer : MonoBehaviour
         {
             PlayerObject = LTW.transform.position;
         }
-        else if (KAW.activeSelf)
-        {
-            PlayerObject = KAW.transform.position;
-        }
         else if (LTU.activeSelf)
         {
             PlayerObject = LTU.transform.position;
+        }
+        else if (LAI.activeSelf)
+        {
+            PlayerObject = LAI.transform.position;
+        }
+        else if (LAW.activeSelf)
+        {
+            PlayerObject = LAW.transform.position;
+        }
+        else if (LAU.activeSelf)
+        {
+            PlayerObject = LAU.transform.position;
+        }
+        else if (KAW.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
         }
         this.transform.position = PlayerObject;
     }
