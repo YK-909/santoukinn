@@ -462,6 +462,9 @@ public class KeyBordPlay1 : MonoBehaviour
                                                     {
                                                         ArmadilloSpeed += 15 * Time.deltaTime;
                                                     }
+
+                                                    //音鳴らす
+                                                    atomSrc.Play("Armadillo_Roll");
                                                 }
                                                 if (Input.GetKeyUp(KeyCode.Joystick1Button3))
                                                 {
@@ -594,6 +597,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                         if (HorseSwitch == true)
                                         {
                                             //音鳴らす
+                                            atomSrc.Play("Horse_Swing");
 
                                             AllActionInterval = true;
                                             P1HorseLeg.tag = "P2HorseAttack";
@@ -838,15 +842,16 @@ public class KeyBordPlay1 : MonoBehaviour
 
     void BiteSound()
     {
-        //音鳴らす
-        //LionSrc.Play();
-        atomSrc.Play("Lion_Bite");
+        
     }
 
     void BiteEnable()
     {
         //ライオンの当たり判定
         P1Lionhead.SetActive(true);
+        //音鳴らす
+        //LionSrc.Play();
+        atomSrc.Play("Lion_Bite");
     }
 
     void BiteUnable()
@@ -1206,6 +1211,10 @@ public class KeyBordPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+
+                    //音鳴らす
+                    //AnimalDamage.Play();
+                    atomSrc.Play("Armadillo_Hit");
                     DelayFlog();
 
                     //ふっとぶ
@@ -1222,6 +1231,10 @@ public class KeyBordPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+
+                    //音鳴らす
+                    //AnimalDamage.Play();
+                    atomSrc.Play("Horse_Kick");
                     DelayFlog();
 
                     //ふっとぶ
