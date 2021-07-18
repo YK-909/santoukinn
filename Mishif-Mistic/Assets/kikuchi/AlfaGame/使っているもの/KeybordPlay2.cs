@@ -473,6 +473,7 @@ public class KeybordPlay2 : MonoBehaviour
                                                     this.Animator.SetBool(isRollStr, true);
                                                     this.Animator.SetBool(isRollFin, false);
 
+                                                    //音鳴らす
                                                     atomSrc.Play("Armadillo_Roll");
                                                 }
                                                 if (Input.GetKeyUp(KeyCode.X))
@@ -864,16 +865,17 @@ public class KeybordPlay2 : MonoBehaviour
 
     void BiteSound()
     {
-        //音鳴らす
-        //LionSrc.Play();
-        atomSrc.Play("Lion_Bite");
+        
     }
 
     void BiteEnable()
     {
         //ライオンの当たり判定
         P2Lionhead.SetActive(true);
-        
+        //音鳴らす
+        //LionSrc.Play();
+        atomSrc.Play("Lion_Bite");
+
     }
 
     void BiteUnable()
@@ -1258,7 +1260,7 @@ public class KeybordPlay2 : MonoBehaviour
 
                     //音鳴らす
                     //AnimalDamage.Play();
-                    atomSrc.Play("Animal_Damage");
+                    atomSrc.Play("Armadillo_Hit");
                     DelayFlog();
 
                     //ふっとぶ
