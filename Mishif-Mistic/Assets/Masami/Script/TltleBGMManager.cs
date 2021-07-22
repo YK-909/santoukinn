@@ -23,17 +23,19 @@ public class TltleBGMManager : MonoBehaviour
 
         GameObject.DontDestroyOnLoad(this.gameObject);
         instance = this;
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        instance.atomSource.Play("TitleBGM");
     }
 
     static public void PlayCueId(int cueID)
     {
-        instance.atomSource.Play(cueID);
+        
     }
 
     private void OnDestroy()

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -277,6 +277,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137843771}
   m_CullTransparentMesh: 0
+--- !u!1 &223102049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 223102050}
+  - component: {fileID: 223102051}
+  m_Layer: 0
+  m_Name: Cursor_Select(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &223102050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223102049}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 531032544}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &223102051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223102049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Cursor_Select
+  _cueSheet: UISE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &266922717
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +480,103 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &531032542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 531032544}
+  - component: {fileID: 531032543}
+  m_Layer: 0
+  m_Name: CriWareLibraryInitializer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &531032543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531032542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e49f339aff054453b2d8287aec75bf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initializesFileSystem: 1
+  fileSystemConfig:
+    numberOfLoaders: 16
+    numberOfBinders: 8
+    numberOfInstallers: 2
+    installBufferSize: 32
+    maxPath: 256
+    userAgentString: 
+    minimizeFileDescriptorUsage: 0
+    enableCrcCheck: 0
+    androidDeviceReadBitrate: 50000000
+  initializesAtom: 1
+  atomConfig:
+    acfFileName: 
+    maxVirtualVoices: 32
+    maxVoiceLimitGroups: 32
+    maxCategories: 32
+    maxSequenceEventsPerFrame: 2
+    maxBeatSyncCallbacksPerFrame: 1
+    standardVoicePoolConfig:
+      memoryVoices: 16
+      streamingVoices: 8
+    hcaMxVoicePoolConfig:
+      memoryVoices: 0
+      streamingVoices: 0
+    outputSamplingRate: 0
+    usesInGamePreview: 0
+    inGamePreviewMode: 0
+    serverFrequency: 60
+    asrOutputChannels: 0
+    useRandomSeedWithTime: 0
+    categoriesPerPlayback: 4
+    maxBuses: 8
+    maxParameterBlocks: 1024
+    vrMode: 0
+    keepPlayingSoundOnPause: 1
+    pcBufferingTime: 0
+    iosBufferingTime: 50
+    iosOverrideIPodMusic: 0
+    androidBufferingTime: 133
+    androidStartBufferingTime: 100
+    androidLowLatencyStandardVoicePoolConfig:
+      memoryVoices: 0
+      streamingVoices: 0
+    androidUsesAndroidFastMixer: 1
+    androidForceToUseAsrForDefaultPlayback: 1
+    androidUsesAAudio: 0
+  initializesMana: 1
+  manaConfig:
+    numberOfDecoders: 8
+    numberOfMaxEntries: 4
+  dontInitializeOnAwake: 0
+  dontDestroyOnLoad: 0
+--- !u!4 &531032544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531032542}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 223102050}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &602721767
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +590,8 @@ GameObject:
   - component: {fileID: 602721771}
   - component: {fileID: 602721770}
   - component: {fileID: 602721769}
+  - component: {fileID: 602721774}
+  - component: {fileID: 602721773}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -534,7 +687,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 602721774}
         m_MethodName: PlayAndStopSound
         m_Mode: 1
         m_Arguments:
@@ -582,6 +735,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602721767}
   m_CullTransparentMesh: 0
+--- !u!114 &602721773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602721767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Cursor_GoBack
+  _cueSheet: UISE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
+--- !u!114 &602721774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602721767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce6ceccb3d86dd40a57ab75b64bdff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &736920182
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +861,8 @@ GameObject:
   - component: {fileID: 925167038}
   - component: {fileID: 925167037}
   - component: {fileID: 925167036}
+  - component: {fileID: 925167040}
+  - component: {fileID: 925167041}
   m_Layer: 5
   m_Name: NPCButton
   m_TagString: Untagged
@@ -768,7 +958,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 925167040}
         m_MethodName: PlayAndStopSound
         m_Mode: 1
         m_Arguments:
@@ -816,6 +1006,93 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925167034}
   m_CullTransparentMesh: 0
+--- !u!114 &925167040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925167034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce6ceccb3d86dd40a57ab75b64bdff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &925167041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925167034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Cursor_Decision
+  _cueSheet: UISE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
+--- !u!1 &1556088840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1556088842}
+  - component: {fileID: 1556088841}
+  m_Layer: 0
+  m_Name: CRIWARE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1556088841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556088840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f529aa944b914449d62b8c40f188fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acfFile: MischiefMystic.acf
+  cueSheets:
+  - name: UISE
+    acbFile: UISE.acb
+    awbFile: UISE.awb
+    loaderStatus: 0
+  dspBusSetting: 
+  dontDestroyOnLoad: 0
+  dontRemoveExistsCueSheet: 0
+--- !u!4 &1556088842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556088840}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1640059409
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,6 +1194,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1792880306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1792880308}
+  - component: {fileID: 1792880307}
+  m_Layer: 0
+  m_Name: CriWareErrorHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1792880307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792880306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f154ff0ac54c142928b46e94a4ee0790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableDebugPrintOnTerminal: 0
+  enableForceCrashOnError: 0
+  dontDestroyOnLoad: 1
+--- !u!4 &1792880308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792880306}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1988857382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,6 +1404,8 @@ GameObject:
   - component: {fileID: 2121275912}
   - component: {fileID: 2121275910}
   - component: {fileID: 2121275911}
+  - component: {fileID: 2121275916}
+  - component: {fileID: 2121275915}
   m_Layer: 5
   m_Name: RocalButton
   m_TagString: Untagged
@@ -1142,8 +1467,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 2121275916}
+        m_MethodName: PlayAndStopSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1224,3 +1549,38 @@ RectTransform:
   m_AnchoredPosition: {x: -397, y: -10}
   m_SizeDelta: {x: 160, y: 65.03916}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2121275915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121275909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Cursor_Decision
+  _cueSheet: UISE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
+--- !u!114 &2121275916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121275909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce6ceccb3d86dd40a57ab75b64bdff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

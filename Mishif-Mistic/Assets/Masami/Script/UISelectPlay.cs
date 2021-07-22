@@ -46,6 +46,10 @@ public class UISelectPlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            atomSrc.Play("Cursor_Select");
+        }
         if (Input.GetKey(KeyCode.W))
         {
             atomSrc.Play("Cursor_Select");
