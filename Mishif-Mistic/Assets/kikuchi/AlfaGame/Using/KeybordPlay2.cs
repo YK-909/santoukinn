@@ -81,6 +81,7 @@ public class KeybordPlay2 : MonoBehaviour
     private int ArmadilloMode = 0;
     private bool ArmadilloSwitch = true;
     public GameObject ArmadilloBlock;
+    private bool OnceArma = true;
 
     //馬の攻撃
     public GameObject P2HorseLeg;
@@ -464,9 +465,9 @@ public class KeybordPlay2 : MonoBehaviour
                                                 if (Input.GetKey(KeyCode.X))
                                                 {
                                                     Debug.Log(ArmadilloSpeed);
-                                                    if (ArmadilloSpeed < 60)
+                                                    if (ArmadilloSpeed < 30)
                                                     {
-                                                        ArmadilloSpeed += 15 * Time.deltaTime;
+                                                        ArmadilloSpeed += 10 * Time.deltaTime;
                                                     }
 
                                                     //ローリングアタック
@@ -487,10 +488,15 @@ public class KeybordPlay2 : MonoBehaviour
                                             {
                                                 if (ArmadilloSpeed > 0)
                                                 {
+                                                    if(OnceArma==true)
+                                                    {
+                                                        ArmadilloSpeed += 50;
+                                                        OnceArma = false;
+                                                    }
                                                     ArmadilloBlock.SetActive(true);
                                                     ArmadilloBlock.tag = "P2ArmadilloAttack";
-                                                    ArmadilloSpeed += -5 * Time.deltaTime;
-                                                    transform.position += transform.forward * ArmadilloSpeed * Time.deltaTime;
+                                                    ArmadilloSpeed += -20 * Time.deltaTime;
+                                                    transform.position += transform.forward * 50 * Time.deltaTime;
                                                     if (Input.GetKey(KeyCode.RightArrow))
                                                     {
                                                         //右に回転
@@ -504,6 +510,7 @@ public class KeybordPlay2 : MonoBehaviour
                                                 }
                                                 else
                                                 {
+                                                    OnceArma = true;
                                                     this.Animator.SetBool(isRollFin, true);
                                                     ArmadilloBlock.SetActive(false);
                                                     ArmadilloMode = 0;
@@ -831,6 +838,7 @@ public class KeybordPlay2 : MonoBehaviour
     {
         //無敵タイムの終了
         Invincible = false;
+        ArmadilloSpeed = 0;
     }
 
     void MissileTiming()
