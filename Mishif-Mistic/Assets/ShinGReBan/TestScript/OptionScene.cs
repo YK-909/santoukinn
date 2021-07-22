@@ -20,6 +20,6 @@ public class OptionScene : MonoBehaviour
 
     public void MainButton()
     {
-        SceneManager.UnloadSceneAsync("OptionScene");
+        SceneManager.UnloadSceneAsync("VolumeControl");
     }
 }

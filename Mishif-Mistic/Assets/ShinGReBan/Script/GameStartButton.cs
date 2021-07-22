@@ -14,6 +14,9 @@ namespace SelectCharacter
         //ADX設定
         public CriAtomSource SlotDecisionSrc;
 
+        public GameObject KimariButton1;
+        public GameObject KimeraButton2;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -23,7 +26,9 @@ namespace SelectCharacter
         // Update is called once per frame
         void Update()
         {
-            if(Contlole.GetHead() == 3 || Contlole2.GetHead2() == 3)
+
+
+            if (Contlole.GetHead() == 3 || Contlole2.GetHead2() == 3)
             {
                 this.gameObject.SetActive(false);
             }
@@ -37,8 +42,9 @@ namespace SelectCharacter
         {
             //音鳴らす
             SlotDecisionSrc.Play();
-
+            
             Invoke("OnGameStart2", 2.0f);
+            
         }
 
         public void OnGameStart2()

@@ -27,7 +27,7 @@ public class MainScene : MonoBehaviour
             obj.SetActive(false);
         }
 
-        SceneManager.LoadScene("OptionScene", LoadSceneMode.Additive);
+        SceneManager.LoadScene("VolumeControl", LoadSceneMode.Additive);
     }
 
     private void OnSceneUnloaded(Scene current)

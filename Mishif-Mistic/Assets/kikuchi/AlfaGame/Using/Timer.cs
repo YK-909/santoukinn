@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -73,13 +74,16 @@ public class Timer : MonoBehaviour
             {
                 GameWinner.text = "P2の勝利";
                 GameChange = 2;
-        
+
+                Invoke("SceneResult2", 2.0f);
             }
             else if (KeybordPlay2.GetP2HP() <= 0)
             {
                 GameWinner.text = "P1の勝利";
                 GameChange = 2;
-             
+
+                Invoke("SceneResult1", 2.0f);
+
             }
             //制限時間による勝敗
             if (Second <= 0)
@@ -88,13 +92,16 @@ public class Timer : MonoBehaviour
                 {
                     GameWinner.text = "P2の勝利";
                     GameChange = 2;
-               
+
+                    Invoke("SceneResult2", 2.0f);
+
                 }
                 else if (KeybordPlay2.GetP2HP() < JoyconPlay1.GetP1HP())
                 {
                     GameWinner.text = "P1の勝利";
                     GameChange = 2;
-               
+
+                    Invoke("SceneResult1", 2.0f);
                 }
             }
         }
@@ -122,5 +129,15 @@ public class Timer : MonoBehaviour
     public static int GetGamemode()
     {
         return GameChange;
+    }
+
+    void SceneResult1()
+    {
+        SceneManager.LoadScene("ResultSceneP1Win");
+    }
+
+    void SceneResult2()
+    {
+        SceneManager.LoadScene("ResultSceneP2Win");
     }
 }
