@@ -82,6 +82,7 @@ public class JoyconPlay1 : MonoBehaviour
     private int ArmadilloMode = 0;
     private bool ArmadilloSwitch = true;
     public GameObject ArmadilloBlock;
+    private bool OnceArma = true;
 
     //馬の攻撃
     public GameObject P1HorseLeg;
@@ -90,6 +91,7 @@ public class JoyconPlay1 : MonoBehaviour
     //クワガタの攻撃
     public GameObject KuwagataBlock;
     private bool KuwagataSwitch = true;
+    private Vector3 KuwagataVec;
 
     private bool AllActionInterval = false;
     private bool CalledOncePoint = false;
@@ -410,9 +412,9 @@ public class JoyconPlay1 : MonoBehaviour
                                                 if (Input.GetKey(KeyCode.Joystick1Button3))
                                                 {
                                                     Debug.Log(ArmadilloSpeed);
-                                                    if (ArmadilloSpeed < 60)
+                                                    if (ArmadilloSpeed < 30)
                                                     {
-                                                        ArmadilloSpeed += 15 * Time.deltaTime;
+                                                        ArmadilloSpeed += 10 * Time.deltaTime;
                                                     }
                                                 }
                                                 if (Input.GetKeyUp(KeyCode.Joystick1Button3))
@@ -424,10 +426,15 @@ public class JoyconPlay1 : MonoBehaviour
                                             {
                                                 if (ArmadilloSpeed > 0)
                                                 {
+                                                    if (OnceArma == true)
+                                                    {
+                                                        ArmadilloSpeed += 50;
+                                                        OnceArma = false;
+                                                    }
                                                     ArmadilloBlock.SetActive(true);
                                                     ArmadilloBlock.tag = "P1ArmadilloAttack";
-                                                    ArmadilloSpeed += -5 * Time.deltaTime;
-                                                    transform.position += transform.forward * ArmadilloSpeed * Time.deltaTime;
+                                                    ArmadilloSpeed += -20 * Time.deltaTime;
+                                                    transform.position += transform.forward * 50 * Time.deltaTime;
                                                     if (Direction.x > 0)
                                                     {
                                                         //右に回転
@@ -441,6 +448,7 @@ public class JoyconPlay1 : MonoBehaviour
                                                 }
                                                 else
                                                 {
+                                                    OnceArma = true;
                                                     ArmadilloBlock.SetActive(false);
                                                     ArmadilloMode = 0;
                                                     //オブジェクトが消える時間
@@ -756,6 +764,7 @@ public class JoyconPlay1 : MonoBehaviour
     {
         //無敵タイムの終了
         Invincible = false;
+        ArmadilloSpeed = 0;
     }
 
     void MissileTiming()
@@ -861,6 +870,11 @@ public class JoyconPlay1 : MonoBehaviour
     void DelayKuwagata()
     {
         KuwagataSwitch = true;
+    }
+
+    void KuwagataNock()
+    {
+        Rb.AddForce(KuwagataVec * 50, ForceMode.Impulse);
     }
     Vector3 GetAngleVec(GameObject _from, GameObject _to)
     {
@@ -1284,12 +1298,14 @@ public class JoyconPlay1 : MonoBehaviour
                 Player1HP -= 30;
                 P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                 //ノックバック
-                this.transform.position = new Vector3(this.transform.position.x, other.gameObject.transform.position.y + 2, this.transform.position.z);
-                Vector3 ToVec = GetAngleVec(this.gameObject, other.gameObject);
-                Rb.AddForce(transform.up * 20, ForceMode.Impulse);
-                Rb.AddForce(ToVec * 40, ForceMode.Impulse);
+                //this.transform.position = new Vector3(this.transform.position.x, other.gameObject.transform.position.y + 2, this.transform.position.z);
+                //Vector3 ToVec = GetAngleVec(this.gameObject, other.gameObject);
+                KuwagataVec = GetAngleVec(this.gameObject, other.gameObject);
+                Rb.AddForce(transform.up * 50, ForceMode.Impulse);
+                Invoke("KuwagataNock", 0.5f); 
+                //Rb.AddForce(ToVec * 50, ForceMode.Impulse);
                 //無敵タイム開始
-                Invincible = true;
+                 Invincible = true;
                 Invoke("InvincibleTime", 1.5f);
                 //行動停止
                 AllActionInterval = true;
