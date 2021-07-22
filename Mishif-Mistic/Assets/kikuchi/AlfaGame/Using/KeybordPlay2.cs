@@ -1269,6 +1269,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //音鳴らす
                     //AnimalDamage.Play();
                     atomSrc.Play("Armadillo_Hit");
+                    Debug.Log("鳴った");
                     DelayFlog();
 
                     //ふっとぶ
@@ -1289,6 +1290,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //音鳴らす
                     //AnimalDamage.Play();
                     atomSrc.Play("Horse_Kick");
+                    Debug.Log("鳴った");
                     DelayFlog();
 
                     //ふっとぶ

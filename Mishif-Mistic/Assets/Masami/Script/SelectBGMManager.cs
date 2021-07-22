@@ -23,6 +23,8 @@ public class SelectBGMManager : MonoBehaviour
 
         GameObject.DontDestroyOnLoad(this.gameObject);
         instance = this;
+
+        instance.atomSource.Play("SelectBGM");
     }
 
     // Update is called once per frame
@@ -33,7 +35,7 @@ public class SelectBGMManager : MonoBehaviour
 
     static public void PlayCueId(int cueID)
     {
-        instance.atomSource.Play(cueID);
+        
     }
 
     private void OnDestroy()

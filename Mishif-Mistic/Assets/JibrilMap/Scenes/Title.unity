@@ -235,7 +235,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 249240161}
-  - component: {fileID: 249240163}
   - component: {fileID: 249240162}
   m_Layer: 0
   m_Name: BGMManager
@@ -271,29 +270,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TltleBGMcueSheet: TitleBGM
---- !u!114 &249240163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249240160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playOnStart: 1
-  _cueName: TitleBGM
-  _cueSheet: TltleBGM
-  _regionOnStart: {fileID: 0}
-  _listenerOnStart: {fileID: 0}
-  _use3dPositioning: 0
-  _loop: 1
-  _volume: 0.3
-  _pitch: 0
-  _androidUseLowLatencyVoicePool: 0
-  need_to_player_update_all: 1
 --- !u!1 &339719748
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,8 +462,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 590219315}
-  - component: {fileID: 590219314}
   - component: {fileID: 590219313}
+  - component: {fileID: 590219314}
   m_Layer: 0
   m_Name: SelectSEManager
   m_TagString: Untagged
@@ -524,7 +500,7 @@ MonoBehaviour:
   _cueSheet: UISE
   _regionOnStart: {fileID: 0}
   _listenerOnStart: {fileID: 0}
-  _use3dPositioning: 0
+  _use3dPositioning: 1
   _loop: 0
   _volume: 1
   _pitch: 0
