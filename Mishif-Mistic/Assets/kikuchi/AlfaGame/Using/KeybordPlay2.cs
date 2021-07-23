@@ -205,9 +205,21 @@ public class KeybordPlay2 : MonoBehaviour
                                     transform.position += transform.forward * Speed * Time.deltaTime;
                                     if (Speed == 40.0)
                                     {
-                                        //音鳴らす
-                                        //AnimalFSSrc.Play();
-                                        atomSrc.Play("Garden_Footsteps");
+                                        //インパラの足音
+                                        if (Leg == 1)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Impala_GFootsteps");
+                                        }
+
+                                        //狼の足音
+                                        if (Leg == 2)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Garden_Footsteps");
+                                        }
                                     }
 
                                     //走る
@@ -222,9 +234,29 @@ public class KeybordPlay2 : MonoBehaviour
 
                                     if (Speed == 40.0)
                                     {
-                                        //音鳴らす
-                                        //AnimalFSSrc.Play();
-                                        atomSrc.Play("Garden_Footsteps");
+                                        //インパラの足音
+                                        if (Leg == 1)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Impala_GFootsteps");
+                                        }
+
+                                        //狼の足音
+                                        if (Leg == 2)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Garden_Footsteps");
+                                        }
+
+                                        //馬の足音
+                                        if (Leg == 3)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Horse_GFootsteps");
+                                        }
                                     }
 
                                     //走る
@@ -238,9 +270,29 @@ public class KeybordPlay2 : MonoBehaviour
                                     transform.position += transform.forward * Speed * Time.deltaTime;
                                     if (Speed == 40.0)
                                     {
-                                        //音鳴らす
-                                        //AnimalFSSrc.Play();
-                                        atomSrc.Play("Garden_Footsteps");
+                                        //インパラの足音
+                                        if (Leg == 1)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Impala_GFootsteps");
+                                        }
+
+                                        //狼の足音
+                                        if (Leg == 2)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Garden_Footsteps");
+                                        }
+
+                                        //馬の足音
+                                        if (Leg == 3)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Horse_GFootsteps");
+                                        }
                                     }
 
                                     //走る
@@ -255,9 +307,29 @@ public class KeybordPlay2 : MonoBehaviour
 
                                     if (Speed == 40.0)
                                     {
-                                        //音鳴らす
-                                        //AnimalFSSrc.Play();
-                                        atomSrc.Play("Garden_Footsteps");
+                                        //インパラの足音
+                                        if (Leg == 1)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Impala_GFootsteps");
+                                        }
+
+                                        //狼の足音
+                                        if (Leg == 2)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Garden_Footsteps");
+                                        }
+
+                                        //馬の足音
+                                        if (Leg == 3)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Horse_GFootsteps");
+                                        }
                                     }
 
                                     //走る
@@ -969,7 +1041,12 @@ public class KeybordPlay2 : MonoBehaviour
             ImpalaFinTiming();
 
             //ただのジャンプ
-            NormalJump = false;
+            if (NormalJump == true)
+            {
+                NormalJump = false;
+                //着地音鳴らす
+                atomSrc.Play("Landing");
+            }
             Implajump = false;
             gameObject.layer = LayerMask.NameToLayer("NormalLayer");
             //インパラの攻撃のため
