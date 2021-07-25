@@ -920,6 +920,11 @@ public class JoyconPlay1 : MonoBehaviour
     //元の数字に10+
     void OnTriggerStay(Collider other)
     {
+        if (other.gameObject.tag != "floor")
+        {
+            Rb.isKinematic = false;
+            ArmadilloSpeed = 0;
+        }
         if (Invincible == false)
         {
             if (Shield == true)
@@ -1052,6 +1057,9 @@ public class JoyconPlay1 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1073,6 +1081,9 @@ public class JoyconPlay1 : MonoBehaviour
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Debug.Log(ToVec);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1089,6 +1100,9 @@ public class JoyconPlay1 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 30, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1110,6 +1124,9 @@ public class JoyconPlay1 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 40, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1129,6 +1146,9 @@ public class JoyconPlay1 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject,this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 0.3f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.6f);
@@ -1149,9 +1169,12 @@ public class JoyconPlay1 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 0.3f);
                     //無敵タイム開始
                     Invincible = true;
-                    Invoke("InvincibleTime", 0.7f);
+                    Invoke("InvincibleTime", 0.5f);
                     P1ImplaBlock.SetActive(false);
                     //音鳴らす
                     //AnimalDamage.Play();
@@ -1169,6 +1192,9 @@ public class JoyconPlay1 : MonoBehaviour
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
                     P1ImplaBlock.SetActive(false);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1185,6 +1211,9 @@ public class JoyconPlay1 : MonoBehaviour
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
                     P1ImplaBlock.SetActive(false);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1203,6 +1232,9 @@ public class JoyconPlay1 : MonoBehaviour
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 55, ForceMode.Impulse);
                     P1ImplaBlock.SetActive(false);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1215,6 +1247,9 @@ public class JoyconPlay1 : MonoBehaviour
                     Vector3 ToVec = GetAngleVec(other.gameObject, P1ImplaBlock);
                     P1ImplaBlock.SetActive(false);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1224,6 +1259,9 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 12;
                     P1G.transform.position += new Vector3(HP10per * 1.2f, 0, 0);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     P1ImplaBlock.SetActive(false);
                     Invincible = true;
@@ -1237,9 +1275,12 @@ public class JoyconPlay1 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 20, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 0.2f);
                     //無敵タイム開始
                     Invincible = true;
-                    Invoke("InvincibleTime", 0.3f);
+                    Invoke("InvincibleTime", 0.5f);
                     DelayFlog();
                 }
                 //オオカミのカウンターのタグに切り替えが未実装
@@ -1250,6 +1291,9 @@ public class JoyconPlay1 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 55, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1263,6 +1307,9 @@ public class JoyconPlay1 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 16, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1275,6 +1322,9 @@ public class JoyconPlay1 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1287,6 +1337,9 @@ public class JoyconPlay1 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
