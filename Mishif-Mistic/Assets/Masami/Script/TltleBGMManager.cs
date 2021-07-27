@@ -20,6 +20,7 @@ public class TltleBGMManager : MonoBehaviour
 
         atomSource = gameObject.AddComponent<CriAtomSource>();
         atomSource.cueSheet = TltleBGMcueSheet;
+        atomSource.volume = 0.3f;
 
         GameObject.DontDestroyOnLoad(this.gameObject);
         instance = this;

@@ -879,7 +879,7 @@ MonoBehaviour:
     acbFile: UISE.acb
     awbFile: UISE.awb
     loaderStatus: 0
-  - name: TltleBGM
+  - name: TltleBGMcueSheet
     acbFile: TltleBGM.acb
     awbFile: TltleBGM.awb
     loaderStatus: 0
@@ -1492,7 +1492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33319b6ca39816d4c8a85f487e85aaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TltleBGMcueSheet: TitleBGM
+  TltleBGMcueSheet: TitleBGMcueSheet
 --- !u!114 &1836129063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,9 +1505,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playOnStart: 1
+  _playOnStart: 0
   _cueName: TitleBGM
-  _cueSheet: TltleBGM
+  _cueSheet: TltleBGMcueSheet
   _regionOnStart: {fileID: 0}
   _listenerOnStart: {fileID: 0}
   _use3dPositioning: 0
