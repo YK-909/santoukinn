@@ -395,7 +395,7 @@ public class KeybordPlay2 : MonoBehaviour
                                             Invoke("DelayFlog", 1.5f);
                                             AllActionInterval = true;
                                             //行動停止
-                                            Invoke("ActionInterval", 3.0f);
+                                            Invoke("ActionInterval", 2.65f);
 
                                             //音止める
                                             //FrogSwingSrc.Stop();
@@ -495,9 +495,9 @@ public class KeybordPlay2 : MonoBehaviour
                                                 //上と同じ値
                                                 Invoke("TurtleGardRemove", 2f);
                                                 //行動停止
-                                                Invoke("ActionInterval", 3.0f);
+                                                Invoke("ActionInterval", 2.3f);
                                                 //リキャストタイム
-                                                Invoke("DelayTartle", 4f);
+                                                Invoke("DelayTartle", 3.2f);
 
                                                 //カメのシールド
                                                 this.Animator.SetBool(isKameShield, true);
