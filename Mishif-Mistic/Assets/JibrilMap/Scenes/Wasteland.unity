@@ -1161,6 +1161,84 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1364018778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1364018779}
+  - component: {fileID: 1364018781}
+  - component: {fileID: 1364018780}
+  m_Layer: 5
+  m_Name: BuffP2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1364018779
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364018778}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1732650002}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -125, y: -50}
+  m_SizeDelta: {x: 250, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1364018780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364018778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 90
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: P2:3
+--- !u!222 &1364018781
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364018778}
+  m_CullTransparentMesh: 0
 --- !u!1 &1392106900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,7 +1502,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 28.158924
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: 100
@@ -1449,7 +1527,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544286332}
-  m_LocalRotation: {x: 0.25088724, y: -0.0067983116, z: 0.0017620098, w: 0.9679909}
+  m_LocalRotation: {x: 0.2585715, y: -0.029133817, z: 0.007802185, w: 0.96552116}
   m_LocalPosition: {x: 2200, y: 3453, z: 221}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1575,6 +1653,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!224 &1732650002 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5619619233083834224, guid: b27404b3d78794440b1c9751b6b85bd7,
+    type: 3}
+  m_PrefabInstance: {fileID: 5846498091668175092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1739858053
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,22 +2208,22 @@ PrefabInstance:
     - target: {fileID: 4087507682542283756, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.25088724
+      value: 0.2585715
       objectReference: {fileID: 0}
     - target: {fileID: 4087507682542283756, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0067983116
+      value: -0.029133817
       objectReference: {fileID: 0}
     - target: {fileID: 4087507682542283756, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0017620098
+      value: 0.007802185
       objectReference: {fileID: 0}
     - target: {fileID: 4087507682542283756, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9679909
+      value: 0.96552116
       objectReference: {fileID: 0}
     - target: {fileID: 5604789689679870168, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
@@ -2156,6 +2240,16 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7188676549101684088, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: m_text
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638606489542059750, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: BuffCountTextP2
+      value: 
+      objectReference: {fileID: 1364018780}
     - target: {fileID: 9113059037662595083, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
       propertyPath: m_IsTrigger
