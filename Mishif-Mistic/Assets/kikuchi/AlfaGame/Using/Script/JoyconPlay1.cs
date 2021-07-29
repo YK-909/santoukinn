@@ -356,7 +356,7 @@ public class JoyconPlay1 : MonoBehaviour
                                                 //上と同じ値
                                                 Invoke("TurtleGardRemove", 2f);
                                                 //行動停止
-                                                Invoke("ActionInterval", 2.3f);
+                                                Invoke("ActionInterval", 2.65f);
                                                 //リキャストタイム
                                                 Invoke("DelayTartle", 3f);
 
