@@ -236,6 +236,14 @@ public class KeybordPlay2 : MonoBehaviour
                                             //AnimalFSSrc.Play();
                                             atomSrc.Play("Garden_Footsteps");
                                         }
+
+                                        //馬の足音
+                                        if (Leg == 3)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Horse_GFootsteps");
+                                        }
                                     }
 
                                     //走る
