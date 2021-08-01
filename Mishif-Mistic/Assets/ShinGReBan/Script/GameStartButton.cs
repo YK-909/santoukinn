@@ -27,15 +27,6 @@ namespace SelectCharacter
         void Update()
         {
 
-
-            if (Contlole.GetHead() == 3 || Contlole2.GetHead2() == 3)
-            {
-                this.gameObject.SetActive(false);
-            }
-            else
-            {
-                this.gameObject.SetActive(true);
-            }
         }
 
         public void OnGameStart()
