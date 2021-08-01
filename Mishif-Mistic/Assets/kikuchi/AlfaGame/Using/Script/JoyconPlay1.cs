@@ -96,6 +96,10 @@ public class JoyconPlay1 : MonoBehaviour
     private bool AllActionInterval = false;
     private bool CalledOncePoint = false;
 
+    //吸血
+    public static float DamageHP1=0;
+    public static bool HitDamage = false;
+
     //キャラの向きを常に一定に
     private GameObject EnemyObj;
     private Vector3 Enemy;
@@ -173,6 +177,7 @@ public class JoyconPlay1 : MonoBehaviour
         {
             if (AllActionInterval == false)
             {
+                HitDamage = false;
                 if (!CalledOncePoint)
                 {
                     CalledOncePoint = true;
@@ -889,6 +894,15 @@ public class JoyconPlay1 : MonoBehaviour
         return Player1HP;
     }
 
+    public static float GetDamage()
+    {
+        return DamageHP1;
+    }
+    public static bool HitP1()
+    {
+        return HitDamage;
+    }
+
     void OnCollisionEnter(Collision other)
     {
 
@@ -1048,6 +1062,8 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2LionAttack"))
                 {
                     Player1HP -= 30;
+                    DamageHP1 = 30;
+                    HitDamage = true;
                     P1G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
@@ -1076,6 +1092,8 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2Impla"))
                 {
                     Player1HP -= 30;
+                    DamageHP1 = 30;
+                    HitDamage = true;
                     P1G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1096,6 +1114,8 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2ImplaWave"))
                 {
                     Player1HP -= 10;
+                    DamageHP1 = 10;
+                    HitDamage = true;
                     P1G.transform.position += new Vector3(HP10per, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1115,6 +1135,8 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2WolfAttack"))
                 {
                     Player1HP -= 20;
+                    DamageHP1 = 20;
+                    HitDamage = true;
                     P1G.transform.position += new Vector3(HP10per * 2f, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
@@ -1142,6 +1164,8 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2FlogAttack"))
                 {
                     Player1HP -= 1.5f;
+                    DamageHP1 = 1.5f;
+                    HitDamage = true;
                     P1G.transform.position += new Vector3(HP10per * 0.15f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject,this.gameObject);
@@ -1164,6 +1188,8 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
                     Player1HP -= 3;
+                    DamageHP1 = 3;
+                    HitDamage = true;
                     Poisontimer = 0;
                     P1G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
@@ -1187,6 +1213,8 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2ArmadilloAttack"))
                 {
                     Player1HP -= 25;
+                    DamageHP1 = 25;
+                    HitDamage = true;
                     P1G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1206,6 +1234,8 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2HorseAttack"))
                 {
                     Player1HP -= 25;
+                    DamageHP1 = 25;
+                    HitDamage = true;
                     P1G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1227,6 +1257,8 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1LionAttackBack"))
                 {
                     Player1HP -= 24;
+                    DamageHP1 = 24;
+                    HitDamage = true;
                     P1G.transform.position += new Vector3(HP10per * 2 * 1.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1243,6 +1275,8 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1ImplaBack"))
                 {
                     Player1HP -= 36;
+                    DamageHP1 = 36;
+                    HitDamage = true;
                     P1G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     Vector3 ToVec = GetAngleVec(other.gameObject, P1ImplaBlock);
                     P1ImplaBlock.SetActive(false);
@@ -1258,6 +1292,8 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1ImplaWaveBack"))
                 {
                     Player1HP -= 12;
+                    DamageHP1 = 12;
+                    HitDamage = true;
                     P1G.transform.position += new Vector3(HP10per * 1.2f, 0, 0);
                     //行動停止
                     AllActionInterval = true;
@@ -1271,6 +1307,7 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1FlogAttackBack"))
                 {
                     Player1HP -= 3f;
+                    DamageHP1 = 3;
                     P1G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1287,6 +1324,8 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1WolfAttackBack"))
                 {
                     Player1HP -= 22;
+                    DamageHP1 = 22;
+                    HitDamage = true;
                     P1G.transform.position += new Vector3(HP10per * 2.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1302,6 +1341,8 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("PoisonAttackBack"))
                 {
                     Player1HP -= 3.6f;
+                    DamageHP1 = 3.6f;
+                    HitDamage = true;
                     Poisontimer = 0;
                     P1G.transform.position += new Vector3(HP10per * 0.36f, 0, 0);
                     //ノックバック
@@ -1318,6 +1359,8 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1ArmadilloAttackBack"))
                 {
                     Player1HP -= 30;
+                    DamageHP1 = 30;
+                    HitDamage = true;
                     P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1333,6 +1376,8 @@ public class JoyconPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1HorseAttackBack"))
                 {
                     Player1HP -= 30;
+                    DamageHP1 = 30;
+                    HitDamage = true;
                     P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1349,6 +1394,8 @@ public class JoyconPlay1 : MonoBehaviour
             if (other.gameObject.CompareTag("P2KuwagataAttack"))
             {
                 Player1HP -= 30;
+                DamageHP1 = 30;
+                HitDamage = true;
                 P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                 //ノックバック
                 //this.transform.position = new Vector3(this.transform.position.x, other.gameObject.transform.position.y + 2, this.transform.position.z);

@@ -18,7 +18,7 @@ public class KeybordPlay2 : MonoBehaviour
     public int Leg = 0;
     //外装
     //1=加速　わざと１
-    private int Exterior = 1;
+    private int Exterior = 2;
     //移動速度
     private float Speed = 40.0f;
 
@@ -105,6 +105,13 @@ public class KeybordPlay2 : MonoBehaviour
     private static int BuffCount = 3;
     public float BuffTimer = 0;
 
+    //吸血
+    private bool EnemyHit=false;
+    private float EnemyDamage = 0;
+    private bool Oncesucking =false;
+
+    //リジェネ
+    private float RejeTime =0;
 
     //キャラの向きを常に一定に
     private GameObject EnemyObj;
@@ -738,14 +745,48 @@ public class KeybordPlay2 : MonoBehaviour
                                     }
                                 }
 
-                                if(Exterior==1)
+                                if (Exterior == 1)
                                 {
-                                    if (BuffSpeed != 1.5f&&BuffCount!=0)
+                                    if (BuffSpeed != 1.5f && BuffCount != 0)
                                     {
                                         if (Input.GetKeyDown(KeyCode.B))
                                         {
                                             BuffSpeed = 1.5f;
                                             BuffCount -= 1;
+                                        }
+                                    }
+                                }
+                                else if (Exterior == 2)
+                                {
+                                    
+                                    EnemyDamage = JoyconPlay1.GetDamage();
+                                    EnemyHit = JoyconPlay1.HitP1();
+                                    if (Oncesucking == false)
+                                    {
+                                        if (EnemyHit == true)
+                                        {
+                                            if (Player2HP+(EnemyDamage / 10) < 100)
+                                            {
+                                                Player2HP += EnemyDamage / 10;
+                                                P2G.transform.position -= new Vector3(HP10per * (EnemyDamage / 100), 0, 0);
+                                                P2R.transform.position -= new Vector3(HP10per * (EnemyDamage / 100), 0, 0);
+                                                Oncesucking = true;
+                                                Invoke("Delaysucking", 1.3f);
+                                            }
+                                        }
+                                    }
+                                }
+                                else if(Exterior==3)
+                                {
+                                    RejeTime += Time.deltaTime;
+                                    if(RejeTime>=1)
+                                    {
+                                        if (Player2HP+3 < 100)
+                                        {
+                                            Player2HP += 3;
+                                            P2G.transform.position -= new Vector3(HP10per * 0.3f, 0, 0);
+                                            P2R.transform.position -= new Vector3(HP10per * 0.3f, 0, 0);
+                                            RejeTime = 0;
                                         }
                                     }
                                 }
@@ -896,7 +937,6 @@ public class KeybordPlay2 : MonoBehaviour
         {
             P2R.transform.position += new Vector3(0.2f, 0, 0);
         }
-
         //シールドブレイク
         if (ShieldPoint <= 0)
         {
@@ -1096,6 +1136,10 @@ public class KeybordPlay2 : MonoBehaviour
     void DelayKuwagata()
     {
         KuwagataSwitch = true;
+    }
+    void Delaysucking()
+    {
+        Oncesucking = false;
     }
     Vector3 GetAngleVec(GameObject _from, GameObject _to)
     {
