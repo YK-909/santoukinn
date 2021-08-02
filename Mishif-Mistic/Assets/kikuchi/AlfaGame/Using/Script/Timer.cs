@@ -78,14 +78,14 @@ public class Timer : MonoBehaviour
                 GameWinner.text = "P2の勝利";
                 GameChange = 2;
 
-                Invoke("SceneResult2", 2.0f);
+                Invoke("SceneResult2", 3.0f);
             }
             else if (KeybordPlay2.GetP2HP() <= 0)
             {
                 GameWinner.text = "P1の勝利";
                 GameChange = 2;
 
-                Invoke("SceneResult1", 2.0f);
+                Invoke("SceneResult1", 3.0f);
 
             }
             //制限時間による勝敗
