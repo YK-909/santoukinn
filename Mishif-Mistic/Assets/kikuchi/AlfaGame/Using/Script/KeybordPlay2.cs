@@ -145,6 +145,7 @@ public class KeybordPlay2 : MonoBehaviour
     private string isFalt = "isFalt";
     private string isBlown = "isBlown";
     private string isShield = "isShield";
+    private string isDown = "isDown";
 
     //固有スキルアニメーション
     private string isBite = "isBite";
@@ -1355,6 +1356,11 @@ public class KeybordPlay2 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1Impla"))
                 {
@@ -1378,6 +1384,11 @@ public class KeybordPlay2 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
 
                 }
                 if (other.gameObject.CompareTag("P1ImplaWave"))
@@ -1400,6 +1411,11 @@ public class KeybordPlay2 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1WolfAttack"))
                 {
@@ -1427,6 +1443,11 @@ public class KeybordPlay2 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1FlogAttack"))
                 {
@@ -1449,6 +1470,11 @@ public class KeybordPlay2 : MonoBehaviour
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
@@ -1473,6 +1499,11 @@ public class KeybordPlay2 : MonoBehaviour
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1ArmadilloAttack"))
                 {
@@ -1497,6 +1528,11 @@ public class KeybordPlay2 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1HorseAttack"))
                 {
@@ -1521,6 +1557,11 @@ public class KeybordPlay2 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
                 }
                 //カウンターダメージ用
                 if (other.gameObject.CompareTag("P2LionAttackBack"))

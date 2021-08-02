@@ -132,6 +132,7 @@ public class JoyconPlay1 : MonoBehaviour
     private string isFalt = "isFalt";
     private string isBlown = "isBlown";
     private string isShield = "isShield";
+    private string isDown = "isDown";
 
     //固有スキルアニメーション
     private string isBite = "isBite";
@@ -1088,6 +1089,11 @@ public class JoyconPlay1 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
                 }
                 if (other.gameObject.CompareTag("P2Impla"))
                 {
@@ -1110,6 +1116,11 @@ public class JoyconPlay1 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
                 }
                 if (other.gameObject.CompareTag("P2ImplaWave"))
                 {
@@ -1131,6 +1142,11 @@ public class JoyconPlay1 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
                 }
                 if (other.gameObject.CompareTag("P2WolfAttack"))
                 {
@@ -1160,6 +1176,11 @@ public class JoyconPlay1 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
                 }
                 if (other.gameObject.CompareTag("P2FlogAttack"))
                 {
@@ -1184,6 +1205,11 @@ public class JoyconPlay1 : MonoBehaviour
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
@@ -1209,6 +1235,11 @@ public class JoyconPlay1 : MonoBehaviour
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
                 }
                 if (other.gameObject.CompareTag("P2ArmadilloAttack"))
                 {
@@ -1230,6 +1261,11 @@ public class JoyconPlay1 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
                 }
                 if (other.gameObject.CompareTag("P2HorseAttack"))
                 {
@@ -1251,6 +1287,11 @@ public class JoyconPlay1 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
                 }
 
                 //カウンターダメージ用
