@@ -18,10 +18,19 @@ public class LoadScene: MonoBehaviour
         //audioSource = GetComponent<AudioSource>();
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Invoke("InvokeTitle", 1.0f);
+        }
+    }
+
     public void LoadSceneBottun()
     {
-            SceneManager.LoadScene(m_BackScene);
+        SceneManager.LoadScene(m_BackScene);
 
+        
         //音鳴らす
         //audioSource.PlayOneShot(TitleDecesionSound);
 
