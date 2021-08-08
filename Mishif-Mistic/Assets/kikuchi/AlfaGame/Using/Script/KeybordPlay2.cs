@@ -117,6 +117,9 @@ public class KeybordPlay2 : MonoBehaviour
     private GameObject EnemyObj;
     private Vector3 Enemy;
 
+    //ヒットエフェクト
+    public GameObject HitEff;
+
     //ADX設定
     //public CriAtomSource AnimalFSSrc;
     //public CriAtomSource LionSrc;
@@ -1361,6 +1364,11 @@ public class KeybordPlay2 : MonoBehaviour
                     {
                         this.Animator.SetBool(isDown, true);
                     }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P1Impla"))
                 {
@@ -1390,6 +1398,10 @@ public class KeybordPlay2 : MonoBehaviour
                         this.Animator.SetBool(isDown, true);
                     }
 
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P1ImplaWave"))
                 {
@@ -1416,6 +1428,11 @@ public class KeybordPlay2 : MonoBehaviour
                     {
                         this.Animator.SetBool(isDown, true);
                     }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P1WolfAttack"))
                 {
@@ -1448,6 +1465,11 @@ public class KeybordPlay2 : MonoBehaviour
                     {
                         this.Animator.SetBool(isDown, true);
                     }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P1FlogAttack"))
                 {
@@ -1475,6 +1497,11 @@ public class KeybordPlay2 : MonoBehaviour
                     {
                         this.Animator.SetBool(isDown, true);
                     }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
@@ -1504,6 +1531,11 @@ public class KeybordPlay2 : MonoBehaviour
                     {
                         this.Animator.SetBool(isDown, true);
                     }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P1ArmadilloAttack"))
                 {
@@ -1533,6 +1565,11 @@ public class KeybordPlay2 : MonoBehaviour
                     {
                         this.Animator.SetBool(isDown, true);
                     }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P1HorseAttack"))
                 {
@@ -1562,6 +1599,11 @@ public class KeybordPlay2 : MonoBehaviour
                     {
                         this.Animator.SetBool(isDown, true);
                     }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 //カウンターダメージ用
                 if (other.gameObject.CompareTag("P2LionAttackBack"))

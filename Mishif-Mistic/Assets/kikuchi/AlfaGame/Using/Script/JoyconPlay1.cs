@@ -104,6 +104,9 @@ public class JoyconPlay1 : MonoBehaviour
     private GameObject EnemyObj;
     private Vector3 Enemy;
 
+    //ヒットエフェクト
+    public GameObject HitEff;
+
     //ADX設定
     //public CriAtomSource AnimalFSSrc;
     //public CriAtomSource LionSrc;
@@ -1094,6 +1097,11 @@ public class JoyconPlay1 : MonoBehaviour
                     {
                         this.Animator.SetBool(isDown, true);
                     }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P2Impla"))
                 {
@@ -1121,6 +1129,11 @@ public class JoyconPlay1 : MonoBehaviour
                     {
                         this.Animator.SetBool(isDown, true);
                     }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P2ImplaWave"))
                 {
@@ -1147,6 +1160,11 @@ public class JoyconPlay1 : MonoBehaviour
                     {
                         this.Animator.SetBool(isDown, true);
                     }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P2WolfAttack"))
                 {
@@ -1181,6 +1199,11 @@ public class JoyconPlay1 : MonoBehaviour
                     {
                         this.Animator.SetBool(isDown, true);
                     }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P2FlogAttack"))
                 {
@@ -1210,6 +1233,11 @@ public class JoyconPlay1 : MonoBehaviour
                     {
                         this.Animator.SetBool(isDown, true);
                     }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position+transform.forward*4+transform.up*1.8f, transform.rotation)as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
@@ -1240,6 +1268,11 @@ public class JoyconPlay1 : MonoBehaviour
                     {
                         this.Animator.SetBool(isDown, true);
                     }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P2ArmadilloAttack"))
                 {
@@ -1266,6 +1299,11 @@ public class JoyconPlay1 : MonoBehaviour
                     {
                         this.Animator.SetBool(isDown, true);
                     }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P2HorseAttack"))
                 {
@@ -1292,6 +1330,11 @@ public class JoyconPlay1 : MonoBehaviour
                     {
                         this.Animator.SetBool(isDown, true);
                     }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
 
                 //カウンターダメージ用
