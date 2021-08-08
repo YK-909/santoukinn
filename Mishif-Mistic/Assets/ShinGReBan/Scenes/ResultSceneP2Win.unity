@@ -1704,8 +1704,10 @@ MonoBehaviour:
   Head: 1
   Body: 2
   Leg: 1
-  ShieldObj: {fileID: 1565718846}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 1314439387}
@@ -1722,6 +1724,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 54562658}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!114 &25117591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2920,6 +2924,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 557587445}
   P1HorseLeg: {fileID: 1265734038}
   KuwagataBlock: {fileID: 699520179}
+  HitEff: {fileID: 0}
 --- !u!114 &35081063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5750,8 +5755,10 @@ MonoBehaviour:
   Head: 2
   Body: 3
   Leg: 3
-  ShieldObj: {fileID: 501536634}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 74943588}
@@ -5769,6 +5776,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 514797263}
   P2HorseLeg: {fileID: 1839114181}
   KuwagataBlock: {fileID: 814943339}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!114 &84905884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10302,8 +10311,10 @@ MonoBehaviour:
   Head: 1
   Body: 3
   Leg: 3
-  ShieldObj: {fileID: 1655771718}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 638913551}
@@ -10321,6 +10332,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 1266998109}
   P2HorseLeg: {fileID: 1134822815}
   KuwagataBlock: {fileID: 1040307808}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!114 &169931214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10542,6 +10555,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 1233778397}
   KuwagataBlock: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &171149950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11298,6 +11312,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 1375014902}
   P1HorseLeg: {fileID: 1251621879}
   KuwagataBlock: {fileID: 186463199}
+  HitEff: {fileID: 0}
 --- !u!114 &175413609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15206,8 +15221,10 @@ MonoBehaviour:
   Head: 2
   Body: 2
   Leg: 1
-  ShieldObj: {fileID: 2030159390}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 1963044862}
@@ -15224,6 +15241,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 1485208199}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!114 &240260305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17148,8 +17167,10 @@ MonoBehaviour:
   Head: 2
   Body: 1
   Leg: 2
-  ShieldObj: {fileID: 188405445}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 1415943355}
@@ -17167,6 +17188,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 1781077398}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!114 &265577549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19229,8 +19252,10 @@ MonoBehaviour:
   Head: 1
   Body: 1
   Leg: 1
-  ShieldObj: {fileID: 667781993}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 1779485403}
@@ -19248,6 +19273,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 1632206500}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!114 &313624281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19856,8 +19883,10 @@ MonoBehaviour:
   Head: 3
   Body: 3
   Leg: 2
-  ShieldObj: {fileID: 289947922}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 330516946}
@@ -19875,6 +19904,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 249840794}
   P2HorseLeg: {fileID: 433471081}
   KuwagataBlock: {fileID: 1549086539}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!95 &322554354
 Animator:
   serializedVersion: 3
@@ -25235,8 +25266,10 @@ MonoBehaviour:
   Head: 2
   Body: 2
   Leg: 2
-  ShieldObj: {fileID: 344063186}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 552418302}
@@ -25253,6 +25286,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 2093620349}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!114 &421790942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34010,6 +34045,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 1766080032}
   KuwagataBlock: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &583007202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38562,8 +38598,10 @@ MonoBehaviour:
   Head: 2
   Body: 1
   Leg: 3
-  ShieldObj: {fileID: 31437237}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 1438221794}
@@ -38581,6 +38619,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 1406330695}
   KuwagataBlock: {fileID: 1839737417}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!95 &661240484
 Animator:
   serializedVersion: 3
@@ -41954,6 +41994,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 1404063403}
   P1HorseLeg: {fileID: 440594870}
   KuwagataBlock: {fileID: 333763904}
+  HitEff: {fileID: 0}
 --- !u!114 &716114595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42677,8 +42718,10 @@ MonoBehaviour:
   Head: 1
   Body: 2
   Leg: 2
-  ShieldObj: {fileID: 727829705}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 36205263}
@@ -42695,6 +42738,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 1267728737}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!114 &732894896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44165,6 +44210,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 1925837837}
   KuwagataBlock: {fileID: 1460507412}
+  HitEff: {fileID: 0}
 --- !u!114 &752339525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49601,8 +49647,10 @@ MonoBehaviour:
   Head: 1
   Body: 3
   Leg: 2
-  ShieldObj: {fileID: 1473551147}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 1916192008}
@@ -49620,6 +49668,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 879453059}
   P2HorseLeg: {fileID: 1543581624}
   KuwagataBlock: {fileID: 248630492}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!95 &853842316
 Animator:
   serializedVersion: 3
@@ -60791,6 +60841,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 1855062396}
   KuwagataBlock: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &1040079223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61775,6 +61826,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 921079334}
   P1HorseLeg: {fileID: 667039139}
   KuwagataBlock: {fileID: 2091348846}
+  HitEff: {fileID: 0}
 --- !u!95 &1045322315
 Animator:
   serializedVersion: 3
@@ -72649,6 +72701,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 1057712596}
   P1HorseLeg: {fileID: 666123758}
   KuwagataBlock: {fileID: 1185172600}
+  HitEff: {fileID: 0}
 --- !u!114 &1245757202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84049,8 +84102,10 @@ MonoBehaviour:
   Head: 1
   Body: 1
   Leg: 2
-  ShieldObj: {fileID: 1658640136}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 928085157}
@@ -84068,6 +84123,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 1114028118}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!114 &1452520078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84469,8 +84526,10 @@ MonoBehaviour:
   Head: 2
   Body: 1
   Leg: 1
-  ShieldObj: {fileID: 263278744}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 1567167772}
@@ -84488,6 +84547,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 322935194}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!114 &1456233830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86686,6 +86747,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 429463361}
   KuwagataBlock: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &1499212317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89365,6 +89427,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 1192155219}
   KuwagataBlock: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &1544395175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96438,6 +96501,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -6288747229944292326, guid: 7e41791d01e2f7e408e38303f81a410f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f5649ece5eca244bab3f48b95021d3c, type: 2}
+    - target: {fileID: -6288747229944292326, guid: 7e41791d01e2f7e408e38303f81a410f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 180a0238ee537d74a88f28a6e196878f, type: 2}
     - target: {fileID: -6243139312899641497, guid: 7e41791d01e2f7e408e38303f81a410f,
         type: 3}
       propertyPath: m_Layer
@@ -96889,6 +96962,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 833315444}
   P1HorseLeg: {fileID: 2069326642}
   KuwagataBlock: {fileID: 213890963}
+  HitEff: {fileID: 0}
 --- !u!114 &1680802789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101314,8 +101388,10 @@ MonoBehaviour:
   Head: 2
   Body: 3
   Leg: 2
-  ShieldObj: {fileID: 1296619906}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 1405794189}
@@ -101333,6 +101409,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 1917140210}
   P2HorseLeg: {fileID: 344418311}
   KuwagataBlock: {fileID: 1807539241}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!114 &1757061806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102764,6 +102842,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 1506796194}
   KuwagataBlock: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &1770644025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103641,6 +103720,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 2089518224}
   P1HorseLeg: {fileID: 1798275365}
   KuwagataBlock: {fileID: 176778875}
+  HitEff: {fileID: 0}
 --- !u!95 &1780702018
 Animator:
   serializedVersion: 3
@@ -108175,8 +108255,10 @@ MonoBehaviour:
   Head: 2
   Body: 3
   Leg: 1
-  ShieldObj: {fileID: 400650180}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 864808285}
@@ -108194,6 +108276,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 1589574742}
   P2HorseLeg: {fileID: 72640472}
   KuwagataBlock: {fileID: 2105736568}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!114 &1858688590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110964,6 +111048,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 2594073}
   KuwagataBlock: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &1897842379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113394,8 +113479,10 @@ MonoBehaviour:
   Head: 1
   Body: 2
   Leg: 3
-  ShieldObj: {fileID: 922042231}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 682856188}
@@ -113413,6 +113500,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 2136471624}
   P2HorseLeg: {fileID: 114847717}
   KuwagataBlock: {fileID: 1503657013}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!95 &1931497816
 Animator:
   serializedVersion: 3
@@ -114150,6 +114239,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 1019081986}
   KuwagataBlock: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &1946950967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115248,8 +115338,10 @@ MonoBehaviour:
   Head: 1
   Body: 3
   Leg: 1
-  ShieldObj: {fileID: 2053256345}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 1558669753}
@@ -115267,6 +115359,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 178597747}
   P2HorseLeg: {fileID: 1167849879}
   KuwagataBlock: {fileID: 565539615}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!95 &1958320976
 Animator:
   serializedVersion: 3
@@ -118394,6 +118488,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 1539586301}
   P1HorseLeg: {fileID: 1363902018}
   KuwagataBlock: {fileID: 1374459410}
+  HitEff: {fileID: 0}
 --- !u!95 &2001858149
 Animator:
   serializedVersion: 3
@@ -119041,6 +119136,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 948413898}
   P1HorseLeg: {fileID: 1335546188}
   KuwagataBlock: {fileID: 1099836716}
+  HitEff: {fileID: 0}
 --- !u!95 &2007208149
 Animator:
   serializedVersion: 3
@@ -120196,8 +120292,10 @@ MonoBehaviour:
   Head: 1
   Body: 1
   Leg: 3
-  ShieldObj: {fileID: 1628715722}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 1557628412}
@@ -120215,6 +120313,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 1527945410}
   P2HorseLeg: {fileID: 1065582171}
   KuwagataBlock: {fileID: 258634935}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!114 &2020839762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122403,6 +122503,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -6288747229944292326, guid: 7e41791d01e2f7e408e38303f81a410f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f5649ece5eca244bab3f48b95021d3c, type: 2}
+    - target: {fileID: -6288747229944292326, guid: 7e41791d01e2f7e408e38303f81a410f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 180a0238ee537d74a88f28a6e196878f, type: 2}
     - target: {fileID: -6243139312899641497, guid: 7e41791d01e2f7e408e38303f81a410f,
         type: 3}
       propertyPath: m_Layer
@@ -122835,8 +122945,10 @@ MonoBehaviour:
   Head: 2
   Body: 2
   Leg: 3
-  ShieldObj: {fileID: 2001652739}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 0}
   P2R: {fileID: 0}
   P2FlogTongue: {fileID: 1950907275}
@@ -122854,6 +122966,8 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 953493721}
   P2HorseLeg: {fileID: 698267225}
   KuwagataBlock: {fileID: 765404257}
+  BuffTimer: 0
+  HitEff: {fileID: 0}
 --- !u!114 &2054272579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127070,6 +127184,7 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 449086981}
   KuwagataBlock: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &2142120821
 MonoBehaviour:
   m_ObjectHideFlags: 0
