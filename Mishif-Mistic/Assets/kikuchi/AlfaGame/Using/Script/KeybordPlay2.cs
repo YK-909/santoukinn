@@ -105,10 +105,7 @@ public class KeybordPlay2 : MonoBehaviour
     private static int BuffCount = 3;
     public float BuffTimer = 0;
 
-    //吸血
-    private bool EnemyHit=false;
-    private float EnemyDamage = 0;
-    private bool Oncesucking =false;
+ 
 
     //リジェネ
     private float RejeTime =0;
@@ -194,11 +191,14 @@ public class KeybordPlay2 : MonoBehaviour
     {
         Gamemode = Timer.GetGamemode();
         P2TurtleGard.transform.position = this.transform.position + transform.forward * 5+transform.up*-2;
-
         if (Gamemode == 1)
         {
             if (AllActionInterval == false)
             {
+                Player2HP = JoyconPlay1.GetP2HP();
+                //重力とは別な上からの力　要調整
+                Rb.AddForce(new Vector3(0,-30,0), ForceMode.Force);
+
                 if (!CalledOncePoint)
                 {
                     CalledOncePoint = true;
@@ -763,22 +763,7 @@ public class KeybordPlay2 : MonoBehaviour
                                 else if (Exterior == 2)
                                 {
                                     
-                                    EnemyDamage = JoyconPlay1.GetDamage();
-                                    EnemyHit = JoyconPlay1.HitP1();
-                                    if (Oncesucking == false)
-                                    {
-                                        if (EnemyHit == true)
-                                        {
-                                            if (Player2HP+(EnemyDamage / 10) < 100)
-                                            {
-                                                Player2HP += EnemyDamage / 10;
-                                                P2G.transform.position -= new Vector3(HP10per * (EnemyDamage / 100), 0, 0);
-                                                P2R.transform.position -= new Vector3(HP10per * (EnemyDamage / 100), 0, 0);
-                                                Oncesucking = true;
-                                                Invoke("Delaysucking", 1.3f);
-                                            }
-                                        }
-                                    }
+                                
                                 }
                                 else if(Exterior==3)
                                 {
@@ -1140,10 +1125,6 @@ public class KeybordPlay2 : MonoBehaviour
     void DelayKuwagata()
     {
         KuwagataSwitch = true;
-    }
-    void Delaysucking()
-    {
-        Oncesucking = false;
     }
     Vector3 GetAngleVec(GameObject _from, GameObject _to)
     {

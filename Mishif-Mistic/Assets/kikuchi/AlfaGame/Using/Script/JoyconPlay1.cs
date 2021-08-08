@@ -97,8 +97,10 @@ public class JoyconPlay1 : MonoBehaviour
     private bool CalledOncePoint = false;
 
     //吸血
-    public static float DamageHP1=0;
-    public static bool HitDamage = false;
+    private float DamageHP1=0;
+    private static float EnemyHP =100;
+    public GameObject P2G;
+    public GameObject P2R;
 
     //キャラの向きを常に一定に
     private GameObject EnemyObj;
@@ -176,12 +178,15 @@ public class JoyconPlay1 : MonoBehaviour
         P1TurtleGard.transform.position = this.transform.position + transform.forward * 5 + transform.up * -2;
         //シールドの色変更　tの値で変わる　調整中無視していいよ
         ShieldObj.GetComponent<Renderer>().material.color = Color.HSVToRGB(ShieldPoint * 150, 1, 1);
-
+        DamageHP1 = 0;
         if (Gamemode == 1)
         {
             if (AllActionInterval == false)
             {
-                HitDamage = false;
+                EnemyHP = KeybordPlay2.GetP2HP();
+                //重力とは別な上からの力　要調整
+                Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Force);
+
                 if (!CalledOncePoint)
                 {
                     CalledOncePoint = true;
@@ -881,6 +886,19 @@ public class JoyconPlay1 : MonoBehaviour
         KuwagataSwitch = true;
     }
 
+    void HPdrain()
+    {
+        if (EnemyHP + (DamageHP1 / 10) < 100)
+        {
+            EnemyHP += DamageHP1 / 10;
+            P2G.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
+            P2R.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
+        }
+    }
+    public static float GetP2HP()
+    {
+        return EnemyHP;
+    }
     void KuwagataNock()
     {
         Rb.AddForce(KuwagataVec * 50, ForceMode.Impulse);
@@ -898,14 +916,6 @@ public class JoyconPlay1 : MonoBehaviour
         return Player1HP;
     }
 
-    public static float GetDamage()
-    {
-        return DamageHP1;
-    }
-    public static bool HitP1()
-    {
-        return HitDamage;
-    }
 
     void OnCollisionEnter(Collision other)
     {
@@ -1067,7 +1077,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 30;
                     DamageHP1 = 30;
-                    HitDamage = true;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
@@ -1107,7 +1117,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 30;
                     DamageHP1 = 30;
-                    HitDamage = true;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1139,7 +1149,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 10;
                     DamageHP1 = 10;
-                    HitDamage = true;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1170,7 +1180,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 20;
                     DamageHP1 = 20;
-                    HitDamage = true;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2f, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
@@ -1209,7 +1219,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 1.5f;
                     DamageHP1 = 1.5f;
-                    HitDamage = true;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 0.15f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject,this.gameObject);
@@ -1243,7 +1253,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 3;
                     DamageHP1 = 3;
-                    HitDamage = true;
+                    HPdrain();
                     Poisontimer = 0;
                     P1G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
@@ -1278,7 +1288,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 25;
                     DamageHP1 = 25;
-                    HitDamage = true;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1309,7 +1319,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 25;
                     DamageHP1 = 25;
-                    HitDamage = true;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1342,7 +1352,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 24;
                     DamageHP1 = 24;
-                    HitDamage = true;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2 * 1.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1360,7 +1370,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 36;
                     DamageHP1 = 36;
-                    HitDamage = true;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     Vector3 ToVec = GetAngleVec(other.gameObject, P1ImplaBlock);
                     P1ImplaBlock.SetActive(false);
@@ -1377,7 +1387,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 12;
                     DamageHP1 = 12;
-                    HitDamage = true;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 1.2f, 0, 0);
                     //行動停止
                     AllActionInterval = true;
@@ -1392,6 +1402,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 3f;
                     DamageHP1 = 3;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1409,7 +1420,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 22;
                     DamageHP1 = 22;
-                    HitDamage = true;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1426,7 +1437,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 3.6f;
                     DamageHP1 = 3.6f;
-                    HitDamage = true;
+                    HPdrain();
                     Poisontimer = 0;
                     P1G.transform.position += new Vector3(HP10per * 0.36f, 0, 0);
                     //ノックバック
@@ -1444,7 +1455,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 30;
                     DamageHP1 = 30;
-                    HitDamage = true;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1461,7 +1472,7 @@ public class JoyconPlay1 : MonoBehaviour
                 {
                     Player1HP -= 30;
                     DamageHP1 = 30;
-                    HitDamage = true;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1479,7 +1490,7 @@ public class JoyconPlay1 : MonoBehaviour
             {
                 Player1HP -= 30;
                 DamageHP1 = 30;
-                HitDamage = true;
+                HPdrain();
                 P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                 //ノックバック
                 //this.transform.position = new Vector3(this.transform.position.x, other.gameObject.transform.position.y + 2, this.transform.position.z);
