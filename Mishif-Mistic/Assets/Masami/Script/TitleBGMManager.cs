@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TitleBGMManager : MonoBehaviour
 {
-    public string TitleBGMcueSheet = "TitleBGM";
+    public string TitleBGMcueSheet = "TitleBGMcueSheet";
 
     private CriAtomSource atomSource;
     static private TitleBGMManager instance = null;
@@ -31,12 +31,12 @@ public class TitleBGMManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        instance.atomSource.Play("TitleBGM");
     }
 
     static public void PlayCueId(int cueID)
     {
-        instance.atomSource.Play("TitleBGM");
+        
     }
 
     private void OnDestroy()
