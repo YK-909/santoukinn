@@ -6,8 +6,8 @@ public class P1ChooseArea : MonoBehaviour
 {
     public CriAtomSource SwitchSlotLRSrc;
 
-    private float minX = 270;
-    private float maxX = 680;
+    private float minX = 280;
+    private float maxX = 770;
     new string name = "Horizontal3";
     private bool delay = false;
 
@@ -25,7 +25,7 @@ public class P1ChooseArea : MonoBehaviour
             float x = Input.GetAxis("Horizontal3");
             if (x < 0)
             {
-                transform.Translate(-200, 0, 0);
+                transform.Translate(-170, 0, 0);
 
                 //音鳴らす
                 SwitchSlotLRSrc.Play();
@@ -35,7 +35,7 @@ public class P1ChooseArea : MonoBehaviour
 
             if (x > 0)
             {
-                transform.Translate(200, 0, 0);
+                transform.Translate(170, 0, 0);
 
                 //音鳴らす
                 SwitchSlotLRSrc.Play();

@@ -10,6 +10,8 @@ public class PreviewP1Kimera121 : MonoBehaviour
     int Body;
     [SerializeField]
     int Leg;
+    [SerializeField]
+    int Passive;
 
     GameObject instance;
 
@@ -26,7 +28,7 @@ public class PreviewP1Kimera121 : MonoBehaviour
     {
         if(One)
         {
-            if (Contlole.head == Head && ContloleBody.body == Body && ContloleLeg.leg == Leg)
+            if (Contlole.head == Head && ContloleBody.body == Body && ContloleLeg.leg == Leg && ContlolePassive1.passive == Passive)
             {
                 //if文の外でやると無駄に毎フレーム実行されるので中にする
                 GameObject obj = (GameObject)Resources.Load("CP1Kimera121");
@@ -40,7 +42,7 @@ public class PreviewP1Kimera121 : MonoBehaviour
             instance.SetActive(false);
         }
 
-        if (Contlole.head == Head && ContloleBody.body == Body && ContloleLeg.leg == Leg)
+        if (Contlole.head == Head && ContloleBody.body == Body && ContloleLeg.leg == Leg && ContlolePassive1.passive == Passive)
         {
             instance.SetActive(true);
             instance.transform.RotateAround(new Vector3(-4.8f, -1, 10), transform.up, 20 * Time.deltaTime);
