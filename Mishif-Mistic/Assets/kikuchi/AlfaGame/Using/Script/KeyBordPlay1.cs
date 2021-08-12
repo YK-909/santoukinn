@@ -16,15 +16,21 @@ public class KeyBordPlay1 : MonoBehaviour
     public int Body = 0;
     //1=インパラ 1=オオカミ
     public int Leg = 0;
-
+    //外装
+    //1=加速　わざと１
+    private int Exterior = 2;
     //移動速度
     private float Speed = 40.0f;
+    private Vector3 Direction;
 
     //シールド　※カメとの変数に注意　調整中無視していいよ
     private bool Shield = false;
     public GameObject ShieldObj;
     [Range(0f, 1f)]
-    public float ShieldPoint;
+    private float ShieldPoint = 1.0f;
+    public GameObject Shield_Blue;
+    public GameObject Shield_Yellow;
+    public GameObject Shield_Red;
 
     //普通のジャンプ
     private bool NormalJump = false;
@@ -81,6 +87,7 @@ public class KeyBordPlay1 : MonoBehaviour
     private int ArmadilloMode = 0;
     private bool ArmadilloSwitch = true;
     public GameObject ArmadilloBlock;
+    private bool OnceArma = true;
 
     //馬の攻撃
     public GameObject P1HorseLeg;
@@ -89,13 +96,29 @@ public class KeyBordPlay1 : MonoBehaviour
     //クワガタの攻撃
     public GameObject KuwagataBlock;
     private bool KuwagataSwitch = true;
+    private Vector3 KuwagataVec;
 
     private bool AllActionInterval = false;
     private bool CalledOncePoint = false;
 
+    //加速するための
+    private float BuffSpeed = 1.0f;
+    //外部に数値を持っていく
+    private static int BuffCountP1 = 3;
+    public float BuffTimer = 0;
+
+    //吸血
+    private float DamageHP1 = 0;
+    private static float EnemyHP_2 = 100;
+    public GameObject P2G;
+    public GameObject P2R;
+
     //キャラの向きを常に一定に
     private GameObject EnemyObj;
     private Vector3 Enemy;
+
+    //ヒットエフェクト
+    public GameObject HitEff;
 
     //ADX設定
     //public CriAtomSource AnimalFSSrc;
@@ -125,6 +148,7 @@ public class KeyBordPlay1 : MonoBehaviour
     private string isFalt = "isFalt";
     private string isBlown = "isBlown";
     private string isShield = "isShield";
+    private string isDown = "isDown";
 
     //固有スキルアニメーション
     private string isBite = "isBite";
@@ -152,6 +176,11 @@ public class KeyBordPlay1 : MonoBehaviour
         Rb = GetComponent<Rigidbody>();
         Rb.isKinematic = true;
         EnemyObj = GameObject.Find("P2camera");
+        ShieldObj.SetActive(false);
+        if (Exterior == 1)
+        {
+            BuffSpeed = 0.8f;
+        }
 
         Animator = GetComponent<Animator>();
 
@@ -163,13 +192,19 @@ public class KeyBordPlay1 : MonoBehaviour
     {
         Gamemode = Timerbotgame.GetGamemode();
         P1TurtleGard.transform.position = this.transform.position + transform.forward * 5 + transform.up * -2;
-        //シールドの色変更　tの値で変わる　調整中無視していいよ
-        ShieldObj.GetComponent<Renderer>().material.color = Color.HSVToRGB(ShieldPoint * 150, 1, 1);
-
+        DamageHP1 = 0;
         if (Gamemode == 1)
         {
             if (AllActionInterval == false)
             {
+                if (Exterior == 2)
+                {
+                    Player1HP = BotFSW.GetP1HP();
+                }
+                EnemyHP_2 = BotFSW.GetP2HP();
+                //重力とは別な上からの力　要調整
+                Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Force);
+
                 if (!CalledOncePoint)
                 {
                     CalledOncePoint = true;
@@ -185,11 +220,11 @@ public class KeyBordPlay1 : MonoBehaviour
                             {
                                 if (NormalJump == false)
                                 {
-                                    Speed = 40.0f;
+                                    Speed = 40.0f * BuffSpeed; ;
                                 }
                                 else
                                 {
-                                    Speed = 15f;
+                                    Speed = 15f * BuffSpeed; ;
                                 }
 
                                 if (Input.GetKey(KeyCode.UpArrow))
@@ -198,11 +233,31 @@ public class KeyBordPlay1 : MonoBehaviour
                                     transform.rotation = Quaternion.Euler(0, 0, 0);
                                     //前方に移動する
                                     transform.position += transform.forward * Speed * Time.deltaTime;
-                                    if (Speed == 40.0)
+                                    if (Speed == 40.0 * BuffSpeed)
                                     {
-                                        //音鳴らす
-                                        //AnimalFSSrc.Play();
-                                        atomSrc.Play("Garden_Footsteps");
+                                        //インパラの足音
+                                        if (Leg == 1)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Impala_GFootsteps");
+                                        }
+
+                                        //狼の足音
+                                        if (Leg == 2)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Garden_Footsteps");
+                                        }
+
+                                        //馬の足音
+                                        if (Leg == 3)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Horse_GFootsteps");
+                                        }
                                     }
 
                                     //走る
@@ -215,11 +270,31 @@ public class KeyBordPlay1 : MonoBehaviour
                                     //前方に移動する
                                     transform.position += transform.forward * Speed * Time.deltaTime;
 
-                                    if (Speed == 40.0)
+                                    if (Speed == 40.0 * BuffSpeed)
                                     {
-                                        //音鳴らす
-                                        //AnimalFSSrc.Play();
-                                        atomSrc.Play("Garden_Footsteps");
+                                        //インパラの足音
+                                        if (Leg == 1)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Impala_GFootsteps");
+                                        }
+
+                                        //狼の足音
+                                        if (Leg == 2)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Garden_Footsteps");
+                                        }
+
+                                        //馬の足音
+                                        if (Leg == 3)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Horse_GFootsteps");
+                                        }
                                     }
 
                                     //走る
@@ -231,11 +306,31 @@ public class KeyBordPlay1 : MonoBehaviour
                                     transform.rotation = Quaternion.Euler(0, 90, 0);
                                     //前方に移動する
                                     transform.position += transform.forward * Speed * Time.deltaTime;
-                                    if (Speed == 40.0)
+                                    if (Speed == 40.0 * BuffSpeed)
                                     {
-                                        //音鳴らす
-                                        //AnimalFSSrc.Play();
-                                        atomSrc.Play("Garden_Footsteps");
+                                        //インパラの足音
+                                        if (Leg == 1)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Impala_GFootsteps");
+                                        }
+
+                                        //狼の足音
+                                        if (Leg == 2)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Garden_Footsteps");
+                                        }
+
+                                        //馬の足音
+                                        if (Leg == 3)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Horse_GFootsteps");
+                                        }
                                     }
 
                                     //走る
@@ -248,11 +343,31 @@ public class KeyBordPlay1 : MonoBehaviour
                                     //前方に移動する
                                     transform.position += transform.forward * Speed * Time.deltaTime;
 
-                                    if (Speed == 40.0)
+                                    if (Speed == 40.0 * BuffSpeed)
                                     {
-                                        //音鳴らす
-                                        //AnimalFSSrc.Play();
-                                        atomSrc.Play("Garden_Footsteps");
+                                        //インパラの足音
+                                        if (Leg == 1)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Impala_GFootsteps");
+                                        }
+
+                                        //狼の足音
+                                        if (Leg == 2)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Garden_Footsteps");
+                                        }
+
+                                        //馬の足音
+                                        if (Leg == 3)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Horse_GFootsteps");
+                                        }
                                     }
 
                                     //走る
@@ -304,7 +419,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                             Invoke("DelayFlog", 1.5f);
                                             AllActionInterval = true;
                                             //行動停止
-                                            Invoke("ActionInterval", 3.0f);
+                                            Invoke("ActionInterval", 2.65f);
 
                                             //音止める
                                             //FrogSwingSrc.Stop();
@@ -404,7 +519,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                                 //行動停止
                                                 Invoke("ActionInterval", 2.3f);
                                                 //リキャストタイム
-                                                Invoke("DelayTartle", 3f);
+                                                Invoke("DelayTartle", 3.2f);
 
                                                 //カメのシールド
                                                 this.Animator.SetBool(isKameShield, true);
@@ -458,27 +573,38 @@ public class KeyBordPlay1 : MonoBehaviour
                                                 if (Input.GetKey(KeyCode.X))
                                                 {
                                                     Debug.Log(ArmadilloSpeed);
-                                                    if (ArmadilloSpeed < 60)
+                                                    if (ArmadilloSpeed < 30)
                                                     {
-                                                        ArmadilloSpeed += 15 * Time.deltaTime;
+                                                        ArmadilloSpeed += 10 * Time.deltaTime;
                                                     }
+
+                                                    //ローリングアタック
+                                                    this.Animator.SetBool(isRollStr, true);
+                                                    this.Animator.SetBool(isRollFin, false);
 
                                                     //音鳴らす
                                                     atomSrc.Play("Armadillo_Roll");
                                                 }
-                                                if (Input.GetKeyUp(KeyCode.Joystick1Button3))
+                                                if (Input.GetKeyUp(KeyCode.X))
                                                 {
                                                     ArmadilloMode = 1;
+                                                    //アニメーションの位置をずらしたよ
+                                                    this.Animator.SetBool(isRollStr, false);
                                                 }
                                             }
                                             else if (ArmadilloMode == 1)
                                             {
                                                 if (ArmadilloSpeed > 0)
                                                 {
+                                                    if (OnceArma == true)
+                                                    {
+                                                        ArmadilloSpeed += 50;
+                                                        OnceArma = false;
+                                                    }
                                                     ArmadilloBlock.SetActive(true);
                                                     ArmadilloBlock.tag = "P1ArmadilloAttack";
-                                                    ArmadilloSpeed += -5 * Time.deltaTime;
-                                                    transform.position += transform.forward * ArmadilloSpeed * Time.deltaTime;
+                                                    ArmadilloSpeed += -20 * Time.deltaTime;
+                                                    transform.position += transform.forward * 50 * Time.deltaTime;
                                                     if (Input.GetKey(KeyCode.RightArrow))
                                                     {
                                                         //右に回転
@@ -492,6 +618,8 @@ public class KeyBordPlay1 : MonoBehaviour
                                                 }
                                                 else
                                                 {
+                                                    OnceArma = true;
+                                                    this.Animator.SetBool(isRollFin, true);
                                                     ArmadilloBlock.SetActive(false);
                                                     ArmadilloMode = 0;
                                                     //オブジェクトが消える時間
@@ -621,6 +749,27 @@ public class KeyBordPlay1 : MonoBehaviour
                                         this.Animator.SetBool(isKick, false);
                                     }
                                 }
+
+                                if (Exterior == 1)
+                                {
+                                    if (BuffSpeed != 1.5f && BuffCountP1 != 0)
+                                    {
+                                        if (Input.GetKey(KeyCode.B))
+                                        {
+                                            BuffSpeed = 1.5f;
+                                            BuffCountP1 -= 1;
+                                        }
+                                    }
+                                }
+                                else if (Exterior == 2)
+                                {
+
+
+                                }
+                                else if (Exterior == 3)
+                                {
+
+                                }
                             }
                         }
                     }
@@ -645,18 +794,40 @@ public class KeyBordPlay1 : MonoBehaviour
                                 if (FlogSwitch == true)
                                 {
                                     Shield = true;
-                                    ShieldObj.SetActive(true);
+                                    Shield_Blue.transform.position = ShieldObj.transform.position;
+                                    Shield_Yellow.transform.position = ShieldObj.transform.position;
+                                    Shield_Red.transform.position = ShieldObj.transform.position;
+                                    if (ShieldPoint > 0.6f)
+                                    {
+                                        Shield_Blue.SetActive(true);
+                                        Shield_Yellow.SetActive(false);
+                                        Shield_Red.SetActive(false);
+                                    }
+                                    if (0.6f >= ShieldPoint && ShieldPoint > 0.3f)
+                                    {
+                                        Shield_Blue.SetActive(false);
+                                        Shield_Yellow.SetActive(true);
+                                        Shield_Red.SetActive(false);
+                                    }
+                                    if (0.3f >= ShieldPoint && ShieldPoint > 0f)
+                                    {
+                                        Shield_Blue.SetActive(false);
+                                        Shield_Yellow.SetActive(false);
+                                        Shield_Red.SetActive(true);
+                                    }
                                     if (ShieldPoint >= 0)
                                     {
                                         //シールドの減少量
                                         ShieldPoint -= 0.001f;
                                     }
-                                }
 
+                                }
                             }
                             else
                             {
-                                ShieldObj.SetActive(false);
+                                Shield_Blue.SetActive(false);
+                                Shield_Yellow.SetActive(false);
+                                Shield_Red.SetActive(false);
                                 //シールド
                                 if (ShieldPoint <= 1)
                                 {
@@ -702,6 +873,20 @@ public class KeyBordPlay1 : MonoBehaviour
         else if (Gamemode == 2)
         {
             Player1HP = 100;
+        }
+
+        if (BuffSpeed > 1)
+        {
+            BuffTimer += Time.deltaTime;
+            Debug.Log(BuffTimer);
+            if (BuffTimer > 5)
+            {
+                BuffSpeed = 0.8f;
+            }
+        }
+        else
+        {
+            BuffTimer = 0;
         }
 
         if (Poisontimer < Poisoningtime)
@@ -922,12 +1107,28 @@ public class KeyBordPlay1 : MonoBehaviour
         Vector3 toVec = new Vector3(_to.transform.position.x, 0, _to.transform.position.z);
         return Vector3.Normalize(toVec - fromVec);
     }
+    void HPdrain()
+    {
+        if (EnemyHP_2 + (DamageHP1 / 10) < 100)
+        {
+            EnemyHP_2 += DamageHP1 / 10;
+            P2G.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
+            P2R.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
+        }
+    }
+    public static float GetP2HP()
+    {
+        return EnemyHP_2;
+    }
+    public static int GetBuffCountP1()
+    {
+        return BuffCountP1;
+    }
 
     public static float GetP1HP()
     {
         return Player1HP;
     }
-
     void OnCollisionEnter(Collision other)
     {
 
@@ -959,6 +1160,11 @@ public class KeyBordPlay1 : MonoBehaviour
     //元の数字に10+
     void OnTriggerStay(Collider other)
     {
+        if (other.gameObject.tag != "floor")
+        {
+            Rb.isKinematic = false;
+            ArmadilloSpeed = 0;
+        }
         if (Invincible == false)
         {
             if (Shield == true)
@@ -1082,6 +1288,8 @@ public class KeyBordPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2LionAttack"))
                 {
                     Player1HP -= 30;
+                    DamageHP1 = 30;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
@@ -1091,6 +1299,9 @@ public class KeyBordPlay1 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1103,15 +1314,30 @@ public class KeyBordPlay1 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P2Impla"))
                 {
                     Player1HP -= 30;
+                    DamageHP1 = 30;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Debug.Log(ToVec);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1120,14 +1346,29 @@ public class KeyBordPlay1 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P2ImplaWave"))
                 {
                     Player1HP -= 10;
+                    DamageHP1 = 10;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 30, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1136,10 +1377,22 @@ public class KeyBordPlay1 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P2WolfAttack"))
                 {
                     Player1HP -= 20;
+                    DamageHP1 = 20;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2f, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
@@ -1149,6 +1402,9 @@ public class KeyBordPlay1 : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 40, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1160,14 +1416,29 @@ public class KeyBordPlay1 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P2FlogAttack"))
                 {
                     Player1HP -= 1.5f;
+                    DamageHP1 = 1.5f;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 0.15f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 0.3f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.6f);
@@ -1179,18 +1450,33 @@ public class KeyBordPlay1 : MonoBehaviour
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
                     Player1HP -= 3;
+                    DamageHP1 = 3;
+                    HPdrain();
                     Poisontimer = 0;
                     P1G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 0.3f);
                     //無敵タイム開始
                     Invincible = true;
-                    Invoke("InvincibleTime", 0.7f);
+                    Invoke("InvincibleTime", 0.5f);
                     P1ImplaBlock.SetActive(false);
                     //音鳴らす
                     //AnimalDamage.Play();
@@ -1199,57 +1485,94 @@ public class KeyBordPlay1 : MonoBehaviour
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P2ArmadilloAttack"))
                 {
                     Player1HP -= 25;
+                    DamageHP1 = 25;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
                     P1ImplaBlock.SetActive(false);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
-
-                    //音鳴らす
-                    //AnimalDamage.Play();
-                    atomSrc.Play("Armadillo_Hit");
                     DelayFlog();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P2HorseAttack"))
                 {
                     Player1HP -= 25;
+                    DamageHP1 = 25;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
                     P1ImplaBlock.SetActive(false);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
-
-                    //音鳴らす
-                    //AnimalDamage.Play();
-                    atomSrc.Play("Horse_Kick");
                     DelayFlog();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (JoyconPlay1.GetP1HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
 
                 //カウンターダメージ用
                 if (other.gameObject.CompareTag("P1LionAttackBack"))
                 {
-                    Player1HP -= 24;
+                    Player1HP -= 36;
+                    DamageHP1 = 36;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2 * 1.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 55, ForceMode.Impulse);
                     P1ImplaBlock.SetActive(false);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1258,10 +1581,15 @@ public class KeyBordPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1ImplaBack"))
                 {
                     Player1HP -= 36;
+                    DamageHP1 = 36;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     Vector3 ToVec = GetAngleVec(other.gameObject, P1ImplaBlock);
                     P1ImplaBlock.SetActive(false);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1270,7 +1598,12 @@ public class KeyBordPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1ImplaWaveBack"))
                 {
                     Player1HP -= 12;
+                    DamageHP1 = 12;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 1.2f, 0, 0);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     P1ImplaBlock.SetActive(false);
                     Invincible = true;
@@ -1280,23 +1613,33 @@ public class KeyBordPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1FlogAttackBack"))
                 {
                     Player1HP -= 3f;
+                    DamageHP1 = 3;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 20, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 0.2f);
                     //無敵タイム開始
                     Invincible = true;
-                    Invoke("InvincibleTime", 0.3f);
+                    Invoke("InvincibleTime", 0.5f);
                     DelayFlog();
                 }
                 //オオカミのカウンターのタグに切り替えが未実装
                 if (other.gameObject.CompareTag("P1WolfAttackBack"))
                 {
                     Player1HP -= 22;
+                    DamageHP1 = 22;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 55, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1305,11 +1648,16 @@ public class KeyBordPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("PoisonAttackBack"))
                 {
                     Player1HP -= 3.6f;
+                    DamageHP1 = 3.6f;
+                    HPdrain();
                     Poisontimer = 0;
                     P1G.transform.position += new Vector3(HP10per * 0.36f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 16, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1318,10 +1666,15 @@ public class KeyBordPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1ArmadilloAttackBack"))
                 {
                     Player1HP -= 30;
+                    DamageHP1 = 30;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1330,10 +1683,15 @@ public class KeyBordPlay1 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1HorseAttackBack"))
                 {
                     Player1HP -= 30;
+                    DamageHP1 = 30;
+                    HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1343,12 +1701,16 @@ public class KeyBordPlay1 : MonoBehaviour
             if (other.gameObject.CompareTag("P2KuwagataAttack"))
             {
                 Player1HP -= 30;
+                DamageHP1 = 30;
+                HPdrain();
                 P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                 //ノックバック
-                this.transform.position = new Vector3(this.transform.position.x, other.gameObject.transform.position.y + 2, this.transform.position.z);
-                Vector3 ToVec = GetAngleVec(this.gameObject, other.gameObject);
-                Rb.AddForce(transform.up * 20, ForceMode.Impulse);
-                Rb.AddForce(ToVec * 40, ForceMode.Impulse);
+                //this.transform.position = new Vector3(this.transform.position.x, other.gameObject.transform.position.y + 2, this.transform.position.z);
+                //Vector3 ToVec = GetAngleVec(this.gameObject, other.gameObject);
+                KuwagataVec = GetAngleVec(this.gameObject, other.gameObject);
+                Rb.AddForce(transform.up * 50, ForceMode.Impulse);
+                Invoke("KuwagataNock", 0.5f);
+                //Rb.AddForce(ToVec * 50, ForceMode.Impulse);
                 //無敵タイム開始
                 Invincible = true;
                 Invoke("InvincibleTime", 1.5f);

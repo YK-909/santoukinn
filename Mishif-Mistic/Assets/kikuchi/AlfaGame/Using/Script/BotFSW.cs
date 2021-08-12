@@ -6,28 +6,28 @@ public class BotFSW : MonoBehaviour
 {
     //体力
     public static float Player2HP = 100;
-    //スタートの合図のため
+    //
     private int Gamemode = 0;
 
     //キャラ変更
     //1=ライオン 2=カエル
     public int Head = 0;
-    //1=カメ 1=サソリ
+    //1=カメ 2=サソリ 3=アルマジロ
     public int Body = 0;
-    //1=インパラ 1=オオカミ
+    //1=インパラ 2=オオカミ 3=馬
     public int Leg = 0;
-
+    //外装
+    //1=加速 2=吸血　わざと１
+    private int Exterior = 0;
     //移動速度
     private float Speed = 40.0f;
-    private Vector3 Direction;
-
 
     //シールド　※カメとの変数に注意　調整中無視していいよ
     private bool Shield = false;
     public GameObject ShieldObj;
     [Range(0f, 1f)]
-    public float ShieldPoint;
-
+    private float ShieldPoint = 1.0f;
+ 
     //普通のジャンプ
     private bool NormalJump = false;
 
@@ -58,20 +58,18 @@ public class BotFSW : MonoBehaviour
     //オオカミの攻撃
     public GameObject P2WolfAtk;
     private bool WolfSwitch = true;
-    public Material P2WolfNormal;
-    public Material P2WolfColor;
 
     //ライオンの攻撃
     public GameObject P2Lionhead;
-    public Material P2LionNormal;
-    public Material P2LionColor;
     private bool LionSwitch = true;
     //出血について
     private float Bloodingtimer = 5;
     private float Bloodingtime = 5;
     private int Bloodper;
+
     //カメのカウンター
     public GameObject P2TurtleGard;
+    public GameObject P2TurtleCounter;
     private bool Gard = true;
 
     //インパラののジャンプ攻撃
@@ -80,12 +78,45 @@ public class BotFSW : MonoBehaviour
     public GameObject P2ImplaBlock;
     public GameObject P2ImplaWaveBlock;
 
+    //アルマジロの攻撃
+    private float ArmadilloSpeed = 0.0f;
+    private int ArmadilloMode = 0;
+    private bool ArmadilloSwitch = true;
+    public GameObject ArmadilloBlock;
+    private bool OnceArma = true;
+
+    //馬の攻撃
+    public GameObject P2HorseLeg;
+    private bool HorseSwitch = true;
+
+    //クワガタの攻撃
+    public GameObject KuwagataBlock;
+    private bool KuwagataSwitch = true;
+
     private bool AllActionInterval = false;
     private bool CalledOncePoint = false;
+
+    //加速するための
+    private float BuffSpeed = 1.0f;
+    //外部に数値を持っていく
+    private static int BuffCountP2 = 3;
+    public float BuffTimer = 0;
+
+    //吸血
+    private float DamageHP2 = 0;
+    private static float EnemyHP_1 = 100;
+    public GameObject P1G;
+    public GameObject P1R;
+
+    //リジェネ
+    private float RejeTime = 0;
 
     //キャラの向きを常に一定に
     private GameObject EnemyObj;
     private Vector3 Enemy;
+
+    //ヒットエフェクト
+    public GameObject HitEff;
 
     //ADX設定
     //public CriAtomSource AnimalFSSrc;
@@ -115,6 +146,7 @@ public class BotFSW : MonoBehaviour
     private string isFalt = "isFalt";
     private string isBlown = "isBlown";
     private string isShield = "isShield";
+    private string isDown = "isDown";
 
     //固有スキルアニメーション
     private string isBite = "isBite";
@@ -125,7 +157,13 @@ public class BotFSW : MonoBehaviour
     private string isMissileFin = "isMissileFin";
     private string isTongueStr = "isTongueStr";
     private string isTongueFin = "isTongueFin";
-    private string isImpalaAtk = "isImpAtk";
+    private string isImpalaAtkStr = "isImpAtkStr";
+    private string isImpalaAtkCont = "isImpAtkCont";
+    private string isImpalaAtkFin = "isImpAtkFin";
+    private string isKick = "isKick";
+    private string isGilotine = "isGilotine";
+    private string isRollStr = "isRollStr";
+    private string isRollFin = "isRollFin";
 
     //ボット化のための
     private int Value = 1;
@@ -140,6 +178,11 @@ public class BotFSW : MonoBehaviour
         Rb = GetComponent<Rigidbody>();
         Rb.isKinematic = true;
         EnemyObj = GameObject.Find("P1camera");
+        ShieldObj.SetActive(false);
+        if (Exterior == 1)
+        {
+            BuffSpeed = 0.8f;
+        }
 
         Animator = GetComponent<Animator>();
 
@@ -150,9 +193,8 @@ public class BotFSW : MonoBehaviour
     void Update()
     {
         Gamemode = Timerbotgame.GetGamemode();
-        P2TurtleGard.transform.position = this.transform.position;
-        //シールドの色変更　tの値で変わる　調整中無視していいよ
-        ShieldObj.GetComponent<Renderer>().material.color = Color.HSVToRGB(ShieldPoint * 150, 1, 1);
+        P2TurtleGard.transform.position = this.transform.position + transform.forward * 5 + transform.up * -2;
+        DamageHP2 = 0;
 
         //ボット用 この数値が短いほど正確な動き
         StartCoroutine(DelayMethod(4));
@@ -164,6 +206,13 @@ public class BotFSW : MonoBehaviour
         {
             if (AllActionInterval == false)
             {
+                EnemyHP_1 = KeyBordPlay1.GetP1HP();
+                if (Exterior == 2)
+                {
+                    Player2HP = KeyBordPlay1.GetP2HP();
+                }
+                //重力とは別な上からの力　要調整
+                Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Force);
                 if (!CalledOncePoint)
                 {
                     CalledOncePoint = true;
@@ -178,11 +227,11 @@ public class BotFSW : MonoBehaviour
 
                             if (NormalJump == false)
                             {
-                                Speed = 40.0f;
+                                Speed = 40.0f * BuffSpeed;
                             }
                             else
                             {
-                                Speed = 15f;
+                                Speed = 15f * BuffSpeed;
                             }
 
                             //距離要調整
@@ -242,7 +291,7 @@ public class BotFSW : MonoBehaviour
                                         this.Animator.SetBool(isTongueFin, false);
                                     }
                                 }
-                                if (Distance > 35)
+                                else
                                 {
                                     if (FlogSwitch == false)
                                     {
@@ -251,7 +300,7 @@ public class BotFSW : MonoBehaviour
                                         Invoke("DelayFlog", 1.5f);
                                         AllActionInterval = true;
                                         //行動停止
-                                        Invoke("ActionInterval", 3.0f);
+                                        Invoke("ActionInterval", 2.65f);
 
                                         //音止める
                                         //FrogSwingSrc.Stop();
@@ -360,84 +409,6 @@ public class BotFSW : MonoBehaviour
                                 }
                             }
                         }
-                    }
-                }
-
-
-
-                if (Invincible == false)
-                {
-                    if (Implajump == false)
-                    {
-                        if (NormalJump == false)
-                        {
-                            //LRのシールド
-                            if (Input.GetKey(KeyCode.V))
-                            {
-                                //音鳴らす
-                                //AnimalShieldOPSrc.Play();
-                                atomSrc.Play("Animal_Shield_OP");
-
-                                //シールド展開
-                                this.Animator.SetBool(isShield, true);
-
-
-                                if (FlogSwitch == true)
-                                {
-                                    Shield = true;
-                                    ShieldObj.SetActive(true);
-                                    if (ShieldPoint >= 0)
-                                    {
-                                        //シールドの減少量
-                                        ShieldPoint -= 0.001f;
-                                    }
-
-                                }
-                            }
-                            else
-                            {
-                                ShieldObj.SetActive(false);
-                                //シールド
-                                if (ShieldPoint <= 1)
-                                {
-                                    //シールドの回復速度
-                                    ShieldPoint += 0.001f;
-                                }
-                            }
-
-                            //ガードのボタンを離したとき　後隙
-                            if (Input.GetKeyUp(KeyCode.V))
-                            {
-
-                                ShieldObj.SetActive(false);
-                                Invoke("ShieldDelay", 0.25f);//行動停止
-                                this.Animator.SetBool(isShield, false);
-                            }
-                            if (Shield == false)
-                            {
-                                if (Input.GetKey(KeyCode.Space))
-                                {
-                                    if (FlogSwitch == true)
-                                    {
-                                        Rb.AddForce(transform.up * 45, ForceMode.Impulse);
-                                        NormalJump = true;
-
-                                        //音鳴らす
-                                        //AnimalJumpSrc.Play();
-                                        atomSrc.Play("Animal_Jump");
-
-                                        //ジャンプする
-                                        this.Animator.SetBool(isJump, true);
-                                    }
-                                }
-                                else
-                                {
-                                    //ジャンプする
-                                    this.Animator.SetBool(isJump, false);
-                                }
-                            }
-                        }
-
                     }
                 }
             }
@@ -621,9 +592,26 @@ public class BotFSW : MonoBehaviour
         return Vector3.Normalize(toVec - fromVec);
     }
 
+    void HPdrain()
+    {
+        if (EnemyHP_1 + (DamageHP2 / 10) < 100)
+        {
+            EnemyHP_1 += DamageHP2 / 10;
+            P2G.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
+            P2R.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
+        }
+    }
     public static float GetP2HP()
     {
         return Player2HP;
+    }
+    public static int GetBuffCountP2()
+    {
+        return BuffCountP2;
+    }
+    public static float GetP1HP()
+    {
+        return EnemyHP_1;
     }
 
     private IEnumerator DelayMethod(int delayFrameCount)
@@ -669,6 +657,7 @@ public class BotFSW : MonoBehaviour
         if (other.gameObject.tag != "floor")
         {
             Rb.isKinematic = false;
+            ArmadilloSpeed = 0;
         }
         if (Invincible == false)
         {
@@ -804,6 +793,8 @@ public class BotFSW : MonoBehaviour
                 if (other.gameObject.CompareTag("P1LionAttack"))
                 {
                     Player2HP -= 30;
+                    DamageHP2 = 30;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
@@ -813,6 +804,9 @@ public class BotFSW : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -825,16 +819,31 @@ public class BotFSW : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P1Impla"))
                 {
                     Player2HP -= 30;
+                    DamageHP2 = 30;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Debug.Log(ToVec);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
                     P2ImplaBlock.SetActive(false);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -845,16 +854,30 @@ public class BotFSW : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
 
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P1ImplaWave"))
                 {
                     Player2HP -= 10;
+                    DamageHP2 = 10;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 30, ForceMode.Impulse);
                     P2ImplaBlock.SetActive(false);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -864,10 +887,22 @@ public class BotFSW : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P1WolfAttack"))
                 {
                     Player2HP -= 20;
+                    DamageHP2 = 20;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 2f, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
@@ -877,6 +912,9 @@ public class BotFSW : MonoBehaviour
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 40, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -888,14 +926,29 @@ public class BotFSW : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P1FlogAttack"))
                 {
                     Player2HP -= 1.5f;
+                    DamageHP2 = 1.5f;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 0.15f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 0.3f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.6f);
@@ -907,18 +960,33 @@ public class BotFSW : MonoBehaviour
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
                     Player2HP -= 3;
+                    DamageHP2 = 3;
+                    HPdrain();
                     Poisontimer = 0;
                     P2G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 0.3f);
                     //無敵タイム開始
                     Invincible = true;
-                    Invoke("InvincibleTime", 0.7f);
+                    Invoke("InvincibleTime", 0.5f);
                     P2ImplaBlock.SetActive(false);
 
                     //音鳴らす
@@ -928,14 +996,29 @@ public class BotFSW : MonoBehaviour
 
                     //怯む
                     this.Animator.SetBool(isFalt, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P1ArmadilloAttack"))
                 {
                     Player2HP -= 25;
+                    DamageHP2 = 25;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -943,19 +1026,35 @@ public class BotFSW : MonoBehaviour
 
                     //音鳴らす
                     //AnimalDamage.Play();
-                    atomSrc.Play("Animal_Damage");
+                    atomSrc.Play("Armadillo_Hit");
+                    Debug.Log("鳴った");
                     DelayFlog();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 if (other.gameObject.CompareTag("P1HorseAttack"))
                 {
                     Player2HP -= 25;
+                    DamageHP2 = 25;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -964,19 +1063,35 @@ public class BotFSW : MonoBehaviour
                     //音鳴らす
                     //AnimalDamage.Play();
                     atomSrc.Play("Horse_Kick");
+                    Debug.Log("鳴った");
                     DelayFlog();
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    //最後の一撃
+                    if (KeybordPlay2.GetP2HP() <= 0)
+                    {
+                        this.Animator.SetBool(isDown, true);
+                    }
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
                 }
                 //カウンターダメージ用
                 if (other.gameObject.CompareTag("P2LionAttackBack"))
                 {
                     Player2HP -= 36;
+                    DamageHP2 = 36;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 55, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -985,10 +1100,15 @@ public class BotFSW : MonoBehaviour
                 if (other.gameObject.CompareTag("P2ImplaBack"))
                 {
                     Player2HP -= 36;
+                    DamageHP2 = 36;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     Vector3 ToVec = GetAngleVec(other.gameObject, P2ImplaBlock);
 
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -998,7 +1118,12 @@ public class BotFSW : MonoBehaviour
                 if (other.gameObject.CompareTag("P2ImplaWaveBack"))
                 {
                     Player2HP -= 12;
+                    DamageHP2 = 12;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 1.2f, 0, 0);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1008,10 +1133,15 @@ public class BotFSW : MonoBehaviour
                 if (other.gameObject.CompareTag("P2FlogAttackBack"))
                 {
                     Player2HP -= 3f;
+                    DamageHP2 = 3;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 20, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 0.2f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 0.5f);
@@ -1021,10 +1151,15 @@ public class BotFSW : MonoBehaviour
                 if (other.gameObject.CompareTag("P2WolfAttackBack"))
                 {
                     Player2HP -= 22;
+                    DamageHP2 = 22;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 2.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 55, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1033,11 +1168,16 @@ public class BotFSW : MonoBehaviour
                 if (other.gameObject.CompareTag("PoisonAttackBack"))
                 {
                     Player2HP -= 3.6f;
+                    DamageHP2 = 3.6f;
+                    HPdrain();
                     Poisontimer = 0;
                     P2G.transform.position += new Vector3(HP10per * 0.36f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 16, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1047,10 +1187,15 @@ public class BotFSW : MonoBehaviour
                 if (other.gameObject.CompareTag("P2ArmadilloAttackBack"))
                 {
                     Player2HP -= 30;
+                    DamageHP2 = 30;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1059,10 +1204,15 @@ public class BotFSW : MonoBehaviour
                 if (other.gameObject.CompareTag("P2HorseAttackBack"))
                 {
                     Player2HP -= 30;
+                    DamageHP2 = 30;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.1f);
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
@@ -1072,6 +1222,8 @@ public class BotFSW : MonoBehaviour
             if (other.gameObject.CompareTag("P1KuwagataAttack"))
             {
                 Player2HP -= 30;
+                DamageHP2 = 30;
+                HPdrain();
                 P2G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                 //ノックバック
                 this.transform.position = new Vector3(this.transform.position.x, other.gameObject.transform.position.y + 2, this.transform.position.z);
