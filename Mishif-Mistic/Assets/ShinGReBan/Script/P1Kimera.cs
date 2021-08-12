@@ -10,6 +10,8 @@ public class P1Kimera : MonoBehaviour
     int Body;
     [SerializeField]
     int Leg;
+    [SerializeField]
+    int Passive;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,7 @@ public class P1Kimera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Contlole.GetHead() == Head && ContloleBody.GetBody() == Body && ContloleLeg.GetLeg() == Leg)
+        if (Contlole.GetHead() == Head && ContloleBody.GetBody() == Body && ContloleLeg.GetLeg() == Leg && ContlolePassive1.GetPassive() == Passive)
         {
             this.gameObject.SetActive(true);
         }

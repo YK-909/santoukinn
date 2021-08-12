@@ -7,7 +7,7 @@ public class ChooseArea : MonoBehaviour
     //ADX設定
     public CriAtomSource KeyboardSlotLRSrc;
 
-    private float minX = 1230;
+    private float minX = 1200;
     private float maxX = 1650;
 
     // Start is called before the first frame update
@@ -21,7 +21,7 @@ public class ChooseArea : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.Translate(-200, 0, 0);
+            transform.Translate(-150, 0, 0);
 
             //音鳴らす
             KeyboardSlotLRSrc.Play();
@@ -29,7 +29,7 @@ public class ChooseArea : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.Translate(200, 0, 0);
+            transform.Translate(150, 0, 0);
 
             //音鳴らす
             KeyboardSlotLRSrc.Play();

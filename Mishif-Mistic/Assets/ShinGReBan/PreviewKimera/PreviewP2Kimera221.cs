@@ -10,6 +10,8 @@ public class PreviewP2Kimera221 : MonoBehaviour
     int Body2;
     [SerializeField]
     int Leg2;
+    [SerializeField]
+    int Passive2;
 
     GameObject instance;
 
