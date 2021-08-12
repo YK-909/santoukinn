@@ -16,7 +16,9 @@ public class JoyconPlay1 : MonoBehaviour
     public int Body = 0;
     //1=インパラ 1=オオカミ
     public int Leg = 0;
-
+    //外装
+    //1=加速　わざと１
+    private int Exterior = 2;
     //移動速度
     private float Speed = 40.0f;
     private Vector3 Direction;
@@ -25,7 +27,10 @@ public class JoyconPlay1 : MonoBehaviour
     private bool Shield = false;
     public GameObject ShieldObj;
     [Range(0f, 1f)]
-    public float ShieldPoint;
+    private float ShieldPoint = 1.0f;
+    public GameObject Shield_Blue;
+    public GameObject Shield_Yellow;
+    public GameObject Shield_Red;
 
     //普通のジャンプ
     private bool NormalJump = false;
@@ -96,9 +101,15 @@ public class JoyconPlay1 : MonoBehaviour
     private bool AllActionInterval = false;
     private bool CalledOncePoint = false;
 
+    //加速するための
+    private float BuffSpeed = 1.0f;
+    //外部に数値を持っていく
+    private static int BuffCountP1 = 3;
+    public float BuffTimer = 0;
+
     //吸血
     private float DamageHP1=0;
-    private static float EnemyHP =100;
+    private static float EnemyHP_2 =100;
     public GameObject P2G;
     public GameObject P2R;
 
@@ -165,6 +176,11 @@ public class JoyconPlay1 : MonoBehaviour
         Rb = GetComponent<Rigidbody>();
         Rb.isKinematic = true;
         EnemyObj = GameObject.Find("P2camera");
+        ShieldObj.SetActive(false);
+        if (Exterior == 1)
+        {
+            BuffSpeed = 0.8f;
+        }
 
         Animator = GetComponent<Animator>();
 
@@ -175,15 +191,17 @@ public class JoyconPlay1 : MonoBehaviour
     void Update()
     {
         Gamemode = Timer.GetGamemode();
-        P1TurtleGard.transform.position = this.transform.position + transform.forward * 5 + transform.up * -2;
-        //シールドの色変更　tの値で変わる　調整中無視していいよ
-        ShieldObj.GetComponent<Renderer>().material.color = Color.HSVToRGB(ShieldPoint * 150, 1, 1);
+        P1TurtleGard.transform.position = this.transform.position + transform.forward * 5 + transform.up * -2; 
         DamageHP1 = 0;
         if (Gamemode == 1)
         {
             if (AllActionInterval == false)
             {
-                EnemyHP = KeybordPlay2.GetP2HP();
+                if (Exterior == 2)
+                {
+                    Player1HP = KeybordPlay2.GetP1HP();
+                }
+                    EnemyHP_2 = KeybordPlay2.GetP2HP();
                 //重力とは別な上からの力　要調整
                 Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Force);
 
@@ -232,7 +250,7 @@ public class JoyconPlay1 : MonoBehaviour
                                     this.Animator.SetBool(isRun, false);
                                 }
                                 //前方に移動する
-                                transform.position += Direction * Speed * Time.deltaTime;
+                                transform.position += Direction * Speed * BuffSpeed * Time.deltaTime;
                             }
                         }
 
@@ -272,7 +290,7 @@ public class JoyconPlay1 : MonoBehaviour
                                             Invoke("DelayFlog", 1.5f);
                                             AllActionInterval = true;
                                             //行動停止
-                                            Invoke("ActionInterval", 3.0f);
+                                            Invoke("ActionInterval", 2.65f);
 
                                             //音止める
                                             //FrogSwingSrc.Stop();
@@ -370,9 +388,9 @@ public class JoyconPlay1 : MonoBehaviour
                                                 //上と同じ値
                                                 Invoke("TurtleGardRemove", 2f);
                                                 //行動停止
-                                                Invoke("ActionInterval", 2.65f);
+                                                Invoke("ActionInterval", 2.3f);
                                                 //リキャストタイム
-                                                Invoke("DelayTartle", 3f);
+                                                Invoke("DelayTartle", 3.2f);
 
                                                 //カメのシールド
                                                 this.Animator.SetBool(isKameShield, true);
@@ -591,6 +609,27 @@ public class JoyconPlay1 : MonoBehaviour
                                         this.Animator.SetBool(isKick, false);
                                     }
                                 }
+
+                                if (Exterior == 1)
+                                {
+                                    if (BuffSpeed != 1.5f && BuffCountP1 != 0)
+                                    {
+                                        if (Input.GetKey(KeyCode.Joystick1Button7))
+                                        {
+                                            BuffSpeed = 1.5f;
+                                            BuffCountP1 -= 1;
+                                        }
+                                    }
+                                }
+                                else if (Exterior == 2)
+                                {
+
+
+                                }
+                                else if (Exterior == 3)
+                                {
+                                   
+                                }
                             }
                         }
                     }
@@ -602,7 +641,7 @@ public class JoyconPlay1 : MonoBehaviour
                         if (NormalJump == false)
                         {
                             //LRのシールド
-                            if (Input.GetKey(KeyCode.Joystick1Button6) || Input.GetKey(KeyCode.Joystick2Button7))
+                            if (Input.GetKey(KeyCode.Joystick1Button6))
                             {
                                 //音鳴らす
                                 //AnimalShieldOPSrc.Play();
@@ -615,18 +654,41 @@ public class JoyconPlay1 : MonoBehaviour
                                 if (FlogSwitch == true)
                                 {
                                     Shield = true;
-                                    ShieldObj.SetActive(true);
+                                    Shield_Blue.transform.position = ShieldObj.transform.position;
+                                    Shield_Yellow.transform.position = ShieldObj.transform.position;
+                                    Shield_Red.transform.position = ShieldObj.transform.position;
+                                    if (ShieldPoint > 0.6f)
+                                    {
+                                        Shield_Blue.SetActive(true);
+                                        Shield_Yellow.SetActive(false);
+                                        Shield_Red.SetActive(false);
+                                    }
+                                    if (0.6f >= ShieldPoint && ShieldPoint > 0.3f)
+                                    {
+                                        Shield_Blue.SetActive(false);
+                                        Shield_Yellow.SetActive(true);
+                                        Shield_Red.SetActive(false);
+                                    }
+                                    if (0.3f >= ShieldPoint && ShieldPoint > 0f)
+                                    {
+                                        Shield_Blue.SetActive(false);
+                                        Shield_Yellow.SetActive(false);
+                                        Shield_Red.SetActive(true);
+                                    }
                                     if (ShieldPoint >= 0)
                                     {
                                         //シールドの減少量
                                         ShieldPoint -= 0.001f;
                                     }
+
                                 }
 
                             }
                             else
                             {
-                                ShieldObj.SetActive(false);
+                                Shield_Blue.SetActive(false);
+                                Shield_Yellow.SetActive(false);
+                                Shield_Red.SetActive(false);
                                 //シールド
                                 if (ShieldPoint <= 1)
                                 {
@@ -635,7 +697,7 @@ public class JoyconPlay1 : MonoBehaviour
                                 }
                             }
                             //ガードのボタンを離したとき　後隙
-                            if (Input.GetKeyUp(KeyCode.Joystick1Button6) || Input.GetKey(KeyCode.Joystick2Button7))
+                            if (Input.GetKeyUp(KeyCode.Joystick1Button6))
                             {
                                 ShieldObj.SetActive(false);
                                 Invoke("ShieldDelay", 0.25f);
@@ -674,12 +736,27 @@ public class JoyconPlay1 : MonoBehaviour
             Player1HP = 100;
         }
 
+        if (BuffSpeed > 1)
+        {
+            BuffTimer += Time.deltaTime;
+            Debug.Log(BuffTimer);
+            if (BuffTimer > 5)
+            {
+                BuffSpeed = 0.8f;
+            }
+        }
+        else
+        {
+            BuffTimer = 0;
+        }
+
         if (Poisontimer < Poisoningtime)
         {
             Poisontimer += Time.deltaTime;
             Player1HP -= Time.deltaTime;
             P1G.transform.position += new Vector3(HP10per * (0.1f * Time.deltaTime), 0, 0);
         }
+
         if (Bloodingtimer < Bloodingtime)
         {
             Bloodingtimer += Time.deltaTime;
@@ -696,7 +773,9 @@ public class JoyconPlay1 : MonoBehaviour
         //シールドブレイク
         if (ShieldPoint <= 0)
         {
-            ShieldObj.SetActive(false);
+            Shield_Blue.SetActive(false);
+            Shield_Yellow.SetActive(false);
+            Shield_Red.SetActive(false);
             AllActionInterval = true;
             //何もできない待機時間
             Invoke("ActionInterval", 5f);
@@ -885,20 +964,7 @@ public class JoyconPlay1 : MonoBehaviour
     {
         KuwagataSwitch = true;
     }
-
-    void HPdrain()
-    {
-        if (EnemyHP + (DamageHP1 / 10) < 100)
-        {
-            EnemyHP += DamageHP1 / 10;
-            P2G.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
-            P2R.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
-        }
-    }
-    public static float GetP2HP()
-    {
-        return EnemyHP;
-    }
+  
     void KuwagataNock()
     {
         Rb.AddForce(KuwagataVec * 50, ForceMode.Impulse);
@@ -910,7 +976,23 @@ public class JoyconPlay1 : MonoBehaviour
         Vector3 toVec = new Vector3(_to.transform.position.x, 0, _to.transform.position.z);
         return Vector3.Normalize(toVec - fromVec);
     }
-
+    void HPdrain()
+    {
+        if (EnemyHP_2 + (DamageHP1 / 10) < 100)
+        {
+            EnemyHP_2 += DamageHP1 / 10;
+            P2G.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
+            P2R.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
+        }
+    }
+    public static float GetP2HP()
+    {
+        return EnemyHP_2;
+    }
+    public static int GetBuffCountP1()
+    {
+        return BuffCountP1;
+    }
     public static float GetP1HP()
     {
         return Player1HP;
@@ -1350,8 +1432,8 @@ public class JoyconPlay1 : MonoBehaviour
                 //カウンターダメージ用
                 if (other.gameObject.CompareTag("P1LionAttackBack"))
                 {
-                    Player1HP -= 24;
-                    DamageHP1 = 24;
+                    Player1HP -= 36;
+                    DamageHP1 = 36;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2 * 1.2f, 0, 0);
                     //ノックバック

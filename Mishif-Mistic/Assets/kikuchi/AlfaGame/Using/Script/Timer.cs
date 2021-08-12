@@ -16,6 +16,8 @@ public class Timer : MonoBehaviour
     private Text GameWinner;
     [SerializeField]
     private Text BuffCountTextP2;
+    [SerializeField]
+    private Text BuffCountTextP1;
 
     //ADX設定
     public CriAtomSource CountSrc;
@@ -107,8 +109,10 @@ public class Timer : MonoBehaviour
                     Invoke("SceneResult1", 2.0f);
                 }
             }
-            string Counttext = KeybordPlay2.BuffCountP2().ToString("0");
-            BuffCountTextP2.text ="P2="+Counttext;
+            string CounttextP2 = KeybordPlay2.GetBuffCountP2().ToString("0");
+            BuffCountTextP2.text ="P2="+CounttextP2;
+            string CounttextP1 = JoyconPlay1.GetBuffCountP1().ToString("0");
+            BuffCountTextP2.text = "P1=" + CounttextP1;
         }
 
         if (_textCountdown.text == "3")

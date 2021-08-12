@@ -102,10 +102,14 @@ public class KeybordPlay2 : MonoBehaviour
     //加速するための
     private float BuffSpeed=1.0f;
     //外部に数値を持っていく
-    private static int BuffCount = 3;
+    private static int BuffCountP2 = 3;
     public float BuffTimer = 0;
 
- 
+    //吸血
+    private float DamageHP2 = 0;
+    private static float EnemyHP_1 = 100;
+    public GameObject P1G;
+    public GameObject P1R;
 
     //リジェネ
     private float RejeTime =0;
@@ -191,11 +195,16 @@ public class KeybordPlay2 : MonoBehaviour
     {
         Gamemode = Timer.GetGamemode();
         P2TurtleGard.transform.position = this.transform.position + transform.forward * 5+transform.up*-2;
+        DamageHP2 = 0;
         if (Gamemode == 1)
         {
             if (AllActionInterval == false)
             {
-                Player2HP = JoyconPlay1.GetP2HP();
+                EnemyHP_1 = JoyconPlay1.GetP1HP();
+                if (Exterior == 2)
+                {
+                    Player2HP = JoyconPlay1.GetP2HP();
+                }
                 //重力とは別な上からの力　要調整
                 Rb.AddForce(new Vector3(0,-30,0), ForceMode.Force);
 
@@ -751,12 +760,12 @@ public class KeybordPlay2 : MonoBehaviour
 
                                 if (Exterior == 1)
                                 {
-                                    if (BuffSpeed != 1.5f && BuffCount != 0)
+                                    if (BuffSpeed != 1.5f && BuffCountP2 != 0)
                                     {
                                         if (Input.GetKeyDown(KeyCode.B))
                                         {
                                             BuffSpeed = 1.5f;
-                                            BuffCount -= 1;
+                                            BuffCountP2 -= 1;
                                         }
                                     }
                                 }
@@ -1133,13 +1142,26 @@ public class KeybordPlay2 : MonoBehaviour
         Vector3 toVec = new Vector3(_to.transform.position.x, 0, _to.transform.position.z);
         return Vector3.Normalize(toVec - fromVec);
     }
+    void HPdrain()
+    {
+        if (EnemyHP_1 + (DamageHP2 / 10) < 100)
+        {
+            EnemyHP_1 += DamageHP2 / 10;
+            P2G.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
+            P2R.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
+        }
+    }
     public static float GetP2HP()
     {
         return Player2HP;
     }
-    public static int BuffCountP2()
+    public static int GetBuffCountP2()
     {
-        return BuffCount;
+        return BuffCountP2;
+    }
+    public static float GetP1HP()
+    {
+        return EnemyHP_1;
     }
     void OnCollisionEnter(Collision other)
     {
@@ -1316,6 +1338,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1LionAttack"))
                 {
                     Player2HP -= 30;
+                    DamageHP2 = 30;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
@@ -1354,6 +1378,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1Impla"))
                 {
                     Player2HP -= 30;
+                    DamageHP2 = 30;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1387,6 +1413,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1ImplaWave"))
                 {
                     Player2HP -= 10;
+                    DamageHP2 = 10;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1418,6 +1446,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1WolfAttack"))
                 {
                     Player2HP -= 20;
+                    DamageHP2 = 20;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 2f, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
@@ -1455,6 +1485,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1FlogAttack"))
                 {
                     Player2HP -= 1.5f;
+                    DamageHP2 = 1.5f;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 0.15f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1487,6 +1519,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
                     Player2HP -= 3;
+                    DamageHP2 = 3;
+                    HPdrain();
                     Poisontimer = 0;
                     P2G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
@@ -1521,6 +1555,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1ArmadilloAttack"))
                 {
                     Player2HP -= 25;
+                    DamageHP2 = 25;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1555,6 +1591,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P1HorseAttack"))
                 {
                     Player2HP -= 25;
+                    DamageHP2 = 25;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1590,6 +1628,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2LionAttackBack"))
                 {
                     Player2HP -= 36;
+                    DamageHP2 = 36;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1605,6 +1645,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2ImplaBack"))
                 {
                     Player2HP -= 36;
+                    DamageHP2 = 36;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     Vector3 ToVec = GetAngleVec(other.gameObject, P2ImplaBlock);
 
@@ -1621,6 +1663,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2ImplaWaveBack"))
                 {
                     Player2HP -= 12;
+                    DamageHP2 = 12;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 1.2f, 0, 0);
                     //行動停止
                     AllActionInterval = true;
@@ -1634,6 +1678,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2FlogAttackBack"))
                 {
                     Player2HP -= 3f;
+                    DamageHP2 = 3;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1650,6 +1696,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2WolfAttackBack"))
                 {
                     Player2HP -= 22;
+                    DamageHP2 = 22;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 2.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1665,6 +1713,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("PoisonAttackBack"))
                 {
                     Player2HP -= 3.6f;
+                    DamageHP2 = 3.6f;
+                    HPdrain();
                     Poisontimer = 0;
                     P2G.transform.position += new Vector3(HP10per * 0.36f, 0, 0);
                     //ノックバック
@@ -1682,6 +1732,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2ArmadilloAttackBack"))
                 {
                     Player2HP -= 30;
+                    DamageHP2 = 30;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1697,6 +1749,8 @@ public class KeybordPlay2 : MonoBehaviour
                 if (other.gameObject.CompareTag("P2HorseAttackBack"))
                 {
                     Player2HP -= 30;
+                    DamageHP2 = 30;
+                    HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
@@ -1713,6 +1767,8 @@ public class KeybordPlay2 : MonoBehaviour
             if (other.gameObject.CompareTag("P1KuwagataAttack"))
             {
                 Player2HP -= 30;
+                DamageHP2 = 30;
+                HPdrain();
                 P2G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                 //ノックバック
                 this.transform.position = new Vector3(this.transform.position.x, other.gameObject.transform.position.y + 2, this.transform.position.z);
