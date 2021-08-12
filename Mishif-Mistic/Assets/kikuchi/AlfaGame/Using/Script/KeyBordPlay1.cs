@@ -82,6 +82,8 @@ public class KeyBordPlay1 : MonoBehaviour
     public GameObject P1ImplaBlock;
     public GameObject P1ImplaWaveBlock;
 
+    public GameObject shockWave;
+
     //アルマジロの攻撃
     private float ArmadilloSpeed = 0.0f;
     private int ArmadilloMode = 0;
@@ -663,6 +665,7 @@ public class KeyBordPlay1 : MonoBehaviour
 
                                                 Invoke("ImpalaAtkTiming", 0.5f);
                                                 Invoke("ImpalaFinTiming", 1.5f);
+
                                             }
                                         }
                                         else if (Implajump == false)
@@ -1071,6 +1074,15 @@ public class KeyBordPlay1 : MonoBehaviour
         this.Animator.SetBool(isImpalaAtkStr, false);
         this.Animator.SetBool(isImpalaAtkCont, false);
     }
+
+    public void ImpShockWave()
+    {
+        GameObject Obj;
+        Obj = Instantiate(shockWave, transform.position + transform.up * -10 + transform.forward * -2, transform.rotation) as GameObject;
+        Obj.transform.localScale = new Vector3(12.0f, 12.0f, 12.0f);
+        Destroy(Obj, 0.8f);
+    }
+
     void DelayArma()
     {
         ArmadilloSwitch = true;

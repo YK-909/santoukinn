@@ -834,6 +834,7 @@ MonoBehaviour:
   Head2: 1
   Body2: 1
   Leg2: 2
+  Passive2: 0
 --- !u!114 &5475399062167280479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,10 +868,13 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 5216939304303646290}
   P2ImplaWaveBlock: {fileID: 8530973362980852059}
+  P2shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 3103451876262858233}
   KuwagataBlock: {fileID: 0}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!95 &1629060453221899075
 Animator:
@@ -10508,6 +10512,7 @@ MonoBehaviour:
   Head: 1
   Body: 2
   Leg: 1
+  Passive: 0
 --- !u!114 &3248021741667926460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10524,7 +10529,9 @@ MonoBehaviour:
   Body: 2
   Leg: 1
   ShieldObj: {fileID: 5923788743363755943}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 3385658964936071865}
@@ -10537,10 +10544,15 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 2753284465027848891}
   P2TurtleCounter: {fileID: 0}
   P1ImplaBlock: {fileID: 8343013084907087624}
-  P1ImplaWaveBlock: {fileID: 4472039655555133637}
+  P1ImplaWaveBlock: {fileID: 0}
+  shockWave: {fileID: 5475163647346432145, guid: 4271fa21c08bb88438f18cc18ca61dd8,
+    type: 3}
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 3103451876582401219}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!95 &1187679517888709671
 Animator:
@@ -13165,6 +13177,7 @@ MonoBehaviour:
   Head: 1
   Body: 1
   Leg: 2
+  Passive: 0
 --- !u!114 &1297559713348134100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13181,7 +13194,9 @@ MonoBehaviour:
   Body: 1
   Leg: 2
   ShieldObj: {fileID: 2488725875886547987}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 5406943056399113074}
@@ -13196,9 +13211,13 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 3805379896157658463}
   P1ImplaWaveBlock: {fileID: 5225703657404884427}
+  shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 3103451876644106524}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!95 &2297941741241667797
 Animator:
@@ -16913,6 +16932,7 @@ MonoBehaviour:
   Head: 1
   Body: 2
   Leg: 2
+  Passive: 0
 --- !u!114 &9212077784305121449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16929,7 +16949,9 @@ MonoBehaviour:
   Body: 2
   Leg: 2
   ShieldObj: {fileID: 9208753950068520662}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 8960580202250237834}
@@ -16943,9 +16965,13 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 0}
   P1ImplaBlock: {fileID: 2419295456147711413}
   P1ImplaWaveBlock: {fileID: 3302143135489340798}
+  shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 3103451876643419390}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!95 &4479790809257302504
 Animator:
@@ -20180,6 +20206,7 @@ MonoBehaviour:
   Head2: 2
   Body2: 2
   Leg2: 2
+  Passive2: 0
 --- !u!114 &5966191544523028768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20212,10 +20239,13 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 0}
   P2ImplaBlock: {fileID: 318393858629807871}
   P2ImplaWaveBlock: {fileID: 3309426729684358923}
+  P2shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 3103451876504371042}
   KuwagataBlock: {fileID: 0}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!95 &7588616272023060663
 Animator:
@@ -34359,6 +34389,7 @@ MonoBehaviour:
   Head2: 2
   Body2: 1
   Leg2: 2
+  Passive2: 0
 --- !u!114 &8766694084992382329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34392,10 +34423,13 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 2298025018686310038}
   P2ImplaWaveBlock: {fileID: 2554739628217484337}
+  P2shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 3103451875241688477}
   KuwagataBlock: {fileID: 0}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!95 &5126625484848428638
 Animator:
@@ -37306,6 +37340,7 @@ MonoBehaviour:
   Head2: 1
   Body2: 2
   Leg2: 1
+  Passive2: 0
 --- !u!114 &8427282816548595101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37337,11 +37372,15 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 2960846431754434775}
   P2TurtleCounter: {fileID: 0}
   P2ImplaBlock: {fileID: 9057483621133765560}
-  P2ImplaWaveBlock: {fileID: 7223827578289968609}
+  P2ImplaWaveBlock: {fileID: 0}
+  P2shockWave: {fileID: 5475163647346432145, guid: 4271fa21c08bb88438f18cc18ca61dd8,
+    type: 3}
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 3103451875148175240}
   KuwagataBlock: {fileID: 0}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!95 &3536889879098285575
 Animator:
@@ -38890,6 +38929,7 @@ MonoBehaviour:
   Head2: 2
   Body2: 2
   Leg2: 1
+  Passive2: 0
 --- !u!114 &6486136641720043323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38921,11 +38961,15 @@ MonoBehaviour:
   P2TurtleGard: {fileID: 6084233949199853226}
   P2TurtleCounter: {fileID: 0}
   P2ImplaBlock: {fileID: 3660105662803765179}
-  P2ImplaWaveBlock: {fileID: 7338772882323083650}
+  P2ImplaWaveBlock: {fileID: 0}
+  P2shockWave: {fileID: 5475163647346432145, guid: 4271fa21c08bb88438f18cc18ca61dd8,
+    type: 3}
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 3103451876113101571}
   KuwagataBlock: {fileID: 0}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!95 &1360939814265113975
 Animator:
@@ -94849,6 +94893,7 @@ MonoBehaviour:
   Head2: 1
   Body2: 2
   Leg2: 2
+  Passive2: 0
 --- !u!114 &3833353831902867450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94881,10 +94926,13 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 0}
   P2ImplaBlock: {fileID: 6436326332377717412}
   P2ImplaWaveBlock: {fileID: 225116701911246047}
+  P2shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 3103451875545601385}
   KuwagataBlock: {fileID: 0}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!95 &5684119974127076875
 Animator:
@@ -95144,6 +95192,7 @@ MonoBehaviour:
   Head2: 1
   Body2: 1
   Leg2: 3
+  Passive2: 0
 --- !u!114 &5846498092173661381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95177,10 +95226,13 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 5846498091067475496}
   P2ImplaWaveBlock: {fileID: 5846498092190562143}
+  P2shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 5846498091401295860}
   P2HorseLeg: {fileID: 5846498091279405287}
   KuwagataBlock: {fileID: 5846498090602240535}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!114 &5846498092173661403
 MonoBehaviour:
@@ -95326,10 +95378,13 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 5233635490546471211}
   P2ImplaWaveBlock: {fileID: 3044740481976344973}
+  P2shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 1639398655965301321}
   P2HorseLeg: {fileID: 5846498090450082320}
   KuwagataBlock: {fileID: 5846498091017180721}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!114 &5846498092228907641
 MonoBehaviour:
@@ -95346,6 +95401,7 @@ MonoBehaviour:
   Head2: 3
   Body2: 3
   Leg2: 2
+  Passive2: 0
 --- !u!114 &5846498091668175064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95450,10 +95506,13 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 5846498090920543369}
   P2ImplaWaveBlock: {fileID: 5846498092186887028}
+  P2shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 5846498092071592164}
   P2HorseLeg: {fileID: 5846498092126704998}
   KuwagataBlock: {fileID: 5846498091930596143}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!114 &5846498092375565114
 MonoBehaviour:
@@ -95493,6 +95552,7 @@ MonoBehaviour:
   Head2: 1
   Body2: 2
   Leg2: 3
+  Passive2: 0
 --- !u!54 &5846498091560047329
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -95579,6 +95639,7 @@ MonoBehaviour:
   Head: 2
   Body: 2
   Leg: 3
+  Passive: 0
 --- !u!114 &5846498091560047335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95595,7 +95656,9 @@ MonoBehaviour:
   Body: 2
   Leg: 3
   ShieldObj: {fileID: 5846498090532813423}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 5846498091824805975}
@@ -95610,9 +95673,13 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 5846498091325583490}
   P1ImplaWaveBlock: {fileID: 5846498091097672793}
+  shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 5846498091343756866}
   P1HorseLeg: {fileID: 5846498091477170093}
   KuwagataBlock: {fileID: 5846498092233887906}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!54 &5846498091652666908
 Rigidbody:
@@ -95700,6 +95767,7 @@ MonoBehaviour:
   Head: 1
   Body: 3
   Leg: 2
+  Passive: 0
 --- !u!114 &5846498091652666898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95716,7 +95784,9 @@ MonoBehaviour:
   Body: 3
   Leg: 2
   ShieldObj: {fileID: 5846498090411374720}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 5846498092334409096}
@@ -95731,9 +95801,13 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 5846498091245149325}
   P1ImplaWaveBlock: {fileID: 5846498091808230022}
+  shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 5846498092055302342}
   P1HorseLeg: {fileID: 5846498091180695384}
   KuwagataBlock: {fileID: 5846498091485795102}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!54 &5846498091666227841
 Rigidbody:
@@ -95821,6 +95895,7 @@ MonoBehaviour:
   Head2: 1
   Body2: 3
   Leg2: 3
+  Passive2: 0
 --- !u!114 &5846498091666227847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95854,10 +95929,13 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 5846498091886620602}
   P2ImplaWaveBlock: {fileID: 5846498090498067177}
+  P2shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 5846498090431002327}
   P2HorseLeg: {fileID: 5846498091987185589}
   KuwagataBlock: {fileID: 5846498091094163437}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!54 &5846498091692247140
 Rigidbody:
@@ -95945,6 +96023,7 @@ MonoBehaviour:
   Head2: 1
   Body2: 3
   Leg2: 1
+  Passive2: 0
 --- !u!114 &5846498091692247162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95977,11 +96056,15 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 7164893212814238295, guid: d24142e4c06483f449fb7d3e426a60a8,
     type: 3}
   P2ImplaBlock: {fileID: 5846498090595063222}
-  P2ImplaWaveBlock: {fileID: 5846498090757612568}
+  P2ImplaWaveBlock: {fileID: 0}
+  P2shockWave: {fileID: 5475163647346432145, guid: 4271fa21c08bb88438f18cc18ca61dd8,
+    type: 3}
   ArmadilloBlock: {fileID: 5846498091430259359}
   P2HorseLeg: {fileID: 5846498091318629403}
   KuwagataBlock: {fileID: 5846498090652723758}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!54 &5846498091586107355
 Rigidbody:
@@ -96047,7 +96130,9 @@ MonoBehaviour:
   Body: 1
   Leg: 3
   ShieldObj: {fileID: 5846498092268068540}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 5846498090738920309}
@@ -96062,9 +96147,13 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 5846498090529394082}
   P1ImplaWaveBlock: {fileID: 5846498091519443041}
+  shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 5846498091986039040}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!114 &5846498091586107353
 MonoBehaviour:
@@ -96081,6 +96170,7 @@ MonoBehaviour:
   Head: 2
   Body: 1
   Leg: 3
+  Passive: 0
 --- !u!114 &5846498091668175151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96167,6 +96257,7 @@ MonoBehaviour:
   Head2: 2
   Body2: 3
   Leg2: 2
+  Passive2: 0
 --- !u!114 &5846498091586710385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96200,10 +96291,13 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 5846498091323646110}
   P2ImplaWaveBlock: {fileID: 5846498092485733649}
+  P2shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 5846498091935805606}
   P2HorseLeg: {fileID: 5846498092178524763}
   KuwagataBlock: {fileID: 5846498091867147067}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!114 &5846498091586710391
 MonoBehaviour:
@@ -96314,6 +96408,7 @@ MonoBehaviour:
   Head2: 2
   Body2: 2
   Leg2: 3
+  Passive2: 0
 --- !u!114 &5846498091879173279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96347,10 +96442,13 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 5846498091960372058}
   P2ImplaWaveBlock: {fileID: 5846498091047082403}
+  P2shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 5846498090436066970}
   P2HorseLeg: {fileID: 5846498090860679880}
   KuwagataBlock: {fileID: 5846498091468801719}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!54 &5846498090982738829
 Rigidbody:
@@ -96416,7 +96514,9 @@ MonoBehaviour:
   Body: 3
   Leg: 2
   ShieldObj: {fileID: 5846498090495701811}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 5846498090375920218}
@@ -96431,9 +96531,13 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 5846498092432650348}
   P1ImplaWaveBlock: {fileID: 5846498090772647592}
+  shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 5846498091527180373}
   KuwagataBlock: {fileID: 5846498092340397470}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!114 &5846498090982738819
 MonoBehaviour:
@@ -96450,6 +96554,7 @@ MonoBehaviour:
   Head: 3
   Body: 3
   Leg: 2
+  Passive: 0
 --- !u!114 &5846498091668175148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96559,6 +96664,7 @@ MonoBehaviour:
   Head: 1
   Body: 2
   Leg: 3
+  Passive: 0
 --- !u!114 &5846498090900792134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96575,7 +96681,9 @@ MonoBehaviour:
   Body: 2
   Leg: 3
   ShieldObj: {fileID: 5846498092119747540}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 5846498091390767316}
@@ -96590,9 +96698,13 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 5846498092284183782}
   P1ImplaWaveBlock: {fileID: 5846498090890177152}
+  shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 5846498090838495195}
   P1HorseLeg: {fileID: 5846498091786379513}
   KuwagataBlock: {fileID: 5846498091286440823}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!54 &5846498090924819326
 Rigidbody:
@@ -96680,6 +96792,7 @@ MonoBehaviour:
   Head: 2
   Body: 3
   Leg: 3
+  Passive: 0
 --- !u!114 &5846498090924819324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96696,7 +96809,9 @@ MonoBehaviour:
   Body: 3
   Leg: 3
   ShieldObj: {fileID: 5846498091663732396}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 5846498091857847413}
@@ -96711,9 +96826,13 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 5846498092505549231}
   P1ImplaWaveBlock: {fileID: 5846498090443668056}
+  shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 5846498091612482522}
   P1HorseLeg: {fileID: 5846498090885051664}
   KuwagataBlock: {fileID: 5846498090787684947}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!54 &5846498091142297167
 Rigidbody:
@@ -96801,6 +96920,7 @@ MonoBehaviour:
   Head: 1
   Body: 1
   Leg: 3
+  Passive: 0
 --- !u!114 &5846498091142297165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96817,7 +96937,9 @@ MonoBehaviour:
   Body: 1
   Leg: 3
   ShieldObj: {fileID: 5846498090812621503}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 5846498092026169715}
@@ -96832,9 +96954,13 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 5846498092234271687}
   P1ImplaWaveBlock: {fileID: 5846498090912702528}
+  shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 5846498090873820934}
   P1HorseLeg: {fileID: 5846498091779683436}
   KuwagataBlock: {fileID: 5846498091055684616}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!54 &5846498091083711353
 Rigidbody:
@@ -96922,6 +97048,7 @@ MonoBehaviour:
   Head2: 2
   Body2: 3
   Leg2: 3
+  Passive2: 0
 --- !u!114 &5846498091083711359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96955,10 +97082,13 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 5846498092057308505}
   P2ImplaWaveBlock: {fileID: 5846498092458904454}
+  P2shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 5846498091853139621}
   P2HorseLeg: {fileID: 5846498090532716739}
   KuwagataBlock: {fileID: 5846498092506871132}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!54 &5846498091093637393
 Rigidbody:
@@ -97046,6 +97176,7 @@ MonoBehaviour:
   Head: 1
   Body: 3
   Leg: 3
+  Passive: 0
 --- !u!114 &5846498091093637399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97062,7 +97193,9 @@ MonoBehaviour:
   Body: 3
   Leg: 3
   ShieldObj: {fileID: 5846498090703418371}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 5846498090644829104}
@@ -97077,9 +97210,13 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 5846498091382269942}
   P1ImplaWaveBlock: {fileID: 5846498090882220387}
+  shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 5846498091699198532}
   P1HorseLeg: {fileID: 5846498091344734704}
   KuwagataBlock: {fileID: 5846498091632544224}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!54 &5846498091237863564
 Rigidbody:
@@ -97167,6 +97304,7 @@ MonoBehaviour:
   Head: 2
   Body: 3
   Leg: 2
+  Passive: 0
 --- !u!114 &5846498091237863554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97183,7 +97321,9 @@ MonoBehaviour:
   Body: 3
   Leg: 2
   ShieldObj: {fileID: 5846498092062224228}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 5846498091118287068}
@@ -97198,9 +97338,13 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 5846498090641425251}
   P1ImplaWaveBlock: {fileID: 5846498091721258713}
+  shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 5846498091218374650}
   P1HorseLeg: {fileID: 5846498092249121333}
   KuwagataBlock: {fileID: 5846498092065347870}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!54 &5846498091341476219
 Rigidbody:
@@ -97265,6 +97409,7 @@ MonoBehaviour:
   Head2: 2
   Body2: 3
   Leg2: 1
+  Passive2: 0
 --- !u!114 &5846498091341476217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97297,11 +97442,15 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 7164893212814238295, guid: d24142e4c06483f449fb7d3e426a60a8,
     type: 3}
   P2ImplaBlock: {fileID: 5846498090708652010}
-  P2ImplaWaveBlock: {fileID: 5846498092018264617}
+  P2ImplaWaveBlock: {fileID: 0}
+  P2shockWave: {fileID: 5475163647346432145, guid: 4271fa21c08bb88438f18cc18ca61dd8,
+    type: 3}
   ArmadilloBlock: {fileID: 5846498090992204725}
   P2HorseLeg: {fileID: 5846498091411360829}
   KuwagataBlock: {fileID: 5846498091547951128}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!114 &5846498091341476223
 MonoBehaviour:
@@ -97389,6 +97538,7 @@ MonoBehaviour:
   Head: 1
   Body: 3
   Leg: 1
+  Passive: 0
 --- !u!114 &5846498090720387305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97405,7 +97555,9 @@ MonoBehaviour:
   Body: 3
   Leg: 1
   ShieldObj: {fileID: 5846498090502126251}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 5846498091401866980}
@@ -97419,10 +97571,15 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 7164893212814238295, guid: d24142e4c06483f449fb7d3e426a60a8,
     type: 3}
   P1ImplaBlock: {fileID: 5846498090449412156}
-  P1ImplaWaveBlock: {fileID: 5846498091591313118}
+  P1ImplaWaveBlock: {fileID: 0}
+  shockWave: {fileID: 5475163647346432145, guid: 4271fa21c08bb88438f18cc18ca61dd8,
+    type: 3}
   ArmadilloBlock: {fileID: 5846498090669135907}
   P1HorseLeg: {fileID: 5846498090535667325}
   KuwagataBlock: {fileID: 5846498091508593531}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!114 &5846498090720387311
 MonoBehaviour:
@@ -97510,6 +97667,7 @@ MonoBehaviour:
   Head: 2
   Body: 3
   Leg: 1
+  Passive: 0
 --- !u!114 &5846498090687371513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97526,7 +97684,9 @@ MonoBehaviour:
   Body: 3
   Leg: 1
   ShieldObj: {fileID: 5846498090912962621}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 5846498090892994734}
@@ -97540,10 +97700,15 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 7164893212814238295, guid: d24142e4c06483f449fb7d3e426a60a8,
     type: 3}
   P1ImplaBlock: {fileID: 5846498091377423728}
-  P1ImplaWaveBlock: {fileID: 5846498091249334969}
+  P1ImplaWaveBlock: {fileID: 0}
+  shockWave: {fileID: 5475163647346432145, guid: 4271fa21c08bb88438f18cc18ca61dd8,
+    type: 3}
   ArmadilloBlock: {fileID: 5846498091245386245}
   P1HorseLeg: {fileID: 5846498092017027665}
   KuwagataBlock: {fileID: 5846498091794318099}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!114 &5846498090687371519
 MonoBehaviour:
@@ -97649,10 +97814,13 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 5846498091975703984}
   P2ImplaWaveBlock: {fileID: 5846498091792488707}
+  P2shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 5846498091982437730}
   P2HorseLeg: {fileID: 5846498091937040679}
   KuwagataBlock: {fileID: 5846498091914928590}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!114 &5846498090843773786
 MonoBehaviour:
@@ -97692,6 +97860,7 @@ MonoBehaviour:
   Head2: 1
   Body2: 3
   Leg2: 2
+  Passive2: 0
 --- !u!1 &6765399329603225048
 GameObject:
   m_ObjectHideFlags: 0
@@ -97815,10 +97984,13 @@ MonoBehaviour:
     type: 3}
   P2ImplaBlock: {fileID: 5846498092052096957}
   P2ImplaWaveBlock: {fileID: 5846498092113988507}
+  P2shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 5846498090609111909}
   KuwagataBlock: {fileID: 5846498092067187701}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!114 &5846498090775197813
 MonoBehaviour:
@@ -97835,6 +98007,7 @@ MonoBehaviour:
   Head2: 2
   Body2: 1
   Leg2: 3
+  Passive2: 0
 --- !u!114 &5846498091668175067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98380,6 +98553,7 @@ MonoBehaviour:
   Head: 2
   Body: 2
   Leg: 2
+  Passive: 0
 --- !u!114 &6810739263117256977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98396,7 +98570,9 @@ MonoBehaviour:
   Body: 2
   Leg: 2
   ShieldObj: {fileID: 3599829204167210157}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 3541414543867505534}
@@ -98410,9 +98586,13 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 0}
   P1ImplaBlock: {fileID: 7129668896438830469}
   P1ImplaWaveBlock: {fileID: 2645792961076793361}
+  shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 3103451874941147431}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!95 &5271083008456969643
 Animator:
@@ -98633,6 +98813,7 @@ MonoBehaviour:
   Head2: 2
   Body2: 1
   Leg2: 1
+  Passive2: 0
 --- !u!114 &7800527428456035355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98665,11 +98846,15 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 7164893212814238295, guid: d24142e4c06483f449fb7d3e426a60a8,
     type: 3}
   P2ImplaBlock: {fileID: 5847402283054525614}
-  P2ImplaWaveBlock: {fileID: 6667041752071331519}
+  P2ImplaWaveBlock: {fileID: 0}
+  P2shockWave: {fileID: 5475163647346432145, guid: 4271fa21c08bb88438f18cc18ca61dd8,
+    type: 3}
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 3103451875564947022}
   KuwagataBlock: {fileID: 0}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!95 &4059931822664126530
 Animator:
@@ -99752,6 +99937,7 @@ MonoBehaviour:
   Head: 2
   Body: 1
   Leg: 1
+  Passive: 0
 --- !u!114 &2553467528550108901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99768,7 +99954,9 @@ MonoBehaviour:
   Body: 1
   Leg: 1
   ShieldObj: {fileID: 3551066582236910259}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 4748701958448004005}
@@ -99782,10 +99970,15 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 7164893212814238295, guid: d24142e4c06483f449fb7d3e426a60a8,
     type: 3}
   P1ImplaBlock: {fileID: 7207232012215533440}
-  P1ImplaWaveBlock: {fileID: 2924370756883471397}
+  P1ImplaWaveBlock: {fileID: 0}
+  shockWave: {fileID: 5475163647346432145, guid: 4271fa21c08bb88438f18cc18ca61dd8,
+    type: 3}
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 3103451875698385581}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!95 &9081599441482135492
 Animator:
@@ -107296,6 +107489,7 @@ MonoBehaviour:
   Head: 1
   Body: 1
   Leg: 1
+  Passive: 0
 --- !u!114 &5895851964667375766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107312,7 +107506,9 @@ MonoBehaviour:
   Body: 1
   Leg: 1
   ShieldObj: {fileID: 536554028532313445}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 1115335666053790357}
@@ -107326,10 +107522,15 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 7164893212814238295, guid: d24142e4c06483f449fb7d3e426a60a8,
     type: 3}
   P1ImplaBlock: {fileID: 5608640307084404407}
-  P1ImplaWaveBlock: {fileID: 6527361986203654642}
+  P1ImplaWaveBlock: {fileID: 0}
+  shockWave: {fileID: 5475163647346432145, guid: 4271fa21c08bb88438f18cc18ca61dd8,
+    type: 3}
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 3103451876153152013}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!95 &2608293557330103062
 Animator:
@@ -107942,6 +108143,7 @@ MonoBehaviour:
   _textCountdown: {fileID: 3343185482855955946}
   GameWinner: {fileID: 851910454304573248}
   BuffCountTextP2: {fileID: 0}
+  BuffCountTextP1: {fileID: 0}
   CountSrc: {fileID: 5846498091297596472}
   BGMSrc: {fileID: 5846498090636772051}
   WastelandES01: {fileID: 0}
@@ -110538,6 +110740,7 @@ MonoBehaviour:
   Head2: 1
   Body2: 1
   Leg2: 1
+  Passive2: 0
 --- !u!114 &49712203515523784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110570,11 +110773,15 @@ MonoBehaviour:
   P2TurtleCounter: {fileID: 7164893212814238295, guid: d24142e4c06483f449fb7d3e426a60a8,
     type: 3}
   P2ImplaBlock: {fileID: 5233635490546471211}
-  P2ImplaWaveBlock: {fileID: 3044740481976344973}
+  P2ImplaWaveBlock: {fileID: 0}
+  P2shockWave: {fileID: 5475163647346432145, guid: 4271fa21c08bb88438f18cc18ca61dd8,
+    type: 3}
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 3103451875824353058}
   KuwagataBlock: {fileID: 0}
   BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
   HitEff: {fileID: 0}
 --- !u!95 &5731504367772600406
 Animator:
@@ -113579,6 +113786,7 @@ MonoBehaviour:
   Head: 2
   Body: 2
   Leg: 1
+  Passive: 0
 --- !u!114 &5744649523089704724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113595,7 +113803,9 @@ MonoBehaviour:
   Body: 2
   Leg: 1
   ShieldObj: {fileID: 3196463715188101743}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 5168421398461256705}
@@ -113608,10 +113818,15 @@ MonoBehaviour:
   P1TurtleGard: {fileID: 1186084609009201020}
   P2TurtleCounter: {fileID: 0}
   P1ImplaBlock: {fileID: 5712692810246050065}
-  P1ImplaWaveBlock: {fileID: 7529908485465115443}
+  P1ImplaWaveBlock: {fileID: 0}
+  shockWave: {fileID: 5475163647346432145, guid: 4271fa21c08bb88438f18cc18ca61dd8,
+    type: 3}
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 3103451876432631433}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!95 &448510128707191443
 Animator:
@@ -115479,6 +115694,7 @@ MonoBehaviour:
   Head: 2
   Body: 1
   Leg: 2
+  Passive: 0
 --- !u!114 &5707764635035437285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115495,7 +115711,9 @@ MonoBehaviour:
   Body: 1
   Leg: 2
   ShieldObj: {fileID: 2483174187690720681}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 5400581929684486688}
   P1R: {fileID: 2807216567028550081}
   P1FlogTongue: {fileID: 259732940725551657}
@@ -115510,9 +115728,13 @@ MonoBehaviour:
     type: 3}
   P1ImplaBlock: {fileID: 3311636647123861685}
   P1ImplaWaveBlock: {fileID: 1340261737804966335}
+  shockWave: {fileID: 0}
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 3103451875237892773}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
   HitEff: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a, type: 3}
 --- !u!95 &7079463905905567587
 Animator:

@@ -897,6 +897,7 @@ public class BotFSW : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
                 }
                 if (other.gameObject.CompareTag("P1WolfAttack"))
                 {
