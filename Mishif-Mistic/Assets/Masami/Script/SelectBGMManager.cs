@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelectBGMManager : MonoBehaviour
 {
-    public string SelectBGMcueSheet = "SelectBGM";
+    public string SelectBGMcueSheet = "SelectBGMcueSheet";
 
     private CriAtomSource atomSource;
     static private SelectBGMManager instance = null;
