@@ -17938,6 +17938,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.55, y: 2.4, z: 2.7}
   m_Center: {x: 0, y: -0.46, z: -0.4}
+--- !u!95 &1261574899
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801435636167112344}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 51591393722bea543bf328fd97088b1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &566939698331208652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17977,7 +17996,9 @@ MonoBehaviour:
   Body: 3
   Leg: 1
   ShieldObj: {fileID: 566939697278382698}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 566939697626054614}
@@ -17995,6 +18016,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 566939697926212010}
   P1HorseLeg: {fileID: 566939697612849986}
   KuwagataBlock: {fileID: 795471638}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &566939698331208654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18010,25 +18035,6 @@ MonoBehaviour:
   Head: 2
   Body: 3
   Leg: 1
---- !u!95 &1261574899
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801435636167112344}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 51591393722bea543bf328fd97088b1a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &566939698384350329
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18058,6 +18064,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.55, y: 2.1, z: 2.75}
   m_Center: {x: 0, y: -0.34, z: -0.3}
+--- !u!95 &1468875653
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801435636220891473}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11bf9dbe87f2e6545a33e672752decf4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &566939698384350212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18074,7 +18099,9 @@ MonoBehaviour:
   Body: 3
   Leg: 2
   ShieldObj: {fileID: 566939697354556014}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 566939698091831117}
@@ -18092,6 +18119,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 566939697905282817}
   P1HorseLeg: {fileID: 566939698366838704}
   KuwagataBlock: {fileID: 700762331}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &566939698384350213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18130,25 +18161,6 @@ MonoBehaviour:
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
---- !u!95 &1468875653
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801435636220891473}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 11bf9dbe87f2e6545a33e672752decf4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &566939697942724086
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18178,6 +18190,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4, y: 2.65, z: 3}
   m_Center: {x: 0, y: -0.6, z: 0}
+--- !u!95 &8784085
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801435636853391532}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 239d79c97ac979f4fb11fe4602f85140, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &566939697942724080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18217,7 +18248,9 @@ MonoBehaviour:
   Body: 1
   Leg: 3
   ShieldObj: {fileID: 566939696795682942}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 566939698108609701}
@@ -18235,6 +18268,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 566939697877341968}
   P1HorseLeg: {fileID: 566939697295159003}
   KuwagataBlock: {fileID: 243948726}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &566939697942724082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18250,25 +18287,6 @@ MonoBehaviour:
   Head: 1
   Body: 1
   Leg: 3
---- !u!95 &8784085
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801435636853391532}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 239d79c97ac979f4fb11fe4602f85140, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &566939698229529878
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18298,6 +18316,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.55, y: 2.3, z: 2.6}
   m_Center: {x: 0, y: -0.47, z: -0.4}
+--- !u!95 &1216233365
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801435637139173452}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6e7b014c4c6ab55499d2297ffd210dcd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &566939698229529872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18314,7 +18351,9 @@ MonoBehaviour:
   Body: 3
   Leg: 1
   ShieldObj: {fileID: 566939697160998006}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 566939698748558502}
@@ -18332,6 +18371,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 566939696967878937}
   P1HorseLeg: {fileID: 566939697382062717}
   KuwagataBlock: {fileID: 1407072709}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &566939698229529873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18370,25 +18413,6 @@ MonoBehaviour:
   _pitch: 0
   _androidUseLowLatencyVoicePool: 0
   need_to_player_update_all: 1
---- !u!95 &1216233365
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801435637139173452}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6e7b014c4c6ab55499d2297ffd210dcd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &566939697350302613
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18418,6 +18442,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.5, z: 3}
   m_Center: {x: 0, y: -0.7, z: 0}
+--- !u!95 &824332808
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801435637200512717}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4cc32515f09ef5e4e903895e8a5ef9f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &566939697350302608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18472,7 +18515,9 @@ MonoBehaviour:
   Body: 2
   Leg: 3
   ShieldObj: {fileID: 566939698278130307}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 566939696954696738}
@@ -18490,25 +18535,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 566939698667745939}
   P1HorseLeg: {fileID: 566939698710986767}
   KuwagataBlock: {fileID: 301201731}
---- !u!95 &824332808
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801435637200512717}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4cc32515f09ef5e4e903895e8a5ef9f3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!54 &566939697440496003
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18538,6 +18568,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.55, y: 2.6, z: 2.6}
   m_Center: {x: 0, y: -0.6, z: -0.4}
+--- !u!95 &610818531
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801435637425054939}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9e6a23598a9be1043bdef427400165f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &566939697440496013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18577,7 +18626,9 @@ MonoBehaviour:
   Body: 3
   Leg: 3
   ShieldObj: {fileID: 566939698637223260}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 566939696931187485}
@@ -18595,6 +18646,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 566939697127060830}
   P1HorseLeg: {fileID: 566939697992581811}
   KuwagataBlock: {fileID: 1522449145}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &566939697440496015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18610,25 +18665,6 @@ MonoBehaviour:
   Head: 1
   Body: 3
   Leg: 3
---- !u!95 &610818531
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801435637425054939}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e6a23598a9be1043bdef427400165f3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &566939697591980378
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18658,6 +18694,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.55, y: 2, z: 2.6}
   m_Center: {x: 0, y: -0.3, z: -0.4}
+--- !u!95 &148190034
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801435637441145904}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4819203f19830a34cb62837d1b2641d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &566939697591980388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18697,7 +18752,9 @@ MonoBehaviour:
   Body: 3
   Leg: 2
   ShieldObj: {fileID: 566939697589336612}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 566939697121046099}
@@ -18715,6 +18772,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 566939697325856801}
   P1HorseLeg: {fileID: 566939698687528984}
   KuwagataBlock: {fileID: 965558574}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &566939697591980390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18730,25 +18791,6 @@ MonoBehaviour:
   Head: 1
   Body: 3
   Leg: 2
---- !u!95 &148190034
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801435637441145904}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4819203f19830a34cb62837d1b2641d2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &566939696782356678
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18778,6 +18820,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.55, y: 2.55, z: 2.7}
   m_Center: {x: 0, y: -0.6, z: -0.35}
+--- !u!95 &27992516
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801435637839990172}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 037abe0fbef4efb4c9feb34d677e416a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &566939696782356672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18817,7 +18878,9 @@ MonoBehaviour:
   Body: 3
   Leg: 3
   ShieldObj: {fileID: 566939697431521966}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 566939697152614443}
@@ -18835,6 +18898,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 566939698337988511}
   P1HorseLeg: {fileID: 566939698262526393}
   KuwagataBlock: {fileID: 70139600}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &566939696782356674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18850,25 +18917,6 @@ MonoBehaviour:
   Head: 2
   Body: 3
   Leg: 3
---- !u!95 &27992516
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801435637839990172}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 037abe0fbef4efb4c9feb34d677e416a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &566939697237851409
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18898,6 +18946,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.75, z: 2.8}
   m_Center: {x: 0, y: -0.6, z: 0}
+--- !u!95 &1206464341
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801435638160212041}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7303142ac4ac807468c93cf54ec40f99, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &566939697237851411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18952,7 +19019,9 @@ MonoBehaviour:
   Body: 2
   Leg: 3
   ShieldObj: {fileID: 566939698797286826}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 566939698342096664}
@@ -18970,25 +19039,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 566939697486347918}
   P1HorseLeg: {fileID: 566939698160165178}
   KuwagataBlock: {fileID: 1155804375}
---- !u!95 &1206464341
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801435638160212041}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7303142ac4ac807468c93cf54ec40f99, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!1 &803060610850713478
 GameObject:
   m_ObjectHideFlags: 0
@@ -23124,6 +23178,7 @@ MonoBehaviour:
   Head2: 1
   Body2: 1
   Leg2: 2
+  Passive2: 0
 --- !u!114 &5934853178352971427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23139,8 +23194,10 @@ MonoBehaviour:
   Head: 1
   Body: 1
   Leg: 2
-  ShieldObj: {fileID: 8500805503597548296}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 3572200226791262187}
   P2R: {fileID: 5435426994859015020}
   P2FlogTongue: {fileID: 8790920263521167251}
@@ -23158,6 +23215,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!95 &1097688859657039551
 Animator:
   serializedVersion: 3
@@ -25924,6 +25985,7 @@ MonoBehaviour:
   Head2: 1
   Body2: 2
   Leg2: 1
+  Passive2: 0
 --- !u!114 &7877898524209090657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25939,8 +26001,10 @@ MonoBehaviour:
   Head: 1
   Body: 2
   Leg: 1
-  ShieldObj: {fileID: 5541226879960268760}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 3572200226791262187}
   P2R: {fileID: 5435426994859015020}
   P2FlogTongue: {fileID: 1675723637498591683}
@@ -25957,6 +26021,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!95 &2933494211640339451
 Animator:
   serializedVersion: 3
@@ -26212,6 +26280,7 @@ MonoBehaviour:
   Head2: 2
   Body2: 2
   Leg2: 1
+  Passive2: 0
 --- !u!114 &4873793112720356039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26227,8 +26296,10 @@ MonoBehaviour:
   Head: 2
   Body: 2
   Leg: 1
-  ShieldObj: {fileID: 4999873425590039594}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 3572200226791262187}
   P2R: {fileID: 5435426994859015020}
   P2FlogTongue: {fileID: 2786752823975175135}
@@ -26245,6 +26316,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!95 &811585157266552971
 Animator:
   serializedVersion: 3
@@ -26659,7 +26734,9 @@ MonoBehaviour:
   Body: 3
   Leg: 2
   ShieldObj: {fileID: 2897813257687466150}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 2897813257381885553}
@@ -26677,6 +26754,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 2897813255823132932}
   P1HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 2897813256616010228}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &2897813257095869035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26721,6 +26802,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4, y: 2.8, z: 3}
   m_Center: {x: 0, y: -0.55, z: 0}
+--- !u!95 &1590874466
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2663439496378647552}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 43127e7fabc2b7c4fa1e3b5fcffb433f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2897813256219933002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26760,7 +26860,9 @@ MonoBehaviour:
   Body: 1
   Leg: 3
   ShieldObj: {fileID: 2897813257081665555}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 2897813257030819161}
@@ -26778,6 +26880,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 2897813256534305413}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &2897813256219933013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26793,25 +26899,6 @@ MonoBehaviour:
   Head: 2
   Body: 1
   Leg: 3
---- !u!95 &1590874466
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2663439496378647552}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 43127e7fabc2b7c4fa1e3b5fcffb433f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2666465762014093265
 GameObject:
   m_ObjectHideFlags: 0
@@ -29686,7 +29773,9 @@ MonoBehaviour:
   Body: 2
   Leg: 1
   ShieldObj: {fileID: 2897813257302893376}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 2897813256932953772}
@@ -29704,6 +29793,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!1 &2897813255715177042
 GameObject:
   m_ObjectHideFlags: 0
@@ -30803,7 +30896,9 @@ MonoBehaviour:
   Body: 2
   Leg: 1
   ShieldObj: {fileID: 2897813257650505478}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 0}
@@ -30821,6 +30916,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!1 &2897813255781597004
 GameObject:
   m_ObjectHideFlags: 0
@@ -35064,7 +35163,9 @@ MonoBehaviour:
   Body: 2
   Leg: 2
   ShieldObj: {fileID: 2897813255712493638}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 2897813256056725277}
@@ -35082,6 +35183,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!1 &2897813256017541644
 GameObject:
   m_ObjectHideFlags: 0
@@ -35255,7 +35360,9 @@ MonoBehaviour:
   Body: 1
   Leg: 2
   ShieldObj: {fileID: 2897813255764667758}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 2897813255845903621}
@@ -35273,6 +35380,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!1 &2897813256019019387
 GameObject:
   m_ObjectHideFlags: 0
@@ -51340,7 +51451,9 @@ MonoBehaviour:
   Body: 2
   Leg: 2
   ShieldObj: {fileID: 2897813257227765683}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 0}
@@ -51358,6 +51471,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!1 &2897813256990059344
 GameObject:
   m_ObjectHideFlags: 0
@@ -52218,7 +52335,9 @@ MonoBehaviour:
   Body: 1
   Leg: 1
   ShieldObj: {fileID: 2897813257541368515}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 2897813256249625519}
@@ -52236,6 +52355,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!1 &2897813257029865086
 GameObject:
   m_ObjectHideFlags: 0
@@ -55849,7 +55972,9 @@ MonoBehaviour:
   Body: 1
   Leg: 2
   ShieldObj: {fileID: 2897813256440934685}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 0}
@@ -55867,6 +55992,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!1 &2897813257218407256
 GameObject:
   m_ObjectHideFlags: 0
@@ -66066,7 +66195,9 @@ MonoBehaviour:
   Body: 1
   Leg: 1
   ShieldObj: {fileID: 2897813257750785227}
-  ShieldPoint: 1
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P1G: {fileID: 6004119967792087004}
   P1R: {fileID: 4563676334093204541}
   P1FlogTongue: {fileID: 0}
@@ -66084,6 +66215,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P1HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P2G: {fileID: 0}
+  P2R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!1 &2897813257776753121
 GameObject:
   m_ObjectHideFlags: 0
@@ -67737,6 +67872,7 @@ MonoBehaviour:
   Head2: 2
   Body2: 1
   Leg2: 2
+  Passive2: 0
 --- !u!114 &6920306638294499461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67752,8 +67888,10 @@ MonoBehaviour:
   Head: 2
   Body: 1
   Leg: 2
-  ShieldObj: {fileID: 7904588168528694645}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 3572200226791262187}
   P2R: {fileID: 5435426994859015020}
   P2FlogTongue: {fileID: 1401881932860416844}
@@ -67771,6 +67909,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!95 &6810917481359967138
 Animator:
   serializedVersion: 3
@@ -70653,6 +70795,7 @@ MonoBehaviour:
   Head2: 2
   Body2: 2
   Leg2: 2
+  Passive2: 0
 --- !u!114 &5434851286167358684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70668,8 +70811,10 @@ MonoBehaviour:
   Head: 2
   Body: 2
   Leg: 2
-  ShieldObj: {fileID: 2738357560389363955}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 3572200226791262187}
   P2R: {fileID: 5435426994859015020}
   P2FlogTongue: {fileID: 7540830674373453640}
@@ -70686,6 +70831,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!95 &8138142658854942027
 Animator:
   serializedVersion: 3
@@ -74400,7 +74549,6 @@ MonoBehaviour:
   Body: 2
   Leg: 2
   ShieldObj: {fileID: 1769196894290676507}
-  ShieldPoint: 1
   P2G: {fileID: 3572200226791262187}
   P2R: {fileID: 5435426994859015020}
   P2FlogTongue: {fileID: 5827264520980553340}
@@ -74409,14 +74557,18 @@ MonoBehaviour:
     type: 3}
   P2SetScorpion: {fileID: 6610526813216414385}
   P2WolfAtk: {fileID: 5436618439602406102}
-  P2WolfNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2WolfColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2Lionhead: {fileID: 2018500318078734456}
-  P2LionNormal: {fileID: 2100000, guid: dae32d884d34a8e4d851069286db3c3f, type: 2}
-  P2LionColor: {fileID: 2100000, guid: a440b54a56ea05443ae61e983aea13f9, type: 2}
   P2TurtleGard: {fileID: 6715675332714538753}
+  P2TurtleCounter: {fileID: 0}
   P2ImplaBlock: {fileID: 4679872613704707928}
   P2ImplaWaveBlock: {fileID: 1927423649837617443}
+  ArmadilloBlock: {fileID: 0}
+  P2HorseLeg: {fileID: 0}
+  KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!114 &4958953565259913304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74964,6 +75116,7 @@ MonoBehaviour:
   Head2: 2
   Body2: 1
   Leg2: 1
+  Passive2: 0
 --- !u!114 &8494169003571233255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74979,8 +75132,10 @@ MonoBehaviour:
   Head: 2
   Body: 1
   Leg: 1
-  ShieldObj: {fileID: 1378266345986207121}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 3572200226791262187}
   P2R: {fileID: 5435426994859015020}
   P2FlogTongue: {fileID: 3740872344069148298}
@@ -74998,6 +75153,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!95 &2447589372772246974
 Animator:
   serializedVersion: 3
@@ -85929,6 +86088,7 @@ MonoBehaviour:
   Head2: 1
   Body2: 1
   Leg2: 1
+  Passive2: 0
 --- !u!114 &1806171144804632372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85944,8 +86104,10 @@ MonoBehaviour:
   Head: 1
   Body: 1
   Leg: 1
-  ShieldObj: {fileID: 553838842054549635}
-  ShieldPoint: 1
+  PositionShield: {fileID: 0}
+  Shield_Blue: {fileID: 0}
+  Shield_Yellow: {fileID: 0}
+  Shield_Red: {fileID: 0}
   P2G: {fileID: 3572200226791262187}
   P2R: {fileID: 5435426994859015020}
   P2FlogTongue: {fileID: 95843476010345778}
@@ -85963,6 +86125,10 @@ MonoBehaviour:
   ArmadilloBlock: {fileID: 0}
   P2HorseLeg: {fileID: 0}
   KuwagataBlock: {fileID: 0}
+  BuffTimer: 0
+  P1G: {fileID: 0}
+  P1R: {fileID: 0}
+  HitEff: {fileID: 0}
 --- !u!95 &6208835721680190890
 Animator:
   serializedVersion: 3
@@ -92252,6 +92418,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -6288747229944292326, guid: 7e41791d01e2f7e408e38303f81a410f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f5649ece5eca244bab3f48b95021d3c, type: 2}
+    - target: {fileID: -6288747229944292326, guid: 7e41791d01e2f7e408e38303f81a410f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 180a0238ee537d74a88f28a6e196878f, type: 2}
     - target: {fileID: -6243139312899641497, guid: 7e41791d01e2f7e408e38303f81a410f,
         type: 3}
       propertyPath: m_Layer
