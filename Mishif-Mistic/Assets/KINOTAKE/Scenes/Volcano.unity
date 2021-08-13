@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4080,21 +4080,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &458403803
+--- !u!4 &458403803 stripped
 Transform:
-  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 94afd02428f885649835347e01087f21,
     type: 3}
   m_PrefabInstance: {fileID: 508763960}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128258055}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1011860296}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &472392735 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4667278622679265537, guid: 4574ca03b95bb77479f13b57e77cb074,
@@ -5050,6 +5041,60 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8515325664793222209}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &592344921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 592344922}
+  - component: {fileID: 592344923}
+  m_Layer: 0
+  m_Name: Bubble01(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &592344922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592344921}
+  m_LocalRotation: {x: -0, y: 0.46002936, z: -0, w: 0.88790375}
+  m_LocalPosition: {x: 389.4322, y: 55, z: 823.34106}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 0.9999999}
+  m_Children: []
+  m_Father: {fileID: 8515325664793222210}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &592344923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592344921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 1
+  _cueName: Bubble01
+  _cueSheet: VolcanoES
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 1
+  _volume: 0.5
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &610373330
 GameObject:
   m_ObjectHideFlags: 0
@@ -8141,37 +8186,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1011860295
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 508763960}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1011860296}
-  m_Layer: 0
-  m_Name: ruin_03 (Missing Prefab)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1011860296
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 508763960}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1011860295}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 458403803}
-  m_Father: {fileID: 1411635439}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1012562907
 GameObject:
   m_ObjectHideFlags: 0
@@ -10639,7 +10653,7 @@ Transform:
   m_Children:
   - {fileID: 1517235485}
   - {fileID: 899161233}
-  - {fileID: 1011860296}
+  - {fileID: 458403803}
   - {fileID: 8270345}
   - {fileID: 674032895}
   - {fileID: 588362739}
@@ -16768,22 +16782,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2128258055
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 508763960}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 458403803}
-  m_Layer: 0
-  m_Name: Missing Prefab (Dummy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1001 &8515325664793222209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17460,6 +17458,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a,
         type: 3}
+    - target: {fileID: 6354609876415479037, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: cueSheets.Array.data[3].name
+      value: VolcanoES
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354609876415479037, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: cueSheets.Array.data[3].acbFile
+      value: VolcanoES.acb
+      objectReference: {fileID: 0}
     - target: {fileID: 6354609876438141467, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
         type: 3}
       propertyPath: PositionShield
@@ -17795,6 +17803,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2728251122106773637, guid: f4ec2bc646cf77a42862e1413c3f6a7a,
         type: 3}
+    - target: {fileID: 6354609877574464844, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: _playOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354609877574464844, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: _loop
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6354609877629588828, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
         type: 3}
       propertyPath: Shield_Blue
