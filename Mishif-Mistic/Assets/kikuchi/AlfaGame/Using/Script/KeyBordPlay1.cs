@@ -18,7 +18,7 @@ public class KeyBordPlay1 : MonoBehaviour
     public int Leg = 0;
     //外装
     //1=加速　わざと１
-    private int Exterior = 2;
+    private int Exterior = 0;
     //移動速度
     private float Speed = 40.0f;
     private Vector3 Direction;

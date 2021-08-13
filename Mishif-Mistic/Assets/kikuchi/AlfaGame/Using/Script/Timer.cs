@@ -19,6 +19,8 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private Text BuffCountTextP1;
 
+    private int Exterior1 = 1;
+    private int Exterior2 = 1;
     //ADX設定
     public CriAtomSource CountSrc;
     public CriAtomSource BGMSrc;
@@ -40,6 +42,8 @@ public class Timer : MonoBehaviour
         CriAtomExAcb Countacb = CriAtom.GetAcb(cueSheetCount);
         BGMSrc.cueSheet = cueSheetBGM;
         CountSrc.cueSheet = cueSheetCount;
+        Exterior1 = ContlolePassive1.GetPassive();
+        Exterior2 = ContlolePassive2.GetPassive2();
     }
 
     IEnumerator CountdownCoroutine()
@@ -109,10 +113,26 @@ public class Timer : MonoBehaviour
                     Invoke("SceneResult1", 2.0f);
                 }
             }
-            string CounttextP2 = KeybordPlay2.GetBuffCountP2().ToString("0");
-            BuffCountTextP2.text ="P2="+CounttextP2;
-            string CounttextP1 = JoyconPlay1.GetBuffCountP1().ToString("0");
-            BuffCountTextP2.text = "P1=" + CounttextP1;
+
+            if (Exterior2 == 2)
+            {
+                string CounttextP2 = KeybordPlay2.GetBuffCountP2().ToString("0");
+                BuffCountTextP2.text = "加速P2:" + CounttextP2 + "回";
+            }
+            else
+            {
+                BuffCountTextP2.text = "";
+            }
+
+            if (Exterior1 == 2)
+            {
+                string CounttextP1 = JoyconPlay1.GetBuffCountP1().ToString("0");
+                BuffCountTextP1.text = "加速P1:" + CounttextP1 + "回";
+            }
+            else
+            {
+                BuffCountTextP1.text = "";
+            }
         }
 
         if (_textCountdown.text == "3")
