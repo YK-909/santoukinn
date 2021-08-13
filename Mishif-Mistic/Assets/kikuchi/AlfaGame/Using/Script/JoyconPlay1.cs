@@ -17,8 +17,8 @@ public class JoyconPlay1 : MonoBehaviour
     //1=インパラ 1=オオカミ
     public int Leg = 0;
     //外装
-    //1=加速　わざと１
-    private int Exterior = 2;
+    //2=加速　吸血＝3
+    private int Exterior = 1;
     //移動速度
     private float Speed = 40.0f;
     private Vector3 Direction;
@@ -179,7 +179,8 @@ public class JoyconPlay1 : MonoBehaviour
         Rb.isKinematic = true;
         EnemyObj = GameObject.Find("P2camera");
         ShieldObj.SetActive(false);
-        if (Exterior == 1)
+        Exterior = ContlolePassive1.GetPassive();
+        if (Exterior == 2)
         {
             BuffSpeed = 0.8f;
         }
@@ -199,7 +200,7 @@ public class JoyconPlay1 : MonoBehaviour
         {
             if (AllActionInterval == false)
             {
-                if (Exterior == 2)
+                if (Exterior == 3)
                 {
                     Player1HP = KeybordPlay2.GetP1HP();
                 }
@@ -612,7 +613,7 @@ public class JoyconPlay1 : MonoBehaviour
                                     }
                                 }
 
-                                if (Exterior == 1)
+                                if (Exterior == 2)
                                 {
                                     if (BuffSpeed != 1.5f && BuffCountP1 != 0)
                                     {
@@ -623,12 +624,12 @@ public class JoyconPlay1 : MonoBehaviour
                                         }
                                     }
                                 }
-                                else if (Exterior == 2)
+                                else if (Exterior == 3)
                                 {
 
 
                                 }
-                                else if (Exterior == 3)
+                                else if (Exterior == 1)
                                 {
                                    
                                 }

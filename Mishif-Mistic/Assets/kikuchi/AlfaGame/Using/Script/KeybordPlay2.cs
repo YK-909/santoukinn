@@ -17,8 +17,8 @@ public class KeybordPlay2 : MonoBehaviour
     //1=インパラ 2=オオカミ 3=馬
     public int Leg = 0;
     //外装
-    //1=加速　わざと１
-    private int Exterior = 2;
+    //2=加速　吸血=3
+    private int Exterior = 1;
     //移動速度
     private float Speed = 40.0f;
 
@@ -181,7 +181,8 @@ public class KeybordPlay2 : MonoBehaviour
         Rb.isKinematic = true;
         EnemyObj = GameObject.Find("P1camera");
         PositionShield.SetActive(false);
-        if (Exterior == 1)
+        Exterior = ContlolePassive2.GetPassive2();
+        if (Exterior == 2)
         {
             BuffSpeed = 0.8f;
         }
@@ -203,7 +204,7 @@ public class KeybordPlay2 : MonoBehaviour
             if (AllActionInterval == false)
             {
                 EnemyHP_1 = JoyconPlay1.GetP1HP();
-                if (Exterior == 2)
+                if (Exterior ==3)
                 {
                     Player2HP = JoyconPlay1.GetP2HP();
                 }
@@ -760,7 +761,7 @@ public class KeybordPlay2 : MonoBehaviour
                                     }
                                 }
 
-                                if (Exterior == 1)
+                                if (Exterior == 2)
                                 {
                                     if (BuffSpeed != 1.5f && BuffCountP2 != 0)
                                     {
@@ -771,24 +772,14 @@ public class KeybordPlay2 : MonoBehaviour
                                         }
                                     }
                                 }
-                                else if (Exterior == 2)
+                                else if (Exterior == 3)
                                 {
                                     
                                 
                                 }
-                                else if(Exterior==3)
+                                else if(Exterior==1)
                                 {
-                                    RejeTime += Time.deltaTime;
-                                    if(RejeTime>=1)
-                                    {
-                                        if (Player2HP+3 < 100)
-                                        {
-                                            Player2HP += 3;
-                                            P2G.transform.position -= new Vector3(HP10per * 0.3f, 0, 0);
-                                            P2R.transform.position -= new Vector3(HP10per * 0.3f, 0, 0);
-                                            RejeTime = 0;
-                                        }
-                                    }
+                                   
                                 }
                             }
                         }
