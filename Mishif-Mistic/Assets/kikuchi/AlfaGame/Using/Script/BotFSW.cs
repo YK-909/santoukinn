@@ -820,7 +820,7 @@ public class BotFSW : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                     //最後の一撃
-                    if (KeybordPlay2.GetP2HP() <= 0)
+                    if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }
@@ -855,7 +855,7 @@ public class BotFSW : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                     //最後の一撃
-                    if (KeybordPlay2.GetP2HP() <= 0)
+                    if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }
@@ -888,7 +888,7 @@ public class BotFSW : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                     //最後の一撃
-                    if (KeybordPlay2.GetP2HP() <= 0)
+                    if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }
@@ -928,7 +928,7 @@ public class BotFSW : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                     //最後の一撃
-                    if (KeybordPlay2.GetP2HP() <= 0)
+                    if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }
@@ -962,7 +962,7 @@ public class BotFSW : MonoBehaviour
                     //怯む
                     this.Animator.SetBool(isFalt, true);
                     //最後の一撃
-                    if (KeybordPlay2.GetP2HP() <= 0)
+                    if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }
@@ -998,7 +998,7 @@ public class BotFSW : MonoBehaviour
                     //怯む
                     this.Animator.SetBool(isFalt, true);
                     //最後の一撃
-                    if (KeybordPlay2.GetP2HP() <= 0)
+                    if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }
@@ -1034,7 +1034,7 @@ public class BotFSW : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                     //最後の一撃
-                    if (KeybordPlay2.GetP2HP() <= 0)
+                    if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }
@@ -1070,7 +1070,7 @@ public class BotFSW : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                     //最後の一撃
-                    if (KeybordPlay2.GetP2HP() <= 0)
+                    if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }

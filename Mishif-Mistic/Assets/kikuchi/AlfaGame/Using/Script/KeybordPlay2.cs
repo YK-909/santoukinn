@@ -453,7 +453,7 @@ public class KeybordPlay2 : MonoBehaviour
                                             //P2Lionhead.SetActive(true);
                                             AllActionInterval = true;
                                             P2Lionhead.tag = "P2LionAttack";
-                                            Rb.AddForce(transform.forward * 30f, ForceMode.Impulse);
+                                            //Rb.AddForce(transform.forward * 30f, ForceMode.Impulse);
                                             LionSwitch = false;
                                             //行動停止
                                             Invoke("ActionInterval", 1.1f);
@@ -674,6 +674,7 @@ public class KeybordPlay2 : MonoBehaviour
 
                                                 Invoke("ImpalaAtkTiming", 0.5f);
                                                 Invoke("ImpalaFinTiming", 1.5f);
+
                                             }
                                         }
                                         else if (Implajump == false)
@@ -1063,6 +1064,8 @@ public class KeybordPlay2 : MonoBehaviour
         //LionSrc.Play();
         atomSrc.Play("Lion_Bite");
 
+        Rb.AddForce(transform.forward * 60f, ForceMode.Impulse);
+
     }
 
     void BiteUnable()
@@ -1101,9 +1104,10 @@ public class KeybordPlay2 : MonoBehaviour
     public void ImpShockWave()
     {
         GameObject Obj;
-        Obj = Instantiate(P2shockWave, transform.position + transform.up * -10+transform.forward*-2, transform.rotation) as GameObject;
+        Obj = Instantiate(P2shockWave, transform.position + transform.up * -10 + transform.forward * -2, transform.rotation) as GameObject;
         Obj.transform.localScale = new Vector3(12.0f, 12.0f, 12.0f);
         Destroy(Obj, 0.8f);
+
     }
 
     void DelayArma()
