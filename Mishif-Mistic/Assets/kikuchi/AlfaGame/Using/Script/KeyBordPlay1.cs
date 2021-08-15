@@ -1327,7 +1327,7 @@ public class KeyBordPlay1 : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                     //最後の一撃
-                    if (JoyconPlay1.GetP1HP() <= 0)
+                    if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }
@@ -1359,7 +1359,7 @@ public class KeyBordPlay1 : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                     //最後の一撃
-                    if (JoyconPlay1.GetP1HP() <= 0)
+                    if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }
@@ -1390,7 +1390,7 @@ public class KeyBordPlay1 : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                     //最後の一撃
-                    if (JoyconPlay1.GetP1HP() <= 0)
+                    if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }
@@ -1429,7 +1429,7 @@ public class KeyBordPlay1 : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                     //最後の一撃
-                    if (JoyconPlay1.GetP1HP() <= 0)
+                    if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }
@@ -1463,7 +1463,7 @@ public class KeyBordPlay1 : MonoBehaviour
                     //怯む
                     this.Animator.SetBool(isFalt, true);
                     //最後の一撃
-                    if (JoyconPlay1.GetP1HP() <= 0)
+                    if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }
@@ -1498,7 +1498,7 @@ public class KeyBordPlay1 : MonoBehaviour
                     //怯む
                     this.Animator.SetBool(isFalt, true);
                     //最後の一撃
-                    if (JoyconPlay1.GetP1HP() <= 0)
+                    if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }
@@ -1529,7 +1529,7 @@ public class KeyBordPlay1 : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                     //最後の一撃
-                    if (JoyconPlay1.GetP1HP() <= 0)
+                    if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }
@@ -1560,7 +1560,7 @@ public class KeyBordPlay1 : MonoBehaviour
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                     //最後の一撃
-                    if (JoyconPlay1.GetP1HP() <= 0)
+                    if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
                     }
