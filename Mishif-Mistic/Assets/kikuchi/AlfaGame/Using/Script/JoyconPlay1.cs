@@ -119,8 +119,9 @@ public class JoyconPlay1 : MonoBehaviour
     private GameObject EnemyObj;
     private Vector3 Enemy;
 
-    //ヒットエフェクト
+    //エフェクト
     public GameObject HitEff;
+    public GameObject Speedup;
 
     //ADX設定
     //public CriAtomSource AnimalFSSrc;
@@ -621,6 +622,12 @@ public class JoyconPlay1 : MonoBehaviour
                                         {
                                             BuffSpeed = 1.5f;
                                             BuffCountP1 -= 1;
+
+                                            //スピードアップエフェクト
+                                            GameObject SpeedObj;
+                                            SpeedObj = Instantiate(Speedup, transform.position + transform.up * -7 + transform.forward * -2, Quaternion.Euler(0, -83f, 0)) as GameObject;
+                                            Speedup.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                                            Destroy(SpeedObj, 1.6f);
                                         }
                                     }
                                 }
