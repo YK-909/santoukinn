@@ -10,6 +10,8 @@ public class NPCPP1Kimera211 : MonoBehaviour
     int Body;
     [SerializeField]
     int Leg;
+    [SerializeField]
+    int Passive;
 
     GameObject instance;
 
@@ -26,7 +28,7 @@ public class NPCPP1Kimera211 : MonoBehaviour
     {
         if (One)
         {
-            if (NPCP1Contlolehead.head == Head && NPCP1Contlolebody.body == Body && NPCP1Contloleleg.leg == Leg)
+            if (NPCP1Contlolehead.head == Head && NPCP1Contlolebody.body == Body && NPCP1Contloleleg.leg == Leg && NPCP1ContlolePassive.passive == Passive)
             {
                 //if文の外でやると無駄に毎フレーム実行されるので中にする
                 GameObject obj = (GameObject)Resources.Load("CP1Kimera211");
@@ -40,7 +42,7 @@ public class NPCPP1Kimera211 : MonoBehaviour
             instance.SetActive(false);
         }
 
-        if (NPCP1Contlolehead.head == Head && NPCP1Contlolebody.body == Body && NPCP1Contloleleg.leg == Leg)
+        if (NPCP1Contlolehead.head == Head && NPCP1Contlolebody.body == Body && NPCP1Contloleleg.leg == Leg && NPCP1ContlolePassive.passive == Passive)
         {
             instance.SetActive(true);
             instance.transform.RotateAround(new Vector3(-4.8f, -1, 10), transform.up, 20 * Time.deltaTime);

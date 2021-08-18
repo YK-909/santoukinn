@@ -6,8 +6,8 @@ public class NPCChooseArea : MonoBehaviour
 {
     public CriAtomSource KeyboardSlotLRSrc;
 
-    private float minX = 290;
-    private float maxX = 690;
+    private float minX = 280;
+    private float maxX = 770;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class NPCChooseArea : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.Translate(-200, 0, 0);
+            transform.Translate(-170, 0, 0);
 
             //音鳴らす
             KeyboardSlotLRSrc.Play();
@@ -28,7 +28,7 @@ public class NPCChooseArea : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.Translate(200, 0, 0);
+            transform.Translate(170, 0, 0);
 
             //音鳴らす
             KeyboardSlotLRSrc.Play();
