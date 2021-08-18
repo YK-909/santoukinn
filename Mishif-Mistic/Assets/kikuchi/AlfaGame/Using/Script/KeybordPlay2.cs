@@ -672,6 +672,7 @@ public class KeybordPlay2 : MonoBehaviour
                                                 Rb.isKinematic = true;
                                                 AllActionInterval = true;
                                                 Invoke("ImpleFreeze", 0.35f);
+                                                Invoke("ActionInterval", 1.2f);
 
                                                 Invoke("ImpalaAtkTiming", 0.5f);
                                                 Invoke("ImpalaFinTiming", 1.5f);
