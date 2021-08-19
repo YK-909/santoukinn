@@ -271,7 +271,7 @@ public class BotFSW : MonoBehaviour
                             if (Head == 1)
                             {
                                 //カエル
-                                if (Distance < 20)
+                                if (Distance < 10)
                                 {
                                     this.Animator.SetBool(isRun, false);
                                     if (FlogSwitch == true)
