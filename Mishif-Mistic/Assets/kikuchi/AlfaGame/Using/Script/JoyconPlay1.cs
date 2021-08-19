@@ -185,6 +185,7 @@ public class JoyconPlay1 : MonoBehaviour
         {
             BuffSpeed = 0.8f;
         }
+        BuffCountP1 = 3;
 
         Animator = GetComponent<Animator>();
 
@@ -452,10 +453,16 @@ public class JoyconPlay1 : MonoBehaviour
                                                     {
                                                         ArmadilloSpeed += 10 * Time.deltaTime;
                                                     }
+
+                                                    //ローリングアタック
+                                                    this.Animator.SetBool(isRollStr, true);
+                                                    this.Animator.SetBool(isRollFin, false);
                                                 }
                                                 if (Input.GetKeyUp(KeyCode.Joystick1Button3))
                                                 {
                                                     ArmadilloMode = 1;
+
+                                                    this.Animator.SetBool(isRollStr, false);
                                                 }
                                             }
                                             else if (ArmadilloMode == 1)
@@ -485,6 +492,7 @@ public class JoyconPlay1 : MonoBehaviour
                                                 else
                                                 {
                                                     OnceArma = true;
+                                                    this.Animator.SetBool(isRollFin, true);
                                                     ArmadilloBlock.SetActive(false);
                                                     ArmadilloMode = 0;
                                                     //オブジェクトが消える時間
@@ -626,7 +634,7 @@ public class JoyconPlay1 : MonoBehaviour
 
                                             //スピードアップエフェクト
                                             GameObject SpeedObj;
-                                            SpeedObj = Instantiate(Speedup, transform.position + transform.up * -7 + transform.forward * -2, Quaternion.Euler(0, -83f, 0)) as GameObject;
+                                            SpeedObj = Instantiate(Speedup, transform.position + transform.up * -7 + transform.forward * -2, transform.rotation) as GameObject;
                                             Speedup.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                                             Destroy(SpeedObj, 1.6f);
                                         }
@@ -1017,6 +1025,10 @@ public class JoyconPlay1 : MonoBehaviour
         return Player1HP;
     }
 
+    private void BlownOff()
+    {
+        this.Animator.SetBool(isBlown, false);
+    }
 
     void OnCollisionEnter(Collision other)
     {
@@ -1248,7 +1260,7 @@ public class JoyconPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P2ImplaWave"))
                 {
-                    Player1HP -= 10;
+                    Player1HP -= 30;
                     DamageHP1 = 10;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per, 0, 0);
@@ -1405,6 +1417,7 @@ public class JoyconPlay1 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    Invoke("BlownOff", 1.1f);
                     //最後の一撃
                     if (JoyconPlay1.GetP1HP() <= 0)
                     {
