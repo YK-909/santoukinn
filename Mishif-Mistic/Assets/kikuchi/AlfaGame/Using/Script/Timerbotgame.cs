@@ -13,6 +13,10 @@ public class Timerbotgame : MonoBehaviour
     public static int GameChange;
     [SerializeField]
     private Text GameWinner;
+    [SerializeField]
+    private Text BuffCountTextP1;
+
+    private int Exterior1 = 1;
 
     //ADX設定
     public CriAtomSource CountSrc;
@@ -31,6 +35,7 @@ public class Timerbotgame : MonoBehaviour
         //CriAtomSourceを取得
         CriAtomExAcb BGMacb = CriAtom.GetAcb(cueSheetBGM);
         CriAtomExAcb Countacb = CriAtom.GetAcb(cueSheetCount);
+        Exterior1 = NPCP1ContlolePassive.GetPassive();
         BGMSrc.cueSheet = cueSheetBGM;
         CountSrc.cueSheet = cueSheetCount;
     }
@@ -95,6 +100,16 @@ public class Timerbotgame : MonoBehaviour
                     GameChange = 2;
 
                 }
+            }
+
+            if (Exterior1 == 2)
+            {
+                string CounttextP1 = KeyBordPlay1.GetBuffCountP1().ToString("0");
+                BuffCountTextP1.text = "加速P1:" + CounttextP1 + "回";
+            }
+            else
+            {
+                BuffCountTextP1.text = "";
             }
         }
 

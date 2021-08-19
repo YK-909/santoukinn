@@ -18,7 +18,7 @@ public class KeyBordPlay1 : MonoBehaviour
     public int Leg = 0;
     //外装
     //1=加速　わざと１
-    private int Exterior = 0;
+    public int Exterior = 0;
     //移動速度
     private float Speed = 40.0f;
     private Vector3 Direction;
@@ -180,7 +180,7 @@ public class KeyBordPlay1 : MonoBehaviour
         Rb.isKinematic = true;
         EnemyObj = GameObject.Find("P2camera");
         ShieldObj.SetActive(false);
-        if (Exterior == 1)
+        if (Exterior == 2)
         {
             BuffSpeed = 0.8f;
         }
@@ -201,7 +201,7 @@ public class KeyBordPlay1 : MonoBehaviour
         {
             if (AllActionInterval == false)
             {
-                if (Exterior == 2)
+                if (Exterior == 3)
                 {
                     Player1HP = BotFSW.GetP1HP();
                 }
@@ -758,6 +758,10 @@ public class KeyBordPlay1 : MonoBehaviour
 
                                 if (Exterior == 1)
                                 {
+                                   
+                                }
+                                else if (Exterior == 2)
+                                {
                                     if (BuffSpeed != 1.5f && BuffCountP1 != 0)
                                     {
                                         if (Input.GetKey(KeyCode.B))
@@ -772,15 +776,6 @@ public class KeyBordPlay1 : MonoBehaviour
                                             Destroy(SpeedObj, 1.6f);
                                         }
                                     }
-                                }
-                                else if (Exterior == 2)
-                                {
-
-
-                                }
-                                else if (Exterior == 3)
-                                {
-
                                 }
                             }
                         }
