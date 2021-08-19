@@ -187,7 +187,7 @@ public class KeybordPlay2 : MonoBehaviour
         {
             BuffSpeed = 0.8f;
         }
-
+        BuffCountP2 = 3;
 
         Animator = GetComponent<Animator>();
 
@@ -775,7 +775,7 @@ public class KeybordPlay2 : MonoBehaviour
 
                                             //スピードアップエフェクト
                                             GameObject SpeedObj;
-                                            SpeedObj = Instantiate(Speedup, transform.position+transform.up*-7+transform.forward*-2, Quaternion.Euler(0,-83f,0)) as GameObject;
+                                            SpeedObj = Instantiate(Speedup, transform.position+transform.up*-7+transform.forward*-2,transform.rotation)as GameObject;
                                             Speedup.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                                             Destroy(SpeedObj, 1.6f);
                                         }
@@ -1175,6 +1175,12 @@ public class KeybordPlay2 : MonoBehaviour
     {
         return EnemyHP_1;
     }
+
+    private void BlownOff()
+    {
+        this.Animator.SetBool(isBlown, false);
+    }
+
     void OnCollisionEnter(Collision other)
     {
 
@@ -1389,7 +1395,7 @@ public class KeybordPlay2 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P1Impla"))
                 {
-                    Player2HP -= 30;
+                    //Player2HP -= 30;
                     DamageHP2 = 30;
                     HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 3, 0, 0);
@@ -1424,7 +1430,7 @@ public class KeybordPlay2 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P1ImplaWave"))
                 {
-                    Player2HP -= 10;
+                    Player2HP -= 30;
                     DamageHP2 = 10;
                     HPdrain();
                     P2G.transform.position += new Vector3(HP10per, 0, 0);
@@ -1589,6 +1595,7 @@ public class KeybordPlay2 : MonoBehaviour
 
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
+                    Invoke("BlownOff", 1.1f);
                     //最後の一撃
                     if (KeybordPlay2.GetP2HP() <= 0)
                     {
