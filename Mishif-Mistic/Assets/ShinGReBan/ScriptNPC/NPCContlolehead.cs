@@ -10,10 +10,11 @@ public class NPCContlolehead : MonoBehaviour
     //ADX設定
     public CriAtomSource LionSlotVo;
     public CriAtomSource FrogSlotVo;
+    public CriAtomSource StagSlotVo;
     //音数制限
     bool isLionVoOnce = false;
     bool isFrogVoOnce = false;
-    
+    bool isStagVoOnce = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,7 @@ public class NPCContlolehead : MonoBehaviour
                 isFrogVoOnce = true;
                 FrogSlotVo.Play();
                 isLionVoOnce = false;
+                isStagVoOnce = false;
             }
             
         }
@@ -58,6 +60,17 @@ public class NPCContlolehead : MonoBehaviour
                 isLionVoOnce = true;
                 LionSlotVo.Play();
                 isFrogVoOnce = false;
+                isStagVoOnce = false;
+            }
+        }
+        if (head2 == 3)
+        {
+            if (isStagVoOnce == false)
+            {
+                isStagVoOnce = true;
+                StagSlotVo.Play();
+                isFrogVoOnce = false;
+                isLionVoOnce = false;
             }
         }
     }
