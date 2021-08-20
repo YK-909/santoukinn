@@ -1068,9 +1068,7 @@ public class KeybordPlay2 : MonoBehaviour
     {
         //ライオンの当たり判定
         P2Lionhead.SetActive(true);
-        //音鳴らす
-        //LionSrc.Play();
-        atomSrc.Play("Lion_Bite");
+        
 
         Rb.AddForce(transform.forward * 60f, ForceMode.Impulse);
 
@@ -1377,6 +1375,7 @@ public class KeybordPlay2 : MonoBehaviour
                     //音鳴らす
                     //LionSrc.Play();
                     //AnimalDamage.Play();
+                    //atomSrc.Play("Lion_Bite");
                     atomSrc.Play("Animal_Damage");
                     DelayFlog();
 
@@ -1386,6 +1385,8 @@ public class KeybordPlay2 : MonoBehaviour
                     if (KeybordPlay2.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1421,6 +1422,8 @@ public class KeybordPlay2 : MonoBehaviour
                     if (KeybordPlay2.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1454,6 +1457,8 @@ public class KeybordPlay2 : MonoBehaviour
                     if (KeybordPlay2.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1493,6 +1498,8 @@ public class KeybordPlay2 : MonoBehaviour
                     if (KeybordPlay2.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1527,6 +1534,8 @@ public class KeybordPlay2 : MonoBehaviour
                     if (KeybordPlay2.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1563,6 +1572,8 @@ public class KeybordPlay2 : MonoBehaviour
                     if (KeybordPlay2.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1572,6 +1583,9 @@ public class KeybordPlay2 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P1ArmadilloAttack"))
                 {
+                    //音鳴らす
+                    //AnimalDamage.Play();
+                    atomSrc.Play("Armadillo_Hit");
                     Player2HP -= 25;
                     DamageHP2 = 25;
                     HPdrain();
@@ -1587,9 +1601,7 @@ public class KeybordPlay2 : MonoBehaviour
                     Invoke("InvincibleTime", 1.5f);
                     P2ImplaBlock.SetActive(false);
 
-                    //音鳴らす
-                    //AnimalDamage.Play();
-                    atomSrc.Play("Armadillo_Hit");
+                    
                     Debug.Log("鳴った");
                     DelayFlog();
 
@@ -1600,6 +1612,8 @@ public class KeybordPlay2 : MonoBehaviour
                     if (KeybordPlay2.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1609,6 +1623,9 @@ public class KeybordPlay2 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P1HorseAttack"))
                 {
+                    //音鳴らす
+                    //AnimalDamage.Play();
+                    atomSrc.Play("Horse_Kick");
                     Player2HP -= 25;
                     DamageHP2 = 25;
                     HPdrain();
@@ -1624,9 +1641,7 @@ public class KeybordPlay2 : MonoBehaviour
                     Invoke("InvincibleTime", 1.5f);
                     P2ImplaBlock.SetActive(false);
 
-                    //音鳴らす
-                    //AnimalDamage.Play();
-                    atomSrc.Play("Horse_Kick");
+                    
                     Debug.Log("鳴った");
                     DelayFlog();
 
@@ -1636,6 +1651,8 @@ public class KeybordPlay2 : MonoBehaviour
                     if (KeybordPlay2.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
