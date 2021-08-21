@@ -123,6 +123,8 @@ public class KeybordPlay2 : MonoBehaviour
     //エフェクト
     public GameObject HitEff;
     public GameObject Speedup;
+    public GameObject Wing;
+    bool isSpeedup = false;
 
     //ADX設定
     //public CriAtomSource AnimalFSSrc;
@@ -778,6 +780,9 @@ public class KeybordPlay2 : MonoBehaviour
                                             SpeedObj = Instantiate(Speedup, transform.position+transform.up*-7+transform.forward*-2,transform.rotation)as GameObject;
                                             Speedup.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                                             Destroy(SpeedObj, 1.6f);
+
+                                            isSpeedup = true;
+                                            Invoke("WingTiming", 0.5f);
                                         }
                                     }
                                 }
@@ -911,6 +916,7 @@ public class KeybordPlay2 : MonoBehaviour
             if(BuffTimer>5)
             {
                 BuffSpeed = 0.8f;
+                Wing.SetActive(false);
             }
         }
         else 
@@ -1114,6 +1120,11 @@ public class KeybordPlay2 : MonoBehaviour
         Obj.transform.localScale = new Vector3(12.0f, 12.0f, 12.0f);
         Destroy(Obj, 0.8f);
 
+    }
+
+    void WingTiming()
+    {
+        Wing.SetActive(true);
     }
 
     void DelayArma()
