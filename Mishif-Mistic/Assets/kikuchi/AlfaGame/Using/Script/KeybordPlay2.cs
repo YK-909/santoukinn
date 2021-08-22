@@ -188,6 +188,8 @@ public class KeybordPlay2 : MonoBehaviour
         if (Exterior == 2)
         {
             BuffSpeed = 0.8f;
+            //音鳴らす
+            atomSrc.Play("Speed_UP");
         }
         BuffCountP2 = 3;
 

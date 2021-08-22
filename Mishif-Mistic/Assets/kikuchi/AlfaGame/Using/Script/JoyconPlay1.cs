@@ -1010,6 +1010,8 @@ public class JoyconPlay1 : MonoBehaviour
             EnemyHP_2 += DamageHP1 / 10;
             P2G.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
             P2R.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
+            //音鳴らす
+            atomSrc.Play("Healing");
         }
     }
     public static float GetP2HP()
