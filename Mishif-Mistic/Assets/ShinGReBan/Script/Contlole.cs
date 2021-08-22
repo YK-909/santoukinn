@@ -65,7 +65,7 @@ public class Contlole : MonoBehaviour
                 isStagVoOnce = false;
             }
         }
-        if (head == 2)
+        if (head == 3)
         {
             if (isStagVoOnce == false)
             {

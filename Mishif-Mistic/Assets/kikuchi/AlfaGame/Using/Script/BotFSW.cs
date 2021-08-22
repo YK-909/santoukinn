@@ -182,6 +182,7 @@ public class BotFSW : MonoBehaviour
         if (Exterior == 1)
         {
             BuffSpeed = 0.8f;
+            
         }
 
         Animator = GetComponent<Animator>();
@@ -210,6 +211,7 @@ public class BotFSW : MonoBehaviour
                 if (Exterior == 2)
                 {
                     Player2HP = KeyBordPlay1.GetP2HP();
+
                 }
                 //重力とは別な上からの力　要調整
                 Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Force);
