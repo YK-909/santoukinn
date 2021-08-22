@@ -75,6 +75,7 @@ public class JoyconPlay1 : MonoBehaviour
     public GameObject P1TurtleGard;
     public GameObject P2TurtleCounter;
     private bool Gard = true;
+    private Vector3 Poseposition = new Vector3();
 
     //インパラののジャンプ攻撃
     private bool Implajump = false;
@@ -198,6 +199,10 @@ public class JoyconPlay1 : MonoBehaviour
         Gamemode = Timer.GetGamemode();
         P1TurtleGard.transform.position = this.transform.position + transform.forward * 5 + transform.up * -2; 
         DamageHP1 = 0;
+        if (P1TurtleGard.activeSelf == true)
+        {
+            this.transform.position = new Vector3(Poseposition.x, Poseposition.y, Poseposition.z);
+        }
         if (Gamemode == 1)
         {
             if (AllActionInterval == false)
@@ -388,6 +393,7 @@ public class JoyconPlay1 : MonoBehaviour
                                                 Gard = false;
                                                 //無敵タイム開始
                                                 Invincible = true;
+                                                Poseposition = this.transform.position;
                                                 //無敵時間
                                                 Invoke("InvincibleTime", 2f);
                                                 //上と同じ値
@@ -1001,7 +1007,19 @@ public class JoyconPlay1 : MonoBehaviour
         //高さの概念を入れないベクトルを作る
         Vector3 fromVec = new Vector3(_from.transform.position.x, 0, _from.transform.position.z);
         Vector3 toVec = new Vector3(_to.transform.position.x, 0, _to.transform.position.z);
-        return Vector3.Normalize(toVec - fromVec);
+        if (toVec - fromVec == new Vector3(0, 0, 0))
+        {
+            Vector3 Nock = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+            if (Nock.x == 0 && Nock.z == 0)
+            {
+                Nock.z = Random.Range(-10, -1);
+            }
+            return Vector3.Normalize(Nock);
+        }
+        else
+        {
+            return Vector3.Normalize(toVec - fromVec);
+        }
     }
     void HPdrain()
     {
