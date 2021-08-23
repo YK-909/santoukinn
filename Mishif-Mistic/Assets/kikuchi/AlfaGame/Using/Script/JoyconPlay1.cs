@@ -244,9 +244,29 @@ public class JoyconPlay1 : MonoBehaviour
                                     transform.rotation = Quaternion.LookRotation(Direction);
                                     if (Speed == 40.0)
                                     {
-                                        //音鳴らす
-                                        //AnimalFSSrc.Play();
-                                        atomSrc.Play("Garden_Footsteps");
+                                        //インパラの足音
+                                        if (Leg == 1)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Impala_GFootsteps");
+                                        }
+
+                                        //狼の足音
+                                        if (Leg == 2)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Garden_Footsteps");
+                                        }
+
+                                        //馬の足音
+                                        if (Leg == 3)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            atomSrc.Play("Horse_GFootsteps");
+                                        }
                                     }
 
                                     //走る
@@ -463,6 +483,9 @@ public class JoyconPlay1 : MonoBehaviour
                                                     //ローリングアタック
                                                     this.Animator.SetBool(isRollStr, true);
                                                     this.Animator.SetBool(isRollFin, false);
+
+                                                    //音鳴らす
+                                                    atomSrc.Play("Armadillo_Roll");
                                                 }
                                                 if (Input.GetKeyUp(KeyCode.Joystick1Button3))
                                                 {
@@ -605,6 +628,7 @@ public class JoyconPlay1 : MonoBehaviour
                                         if (HorseSwitch == true)
                                         {
                                             //音鳴らす
+                                            atomSrc.Play("Horse_Swing");
 
                                             AllActionInterval = true;
                                             P1HorseLeg.tag = "P2HorseAttack";
@@ -1113,6 +1137,8 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
+                    //AnimalShieldDmgSrc.Play();
+                    atomSrc.Play("Animal_Shield_Dmg");
                 }
 
                 if (other.gameObject.CompareTag("P2ImplaWave"))
@@ -1124,6 +1150,8 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
+                    //AnimalShieldDmgSrc.Play();
+                    atomSrc.Play("Animal_Shield_Dmg");
                 }
                 //カエル、サソリ、オオカミ
                 if (other.gameObject.CompareTag("P2FlogAttack"))
@@ -1161,6 +1189,8 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
+                    //AnimalShieldDmgSrc.Play();
+                    atomSrc.Play("Animal_Shield_Dmg");
                 }
                 if (other.gameObject.CompareTag("P2WolfAttack"))
                 {
@@ -1263,6 +1293,8 @@ public class JoyconPlay1 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
                     P1ImplaBlock.SetActive(false);
+                    //音鳴らす
+                    atomSrc.Play("Impala_Attack");
                     DelayFlog();
 
                     //ふっとぶ
@@ -1294,6 +1326,8 @@ public class JoyconPlay1 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
                     P1ImplaBlock.SetActive(false);
+                    //音鳴らす
+                    atomSrc.Play("Impala_Attack");
                     DelayFlog();
 
                     //ふっとぶ
@@ -1433,6 +1467,8 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    //音鳴らす
+                    atomSrc.Play("Armadillo_Hit");
                     DelayFlog();
 
                     //ふっとぶ
@@ -1465,6 +1501,8 @@ public class JoyconPlay1 : MonoBehaviour
                     //無敵タイム開始
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
+                    //音鳴らす
+                    atomSrc.Play("Horse_Kick");
                     DelayFlog();
 
                     //ふっとぶ
