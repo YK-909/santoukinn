@@ -209,6 +209,14 @@ public class KeybordPlay2 : MonoBehaviour
         {
             this.transform.position = new Vector3(Poseposition.x, Poseposition.y, Poseposition.z);
         }
+
+        //通常のダウンの音鳴らす
+        if (Animator.GetCurrentAnimatorStateInfo(0).IsName("Blown"))
+        {
+            //音鳴らす
+            atomSrc.Play("Down");
+        }
+
         if (Gamemode == 1)
         {
             if (AllActionInterval == false)
@@ -495,6 +503,8 @@ public class KeybordPlay2 : MonoBehaviour
                                             KuwagataBlock.tag = "P2KuwagataAttack";
                                             KuwagataBlock.SetActive(true);
                                             Rb.isKinematic = true;
+                                            //音鳴らす
+                                            atomSrc.Play("Stag_Grab");
                                             Invoke("KuwagataUnable", 0.7f);
                                             //行動停止
                                             Invoke("ActionInterval", 1.5f);
@@ -1631,9 +1641,6 @@ public class KeybordPlay2 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
                     P2ImplaBlock.SetActive(false);
-
-                    
-                    Debug.Log("鳴った");
                     DelayFlog();
 
                     //ふっとぶ
@@ -1671,9 +1678,6 @@ public class KeybordPlay2 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
                     P2ImplaBlock.SetActive(false);
-
-                    
-                    Debug.Log("鳴った");
                     DelayFlog();
 
                     //ふっとぶ

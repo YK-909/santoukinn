@@ -184,6 +184,8 @@ public class JoyconPlay1 : MonoBehaviour
         Exterior = ContlolePassive1.GetPassive();
         if (Exterior == 2)
         {
+            //音鳴らす
+            atomSrc.Play("Speed_UP");
             BuffSpeed = 0.8f;
         }
         BuffCountP1 = 3;
@@ -203,6 +205,14 @@ public class JoyconPlay1 : MonoBehaviour
         {
             this.transform.position = new Vector3(Poseposition.x, Poseposition.y, Poseposition.z);
         }
+
+        //通常のダウンの音鳴らす
+        if (Animator.GetCurrentAnimatorStateInfo(0).IsName("Blown"))
+        {
+            //音鳴らす
+            atomSrc.Play("Down");
+        }
+
         if (Gamemode == 1)
         {
             if (AllActionInterval == false)
@@ -377,6 +387,8 @@ public class JoyconPlay1 : MonoBehaviour
                                             KuwagataBlock.tag = "P1KuwagataAttack";
                                             KuwagataBlock.SetActive(true);
                                             Rb.isKinematic = true;
+                                            //音鳴らす
+                                            atomSrc.Play("Stag_Grab");
                                             Invoke("KuwagataUnable", 0.7f);
                                             //行動停止
                                             Invoke("ActionInterval", 1.5f);
@@ -943,7 +955,7 @@ public class JoyconPlay1 : MonoBehaviour
     {
         //音鳴らす
         //LionSrc.Play();
-        atomSrc.Play("Lion_Bite");
+        //atomSrc.Play("Lion_Bite");
     }
 
     void BiteEnable()
@@ -1269,6 +1281,8 @@ public class JoyconPlay1 : MonoBehaviour
                     if (JoyconPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1303,6 +1317,8 @@ public class JoyconPlay1 : MonoBehaviour
                     if (JoyconPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1336,6 +1352,8 @@ public class JoyconPlay1 : MonoBehaviour
                     if (JoyconPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1375,6 +1393,8 @@ public class JoyconPlay1 : MonoBehaviour
                     if (JoyconPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1409,6 +1429,8 @@ public class JoyconPlay1 : MonoBehaviour
                     if (JoyconPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1444,6 +1466,8 @@ public class JoyconPlay1 : MonoBehaviour
                     if (JoyconPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1478,6 +1502,8 @@ public class JoyconPlay1 : MonoBehaviour
                     if (JoyconPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1511,6 +1537,8 @@ public class JoyconPlay1 : MonoBehaviour
                     if (JoyconPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
