@@ -920,10 +920,12 @@ public class KeyBordPlay1 : MonoBehaviour
         {
             ShieldObj.SetActive(false);
             AllActionInterval = true;
+            Shield = false;
+            this.Animator.SetBool(isShield, false);
             //何もできない待機時間
-            Invoke("ActionInterval", 5f);
+            Invoke("ActionInterval", 3f);
             //上と同じ値で　シールドが壊れた時の対応
-            Invoke("ShieldBreak", 5f);
+            Invoke("ShieldBreak", 3f);
 
             //音鳴らす
             //AnimalShieldDstSrc.Play();
