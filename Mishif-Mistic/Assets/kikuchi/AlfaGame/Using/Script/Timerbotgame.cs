@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timerbotgame : MonoBehaviour
 {
@@ -78,11 +79,15 @@ public class Timerbotgame : MonoBehaviour
                 GameWinner.text = "P2の勝利";
                 GameChange = 2;
 
+                Invoke("BotSceneResultNPCWin", 3.0f);
+
             }
             else if (BotFSW.GetP2HP() <= 0)
             {
                 GameWinner.text = "P1の勝利";
                 GameChange = 2;
+
+                Invoke("BotSceneResultP1Win", 3.0f);
 
             }
             //制限時間による勝敗
@@ -93,11 +98,15 @@ public class Timerbotgame : MonoBehaviour
                     GameWinner.text = "P1の勝利";
                     GameChange = 2;
 
+                    Invoke("BotSceneResultP1Win", 3.0f);
+
                 }
                 else if (KeyBordPlay1.GetP1HP() < BotFSW.GetP2HP())
                 {
                     GameWinner.text = "P2の勝利";
                     GameChange = 2;
+
+                    Invoke("BotSceneResultNPCWin", 3.0f);
 
                 }
             }
@@ -135,5 +144,15 @@ public class Timerbotgame : MonoBehaviour
     public static int GetGamemode()
     {
         return GameChange;
+    }
+
+    void BotSceneResultP1Win()
+    {
+        SceneManager.LoadScene("NPCResultSceneP1Win");
+    }
+
+    void BotSceneResultNPCWin()
+    {
+        SceneManager.LoadScene("NPCResultSceneNPCWin");
     }
 }
