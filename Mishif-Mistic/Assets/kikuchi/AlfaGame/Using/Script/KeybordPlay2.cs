@@ -202,6 +202,8 @@ public class KeybordPlay2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(ShieldPoint);
+        Debug.Log(AllActionInterval);
         Gamemode = Timer.GetGamemode();
         P2TurtleGard.transform.position = this.transform.position + transform.forward * 5+transform.up*-2;
         DamageHP2 = 0;
@@ -968,10 +970,12 @@ public class KeybordPlay2 : MonoBehaviour
             Shield_Yellow.SetActive(false);
             Shield_Red.SetActive(false);
             AllActionInterval = true;
+            Shield = false;
+            this.Animator.SetBool(isShield, false);
             //何もできない待機時間
-            Invoke("ActionInterval", 5f);
+            Invoke("ActionInterval", 3f);
             //上と同じ値で　シールドが壊れた時の対応
-            Invoke("ShieldBreak", 5f);
+            Invoke("ShieldBreak", 3f);
 
             //音鳴らす
             //AnimalShieldDstSrc.Play();
