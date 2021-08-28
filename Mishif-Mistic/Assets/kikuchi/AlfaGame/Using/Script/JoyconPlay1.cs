@@ -123,6 +123,9 @@ public class JoyconPlay1 : MonoBehaviour
     //エフェクト
     public GameObject HitEff;
     public GameObject Speedup;
+    public GameObject Wing;
+    public GameObject HealEffect;
+    bool isDrain;
 
     //ADX設定
     //public CriAtomSource AnimalFSSrc;
@@ -679,6 +682,8 @@ public class JoyconPlay1 : MonoBehaviour
                                             SpeedObj = Instantiate(Speedup, transform.position + transform.up * -7 + transform.forward * -2, transform.rotation) as GameObject;
                                             Speedup.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                                             Destroy(SpeedObj, 1.6f);
+
+                                            Invoke("WingTiming", 0.5f);
                                         }
                                     }
                                 }
@@ -804,6 +809,7 @@ public class JoyconPlay1 : MonoBehaviour
             if (BuffTimer > 5)
             {
                 BuffSpeed = 0.8f;
+                Wing.SetActive(false);
             }
         }
         else
@@ -1006,6 +1012,11 @@ public class JoyconPlay1 : MonoBehaviour
         Destroy(Obj, 0.8f);
     }
 
+    void WingTiming()
+    {
+        Wing.SetActive(true);
+    }
+
     void DelayArma()
     {
         ArmadilloSwitch = true;
@@ -1068,6 +1079,9 @@ public class JoyconPlay1 : MonoBehaviour
             P2R.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
             //音鳴らす
             atomSrc.Play("Healing");
+
+            isDrain = true;
+
         }
     }
     public static float GetP2HP()
@@ -1291,6 +1305,14 @@ public class JoyconPlay1 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P2Impla"))
                 {
@@ -1327,6 +1349,14 @@ public class JoyconPlay1 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P2ImplaWave"))
                 {
@@ -1362,6 +1392,14 @@ public class JoyconPlay1 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P2WolfAttack"))
                 {
@@ -1403,6 +1441,15 @@ public class JoyconPlay1 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
+
                 }
                 if (other.gameObject.CompareTag("P2FlogAttack"))
                 {
@@ -1439,6 +1486,14 @@ public class JoyconPlay1 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position+transform.forward*4+transform.up*1.8f, transform.rotation)as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
@@ -1476,6 +1531,14 @@ public class JoyconPlay1 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P2ArmadilloAttack"))
                 {
@@ -1512,6 +1575,14 @@ public class JoyconPlay1 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P2HorseAttack"))
                 {
@@ -1547,6 +1618,14 @@ public class JoyconPlay1 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
 
                 //カウンターダメージ用
@@ -1711,6 +1790,18 @@ public class JoyconPlay1 : MonoBehaviour
                 //AnimalDamage.Play();
                 atomSrc.Play("Animal_Damage");
                 DelayFlog();
+
+                //ヒットエフェクト
+                GameObject Hit;
+                Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+                if (isDrain == true)
+                {
+                    GameObject HealObj;
+                    HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                    HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                    Destroy(HealObj, 0.8f);
+                }
             }
         }
         else

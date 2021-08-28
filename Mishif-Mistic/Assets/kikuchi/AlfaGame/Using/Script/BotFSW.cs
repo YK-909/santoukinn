@@ -117,6 +117,8 @@ public class BotFSW : MonoBehaviour
 
     //ヒットエフェクト
     public GameObject HitEff;
+    public GameObject HealEffect;
+    bool isDrain;
 
     //ADX設定
     //public CriAtomSource AnimalFSSrc;
@@ -601,6 +603,8 @@ public class BotFSW : MonoBehaviour
             EnemyHP_1 += DamageHP2 / 10;
             P2G.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
             P2R.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
+
+            isDrain = true;
         }
     }
     public static float GetP2HP()
@@ -831,6 +835,14 @@ public class BotFSW : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1Impla"))
                 {
@@ -866,6 +878,14 @@ public class BotFSW : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1ImplaWave"))
                 {
@@ -900,6 +920,13 @@ public class BotFSW : MonoBehaviour
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
 
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1WolfAttack"))
                 {
@@ -939,6 +966,14 @@ public class BotFSW : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1FlogAttack"))
                 {
@@ -973,6 +1008,14 @@ public class BotFSW : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
@@ -1009,6 +1052,14 @@ public class BotFSW : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1ArmadilloAttack"))
                 {
@@ -1045,6 +1096,14 @@ public class BotFSW : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1HorseAttack"))
                 {
@@ -1081,6 +1140,14 @@ public class BotFSW : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 //カウンターダメージ用
                 if (other.gameObject.CompareTag("P2LionAttackBack"))
@@ -1243,6 +1310,18 @@ public class BotFSW : MonoBehaviour
                 //AnimalDamage.Play();
                 atomSrc.Play("Animal_Damage");
                 DelayFlog();
+
+                //ヒットエフェクト
+                GameObject Hit;
+                Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+                if (isDrain == true)
+                {
+                    GameObject HealObj;
+                    HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                    HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                    Destroy(HealObj, 0.8f);
+                }
             }
         }
         else
