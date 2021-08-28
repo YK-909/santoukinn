@@ -190,8 +190,6 @@ public class KeybordPlay2 : MonoBehaviour
         if (Exterior == 2)
         {
             BuffSpeed = 0.8f;
-            //音鳴らす
-            atomSrc.Play("Speed_UP");
         }
         BuffCountP2 = 3;
 
@@ -801,6 +799,9 @@ public class KeybordPlay2 : MonoBehaviour
                                             SpeedObj = Instantiate(Speedup, transform.position+transform.up*-7+transform.forward*-2,transform.rotation)as GameObject;
                                             Speedup.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                                             Destroy(SpeedObj, 1.6f);
+
+                                            //音鳴らす
+                                            atomSrc.Play("Speed_UP");
 
                                             Invoke("WingTiming", 0.5f);
                                         }

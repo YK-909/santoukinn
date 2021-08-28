@@ -187,8 +187,6 @@ public class JoyconPlay1 : MonoBehaviour
         Exterior = ContlolePassive1.GetPassive();
         if (Exterior == 2)
         {
-            //音鳴らす
-            atomSrc.Play("Speed_UP");
             BuffSpeed = 0.8f;
         }
         BuffCountP1 = 3;
@@ -682,6 +680,9 @@ public class JoyconPlay1 : MonoBehaviour
                                             SpeedObj = Instantiate(Speedup, transform.position + transform.up * -7 + transform.forward * -2, transform.rotation) as GameObject;
                                             Speedup.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                                             Destroy(SpeedObj, 1.6f);
+
+                                            //音鳴らす
+                                            atomSrc.Play("Speed_UP");
 
                                             Invoke("WingTiming", 0.5f);
                                         }
