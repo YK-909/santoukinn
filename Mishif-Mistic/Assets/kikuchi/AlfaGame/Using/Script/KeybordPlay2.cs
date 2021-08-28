@@ -125,7 +125,8 @@ public class KeybordPlay2 : MonoBehaviour
     public GameObject HitEff;
     public GameObject Speedup;
     public GameObject Wing;
-    bool isSpeedup = false;
+    public GameObject HealEffect;
+    bool isDrain;
 
     //ADX設定
     //public CriAtomSource AnimalFSSrc;
@@ -801,7 +802,6 @@ public class KeybordPlay2 : MonoBehaviour
                                             Speedup.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                                             Destroy(SpeedObj, 1.6f);
 
-                                            isSpeedup = true;
                                             Invoke("WingTiming", 0.5f);
                                         }
                                     }
@@ -1204,6 +1204,8 @@ public class KeybordPlay2 : MonoBehaviour
             EnemyHP_1 += DamageHP2 / 10;
             P2G.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
             P2R.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
+
+            isDrain = true;
         }
     }
     public static float GetP2HP()
@@ -1438,10 +1440,18 @@ public class KeybordPlay2 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1Impla"))
                 {
-                    //Player2HP -= 30;
+                    Player2HP -= 30;
                     DamageHP2 = 30;
                     HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 3, 0, 0);
@@ -1475,6 +1485,14 @@ public class KeybordPlay2 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1ImplaWave"))
                 {
@@ -1510,6 +1528,14 @@ public class KeybordPlay2 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1WolfAttack"))
                 {
@@ -1551,6 +1577,14 @@ public class KeybordPlay2 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1FlogAttack"))
                 {
@@ -1587,6 +1621,14 @@ public class KeybordPlay2 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
@@ -1625,6 +1667,14 @@ public class KeybordPlay2 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1ArmadilloAttack"))
                 {
@@ -1662,6 +1712,14 @@ public class KeybordPlay2 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 if (other.gameObject.CompareTag("P1HorseAttack"))
                 {
@@ -1698,6 +1756,14 @@ public class KeybordPlay2 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    if (isDrain)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
                 }
                 //カウンターダメージ用
                 if (other.gameObject.CompareTag("P2LionAttackBack"))
@@ -1860,6 +1926,18 @@ public class KeybordPlay2 : MonoBehaviour
                 //AnimalDamage.Play();
                 atomSrc.Play("Animal_Damage");
                 DelayFlog();
+
+                //ヒットエフェクト
+                GameObject Hit;
+                Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+                if (isDrain)
+                {
+                    GameObject HealObj;
+                    HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                    HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                    Destroy(HealObj, 0.8f);
+                }
             }
         }
         else
