@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -886,10 +886,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1082415065}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e80c780671463a440acac78b4d554b25, type: 3}
+  m_Script: {fileID: 11500000, guid: 6078702a736bd62409ace65a4d7a904c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameObjectsTohidden: []
+  m_BackScene:
+    m_SceneName: VolumeControl
 --- !u!114 &1082415068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,7 +935,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1082415067}
-        m_MethodName: OputionButton
+        m_MethodName: LoadSceneButtonTitle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1794,7 +1794,12 @@ public static class CriAtomExCategory
 	[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 	private static extern bool criAtomExCategory_GetAttachedAisacInfoByName(string name, int aisacAttachedIndex, IntPtr aisacInfo);
 
-	#else
+    public static void Save()
+    {
+        throw new NotImplementedException();
+    }
+
+#else
 	private static void criAtomExCategory_SetVolumeByName(string name, float volume) { }
 	private static float criAtomExCategory_GetVolumeByName(string name) { return 1.0f; }
 	private static void criAtomExCategory_SetVolumeById(int id, float volume) { }
@@ -1819,9 +1824,9 @@ public static class CriAtomExCategory
 	private static bool criAtomExCategory_GetAttachedAisacInfoById(uint id, int aisacAttachedIndex, IntPtr aisacInfo) { return false; }
 	private static bool criAtomExCategory_GetAttachedAisacInfoByName(string name, int aisacAttachedIndex, IntPtr aisacInfo) { return false; }
 
-	#endif
+#endif
 
-	#endregion
+    #endregion
 }
 
 /**
