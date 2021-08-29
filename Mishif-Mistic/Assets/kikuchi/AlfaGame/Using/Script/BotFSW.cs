@@ -439,7 +439,7 @@ public class BotFSW : MonoBehaviour
         //HPの継続的な減少
         if (P2G.transform.position.x > P2R.transform.position.x)
         {
-            P2R.transform.position += new Vector3(0.2f, 0, 0);
+            P2R.transform.position += new Vector3(10f, 0, 0) * Time.deltaTime;
         }
 
         //シールドブレイク

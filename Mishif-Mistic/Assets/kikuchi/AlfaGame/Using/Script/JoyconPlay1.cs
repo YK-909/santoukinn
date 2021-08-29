@@ -644,7 +644,7 @@ public class JoyconPlay1 : MonoBehaviour
                                             atomSrc.Play("Horse_Swing");
 
                                             AllActionInterval = true;
-                                            P1HorseLeg.tag = "P2HorseAttack";
+                                            P1HorseLeg.tag = "P1HorseAttack";
                                             Rb.AddForce(transform.forward * 25f, ForceMode.Impulse);
                                             HorseSwitch = false;
                                             //行動停止
@@ -835,7 +835,7 @@ public class JoyconPlay1 : MonoBehaviour
         //HPの継続的な減少
         if (P1G.transform.position.x < P1R.transform.position.x)
         {
-            P1R.transform.position -= new Vector3(0.2f, 0, 0);
+            P1R.transform.position -= new Vector3(10f, 0, 0) * Time.deltaTime;
         }
 
         //シールドブレイク

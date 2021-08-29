@@ -918,7 +918,7 @@ public class KeyBordPlay1 : MonoBehaviour
         //HPの継続的な減少
         if (P1G.transform.position.x < P1R.transform.position.x)
         {
-            P1R.transform.position -= new Vector3(0.2f, 0, 0);
+            P1R.transform.position -= new Vector3(10f, 0, 0) * Time.deltaTime;
         }
 
         //シールドブレイク
