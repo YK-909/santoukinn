@@ -34,7 +34,7 @@ public class PP1Kimera3223 : MonoBehaviour
                 GameObject obj = (GameObject)Resources.Load("CP1Kimera3223");
 
                 //メンバ変数に入れる
-                instance = (GameObject)Instantiate(obj, new Vector3(-4.52f, -1.09f, 10.0f), Quaternion.Euler(0f, 90f, 0f));
+                instance = (GameObject)Instantiate(obj, new Vector3(-4.52f, -2f, 10.0f), Quaternion.Euler(0f, 90f, 0f));
                 One = false;
             }
         }

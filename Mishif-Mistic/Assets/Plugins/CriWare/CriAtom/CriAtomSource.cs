@@ -912,9 +912,14 @@ public class CriAtomSource : CriMonoBehaviour
 	{
 		analyzer.DetachExPlayer();
 	}
-	#endregion
 
-	#endregion
+    public bool GetFloat(string v, out float value)
+    {
+        throw new NotImplementedException();
+    }
+    #endregion
+
+    #endregion
 } // end of class
 
 /** @} */

@@ -17,6 +17,7 @@ public class VolumeControl : MonoBehaviour
 
         BGMvolSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
         SEvolSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
+        
     }
 
     // Update is called once per frame

@@ -33,7 +33,7 @@ public class PP2Kimera3223 : MonoBehaviour
                 //if文の外でやると無駄に毎フレーム実行されるので中にする
                 GameObject obj = (GameObject)Resources.Load("CP1Kimera3223");
                 //メンバ変数に入れる
-                instance = (GameObject)Instantiate(obj, new Vector3(4.46f, -1.09f, 10.0f), Quaternion.Euler(0f, -90f, 0f));
+                instance = (GameObject)Instantiate(obj, new Vector3(4.46f, -2f, 10.0f), Quaternion.Euler(0f, -90f, 0f));
                 One = false;
             }
         }
