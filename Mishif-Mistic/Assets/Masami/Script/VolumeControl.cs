@@ -17,13 +17,13 @@ public class VolumeControl : MonoBehaviour
 
         BGMvolSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
         SEvolSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
     public void PlaySound()
     {
@@ -55,6 +55,6 @@ public class VolumeControl : MonoBehaviour
         //atomSrc.volume = BGMvolSlider.value;
         //CriAtomExCategory.SetVolume("BGM", 0.0f);   // BGM カテゴリのボリュームを 0.0f に設定する
         CriAtomExCategory.SetVolume("BGM", BGMvolSlider.value);
-        CriAtomExCategory.SetVolume("SE", SEvolSlider.value);
+        CriAtomExCategory.SetVolume("SFX", SEvolSlider.value);
     }
 }
