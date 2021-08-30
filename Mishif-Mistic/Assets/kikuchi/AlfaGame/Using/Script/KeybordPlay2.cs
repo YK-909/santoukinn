@@ -263,8 +263,15 @@ public class KeybordPlay2 : MonoBehaviour
                                     transform.position += transform.forward * Speed * Time.deltaTime;
                                     if (Speed == 40.0* BuffSpeed)
                                     {
+                                        //スピードアップしている時
+                                        if (BuffSpeed == 1.5f)
+                                        {
+                                            //音鳴らす
+                                            atomSrc.Play("Speed_UP_Wing");
+                                        }
+                                        //以下通常時
                                         //インパラの足音
-                                        if (Leg == 1)
+                                        else if (Leg == 1)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
@@ -272,7 +279,7 @@ public class KeybordPlay2 : MonoBehaviour
                                         }
 
                                         //狼の足音
-                                        if (Leg == 2)
+                                        else if (Leg == 2)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
@@ -280,7 +287,7 @@ public class KeybordPlay2 : MonoBehaviour
                                         }
 
                                         //馬の足音
-                                        if (Leg == 3)
+                                        else if (Leg == 3)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
@@ -300,8 +307,15 @@ public class KeybordPlay2 : MonoBehaviour
 
                                     if (Speed == 40.0* BuffSpeed)
                                     {
+                                        //スピードアップしている時
+                                        if (BuffSpeed == 1.5f)
+                                        {
+                                            //音鳴らす
+                                            atomSrc.Play("Speed_UP_Wing");
+                                        }
+                                        //以下通常時
                                         //インパラの足音
-                                        if (Leg == 1)
+                                        else if (Leg == 1)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
@@ -309,7 +323,7 @@ public class KeybordPlay2 : MonoBehaviour
                                         }
 
                                         //狼の足音
-                                        if (Leg == 2)
+                                        else if (Leg == 2)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
@@ -317,7 +331,7 @@ public class KeybordPlay2 : MonoBehaviour
                                         }
 
                                         //馬の足音
-                                        if (Leg == 3)
+                                        else if (Leg == 3)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
@@ -336,8 +350,15 @@ public class KeybordPlay2 : MonoBehaviour
                                     transform.position += transform.forward * Speed * Time.deltaTime;
                                     if (Speed == 40.0* BuffSpeed)
                                     {
+                                        //スピードアップしている時
+                                        if (BuffSpeed == 1.5f)
+                                        {
+                                            //音鳴らす
+                                            atomSrc.Play("Speed_UP_Wing");
+                                        }
+                                        //以下通常時
                                         //インパラの足音
-                                        if (Leg == 1)
+                                        else if (Leg == 1)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
@@ -345,7 +366,7 @@ public class KeybordPlay2 : MonoBehaviour
                                         }
 
                                         //狼の足音
-                                        if (Leg == 2)
+                                        else if (Leg == 2)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
@@ -353,7 +374,7 @@ public class KeybordPlay2 : MonoBehaviour
                                         }
 
                                         //馬の足音
-                                        if (Leg == 3)
+                                        else if (Leg == 3)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
@@ -373,8 +394,15 @@ public class KeybordPlay2 : MonoBehaviour
 
                                     if (Speed == 40.0* BuffSpeed)
                                     {
+                                        //スピードアップしている時
+                                        if (BuffSpeed == 1.5f)
+                                        {
+                                            //音鳴らす
+                                            atomSrc.Play("Speed_UP_Wing");
+                                        }
+                                        //以下通常時
                                         //インパラの足音
-                                        if (Leg == 1)
+                                        else if (Leg == 1)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
@@ -382,7 +410,7 @@ public class KeybordPlay2 : MonoBehaviour
                                         }
 
                                         //狼の足音
-                                        if (Leg == 2)
+                                        else if (Leg == 2)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
@@ -390,7 +418,7 @@ public class KeybordPlay2 : MonoBehaviour
                                         }
 
                                         //馬の足音
-                                        if (Leg == 3)
+                                        else if (Leg == 3)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
