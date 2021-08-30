@@ -598,13 +598,16 @@ public class BotFSW : MonoBehaviour
 
     void HPdrain()
     {
-        if (EnemyHP_1 + (DamageHP2 / 10) < 100)
+        if (NPCP1ContlolePassive.GetPassive() == 3)
         {
-            EnemyHP_1 += DamageHP2 / 10;
-            P2G.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
-            P2R.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
+            if (EnemyHP_1 + (DamageHP2 / 10) < 100)
+            {
+                EnemyHP_1 += DamageHP2 / 10;
+                P2G.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
+                P2R.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
 
-            isDrain = true;
+                isDrain = true;
+            }
         }
     }
     public static float GetP2HP()
