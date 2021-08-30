@@ -1138,6 +1138,7 @@ public class KeyBordPlay1 : MonoBehaviour
     }
     void HPdrain()
     {
+        //修正していない
         if (EnemyHP_2 + (DamageHP1 / 10) < 100)
         {
             EnemyHP_2 += DamageHP1 / 10;

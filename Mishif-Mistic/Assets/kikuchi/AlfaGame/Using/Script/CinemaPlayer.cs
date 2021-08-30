@@ -23,6 +23,14 @@ public class CinemaPlayer : MonoBehaviour
     public GameObject LAW;
     public GameObject LAU;
     public GameObject KAW;
+    public GameObject KAI;
+    public GameObject KAU;
+    public GameObject KSI;
+    public GameObject KSW;
+    public GameObject KSU;
+    public GameObject KTI;
+    public GameObject KTW;
+    public GameObject KTU;
     public GameObject FSIW;
     public GameObject FSWW;
     public GameObject FSUW;
@@ -42,6 +50,14 @@ public class CinemaPlayer : MonoBehaviour
     public GameObject LAWW;
     public GameObject LAUW;
     public GameObject KAWW;
+    public GameObject KAIW;
+    public GameObject KAUW;
+    public GameObject KSIW;
+    public GameObject KSWW;
+    public GameObject KSUW;
+    public GameObject KTIW;
+    public GameObject KTWW;
+    public GameObject KTUW;
     public GameObject FSID;
     public GameObject FSWD;
     public GameObject FSUD;
@@ -61,7 +77,14 @@ public class CinemaPlayer : MonoBehaviour
     public GameObject LAWD;
     public GameObject LAUD;
     public GameObject KAWD;
-
+    public GameObject KAID;
+    public GameObject KAUD;
+    public GameObject KSID;
+    public GameObject KSWD;
+    public GameObject KSUD;
+    public GameObject KTID;
+    public GameObject KTWD;
+    public GameObject KTUD;
     private Vector3 PlayerObject;
     void Start()
     {
@@ -147,6 +170,38 @@ public class CinemaPlayer : MonoBehaviour
         {
             PlayerObject = KAW.transform.position;
         }
+        else if (KAI.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KAU.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KSI.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KSW.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KSU.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KTI.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KTW.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KTU.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
         else if (FSIW.activeSelf)
         {
             PlayerObject = FSIW.transform.position;
@@ -223,6 +278,38 @@ public class CinemaPlayer : MonoBehaviour
         {
             PlayerObject = KAWW.transform.position;
         }
+        else if (KAIW.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KAUW.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KSIW.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KSWW.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KSUW.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KTIW.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KTWW.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KTUW.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
         else if (FSID.activeSelf)
         {
             PlayerObject = FSID.transform.position;
@@ -298,6 +385,38 @@ public class CinemaPlayer : MonoBehaviour
         else if (KAWD.activeSelf)
         {
             PlayerObject = KAWD.transform.position;
+        }
+        else if (KAID.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KAUD.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KSID.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KSWD.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KSUD.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KTID.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KTWD.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
+        }
+        else if (KTUD.activeSelf)
+        {
+            PlayerObject = KAW.transform.position;
         }
         this.transform.position = PlayerObject;
     }

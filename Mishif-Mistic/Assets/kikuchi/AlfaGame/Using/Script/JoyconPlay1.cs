@@ -18,7 +18,7 @@ public class JoyconPlay1 : MonoBehaviour
     public int Leg = 0;
     //外装
     //2=加速　吸血＝3
-    private int Exterior = 1;
+    public int Exterior = 0;
     //移動速度
     private float Speed = 40.0f;
     private Vector3 Direction;
@@ -184,7 +184,6 @@ public class JoyconPlay1 : MonoBehaviour
         Rb.isKinematic = true;
         EnemyObj = GameObject.Find("P2camera");
         ShieldObj.SetActive(false);
-        Exterior = ContlolePassive1.GetPassive();
         if (Exterior == 2)
         {
             BuffSpeed = 0.8f;
@@ -1080,16 +1079,19 @@ public class JoyconPlay1 : MonoBehaviour
     }
     void HPdrain()
     {
-        if (EnemyHP_2 + (DamageHP1 / 10) < 100)
+        if (ContlolePassive2.GetPassive2() == 3)
         {
-            EnemyHP_2 += DamageHP1 / 10;
-            P2G.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
-            P2R.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
-            //音鳴らす
-            atomSrc.Play("Healing");
+            if (EnemyHP_2 + (DamageHP1 / 10) < 100)
+            {
+                EnemyHP_2 += DamageHP1 / 10;
+                P2G.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
+                P2R.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
+                //音鳴らす
+                atomSrc.Play("Healing");
 
-            isDrain = true;
+                isDrain = true;
 
+            }
         }
     }
     public static float GetP2HP()

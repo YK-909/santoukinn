@@ -18,7 +18,7 @@ public class KeybordPlay2 : MonoBehaviour
     public int Leg = 0;
     //外装
     //2=加速　吸血=3
-    private int Exterior = 1;
+    public int Exterior = 0;
     //移動速度
     private float Speed = 40.0f;
 
@@ -186,7 +186,7 @@ public class KeybordPlay2 : MonoBehaviour
         Rb.isKinematic = true;
         EnemyObj = GameObject.Find("P1camera");
         PositionShield.SetActive(false);
-        Exterior = ContlolePassive2.GetPassive2();
+
         if (Exterior == 2)
         {
             BuffSpeed = 0.8f;
@@ -1228,13 +1228,16 @@ public class KeybordPlay2 : MonoBehaviour
     }
     void HPdrain()
     {
-        if (EnemyHP_1 + (DamageHP2 / 10) < 100)
+        if (ContlolePassive1.GetPassive() == 3)
         {
-            EnemyHP_1 += DamageHP2 / 10;
-            P2G.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
-            P2R.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
+            if (EnemyHP_1 + (DamageHP2 / 10) < 100)
+            {
+                EnemyHP_1 += DamageHP2 / 10;
+                P2G.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
+                P2R.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
 
-            isDrain = true;
+                isDrain = true;
+            }
         }
     }
     public static float GetP2HP()
