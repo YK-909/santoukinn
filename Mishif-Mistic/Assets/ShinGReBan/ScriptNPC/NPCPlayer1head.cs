@@ -95,10 +95,10 @@ public class NPCPlayer1head : MonoBehaviour
             switch (i)
             {
                 case 1:
-                    AnimaruImage[i].sprite = FrogSprite;
+                    AnimaruImage[i].sprite = FlyPanSprite;
                     break;
                 case 2:
-                    AnimaruImage[i].sprite = FlyPanSprite;
+                    AnimaruImage[i].sprite = FrogSprite;
                     break;
                 case 3:
                     AnimaruImage[i].sprite = LionSprite;
