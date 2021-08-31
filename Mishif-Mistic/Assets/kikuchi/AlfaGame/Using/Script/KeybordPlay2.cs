@@ -145,6 +145,9 @@ public class KeybordPlay2 : MonoBehaviour
     //public CriAtomSource FrogAtkVoSrc;
     //public CriAtomSource AnimalDamage;
     private CriAtomSource atomSrc;
+    public CriAtomSource WolfFS;
+    public CriAtomSource ImpalaFS;
+    public CriAtomSource HorseFS;
 
     //アニメーター
     private Animator Animator;
@@ -275,7 +278,8 @@ public class KeybordPlay2 : MonoBehaviour
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Impala_GFootsteps");
+                                            //atomSrc.Play("Impala_GFootsteps");
+                                            ImpalaFS.Play();
                                         }
 
                                         //狼の足音
@@ -283,7 +287,8 @@ public class KeybordPlay2 : MonoBehaviour
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Garden_Footsteps");
+                                            //atomSrc.Play("Garden_Footsteps");
+                                            WolfFS.Play();
                                         }
 
                                         //馬の足音
@@ -291,7 +296,8 @@ public class KeybordPlay2 : MonoBehaviour
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Horse_GFootsteps");
+                                            //atomSrc.Play("Horse_GFootsteps");
+                                            HorseFS.Play();
                                         }
                                     }
 
@@ -319,7 +325,8 @@ public class KeybordPlay2 : MonoBehaviour
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Impala_GFootsteps");
+                                            //atomSrc.Play("Impala_GFootsteps");
+                                            ImpalaFS.Play();
                                         }
 
                                         //狼の足音
@@ -327,7 +334,8 @@ public class KeybordPlay2 : MonoBehaviour
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Garden_Footsteps");
+                                            //atomSrc.Play("Garden_Footsteps");
+                                            WolfFS.Play();
                                         }
 
                                         //馬の足音
@@ -335,7 +343,8 @@ public class KeybordPlay2 : MonoBehaviour
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Horse_GFootsteps");
+                                            //atomSrc.Play("Horse_GFootsteps");
+                                            HorseFS.Play();
                                         }
                                     }
 
@@ -362,7 +371,8 @@ public class KeybordPlay2 : MonoBehaviour
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Impala_GFootsteps");
+                                            //atomSrc.Play("Impala_GFootsteps");
+                                            ImpalaFS.Play();
                                         }
 
                                         //狼の足音
@@ -370,7 +380,8 @@ public class KeybordPlay2 : MonoBehaviour
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Garden_Footsteps");
+                                            //atomSrc.Play("Garden_Footsteps");
+                                            WolfFS.Play();
                                         }
 
                                         //馬の足音
@@ -378,7 +389,8 @@ public class KeybordPlay2 : MonoBehaviour
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Horse_GFootsteps");
+                                            //atomSrc.Play("Horse_GFootsteps");
+                                            HorseFS.Play();
                                         }
                                     }
 
@@ -406,7 +418,8 @@ public class KeybordPlay2 : MonoBehaviour
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Impala_GFootsteps");
+                                            //atomSrc.Play("Impala_GFootsteps");
+                                            ImpalaFS.Play();
                                         }
 
                                         //狼の足音
@@ -414,7 +427,8 @@ public class KeybordPlay2 : MonoBehaviour
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Garden_Footsteps");
+                                            //atomSrc.Play("Garden_Footsteps");
+                                            WolfFS.Play();
                                         }
 
                                         //馬の足音
@@ -422,7 +436,8 @@ public class KeybordPlay2 : MonoBehaviour
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Horse_GFootsteps");
+                                            //atomSrc.Play("Horse_GFootsteps");
+                                            HorseFS.Play();
                                         }
                                     }
 
