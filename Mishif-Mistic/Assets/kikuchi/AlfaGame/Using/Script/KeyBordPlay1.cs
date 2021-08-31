@@ -143,6 +143,9 @@ public class KeyBordPlay1 : MonoBehaviour
     //public CriAtomSource FrogAtkVoSrc;
     //public CriAtomSource AnimalDamage;
     private CriAtomSource atomSrc;
+    public CriAtomSource WolfFS;
+    public CriAtomSource ImpalaFS;
+    public CriAtomSource HorseFS;
 
     //アニメーター
     private Animator Animator;
@@ -197,6 +200,13 @@ public class KeyBordPlay1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //通常のダウンの音鳴らす
+        if (Animator.GetCurrentAnimatorStateInfo(0).IsName("Blown"))
+        {
+            //音鳴らす
+            atomSrc.Play("Down");
+        }
+
         Gamemode = Timerbotgame.GetGamemode();
         P1TurtleGard.transform.position = this.transform.position + transform.forward * 5 + transform.up * -2;
         DamageHP1 = 0;
@@ -242,28 +252,37 @@ public class KeyBordPlay1 : MonoBehaviour
                                     transform.position += transform.forward * Speed * Time.deltaTime;
                                     if (Speed == 40.0 * BuffSpeed)
                                     {
+                                        //スピードアップしている時
+                                        if (BuffSpeed == 1.5f)
+                                        {
+                                            //音鳴らす
+                                            atomSrc.Play("Speed_UP_Wing");
+                                        }
                                         //インパラの足音
-                                        if (Leg == 1)
+                                        else if (Leg == 1)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Impala_GFootsteps");
+                                            //atomSrc.Play("Impala_GFootsteps");
+                                            ImpalaFS.Play();
                                         }
 
                                         //狼の足音
-                                        if (Leg == 2)
+                                        else if (Leg == 2)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Garden_Footsteps");
+                                            //atomSrc.Play("Garden_Footsteps");
+                                            WolfFS.Play();
                                         }
 
                                         //馬の足音
-                                        if (Leg == 3)
+                                        else if (Leg == 3)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Horse_GFootsteps");
+                                            //atomSrc.Play("Horse_GFootsteps");
+                                            HorseFS.Play();
                                         }
                                     }
 
@@ -279,28 +298,37 @@ public class KeyBordPlay1 : MonoBehaviour
 
                                     if (Speed == 40.0 * BuffSpeed)
                                     {
+                                        //スピードアップしている時
+                                        if (BuffSpeed == 1.5f)
+                                        {
+                                            //音鳴らす
+                                            atomSrc.Play("Speed_UP_Wing");
+                                        }
                                         //インパラの足音
-                                        if (Leg == 1)
+                                        else if (Leg == 1)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Impala_GFootsteps");
+                                            //atomSrc.Play("Impala_GFootsteps");
+                                            ImpalaFS.Play();
                                         }
 
                                         //狼の足音
-                                        if (Leg == 2)
+                                        else if (Leg == 2)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Garden_Footsteps");
+                                            //atomSrc.Play("Garden_Footsteps");
+                                            WolfFS.Play();
                                         }
 
                                         //馬の足音
-                                        if (Leg == 3)
+                                        else if (Leg == 3)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Horse_GFootsteps");
+                                            //atomSrc.Play("Horse_GFootsteps");
+                                            HorseFS.Play();
                                         }
                                     }
 
@@ -315,28 +343,37 @@ public class KeyBordPlay1 : MonoBehaviour
                                     transform.position += transform.forward * Speed * Time.deltaTime;
                                     if (Speed == 40.0 * BuffSpeed)
                                     {
+                                        //スピードアップしている時
+                                        if (BuffSpeed == 1.5f)
+                                        {
+                                            //音鳴らす
+                                            atomSrc.Play("Speed_UP_Wing");
+                                        }
                                         //インパラの足音
-                                        if (Leg == 1)
+                                        else if (Leg == 1)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Impala_GFootsteps");
+                                            //atomSrc.Play("Impala_GFootsteps");
+                                            ImpalaFS.Play();
                                         }
 
                                         //狼の足音
-                                        if (Leg == 2)
+                                        else if (Leg == 2)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Garden_Footsteps");
+                                            //atomSrc.Play("Garden_Footsteps");
+                                            WolfFS.Play();
                                         }
 
                                         //馬の足音
-                                        if (Leg == 3)
+                                        else if (Leg == 3)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Horse_GFootsteps");
+                                            //atomSrc.Play("Horse_GFootsteps");
+                                            HorseFS.Play();
                                         }
                                     }
 
@@ -352,28 +389,37 @@ public class KeyBordPlay1 : MonoBehaviour
 
                                     if (Speed == 40.0 * BuffSpeed)
                                     {
+                                        //スピードアップしている時
+                                        if (BuffSpeed == 1.5f)
+                                        {
+                                            //音鳴らす
+                                            atomSrc.Play("Speed_UP_Wing");
+                                        }
                                         //インパラの足音
-                                        if (Leg == 1)
+                                        else if (Leg == 1)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Impala_GFootsteps");
+                                            //atomSrc.Play("Impala_GFootsteps");
+                                            ImpalaFS.Play();
                                         }
 
                                         //狼の足音
-                                        if (Leg == 2)
+                                        else if (Leg == 2)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Garden_Footsteps");
+                                            //atomSrc.Play("Garden_Footsteps");
+                                            WolfFS.Play();
                                         }
 
                                         //馬の足音
-                                        if (Leg == 3)
+                                        else if (Leg == 3)
                                         {
                                             //音鳴らす
                                             //AnimalFSSrc.Play();
-                                            atomSrc.Play("Horse_GFootsteps");
+                                            //atomSrc.Play("Horse_GFootsteps");
+                                            HorseFS.Play();
                                         }
                                     }
 
@@ -483,6 +529,8 @@ public class KeyBordPlay1 : MonoBehaviour
                                             KuwagataBlock.tag = "P1KuwagataAttack";
                                             KuwagataBlock.SetActive(true);
                                             Rb.isKinematic = true;
+                                            //音鳴らす
+                                            atomSrc.Play("Stag_Grab");
                                             Invoke("KuwagataUnable", 0.7f);
                                             //行動停止
                                             Invoke("ActionInterval", 1.5f);
@@ -778,6 +826,9 @@ public class KeyBordPlay1 : MonoBehaviour
                                             Speedup.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                                             Destroy(SpeedObj, 1.6f);
 
+                                            //音鳴らす
+                                            atomSrc.Play("Speed_UP");
+
                                             Invoke("WingTiming", 0.5f);
                                         }
                                     }
@@ -1051,7 +1102,7 @@ public class KeyBordPlay1 : MonoBehaviour
         P1Lionhead.SetActive(true);
         //音鳴らす
         //LionSrc.Play();
-        atomSrc.Play("Lion_Bite");
+        //atomSrc.Play("Lion_Bite");
     }
 
     void BiteUnable()
@@ -1176,7 +1227,13 @@ public class KeyBordPlay1 : MonoBehaviour
             ImpalaFinTiming();
 
             //ただのジャンプ
-            NormalJump = false;
+            //NormalJump = false;
+            if (NormalJump == true)
+            {
+                NormalJump = false;
+                //着地音鳴らす
+                atomSrc.Play("Landing");
+            }
             Implajump = false;
             gameObject.layer = LayerMask.NameToLayer("NormalLayer");
             //インパラの攻撃のため
@@ -1278,6 +1335,9 @@ public class KeyBordPlay1 : MonoBehaviour
                     //無敵タイム開始 当たり判定が連続しないように
                     Invincible = true;
                     Invoke("InvincibleTime", 0.3f);
+                    //音鳴らす
+                    //AnimalShieldDmgSrc.Play();
+                    atomSrc.Play("Animal_Shield_Dmg");
                 }
                 if (other.gameObject.CompareTag("P2WolfAttack"))
                 {
@@ -1390,12 +1450,17 @@ public class KeyBordPlay1 : MonoBehaviour
                     P1ImplaBlock.SetActive(false);
                     DelayFlog();
 
+                    //音鳴らす
+                    atomSrc.Play("Impala_Attack");
+
                     //ふっとぶ
                     this.Animator.SetBool(isBlown, true);
                     //最後の一撃
                     if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1427,6 +1492,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     Invincible = true;
                     Invoke("InvincibleTime", 1.5f);
                     P1ImplaBlock.SetActive(false);
+                    //音鳴らす
+                    atomSrc.Play("Impala_Attack");
                     DelayFlog();
 
                     //ふっとぶ
@@ -1435,6 +1502,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1482,6 +1551,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1525,6 +1596,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1568,6 +1641,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1585,6 +1660,9 @@ public class KeyBordPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P2ArmadilloAttack"))
                 {
+                    //音鳴らす
+                    //AnimalDamage.Play();
+                    atomSrc.Play("Armadillo_Hit");
                     Player1HP -= 25;
                     DamageHP1 = 25;
                     HPdrain();
@@ -1608,6 +1686,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1625,6 +1705,9 @@ public class KeyBordPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P2HorseAttack"))
                 {
+                    //音鳴らす
+                    //AnimalDamage.Play();
+                    atomSrc.Play("Horse_Kick");
                     Player1HP -= 25;
                     DamageHP1 = 25;
                     HPdrain();
@@ -1647,6 +1730,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
