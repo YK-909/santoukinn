@@ -95,10 +95,10 @@ public class NPCPlayer1leg : MonoBehaviour
             switch (i)
             {
                 case 1:
-                    AnimaruImage[i].sprite = ImpalaSprite;
+                    AnimaruImage[i].sprite = FlyPanSprite;
                     break;
                 case 2:
-                    AnimaruImage[i].sprite = FlyPanSprite;
+                    AnimaruImage[i].sprite = ImpalaSprite;
                     break;
                 case 3:
                     AnimaruImage[i].sprite = WolfSprite;
