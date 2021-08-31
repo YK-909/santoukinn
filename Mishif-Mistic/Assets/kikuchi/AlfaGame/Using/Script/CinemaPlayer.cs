@@ -172,35 +172,35 @@ public class CinemaPlayer : MonoBehaviour
         }
         else if (KAI.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KAI.transform.position;
         }
         else if (KAU.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KAU.transform.position;
         }
         else if (KSI.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KSI.transform.position;
         }
         else if (KSW.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KSW.transform.position;
         }
         else if (KSU.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KSU.transform.position;
         }
         else if (KTI.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KTI.transform.position;
         }
         else if (KTW.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KTW.transform.position;
         }
         else if (KTU.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KTU.transform.position;
         }
         else if (FSIW.activeSelf)
         {
@@ -280,35 +280,35 @@ public class CinemaPlayer : MonoBehaviour
         }
         else if (KAIW.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KAIW.transform.position;
         }
         else if (KAUW.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KAUW.transform.position;
         }
         else if (KSIW.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KSIW.transform.position;
         }
         else if (KSWW.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KSWW.transform.position;
         }
         else if (KSUW.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KSUW.transform.position;
         }
         else if (KTIW.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KTIW.transform.position;
         }
         else if (KTWW.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KTWW.transform.position;
         }
         else if (KTUW.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KTUW.transform.position;
         }
         else if (FSID.activeSelf)
         {
@@ -388,35 +388,35 @@ public class CinemaPlayer : MonoBehaviour
         }
         else if (KAID.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KAID.transform.position;
         }
         else if (KAUD.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KAUD.transform.position;
         }
         else if (KSID.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KSID.transform.position;
         }
         else if (KSWD.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KSWD.transform.position;
         }
         else if (KSUD.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KSUD.transform.position;
         }
         else if (KTID.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KTID.transform.position;
         }
         else if (KTWD.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KTWD.transform.position;
         }
         else if (KTUD.activeSelf)
         {
-            PlayerObject = KAW.transform.position;
+            PlayerObject = KTUD.transform.position;
         }
         this.transform.position = PlayerObject;
     }
