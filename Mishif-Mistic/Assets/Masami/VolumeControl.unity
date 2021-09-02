@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -748,8 +748,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf4b3044ce71174bab7b0b68b447064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGMvolSlider: {fileID: 1727368748}
-  SEvolSlider: {fileID: 470739586}
+  UsevolSlider: {fileID: 470739586}
+  CategoryName: SFX
 --- !u!114 &470739586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1662,8 +1662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf4b3044ce71174bab7b0b68b447064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGMvolSlider: {fileID: 1727368748}
-  SEvolSlider: {fileID: 470739586}
+  UsevolSlider: {fileID: 1727368748}
+  CategoryName: BGM
 --- !u!1001 &2021474918
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,8 +5,10 @@ using UnityEngine;
 public class VolumeControl : MonoBehaviour
 {
     /* フィールドを追加 */
-    public UnityEngine.UI.Slider BGMvolSlider;
-    public UnityEngine.UI.Slider SEvolSlider;
+    //public UnityEngine.UI.Slider BGMvolSlider;
+    //使用するSlider
+    public UnityEngine.UI.Slider UsevolSlider;
+    public string CategoryName;
 
     private CriAtomSource atomSrc;
 
@@ -15,15 +17,19 @@ public class VolumeControl : MonoBehaviour
     {
         atomSrc = (CriAtomSource)GetComponent("CriAtomSource");
 
-        BGMvolSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
-        SEvolSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
+        //BGMvolSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
+        //Slider操作で音量が変わる
+        UsevolSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
 
+        //BGMvolSlider.value = CriAtom.GetCategoryVolume("BGM");
+        //Sliderの値を音量と同期させる
+        UsevolSlider.value = CriAtom.GetCategoryVolume(CategoryName);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void PlaySound()
     {
@@ -54,7 +60,8 @@ public class VolumeControl : MonoBehaviour
     {
         //atomSrc.volume = BGMvolSlider.value;
         //CriAtomExCategory.SetVolume("BGM", 0.0f);   // BGM カテゴリのボリュームを 0.0f に設定する
-        CriAtomExCategory.SetVolume("BGM", BGMvolSlider.value);
-        CriAtomExCategory.SetVolume("SFX", SEvolSlider.value);
+        //CriAtom.SetCategoryVolume("BGM", BGMvolSlider.value);
+        //音量をSliderの値にする
+        CriAtom.SetCategoryVolume(CategoryName, UsevolSlider.value);
     }
 }
