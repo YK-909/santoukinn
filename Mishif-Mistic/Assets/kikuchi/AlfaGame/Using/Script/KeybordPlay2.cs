@@ -219,6 +219,7 @@ public class KeybordPlay2 : MonoBehaviour
         {
             //音鳴らす
             atomSrc.Play("Down");
+
         }
 
         if (Gamemode == 1)

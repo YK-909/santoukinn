@@ -205,7 +205,9 @@ public class KeyBordPlay1 : MonoBehaviour
         {
             //音鳴らす
             atomSrc.Play("Down");
+            
         }
+        
 
         Gamemode = Timerbotgame.GetGamemode();
         P1TurtleGard.transform.position = this.transform.position + transform.forward * 5 + transform.up * -2;
