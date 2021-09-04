@@ -109,6 +109,14 @@ public class Timerbotgame : MonoBehaviour
                     Invoke("BotSceneResultNPCWin", 3.0f);
 
                 }
+                else if (KeyBordPlay1.GetP1HP() == BotFSW.GetP2HP())
+                {
+                    GameWinner.text = "引き分け";
+                    GameChange = 2;
+
+                    Invoke("BotSceneResultDraw", 3.0f);
+
+                }
             }
 
             if (Exterior1 == 2)
@@ -154,5 +162,10 @@ public class Timerbotgame : MonoBehaviour
     void BotSceneResultNPCWin()
     {
         SceneManager.LoadScene("NPCResultSceneNPCWin");
+    }
+
+    void BotSceneResultDraw()
+    {
+        SceneManager.LoadScene("ResultSceneDraw");
     }
 }

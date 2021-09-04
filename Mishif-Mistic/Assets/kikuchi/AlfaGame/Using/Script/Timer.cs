@@ -112,6 +112,14 @@ public class Timer : MonoBehaviour
 
                     Invoke("SceneResult1", 2.0f);
                 }
+                else if (KeyBordPlay1.GetP1HP() == BotFSW.GetP2HP())
+                {
+                    GameWinner.text = "引き分け";
+                    GameChange = 2;
+
+                    Invoke("SceneResultDraw", 3.0f);
+
+                }
             }
 
             if (Exterior2 == 2)
@@ -168,5 +176,10 @@ public class Timer : MonoBehaviour
     void SceneResult2()
     {
         SceneManager.LoadScene("ResultSceneP2Win");
+    }
+
+    void SceneResultDraw()
+    {
+        SceneManager.LoadScene("ResultSceneDraw");
     }
 }
