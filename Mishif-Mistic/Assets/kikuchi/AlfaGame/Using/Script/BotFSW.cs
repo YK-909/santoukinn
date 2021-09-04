@@ -18,7 +18,7 @@ public class BotFSW : MonoBehaviour
     public int Leg = 0;
     //外装
     //1=加速 2=吸血　わざと１
-    private int Exterior = 0;
+    private int Exterior = 1;
     //移動速度
     private float Speed = 40.0f;
 
@@ -200,7 +200,7 @@ public class BotFSW : MonoBehaviour
         DamageHP2 = 0;
 
         //ボット用 この数値が短いほど正確な動き
-        StartCoroutine(DelayMethod(4));
+        StartCoroutine(DelayMethod(7));
         StartCoroutine(DirectionMethod(7));
         Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
         transform.LookAt(Enemy);
@@ -240,7 +240,7 @@ public class BotFSW : MonoBehaviour
 
                             //距離要調整
 
-                            if (Value == 1 || Value == 2)
+                            if (Value <= 6)
                             {
                             }
                             else
@@ -250,7 +250,7 @@ public class BotFSW : MonoBehaviour
                                 {
                                     //前方に移動する
                                     transform.position += transform.forward * Speed * Time.deltaTime;
-                                    if (Speed == 40.0)
+                                    if (Speed == 40.0*BuffSpeed)
                                     {
                                         //音鳴らす
                                         atomSrc.Play("Garden_Footsteps");
