@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4570344, g: 0.5595709, b: 0.7865084, a: 1}
+  m_IndirectSpecularColor: {r: 0.45712304, g: 0.55964464, b: 0.78671855, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5985,6 +5985,7 @@ GameObject:
   - component: {fileID: 1449395743}
   - component: {fileID: 1449395742}
   - component: {fileID: 1449395741}
+  - component: {fileID: 1449395745}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6086,6 +6087,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1449395745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449395740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896cf501bf67f0446b1e8592eaa92f92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousSelection: {fileID: 0}
+  Selectables:
+  - {fileID: 817790913}
+  - {fileID: 1197253997}
 --- !u!1 &1463235736
 GameObject:
   m_ObjectHideFlags: 0
