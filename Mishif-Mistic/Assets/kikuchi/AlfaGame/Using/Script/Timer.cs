@@ -24,10 +24,11 @@ public class Timer : MonoBehaviour
     //ADX設定
     public CriAtomSource CountSrc;
     public CriAtomSource BGMSrc;
-    public CriAtomSource WastelandES01;
+    public CriAtomSource ESSrc;
     private CriAtomSource atomSource;
     string cueSheetBGM = "GardenBGM";
     string cueSheetCount = "CountDownSE";
+    public string cueSheetES;
 
     // Start is called before the first frame update
     void Start()
@@ -42,8 +43,10 @@ public class Timer : MonoBehaviour
         CriAtomExAcb Countacb = CriAtom.GetAcb(cueSheetCount);
         BGMSrc.cueSheet = cueSheetBGM;
         CountSrc.cueSheet = cueSheetCount;
+        ESSrc.cueSheet = cueSheetES;
         Exterior1 = ContlolePassive1.GetPassive();
         Exterior2 = ContlolePassive2.GetPassive2();
+        ESSrc.Play();
     }
 
     IEnumerator CountdownCoroutine()
@@ -158,8 +161,19 @@ public class Timer : MonoBehaviour
         else if (_textCountdown.text == "GO!")
         {
             CountSrc.Play("CountDown_Finish");
-            BGMSrc.Play("Battle");
-            atomSource.Play("Wind01");
+            BGMSrc.Play();
+            
+        }
+
+        if (KeybordPlay2.GetP2HP() <= 0)
+        {
+            BGMSrc.Stop();
+            ESSrc.Stop();
+        }
+        else if (JoyconPlay1.GetP1HP() <= 0)
+        {
+            BGMSrc.Stop();
+            ESSrc.Stop();
         }
     }
 

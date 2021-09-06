@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1365,7 +1365,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544286332}
-  m_LocalRotation: {x: 0.25088724, y: -0.006798278, z: 0.0017620011, w: 0.9679909}
+  m_LocalRotation: {x: 0.25088724, y: -0.006798311, z: 0.0017620096, w: 0.9679909}
   m_LocalPosition: {x: 2200, y: 3453, z: 221}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2032,6 +2032,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 971903908384387523, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: _playOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 971903908384387523, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: _loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 971903909373016178, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: cueSheets.Array.data[3].awbFile
+      value: WastelandES.awb
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270841472525231393, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2497788187834374281, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2087,6 +2107,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3918063904239697079, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: ESSrc
+      value: 
+      objectReference: {fileID: 971903909922087590}
+    - target: {fileID: 3918063904239697079, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: cueSheetES
+      value: WastelandES
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270979038611878333, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.006798311
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270979038611878333, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0017620096
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270979038611878333, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.25088724
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270979038611878333, guid: b27404b3d78794440b1c9751b6b85bd7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9679909
+      objectReference: {fileID: 0}
     - target: {fileID: 8621021262105780779, guid: b27404b3d78794440b1c9751b6b85bd7,
         type: 3}
       propertyPath: m_Name
@@ -2094,3 +2144,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b27404b3d78794440b1c9751b6b85bd7, type: 3}
+--- !u!114 &971903909922087590 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 971903908384387523, guid: b27404b3d78794440b1c9751b6b85bd7,
+    type: 3}
+  m_PrefabInstance: {fileID: 971903909922087589}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
