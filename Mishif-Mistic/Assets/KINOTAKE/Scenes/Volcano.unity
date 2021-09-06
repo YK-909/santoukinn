@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4877,6 +4877,60 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 614917051}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &643443204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 643443205}
+  - component: {fileID: 643443206}
+  m_Layer: 0
+  m_Name: Bubble01(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &643443205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643443204}
+  m_LocalRotation: {x: -0, y: 0.46002936, z: -0, w: 0.88790375}
+  m_LocalPosition: {x: 389.4322, y: 55, z: 823.34106}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 0.9999999}
+  m_Children: []
+  m_Father: {fileID: 7032031013859705861}
+  m_RootOrder: 35
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &643443206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643443204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 1
+  _cueName: Bubble01
+  _cueSheet: VolcanoES
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 1
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &643611197
 GameObject:
   m_ObjectHideFlags: 0
@@ -8946,6 +9000,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1233483153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1233483154}
+  - component: {fileID: 1233483155}
+  m_Layer: 0
+  m_Name: Horse_VFootsteps(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1233483154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233483153}
+  m_LocalRotation: {x: -0, y: 0.46002936, z: -0, w: 0.88790375}
+  m_LocalPosition: {x: 389.4322, y: 55, z: 823.34106}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7032031013859705861}
+  m_RootOrder: 38
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1233483155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233483153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Horse_VFootsteps
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &1255586920
 GameObject:
   m_ObjectHideFlags: 0
@@ -9657,6 +9765,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1383049870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1383049871}
+  - component: {fileID: 1383049872}
+  m_Layer: 0
+  m_Name: Impala_VFootsteps(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1383049871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383049870}
+  m_LocalRotation: {x: -0, y: 0.46002936, z: -0, w: 0.88790375}
+  m_LocalPosition: {x: 389.4322, y: 55, z: 823.34106}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7032031013859705861}
+  m_RootOrder: 37
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1383049872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383049870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Impala_VFootsteps
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1001 &1393667769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11703,6 +11865,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1658127427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1658127428}
+  - component: {fileID: 1658127429}
+  m_Layer: 0
+  m_Name: Volcano_Footsteps(CriAtomSource)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1658127428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658127427}
+  m_LocalRotation: {x: -0, y: 0.46002936, z: -0, w: 0.88790375}
+  m_LocalPosition: {x: 389.4322, y: 55, z: 823.34106}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7032031013859705861}
+  m_RootOrder: 36
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1658127429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658127427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e631c3b9947b54c823c6853a05529c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playOnStart: 0
+  _cueName: Volcano_Footsteps
+  _cueSheet: AnimalSE
+  _regionOnStart: {fileID: 0}
+  _listenerOnStart: {fileID: 0}
+  _use3dPositioning: 1
+  _loop: 0
+  _volume: 1
+  _pitch: 0
+  _androidUseLowLatencyVoicePool: 0
+  need_to_player_update_all: 1
 --- !u!1 &1660399412
 GameObject:
   m_ObjectHideFlags: 0
@@ -15823,11 +16039,71 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1468547080415726085, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 1468547080415726085, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 1468547080415726085, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 1881840992176850268, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 1881840992176850268, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 1881840992176850268, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
     - target: {fileID: 2086540662925851802, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
         type: 3}
       propertyPath: m_Name
       value: Alfa vol norotainV2
       objectReference: {fileID: 0}
+    - target: {fileID: 2670411751771447348, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 2670411751771447348, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 2670411751771447348, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 5249280811913624649, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 5249280811913624649, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 5249280811913624649, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
     - target: {fileID: 5330302197910799928, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15883,5 +16159,1246 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6705621080750514694, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ESSrc
+      value: 
+      objectReference: {fileID: 643443206}
+    - target: {fileID: 6705621080750514694, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: cueSheetES
+      value: VolcanoES
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362261621159820627, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621159820627, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621159820627, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621176554414, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621176554414, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621176554414, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621256669823, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621256669823, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621256669823, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621265467661, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621265467661, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621265467661, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621278447111, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621278447111, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621278447111, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621287793464, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621287793464, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621287793464, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621341145972, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621341145972, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621341145972, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621354287858, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621354287858, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621354287858, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621381822878, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621381822878, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621381822878, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621424950056, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621424950056, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621424950056, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621433557306, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621433557306, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621433557306, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621473051456, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621473051456, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621473051456, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621476731296, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621476731296, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621476731296, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621490189617, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621490189617, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621490189617, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621503139680, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621503139680, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621503139680, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621561953751, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621561953751, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621561953751, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621565533379, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621565533379, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621565533379, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621590060888, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621590060888, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621590060888, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621613452592, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621613452592, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621613452592, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621645451348, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621645451348, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621645451348, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621717502013, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621717502013, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621717502013, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621755339239, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621755339239, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621755339239, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621767945125, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621767945125, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621767945125, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621781779795, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621781779795, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621781779795, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621816645956, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621816645956, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621816645956, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621861906165, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621861906165, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621861906165, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621868543937, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621868543937, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621868543937, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621919459011, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: cueSheets.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362261621919459011, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: cueSheets.Array.data[3].awbFile
+      value: VolcanoES.awb
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362261621919459011, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: cueSheets.Array.data[3].name
+      value: VolcanoES
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362261621919459011, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: cueSheets.Array.data[5].name
+      value: VolcanoES
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362261621919459011, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: cueSheets.Array.data[5].acbFile
+      value: VolcanoES.acb
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362261621919459011, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: cueSheets.Array.data[5].awbFile
+      value: VolcanoES.awb
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362261621919459011, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: cueSheets.Array.data[3].acbFile
+      value: VolcanoES.acb
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362261621942755053, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621942755053, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621942755053, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261621964319962, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261621964319962, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261621964319962, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622017260419, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622017260419, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622017260419, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622020644011, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622020644011, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622020644011, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622113407804, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622113407804, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622113407804, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622159961175, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622159961175, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622159961175, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622176125472, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622176125472, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622176125472, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622189998256, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622189998256, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622189998256, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622270431951, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622270431951, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622270431951, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622328257386, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622328257386, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622328257386, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622349464450, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622349464450, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622349464450, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622350049398, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622350049398, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622350049398, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622353239313, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622353239313, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622353239313, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622380077312, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622380077312, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622380077312, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622397327780, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622397327780, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622397327780, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622453558954, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622453558954, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622453558954, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622502655539, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: _playOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362261622510985832, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622510985832, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622510985832, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622512697690, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622512697690, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622512697690, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622513366986, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622513366986, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622513366986, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622553779225, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622553779225, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622553779225, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622573038091, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622573038091, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622573038091, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622586860553, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622586860553, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622586860553, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622632672682, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622632672682, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622632672682, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622665720222, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622665720222, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622665720222, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622677225067, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622677225067, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622677225067, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622697239541, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622697239541, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622697239541, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622726044153, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622726044153, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622726044153, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622729957854, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622729957854, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622729957854, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622766741414, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622766741414, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622766741414, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622778644380, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622778644380, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622778644380, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622828025434, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622828025434, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622828025434, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622852816738, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622852816738, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622852816738, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622853476281, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622853476281, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622853476281, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622908088178, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: _playOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362261622908088178, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: _loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362261622910533245, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622910533245, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622910533245, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622943268343, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622943268343, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622943268343, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261622996185773, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261622996185773, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261622996185773, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261623013666085, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261623013666085, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261623013666085, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261623052305963, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261623052305963, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261623052305963, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261623066509055, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261623066509055, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261623066509055, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261623104336994, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261623104336994, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261623104336994, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261623153769886, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261623153769886, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261623153769886, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261623163432982, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261623163432982, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261623163432982, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261623177804559, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261623177804559, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261623177804559, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261623215711066, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261623215711066, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261623215711066, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261623252092676, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261623252092676, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261623252092676, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261623268607481, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261623268607481, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261623268607481, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7362261623275412123, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7362261623275412123, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7362261623275412123, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7411984792858473590, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7411984792858473590, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7411984792858473590, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 7605020386707402225, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 7605020386707402225, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 7605020386707402225, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 8662923781833460741, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 8662923781833460741, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 8662923781833460741, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 8698692474455294964, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: WolfFS
+      value: 
+      objectReference: {fileID: 1658127429}
+    - target: {fileID: 8698692474455294964, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: ImpalaFS
+      value: 
+      objectReference: {fileID: 1383049872}
+    - target: {fileID: 8698692474455294964, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: HorseFS
+      value: 
+      objectReference: {fileID: 1233483155}
+    - target: {fileID: 8859155592691760016, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a, type: 3}
+--- !u!4 &7032031013859705861 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7362261621369604478, guid: b9bfb2505e75c3a4aad6d1ae77bafe9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7032031013859705860}
+  m_PrefabAsset: {fileID: 0}
