@@ -519,9 +519,9 @@ public class KeybordPlay2 : MonoBehaviour
                                             //Rb.AddForce(transform.forward * 30f, ForceMode.Impulse);
                                             LionSwitch = false;
                                             //行動停止
-                                            Invoke("ActionInterval", 1.1f);
+                                            Invoke("ActionInterval", 0.8f);
                                             //リキャストタイム
-                                            Invoke("DelayLion", 1.4f);
+                                            Invoke("DelayLion", 1.25f);
 
                                             //噛む
                                             this.Animator.SetBool(isBite, true);
@@ -1448,8 +1448,8 @@ public class KeybordPlay2 : MonoBehaviour
                 //ダメージの当たり判定
                 if (other.gameObject.CompareTag("P1LionAttack"))
                 {
-                    Player2HP -= 30;
-                    DamageHP2 = 30;
+                    Player2HP -= 22;
+                    DamageHP2 = 22;
                     HPdrain();
                     P2G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     Bloodper = Random.Range(0, 10);
