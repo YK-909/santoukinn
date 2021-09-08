@@ -372,9 +372,9 @@ public class JoyconPlay1 : MonoBehaviour
                                             Rb.AddForce(transform.forward * 30f, ForceMode.Impulse);
                                             LionSwitch = false;
                                             //行動停止
-                                            Invoke("ActionInterval", 1.1f);
+                                            Invoke("ActionInterval", 0.8f);
                                             //リキャストタイム
-                                            Invoke("DelayLion", 1.4f);
+                                            Invoke("DelayLion", 1.25f);
 
                                             //噛む
                                             this.Animator.SetBool(isBite, true);
@@ -1282,8 +1282,8 @@ public class JoyconPlay1 : MonoBehaviour
                 //ダメージの当たり判定
                 if (other.gameObject.CompareTag("P2LionAttack"))
                 {
-                    Player1HP -= 30;
-                    DamageHP1 = 30;
+                    Player1HP -= 22;
+                    DamageHP1 = 22;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     Bloodper = Random.Range(0, 10);
