@@ -186,6 +186,9 @@ public class KeyBordPlay1 : MonoBehaviour
         Rb.isKinematic = true;
         EnemyObj = GameObject.Find("P2camera");
         ShieldObj.SetActive(false);
+
+        EnemyHP_2 = 100;
+        Player1HP = 100;
         if (Exterior == 2)
         {
             BuffSpeed = 0.8f;
@@ -726,7 +729,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                         }
                                         else if (Implajump == false)
                                         {
-                                            Rb.AddForce(transform.up * 60, ForceMode.Impulse);
+                                            Rb.AddForce(transform.up * 100, ForceMode.Impulse);
                                             Implajump = true;
 
                                             //インパラ攻撃
@@ -738,7 +741,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                     }
                                     if (Implajump == true)
                                     {
-                                        transform.position += transform.forward * 15 * Time.deltaTime;
+                                        transform.position += transform.forward * 25 * Time.deltaTime;
 
                                     }
 
@@ -913,7 +916,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                 {
                                     if (FlogSwitch == true)
                                     {
-                                        Rb.AddForce(transform.up * 45, ForceMode.Impulse);
+                                        Rb.AddForce(transform.up * 60, ForceMode.Impulse);
                                         NormalJump = true;
 
                                         //音鳴らす
@@ -1194,7 +1197,7 @@ public class KeyBordPlay1 : MonoBehaviour
         //修正していない
         if (EnemyHP_2 + (DamageHP1 / 10) < 100)
         {
-            EnemyHP_2 += DamageHP1 / 10;
+            EnemyHP_2 += DamageHP1 / 5;
             P2G.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
             P2R.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
 

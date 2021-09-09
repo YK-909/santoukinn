@@ -181,6 +181,9 @@ public class BotFSW : MonoBehaviour
         Rb.isKinematic = true;
         EnemyObj = GameObject.Find("P1camera");
         ShieldObj.SetActive(false);
+
+        EnemyHP_1 = 100;
+        Player2HP = 100;
         if (Exterior == 1)
         {
             BuffSpeed = 0.8f;
@@ -602,7 +605,7 @@ public class BotFSW : MonoBehaviour
         {
             if (EnemyHP_1 + (DamageHP2 / 10) < 100)
             {
-                EnemyHP_1 += DamageHP2 / 10;
+                EnemyHP_1 += DamageHP2 / 5;
                 P2G.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
                 P2R.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
 
