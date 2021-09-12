@@ -1477,7 +1477,7 @@ public class JoyconPlay1 : MonoBehaviour
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 0.15f, 0, 0);
                     //ノックバック
-                    Vector3 ToVec = GetAngleVec(other.gameObject,this.gameObject);
+                    Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
                     //行動停止
                     AllActionInterval = true;
@@ -1503,7 +1503,7 @@ public class JoyconPlay1 : MonoBehaviour
 
                     //ヒットエフェクト
                     GameObject Hit;
-                    Hit = Instantiate(HitEff, transform.position+transform.forward*4+transform.up*1.8f, transform.rotation)as GameObject;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
 
                     if (isDrain == true)
@@ -1797,10 +1797,10 @@ public class JoyconPlay1 : MonoBehaviour
                 //Vector3 ToVec = GetAngleVec(this.gameObject, other.gameObject);
                 KuwagataVec = GetAngleVec(this.gameObject, other.gameObject);
                 Rb.AddForce(transform.up * 50, ForceMode.Impulse);
-                Invoke("KuwagataNock", 0.5f); 
+                Invoke("KuwagataNock", 0.5f);
                 //Rb.AddForce(ToVec * 50, ForceMode.Impulse);
                 //無敵タイム開始
-                 Invincible = true;
+                Invincible = true;
                 Invoke("InvincibleTime", 1.5f);
                 //行動停止
                 AllActionInterval = true;
@@ -1821,6 +1821,24 @@ public class JoyconPlay1 : MonoBehaviour
                     HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                     Destroy(HealObj, 0.8f);
                 }
+            }
+            if (other.gameObject.CompareTag("PalsyBullet2"))
+            {
+                Player1HP -= 6;
+                P1G.transform.position += new Vector3(HP10per * 0.6f, 0, 0);
+                //ノックバック
+                Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
+                Rb.AddForce(ToVec * 20, ForceMode.Impulse);
+                //行動停止
+                AllActionInterval = true;
+                Invoke("ActionInterval", 1.2f);
+                DelayFlog();
+            }
+            if (other.gameObject.CompareTag("PalsyBlock2"))
+            {
+                AllActionInterval = true;
+                Invoke("ActionInterval", 1f);
+                DelayFlog();
             }
         }
         else

@@ -117,6 +117,9 @@ public class KeybordPlay2 : MonoBehaviour
     //リジェネ
     private float RejeTime =0;
 
+    public GameObject PalsyBullet;
+    public GameObject PalsyBlock;
+
     //キャラの向きを常に一定に
     private GameObject EnemyObj;
     private Vector3 Enemy;
@@ -860,7 +863,29 @@ public class KeybordPlay2 : MonoBehaviour
                                 }
                                 else if(Exterior==1)
                                 {
-                                   
+                                    if (Input.GetKeyDown(KeyCode.B))
+                                    {
+                                        AllActionInterval = true;
+                                        //ScorpionAtk = false;
+
+                                        //弾を出現させる位置を取得
+                                        Vector3 PlacePosition = this.transform.position;
+                                        //出現させる位置をずらす値
+                                        Vector3 OffsetGun = new Vector3(0, 3, 15);
+
+                                        //武器の向きに合わせて弾の向きも調整
+                                        Quaternion Q1 = this.transform.rotation;
+
+                                        //弾を出現させる位置を調整
+                                        PlacePosition = Q1 * OffsetGun + PlacePosition;
+
+                                        GameObject ObjPala;
+                                        ObjPala = Instantiate(PalsyBullet, PlacePosition, this.transform.rotation) as GameObject;
+                                        GameObject ObjPalaBlock;
+                                        ObjPalaBlock = Instantiate(PalsyBlock, PlacePosition, this.transform.rotation) as GameObject;
+                                        //行動停止
+                                        Invoke("ActionInterval", 1.5f);
+                                    }
                                 }
                             }
                         }
