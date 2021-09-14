@@ -62,6 +62,8 @@ public class Timerbotgame : MonoBehaviour
 
         _textCountdown.text = "";
         _textCountdown.gameObject.SetActive(false);
+
+        BuffCountTextP1.text = "";
         GameChange = 1;
     }
 
@@ -124,9 +126,10 @@ public class Timerbotgame : MonoBehaviour
                 string CounttextP1 = KeyBordPlay1.GetBuffCountP1().ToString("0");
                 BuffCountTextP1.text = "加速P1:" + CounttextP1 + "回";
             }
-            else
+            else if (Exterior1 == 1)
             {
-                BuffCountTextP1.text = "";
+                string CounttextP1 = JoyconPlay1.GetPalsyCountP1().ToString("0");
+                BuffCountTextP1.text = "鱗粉P1:" + CounttextP1 + "回";
             }
         }
 

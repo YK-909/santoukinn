@@ -70,6 +70,9 @@ public class Timer : MonoBehaviour
 
         _textCountdown.text = "";
         _textCountdown.gameObject.SetActive(false);
+
+        BuffCountTextP1.text = "";
+        BuffCountTextP2.text = "";
         GameChange = 1;
     }
 
@@ -130,20 +133,24 @@ public class Timer : MonoBehaviour
                 string CounttextP2 = KeybordPlay2.GetBuffCountP2().ToString("0");
                 BuffCountTextP2.text = "加速P2:" + CounttextP2 + "回";
             }
-            else
+            else if(Exterior2==1)
             {
-                BuffCountTextP2.text = "";
+                string CounttextP2 = KeybordPlay2.GetPalsyCountP2().ToString("0");
+                BuffCountTextP2.text = "鱗粉P2:" + CounttextP2 + "回";
             }
+          
 
             if (Exterior1 == 2)
             {
                 string CounttextP1 = JoyconPlay1.GetBuffCountP1().ToString("0");
                 BuffCountTextP1.text = "加速P1:" + CounttextP1 + "回";
             }
-            else
+            else if (Exterior1 == 1)
             {
-                BuffCountTextP1.text = "";
+                string CounttextP1 = JoyconPlay1.GetPalsyCountP1().ToString("0");
+                BuffCountTextP1.text = "鱗粉P1:" + CounttextP1 + "回";
             }
+
         }
 
         if (_textCountdown.text == "3")
