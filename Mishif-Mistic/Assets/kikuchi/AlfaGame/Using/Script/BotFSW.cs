@@ -1329,6 +1329,24 @@ public class BotFSW : MonoBehaviour
                     Destroy(HealObj, 0.8f);
                 }
             }
+            if (other.gameObject.CompareTag("PalsyBullet1"))
+            {
+                Player2HP -= 6;
+                P2G.transform.position += new Vector3(HP10per * 0.6f, 0, 0);
+                //ノックバック
+                Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
+                Rb.AddForce(ToVec * 20, ForceMode.Impulse);
+                //行動停止
+                AllActionInterval = true;
+                Invoke("ActionInterval", 1.2f);
+                DelayFlog();
+            }
+            if (other.gameObject.CompareTag("PalsyBlock1"))
+            {
+                AllActionInterval = true;
+                Invoke("ActionInterval", 1f);
+                DelayFlog();
+            }
         }
         else
         {

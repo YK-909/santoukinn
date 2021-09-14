@@ -114,11 +114,12 @@ public class KeybordPlay2 : MonoBehaviour
     public GameObject P1G;
     public GameObject P1R;
 
-    //リジェネ
-    private float RejeTime =0;
-
+    //麻痺
     public GameObject PalsyBullet;
     public GameObject PalsyBlock;
+    private bool PalsyAtk = true;
+    //外部に数値を持っていく
+    private static int PalsyCountP2 = 3;
 
     //キャラの向きを常に一定に
     private GameObject EnemyObj;
@@ -863,28 +864,33 @@ public class KeybordPlay2 : MonoBehaviour
                                 }
                                 else if(Exterior==1)
                                 {
-                                    if (Input.GetKeyDown(KeyCode.B))
+                                    if (PalsyAtk==true&&PalsyCountP2 != 0)
                                     {
-                                        AllActionInterval = true;
-                                        //ScorpionAtk = false;
+                                        if (Input.GetKeyDown(KeyCode.B))
+                                        {
+                                            AllActionInterval = true;
+                                            PalsyAtk = false;
+                                            PalsyCountP2 -= 1;
 
-                                        //弾を出現させる位置を取得
-                                        Vector3 PlacePosition = this.transform.position;
-                                        //出現させる位置をずらす値
-                                        Vector3 OffsetGun = new Vector3(0, 3, 15);
+                                            //弾を出現させる位置を取得
+                                            Vector3 PlacePosition = this.transform.position;
+                                            //出現させる位置をずらす値
+                                            Vector3 OffsetGun = new Vector3(0, 3, 15);
 
-                                        //武器の向きに合わせて弾の向きも調整
-                                        Quaternion Q1 = this.transform.rotation;
+                                            //武器の向きに合わせて弾の向きも調整
+                                            Quaternion Q1 = this.transform.rotation;
 
-                                        //弾を出現させる位置を調整
-                                        PlacePosition = Q1 * OffsetGun + PlacePosition;
+                                            //弾を出現させる位置を調整
+                                            PlacePosition = Q1 * OffsetGun + PlacePosition;
 
-                                        GameObject ObjPala;
-                                        ObjPala = Instantiate(PalsyBullet, PlacePosition, this.transform.rotation) as GameObject;
-                                        GameObject ObjPalaBlock;
-                                        ObjPalaBlock = Instantiate(PalsyBlock, PlacePosition, this.transform.rotation) as GameObject;
-                                        //行動停止
-                                        Invoke("ActionInterval", 1.5f);
+                                            GameObject ObjPala;
+                                            ObjPala = Instantiate(PalsyBullet, PlacePosition, this.transform.rotation) as GameObject;
+                                            GameObject ObjPalaBlock;
+                                            ObjPalaBlock = Instantiate(PalsyBlock, PlacePosition, this.transform.rotation) as GameObject;
+                                            //行動停止
+                                            Invoke("ActionInterval", 0.8f);
+                                            Invoke("PalsyInterval", 1.4f);
+                                        }
                                     }
                                 }
                             }
@@ -1128,6 +1134,10 @@ public class KeybordPlay2 : MonoBehaviour
         Invincible = false;
         ArmadilloSpeed = 0;
     }
+    void PalsyInterval()
+    {
+        PalsyAtk = true;
+    }
 
     void MissileTiming()
     {
@@ -1300,7 +1310,10 @@ public class KeybordPlay2 : MonoBehaviour
     {
         this.Animator.SetBool(isBlown, false);
     }
-
+    public static int GetPalsyCountP2()
+    {
+        return PalsyCountP2;
+    }
     void OnCollisionEnter(Collision other)
     {
 
@@ -2013,6 +2026,24 @@ public class KeybordPlay2 : MonoBehaviour
                     HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                     Destroy(HealObj, 0.8f);
                 }
+            }
+            if (other.gameObject.CompareTag("PalsyBullet1"))
+            {
+                Player2HP -= 6;
+                P2G.transform.position += new Vector3(HP10per * 0.6f, 0, 0);
+                //ノックバック
+                Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
+                Rb.AddForce(ToVec * 20, ForceMode.Impulse);
+                //行動停止
+                AllActionInterval = true;
+                Invoke("ActionInterval", 1.2f);
+                DelayFlog();
+            }
+            if (other.gameObject.CompareTag("PalsyBlock1"))
+            {
+                AllActionInterval = true;
+                Invoke("ActionInterval", 1f);
+                DelayFlog();
             }
         }
         else
