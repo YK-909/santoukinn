@@ -202,6 +202,7 @@ public class JoyconPlay1 : MonoBehaviour
             BuffSpeed = 0.8f;
         }
         BuffCountP1 = 3;
+        PalsyCountP1 = 3;
 
         Animator = GetComponent<Animator>();
 
@@ -218,6 +219,19 @@ public class JoyconPlay1 : MonoBehaviour
         {
             this.transform.position = new Vector3(Poseposition.x, Poseposition.y, Poseposition.z);
         }
+
+        //鱗粉攻撃(飛んでく鱗粉のみ)
+        if (P2inpunAtk.isRinpunAtk == true)
+        {
+            Player1HP -= 1.5f;
+            P1G.transform.position += new Vector3(HP10per * 0.15f, 0, 0);
+            P2inpunAtk.isRinpunAtk = false;
+            //行動停止
+            AllActionInterval = true;
+            Invoke("ActionInterval", 1.2f);
+            DelayFlog();
+        }
+    
 
         //通常のダウンの音鳴らす
         if (Animator.GetCurrentAnimatorStateInfo(0).IsName("Blown"))
@@ -743,6 +757,7 @@ public class JoyconPlay1 : MonoBehaviour
                                             //行動停止
                                             Invoke("ActionInterval", 0.8f);
                                             Invoke("PalsyInterval", 1.4f);
+
                                         }
                                     }
                                 }

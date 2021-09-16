@@ -6,6 +6,7 @@ public class PalsyBlockP1 : MonoBehaviour
 {
     private float Timecount = 0;
     private bool Once = true;
+
     // Start is called before the first frame update
     void Start()
     {
