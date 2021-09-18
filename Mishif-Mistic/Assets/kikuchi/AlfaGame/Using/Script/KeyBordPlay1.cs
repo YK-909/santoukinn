@@ -202,6 +202,7 @@ public class KeyBordPlay1 : MonoBehaviour
             BuffSpeed = 0.8f;
         }
         BuffCountP1 = 3;
+        PalsyCountP1 = 3;
 
         Animator = GetComponent<Animator>();
 
@@ -842,9 +843,10 @@ public class KeyBordPlay1 : MonoBehaviour
                                             PlacePosition = Q1 * OffsetGun + PlacePosition;
 
                                             GameObject ObjPala;
-                                            ObjPala = Instantiate(PalsyBullet, PlacePosition, this.transform.rotation) as GameObject;
-                                            GameObject ObjPalaBlock;
-                                            ObjPalaBlock = Instantiate(PalsyBlock, PlacePosition, this.transform.rotation) as GameObject;
+                                            ObjPala = Instantiate(PalsyBullet, transform.position + transform.up * -8, this.transform.rotation) as GameObject;
+                                            Destroy(ObjPala, 7f);
+                                            //GameObject ObjPalaBlock;
+                                            //ObjPalaBlock = Instantiate(PalsyBlock, PlacePosition, this.transform.rotation) as GameObject;
                                             //行動停止
                                             Invoke("ActionInterval", 0.8f);
                                             Invoke("PalsyInterval", 1.4f);

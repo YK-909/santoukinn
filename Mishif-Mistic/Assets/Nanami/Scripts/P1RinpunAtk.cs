@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class P1RinpunAtk : MonoBehaviour
 {
+    public static bool isRinpunAtk;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +22,11 @@ public class P1RinpunAtk : MonoBehaviour
     {
         if (other.gameObject.tag == "Player2")
         {
-            
-            
+            isRinpunAtk = true;
+        }
+        else
+        {
+            isRinpunAtk = false;
         }
     }
 }

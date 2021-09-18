@@ -202,6 +202,18 @@ public class BotFSW : MonoBehaviour
         P2TurtleGard.transform.position = this.transform.position + transform.forward * 5 + transform.up * -2;
         DamageHP2 = 0;
 
+        //鱗粉攻撃(飛んでく鱗粉のみ)
+        if (P1RinpunAtk.isRinpunAtk == true)
+        {
+            Player2HP -= 1.5f;
+            P2G.transform.position += new Vector3(HP10per * 0.15f, 0, 0);
+            P1RinpunAtk.isRinpunAtk = false;
+            //行動停止
+            AllActionInterval = true;
+            Invoke("ActionInterval", 1.2f);
+            DelayFlog();
+        }
+
         //ボット用 この数値が短いほど正確な動き
         StartCoroutine(DelayMethod(7));
         StartCoroutine(DirectionMethod(7));
