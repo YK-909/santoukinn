@@ -230,6 +230,18 @@ public class KeybordPlay2 : MonoBehaviour
 
         }
 
+        //鱗粉攻撃(飛んでく鱗粉のみ)
+        if (P1RinpunAtk.isRinpunAtk == true)
+        {
+            Player2HP -= 1.5f;
+            P2G.transform.position += new Vector3(HP10per * 0.15f, 0, 0);
+            P1RinpunAtk.isRinpunAtk = false;
+            //行動停止
+            AllActionInterval = true;
+            Invoke("ActionInterval", 1.2f);
+            DelayFlog();
+        }
+
         if (Gamemode == 1)
         {
             if (AllActionInterval == false)
@@ -887,16 +899,13 @@ public class KeybordPlay2 : MonoBehaviour
 
                                             GameObject ObjPala;
                                             ObjPala = Instantiate(PalsyBullet,transform.position+transform.up*-8, this.transform.rotation) as GameObject;
-                                            GameObject ObjPalaBlock;
-                                            ObjPalaBlock = Instantiate(PalsyBlock, PlacePosition, this.transform.rotation) as GameObject;
+                                            Destroy(ObjPala, 7f);
+                                            //GameObject ObjPalaBlock;
+                                            //ObjPalaBlock = Instantiate(PalsyBlock, transform.position, this.transform.rotation);
                                             //行動停止
                                             Invoke("ActionInterval", 0.8f);
                                             Invoke("PalsyInterval", 1.4f);
 
-                                            if (P2inpunAtk.isRinpunAtk == true)
-                                            {
-                                                Player2HP -= 6;
-                                            }
                                         }
                                     }
                                 }
@@ -2051,6 +2060,7 @@ public class KeybordPlay2 : MonoBehaviour
                 AllActionInterval = true;
                 Invoke("ActionInterval", 1f);
                 DelayFlog();
+                
             }
         }
         else

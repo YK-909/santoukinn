@@ -15,7 +15,7 @@ public class P2inpunAtk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnParticleCollision(GameObject other)
@@ -24,7 +24,6 @@ public class P2inpunAtk : MonoBehaviour
         {
             isRinpunAtk = true;
             Debug.Log(isRinpunAtk);
-            Destroy(gameObject, 2f);
         }
         else
         {
