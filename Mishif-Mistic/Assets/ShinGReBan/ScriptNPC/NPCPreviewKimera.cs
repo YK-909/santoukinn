@@ -29,7 +29,7 @@ public class NPCPreviewKimera : MonoBehaviour
             if (NPCContlolehead.head2 == Head2 && NPCContloleBody.body2 == Body2 && NPCContloleLeg.leg2 == Leg2)
             {
                 //if文の外でやると無駄に毎フレーム実行されるので中にする
-                GameObject obj = (GameObject)Resources.Load("CP2Kimera122");
+                GameObject obj = (GameObject)Resources.Load("CP2Kimera"+Head2+Body2+Leg2);
                 //メンバ変数に入れる
                 instance = (GameObject)Instantiate(obj, new Vector3(4.46f, -1.09f, 10.0f), Quaternion.Euler(0f, -90f, 0f));
                 One = false;

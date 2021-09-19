@@ -33,11 +33,11 @@ public class NPCContlolehead : MonoBehaviour
                 break;
 
             case 1:
-                head2 = 1;
+                head2 = 2;
                 break;
 
             case 2:
-                head2 = 1;
+                head2 = 3;
                 break;
         }
 

@@ -30,7 +30,7 @@ public class NPCContloleLeg : MonoBehaviour
                 break;
 
             case 2:
-                leg2 = 2;
+                leg2 = 3;
                 break;
         }
     }

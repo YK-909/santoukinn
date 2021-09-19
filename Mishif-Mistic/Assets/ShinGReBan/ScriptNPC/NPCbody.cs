@@ -92,10 +92,10 @@ public class NPCbody : MonoBehaviour
             switch (i)
             {
                 case 1:
-                    AnimaruImage[i].sprite = TortoiseSprite;
+                    AnimaruImage[i].sprite = FlyPanSprite;
                     break;
                 case 2:
-                    AnimaruImage[i].sprite = FlyPanSprite;
+                    AnimaruImage[i].sprite = TortoiseSprite;
                     break;
                 case 3:
                     AnimaruImage[i].sprite = ScorpionSprite;

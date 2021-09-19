@@ -26,11 +26,11 @@ public class NPCContloleBody : MonoBehaviour
                 break;
 
             case 1:
-                body2 = 2;
+                body2 = 1;
                 break;
 
             case 2:
-                body2 = 2;
+                body2 = 3;
                 break;
         }
     }
