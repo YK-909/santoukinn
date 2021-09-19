@@ -22,8 +22,10 @@ public class Timerbotgame : MonoBehaviour
     //ADX設定
     public CriAtomSource CountSrc;
     public CriAtomSource BGMSrc;
+    public CriAtomSource ESSrc;
     string cueSheetBGM = "GardenBGM";
     string cueSheetCount = "CountDownSE";
+    public string cueSheetES;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,8 @@ public class Timerbotgame : MonoBehaviour
         Exterior1 = NPCP1ContlolePassive.GetPassive();
         BGMSrc.cueSheet = cueSheetBGM;
         CountSrc.cueSheet = cueSheetCount;
+        ESSrc.cueSheet = cueSheetES;
+        ESSrc.Play();
     }
 
     IEnumerator CountdownCoroutine()
@@ -149,6 +153,17 @@ public class Timerbotgame : MonoBehaviour
         {
             CountSrc.Play("CountDown_Finish");
             BGMSrc.Play("Battle");
+        }
+
+        if (KeybordPlay2.GetP2HP() <= 0)
+        {
+            BGMSrc.Stop();
+            ESSrc.Stop();
+        }
+        else if (JoyconPlay1.GetP1HP() <= 0)
+        {
+            BGMSrc.Stop();
+            ESSrc.Stop();
         }
     }
 

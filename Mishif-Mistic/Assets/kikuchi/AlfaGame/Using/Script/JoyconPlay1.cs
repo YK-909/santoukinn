@@ -154,6 +154,7 @@ public class JoyconPlay1 : MonoBehaviour
     public CriAtomSource WolfFS;
     public CriAtomSource ImpalaFS;
     public CriAtomSource HorseFS;
+    bool isShieldOP = false;
 
     //アニメーター
     private Animator Animator;
@@ -735,6 +736,9 @@ public class JoyconPlay1 : MonoBehaviour
                                     {
                                         if (Input.GetKeyDown(KeyCode.Joystick1Button7))
                                         {
+                                            //音鳴らす
+                                            atomSrc.Play("Butterfly_Wing");
+
                                             AllActionInterval = true;
                                             PalsyAtk = false;
                                             PalsyCountP1 -= 1;
@@ -775,12 +779,16 @@ public class JoyconPlay1 : MonoBehaviour
                             //LRのシールド
                             if (Input.GetKey(KeyCode.Joystick1Button6))
                             {
-                                //音鳴らす
-                                //AnimalShieldOPSrc.Play();
-                                atomSrc.Play("Animal_Shield_OP");
-
                                 //シールド展開
                                 this.Animator.SetBool(isShield, true);
+
+                                if (isShieldOP == false)
+                                {
+                                    //音鳴らす
+                                    //AnimalShieldOPSrc.Play();
+                                    atomSrc.Play("Animal_Shield_OP");
+                                    isShieldOP = true;
+                                }
 
 
                                 if (FlogSwitch == true)
@@ -834,6 +842,7 @@ public class JoyconPlay1 : MonoBehaviour
                                 ShieldObj.SetActive(false);
                                 Invoke("ShieldDelay", 0.25f);
                                 this.Animator.SetBool(isShield, false);
+                                isShieldOP = false;
                             }
                             if (Shield == false)
                             {
