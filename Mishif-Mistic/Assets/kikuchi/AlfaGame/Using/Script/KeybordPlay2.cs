@@ -152,6 +152,7 @@ public class KeybordPlay2 : MonoBehaviour
     public CriAtomSource WolfFS;
     public CriAtomSource ImpalaFS;
     public CriAtomSource HorseFS;
+    bool isShieldOP = false;
 
     //アニメーター
     private Animator Animator;
@@ -882,6 +883,9 @@ public class KeybordPlay2 : MonoBehaviour
                                     {
                                         if (Input.GetKeyDown(KeyCode.B))
                                         {
+                                            //音鳴らす
+                                            atomSrc.Play("Butterfly_Wing");
+
                                             AllActionInterval = true;
                                             PalsyAtk = false;
                                             PalsyCountP2 -= 1;
@@ -926,12 +930,17 @@ public class KeybordPlay2 : MonoBehaviour
                             //LRのシールド
                             if (Input.GetKey(KeyCode.V))
                             {
-                                //音鳴らす
-                                //AnimalShieldOPSrc.Play();
-                                atomSrc.Play("Animal_Shield_OP");
 
                                 //シールド展開
                                 this.Animator.SetBool(isShield, true);
+                                
+                                if (isShieldOP == false)
+                                {
+                                    //音鳴らす
+                                    //AnimalShieldOPSrc.Play();
+                                    atomSrc.Play("Animal_Shield_OP");
+                                    isShieldOP = true;
+                                }
 
 
                                 if (FlogSwitch == true)
@@ -988,6 +997,7 @@ public class KeybordPlay2 : MonoBehaviour
                                 Shield_Red.SetActive(false);
                                 Invoke("ShieldDelay", 0.25f);//行動停止
                                 this.Animator.SetBool(isShield, false);
+                                isShieldOP = false;
                             }
                             if (Shield == false)
                             {
