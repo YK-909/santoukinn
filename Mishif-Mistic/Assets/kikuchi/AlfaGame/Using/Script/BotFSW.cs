@@ -97,7 +97,7 @@ public class BotFSW : MonoBehaviour
     private bool CalledOncePoint = false;
 
     //加速するための
-    private float BuffSpeed = 1.0f;
+    private float BuffSpeed = 0.7f;
     //外部に数値を持っていく
     private static int BuffCountP2 = 3;
     public float BuffTimer = 0;
@@ -186,7 +186,7 @@ public class BotFSW : MonoBehaviour
         Player2HP = 100;
         if (Exterior == 1)
         {
-            BuffSpeed = 0.8f;
+            BuffSpeed = 0.7f;
             
         }
 
@@ -243,40 +243,42 @@ public class BotFSW : MonoBehaviour
                     {
                         if (FlogSwitch == true)
                         {
-
-                            if (NormalJump == false)
+                            if (ArmadilloSpeed <= 0)
                             {
-                                Speed = 40.0f * BuffSpeed;
-                            }
-                            else
-                            {
-                                Speed = 15f * BuffSpeed;
-                            }
-
-                            //距離要調整
-
-                            if (Value <= 6)
-                            {
-                            }
-                            else
-                            {
-                                float dis= Vector3.Distance(transform.position, EnemyObj.transform.position);
-                                if (dis >= 15)
+                                if (NormalJump == false)
                                 {
-                                    //前方に移動する
-                                    transform.position += transform.forward * Speed * Time.deltaTime;
-                                    if (Speed == 40.0*BuffSpeed)
-                                    {
-                                        //音鳴らす
-                                        atomSrc.Play("Garden_Footsteps");
-                                    }
-
-                                    //走る
-                                    this.Animator.SetBool(isRun, true);
+                                    Speed = 40.0f * BuffSpeed;
                                 }
-                                else 
+                                else
                                 {
-                                    this.Animator.SetBool(isRun, false);
+                                    Speed = 15f * BuffSpeed;
+                                }
+
+                                //距離要調整
+
+                                if (Value <= 6)
+                                {
+                                }
+                                else
+                                {
+                                    float dis = Vector3.Distance(transform.position, EnemyObj.transform.position);
+                                    if (dis >= 15)
+                                    {
+                                        //前方に移動する
+                                        transform.position += transform.forward * Speed * Time.deltaTime;
+                                        if (Speed == 40.0 * BuffSpeed)
+                                        {
+                                            //音鳴らす
+                                            atomSrc.Play("Garden_Footsteps");
+                                        }
+
+                                        //走る
+                                        this.Animator.SetBool(isRun, true);
+                                    }
+                                    else
+                                    {
+                                        this.Animator.SetBool(isRun, false);
+                                    }
                                 }
                             }
                         }
@@ -290,7 +292,7 @@ public class BotFSW : MonoBehaviour
                             if (Head == 1)
                             {
                                 //カエル
-                                if (Distance < 10)
+                                if (0<Distance && Distance < 10)
                                 {
                                     this.Animator.SetBool(isRun, false);
                                     if (FlogSwitch == true)
@@ -331,14 +333,76 @@ public class BotFSW : MonoBehaviour
                                     }
                                 }
                             }
+                            else if (Head == 2)
+                            {
+                                if (LionSwitch == true)
+                                {
+                                    // ライオン
+                                    if (0 < Distance && Distance < 15)
+                                    {
+                                        //音鳴らす
+                                        //LionAtkVoSrc.Play();
+                                        atomSrc.Play("LionAtkVo");
+                                        Invoke("BiteSound", 0.6f);
+
+                                        //P2Lionhead.SetActive(true);
+                                        AllActionInterval = true;
+                                        P2Lionhead.tag = "P2LionAttack";
+                                        //Rb.AddForce(transform.forward * 30f, ForceMode.Impulse);
+                                        LionSwitch = false;
+                                        //行動停止
+                                        Invoke("ActionInterval", 0.8f);
+                                        //リキャストタイム
+                                        Invoke("DelayLion", 1.25f);
+
+                                        //噛む
+                                        this.Animator.SetBool(isBite, true);
+                                        //当たり判定
+                                        Invoke("BiteEnable", 0.4f);
+                                        Invoke("BiteUnable", 1.0f);
+                                    }
+                                    else
+                                    {
+                                        this.Animator.SetBool(isBite, false);
+                                    }
+                                }
+                            }
+                            else if (Head == 3)
+                            {
+                                //クワガタの攻撃
+                                if (KuwagataSwitch == true)
+                                {
+                                    if (0 < Distance && Distance < 15)
+                                    {
+                                        KuwagataSwitch = false;
+                                        AllActionInterval = true;
+                                        KuwagataBlock.tag = "P2KuwagataAttack";
+                                        KuwagataBlock.SetActive(true);
+                                        Rb.isKinematic = true;
+                                        //音鳴らす
+                                        atomSrc.Play("Stag_Grab");
+                                        Invoke("KuwagataUnable", 0.7f);
+                                        //行動停止
+                                        Invoke("ActionInterval", 1.5f);
+                                        //リキャストタイム
+                                        Invoke("DelayKuwagata", 3f);
+
+                                        //ギロチンアタック
+                                        this.Animator.SetBool(isGilotine, true);
+                                      
+                                    }
+
+                                }
+                                else
+                                {
+                                    this.Animator.SetBool(isGilotine, false);
+                                }
+
+                            }
 
                             if (FlogSwitch == true)
                             {
-
-                                if (Body == 1)
-                                {
-                                }
-                                else if (Body == 2)
+                                if (Body == 2)
                                 {
                                     //サソリ
                                     if (60 < Distance && Distance < 70)
@@ -373,6 +437,65 @@ public class BotFSW : MonoBehaviour
                                         this.Animator.SetBool(isMissileFin, true);
                                     }
                                 }
+                                else if (Body == 3)
+                                {
+                                    if (ArmadilloSwitch == true)
+                                    {
+                                        if (ArmadilloMode == 0)
+                                        {
+                                            //アルマジロ
+                                            if (50< Distance && Distance < 70)
+                                            {
+                                                Debug.Log(ArmadilloSpeed);
+                                                if (ArmadilloSpeed < 30)
+                                                {
+                                                    ArmadilloSpeed += 10 * Time.deltaTime;
+                                                }
+
+                                                //ローリングアタック
+                                                this.Animator.SetBool(isRollStr, true);
+                                                this.Animator.SetBool(isRollFin, false);
+
+                                                //音鳴らす
+                                                atomSrc.Play("Armadillo_Roll");
+                                            }
+                                            if (ArmadilloSpeed>10)
+                                            {
+                                                ArmadilloMode = 1;
+                                                //アニメーションの位置をずらしたよ
+                                                this.Animator.SetBool(isRollStr, false);
+                                            }
+                                        }
+                                        else if (ArmadilloMode == 1)
+                                        {
+                                            if (ArmadilloSpeed > 0)
+                                            {
+                                                if (OnceArma == true)
+                                                {
+                                                    ArmadilloSpeed += 50;
+                                                    OnceArma = false;
+                                                }
+                                                ArmadilloBlock.SetActive(true);
+                                                ArmadilloBlock.tag = "P2ArmadilloAttack";
+                                                ArmadilloSpeed += -20 * Time.deltaTime;
+                                                transform.position += transform.forward * 50 * Time.deltaTime;
+                                            }
+                                            else
+                                            {
+                                                OnceArma = true;
+                                                this.Animator.SetBool(isRollFin, true);
+                                                ArmadilloBlock.SetActive(false);
+                                                ArmadilloMode = 0;
+                                                //オブジェクトが消える時間
+                                                ArmadilloSwitch = false;
+                                                Invoke("DelayArma", 1.5f);
+                                                AllActionInterval = true;
+                                                //行動停止
+                                                Invoke("ActionInterval", 1.0f);
+                                            }
+                                        }
+                                    }
+                                }
                             }
 
                         }
@@ -388,11 +511,47 @@ public class BotFSW : MonoBehaviour
 
                             if (Leg == 1)
                             {
+                                if (0<Distance&&Distance <= 20)
+                                {
+                                    //音鳴らす
+                                    //ImpalaJumpSrc.Play();
+                                    atomSrc.Play("Impala_Jump");
+
+                                    if (Implajump == true)
+                                    {
+                                        if (Distance< 5)
+                                        {
+                                            Rb.isKinematic = true;
+                                            AllActionInterval = true;
+                                            Invoke("ImpleFreeze", 0.35f);
+                                            Invoke("ActionInterval", 1.2f);
+
+                                            Invoke("ImpalaAtkTiming", 0.5f);
+                                            Invoke("ImpalaFinTiming", 1.5f);
+
+                                        }
+                                    }
+                                    else if (Implajump == false)
+                                    {
+                                        Rb.AddForce(transform.up * 100, ForceMode.Impulse);
+                                        Implajump = true;
+
+                                        //インパラ攻撃
+                                        this.Animator.SetBool(isImpalaAtkStr, true);
+                                        this.Animator.SetBool(isImpalaAtkCont, false);
+                                        this.Animator.SetBool(isImpalaAtkFin, false);
+                                    }
+                                }
+                                if (Implajump == true)
+                                {
+                                    transform.position += transform.forward * 25 * Time.deltaTime;
+
+                                }
                             }
                             else if (Leg == 2)
                             {
                                 //オオカミ
-                                if (Distance <= 30)
+                                if (0 < Distance && Distance <= 30)
                                 {
                                     this.Animator.SetBool(isRun, false);
                                     //音鳴らす
@@ -425,6 +584,38 @@ public class BotFSW : MonoBehaviour
                                 {
                                     //ひっかく
                                     this.Animator.SetBool(isScratch, false);
+                                }
+                            }
+                            else if (Leg == 3)
+                            {
+                                // ウマ
+                                if (0 < Distance && Distance <= 25)
+                                {
+
+                                    if (HorseSwitch == true)
+                                    {
+                                        //音鳴らす
+                                        atomSrc.Play("Horse_Swing");
+
+                                        AllActionInterval = true;
+                                        P2HorseLeg.tag = "P2HorseAttack";
+                                        Rb.AddForce(transform.forward * 25f, ForceMode.Impulse);
+                                        HorseSwitch = false;
+                                        //行動停止
+                                        Invoke("ActionInterval", 1.1f);
+                                        //リキャストタイム
+                                        Invoke("DelayHorse", 1.6f);
+
+                                        //蹴る
+                                        this.Animator.SetBool(isKick, true);
+                                        //当たり判定
+                                        Invoke("KickEnable", 0.8f);
+                                        Invoke("KickUnable", 1.2f);
+                                    }
+                                }
+                                else
+                                {
+                                    this.Animator.SetBool(isKick, false);
                                 }
                             }
                         }
@@ -535,6 +726,37 @@ public class BotFSW : MonoBehaviour
         P2FlogTongue.SetActive(false);
         FlogSwitch = true;
     }
+    void DelayArma()
+    {
+        ArmadilloSwitch = true;
+    }
+
+    void DelayHorse()
+    {
+        HorseSwitch = true;
+    }
+
+    void KickEnable()
+    {
+        P2HorseLeg.SetActive(true);
+    }
+
+    void KickUnable()
+    {
+        P2HorseLeg.SetActive(false);
+        this.Animator.SetBool(isKick, false);
+    }
+
+    void KuwagataUnable()
+    {
+        KuwagataBlock.SetActive(false);
+        Rb.isKinematic = false;
+        this.Animator.SetBool(isGilotine, false);
+    }
+    void DelayKuwagata()
+    {
+        KuwagataSwitch = true;
+    }
     void ActionInterval()
     {
         //全操作の一時停止
@@ -574,6 +796,7 @@ public class BotFSW : MonoBehaviour
     {
         //オオカミの当たり判定を消す
         P2WolfAtk.SetActive(false);
+        this.Animator.SetBool(isKick, false);
     }
 
     void BiteSound()
@@ -594,6 +817,7 @@ public class BotFSW : MonoBehaviour
     {
         //ライオンの当たり判定を消すタイミングをイベントで制御
         P2Lionhead.SetActive(false);
+        this.Animator.SetBool(isBite, false);
     }
 
     void TurtleAnimTiming()

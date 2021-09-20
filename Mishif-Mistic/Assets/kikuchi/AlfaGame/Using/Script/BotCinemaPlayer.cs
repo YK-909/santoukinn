@@ -5,6 +5,8 @@ using UnityEngine;
 public class BotCinemaPlayer : MonoBehaviour
 {
     public GameObject FSW;
+    public GameObject LTW;
+    public GameObject KAU;
     private Vector3 PlayerObject;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,14 @@ public class BotCinemaPlayer : MonoBehaviour
         if (FSW.activeSelf)
         {
             PlayerObject = FSW.transform.position;
+        }
+        else if (LTW.activeSelf)
+        {
+            PlayerObject = LTW.transform.position;
+        }
+        else if (KAU.activeSelf)
+        {
+            PlayerObject = KAU.transform.position;
         }
         this.transform.position = PlayerObject;
     }

@@ -82,7 +82,7 @@ public class Timerbotgame : MonoBehaviour
             //HPが０による勝敗
             if (KeyBordPlay1.GetP1HP() <= 0)
             {
-                GameWinner.text = "P2の勝利";
+                GameWinner.text = "NPCの勝利";
                 GameChange = 2;
 
                 Invoke("BotSceneResultNPCWin", 3.0f);
@@ -109,7 +109,7 @@ public class Timerbotgame : MonoBehaviour
                 }
                 else if (KeyBordPlay1.GetP1HP() < BotFSW.GetP2HP())
                 {
-                    GameWinner.text = "P2の勝利";
+                    GameWinner.text = "NPCの勝利";
                     GameChange = 2;
 
                     Invoke("BotSceneResultNPCWin", 3.0f);
