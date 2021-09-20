@@ -660,6 +660,9 @@ public class KeyBordPlay1 : MonoBehaviour
                                                     ArmadilloMode = 1;
                                                     //アニメーションの位置をずらしたよ
                                                     this.Animator.SetBool(isRollStr, false);
+
+                                                    //音鳴らす
+                                                    atomSrc.Play("Armadillo_Roll");
                                                 }
                                             }
                                             else if (ArmadilloMode == 1)
@@ -1995,6 +1998,9 @@ public class KeyBordPlay1 : MonoBehaviour
             }
             if (other.gameObject.CompareTag("PalsyBlock2"))
             {
+                //音鳴らす
+                atomSrc.Play("Butterfly_Stan");
+
                 AllActionInterval = true;
                 Invoke("ActionInterval", 1f);
                 DelayFlog();
