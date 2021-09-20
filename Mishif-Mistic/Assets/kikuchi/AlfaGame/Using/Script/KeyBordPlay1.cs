@@ -6,6 +6,7 @@ public class KeyBordPlay1 : MonoBehaviour
 {
     //体力
     public static float Player1HP = 100;
+    private float HPmag = 0.8f;
     //スタートの合図のため
     private int Gamemode = 0;
 
@@ -1442,8 +1443,8 @@ public class KeyBordPlay1 : MonoBehaviour
                 //ダメージの当たり判定
                 if (other.gameObject.CompareTag("P2LionAttack"))
                 {
-                    Player1HP -= 22;
-                    DamageHP1 = 22;
+                    Player1HP -= 22 * HPmag;
+                    DamageHP1 = 22 * HPmag;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     Bloodper = Random.Range(0, 10);
@@ -1490,8 +1491,8 @@ public class KeyBordPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P2Impla"))
                 {
-                    Player1HP -= 30;
-                    DamageHP1 = 30;
+                    Player1HP -= 30 * HPmag;
+                    DamageHP1 = 30 * HPmag;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     //ノックバック
@@ -1535,8 +1536,8 @@ public class KeyBordPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P2ImplaWave"))
                 {
-                    Player1HP -= 10;
-                    DamageHP1 = 10;
+                    Player1HP -= 10 * HPmag;
+                    DamageHP1 = 10 * HPmag;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per, 0, 0);
                     //ノックバック
@@ -1578,8 +1579,8 @@ public class KeyBordPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P2WolfAttack"))
                 {
-                    Player1HP -= 20;
-                    DamageHP1 = 20;
+                    Player1HP -= 20 * HPmag;
+                    DamageHP1 = 20 * HPmag;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2f, 0, 0);
                     Bloodper = Random.Range(0, 10);
@@ -1628,8 +1629,8 @@ public class KeyBordPlay1 : MonoBehaviour
             }
                 if (other.gameObject.CompareTag("P2FlogAttack"))
                 {
-                    Player1HP -= 1.5f;
-                    DamageHP1 = 1.5f;
+                    Player1HP -= 1.5f * HPmag;
+                    DamageHP1 = 1.5f * HPmag;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 0.15f, 0, 0);
                     //ノックバック
@@ -1672,8 +1673,8 @@ public class KeyBordPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
                 {
-                    Player1HP -= 3;
-                    DamageHP1 = 3;
+                    Player1HP -= 3 * HPmag;
+                    DamageHP1 = 3 * HPmag;
                     HPdrain();
                     Poisontimer = 0;
                     P1G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
@@ -1720,8 +1721,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     //音鳴らす
                     //AnimalDamage.Play();
                     atomSrc.Play("Armadillo_Hit");
-                    Player1HP -= 25;
-                    DamageHP1 = 25;
+                    Player1HP -= 25 * HPmag;
+                    DamageHP1 = 25 * HPmag;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
@@ -1765,8 +1766,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     //音鳴らす
                     //AnimalDamage.Play();
                     atomSrc.Play("Horse_Kick");
-                    Player1HP -= 25;
-                    DamageHP1 = 25;
+                    Player1HP -= 25 * HPmag;
+                    DamageHP1 = 25 * HPmag;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
@@ -1808,8 +1809,8 @@ public class KeyBordPlay1 : MonoBehaviour
                 //カウンターダメージ用
                 if (other.gameObject.CompareTag("P1LionAttackBack"))
                 {
-                    Player1HP -= 36;
-                    DamageHP1 = 36;
+                    Player1HP -= 36 * HPmag;
+                    DamageHP1 = 36 * HPmag;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2 * 1.2f, 0, 0);
                     //ノックバック
@@ -1826,8 +1827,8 @@ public class KeyBordPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P1ImplaBack"))
                 {
-                    Player1HP -= 36;
-                    DamageHP1 = 36;
+                    Player1HP -= 36 * HPmag;
+                    DamageHP1 = 36 * HPmag;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     Vector3 ToVec = GetAngleVec(other.gameObject, P1ImplaBlock);
@@ -1843,8 +1844,8 @@ public class KeyBordPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P1ImplaWaveBack"))
                 {
-                    Player1HP -= 12;
-                    DamageHP1 = 12;
+                    Player1HP -= 12 * HPmag;
+                    DamageHP1 = 12 * HPmag;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 1.2f, 0, 0);
                     //行動停止
@@ -1858,8 +1859,8 @@ public class KeyBordPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P1FlogAttackBack"))
                 {
-                    Player1HP -= 3f;
-                    DamageHP1 = 3;
+                    Player1HP -= 3f * HPmag;
+                    DamageHP1 = 3 * HPmag;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
@@ -1876,8 +1877,8 @@ public class KeyBordPlay1 : MonoBehaviour
                 //オオカミのカウンターのタグに切り替えが未実装
                 if (other.gameObject.CompareTag("P1WolfAttackBack"))
                 {
-                    Player1HP -= 22;
-                    DamageHP1 = 22;
+                    Player1HP -= 22 * HPmag;
+                    DamageHP1 = 22 * HPmag;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 2.2f, 0, 0);
                     //ノックバック
@@ -1893,8 +1894,8 @@ public class KeyBordPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("PoisonAttackBack"))
                 {
-                    Player1HP -= 3.6f;
-                    DamageHP1 = 3.6f;
+                    Player1HP -= 3.6f * HPmag;
+                    DamageHP1 = 3.6f * HPmag;
                     HPdrain();
                     Poisontimer = 0;
                     P1G.transform.position += new Vector3(HP10per * 0.36f, 0, 0);
@@ -1911,8 +1912,8 @@ public class KeyBordPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P1ArmadilloAttackBack"))
                 {
-                    Player1HP -= 30;
-                    DamageHP1 = 30;
+                    Player1HP -= 30 * HPmag;
+                    DamageHP1 = 30 * HPmag;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                     //ノックバック
@@ -1928,8 +1929,8 @@ public class KeyBordPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P1HorseAttackBack"))
                 {
-                    Player1HP -= 30;
-                    DamageHP1 = 30;
+                    Player1HP -= 30 * HPmag;
+                    DamageHP1 = 30 * HPmag;
                     HPdrain();
                     P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                     //ノックバック
@@ -1946,8 +1947,8 @@ public class KeyBordPlay1 : MonoBehaviour
             }
             if (other.gameObject.CompareTag("P2KuwagataAttack"))
             {
-                Player1HP -= 30;
-                DamageHP1 = 30;
+                Player1HP -= 30 * HPmag;
+                DamageHP1 = 30 * HPmag;
                 HPdrain();
                 P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                 //ノックバック
@@ -1982,7 +1983,7 @@ public class KeyBordPlay1 : MonoBehaviour
             }
             if (other.gameObject.CompareTag("PalsyBullet2"))
             {
-                Player1HP -= 6;
+                Player1HP -= 6 * HPmag;
                 P1G.transform.position += new Vector3(HP10per * 0.6f, 0, 0);
                 //ノックバック
                 Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
