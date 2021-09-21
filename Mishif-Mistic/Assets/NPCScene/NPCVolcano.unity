@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -10703,7 +10703,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 34.83056
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -10728,7 +10728,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484220110}
-  m_LocalRotation: {x: 0.16429669, y: 0.00008011234, z: -0.00001334352, w: 0.986411}
+  m_LocalRotation: {x: 0.16452508, y: 0.0013173653, z: -0.0002197342, w: 0.986372}
   m_LocalPosition: {x: 491.53067, y: 131.5, z: 153.72424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -16216,17 +16216,22 @@ PrefabInstance:
     - target: {fileID: 2108833174611199974, guid: 34b912d39a2099743a3c9a624455db6f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14587878
+      value: 0.14598665
       objectReference: {fileID: 0}
     - target: {fileID: 2108833174611199974, guid: 34b912d39a2099743a3c9a624455db6f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.45378798
+      value: 0.45486867
       objectReference: {fileID: 0}
     - target: {fileID: 2108833174611199974, guid: 34b912d39a2099743a3c9a624455db6f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.07558296
+      value: -0.07587128
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108833174611199974, guid: 34b912d39a2099743a3c9a624455db6f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8752291
       objectReference: {fileID: 0}
     - target: {fileID: 2435171021512393041, guid: 34b912d39a2099743a3c9a624455db6f,
         type: 3}
@@ -17202,6 +17207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: cueSheets.Array.data[3].awbFile
       value: VolcanoES.awb
+      objectReference: {fileID: 0}
+    - target: {fileID: 8421525712577889494, guid: 34b912d39a2099743a3c9a624455db6f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8675612852382533018, guid: 34b912d39a2099743a3c9a624455db6f,
         type: 3}
