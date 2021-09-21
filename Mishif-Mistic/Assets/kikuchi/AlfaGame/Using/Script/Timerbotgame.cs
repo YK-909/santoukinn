@@ -132,7 +132,7 @@ public class Timerbotgame : MonoBehaviour
             }
             else if (Exterior1 == 1)
             {
-                string CounttextP1 = JoyconPlay1.GetPalsyCountP1().ToString("0");
+                string CounttextP1 = KeyBordPlay1.GetPalsyCountP1().ToString("0");
                 BuffCountTextP1.text = "鱗粉P1:" + CounttextP1 + "回";
             }
         }
