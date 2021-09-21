@@ -137,6 +137,10 @@ public class BotFSW : MonoBehaviour
     //public CriAtomSource FrogAtkVoSrc;
     //public CriAtomSource AnimalDamage;
     private CriAtomSource atomSrc;
+    public CriAtomSource WolfFS;
+    public CriAtomSource ImpalaFS;
+    public CriAtomSource HorseFS;
+    bool isShieldOP = false;
 
     //アニメーター
     private Animator Animator;
@@ -268,8 +272,39 @@ public class BotFSW : MonoBehaviour
                                         transform.position += transform.forward * Speed * Time.deltaTime;
                                         if (Speed == 40.0 * BuffSpeed)
                                         {
-                                            //音鳴らす
-                                            atomSrc.Play("Garden_Footsteps");
+                                            //スピードアップしている時
+                                            if (BuffSpeed == 1.5f)
+                                            {
+                                                //音鳴らす
+                                                atomSrc.Play("Speed_UP_Wing");
+                                            }
+                                            //以下通常時
+                                            //インパラの足音
+                                            else if (Leg == 1)
+                                            {
+                                                //音鳴らす
+                                                //AnimalFSSrc.Play();
+                                                //atomSrc.Play("Impala_GFootsteps");
+                                                ImpalaFS.Play();
+                                            }
+
+                                            //狼の足音
+                                            else if (Leg == 2)
+                                            {
+                                                //音鳴らす
+                                                //AnimalFSSrc.Play();
+                                                //atomSrc.Play("Garden_Footsteps");
+                                                WolfFS.Play();
+                                            }
+
+                                            //馬の足音
+                                            else if (Leg == 3)
+                                            {
+                                                //音鳴らす
+                                                //AnimalFSSrc.Play();
+                                                //atomSrc.Play("Horse_GFootsteps");
+                                                HorseFS.Play();
+                                            }
                                         }
 
                                         //走る
@@ -468,6 +503,9 @@ public class BotFSW : MonoBehaviour
                                         }
                                         else if (ArmadilloMode == 1)
                                         {
+                                            //音鳴らす
+                                            atomSrc.Play("Armadillo_Roll");
+
                                             if (ArmadilloSpeed > 0)
                                             {
                                                 if (OnceArma == true)
@@ -1579,6 +1617,9 @@ public class BotFSW : MonoBehaviour
             }
             if (other.gameObject.CompareTag("PalsyBlock1"))
             {
+                //音鳴らす
+                atomSrc.Play("Butterfly_Stan");
+
                 AllActionInterval = true;
                 Invoke("ActionInterval", 1f);
                 DelayFlog();
