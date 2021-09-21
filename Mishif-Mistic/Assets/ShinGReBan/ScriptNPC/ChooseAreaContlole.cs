@@ -24,7 +24,7 @@ public class ChooseAreaContlole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(ChooseAreaP1.transform.position.x == 770 * canvasScale)
+        if(ChooseAreaP1.transform.position.x == 771 * canvasScale)
         {
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
