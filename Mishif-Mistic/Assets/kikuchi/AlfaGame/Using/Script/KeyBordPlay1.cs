@@ -121,6 +121,7 @@ public class KeyBordPlay1 : MonoBehaviour
     public GameObject PalsyBullet;
     public GameObject PalsyBlock;
     private bool PalsyAtk = true;
+    public static bool RinpunAtk;
     //外部に数値を持っていく
     private static int PalsyCountP1 = 3;
 
@@ -837,6 +838,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                             AllActionInterval = true;
                                             PalsyAtk = false;
                                             PalsyCountP1 -= 1;
+                                            RinpunAtk = true;
 
                                             //弾を出現させる位置を取得
                                             Vector3 PlacePosition = this.transform.position;
@@ -851,12 +853,16 @@ public class KeyBordPlay1 : MonoBehaviour
 
                                             GameObject ObjPala;
                                             ObjPala = Instantiate(PalsyBullet, transform.position + transform.up * -8, this.transform.rotation) as GameObject;
-                                            Destroy(ObjPala, 7f);
+                                            Destroy(ObjPala, 7.5f);
                                             //GameObject ObjPalaBlock;
                                             //ObjPalaBlock = Instantiate(PalsyBlock, PlacePosition, this.transform.rotation) as GameObject;
                                             //行動停止
                                             Invoke("ActionInterval", 0.8f);
                                             Invoke("PalsyInterval", 1.4f);
+
+                                            //使用時にキメラが飛んで傾く
+                                            Rb.AddForce(transform.up * 10, ForceMode.Impulse);
+                                            transform.Rotate(new Vector3(-30, 0, 0));
                                         }
                                     }
                                 }
