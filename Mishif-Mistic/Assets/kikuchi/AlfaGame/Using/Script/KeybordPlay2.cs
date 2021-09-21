@@ -2067,7 +2067,7 @@ public class KeybordPlay2 : MonoBehaviour
                 Rb.AddForce(ToVec * 20, ForceMode.Impulse);
                 //行動停止
                 AllActionInterval = true;
-                Invoke("ActionInterval", 1.2f);
+                Invoke("ActionInterval", 3f);
                 DelayFlog();
             }
             if (other.gameObject.CompareTag("PalsyBlock1"))
@@ -2076,7 +2076,7 @@ public class KeybordPlay2 : MonoBehaviour
                 atomSrc.Play("Butterfly_Stan");
 
                 AllActionInterval = true;
-                Invoke("ActionInterval", 1f);
+                Invoke("ActionInterval", 5f);
                 DelayFlog();   
             }
         }
