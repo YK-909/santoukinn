@@ -23,6 +23,6 @@ public class ScreenSize : MonoBehaviour
 
     public void Window()
     {
-        Screen.SetResolution(Screen.width, Screen.height, false);
+        Screen.SetResolution(1280, 720, false);
     }
 }
