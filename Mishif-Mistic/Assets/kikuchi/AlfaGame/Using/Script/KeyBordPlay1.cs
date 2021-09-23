@@ -1938,10 +1938,10 @@ public class KeyBordPlay1 : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P1HorseAttackBack"))
                 {
-                    Player1HP -= 30 * HPmag;
-                    DamageHP1 = 30 * HPmag;
+                    Player1HP -= 20 * HPmag;
+                    DamageHP1 = 20 * HPmag;
                     HPdrain();
-                    P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
+                    P1G.transform.position += new Vector3(HP10per * 2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);

@@ -386,9 +386,9 @@ public class BotFSW : MonoBehaviour
                                         //Rb.AddForce(transform.forward * 30f, ForceMode.Impulse);
                                         LionSwitch = false;
                                         //行動停止
-                                        Invoke("ActionInterval", 0.8f);
+                                        Invoke("ActionInterval", 1.1f);
                                         //リキャストタイム
-                                        Invoke("DelayLion", 1.25f);
+                                        Invoke("DelayLion", 1.6f);
 
                                         //噛む
                                         this.Animator.SetBool(isBite, true);
@@ -453,9 +453,9 @@ public class BotFSW : MonoBehaviour
                                             Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
                                             transform.LookAt(Enemy);
                                             //行動停止
-                                            Invoke("ActionInterval", 1.5f);
+                                            Invoke("ActionInterval", 1.7f);
                                             //リキャストタイム
-                                            Invoke("DelayScorpion", 1.8f);
+                                            Invoke("DelayScorpion", 2.0f);
 
                                             //ミサイル発射タイミング
                                             Invoke("MissileTiming", 1.0f);
@@ -1257,10 +1257,10 @@ public class BotFSW : MonoBehaviour
                 }
                 if (other.gameObject.CompareTag("P1FlogAttack"))
                 {
-                    Player2HP -= 1.5f;
-                    DamageHP2 = 1.5f;
+                    Player2HP -= 3.7f;
+                    DamageHP2 = 3.7f;
                     HPdrain();
-                    P2G.transform.position += new Vector3(HP10per * 0.15f, 0, 0);
+                    P2G.transform.position += new Vector3(HP10per * 0.37f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
@@ -1605,8 +1605,8 @@ public class BotFSW : MonoBehaviour
             }
             if (other.gameObject.CompareTag("PalsyBullet1"))
             {
-                Player2HP -= 6;
-                P2G.transform.position += new Vector3(HP10per * 0.6f, 0, 0);
+                Player2HP -= 4;
+                P2G.transform.position += new Vector3(HP10per * 0.4f, 0, 0);
                 //ノックバック
                 Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                 Rb.AddForce(ToVec * 20, ForceMode.Impulse);
