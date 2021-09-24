@@ -236,7 +236,7 @@ public class KeyBordPlay1 : MonoBehaviour
                 }
                 EnemyHP_2 = BotFSW.GetP2HP();
                 //重力とは別な上からの力　要調整
-                Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Force);
+                Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Acceleration);
 
                 if (!CalledOncePoint)
                 {
@@ -577,9 +577,9 @@ public class KeyBordPlay1 : MonoBehaviour
                                                 //無敵タイム開始
                                                 Invincible = true;
                                                 //無敵時間
-                                                Invoke("InvincibleTime", 2f);
+                                                Invoke("InvincibleTime", 3f);
                                                 //上と同じ値
-                                                Invoke("TurtleGardRemove", 2f);
+                                                Invoke("TurtleGardRemove", 3f);
                                                 //行動停止
                                                 Invoke("ActionInterval", 2.3f);
                                                 //リキャストタイム
