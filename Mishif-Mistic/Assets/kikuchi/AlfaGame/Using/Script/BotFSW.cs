@@ -423,16 +423,10 @@ public class BotFSW : MonoBehaviour
                                         Invoke("DelayKuwagata", 3f);
 
                                         //ギロチンアタック
-                                        this.Animator.SetBool(isGilotine, true);
+                                        Animator.SetTrigger("isGilotine2");
                                       
                                     }
-
                                 }
-                                else
-                                {
-                                    this.Animator.SetBool(isGilotine, false);
-                                }
-
                             }
 
                             if (FlogSwitch == true)
@@ -465,12 +459,14 @@ public class BotFSW : MonoBehaviour
                                             this.Animator.SetBool(isMissileStr, true);
                                             this.Animator.SetBool(isMissileFin, false);
                                         }
+
                                     }
                                     else
                                     {
                                         this.Animator.SetBool(isMissileStr, false);
                                         this.Animator.SetBool(isMissileFin, true);
                                     }
+
                                 }
                                 else if (Body == 3)
                                 {
@@ -612,16 +608,12 @@ public class BotFSW : MonoBehaviour
                                         Invoke("DelayWolf", 1.7f);
 
                                         //ひっかく
-                                        this.Animator.SetBool(isScratch, true);
+                                        Animator.SetTrigger("isScratch2");
                                         //当たり判定
                                         Invoke("ScratchEnable", 0.4f);
                                         Invoke("ScratchUnable", 1.0f);
                                     }
-                                }
-                                else
-                                {
-                                    //ひっかく
-                                    this.Animator.SetBool(isScratch, false);
+
                                 }
                             }
                             else if (Leg == 3)
@@ -650,11 +642,12 @@ public class BotFSW : MonoBehaviour
                                         Invoke("KickEnable", 0.8f);
                                         Invoke("KickUnable", 1.2f);
                                     }
+                                    else
+                                    {
+                                        this.Animator.SetBool(isKick, false);
+                                    }
                                 }
-                                else
-                                {
-                                    this.Animator.SetBool(isKick, false);
-                                }
+ 
                             }
                         }
                     }
@@ -1104,7 +1097,7 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    this.Animator.SetBool(isBlown, true);
+                    Animator.SetTrigger("isBlown2");
                     //最後の一撃
                     if (BotFSW.GetP2HP() <= 0)
                     {
@@ -1147,7 +1140,7 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    this.Animator.SetBool(isBlown, true);
+                    Animator.SetTrigger("isBlown2");
                     //最後の一撃
                     if (BotFSW.GetP2HP() <= 0)
                     {
@@ -1188,7 +1181,7 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    this.Animator.SetBool(isBlown, true);
+                    Animator.SetTrigger("isBlown2");
                     //最後の一撃
                     if (BotFSW.GetP2HP() <= 0)
                     {
@@ -1235,7 +1228,7 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    this.Animator.SetBool(isBlown, true);
+                    Animator.SetTrigger("isBlown2");
                     //最後の一撃
                     if (BotFSW.GetP2HP() <= 0)
                     {
@@ -1277,7 +1270,7 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
 
                     //怯む
-                    this.Animator.SetBool(isFalt, true);
+                    Animator.SetTrigger("isFalt2");
                     //最後の一撃
                     if (BotFSW.GetP2HP() <= 0)
                     {
@@ -1295,6 +1288,12 @@ public class BotFSW : MonoBehaviour
                         HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
                         HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                         Destroy(HealObj, 0.8f);
+                    }
+
+                    //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("TongueCont"))
+                    {
+                        Animator.SetTrigger("isFalt2");
                     }
                 }
                 if (other.gameObject.CompareTag("PoisonAttack"))
@@ -1321,7 +1320,7 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
 
                     //怯む
-                    this.Animator.SetBool(isFalt, true);
+                    Animator.SetTrigger("isFalt2");
                     //最後の一撃
                     if (BotFSW.GetP2HP() <= 0)
                     {
@@ -1339,6 +1338,12 @@ public class BotFSW : MonoBehaviour
                         HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
                         HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                         Destroy(HealObj, 0.8f);
+                    }
+
+                    //攻撃を受けたときにMissileCont実行中だった場合はキャンセルして怯む
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("MissileCont"))
+                    {
+                        Animator.SetTrigger("isFalt2");
                     }
                 }
                 if (other.gameObject.CompareTag("P1ArmadilloAttack"))
@@ -1365,7 +1370,7 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    this.Animator.SetBool(isBlown, true);
+                    Animator.SetTrigger("isBlown2");
                     //最後の一撃
                     if (BotFSW.GetP2HP() <= 0)
                     {
@@ -1409,7 +1414,7 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    this.Animator.SetBool(isBlown, true);
+                    Animator.SetTrigger("isBlown2");
                     //最後の一撃
                     if (BotFSW.GetP2HP() <= 0)
                     {
