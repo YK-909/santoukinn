@@ -155,12 +155,12 @@ public class Timerbotgame : MonoBehaviour
             BGMSrc.Play("Battle");
         }
 
-        if (KeybordPlay2.GetP2HP() <= 0)
+        if (KeyBordPlay1.GetP1HP() <= 0)
         {
             BGMSrc.Stop();
             ESSrc.Stop();
         }
-        else if (JoyconPlay1.GetP1HP() <= 0)
+        else if (BotFSW.GetP2HP() <= 0)
         {
             BGMSrc.Stop();
             ESSrc.Stop();

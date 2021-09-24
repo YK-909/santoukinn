@@ -841,7 +841,7 @@ public class BotFSW : MonoBehaviour
     {
         //音鳴らす
         //LionSrc.Play();
-        atomSrc.Play("Lion_Bite");
+        //atomSrc.Play("Lion_Bite");
     }
 
     void BiteEnable()
