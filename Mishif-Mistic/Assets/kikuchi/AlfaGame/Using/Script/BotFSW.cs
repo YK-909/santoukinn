@@ -235,7 +235,7 @@ public class BotFSW : MonoBehaviour
 
                 }
                 //重力とは別な上からの力　要調整
-                Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Force);
+                Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Acceleration);
                 if (!CalledOncePoint)
                 {
                     CalledOncePoint = true;
@@ -249,70 +249,73 @@ public class BotFSW : MonoBehaviour
                         {
                             if (ArmadilloSpeed <= 0)
                             {
-                                if (NormalJump == false)
+                                if (WolfSwitch == true)
                                 {
-                                    Speed = 40.0f * BuffSpeed;
-                                }
-                                else
-                                {
-                                    Speed = 15f * BuffSpeed;
-                                }
-
-                                //距離要調整
-
-                                if (Value <= 6)
-                                {
-                                }
-                                else
-                                {
-                                    float dis = Vector3.Distance(transform.position, EnemyObj.transform.position);
-                                    if (dis >= 15)
+                                    if (NormalJump == false)
                                     {
-                                        //前方に移動する
-                                        transform.position += transform.forward * Speed * Time.deltaTime;
-                                        if (Speed == 40.0 * BuffSpeed)
-                                        {
-                                            //スピードアップしている時
-                                            if (BuffSpeed == 1.5f)
-                                            {
-                                                //音鳴らす
-                                                atomSrc.Play("Speed_UP_Wing");
-                                            }
-                                            //以下通常時
-                                            //インパラの足音
-                                            else if (Leg == 1)
-                                            {
-                                                //音鳴らす
-                                                //AnimalFSSrc.Play();
-                                                //atomSrc.Play("Impala_GFootsteps");
-                                                ImpalaFS.Play();
-                                            }
-
-                                            //狼の足音
-                                            else if (Leg == 2)
-                                            {
-                                                //音鳴らす
-                                                //AnimalFSSrc.Play();
-                                                //atomSrc.Play("Garden_Footsteps");
-                                                WolfFS.Play();
-                                            }
-
-                                            //馬の足音
-                                            else if (Leg == 3)
-                                            {
-                                                //音鳴らす
-                                                //AnimalFSSrc.Play();
-                                                //atomSrc.Play("Horse_GFootsteps");
-                                                HorseFS.Play();
-                                            }
-                                        }
-
-                                        //走る
-                                        this.Animator.SetBool(isRun, true);
+                                        Speed = 40.0f * BuffSpeed;
                                     }
                                     else
                                     {
-                                        this.Animator.SetBool(isRun, false);
+                                        Speed = 15f * BuffSpeed;
+                                    }
+
+                                    //距離要調整
+
+                                    if (Value <= 6)
+                                    {
+                                    }
+                                    else
+                                    {
+                                        float dis = Vector3.Distance(transform.position, EnemyObj.transform.position);
+                                        if (dis >= 15)
+                                        {
+                                            //前方に移動する
+                                            transform.position += transform.forward * Speed * Time.deltaTime;
+                                            if (Speed == 40.0 * BuffSpeed)
+                                            {
+                                                //スピードアップしている時
+                                                if (BuffSpeed == 1.5f)
+                                                {
+                                                    //音鳴らす
+                                                    atomSrc.Play("Speed_UP_Wing");
+                                                }
+                                                //以下通常時
+                                                //インパラの足音
+                                                else if (Leg == 1)
+                                                {
+                                                    //音鳴らす
+                                                    //AnimalFSSrc.Play();
+                                                    //atomSrc.Play("Impala_GFootsteps");
+                                                    ImpalaFS.Play();
+                                                }
+
+                                                //狼の足音
+                                                else if (Leg == 2)
+                                                {
+                                                    //音鳴らす
+                                                    //AnimalFSSrc.Play();
+                                                    //atomSrc.Play("Garden_Footsteps");
+                                                    WolfFS.Play();
+                                                }
+
+                                                //馬の足音
+                                                else if (Leg == 3)
+                                                {
+                                                    //音鳴らす
+                                                    //AnimalFSSrc.Play();
+                                                    //atomSrc.Play("Horse_GFootsteps");
+                                                    HorseFS.Play();
+                                                }
+                                            }
+
+                                            //走る
+                                            this.Animator.SetBool(isRun, true);
+                                        }
+                                        else
+                                        {
+                                            this.Animator.SetBool(isRun, false);
+                                        }
                                     }
                                 }
                             }
@@ -332,6 +335,7 @@ public class BotFSW : MonoBehaviour
                                     this.Animator.SetBool(isRun, false);
                                     if (FlogSwitch == true)
                                     {
+
                                         //音鳴らす
                                         //FrogSwingSrc.Play();
                                         atomSrc.Play("Frog_Swing");
@@ -478,7 +482,7 @@ public class BotFSW : MonoBehaviour
                                             if (50< Distance && Distance < 70)
                                             {
                                                 Debug.Log(ArmadilloSpeed);
-                                                if (ArmadilloSpeed < 30)
+                                                if (ArmadilloSpeed < 5)
                                                 {
                                                     ArmadilloSpeed += 10 * Time.deltaTime;
                                                 }
@@ -547,12 +551,12 @@ public class BotFSW : MonoBehaviour
                             {
                                 if (0<Distance&&Distance <= 20)
                                 {
-                                    //音鳴らす
-                                    //ImpalaJumpSrc.Play();
-                                    atomSrc.Play("Impala_Jump");
 
                                     if (Implajump == true)
                                     {
+                                        //音鳴らす
+                                        //ImpalaJumpSrc.Play();
+                                        atomSrc.Play("Impala_Jump");
                                         if (Distance< 5)
                                         {
                                             Rb.isKinematic = true;
@@ -587,13 +591,9 @@ public class BotFSW : MonoBehaviour
                                 //オオカミ
                                 if (0 < Distance && Distance <= 30)
                                 {
-                                    this.Animator.SetBool(isRun, false);
-                                    //音鳴らす
-                                    //WolfSrc.Play();
-                                    Invoke("ScratchSound", 0.5f);
-
                                     if (WolfSwitch == true)
                                     {
+                                        this.Animator.SetBool(isRun, false);
                                         //音鳴らす
                                         //WolfSrc.Play();
                                         Invoke("ScratchSound", 0.5f);
@@ -605,7 +605,7 @@ public class BotFSW : MonoBehaviour
                                         //行動停止
                                         Invoke("ActionInterval", 1.2f);
                                         //リキャストタイム
-                                        Invoke("DelayWolf", 1.7f);
+                                        Invoke("DelayWolf", 2.4f);
 
                                         //ひっかく
                                         Animator.SetTrigger("isScratch2");
@@ -928,11 +928,13 @@ public class BotFSW : MonoBehaviour
                 Invoke("ActionInterval", 0.5f);
             }
         }
+
     }
 
     //元の数字に10+
     void OnTriggerStay(Collider other)
     {
+
         if (other.gameObject.tag != "floor")
         {
             Rb.isKinematic = false;
