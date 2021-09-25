@@ -21,14 +21,17 @@ public class NPCP1ContlolePassive : MonoBehaviour
         {
             case 0:
                 passive = 1;
+                Debug.Log("1");
                 break;
 
             case 1:
                 passive = 2;
+                Debug.Log("2");
                 break;
 
             case 2:
                 passive = 3;
+                Debug.Log("3");
                 break;
         }
     }
