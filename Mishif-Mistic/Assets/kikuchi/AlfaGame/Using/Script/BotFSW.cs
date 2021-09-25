@@ -206,6 +206,13 @@ public class BotFSW : MonoBehaviour
         P2TurtleGard.transform.position = this.transform.position + transform.forward * 5 + transform.up * -2;
         DamageHP2 = 0;
 
+        //通常のダウンの音鳴らす
+        if (Animator.GetCurrentAnimatorStateInfo(0).IsName("Blown"))
+        {
+            //音鳴らす
+            atomSrc.Play("Down");
+        }
+
         //鱗粉攻撃(飛んでく鱗粉のみ)
         if (P1RinpunAtk.isRinpunAtk == true)
         {
@@ -876,6 +883,9 @@ public class BotFSW : MonoBehaviour
         {
             if (EnemyHP_1 + (DamageHP2 / 10) < 100)
             {
+                //音鳴らす
+                atomSrc.Play("Healing");
+
                 EnemyHP_1 += DamageHP2 / 5;
                 P2G.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
                 P2R.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
@@ -1108,6 +1118,8 @@ public class BotFSW : MonoBehaviour
                     if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1151,6 +1163,8 @@ public class BotFSW : MonoBehaviour
                     if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1198,6 +1212,8 @@ public class BotFSW : MonoBehaviour
                     if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1251,6 +1267,8 @@ public class BotFSW : MonoBehaviour
                     if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1293,6 +1311,8 @@ public class BotFSW : MonoBehaviour
                     if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1343,6 +1363,8 @@ public class BotFSW : MonoBehaviour
                     if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1393,6 +1415,8 @@ public class BotFSW : MonoBehaviour
                     if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1439,6 +1463,8 @@ public class BotFSW : MonoBehaviour
                     if (BotFSW.GetP2HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト

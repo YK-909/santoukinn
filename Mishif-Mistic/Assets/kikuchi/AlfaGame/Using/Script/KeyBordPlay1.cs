@@ -218,8 +218,7 @@ public class KeyBordPlay1 : MonoBehaviour
         if (Animator.GetCurrentAnimatorStateInfo(0).IsName("Blown"))
         {
             //音鳴らす
-            atomSrc.Play("Down");
-            
+            atomSrc.Play("Down");  
         }
         
 
@@ -1469,6 +1468,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     if (KeyBordPlay1.GetP1HP() <= 0)
                     {
                         this.Animator.SetBool(isDown, true);
+                        //音鳴らす
+                        atomSrc.Play("Down_Finish");
                     }
 
                     //ヒットエフェクト
@@ -1521,12 +1522,15 @@ public class KeyBordPlay1 : MonoBehaviour
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
 
-                    if (isDrain)
+                    if (isDrain == true)
                     {
+                        
+
                         GameObject HealObj;
                         HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
                         HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                         Destroy(HealObj, 0.8f);
+                        
                     }
                 }
                 if (other.gameObject.CompareTag("P2ImplaWave"))
