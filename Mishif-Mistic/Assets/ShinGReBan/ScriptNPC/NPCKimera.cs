@@ -20,7 +20,7 @@ public class NPCKimera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (NPCContlolehead.GetHead2() == Head2 && NPCContloleBody.GetBody2() == Body2 && NPCContloleLeg.GetLeg2() == Leg2)
+        if (EnemySelectButton.GetHead2() == Head2 && EnemySelectButton.GetBody2() == Body2 && EnemySelectButton.GetLeg2() == Leg2)
         {
             this.gameObject.SetActive(true);
         }
