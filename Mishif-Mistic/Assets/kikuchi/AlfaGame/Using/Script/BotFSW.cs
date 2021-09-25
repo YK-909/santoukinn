@@ -395,32 +395,29 @@ public class BotFSW : MonoBehaviour
                                         Invoke("DelayLion", 1.6f);
 
                                         //噛む
-                                        this.Animator.SetBool(isBite, true);
+                                        Animator.SetTrigger("isBite2");
                                         //当たり判定
-                                        Invoke("BiteEnable", 0.4f);
-                                        Invoke("BiteUnable", 1.0f);
+                                        //Invoke("BiteEnable", 0.4f);
+                                        //Invoke("BiteUnable", 1.0f);
                                     }
-                                    else
-                                    {
-                                        this.Animator.SetBool(isBite, false);
-                                    }
+
                                 }
                             }
                             else if (Head == 3)
                             {
                                 //クワガタの攻撃
-                                if (KuwagataSwitch == true)
+                                if (0 < Distance && Distance < 15)
                                 {
-                                    if (0 < Distance && Distance < 15)
+                                    if (KuwagataSwitch == true)
                                     {
                                         KuwagataSwitch = false;
                                         AllActionInterval = true;
                                         KuwagataBlock.tag = "P2KuwagataAttack";
-                                        KuwagataBlock.SetActive(true);
-                                        Rb.isKinematic = true;
+                                        //KuwagataBlock.SetActive(true);
+                                        //Rb.isKinematic = true;
                                         //音鳴らす
                                         atomSrc.Play("Stag_Grab");
-                                        Invoke("KuwagataUnable", 0.7f);
+                                       // Invoke("KuwagataUnable", 0.7f);
                                         //行動停止
                                         Invoke("ActionInterval", 1.5f);
                                         //リキャストタイム
@@ -428,7 +425,10 @@ public class BotFSW : MonoBehaviour
 
                                         //ギロチンアタック
                                         Animator.SetTrigger("isGilotine2");
-                                      
+
+                                        //当たり判定
+                                        //Invoke("KuwagataEnable", 0.5f);
+                                        //Invoke("KuwagataUnable", 1.2f);
                                     }
                                 }
                             }
@@ -513,7 +513,7 @@ public class BotFSW : MonoBehaviour
                                                     ArmadilloSpeed += 50;
                                                     OnceArma = false;
                                                 }
-                                                ArmadilloBlock.SetActive(true);
+                                               // ArmadilloBlock.SetActive(true);
                                                 ArmadilloBlock.tag = "P2ArmadilloAttack";
                                                 ArmadilloSpeed += -20 * Time.deltaTime;
                                                 transform.position += transform.forward * 50 * Time.deltaTime;
@@ -610,8 +610,8 @@ public class BotFSW : MonoBehaviour
                                         //ひっかく
                                         Animator.SetTrigger("isScratch2");
                                         //当たり判定
-                                        Invoke("ScratchEnable", 0.4f);
-                                        Invoke("ScratchUnable", 1.0f);
+                                        //Invoke("ScratchEnable", 0.4f);
+                                        //Invoke("ScratchUnable", 1.0f);
                                     }
 
                                 }
@@ -637,15 +637,12 @@ public class BotFSW : MonoBehaviour
                                         Invoke("DelayHorse", 1.6f);
 
                                         //蹴る
-                                        this.Animator.SetBool(isKick, true);
+                                        Animator.SetTrigger("isKick2");
                                         //当たり判定
-                                        Invoke("KickEnable", 0.8f);
-                                        Invoke("KickUnable", 1.2f);
+                                       // Invoke("KickEnable", 0.8f);
+                                        //Invoke("KickUnable", 1.2f);
                                     }
-                                    else
-                                    {
-                                        this.Animator.SetBool(isKick, false);
-                                    }
+
                                 }
  
                             }
@@ -778,12 +775,19 @@ public class BotFSW : MonoBehaviour
         this.Animator.SetBool(isKick, false);
     }
 
-    void KuwagataUnable()
+    public void KuwagataUnable()
     {
         KuwagataBlock.SetActive(false);
         Rb.isKinematic = false;
-        this.Animator.SetBool(isGilotine, false);
+        //this.Animator.SetBool(isGilotine, false);
     }
+    public void KuwagataEnable()
+    {
+        KuwagataBlock.SetActive(true);
+        Rb.isKinematic = true;
+        //this.Animator.SetBool(isGilotine, false);
+    }
+
     void DelayKuwagata()
     {
         KuwagataSwitch = true;
@@ -816,14 +820,14 @@ public class BotFSW : MonoBehaviour
         atomSrc.Play("Wolf_Scratch");
     }
 
-    void ScratchEnable()
+    public void ScratchEnable()
     {
         //オオカミの当たり判定
         P2WolfAtk.SetActive(true);
 
     }
 
-    void ScratchUnable()
+    public void ScratchUnable()
     {
         //オオカミの当たり判定を消す
         P2WolfAtk.SetActive(false);
@@ -837,14 +841,14 @@ public class BotFSW : MonoBehaviour
         //atomSrc.Play("Lion_Bite");
     }
 
-    void BiteEnable()
+    public void BiteEnable()
     {
         //ライオンの当たり判定
         P2Lionhead.SetActive(true);
 
     }
 
-    void BiteUnable()
+    public void BiteUnable()
     {
         //ライオンの当たり判定を消すタイミングをイベントで制御
         P2Lionhead.SetActive(false);
@@ -1161,6 +1165,12 @@ public class BotFSW : MonoBehaviour
                         HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                         Destroy(HealObj, 0.8f);
                     }
+
+                    //攻撃を受けたときにMissileCont実行中だった場合はキャンセルして怯む
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont"))
+                    {
+                        Animator.SetTrigger("isFalt2");
+                    }
                 }
                 if (other.gameObject.CompareTag("P1ImplaWave"))
                 {
@@ -1201,6 +1211,12 @@ public class BotFSW : MonoBehaviour
                         HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
                         HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                         Destroy(HealObj, 0.8f);
+                    }
+
+                    //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont"))
+                    {
+                        Animator.SetTrigger("isFalt2");
                     }
                 }
                 if (other.gameObject.CompareTag("P1WolfAttack"))
@@ -1293,7 +1309,7 @@ public class BotFSW : MonoBehaviour
                     }
 
                     //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
-                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("TongueCont"))
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("TongueCont")|| Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont"))
                     {
                         Animator.SetTrigger("isFalt2");
                     }
@@ -1391,6 +1407,8 @@ public class BotFSW : MonoBehaviour
                         HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                         Destroy(HealObj, 0.8f);
                     }
+
+                    
                 }
                 if (other.gameObject.CompareTag("P1HorseAttack"))
                 {
