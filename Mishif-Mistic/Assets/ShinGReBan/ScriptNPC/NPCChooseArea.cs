@@ -7,8 +7,8 @@ public class NPCChooseArea : MonoBehaviour
 {
     public CriAtomSource KeyboardSlotLRSrc;
 
-    private float minX = 280;
-    private float maxX = 771;
+    private float minX = 342;
+    private float maxX = 829;
 
     private float canvasScale;
 
