@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KeyBordPlay1 : MonoBehaviour
 {
@@ -37,10 +38,10 @@ public class KeyBordPlay1 : MonoBehaviour
     private bool NormalJump = false;
 
     //HPバーの生成
-    public GameObject P1G;
-    public GameObject P1R;
+    public Slider P1G;
+    public Slider P1R;
     //座標からHPが10ごと減少した際の値
-    private float HP10per = -34.7f;
+   // private float HP10per = -34.7f;
 
     //無敵時間の生成
     private bool Invincible = false;
@@ -113,8 +114,8 @@ public class KeyBordPlay1 : MonoBehaviour
     //吸血
     private float DamageHP1 = 0;
     private static float EnemyHP_2 = 100;
-    public GameObject P2G;
-    public GameObject P2R;
+    public Slider P2G;
+    public Slider P2R;
 
 
     //麻痺
@@ -199,6 +200,7 @@ public class KeyBordPlay1 : MonoBehaviour
 
         EnemyHP_2 = 100;
         Player1HP = 100;
+        P2G.value = Player1HP;
         if (Exterior == 2)
         {
             BuffSpeed = 0.8f;
@@ -233,9 +235,10 @@ public class KeyBordPlay1 : MonoBehaviour
                 {
                     Player1HP = BotFSW.GetP1HP();
                 }
+                P2G.value = Player1HP;
                 EnemyHP_2 = BotFSW.GetP2HP();
                 //重力とは別な上からの力　要調整
-                Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Acceleration);
+                //Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Acceleration);
 
                 if (!CalledOncePoint)
                 {
@@ -513,7 +516,7 @@ public class KeyBordPlay1 : MonoBehaviour
 
                                             AllActionInterval = true;
                                             P1Lionhead.tag = "P1LionAttack";
-                                            Rb.AddForce(transform.forward * 30f, ForceMode.Impulse);
+                                           // Rb.AddForce(transform.forward * 30f, ForceMode.Impulse);
                                             LionSwitch = false;
                                             //行動停止
                                             Invoke("ActionInterval", 0.8f);
@@ -765,7 +768,7 @@ public class KeyBordPlay1 : MonoBehaviour
 
                                             AllActionInterval = true;
                                             P1WolfAtk.tag = "P1WolfAttack";
-                                            Rb.AddForce(transform.forward * 60f, ForceMode.Impulse);
+                                          //  Rb.AddForce(transform.forward * 60f, ForceMode.Impulse);
                                             WolfSwitch = false;
                                             //行動停止
                                             Invoke("ActionInterval", 1.2f);
@@ -793,7 +796,7 @@ public class KeyBordPlay1 : MonoBehaviour
 
                                             AllActionInterval = true;
                                             P1HorseLeg.tag = "P2HorseAttack";
-                                            Rb.AddForce(transform.forward * 25f, ForceMode.Impulse);
+                                            //Rb.AddForce(transform.forward * 25f, ForceMode.Impulse);
                                             HorseSwitch = false;
                                             //行動停止
                                             Invoke("ActionInterval", 1.1f);
@@ -1002,19 +1005,17 @@ public class KeyBordPlay1 : MonoBehaviour
         {
             Poisontimer += Time.deltaTime;
             Player1HP -= Time.deltaTime;
-            P1G.transform.position += new Vector3(HP10per * (0.1f * Time.deltaTime), 0, 0);
         }
         if (Bloodingtimer < Bloodingtime)
         {
             Bloodingtimer += Time.deltaTime;
             Player1HP -= Time.deltaTime;
-            P1G.transform.position += new Vector3(HP10per * (0.1f * Time.deltaTime), 0, 0);
         }
 
         //HPの継続的な減少
-        if (P1G.transform.position.x < P1R.transform.position.x)
+        if (P1G.value < P1R.value)
         {
-            P1R.transform.position -= new Vector3(10f, 0, 0) * Time.deltaTime;
+            P1R.value -= 10f * Time.deltaTime;
         }
 
         //シールドブレイク
@@ -1238,8 +1239,7 @@ public class KeyBordPlay1 : MonoBehaviour
         if (EnemyHP_2 + (DamageHP1 / 10) < 100)
         {
             EnemyHP_2 += DamageHP1 / 5;
-            P2G.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
-            P2R.transform.position += new Vector3(HP10per * (DamageHP1 / 100), 0, 0);
+            P2R.value+= DamageHP1 / 5; ;
 
             isDrain = true;
         }
@@ -1440,7 +1440,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     Player1HP -= 22 * HPmag;
                     DamageHP1 = 22 * HPmag;
                     HPdrain();
-                    P1G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
                     {
@@ -1490,7 +1489,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     Player1HP -= 30 * HPmag;
                     DamageHP1 = 30 * HPmag;
                     HPdrain();
-                    P1G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Debug.Log(ToVec);
@@ -1538,7 +1536,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     Player1HP -= 10 * HPmag;
                     DamageHP1 = 10 * HPmag;
                     HPdrain();
-                    P1G.transform.position += new Vector3(HP10per, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 30, ForceMode.Impulse);
@@ -1581,7 +1578,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     Player1HP -= 20 * HPmag;
                     DamageHP1 = 20 * HPmag;
                     HPdrain();
-                    P1G.transform.position += new Vector3(HP10per * 2f, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
                     {
@@ -1631,7 +1627,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     Player1HP -= 1.5f * HPmag;
                     DamageHP1 = 1.5f * HPmag;
                     HPdrain();
-                    P1G.transform.position += new Vector3(HP10per * 0.15f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
@@ -1682,7 +1677,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     DamageHP1 = 3 * HPmag;
                     HPdrain();
                     Poisontimer = 0;
-                    P1G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
@@ -1735,7 +1729,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     Player1HP -= 25 * HPmag;
                     DamageHP1 = 25 * HPmag;
                     HPdrain();
-                    P1G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
@@ -1780,7 +1773,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     Player1HP -= 25 * HPmag;
                     DamageHP1 = 25 * HPmag;
                     HPdrain();
-                    P1G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
@@ -1818,12 +1810,11 @@ public class KeyBordPlay1 : MonoBehaviour
                 }
 
                 //カウンターダメージ用
-                if (other.gameObject.CompareTag("P1LionAttackBack"))
+                if (P1Lionhead.tag=="P1LionAttackBack")
                 {
                     Player1HP -= 36 * HPmag;
                     DamageHP1 = 36 * HPmag;
                     HPdrain();
-                    P1G.transform.position += new Vector3(HP10per * 2 * 1.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 55, ForceMode.Impulse);
@@ -1836,12 +1827,11 @@ public class KeyBordPlay1 : MonoBehaviour
                     Invoke("InvincibleTime", 1.5f);
                     DelayFlog();
                 }
-                if (other.gameObject.CompareTag("P1ImplaBack"))
+                if (P1ImplaBlock.tag=="P1ImplaBack")
                 {
                     Player1HP -= 36 * HPmag;
                     DamageHP1 = 36 * HPmag;
                     HPdrain();
-                    P1G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     Vector3 ToVec = GetAngleVec(other.gameObject, P1ImplaBlock);
                     P1ImplaBlock.SetActive(false);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
@@ -1853,12 +1843,11 @@ public class KeyBordPlay1 : MonoBehaviour
                     Invoke("InvincibleTime", 1.5f);
                     DelayFlog();
                 }
-                if (other.gameObject.CompareTag("P1ImplaWaveBack"))
+                if (P1ImplaWaveBlock.tag=="P1ImplaWaveBack")
                 {
                     Player1HP -= 12 * HPmag;
                     DamageHP1 = 12 * HPmag;
                     HPdrain();
-                    P1G.transform.position += new Vector3(HP10per * 1.2f, 0, 0);
                     //行動停止
                     AllActionInterval = true;
                     Invoke("ActionInterval", 1.1f);
@@ -1868,12 +1857,11 @@ public class KeyBordPlay1 : MonoBehaviour
                     Invoke("InvincibleTime", 1.5f);
                     DelayFlog();
                 }
-                if (other.gameObject.CompareTag("P1FlogAttackBack"))
+                if (P1FlogTongue.tag=="P1FlogAttackBack")
                 {
                     Player1HP -= 3f * HPmag;
                     DamageHP1 = 3 * HPmag;
                     HPdrain();
-                    P1G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 20, ForceMode.Impulse);
@@ -1886,12 +1874,11 @@ public class KeyBordPlay1 : MonoBehaviour
                     DelayFlog();
                 }
                 //オオカミのカウンターのタグに切り替えが未実装
-                if (other.gameObject.CompareTag("P1WolfAttackBack"))
+                if (P1WolfAtk.tag=="P1WolfAttackBack")
                 {
                     Player1HP -= 22 * HPmag;
                     DamageHP1 = 22 * HPmag;
                     HPdrain();
-                    P1G.transform.position += new Vector3(HP10per * 2.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 55, ForceMode.Impulse);
@@ -1909,7 +1896,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     DamageHP1 = 3.6f * HPmag;
                     HPdrain();
                     Poisontimer = 0;
-                    P1G.transform.position += new Vector3(HP10per * 0.36f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 16, ForceMode.Impulse);
@@ -1921,12 +1907,11 @@ public class KeyBordPlay1 : MonoBehaviour
                     Invoke("InvincibleTime", 1.5f);
                     DelayFlog();
                 }
-                if (other.gameObject.CompareTag("P1ArmadilloAttackBack"))
+                if (ArmadilloBlock.tag=="P1ArmadilloAttackBack")
                 {
                     Player1HP -= 30 * HPmag;
                     DamageHP1 = 30 * HPmag;
                     HPdrain();
-                    P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
@@ -1938,12 +1923,11 @@ public class KeyBordPlay1 : MonoBehaviour
                     Invoke("InvincibleTime", 1.5f);
                     DelayFlog();
                 }
-                if (other.gameObject.CompareTag("P1HorseAttackBack"))
+                if (P1HorseLeg.tag=="P1HorseAttackBack")
                 {
                     Player1HP -= 20 * HPmag;
                     DamageHP1 = 20 * HPmag;
                     HPdrain();
-                    P1G.transform.position += new Vector3(HP10per * 2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
@@ -1961,7 +1945,6 @@ public class KeyBordPlay1 : MonoBehaviour
                 Player1HP -= 30 * HPmag;
                 DamageHP1 = 30 * HPmag;
                 HPdrain();
-                P1G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                 //ノックバック
                 //this.transform.position = new Vector3(this.transform.position.x, other.gameObject.transform.position.y + 2, this.transform.position.z);
                 //Vector3 ToVec = GetAngleVec(this.gameObject, other.gameObject);
@@ -1995,7 +1978,6 @@ public class KeyBordPlay1 : MonoBehaviour
             if (other.gameObject.CompareTag("PalsyBullet2"))
             {
                 Player1HP -= 6 * HPmag;
-                P1G.transform.position += new Vector3(HP10per * 0.6f, 0, 0);
                 //ノックバック
                 Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                 Rb.AddForce(ToVec * 20, ForceMode.Impulse);
