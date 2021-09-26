@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BotFSW : MonoBehaviour
 {
@@ -32,10 +33,10 @@ public class BotFSW : MonoBehaviour
     private bool NormalJump = false;
 
     //HPバーの生成
-    public GameObject P2G;
-    public GameObject P2R;
+    public Slider P2G;
+    public Slider P2R;
     //座標からHPが10ごと減少した際の値
-    private float HP10per = 34.7f;
+   // private float HP10per = 34.7f;
 
     //無敵時間の生成
     private bool Invincible = false;
@@ -105,8 +106,8 @@ public class BotFSW : MonoBehaviour
     //吸血
     private float DamageHP2 = 0;
     private static float EnemyHP_1 = 100;
-    public GameObject P1G;
-    public GameObject P1R;
+    public Slider P1G;
+    public Slider P1R;
 
     //リジェネ
     private float RejeTime = 0;
@@ -188,6 +189,7 @@ public class BotFSW : MonoBehaviour
 
         EnemyHP_1 = 100;
         Player2HP = 100;
+        P1G.value = Player2HP;
         if (Exterior == 1)
         {
             BuffSpeed = 0.7f;
@@ -217,7 +219,6 @@ public class BotFSW : MonoBehaviour
         if (P1RinpunAtk.isRinpunAtk == true)
         {
             Player2HP -= 1.5f;
-            P2G.transform.position += new Vector3(HP10per * 0.15f, 0, 0);
             P1RinpunAtk.isRinpunAtk = false;
             //行動停止
             AllActionInterval = true;
@@ -241,8 +242,9 @@ public class BotFSW : MonoBehaviour
                     Player2HP = KeyBordPlay1.GetP2HP();
 
                 }
+                P1G.value = Player2HP;
                 //重力とは別な上からの力　要調整
-                Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Acceleration);
+                //Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Acceleration);
                 if (!CalledOncePoint)
                 {
                     CalledOncePoint = true;
@@ -607,7 +609,7 @@ public class BotFSW : MonoBehaviour
 
                                         AllActionInterval = true;
                                         P2WolfAtk.tag = "P2WolfAttack";
-                                        Rb.AddForce(transform.forward * 60f, ForceMode.Impulse);
+                                        //Rb.AddForce(transform.forward * 60f, ForceMode.Impulse);
                                         WolfSwitch = false;
                                         //行動停止
                                         Invoke("ActionInterval", 1.2f);
@@ -636,7 +638,7 @@ public class BotFSW : MonoBehaviour
 
                                         AllActionInterval = true;
                                         P2HorseLeg.tag = "P2HorseAttack";
-                                        Rb.AddForce(transform.forward * 25f, ForceMode.Impulse);
+                                        //Rb.AddForce(transform.forward * 25f, ForceMode.Impulse);
                                         HorseSwitch = false;
                                         //行動停止
                                         Invoke("ActionInterval", 1.1f);
@@ -667,20 +669,18 @@ public class BotFSW : MonoBehaviour
         {
             Poisontimer += Time.deltaTime;
             Player2HP -= Time.deltaTime;
-            P2G.transform.position += new Vector3(HP10per * (0.1f * Time.deltaTime), 0, 0);
         }
 
         if (Bloodingtimer < Bloodingtime)
         {
             Bloodingtimer += Time.deltaTime;
             Player2HP -= Time.deltaTime;
-            P2G.transform.position += new Vector3(HP10per * (0.1f * Time.deltaTime), 0, 0);
         }
 
         //HPの継続的な減少
-        if (P2G.transform.position.x > P2R.transform.position.x)
+        if (P2G.value > P2R.value)
         {
-            P2R.transform.position += new Vector3(10f, 0, 0) * Time.deltaTime;
+            P2R.value -= 10f * Time.deltaTime;
         }
 
         //シールドブレイク
@@ -881,14 +881,13 @@ public class BotFSW : MonoBehaviour
     {
         if (NPCP1ContlolePassive.GetPassive() == 3)
         {
-            if (EnemyHP_1 + (DamageHP2 / 10) < 100)
+            if (EnemyHP_1 + (DamageHP2 / 5) < 100)
             {
                 //音鳴らす
                 atomSrc.Play("Healing");
 
                 EnemyHP_1 += DamageHP2 / 5;
-                P2G.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
-                P2R.transform.position += new Vector3(HP10per * (DamageHP2 / 100), 0, 0);
+                P1R.value+= DamageHP2 / 5;
 
                 isDrain = true;
             }
@@ -1090,7 +1089,6 @@ public class BotFSW : MonoBehaviour
                     Player2HP -= 30;
                     DamageHP2 = 30;
                     HPdrain();
-                    P2G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
                     {
@@ -1140,7 +1138,6 @@ public class BotFSW : MonoBehaviour
                     Player2HP -= 30;
                     DamageHP2 = 30;
                     HPdrain();
-                    P2G.transform.position += new Vector3(HP10per * 3, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Debug.Log(ToVec);
@@ -1191,7 +1188,6 @@ public class BotFSW : MonoBehaviour
                     Player2HP -= 10;
                     DamageHP2 = 10;
                     HPdrain();
-                    P2G.transform.position += new Vector3(HP10per, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 30, ForceMode.Impulse);
@@ -1240,7 +1236,6 @@ public class BotFSW : MonoBehaviour
                     Player2HP -= 20;
                     DamageHP2 = 20;
                     HPdrain();
-                    P2G.transform.position += new Vector3(HP10per * 2f, 0, 0);
                     Bloodper = Random.Range(0, 10);
                     if (Bloodper == 0 || Bloodper == 1)
                     {
@@ -1289,7 +1284,6 @@ public class BotFSW : MonoBehaviour
                     Player2HP -= 3.7f;
                     DamageHP2 = 3.7f;
                     HPdrain();
-                    P2G.transform.position += new Vector3(HP10per * 0.37f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
@@ -1340,7 +1334,6 @@ public class BotFSW : MonoBehaviour
                     DamageHP2 = 3;
                     HPdrain();
                     Poisontimer = 0;
-                    P2G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 15, ForceMode.Impulse);
@@ -1391,7 +1384,6 @@ public class BotFSW : MonoBehaviour
                     Player2HP -= 25;
                     DamageHP2 = 25;
                     HPdrain();
-                    P2G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
@@ -1439,7 +1431,6 @@ public class BotFSW : MonoBehaviour
                     Player2HP -= 25;
                     DamageHP2 = 25;
                     HPdrain();
-                    P2G.transform.position += new Vector3(HP10per * 2.5f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 50, ForceMode.Impulse);
@@ -1481,12 +1472,11 @@ public class BotFSW : MonoBehaviour
                     }
                 }
                 //カウンターダメージ用
-                if (other.gameObject.CompareTag("P2LionAttackBack"))
+                if (P2Lionhead.tag=="P2LionAttackBack")
                 {
                     Player2HP -= 36;
                     DamageHP2 = 36;
                     HPdrain();
-                    P2G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 55, ForceMode.Impulse);
@@ -1498,12 +1488,11 @@ public class BotFSW : MonoBehaviour
                     Invoke("InvincibleTime", 1.5f);
                     DelayFlog();
                 }
-                if (other.gameObject.CompareTag("P2ImplaBack"))
+                if (P2ImplaBlock.tag=="P2ImplaBack")
                 {
                     Player2HP -= 36;
                     DamageHP2 = 36;
                     HPdrain();
-                    P2G.transform.position += new Vector3(HP10per * 3 * 1.2f, 0, 0);
                     Vector3 ToVec = GetAngleVec(other.gameObject, P2ImplaBlock);
 
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
@@ -1516,12 +1505,11 @@ public class BotFSW : MonoBehaviour
                     P2ImplaBlock.SetActive(false);
                     DelayFlog();
                 }
-                if (other.gameObject.CompareTag("P2ImplaWaveBack"))
+                if (P2ImplaWaveBlock.tag=="P2ImplaWaveBack")
                 {
                     Player2HP -= 12;
                     DamageHP2 = 12;
                     HPdrain();
-                    P2G.transform.position += new Vector3(HP10per * 1.2f, 0, 0);
                     //行動停止
                     AllActionInterval = true;
                     Invoke("ActionInterval", 1.1f);
@@ -1531,12 +1519,11 @@ public class BotFSW : MonoBehaviour
                     P2ImplaBlock.SetActive(false);
                     DelayFlog();
                 }
-                if (other.gameObject.CompareTag("P2FlogAttackBack"))
+                if (P2FlogTongue.tag=="P2FlogAttackBack")
                 {
                     Player2HP -= 3f;
                     DamageHP2 = 3;
                     HPdrain();
-                    P2G.transform.position += new Vector3(HP10per * 0.3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 20, ForceMode.Impulse);
@@ -1549,12 +1536,11 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
                 }
                 //オオカミのカウンターのタグに切り替えが未実装
-                if (other.gameObject.CompareTag("P2WolfAttackBack"))
+                if (P2WolfAtk.tag=="P2WolfAttackBack")
                 {
                     Player2HP -= 22;
                     DamageHP2 = 22;
                     HPdrain();
-                    P2G.transform.position += new Vector3(HP10per * 2.2f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 55, ForceMode.Impulse);
@@ -1572,7 +1558,6 @@ public class BotFSW : MonoBehaviour
                     DamageHP2 = 3.6f;
                     HPdrain();
                     Poisontimer = 0;
-                    P2G.transform.position += new Vector3(HP10per * 0.36f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 16, ForceMode.Impulse);
@@ -1585,12 +1570,11 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
 
                 }
-                if (other.gameObject.CompareTag("P2ArmadilloAttackBack"))
+                if (ArmadilloBlock.tag=="P2ArmadilloAttackBack")
                 {
                     Player2HP -= 30;
                     DamageHP2 = 30;
                     HPdrain();
-                    P2G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
@@ -1602,12 +1586,11 @@ public class BotFSW : MonoBehaviour
                     Invoke("InvincibleTime", 1.5f);
                     DelayFlog();
                 }
-                if (other.gameObject.CompareTag("P2HorseAttackBack"))
+                if (P2HorseLeg.tag=="P2HorseAttackBack")
                 {
                     Player2HP -= 30;
                     DamageHP2 = 30;
                     HPdrain();
-                    P2G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                     //ノックバック
                     Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                     Rb.AddForce(ToVec * 60, ForceMode.Impulse);
@@ -1625,7 +1608,6 @@ public class BotFSW : MonoBehaviour
                 Player2HP -= 30;
                 DamageHP2 = 30;
                 HPdrain();
-                P2G.transform.position += new Vector3(HP10per * 3f, 0, 0);
                 //ノックバック
                 this.transform.position = new Vector3(this.transform.position.x, other.gameObject.transform.position.y + 2, this.transform.position.z);
                 Vector3 ToVec = GetAngleVec(this.gameObject, other.gameObject);
@@ -1657,7 +1639,6 @@ public class BotFSW : MonoBehaviour
             if (other.gameObject.CompareTag("PalsyBullet1"))
             {
                 Player2HP -= 4;
-                P2G.transform.position += new Vector3(HP10per * 0.4f, 0, 0);
                 //ノックバック
                 Vector3 ToVec = GetAngleVec(other.gameObject, this.gameObject);
                 Rb.AddForce(ToVec * 20, ForceMode.Impulse);

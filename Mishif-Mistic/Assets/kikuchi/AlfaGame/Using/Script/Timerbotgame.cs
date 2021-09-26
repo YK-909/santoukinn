@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Timerbotgame : MonoBehaviour
 {
-    public TextMeshProUGUI TimerText;
+    public Text TimerText;
     private float Second = 180;
     [SerializeField]
     private Text _textCountdown;
@@ -18,6 +18,15 @@ public class Timerbotgame : MonoBehaviour
     private Text BuffCountTextP1;
 
     private int Exterior1 = 1;
+
+    public GameObject Para;
+    public GameObject Speed;
+    public GameObject Drain;
+
+
+    public GameObject P1used1;
+    public GameObject P1used2;
+    public GameObject P1used3;
 
     //ADX設定
     public CriAtomSource CountSrc;
@@ -34,6 +43,13 @@ public class Timerbotgame : MonoBehaviour
         _textCountdown.text = "";
         GameWinner.text = "";
         StartCoroutine(CountdownCoroutine());
+
+        Para.SetActive(false);
+        Speed.SetActive(false);
+        Drain.SetActive(false);
+        P1used1.SetActive(false);
+        P1used2.SetActive(false);
+        P1used3.SetActive(false);
 
         //CriAtomSourceを取得
         CriAtomExAcb BGMacb = CriAtom.GetAcb(cueSheetBGM);
@@ -125,15 +141,43 @@ public class Timerbotgame : MonoBehaviour
                 }
             }
 
-            if (Exterior1 == 2)
+            if (Exterior1 == 3) 
             {
-                string CounttextP1 = KeyBordPlay1.GetBuffCountP1().ToString("0");
-                BuffCountTextP1.text = "加速P1:" + CounttextP1 + "回";
+                Drain.SetActive(true);
+            }
+            else if (Exterior1 == 2)
+            {
+                int CountP1 = KeyBordPlay1.GetBuffCountP1();
+                Speed.SetActive(true);
+                if (CountP1 == 2) 
+                {
+                    P1used1.SetActive(true);
+                }
+                else if(CountP1==1)
+                {
+                    P1used2.SetActive(true);
+                }
+                else if(CountP1==0)
+                {
+                    P1used3.SetActive(true);
+                }
             }
             else if (Exterior1 == 1)
             {
-                string CounttextP1 = KeyBordPlay1.GetPalsyCountP1().ToString("0");
-                BuffCountTextP1.text = "鱗粉P1:" + CounttextP1 + "回";
+                int CountP1 = KeyBordPlay1.GetPalsyCountP1();
+                Para.SetActive(true);
+                if (CountP1 == 2)
+                {
+                    P1used1.SetActive(true);
+                }
+                else if (CountP1 == 1)
+                {
+                    P1used2.SetActive(true);
+                }
+                else if (CountP1 == 0)
+                {
+                    P1used3.SetActive(true);
+                }
             }
         }
 
