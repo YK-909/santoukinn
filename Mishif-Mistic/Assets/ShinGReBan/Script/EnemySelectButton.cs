@@ -62,7 +62,7 @@ public class EnemySelectButton : MonoBehaviour
     public void NPCSelectButton3()
     {
         NPCCanvas.SetActive(false);
-        SelectCanvas2.SetActive(true);
+        SelectCanvas3.SetActive(true);
         Kimera1.SetActive(false);
         Kimera2.SetActive(false);
         Kimera3.SetActive(false);
