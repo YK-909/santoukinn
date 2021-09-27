@@ -29,12 +29,12 @@ public class ADX_SlotLR_CuePlay : MonoBehaviour
         //2P左
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            atomSrc.Play();
+            atomSrc.Play("SlotLeftRight");
         }
         //2P右
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            atomSrc.Play();
+            atomSrc.Play("SlotLeftRight");
         }
     }
 }
