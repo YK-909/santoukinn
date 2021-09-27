@@ -32,7 +32,7 @@ public class NPCChooseArea : MonoBehaviour
             transform.Translate(-170 * canvasScale, 0, 0);
 
             //音鳴らす
-            KeyboardSlotLRSrc.Play();
+            //KeyboardSlotLRSrc.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -40,7 +40,7 @@ public class NPCChooseArea : MonoBehaviour
             transform.Translate(170 * canvasScale, 0, 0);
 
             //音鳴らす
-            KeyboardSlotLRSrc.Play();
+            //KeyboardSlotLRSrc.Play();
         }
 
         if (transform.position.x < minX * canvasScale)
