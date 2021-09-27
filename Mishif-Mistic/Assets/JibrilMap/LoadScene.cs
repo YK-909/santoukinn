@@ -68,10 +68,10 @@ public class LoadScene: MonoBehaviour
         Kimera3.SetActive(true);
         Stand.SetActive(false);
 
-        head = 0;
-        body = 0;
-        leg = 0;
-        passive = 0;
+        head = 4;
+        body = 4;
+        leg = 4;
+        passive = 4;
     }
 
     public static int GetHead()
