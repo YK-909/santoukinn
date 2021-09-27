@@ -1111,7 +1111,8 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    Animator.SetTrigger("isBlown2");
+                    //Animator.SetTrigger("isBlown2");
+                    Animator.SetBool(isBlown, true);
                     //最後の一撃
                     if (BotFSW.GetP2HP() <= 0)
                     {
@@ -1155,7 +1156,8 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    Animator.SetTrigger("isBlown2");
+                    //Animator.SetTrigger("isBlown2");
+                    Animator.SetBool(isBlown, true);
                     //最後の一撃
                     if (BotFSW.GetP2HP() <= 0)
                     {
@@ -1203,7 +1205,8 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    Animator.SetTrigger("isBlown2");
+                    //Animator.SetTrigger("isBlown2");
+                    Animator.SetBool(isBlown, true);
                     //最後の一撃
                     if (BotFSW.GetP2HP() <= 0)
                     {
@@ -1257,7 +1260,8 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    Animator.SetTrigger("isBlown2");
+                    //Animator.SetTrigger("isBlown2");
+                    Animator.SetBool(isBlown, true);
                     //最後の一撃
                     if (BotFSW.GetP2HP() <= 0)
                     {
@@ -1277,6 +1281,12 @@ public class BotFSW : MonoBehaviour
                         HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
                         HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                         Destroy(HealObj, 0.8f);
+                    }
+
+                    //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont"))
+                    {
+                        Animator.SetTrigger("isFalt2");
                     }
                 }
                 if (other.gameObject.CompareTag("P1FlogAttack"))
@@ -1323,7 +1333,7 @@ public class BotFSW : MonoBehaviour
                     }
 
                     //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
-                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("TongueCont")|| Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont"))
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("TongueCont")|| Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont")|| Animator.GetCurrentAnimatorStateInfo(0).IsName("MissileCont"))
                     {
                         Animator.SetTrigger("isFalt2");
                     }
@@ -1374,7 +1384,7 @@ public class BotFSW : MonoBehaviour
                     }
 
                     //攻撃を受けたときにMissileCont実行中だった場合はキャンセルして怯む
-                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("MissileCont"))
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("MissileCont")|| Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont")|| Animator.GetCurrentAnimatorStateInfo(0).IsName("TongueCont"))
                     {
                         Animator.SetTrigger("isFalt2");
                     }
@@ -1402,7 +1412,8 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    Animator.SetTrigger("isBlown2");
+                    //Animator.SetTrigger("isBlown2");
+                    Animator.SetBool(isBlown, true);
                     //最後の一撃
                     if (BotFSW.GetP2HP() <= 0)
                     {
@@ -1424,7 +1435,12 @@ public class BotFSW : MonoBehaviour
                         Destroy(HealObj, 0.8f);
                     }
 
-                    
+                    //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont"))
+                    {
+                        Animator.SetTrigger("isFalt2");
+                    }
+
                 }
                 if (other.gameObject.CompareTag("P1HorseAttack"))
                 {
@@ -1449,7 +1465,8 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    Animator.SetTrigger("isBlown2");
+                    //Animator.SetTrigger("isBlown2");
+                    Animator.SetBool(isBlown, true);
                     //最後の一撃
                     if (BotFSW.GetP2HP() <= 0)
                     {
@@ -1469,6 +1486,12 @@ public class BotFSW : MonoBehaviour
                         HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
                         HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                         Destroy(HealObj, 0.8f);
+                    }
+
+                    //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont"))
+                    {
+                        Animator.SetTrigger("isFalt2");
                     }
                 }
                 //カウンターダメージ用
@@ -1634,6 +1657,12 @@ public class BotFSW : MonoBehaviour
                     HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
                     HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
                     Destroy(HealObj, 0.8f);
+                }
+
+                //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
+                if (Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont"))
+                {
+                    Animator.SetTrigger("isFalt2");
                 }
             }
             if (other.gameObject.CompareTag("PalsyBullet1"))

@@ -135,6 +135,7 @@ public class KeyBordPlay1 : MonoBehaviour
     public GameObject Speedup;
     public GameObject Wing;
     public GameObject HealEffect;
+    public GameObject Pegasus;
     bool isDrain;
 
     //ADX設定
@@ -994,6 +995,7 @@ public class KeyBordPlay1 : MonoBehaviour
             {
                 BuffSpeed = 0.8f;
                 Wing.SetActive(false);
+                Pegasus.SetActive(true);
             }
         }
         else
@@ -1195,6 +1197,7 @@ public class KeyBordPlay1 : MonoBehaviour
     void WingTiming()
     {
         Wing.SetActive(true);
+        Pegasus.SetActive(false);
     }
 
     void DelayArma()
@@ -1462,7 +1465,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    Animator.SetTrigger("isBlown2");
+                    //Animator.SetTrigger("isBlown2");
+                    Animator.SetBool(isBlown, true);
                     //最後の一撃
                     if (KeyBordPlay1.GetP1HP() <= 0)
                     {
@@ -1506,7 +1510,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     atomSrc.Play("Impala_Attack");
 
                     //ふっとぶ
-                    Animator.SetTrigger("isBlown2");
+                    //Animator.SetTrigger("isBlown2");
+                    Animator.SetBool(isBlown, true);
                     //最後の一撃
                     if (KeyBordPlay1.GetP1HP() <= 0)
                     {
@@ -1551,7 +1556,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    Animator.SetTrigger("isBlown2");
+                    //Animator.SetTrigger("isBlown2");
+                    Animator.SetBool(isBlown, true);
                     //最後の一撃
                     if (KeyBordPlay1.GetP1HP() <= 0)
                     {
@@ -1599,7 +1605,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    Animator.SetTrigger("isBlown2");
+                    //Animator.SetTrigger("isBlown2");
+                    Animator.SetBool(isBlown, true);
                     //最後の一撃
                     if (KeyBordPlay1.GetP1HP() <= 0)
                     {
@@ -1742,7 +1749,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    Animator.SetTrigger("isBlown2");
+                    Animator.SetBool(isBlown, true);
+                    //Animator.SetTrigger("isBlown2");
                     Invoke("BlownOff", 1.1f);
                     //最後の一撃
                     if (KeyBordPlay1.GetP1HP() <= 0)
@@ -1786,7 +1794,8 @@ public class KeyBordPlay1 : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                    Animator.SetTrigger("isBlown2");
+                   // Animator.SetTrigger("isBlown2");
+                    Animator.SetBool(isBlown, true);
                     //最後の一撃
                     if (KeyBordPlay1.GetP1HP() <= 0)
                     {
