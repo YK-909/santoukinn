@@ -135,6 +135,7 @@ public class KeyBordPlay1 : MonoBehaviour
     public GameObject Speedup;
     public GameObject Wing;
     public GameObject HealEffect;
+    public GameObject HealEffect_SF;
     public GameObject Pegasus;
     bool isDrain;
 
@@ -223,7 +224,15 @@ public class KeyBordPlay1 : MonoBehaviour
             //音鳴らす
             atomSrc.Play("Down");  
         }
-        
+
+        if (BotFSW.isHeal == true)
+        {
+            GameObject HealObj;
+            HealObj = Instantiate(HealEffect_SF, transform.position + transform.forward * -2 + transform.up * -0.5f, Quaternion.identity);
+            HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+            Destroy(HealObj, 0.8f);
+            BotFSW.isHeal = false;
+        }
 
         Gamemode = Timerbotgame.GetGamemode();
         P1TurtleGard.transform.position = this.transform.position + transform.forward * 5 + transform.up * -2;
@@ -770,7 +779,7 @@ public class KeyBordPlay1 : MonoBehaviour
 
                                             AllActionInterval = true;
                                             P1WolfAtk.tag = "P1WolfAttack";
-                                          //  Rb.AddForce(transform.forward * 60f, ForceMode.Impulse);
+                                            Rb.AddForce(transform.forward * 60f, ForceMode.Impulse);
                                             WolfSwitch = false;
                                             //行動停止
                                             Invoke("ActionInterval", 1.2f);
@@ -808,7 +817,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                             //蹴る
                                             Animator.SetTrigger("isKick2");
                                             //当たり判定
-                                            Invoke("KickEnable", 0.8f);
+                                            Invoke("KickEnable", 0.4f);
                                             Invoke("KickUnable", 1.2f);
 
                                         }
@@ -1152,6 +1161,7 @@ public class KeyBordPlay1 : MonoBehaviour
         //音鳴らす
         //LionSrc.Play();
         //atomSrc.Play("Lion_Bite");
+        Rb.AddForce(transform.forward * 65f, ForceMode.Impulse);
     }
 
     void BiteUnable()
@@ -1481,13 +1491,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
 
-                    if (isDrain)
-                    {
-                        GameObject HealObj;
-                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
-                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
-                        Destroy(HealObj, 0.8f);
-                    }
                 }
                 if (other.gameObject.CompareTag("P2Impla"))
                 {
@@ -1526,16 +1529,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
 
-                    if (isDrain == true)
-                    {
-                        
-
-                        GameObject HealObj;
-                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
-                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
-                        Destroy(HealObj, 0.8f);
-                        
-                    }
                 }
                 if (other.gameObject.CompareTag("P2ImplaWave"))
                 {
@@ -1571,14 +1564,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
-
-                    if (isDrain)
-                    {
-                        GameObject HealObj;
-                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
-                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
-                        Destroy(HealObj, 0.8f);
-                    }
                 }
                 if (other.gameObject.CompareTag("P2WolfAttack"))
                 {
@@ -1607,7 +1592,7 @@ public class KeyBordPlay1 : MonoBehaviour
 
                     //ふっとぶ
                     //Animator.SetTrigger("isBlown2");
-                    Animator.SetBool(isBlown, true);
+                    this.Animator.SetBool(isBlown, true);
                     //最後の一撃
                     if (KeyBordPlay1.GetP1HP() <= 0)
                     {
@@ -1620,14 +1605,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
-
-                    if (isDrain == true)
-                    {
-                        GameObject HealObj;
-                        HealObj = Instantiate(HealEffect, other.transform.position+other.transform.forward*-2, Quaternion.identity);
-                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
-                        Destroy(HealObj, 0.8f);
-                    }
                 
             }
                 if (other.gameObject.CompareTag("P2FlogAttack"))
@@ -1664,14 +1641,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
-
-                    if (isDrain)
-                    {
-                        GameObject HealObj;
-                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
-                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
-                        Destroy(HealObj, 0.8f);
-                    }
 
                     //攻撃を受けたときにMissileCont実行中だった場合はキャンセルして怯む
                     if (Animator.GetCurrentAnimatorStateInfo(0).IsName("TongueCont"))
@@ -1714,14 +1683,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
-
-                    if (isDrain)
-                    {
-                        GameObject HealObj;
-                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
-                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
-                        Destroy(HealObj, 0.8f);
-                    }
 
                     //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
                     if (Animator.GetCurrentAnimatorStateInfo(0).IsName("MissileCont"))
@@ -1766,13 +1727,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
 
-                    if (isDrain)
-                    {
-                        GameObject HealObj;
-                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
-                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
-                        Destroy(HealObj, 0.8f);
-                    }
                 }
                 if (other.gameObject.CompareTag("P2HorseAttack"))
                 {
@@ -1795,7 +1749,7 @@ public class KeyBordPlay1 : MonoBehaviour
                     DelayFlog();
 
                     //ふっとぶ
-                   // Animator.SetTrigger("isBlown2");
+                    //Animator.SetTrigger("isBlown2");
                     Animator.SetBool(isBlown, true);
                     //最後の一撃
                     if (KeyBordPlay1.GetP1HP() <= 0)
@@ -1810,13 +1764,6 @@ public class KeyBordPlay1 : MonoBehaviour
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
 
-                    if (isDrain)
-                    {
-                        GameObject HealObj;
-                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
-                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
-                        Destroy(HealObj, 0.8f);
-                    }
                 }
 
                 //カウンターダメージ用
@@ -1977,13 +1924,7 @@ public class KeyBordPlay1 : MonoBehaviour
                 GameObject Hit;
                 Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                 Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
-                if (isDrain)
-                {
-                    GameObject HealObj;
-                    HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
-                    HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
-                    Destroy(HealObj, 0.8f);
-                }
+
             }
             if (other.gameObject.CompareTag("PalsyBullet2"))
             {
