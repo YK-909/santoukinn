@@ -30,6 +30,7 @@ public class Timerbotgame : MonoBehaviour
     public CriAtomSource CountSrc;
     public CriAtomSource BGMSrc;
     public CriAtomSource ESSrc;
+    private CriAtomSource atomSrc;
     string cueSheetBGM = "GardenBGM";
     string cueSheetCount = "CountDownSE";
     public string cueSheetES;
@@ -49,6 +50,7 @@ public class Timerbotgame : MonoBehaviour
         P1used3.SetActive(false);
 
         //CriAtomSourceを取得
+        atomSrc = (CriAtomSource)GetComponent("CriAtomSource");
         CriAtomExAcb BGMacb = CriAtom.GetAcb(cueSheetBGM);
         CriAtomExAcb Countacb = CriAtom.GetAcb(cueSheetCount);
         Exterior1 = NPCP1ContlolePassive.GetPassive();
@@ -90,6 +92,10 @@ public class Timerbotgame : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                //再開
+                BGMSrc.Pause(false);
+                ESSrc.Pause(false);
+
                 GameChange = 1;
                 PauseUI.SetActive(false);
             }
@@ -100,6 +106,10 @@ public class Timerbotgame : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
+                    //一時停止
+                    BGMSrc.Pause(true);
+                    ESSrc.Pause(true);
+
                     GameChange = 3;
                     PauseUI.SetActive(true);
                 }

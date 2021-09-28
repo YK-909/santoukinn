@@ -28,11 +28,14 @@ public class LoadScene: MonoBehaviour
     //AuidoComponent設定
     //public AudioClip TitleDecesionSound;
     //AudioSource audioSource;
+    private CriAtomSource atomSrc;
 
     public void Start()
     {
         //Componentを取得
         //audioSource = GetComponent<AudioSource>();
+        //CriAtomSourceを取得
+        atomSrc = (CriAtomSource)GetComponent("CriAtomSource");
 
         One = true;
     }
@@ -41,6 +44,8 @@ public class LoadScene: MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            //音鳴らす
+            atomSrc.Play("Cursor_GoBack");
             Invoke("InvokeTitle", 1.0f);
         }
     }
