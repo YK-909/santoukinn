@@ -189,7 +189,7 @@ public class BotFSW : MonoBehaviour
 
         EnemyHP_1 = 100;
         Player2HP = 100;
-        P1G.value = Player2HP;
+        P2G.value = Player2HP;
         if (Exterior == 1)
         {
             BuffSpeed = 0.7f;
@@ -231,6 +231,7 @@ public class BotFSW : MonoBehaviour
         StartCoroutine(DirectionMethod(7));
         Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
         transform.LookAt(Enemy);
+        P2G.value = Player2HP;
 
         if (Gamemode == 1)
         {
@@ -242,7 +243,7 @@ public class BotFSW : MonoBehaviour
                     Player2HP = KeyBordPlay1.GetP2HP();
 
                 }
-                P1G.value = Player2HP;
+                P2G.value = Player2HP;
                 //重力とは別な上からの力　要調整
                 //Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Acceleration);
                 if (!CalledOncePoint)
@@ -491,7 +492,7 @@ public class BotFSW : MonoBehaviour
                                             if (50< Distance && Distance < 70)
                                             {
                                                 Debug.Log(ArmadilloSpeed);
-                                                if (ArmadilloSpeed < 5)
+                                                if (ArmadilloSpeed <= 5)
                                                 {
                                                     ArmadilloSpeed += 10 * Time.deltaTime;
                                                 }
@@ -503,7 +504,7 @@ public class BotFSW : MonoBehaviour
                                                 //音鳴らす
                                                 atomSrc.Play("Armadillo_Roll");
                                             }
-                                            if (ArmadilloSpeed>10)
+                                            if (ArmadilloSpeed>=5)
                                             {
                                                 ArmadilloMode = 1;
                                                 //アニメーションの位置をずらしたよ
