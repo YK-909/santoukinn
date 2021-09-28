@@ -21,7 +21,6 @@ public class Pause_Button : MonoBehaviour
     {
         SceneManager.LoadScene(BackScene);
 
-
         //音鳴らす
         //audioSource.PlayOneShot(TitleDecesionSound);
 
