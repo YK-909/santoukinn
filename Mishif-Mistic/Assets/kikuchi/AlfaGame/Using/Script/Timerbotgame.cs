@@ -12,10 +12,6 @@ public class Timerbotgame : MonoBehaviour
     [SerializeField]
     private Text _textCountdown;
     public static int GameChange;
-    [SerializeField]
-    private Text GameWinner;
-    [SerializeField]
-    private Text BuffCountTextP1;
 
     private int Exterior1 = 1;
 
@@ -28,6 +24,8 @@ public class Timerbotgame : MonoBehaviour
     public GameObject P1used2;
     public GameObject P1used3;
 
+    public GameObject PauseUI;
+    public GameObject SoundUI;
     //ADX設定
     public CriAtomSource CountSrc;
     public CriAtomSource BGMSrc;
@@ -41,7 +39,6 @@ public class Timerbotgame : MonoBehaviour
     {
         GameChange = 2;
         _textCountdown.text = "";
-        GameWinner.text = "";
         StartCoroutine(CountdownCoroutine());
 
         Para.SetActive(false);
@@ -83,13 +80,40 @@ public class Timerbotgame : MonoBehaviour
         _textCountdown.text = "";
         _textCountdown.gameObject.SetActive(false);
 
-        BuffCountTextP1.text = "";
         GameChange = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (PauseUI.activeSelf && SoundUI.activeSelf == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                GameChange = 1;
+                PauseUI.SetActive(false);
+            }
+        }
+        else
+        {
+            if (GameChange == 1)
+            {
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    GameChange = 3;
+                    PauseUI.SetActive(true);
+                }
+            }
+        }
+
+        if (GameChange == 3)
+        {
+            if (PauseUI.activeSelf==false && SoundUI.activeSelf==false)
+            {
+                GameChange = 1;
+            }
+        }
+
         if (GameChange == 1)
         {
             Second -= Time.deltaTime;
@@ -98,7 +122,6 @@ public class Timerbotgame : MonoBehaviour
             //HPが０による勝敗
             if (KeyBordPlay1.GetP1HP() <= 0)
             {
-                GameWinner.text = "NPCの勝利";
                 GameChange = 2;
 
                 Invoke("BotSceneResultNPCWin", 3.0f);
@@ -106,7 +129,6 @@ public class Timerbotgame : MonoBehaviour
             }
             else if (BotFSW.GetP2HP() <= 0)
             {
-                GameWinner.text = "P1の勝利";
                 GameChange = 2;
 
                 Invoke("BotSceneResultP1Win", 3.0f);
@@ -117,7 +139,6 @@ public class Timerbotgame : MonoBehaviour
             {
                 if (BotFSW.GetP2HP() < KeyBordPlay1.GetP1HP())
                 {
-                    GameWinner.text = "P1の勝利";
                     GameChange = 2;
 
                     Invoke("BotSceneResultP1Win", 3.0f);
@@ -125,7 +146,6 @@ public class Timerbotgame : MonoBehaviour
                 }
                 else if (KeyBordPlay1.GetP1HP() < BotFSW.GetP2HP())
                 {
-                    GameWinner.text = "NPCの勝利";
                     GameChange = 2;
 
                     Invoke("BotSceneResultNPCWin", 3.0f);
@@ -133,7 +153,6 @@ public class Timerbotgame : MonoBehaviour
                 }
                 else if (KeyBordPlay1.GetP1HP() == BotFSW.GetP2HP())
                 {
-                    GameWinner.text = "引き分け";
                     GameChange = 2;
 
                     Invoke("BotSceneResultDraw", 3.0f);
@@ -141,7 +160,7 @@ public class Timerbotgame : MonoBehaviour
                 }
             }
 
-            if (Exterior1 == 3) 
+            if (Exterior1 == 3)
             {
                 Drain.SetActive(true);
             }
@@ -149,15 +168,15 @@ public class Timerbotgame : MonoBehaviour
             {
                 int CountP1 = KeyBordPlay1.GetBuffCountP1();
                 Speed.SetActive(true);
-                if (CountP1 == 2) 
+                if (CountP1 == 2)
                 {
                     P1used1.SetActive(true);
                 }
-                else if(CountP1==1)
+                else if (CountP1 == 1)
                 {
                     P1used2.SetActive(true);
                 }
-                else if(CountP1==0)
+                else if (CountP1 == 0)
                 {
                     P1used3.SetActive(true);
                 }
