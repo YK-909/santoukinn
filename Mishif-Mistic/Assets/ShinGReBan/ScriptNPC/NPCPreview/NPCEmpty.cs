@@ -28,7 +28,7 @@ public class NPCEmpty : MonoBehaviour
     {
         if (One)
         {
-            if (LoadScene.GetHead() == Head && LoadScene.GetBody() == Body && LoadScene.GetLeg() == Leg && LoadScene.GetPassive() == Passive)
+            if (LoadScene.head == 4 && LoadScene.body == Body && LoadScene.leg == Leg && LoadScene.passive == 4)
             {
                 //if文の外でやると無駄に毎フレーム実行されるので中にする
                 GameObject obj = (GameObject)Resources.Load("CP1Kimera" + Head + Body + Leg + Passive);
@@ -42,7 +42,7 @@ public class NPCEmpty : MonoBehaviour
         {
             instance.SetActive(false);
         }
-        if (LoadScene.GetHead() == Head && LoadScene.GetBody() == Body && LoadScene.GetLeg() == Leg && LoadScene.GetPassive() == Passive)
+        if (LoadScene.head == 4 && LoadScene.body == Body && LoadScene.leg == Leg && LoadScene.passive == 4)
         {
             instance.SetActive(true);
             instance.transform.RotateAround(new Vector3(4.27f, 1.17f, 7.64f), transform.up, 20 * Time.deltaTime);
