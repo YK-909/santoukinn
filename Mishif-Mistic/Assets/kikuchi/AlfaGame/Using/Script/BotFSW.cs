@@ -119,6 +119,7 @@ public class BotFSW : MonoBehaviour
     //ヒットエフェクト
     public GameObject HitEff;
     public GameObject HealEffect;
+    public static bool isHeal;
     bool isDrain;
 
     //ADX設定
@@ -523,7 +524,7 @@ public class BotFSW : MonoBehaviour
                                                     ArmadilloSpeed += 50;
                                                     OnceArma = false;
                                                 }
-                                               // ArmadilloBlock.SetActive(true);
+                                                ArmadilloBlock.SetActive(true);
                                                 ArmadilloBlock.tag = "P2ArmadilloAttack";
                                                 ArmadilloSpeed += -20 * Time.deltaTime;
                                                 transform.position += transform.forward * 50 * Time.deltaTime;
@@ -610,7 +611,7 @@ public class BotFSW : MonoBehaviour
 
                                         AllActionInterval = true;
                                         P2WolfAtk.tag = "P2WolfAttack";
-                                        //Rb.AddForce(transform.forward * 60f, ForceMode.Impulse);
+                                        Rb.AddForce(transform.forward * 60f, ForceMode.Impulse);
                                         WolfSwitch = false;
                                         //行動停止
                                         Invoke("ActionInterval", 1.2f);
@@ -853,6 +854,7 @@ public class BotFSW : MonoBehaviour
     {
         //ライオンの当たり判定
         P2Lionhead.SetActive(true);
+        Rb.AddForce(transform.forward * 65f, ForceMode.Impulse);
 
     }
 
@@ -1327,10 +1329,11 @@ public class BotFSW : MonoBehaviour
 
                     if (isDrain == true)
                     {
-                        GameObject HealObj;
-                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
-                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
-                        Destroy(HealObj, 0.8f);
+                        isHeal = true;
+                    }
+                    else
+                    {
+                        isHeal = false;
                     }
 
                     //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
@@ -1377,11 +1380,12 @@ public class BotFSW : MonoBehaviour
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
 
                     if (isDrain == true)
+                    {                       
+                        isHeal = true;
+                    }
+                    else
                     {
-                        GameObject HealObj;
-                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
-                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
-                        Destroy(HealObj, 0.8f);
+                        isHeal = false;
                     }
 
                     //攻撃を受けたときにMissileCont実行中だった場合はキャンセルして怯む
