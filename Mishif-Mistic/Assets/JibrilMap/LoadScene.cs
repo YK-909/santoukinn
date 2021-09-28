@@ -21,6 +21,10 @@ public class LoadScene: MonoBehaviour
     public static int leg;
     public static int passive;
 
+    GameObject instance;
+
+    bool One;
+
     //AuidoComponent設定
     //public AudioClip TitleDecesionSound;
     //AudioSource audioSource;
@@ -29,6 +33,8 @@ public class LoadScene: MonoBehaviour
     {
         //Componentを取得
         //audioSource = GetComponent<AudioSource>();
+
+        One = true;
     }
 
     public void Update()
@@ -68,10 +74,34 @@ public class LoadScene: MonoBehaviour
         Kimera3.SetActive(true);
         Stand.SetActive(false);
 
+        Destroy(instance);
+
         head = 4;
         body = 4;
         leg = 4;
         passive = 4;
+
+        if (One)
+        {
+            if (LoadScene.head == 4 && LoadScene.body == 4 && LoadScene.leg == 4 && LoadScene.passive == 4)
+            {
+                //if文の外でやると無駄に毎フレーム実行されるので中にする
+                GameObject obj = (GameObject)Resources.Load("CP1Kimera4444");
+
+                //メンバ変数に入れる
+                instance = (GameObject)Instantiate(obj, new Vector3(4.27f, 1.17f, 7.64f), Quaternion.Euler(0f, 90f, 0f));
+                One = false;
+            }
+        }
+        else
+        {
+            instance.SetActive(false);
+        }
+        if (LoadScene.head == 4 && LoadScene.body == 4 && LoadScene.leg == 4 && LoadScene.passive == 4)
+        {
+            instance.SetActive(true);
+            instance.transform.RotateAround(new Vector3(4.27f, 1.17f, 7.64f), transform.up, 20 * Time.deltaTime);
+        }
     }
 
     public static int GetHead()
