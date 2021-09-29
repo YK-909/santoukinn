@@ -679,7 +679,7 @@ public class BotFSW : MonoBehaviour
         }
 
         //HPの継続的な減少
-        if (P2G.value > P2R.value)
+        if (P2G.value < P2R.value)
         {
             P2R.value -= 10f * Time.deltaTime;
         }
