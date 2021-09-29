@@ -1499,6 +1499,48 @@ public class BotFSW : MonoBehaviour
                         Animator.SetTrigger("isFalt2");
                     }
                 }
+                if (other.gameObject.CompareTag("P1KuwagataAttack"))
+                {
+                    Player2HP -= 30;
+                    DamageHP2 = 30;
+                    HPdrain();
+                    //ノックバック
+                    this.transform.position = new Vector3(this.transform.position.x, other.gameObject.transform.position.y + 2, this.transform.position.z);
+                    Vector3 ToVec = GetAngleVec(this.gameObject, other.gameObject);
+                    Rb.AddForce(transform.up * 20, ForceMode.Impulse);
+                    Rb.AddForce(ToVec * 40, ForceMode.Impulse);
+                    //無敵タイム開始
+                    Invincible = true;
+                    Invoke("InvincibleTime", 1.5f);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.2f);
+                    //音鳴らす
+                    //AnimalDamage.Play();
+                    atomSrc.Play("Animal_Damage");
+                    DelayFlog();
+
+                    Animator.SetBool(isBlown, true);
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+                    if (isDrain == true)
+                    {
+                        GameObject HealObj;
+                        HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
+                        HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                        Destroy(HealObj, 0.8f);
+                    }
+
+                    //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont"))
+                    {
+                        Animator.SetTrigger("isFalt2");
+                    }
+                }
+
                 //カウンターダメージ用
                 if (P2Lionhead.tag=="P2LionAttackBack")
                 {
@@ -1631,45 +1673,7 @@ public class BotFSW : MonoBehaviour
                     DelayFlog();
                 }
             }
-            if (other.gameObject.CompareTag("P1KuwagataAttack"))
-            {
-                Player2HP -= 30;
-                DamageHP2 = 30;
-                HPdrain();
-                //ノックバック
-                this.transform.position = new Vector3(this.transform.position.x, other.gameObject.transform.position.y + 2, this.transform.position.z);
-                Vector3 ToVec = GetAngleVec(this.gameObject, other.gameObject);
-                Rb.AddForce(transform.up * 20, ForceMode.Impulse);
-                Rb.AddForce(ToVec * 40, ForceMode.Impulse);
-                //無敵タイム開始
-                Invincible = true;
-                Invoke("InvincibleTime", 1.5f);
-                //行動停止
-                AllActionInterval = true;
-                Invoke("ActionInterval", 1.2f);
-                //音鳴らす
-                //AnimalDamage.Play();
-                atomSrc.Play("Animal_Damage");
-                DelayFlog();
-
-                //ヒットエフェクト
-                GameObject Hit;
-                Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
-                Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
-                if (isDrain == true)
-                {
-                    GameObject HealObj;
-                    HealObj = Instantiate(HealEffect, other.transform.position + other.transform.forward * -2 + other.transform.up * 3.5f, Quaternion.identity);
-                    HealObj.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
-                    Destroy(HealObj, 0.8f);
-                }
-
-                //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
-                if (Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont"))
-                {
-                    Animator.SetTrigger("isFalt2");
-                }
-            }
+            
             if (other.gameObject.CompareTag("PalsyBullet1"))
             {
                 Player2HP -= 4;

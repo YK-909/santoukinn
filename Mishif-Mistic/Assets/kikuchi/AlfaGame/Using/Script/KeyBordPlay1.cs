@@ -806,7 +806,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                             atomSrc.Play("Horse_Swing");
 
                                             AllActionInterval = true;
-                                            P1HorseLeg.tag = "P2HorseAttack";
+                                            P1HorseLeg.tag = "P1HorseAttack";
                                             //Rb.AddForce(transform.forward * 25f, ForceMode.Impulse);
                                             HorseSwitch = false;
                                             //行動停止
@@ -817,8 +817,8 @@ public class KeyBordPlay1 : MonoBehaviour
                                             //蹴る
                                             Animator.SetTrigger("isKick2");
                                             //当たり判定
-                                            Invoke("KickEnable", 0.4f);
-                                            Invoke("KickUnable", 1.2f);
+                                            Invoke("KickEnable", 0.8f);
+                                            Invoke("KickUnable", 1.3f);
 
                                         }
                                     }
@@ -1765,6 +1765,37 @@ public class KeyBordPlay1 : MonoBehaviour
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
 
                 }
+                if (other.gameObject.CompareTag("P2KuwagataAttack"))
+                {
+                    Player1HP -= 30 * HPmag;
+                    DamageHP1 = 30 * HPmag;
+                    HPdrain();
+                    //ノックバック
+                    //this.transform.position = new Vector3(this.transform.position.x, other.gameObject.transform.position.y + 2, this.transform.position.z);
+                    //Vector3 ToVec = GetAngleVec(this.gameObject, other.gameObject);
+                    KuwagataVec = GetAngleVec(this.gameObject, other.gameObject);
+                    Rb.AddForce(transform.up * 50, ForceMode.Impulse);
+                    Invoke("KuwagataNock", 0.5f);
+                    //Rb.AddForce(ToVec * 50, ForceMode.Impulse);
+                    //無敵タイム開始
+                    Invincible = true;
+                    Invoke("InvincibleTime", 1.5f);
+                    //行動停止
+                    AllActionInterval = true;
+                    Invoke("ActionInterval", 1.2f);
+                    //音鳴らす
+                    //AnimalDamage.Play();
+                    atomSrc.Play("Animal_Damage");
+                    DelayFlog();
+
+                    Animator.SetBool(isBlown, true);
+
+                    //ヒットエフェクト
+                    GameObject Hit;
+                    Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
+                    Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                }
 
                 //カウンターダメージ用
                 if (P1Lionhead.tag=="P1LionAttackBack")
@@ -1897,35 +1928,7 @@ public class KeyBordPlay1 : MonoBehaviour
                     DelayFlog();
                 }
             }
-            if (other.gameObject.CompareTag("P2KuwagataAttack"))
-            {
-                Player1HP -= 30 * HPmag;
-                DamageHP1 = 30 * HPmag;
-                HPdrain();
-                //ノックバック
-                //this.transform.position = new Vector3(this.transform.position.x, other.gameObject.transform.position.y + 2, this.transform.position.z);
-                //Vector3 ToVec = GetAngleVec(this.gameObject, other.gameObject);
-                KuwagataVec = GetAngleVec(this.gameObject, other.gameObject);
-                Rb.AddForce(transform.up * 50, ForceMode.Impulse);
-                Invoke("KuwagataNock", 0.5f);
-                //Rb.AddForce(ToVec * 50, ForceMode.Impulse);
-                //無敵タイム開始
-                Invincible = true;
-                Invoke("InvincibleTime", 1.5f);
-                //行動停止
-                AllActionInterval = true;
-                Invoke("ActionInterval", 1.2f);
-                //音鳴らす
-                //AnimalDamage.Play();
-                atomSrc.Play("Animal_Damage");
-                DelayFlog();
-
-                //ヒットエフェクト
-                GameObject Hit;
-                Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
-                Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
-
-            }
+            
             if (other.gameObject.CompareTag("PalsyBullet2"))
             {
                 Player1HP -= 6 * HPmag;
