@@ -1490,6 +1490,12 @@ public class KeyBordPlay1 : MonoBehaviour
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
 
+                    //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("TongueCont") || Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont") || Animator.GetCurrentAnimatorStateInfo(0).IsName("MissileCont"))
+                    {
+                        Animator.SetTrigger("isFalt2");
+                    }
+
                 }
                 if (other.gameObject.CompareTag("P2Impla"))
                 {
@@ -1528,6 +1534,12 @@ public class KeyBordPlay1 : MonoBehaviour
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
 
+                    //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("TongueCont") || Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont") || Animator.GetCurrentAnimatorStateInfo(0).IsName("MissileCont"))
+                    {
+                        Animator.SetTrigger("isFalt2");
+                    }
+
                 }
                 if (other.gameObject.CompareTag("P2ImplaWave"))
                 {
@@ -1563,6 +1575,12 @@ public class KeyBordPlay1 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("TongueCont") || Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont") || Animator.GetCurrentAnimatorStateInfo(0).IsName("MissileCont"))
+                    {
+                        Animator.SetTrigger("isFalt2");
+                    }
                 }
                 if (other.gameObject.CompareTag("P2WolfAttack"))
                 {
@@ -1604,8 +1622,14 @@ public class KeyBordPlay1 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
-                
-            }
+
+                    //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("TongueCont") || Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont") || Animator.GetCurrentAnimatorStateInfo(0).IsName("MissileCont"))
+                    {
+                        Animator.SetTrigger("isFalt2");
+                    }
+
+                }
                 if (other.gameObject.CompareTag("P2FlogAttack"))
                 {
                     Player1HP -= 1.5f * HPmag;
@@ -1763,6 +1787,12 @@ public class KeyBordPlay1 : MonoBehaviour
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
 
+                    //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("TongueCont") || Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont") || Animator.GetCurrentAnimatorStateInfo(0).IsName("MissileCont"))
+                    {
+                        Animator.SetTrigger("isFalt2");
+                    }
+
                 }
                 if (other.gameObject.CompareTag("P2KuwagataAttack"))
                 {
@@ -1793,6 +1823,12 @@ public class KeyBordPlay1 : MonoBehaviour
                     GameObject Hit;
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+
+                    //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("TongueCont") || Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont") || Animator.GetCurrentAnimatorStateInfo(0).IsName("MissileCont"))
+                    {
+                        Animator.SetTrigger("isFalt2");
+                    }
 
                 }
 

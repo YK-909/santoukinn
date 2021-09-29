@@ -18,7 +18,7 @@ namespace SelectCharacter
         private void OnEnable()
         {
             //タイトルシーン時にリセット
-            if (SceneManager.GetActiveScene().name == "SelectCharactorTitle")
+            if (SceneManager.GetActiveScene().name == "NPCSelectCharactorTitle")
             {
                 nextSceneName = "";
                 character = null;
