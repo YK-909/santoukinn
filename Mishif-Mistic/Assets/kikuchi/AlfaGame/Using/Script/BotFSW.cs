@@ -1129,6 +1129,12 @@ public class BotFSW : MonoBehaviour
                     Hit = Instantiate(HitEff, transform.position + transform.forward * 4 + transform.up * 1.8f, transform.rotation) as GameObject;
                     Hit.transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
 
+                    //攻撃を受けたときにTongueCont実行中だった場合はキャンセルして怯む
+                    if (Animator.GetCurrentAnimatorStateInfo(0).IsName("TongueCont") || Animator.GetCurrentAnimatorStateInfo(0).IsName("RollCont") || Animator.GetCurrentAnimatorStateInfo(0).IsName("MissileCont"))
+                    {
+                        Animator.SetTrigger("isFalt2");
+                    }
+
                     if (isDrain == true)
                     {
                         GameObject HealObj;
