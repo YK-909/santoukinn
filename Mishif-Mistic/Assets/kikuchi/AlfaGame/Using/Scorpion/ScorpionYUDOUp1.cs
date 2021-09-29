@@ -9,17 +9,19 @@ public class ScorpionYUDOUp1 : MonoBehaviour
     private float Timecount = 0;
     private GameObject TargetObj;
     private Vector3 Target;
+    private GameObject TargetObjRev;
     private bool Once = true;
     // Start is called before the first frame update
     void Start()
     {
         TargetObj = GameObject.Find("P2camera");
+        TargetObjRev = GameObject.Find("P1camera");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Once == true)
+        if (Once == true && GardTouch == false)
         {
             float dist = Vector3.Distance(TargetObj.transform.position, transform.position);
             if (dist < 55)
@@ -35,6 +37,12 @@ public class ScorpionYUDOUp1 : MonoBehaviour
 
             Once = false;
         }
+        else if (Once == true && GardTouch == true)
+        {
+            Target = new Vector3(TargetObjRev.transform.position.x, TargetObjRev.transform.position.y, TargetObjRev.transform.position.z);
+            transform.LookAt(Target);
+        }
+
         Timecount += Time.deltaTime;
         if (GardTouch == false)
         {
@@ -42,7 +50,7 @@ public class ScorpionYUDOUp1 : MonoBehaviour
         }
         else if (GardTouch == true)
         {
-            transform.position -= transform.forward * 120f * Time.deltaTime;
+            transform.position += transform.forward * 120f * Time.deltaTime;
         }
 
         if (Timecount > 2.0)
@@ -67,6 +75,7 @@ public class ScorpionYUDOUp1 : MonoBehaviour
             this.tag = "PoisonAttackBack";
             //反転した時の射程範囲の調整
             Timecount = 0;
+            Once = true;
         }
         if (collision.gameObject.tag == "floor")
         {
