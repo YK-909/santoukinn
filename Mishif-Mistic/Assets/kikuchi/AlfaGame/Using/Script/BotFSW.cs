@@ -232,7 +232,6 @@ public class BotFSW : MonoBehaviour
         StartCoroutine(DirectionMethod(7));
         Enemy = new Vector3(EnemyObj.transform.position.x, this.transform.position.y, EnemyObj.transform.position.z);
         transform.LookAt(Enemy);
-        P2G.value = Player2HP;
 
         if (Gamemode == 1)
         {
@@ -895,6 +894,7 @@ public class BotFSW : MonoBehaviour
                 isDrain = true;
             }
         }
+        P2G.value = Player2HP;
     }
     public static float GetP2HP()
     {

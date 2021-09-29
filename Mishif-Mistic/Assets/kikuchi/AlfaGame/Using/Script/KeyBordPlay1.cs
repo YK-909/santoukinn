@@ -237,7 +237,6 @@ public class KeyBordPlay1 : MonoBehaviour
         Gamemode = Timerbotgame.GetGamemode();
         P1TurtleGard.transform.position = this.transform.position + transform.forward * 5 + transform.up * -2;
         DamageHP1 = 0;
-        P1G.value = Player1HP;
         if (Gamemode == 1)
         {
             if (AllActionInterval == false)
@@ -1254,9 +1253,9 @@ public class KeyBordPlay1 : MonoBehaviour
         {
             EnemyHP_2 += DamageHP1 / 5;
             P2R.value+= DamageHP1 / 5; ;
-
             isDrain = true;
         }
+        P1G.value = Player1HP;
     }
     void PalsyInterval()
     {
