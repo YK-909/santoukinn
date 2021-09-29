@@ -817,8 +817,8 @@ public class KeyBordPlay1 : MonoBehaviour
                                             //蹴る
                                             Animator.SetTrigger("isKick2");
                                             //当たり判定
-                                            Invoke("KickEnable", 0.8f);
-                                            Invoke("KickUnable", 1.3f);
+                                            //Invoke("KickEnable", 0.8f);
+                                            //Invoke("KickUnable", 1.3f);
 
                                         }
                                     }
