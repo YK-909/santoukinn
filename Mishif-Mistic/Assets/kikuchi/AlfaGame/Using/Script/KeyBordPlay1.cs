@@ -213,6 +213,10 @@ public class KeyBordPlay1 : MonoBehaviour
         Animator = GetComponent<Animator>();
 
         atomSrc = (CriAtomSource)GetComponent<CriAtomSource>();
+
+        //吹っ飛ばないためのコライダーオンオフ
+        GetComponent<BoxCollider>().enabled = false;
+        Invoke("ColliderEnabled", 0.5f);
     }
 
     // Update is called once per frame
@@ -748,7 +752,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                         }
                                         else if (Implajump == false)
                                         {
-                                            Rb.AddForce(transform.up * 100, ForceMode.Impulse);
+                                            Rb.AddForce(transform.up * 200, ForceMode.Impulse);
                                             Implajump = true;
 
                                             //インパラ攻撃
@@ -969,7 +973,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                 {
                                     if (FlogSwitch == true)
                                     {
-                                        Rb.AddForce(transform.up * 60, ForceMode.Impulse);
+                                        Rb.AddForce(transform.up * 120, ForceMode.Impulse);
                                         NormalJump = true;
 
                                         //音鳴らす
@@ -1238,6 +1242,11 @@ public class KeyBordPlay1 : MonoBehaviour
     void DelayKuwagata()
     {
         KuwagataSwitch = true;
+    }
+
+    void ColliderEnabled()
+    {
+        GetComponent<BoxCollider>().enabled = true;
     }
     Vector3 GetAngleVec(GameObject _from, GameObject _to)
     {
