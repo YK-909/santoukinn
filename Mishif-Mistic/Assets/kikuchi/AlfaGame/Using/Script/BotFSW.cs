@@ -894,7 +894,10 @@ public class BotFSW : MonoBehaviour
                 isDrain = true;
             }
         }
-        P2G.value = Player2HP;
+        if (Player2HP <= 0)
+        {
+            P2G.value = 0;
+        }
     }
     public static float GetP2HP()
     {
