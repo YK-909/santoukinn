@@ -276,6 +276,48 @@ public class KeyBordPlay1 : MonoBehaviour
                                     Speed = 15f * BuffSpeed; ;
                                 }
 
+                                Direction.Set(Input.GetAxis("Horizontal1"), 0, Input.GetAxis("Vertical1"));
+                                if (Direction != Vector3.zero)
+                                {
+                                    //向きを指定
+                                    transform.rotation = Quaternion.LookRotation(Direction);
+                                    if (Speed == 40.0)
+                                    {
+                                        //スピードアップしている時
+                                        if (BuffSpeed == 1.5f)
+                                        {
+                                            //音鳴らす
+                                            atomSrc.Play("Speed_UP_Wing");
+                                        }
+                                        //以下通常時
+                                        //インパラの足音
+                                        else if (Leg == 1)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            //atomSrc.Play("Impala_GFootsteps");
+                                            ImpalaFS.Play();
+                                        }
+
+                                        //狼の足音
+                                        else if (Leg == 2)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            //atomSrc.Play("Garden_Footsteps");
+                                            WolfFS.Play();
+                                        }
+
+                                        //馬の足音
+                                        else if (Leg == 3)
+                                        {
+                                            //音鳴らす
+                                            //AnimalFSSrc.Play();
+                                            //atomSrc.Play("Horse_GFootsteps");
+                                            HorseFS.Play();
+                                        }
+                                    }
+                                }
                                 if (Input.GetKey(KeyCode.UpArrow))
                                 {
                                     //キャラクターが指定の向きを向く
@@ -476,7 +518,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                 if (Head == 1)
                                 {
                                     //カエル
-                                    if (Input.GetKeyDown(KeyCode.Z))
+                                    if (Input.GetKeyDown(KeyCode.Z)|| Input.GetKeyDown(KeyCode.Joystick1Button0))
                                     {
                                         if (FlogSwitch == true)
                                         {
@@ -495,7 +537,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                             this.Animator.SetBool(isTongueFin, false);
                                         }
                                     }
-                                    if (Input.GetKeyUp(KeyCode.Z))
+                                    if (Input.GetKeyUp(KeyCode.Z)|| Input.GetKeyUp(KeyCode.Joystick1Button0))
                                     {
                                         if (FlogSwitch == false)
                                         {
@@ -504,7 +546,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                             Invoke("DelayFlog", 1.5f);
                                             AllActionInterval = true;
                                             //行動停止
-                                            Invoke("ActionInterval", 2.65f);
+                                            Invoke("ActionInterval", 2.0f);
 
                                             //音止める
                                             //FrogSwingSrc.Stop();
@@ -519,7 +561,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                 else if (Head == 2)
                                 {
                                     // ライオン
-                                    if (Input.GetKeyDown(KeyCode.Z))
+                                    if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Joystick1Button0))
                                     {
                                         if (LionSwitch == true)
                                         {
@@ -551,7 +593,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                     //クワガタの攻撃
                                     if (KuwagataSwitch == true)
                                     {
-                                        if (Input.GetKeyDown(KeyCode.Z))
+                                        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Joystick1Button0))
                                         {
                                             KuwagataSwitch = false;
                                             AllActionInterval = true;
@@ -562,7 +604,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                             atomSrc.Play("Stag_Grab");
                                             Invoke("KuwagataUnable", 0.7f);
                                             //行動停止
-                                            Invoke("ActionInterval", 1.5f);
+                                            Invoke("ActionInterval", 1.0f);
                                             //リキャストタイム
                                             Invoke("DelayKuwagata", 3f);
 
@@ -578,7 +620,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                     if (Body == 1)
                                     {
                                         //カメ
-                                        if (Input.GetKeyUp(KeyCode.X))
+                                        if (Input.GetKeyUp(KeyCode.X)||Input.GetKeyUp(KeyCode.Joystick1Button3))
                                         {
 
                                             if (Gard == true)
@@ -597,9 +639,9 @@ public class KeyBordPlay1 : MonoBehaviour
                                                 //上と同じ値
                                                 Invoke("TurtleGardRemove", 3f);
                                                 //行動停止
-                                                Invoke("ActionInterval", 2.3f);
+                                                Invoke("ActionInterval", 3.3f);
                                                 //リキャストタイム
-                                                Invoke("DelayTartle", 3.2f);
+                                                Invoke("DelayTartle", 3.65f);
 
                                                 //カメのシールド
                                                 this.Animator.SetBool(isKameShield, true);
@@ -615,7 +657,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                         if (ScorpionAtk == true)
                                         {
                                             //サソリ
-                                            if (Input.GetKey(KeyCode.X))
+                                            if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.Joystick1Button3))
                                             {
                                                 //音鳴らす
                                                 //ScorpionSrc.Play();
@@ -650,7 +692,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                             if (ArmadilloMode == 0)
                                             {
                                                 //アルマジロ
-                                                if (Input.GetKey(KeyCode.X))
+                                                if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.Joystick1Button3))
                                                 {
                                                     Debug.Log(ArmadilloSpeed);
                                                     if (ArmadilloSpeed < 30)
@@ -665,7 +707,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                                     //音鳴らす
                                                     atomSrc.Play("Armadillo_Roll");
                                                 }
-                                                if (Input.GetKeyUp(KeyCode.X))
+                                                if (Input.GetKeyUp(KeyCode.X) || Input.GetKeyUp(KeyCode.Joystick1Button3))
                                                 {
                                                     ArmadilloMode = 1;
                                                     //アニメーションの位置をずらしたよ
@@ -730,7 +772,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                 if (Leg == 1)
                                 {
                                     //インパラ
-                                    if (Input.GetKeyDown(KeyCode.C))
+                                    if (Input.GetKeyDown(KeyCode.C)|| Input.GetKeyDown(KeyCode.Joystick1Button2))
                                     {
                                         //音鳴らす
                                         //ImpalaJumpSrc.Play();
@@ -772,7 +814,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                 else if (Leg == 2)
                                 {
                                     //オオカミ
-                                    if (Input.GetKey(KeyCode.C))
+                                    if (Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.Joystick1Button2))
                                     {
                                         if (WolfSwitch == true)
                                         {
@@ -800,7 +842,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                 }
                                 else if (Leg == 3)
                                 {
-                                    if (Input.GetKeyDown(KeyCode.C))
+                                    if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.Joystick1Button2))
                                     {
 
                                         if (HorseSwitch == true)
@@ -832,7 +874,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                 {
                                     if (PalsyAtk == true && PalsyCountP1 != 0)
                                     {
-                                        if (Input.GetKeyDown(KeyCode.B))
+                                        if (Input.GetKeyDown(KeyCode.B)|| Input.GetKeyDown(KeyCode.Joystick1Button7))
                                         {
                                             //音鳴らす
                                             atomSrc.Play("Butterfly_Wing");
@@ -872,7 +914,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                 {
                                     if (BuffSpeed != 1.5f && BuffCountP1 != 0)
                                     {
-                                        if (Input.GetKey(KeyCode.B))
+                                        if (Input.GetKey(KeyCode.B) || Input.GetKey(KeyCode.Joystick1Button7))
                                         {
                                             BuffSpeed = 1.5f;
                                             BuffCountP1 -= 1;
@@ -901,7 +943,7 @@ public class KeyBordPlay1 : MonoBehaviour
                         if (NormalJump == false)
                         {
                             //LRのシールド
-                            if (Input.GetKey(KeyCode.V))
+                            if (Input.GetKey(KeyCode.V)|| Input.GetKey(KeyCode.Joystick1Button6))
                             {
                                 //シールド展開
                                 this.Animator.SetBool(isShield, true);
@@ -960,7 +1002,7 @@ public class KeyBordPlay1 : MonoBehaviour
                                 }
                             }
                             //ガードのボタンを離したとき　後隙
-                            if (Input.GetKeyUp(KeyCode.V))
+                            if (Input.GetKeyUp(KeyCode.V)|| Input.GetKeyUp(KeyCode.Joystick1Button6))
                             {
                                 ShieldObj.SetActive(false);
                                 Invoke("ShieldDelay", 0.25f);
@@ -969,7 +1011,7 @@ public class KeyBordPlay1 : MonoBehaviour
                             }
                             if (Shield == false)
                             {
-                                if (Input.GetKey(KeyCode.Space))
+                                if (Input.GetKey(KeyCode.Space)|| Input.GetKey(KeyCode.Joystick1Button1))
                                 {
                                     if (FlogSwitch == true)
                                     {
@@ -1264,7 +1306,11 @@ public class KeyBordPlay1 : MonoBehaviour
             P2R.value+= DamageHP1 / 5; ;
             isDrain = true;
         }
-        P1G.value = Player1HP;
+        
+        if(Player1HP<=0)
+        {
+            P1G.value = 0;
+        }
     }
     void PalsyInterval()
     {
