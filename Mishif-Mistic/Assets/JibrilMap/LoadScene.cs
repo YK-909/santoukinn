@@ -47,6 +47,11 @@ public class LoadScene: MonoBehaviour
             //音鳴らす
             atomSrc.Play("Cursor_GoBack");
             Invoke("InvokeTitle", 1.0f);
+
+            NPCP1Contlolehead.head = 0;
+            NPCP1Contlolebody.body = 0;
+            NPCP1Contloleleg.leg = 0;
+            NPCP1ContlolePassive.passive = 0;
         }
     }
 
@@ -68,6 +73,11 @@ public class LoadScene: MonoBehaviour
     public void LoadSceneButtonTitle()
     {
         Invoke("InvokeTitle", 1.0f);
+
+        NPCP1Contlolehead.head = 0;
+        NPCP1Contlolebody.body = 0;
+        NPCP1Contloleleg.leg = 0;
+        NPCP1ContlolePassive.passive = 0;
     }
 
     public void NPCBack()
@@ -85,6 +95,11 @@ public class LoadScene: MonoBehaviour
         body = 4;
         leg = 4;
         passive = 4;
+
+        NPCP1Contlolehead.head = 0;
+        NPCP1Contlolebody.body = 0;
+        NPCP1Contloleleg.leg = 0;
+        NPCP1ContlolePassive.passive = 0;
 
         if (One)
         {
