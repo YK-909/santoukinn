@@ -235,15 +235,16 @@ public class BotFSW : MonoBehaviour
 
         if (Gamemode == 1)
         {
+            EnemyHP_1 = KeyBordPlay1.GetP1HP();
+            P2G.value = Player2HP;
             if (AllActionInterval == false)
             {
                 EnemyHP_1 = KeyBordPlay1.GetP1HP();
                 if (Exterior == 2)
                 {
                     Player2HP = KeyBordPlay1.GetP2HP();
-
                 }
-                P2G.value = Player2HP;
+               
                 //重力とは別な上からの力　要調整
                 //Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Acceleration);
                 if (!CalledOncePoint)

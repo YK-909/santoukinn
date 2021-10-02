@@ -26,6 +26,7 @@ public class Timerbotgame : MonoBehaviour
 
     public GameObject PauseUI;
     public GameObject SoundUI;
+
     //ADX設定
     public CriAtomSource CountSrc;
     public CriAtomSource BGMSrc;
@@ -133,14 +134,12 @@ public class Timerbotgame : MonoBehaviour
             if (KeyBordPlay1.GetP1HP() <= 0)
             {
                 GameChange = 2;
-
                 Invoke("BotSceneResultNPCWin", 3.0f);
 
             }
             else if (BotFSW.GetP2HP() <= 0)
             {
                 GameChange = 2;
-
                 Invoke("BotSceneResultP1Win", 3.0f);
 
             }
