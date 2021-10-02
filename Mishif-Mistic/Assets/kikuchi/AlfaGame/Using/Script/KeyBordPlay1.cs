@@ -243,14 +243,15 @@ public class KeyBordPlay1 : MonoBehaviour
         DamageHP1 = 0;
         if (Gamemode == 1)
         {
+            if (Exterior == 3)
+            {
+                Player1HP = BotFSW.GetP1HP();
+            }
+            P1G.value = Player1HP;
             if (AllActionInterval == false)
             {
-                if (Exterior == 3)
-                {
-                    Player1HP = BotFSW.GetP1HP();
-                }
-                P1G.value = Player1HP;
                 EnemyHP_2 = BotFSW.GetP2HP();
+
                 //重力とは別な上からの力　要調整
                 //Rb.AddForce(new Vector3(0, -30, 0), ForceMode.Acceleration);
 
